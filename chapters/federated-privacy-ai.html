@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federated &amp; Privacy-Preserving AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Federated &amp; Privacy-Preserving AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Privacy-Preserving AI — the federated learning pipeline, 8-layer stack, privacy mechanisms, secure computation, benchmarks, market data, and more.</p>
+ <span class="reading-time">~55 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/09-federated-privacy-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 1 — PIPELINE -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-pipeline">
+ <h2>The Federated Learning Pipeline</h2>
+ <p class="desc">Privacy-preserving AI follows a seven-step circular pipeline where local training and global aggregation repeat without raw data ever leaving its source. Click each step to learn more.</p>
+
+ <div class="pipeline-container" id="pipeline-flow">
+ <div class="pipeline-step" data-step="0" style="border-color: var(--accent);">
+ 
+ <div class="step-label">DATA OWNERS</div>
+ <div class="step-sub">Train locally</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="1" style="border-color: var(--accent2);">
+ 
+ <div class="step-label">LOCAL UPDATES</div>
+ <div class="step-sub">Model gradients</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="2" style="border-color: var(--accent3);">
+ 
+ <div class="step-label">PRIVACY ENHANCE</div>
+ <div class="step-sub">DP noise / encryption</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="3" style="border-color: var(--accent4);">
+ 
+ <div class="step-label">AGGREGATION</div>
+ <div class="step-sub">Server combines</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="4" style="border-color: var(--accent5);">
+ 
+ <div class="step-label">GLOBAL UPDATE</div>
+ <div class="step-sub">Improved model</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="5" style="border-color: var(--accent6);">
+ 
+ <div class="step-label">DISTRIBUTE</div>
+ <div class="step-sub">Push to clients</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="6" style="border-color: var(--accent2);">
+ 
+ <div class="step-label">REPEAT</div>
+ <div class="step-sub">Until converged</div>
+ </div>
+ </div>
+
+ <div class="pipeline-info" id="pipeline-info">
+ <h3>Click a step above</h3>
+ <p>Explore how data owners collaboratively train a shared model without ever exchanging raw data — privacy is enforced at every step of the pipeline.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Privacy-Preserving AI Works — The Distributed Training Pipeline</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ PRIVACY-PRESERVING AI — FEDERATED LEARNING EXAMPLE │
+│ │
+│ DATA OWNER A DATA OWNER B DATA OWNER C │
+│ ────────────── ────────────── ────────────── │
+│ Trains model Trains model Trains model │
+│ locally on locally on locally on │
+│ own data own data own data │
+│ │ │ │ │
+│ ▼ ▼ ▼ │
+│ Local model Local model Local model │
+│ update update update │
+│ │ │ │ │
+│ └───────────────────┼───────────────────┘ │
+│ ▼ │
+│ ┌──────────────────────┐ │
+│ │ AGGREGATION SERVER │ │
+│ │ Combines updates │ │
+│ │ (e.g., FedAvg) │ │
+│ │ NO RAW DATA SEEN │ │
+│ └──────────┬───────────┘ │
+│ │ │
+│ ▼ │
+│ Updated global model │
+│ sent back to all │
+│ participants │
+│ │
+│ ──── RAW DATA NEVER LEAVES ITS OWNER — ONLY MODEL UPDATES SHARED ──── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Privacy-Preserving Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Remains Local</strong></td>
+<td>Each participant's data stays on their own infrastructure — never transferred, copied, or viewed by others</td>
+</tr>
+<tr>
+<td><strong>Local Training</strong></td>
+<td>Each participant trains a model (or computes gradients) on their local data using the current global model</td>
+</tr>
+<tr>
+<td><strong>Update Extraction</strong></td>
+<td>Model updates (gradients or weight deltas) are extracted — not the data itself</td>
+</tr>
+<tr>
+<td><strong>Privacy Enhancement</strong></td>
+<td>Optional: noise is added to updates (differential privacy), updates are encrypted (secure aggregation), or computation is performed in a TEE</td>
+</tr>
+<tr>
+<td><strong>Secure Aggregation</strong></td>
+<td>Updates from all participants are aggregated (averaged) without exposing any individual's update</td>
+</tr>
+<tr>
+<td><strong>Global Model Update</strong></td>
+<td>The aggregated update is applied to the global model</td>
+</tr>
+<tr>
+<td><strong>Distribution</strong></td>
+<td>The updated global model is sent back to all participants for the next round</td>
+</tr>
+<tr>
+<td><strong>Iteration</strong></td>
+<td>The process repeats until the model converges</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Privacy-Preserving AI Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy Budget (ε)</strong></td>
+<td>Differential privacy epsilon — lower = stronger privacy, higher noise, less accuracy</td>
+</tr>
+<tr>
+<td><strong>Number of Participants</strong></td>
+<td>How many data owners contribute — more participants improve both privacy and model quality</td>
+</tr>
+<tr>
+<td><strong>Communication Rounds</strong></td>
+<td>Number of federated training rounds — more rounds improve convergence</td>
+</tr>
+<tr>
+<td><strong>Local Epochs</strong></td>
+<td>Number of training passes each participant performs locally before sending updates</td>
+</tr>
+<tr>
+<td><strong>Aggregation Strategy</strong></td>
+<td>How updates are combined — FedAvg, FedProx, FedMA, weighted average</td>
+</tr>
+<tr>
+<td><strong>Clipping Norm</strong></td>
+<td>Bound on the maximum size of individual gradient updates (for differential privacy)</td>
+</tr>
+<tr>
+<td><strong>Encryption Scheme</strong></td>
+<td>Type of encryption used for secure computation — HE, MPC, TEE</td>
+</tr>
+<tr>
+<td><strong>Noise Mechanism</strong></td>
+<td>Type of noise added for differential privacy — Gaussian, Laplace</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Google's Gboard keyboard was one of the first mass-deployed federated learning systems, used by billions.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Differential privacy adds calibrated noise to data — Apple uses it to collect usage statistics from 1.5 billion devices.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Federated learning can reduce data transfer by 100x compared to centralised training approaches.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What stays on-device in federated learning?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">The global model</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Raw training data</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">The aggregation server</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">The learning rate</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What does differential privacy add to data?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Encryption keys</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Calibrated statistical noise</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Data labels</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Feature columns</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What is secure multi-party computation (MPC)?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A distributed database</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Jointly computing functions without revealing individual inputs</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A consensus algorithm</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A model compression technique</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 2 — 8-LAYER STACK -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-stack">
+ <h2>The 8-Layer Privacy-Preserving AI Stack</h2>
+ <p class="desc">Federated and privacy-preserving AI is organised into eight architectural layers from data ingestion to governance. Click any layer to expand details.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Privacy-Preserving AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Data Layer</strong></td>
+<td>Local data stores, data governance policies, data classification, consent management</td>
+</tr>
+<tr>
+<td><strong>2. Privacy Mechanisms</strong></td>
+<td>Differential privacy, secure aggregation, HE, MPC, TEE, k-anonymity, synthetic data</td>
+</tr>
+<tr>
+<td><strong>3. Federated Training</strong></td>
+<td>Local training, gradient computation, communication protocols, aggregation algorithms</td>
+</tr>
+<tr>
+<td><strong>4. Aggregation &amp; Coordination</strong></td>
+<td>Central server, peer-to-peer coordination, asynchronous aggregation, model merging</td>
+</tr>
+<tr>
+<td><strong>5. Model Layer</strong></td>
+<td>Global model, personalised local models, model compression for edge deployment</td>
+</tr>
+<tr>
+<td><strong>6. Inference &amp; Serving</strong></td>
+<td>Private inference (encrypted), on-device inference, confidential computing</td>
+</tr>
+<tr>
+<td><strong>7. Audit &amp; Verification</strong></td>
+<td>Privacy budget tracking, membership inference testing, differential privacy verification</td>
+</tr>
+<tr>
+<td><strong>8. Governance &amp; Compliance</strong></td>
+<td>Data processing agreements, regulatory compliance (GDPR, HIPAA), consent management, audit logs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 3 — SUB-TYPES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-subtypes">
+ <h2>Sub-Types of Privacy-Preserving AI</h2>
+ <p class="desc">Nine principal sub-types spanning federated learning topologies, mathematical privacy guarantees, cryptographic computation, hardware isolation, and synthetic data generation.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Privacy Mechanism</h3>
+<h3>By Data Distribution Architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cross-Device Federated</strong></td>
+<td>Training across millions of edge devices (phones, IoT); tiny data per device</td>
+<td>Google Keyboard (Gboard) next-word prediction</td>
+</tr>
+<tr>
+<td><strong>Cross-Silo Federated</strong></td>
+<td>Training across a small number of organisations (5–100); large data per silo</td>
+<td>Hospitals training a shared cancer model</td>
+</tr>
+<tr>
+<td><strong>Vertical Federated</strong></td>
+<td>Participants have different features for the same individuals (e.g., bank + telecom)</td>
+<td>Joint credit scoring across institutions</td>
+</tr>
+<tr>
+<td><strong>Horizontal Federated</strong></td>
+<td>Participants have the same features but different individuals</td>
+<td>Same hospital network across regions</td>
+</tr>
+</tbody>
+</table>
+<h3>By Privacy Guarantee</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Privacy Guarantee</th>
+<th>Performance Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Differential Privacy</strong></td>
+<td>Mathematical bound on individual information leakage (ε-DP)</td>
+<td>Accuracy loss from noise injection</td>
+</tr>
+<tr>
+<td><strong>Homomorphic Encryption</strong></td>
+<td>Cryptographic — data never decrypted during computation</td>
+<td>1,000x–1,000,000x slowdown</td>
+</tr>
+<tr>
+<td><strong>Secure Multi-Party Computation</strong></td>
+<td>Cryptographic — no party sees another's input</td>
+<td>High communication overhead</td>
+</tr>
+<tr>
+<td><strong>Trusted Execution Environments</strong></td>
+<td>Hardware isolation — data decrypted only inside enclave</td>
+<td>Near-native performance</td>
+</tr>
+<tr>
+<td><strong>Synthetic Data</strong></td>
+<td>Statistical — no individual's actual data in the output</td>
+<td>Quality loss; privacy depends on generation method</td>
+</tr>
+<tr>
+<td><strong>Federated Learning (alone)</strong></td>
+<td>Architectural — raw data doesn't leave the device</td>
+<td>Gradients can still leak information</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 4 — CORE ARCHITECTURES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">Five foundational architectural families that underpin all privacy-preserving AI systems.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Techniques</h3>
+<h3>Federated Learning (FL)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Train a shared model across multiple decentralised data holders; each trains locally; only model updates are shared</td>
+</tr>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>Google (2016) — McMahan et al., "Communication-Efficient Learning of Deep Networks from Decentralised Data"</td>
+</tr>
+<tr>
+<td><strong>FedAvg</strong></td>
+<td>Foundation algorithm: each client trains locally, sends updates; server averages them</td>
+</tr>
+<tr>
+<td><strong>Cross-Device FL</strong></td>
+<td>Training across millions of edge devices (smartphones, IoT) — small data per device, high participant count</td>
+</tr>
+<tr>
+<td><strong>Cross-Silo FL</strong></td>
+<td>Training across organisations (hospitals, banks) — larger data per participant, smaller participant count</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Data never leaves the device; scales to millions of participants; enables cross-organisational collaboration</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Communication overhead; non-IID data challenges; model poisoning risk; gradients can leak information</td>
+</tr>
+</tbody>
+</table>
+<h3>Differential Privacy (DP)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Add carefully calibrated mathematical noise to data, queries, or model updates — guaranteeing that the output is statistically nearly identical whether any single individual's data is included or not</td>
+</tr>
+<tr>
+<td><strong>Formal Guarantee</strong></td>
+<td>For any individual: the probability of any output changes by at most a factor of e^ε whether their data is included or not</td>
+</tr>
+<tr>
+<td><strong>Privacy Budget (ε)</strong></td>
+<td>Lower ε = stronger privacy (more noise); ε &lt; 1 is strong; ε &gt; 10 is weak</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Mathematical privacy guarantee; composable — total privacy loss across multiple analyses is provably bounded</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Accuracy-privacy trade-off — stronger privacy requires more noise, degrading utility</td>
+</tr>
+<tr>
+<td><strong>Used By</strong></td>
+<td>Apple (emoji suggestions), Google (Chrome, Android), US Census Bureau (2020 Census)</td>
+</tr>
+</tbody>
+</table>
+<h3>Homomorphic Encryption (HE)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Encrypt data in a way that allows computation on the ciphertext — the result, when decrypted, is the same as if the computation had been performed on the plaintext</td>
+</tr>
+<tr>
+<td><strong>Types</strong></td>
+<td>Partially HE (supports one operation), Somewhat HE (limited operations), Fully HE (FHE — arbitrary computation)</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Data is never decrypted during computation; strongest privacy guarantee</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Extremely computationally expensive — 1,000x–1,000,000x slower than plaintext computation; improving but still impractical for large models</td>
+</tr>
+<tr>
+<td><strong>Key Schemes</strong></td>
+<td>BFV, BGV, CKKS (approximate FHE for ML), TFHE</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Privacy-preserving inference, encrypted database queries, secure voting</td>
+</tr>
+</tbody>
+</table>
+<h3>Secure Multi-Party Computation (MPC)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Multiple parties jointly compute a function over their inputs while keeping each party's input private from all others</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Data is split into secret shares distributed across parties; computation proceeds on shares; no single party can reconstruct any other party's data</td>
+</tr>
+<tr>
+<td><strong>Protocols</strong></td>
+<td>Garbled circuits, secret sharing (Shamir, additive), oblivious transfer</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Strong privacy guarantees; more practical than FHE for many applications</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>High communication overhead; requires synchronous online parties; latency</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Private set intersection (ad measurement), private auctions, cross-organisational analytics</td>
+</tr>
+</tbody>
+</table>
+<h3>Trusted Execution Environments (TEE)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Hardware-based isolation — computation occurs in a secure enclave that even the machine's owner cannot inspect</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Data is encrypted in transit and at rest; decrypted only inside the TEE; results are encrypted before leaving</td>
+</tr>
+<tr>
+<td><strong>Hardware</strong></td>
+<td>Intel SGX, AMD SEV, ARM TrustZone, NVIDIA Confidential Computing</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Near-native performance; practical for real workloads; hardware root of trust</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Side-channel attacks have been demonstrated (Spectre, Foreshadow); trust in hardware vendor</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Confidential cloud computing (Azure Confidential, GCP Confidential), key management, private inference</td>
+</tr>
+</tbody>
+</table>
+<h3>Synthetic Data Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Generate artificial data that preserves the statistical properties of real data without containing any actual individual's information</td>
+</tr>
+<tr>
+<td><strong>Techniques</strong></td>
+<td>GANs, VAEs, diffusion models trained on real data; DP-SGD to ensure the generator doesn't memorise individuals</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Shareable, usable for development and testing; no privacy restrictions on synthetic data</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Quality depends on the generator; may miss tail distributions; privacy guarantee depends on generation method</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Healthcare data sharing, financial ML development, software testing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 5 — TOOLS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-tools">
+ <h2>Tools &amp; Frameworks</h2>
+ <p class="desc">The definitive toolkit for building federated and privacy-preserving AI systems — from FL frameworks to homomorphic encryption libraries.</p>
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Creator</th><th>Key Capabilities</th></tr>
+ </thead>
+ <tbody>
+ <tr><td style="color:var(--accent);font-weight:700;">Flower (flwr)</td><td>Flower Labs</td><td>Framework-agnostic FL; supports PyTorch, TensorFlow, JAX</td></tr>
+ <tr><td style="color:var(--accent2);font-weight:700;">PySyft</td><td>OpenMined</td><td>FL + DP + MPC toolkit; remote data science</td></tr>
+ <tr><td style="color:var(--accent3);font-weight:700;">TensorFlow Federated</td><td>Google</td><td>FL with strong differential privacy integration</td></tr>
+ <tr><td style="color:var(--accent4);font-weight:700;">NVIDIA FLARE</td><td>NVIDIA</td><td>Enterprise FL; healthcare-focused; provisioning &amp; security</td></tr>
+ <tr><td style="color:var(--accent5);font-weight:700;">Opacus</td><td>Meta</td><td>DP-SGD for PyTorch; per-sample gradient clipping</td></tr>
+ <tr><td style="color:var(--accent6);font-weight:700;">Google DP Library</td><td>Google</td><td>Core DP mechanisms; production-grade C++ with Python bindings</td></tr>
+ <tr><td style="color:var(--accent);font-weight:700;">OpenDP</td><td>Harvard / Microsoft</td><td>Modular DP framework; composable privacy guarantees</td></tr>
+ <tr><td style="color:var(--accent2);font-weight:700;">Microsoft SEAL</td><td>Microsoft</td><td>Homomorphic encryption library; BFV &amp; CKKS schemes</td></tr>
+ <tr><td style="color:var(--accent3);font-weight:700;">OpenFHE</td><td>Open-source</td><td>Comprehensive FHE library; BGV, BFV, CKKS, TFHE</td></tr>
+ <tr><td style="color:var(--accent4);font-weight:700;">CrypTen</td><td>Meta</td><td>MPC for PyTorch via secret sharing; ML-friendly API</td></tr>
+ <tr><td style="color:var(--accent5);font-weight:700;">Azure Confidential Computing</td><td>Microsoft</td><td>Intel SGX &amp; AMD SEV; hardware-isolated enclaves</td></tr>
+ <tr><td style="color:var(--accent6);font-weight:700;">AWS Nitro Enclaves</td><td>AWS</td><td>Isolated compute environments; attestation-based trust</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Federated Learning Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flower (flwr)</strong></td>
+<td>Flower Labs (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU or GPU; distributed across any cloud / on-prem nodes)</td>
+<td>Framework-agnostic FL; supports PyTorch, TensorFlow, JAX; growing ecosystem</td>
+</tr>
+<tr>
+<td><strong>PySyft</strong></td>
+<td>OpenMined (open-source)</td>
+<td>Open-Source (any OS; Python 3.9+; CPU or GPU)</td>
+<td>Privacy-preserving ML; FL + DP + MPC; Python-native</td>
+</tr>
+<tr>
+<td><strong>TensorFlow Federated (TFF)</strong></td>
+<td>Google (open-source)</td>
+<td>Open-Source (any OS; Python 3.9+; CPU or GPU or TPU; CUDA 11.8+ for GPU)</td>
+<td>FL with TensorFlow; strong DP integration; simulation and deployment</td>
+</tr>
+<tr>
+<td><strong>NVIDIA FLARE</strong></td>
+<td>NVIDIA (open-source)</td>
+<td>Open-Source (Linux; Python 3.8+; NVIDIA GPU recommended; Docker/K8s for enterprise)</td>
+<td>Enterprise FL; supports custom aggregation; healthcare focus</td>
+</tr>
+<tr>
+<td><strong>IBM FL</strong></td>
+<td>IBM (open-source)</td>
+<td>Open-Source (Linux; Python 3.8+; CPU or GPU; IBM Cloud Pak compatible)</td>
+<td>Enterprise federated learning platform; multi-framework support</td>
+</tr>
+<tr>
+<td><strong>Substra</strong></td>
+<td>Owkin (open-source)</td>
+<td>Open-Source (Linux; K8s cluster; Docker; Python 3.9+)</td>
+<td>FL for healthcare; focus on traceability and governance</td>
+</tr>
+<tr>
+<td><strong>FedML</strong></td>
+<td>FedML (open-source)</td>
+<td>Open-Source / Cloud (any OS; Python 3.8+; CPU or GPU; FedML Cloud on AWS)</td>
+<td>Cross-device and cross-silo FL; spans edge, cloud, and on-premise</td>
+</tr>
+<tr>
+<td><strong>Federated AI Technology Enabler (FATE)</strong></td>
+<td>WeBank (open-source)</td>
+<td>Open-Source (Linux; Docker/K8s; Python 3.8+; multi-node cluster)</td>
+<td>Industrial FL platform; supports horizontal, vertical, and transfer FL</td>
+</tr>
+</tbody>
+</table>
+<h3>Differential Privacy Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opacus</strong></td>
+<td>Meta (open-source / PyTorch)</td>
+<td>Open-Source (any OS; Python 3.8+; PyTorch; CPU or NVIDIA GPU)</td>
+<td>DP-SGD for PyTorch model training; the go-to for DP deep learning</td>
+</tr>
+<tr>
+<td><strong>TensorFlow Privacy</strong></td>
+<td>Google (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; TensorFlow; CPU or GPU or TPU)</td>
+<td>DP-SGD for TensorFlow models</td>
+</tr>
+<tr>
+<td><strong>Google DP Library</strong></td>
+<td>Google (open-source, C++)</td>
+<td>Open-Source (any OS; C++ / Java / Go; CPU-only)</td>
+<td>Core DP mechanisms (Laplace, Gaussian, count, mean, quantile); production-grade</td>
+</tr>
+<tr>
+<td><strong>OpenDP</strong></td>
+<td>Harvard/Microsoft (open-source)</td>
+<td>Open-Source (any OS; Rust core + Python bindings; CPU-only)</td>
+<td>Modular DP framework; composable privacy guarantees</td>
+</tr>
+<tr>
+<td><strong>Tumult Analytics</strong></td>
+<td>Tumult Labs</td>
+<td>Cloud (Tumult SaaS on AWS; integrates with Spark on Databricks / EMR)</td>
+<td>Commercial DP analytics platform; used by the US Census Bureau</td>
+</tr>
+<tr>
+<td><strong>PipelineDP</strong></td>
+<td>OpenMined / Google (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; runs on Apache Spark or Beam; CPU-only)</td>
+<td>DP for Apache Spark and Beam pipelines</td>
+</tr>
+</tbody>
+</table>
+<h3>Secure Computation Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microsoft SEAL</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Open-Source (any OS; C++ / .NET; CPU-only; high-memory recommended)</td>
+<td>Homomorphic encryption library; BFV and CKKS schemes</td>
+</tr>
+<tr>
+<td><strong>OpenFHE</strong></td>
+<td>DARPA-funded (open-source)</td>
+<td>Open-Source (Linux/macOS/Windows; C++17; CPU-only; high-memory recommended)</td>
+<td>Comprehensive FHE library; BGV, BFV, CKKS, TFHE</td>
+</tr>
+<tr>
+<td><strong>Concrete ML</strong></td>
+<td>Zama (open-source)</td>
+<td>Open-Source (Linux/macOS; Python 3.8+; CPU-only; Rust compiler required)</td>
+<td>ML inference on FHE; compile scikit-learn/PyTorch models to FHE</td>
+</tr>
+<tr>
+<td><strong>MP-SPDZ</strong></td>
+<td>Open-source</td>
+<td>Open-Source (Linux/macOS; C++; Python 3.8+; multi-node network for MPC)</td>
+<td>Multi-party computation framework; supports many protocols</td>
+</tr>
+<tr>
+<td><strong>ABY / ABY3</strong></td>
+<td>Academic (open-source)</td>
+<td>Open-Source (Linux; C++; multi-node network required)</td>
+<td>MPC framework supporting arithmetic, Boolean, and Yao sharing</td>
+</tr>
+<tr>
+<td><strong>CrypTen</strong></td>
+<td>Meta (open-source)</td>
+<td>Open-Source (Linux; Python 3.8+; PyTorch; CPU or GPU; multi-process)</td>
+<td>MPC for PyTorch; private ML through secret sharing</td>
+</tr>
+</tbody>
+</table>
+<h3>Confidential Computing Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure Confidential Computing</strong></td>
+<td>Microsoft</td>
+<td>Cloud (Azure — DCsv3/DCdsv3 VMs with Intel SGX; ACC VMs with AMD SEV-SNP)</td>
+<td>TEE-based (Intel SGX, AMD SEV); confidential VMs and containers</td>
+</tr>
+<tr>
+<td><strong>GCP Confidential Computing</strong></td>
+<td>Google</td>
+<td>Cloud (GCP — N2D Confidential VMs with AMD SEV; Confidential GKE nodes)</td>
+<td>Confidential VMs (AMD SEV); Confidential GKE</td>
+</tr>
+<tr>
+<td><strong>AWS Nitro Enclaves</strong></td>
+<td>Amazon</td>
+<td>Cloud (AWS — EC2 instances with Nitro Enclaves enabled)</td>
+<td>Isolated compute environments on EC2; no persistent storage or network</td>
+</tr>
+<tr>
+<td><strong>NVIDIA Confidential Computing</strong></td>
+<td>NVIDIA</td>
+<td>Cloud (AWS P5 / Azure ND H100; NVIDIA H100 GPU with confidential compute mode)</td>
+<td>GPU TEE; H100 confidential computing for AI inference</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 6 — USE CASES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">Where federated and privacy-preserving AI delivers real-world value — from healthcare to financial crime prevention.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Multi-Hospital Model Training</strong></td>
+<td>FL across hospitals to build shared models without sharing patient data</td>
+<td>HealthChain, Owkin, NVIDIA Clara FL</td>
+</tr>
+<tr>
+<td><strong>Rare Disease Research</strong></td>
+<td>FL enables combining data across institutions for diseases too rare for any single institution</td>
+<td>Federated tumour segmentation (FeTS)</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>Secure computation for cross-pharma compound screening without IP exposure</td>
+<td>MELLODDY consortium (10 pharma companies)</td>
+</tr>
+<tr>
+<td><strong>Genomics</strong></td>
+<td>Privacy-preserving genome-wide association studies</td>
+<td>Secure GWAS via MPC</td>
+</tr>
+<tr>
+<td><strong>EHR Analytics</strong></td>
+<td>Differentially private analytics across electronic health record systems</td>
+<td>HIPAA-compliant DP analytics</td>
+</tr>
+</tbody>
+</table>
+<h3>Financial Services</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cross-Bank Fraud Detection</strong></td>
+<td>FL or MPC to train shared fraud models without sharing customer transaction data</td>
+<td>Singapore's FATE project, FinTech collaborations</td>
+</tr>
+<tr>
+<td><strong>AML Collaboration</strong></td>
+<td>PSI and MPC for anti-money laundering across institutions</td>
+<td>SWIFT collaborative analytics</td>
+</tr>
+<tr>
+<td><strong>Credit Scoring</strong></td>
+<td>Vertical FL combining bank and telecom data for improved credit scoring</td>
+<td>WeBank FATE deployments</td>
+</tr>
+<tr>
+<td><strong>Risk Analytics</strong></td>
+<td>DP for aggregate risk reporting without exposing individual positions</td>
+<td>Regulatory reporting</td>
+</tr>
+</tbody>
+</table>
+<h3>Technology</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mobile Keyboard Prediction</strong></td>
+<td>Cross-device FL for next-word prediction without sending typed text to servers</td>
+<td>Google Gboard, Apple QuickType</td>
+</tr>
+<tr>
+<td><strong>Voice Assistant Training</strong></td>
+<td>FL for speech recognition improvement without centralising voice recordings</td>
+<td>Apple Siri, Google Assistant</td>
+</tr>
+<tr>
+<td><strong>Browser Telemetry</strong></td>
+<td>Local DP for aggregate usage statistics without tracking individual users</td>
+<td>Google RAPPOR (Chrome)</td>
+</tr>
+<tr>
+<td><strong>Ad Measurement</strong></td>
+<td>PSI and aggregated reporting for ad conversion without cross-site tracking</td>
+<td>Google Privacy Sandbox, Apple SKAdNetwork</td>
+</tr>
+<tr>
+<td><strong>Recommendation Systems</strong></td>
+<td>FL for personalised recommendations without centralising user history</td>
+<td>Research prototypes; growing commercial interest</td>
+</tr>
+</tbody>
+</table>
+<h3>Government &amp; Public Sector</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Census &amp; Statistical Agencies</strong></td>
+<td>DP for publishing accurate statistics while protecting individual respondents</td>
+<td>US Census Bureau 2020 (DP), Eurostat</td>
+</tr>
+<tr>
+<td><strong>Cross-Agency Intelligence</strong></td>
+<td>MPC for joint analytics across intelligence agencies without sharing classified data</td>
+<td>Research prototypes</td>
+</tr>
+<tr>
+<td><strong>Tax Administration</strong></td>
+<td>Privacy-preserving analytics for tax compliance without exposing individual returns</td>
+<td>Government pilot programmes</td>
+</tr>
+</tbody>
+</table>
+<h3>Telecommunications</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network Optimisation</strong></td>
+<td>FL for optimising mobile network performance using data from user devices</td>
+<td>Ericsson, Nokia research</td>
+</tr>
+<tr>
+<td><strong>Joint Fraud Detection</strong></td>
+<td>MPC for collaborative fraud detection across telecom operators</td>
+<td>EU research consortia</td>
+</tr>
+</tbody>
+</table>
+<h3>Automotive</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Federated Driving Model Training</strong></td>
+<td>FL across vehicle fleets to improve driving models without centralising driving data</td>
+<td>BMW, Mercedes, Stellantis research</td>
+</tr>
+<tr>
+<td><strong>V2X Privacy</strong></td>
+<td>Privacy-preserving vehicle-to-everything communication</td>
+<td>Connected vehicle research</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 7 — BENCHMARKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-benchmarks">
+ <h2>Benchmarks &amp; Evaluation</h2>
+ <p class="desc">Quantitative measures of privacy strength and federated learning performance.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Privacy Metrics</h3>
+ <canvas id="chart-privacy"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>FL Performance</h3>
+ <canvas id="chart-fl-perf"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Privacy Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy Budget (ε)</strong></td>
+<td>Total differential privacy epsilon consumed; lower = stronger privacy</td>
+</tr>
+<tr>
+<td><strong>δ (Delta)</strong></td>
+<td>Probability of privacy guarantee failure; should be negligible (e.g., 1/n²)</td>
+</tr>
+<tr>
+<td><strong>Membership Inference Success Rate</strong></td>
+<td>Can an attacker determine if a specific individual was in the training data? Lower = better</td>
+</tr>
+<tr>
+<td><strong>Attribute Inference Risk</strong></td>
+<td>Can an attacker infer sensitive attributes from the model? Lower = better</td>
+</tr>
+<tr>
+<td><strong>Model Inversion Risk</strong></td>
+<td>Can an attacker reconstruct training data from the model? Lower = better</td>
+</tr>
+<tr>
+<td><strong>k-Anonymity Level</strong></td>
+<td>Minimum number of individuals sharing each combination of quasi-identifiers</td>
+</tr>
+<tr>
+<td><strong>l-Diversity</strong></td>
+<td>Diversity of sensitive values within each equivalence class</td>
+</tr>
+</tbody>
+</table>
+<h3>Utility Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Accuracy vs. Centralised Baseline</strong></td>
+<td>How much accuracy is lost compared to a model trained on centralised data</td>
+</tr>
+<tr>
+<td><strong>Privacy-Utility Tradeoff Curve</strong></td>
+<td>Accuracy as a function of ε — characterises how much privacy costs in utility</td>
+</tr>
+<tr>
+<td><strong>Convergence Rounds</strong></td>
+<td>Number of federated rounds needed to reach target accuracy</td>
+</tr>
+<tr>
+<td><strong>Per-Client Accuracy</strong></td>
+<td>Individual client's local model performance — measures fairness across participants</td>
+</tr>
+<tr>
+<td><strong>Statistical Utility</strong></td>
+<td>For DP queries: error between privatised and true statistics</td>
+</tr>
+</tbody>
+</table>
+<h3>Efficiency Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Communication Cost</strong></td>
+<td>Total data transferred between clients and server during training</td>
+</tr>
+<tr>
+<td><strong>Computation Overhead</strong></td>
+<td>Additional compute cost vs. non-private training (HE can be 1,000x+)</td>
+</tr>
+<tr>
+<td><strong>Training Time</strong></td>
+<td>Wall-clock time including communication rounds and local computation</td>
+</tr>
+<tr>
+<td><strong>Encryption Throughput</strong></td>
+<td>Operations per second for HE or MPC workloads</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>End-to-end time for a single private inference</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 8 — MARKET DATA -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-market">
+ <h2>Market Data</h2>
+ <p class="desc">Market sizing and growth projections for federated learning and privacy-enhancing technologies.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Market Segments (2024)</h3>
+ <canvas id="chart-segments"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Federated Learning Market Growth (2024–2028)</h3>
+ <canvas id="chart-growth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Context</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Federated Learning Market (2024)</strong></td>
+<td>~$195 million</td>
+<td>MarketsandMarkets; projected ~$420M by 2028</td>
+</tr>
+<tr>
+<td><strong>Privacy-Enhancing Technologies (PET) Market (2024)</strong></td>
+<td>~$2.2 billion</td>
+<td>Includes DP, HE, MPC, TEE, FL, synthetic data</td>
+</tr>
+<tr>
+<td><strong>Confidential Computing Market (2024)</strong></td>
+<td>~$4.8 billion</td>
+<td>Azure, GCP, AWS, NVIDIA; growing rapidly</td>
+</tr>
+<tr>
+<td><strong>Organisations Deploying FL (2024)</strong></td>
+<td>~12% of large enterprises (pilot or production)</td>
+<td>Gartner; concentrated in healthcare and finance</td>
+</tr>
+<tr>
+<td><strong>Organisations Using DP (2024)</strong></td>
+<td>~18% of large tech companies; &lt;5% of non-tech enterprises</td>
+<td>Apple, Google, Meta lead; enterprise adoption nascent</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Trends</h3>
+<table>
+<thead>
+<tr>
+<th>Trend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Regulatory Acceleration</strong></td>
+<td>New privacy regulations (GDPR enforcement, US state laws, PIPL) are driving urgent adoption</td>
+</tr>
+<tr>
+<td><strong>Healthcare Leading</strong></td>
+<td>Healthcare is the top vertical for FL deployment — driven by strict privacy requirements and distributed data</td>
+</tr>
+<tr>
+<td><strong>Confidential Computing Mainstream</strong></td>
+<td>Azure, GCP, and AWS all offer confidential computing; GPU TEE emerging</td>
+</tr>
+<tr>
+<td><strong>FHE Approaching Practicality</strong></td>
+<td>Dramatic improvements in FHE performance (Zama Concrete, Intel HE-Transformer) — still 100x+ overhead</td>
+</tr>
+<tr>
+<td><strong>Synthetic Data Growing</strong></td>
+<td>Synthetic data emerging as a simpler alternative for development and testing use cases</td>
+</tr>
+<tr>
+<td><strong>Privacy as Competitive Advantage</strong></td>
+<td>Apple and others marketing privacy as a product differentiator</td>
+</tr>
+<tr>
+<td><strong>Cross-Industry Data Collaborations</strong></td>
+<td>Consortia forming for federated fraud detection, drug discovery, smart manufacturing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 9 — RISKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Key risks and open challenges facing federated and privacy-preserving AI deployments.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Fundamental Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy-Utility Tradeoff</strong></td>
+<td>Stronger privacy guarantees require more noise or slower computation, reducing model utility</td>
+</tr>
+<tr>
+<td><strong>Computational Overhead</strong></td>
+<td>HE and MPC introduce massive compute costs — orders of magnitude slower than plaintext</td>
+</tr>
+<tr>
+<td><strong>Communication Cost</strong></td>
+<td>FL requires multiple communication rounds; bandwidth-intensive for large models</td>
+</tr>
+<tr>
+<td><strong>Non-IID Data</strong></td>
+<td>Federated data is often non-identically distributed across clients, degrading model quality</td>
+</tr>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Implementing privacy-preserving AI correctly is technically extremely difficult</td>
+</tr>
+<tr>
+<td><strong>Incomplete Protection</strong></td>
+<td>FL alone does not prevent all privacy attacks — gradient inversion, membership inference remain risks</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>MPC communication grows with the number of parties; FHE is computationally expensive for large models</td>
+</tr>
+<tr>
+<td><strong>Maturity</strong></td>
+<td>Many techniques are still research-grade; production deployments are limited in scope</td>
+</tr>
+</tbody>
+</table>
+<h3>Privacy Attack Vectors</h3>
+<table>
+<thead>
+<tr>
+<th>Attack</th>
+<th>Description</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gradient Inversion</strong></td>
+<td>Reconstruct training data from shared gradient updates</td>
+<td>Secure aggregation + differential privacy</td>
+</tr>
+<tr>
+<td><strong>Membership Inference</strong></td>
+<td>Determine whether a specific individual's data was used in training</td>
+<td>DP training (DP-SGD); regularisation</td>
+</tr>
+<tr>
+<td><strong>Model Inversion</strong></td>
+<td>Reconstruct representative training examples from the trained model</td>
+<td>DP; output perturbation; access controls</td>
+</tr>
+<tr>
+<td><strong>Attribute Inference</strong></td>
+<td>Infer sensitive attributes from model predictions</td>
+<td>DP; limit model output precision</td>
+</tr>
+<tr>
+<td><strong>Model Poisoning</strong></td>
+<td>Malicious participants send corrupted updates to degrade or backdoor the model</td>
+<td>Byzantine-robust aggregation; anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Data Poisoning</strong></td>
+<td>Malicious participants include bad data to influence model behaviour</td>
+<td>Data quality checks; robust training</td>
+</tr>
+<tr>
+<td><strong>Side-Channel Attacks</strong></td>
+<td>Extract information from TEE hardware through timing, power, or electromagnetic signals</td>
+<td>Hardware hardening; constant-time algorithms</td>
+</tr>
+</tbody>
+</table>
+<h3>When Privacy-Preserving AI Is the Right Choice</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why Privacy-Preserving AI Excels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Legal Requirements</strong></td>
+<td>When regulations (GDPR, HIPAA, CCPA) prohibit data centralisation</td>
+</tr>
+<tr>
+<td><strong>Cross-Organisation Collaboration</strong></td>
+<td>When multiple organisations want to train jointly without sharing proprietary data</td>
+</tr>
+<tr>
+<td><strong>Sensitive Data</strong></td>
+<td>When data is inherently sensitive (medical, financial, personal)</td>
+</tr>
+<tr>
+<td><strong>Competitive Concerns</strong></td>
+<td>When participants are competitors who cannot share raw data</td>
+</tr>
+<tr>
+<td><strong>Jurisdictional Constraints</strong></td>
+<td>When data cannot cross borders due to data sovereignty laws</td>
+</tr>
+<tr>
+<td><strong>Trust Deficit</strong></td>
+<td>When data owners do not trust each other or a central party</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="predictive-discriminative-ai.html">Predictive / Discriminative AI</a>
+<a href="bayesian-probabilistic-ai.html">Bayesian / Probabilistic AI</a>
+<a href="explainable-ai.html">Explainable AI (XAI)</a>
+<a href="analytical-ai.html">Analytical AI</a>
+<a href="generative-ai.html">Generative AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<!-- ██ SECTION 10 — GLOSSARY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Essential terminology for federated and privacy-preserving AI.</p>
+ <input type="text" class="glossary-search" id="glossary-search" placeholder="Search glossary…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Central DP</strong></td>
+<td>Differential privacy applied by a trusted central server that has access to raw data and adds noise before publishing results</td>
+</tr>
+<tr>
+<td><strong>Confidential Computing</strong></td>
+<td>Hardware-based isolation that protects data during processing using Trusted Execution Environments</td>
+</tr>
+<tr>
+<td><strong>Cross-Device Federated Learning</strong></td>
+<td>FL where participants are millions of edge devices (smartphones, IoT) with small local datasets</td>
+</tr>
+<tr>
+<td><strong>Cross-Silo Federated Learning</strong></td>
+<td>FL where participants are organisations (hospitals, banks) with large local datasets</td>
+</tr>
+<tr>
+<td><strong>Data Minimisation</strong></td>
+<td>GDPR principle: collect and process only the data strictly necessary for the stated purpose</td>
+</tr>
+<tr>
+<td><strong>Differential Privacy (DP)</strong></td>
+<td>A mathematical framework guaranteeing that the output of a computation is nearly the same whether any individual's data is included or not</td>
+</tr>
+<tr>
+<td><strong>DP-SGD</strong></td>
+<td>Differentially Private Stochastic Gradient Descent — training ML models with per-sample gradient clipping and noise addition</td>
+</tr>
+<tr>
+<td><strong>Epsilon (ε)</strong></td>
+<td>The privacy loss parameter in differential privacy; lower ε = stronger privacy</td>
+</tr>
+<tr>
+<td><strong>FedAvg</strong></td>
+<td>Federated Averaging — the foundational FL algorithm: local training + weighted averaging of model updates</td>
+</tr>
+<tr>
+<td><strong>Federated Learning (FL)</strong></td>
+<td>Training a shared model across decentralised data holders; data never leaves the device</td>
+</tr>
+<tr>
+<td><strong>Fully Homomorphic Encryption (FHE)</strong></td>
+<td>Encryption that allows arbitrary computation on ciphertext; the holy grail of encrypted computation</td>
+</tr>
+<tr>
+<td><strong>Gradient Inversion Attack</strong></td>
+<td>An attack that reconstructs training data from shared model gradients</td>
+</tr>
+<tr>
+<td><strong>Horizontal Federated Learning</strong></td>
+<td>FL where participants have the same features but different data records (same columns, different rows)</td>
+</tr>
+<tr>
+<td><strong>Homomorphic Encryption (HE)</strong></td>
+<td>Encryption that allows computation on ciphertext — the decrypted result equals the computation on plaintext</td>
+</tr>
+<tr>
+<td><strong>k-Anonymity</strong></td>
+<td>Privacy property ensuring each record is indistinguishable from at least k-1 other records</td>
+</tr>
+<tr>
+<td><strong>Local DP</strong></td>
+<td>Differential privacy applied on each individual's device before any data is sent — strongest trust model</td>
+</tr>
+<tr>
+<td><strong>Membership Inference Attack</strong></td>
+<td>An attack that determines whether a specific individual's data was used to train a model</td>
+</tr>
+<tr>
+<td><strong>Model Inversion Attack</strong></td>
+<td>An attack that reconstructs representative training examples from model outputs</td>
+</tr>
+<tr>
+<td><strong>Model Poisoning</strong></td>
+<td>A malicious participant sends corrupted model updates to degrade or backdoor the federated model</td>
+</tr>
+<tr>
+<td><strong>Non-IID Data</strong></td>
+<td>Non-Independent and Identically Distributed — data distributions differ across federated clients</td>
+</tr>
+<tr>
+<td><strong>Oblivious Transfer</strong></td>
+<td>A cryptographic protocol where a receiver obtains one of several items from a sender without the sender knowing which</td>
+</tr>
+<tr>
+<td><strong>Privacy Budget</strong></td>
+<td>The total allowable privacy loss (ε) across all computations; once exhausted, no further private computations are permitted</td>
+</tr>
+<tr>
+<td><strong>Privacy-Enhancing Technologies (PET)</strong></td>
+<td>Umbrella term for technologies that protect privacy: DP, HE, MPC, FL, TEE, synthetic data</td>
+</tr>
+<tr>
+<td><strong>Private Set Intersection (PSI)</strong></td>
+<td>A protocol where two parties learn which elements appear in both their sets without revealing anything else</td>
+</tr>
+<tr>
+<td><strong>Secure Aggregation</strong></td>
+<td>A protocol ensuring the server can only see the aggregate of client updates, not individual updates</td>
+</tr>
+<tr>
+<td><strong>Secure Multi-Party Computation (MPC)</strong></td>
+<td>Protocols allowing multiple parties to jointly compute a function while keeping each party's input private</td>
+</tr>
+<tr>
+<td><strong>Secret Sharing</strong></td>
+<td>Splitting data into shares distributed across parties; no single party can reconstruct the data alone</td>
+</tr>
+<tr>
+<td><strong>Sensitivity</strong></td>
+<td>In DP: the maximum change in a query's output when one individual's data is added or removed</td>
+</tr>
+<tr>
+<td><strong>Synthetic Data</strong></td>
+<td>Artificially generated data that preserves statistical properties of real data without containing actual individuals</td>
+</tr>
+<tr>
+<td><strong>TEE (Trusted Execution Environment)</strong></td>
+<td>A secure area within a processor that ensures code and data are protected in use</td>
+</tr>
+<tr>
+<td><strong>Vertical Federated Learning</strong></td>
+<td>FL where participants have different features for the same individuals (same rows, different columns)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Federated / Privacy-Preserving AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/09-federated-privacy-ai-overview.gif" alt="Federated / Privacy-Preserving AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Federated / Privacy-Preserving AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/09-federated-privacy-ai-tech-stack.gif" alt="Federated / Privacy-Preserving AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Regulatory Drivers</h3>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>How It Drives Privacy-Preserving AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GDPR (EU)</strong></td>
+<td>Data minimisation, purpose limitation, and cross-border transfer restrictions — FL and DP help comply</td>
+</tr>
+<tr>
+<td><strong>HIPAA (US)</strong></td>
+<td>Protected health information cannot be shared without consent — FL enables multi-hospital research</td>
+</tr>
+<tr>
+<td><strong>CCPA/CPRA (California)</strong></td>
+<td>Consumer privacy rights — DP enables analytics while respecting opt-out</td>
+</tr>
+<tr>
+<td><strong>Data Sovereignty Laws</strong></td>
+<td>Many countries require data to stay within borders — FL avoids cross-border data transfer</td>
+</tr>
+<tr>
+<td><strong>EU Data Act (2024)</strong></td>
+<td>Regulates data sharing and access — privacy-preserving techniques enable compliant data collaboration</td>
+</tr>
+<tr>
+<td><strong>US Executive Order on AI (2023)</strong></td>
+<td>Promotes privacy-preserving AI research and development</td>
+</tr>
+<tr>
+<td><strong>PIPL (China)</strong></td>
+<td>Personal Information Protection Law — strict data localisation and consent requirements</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Best Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy Budget Management</strong></td>
+<td>Track total differential privacy epsilon consumed; set a maximum budget; halt when exhausted</td>
+</tr>
+<tr>
+<td><strong>Participant Agreements</strong></td>
+<td>Formal data processing agreements defining each party's responsibilities, data types, and usage restrictions</td>
+</tr>
+<tr>
+<td><strong>Audit Trail</strong></td>
+<td>Record all training rounds, participants, aggregation events, and privacy budget consumption</td>
+</tr>
+<tr>
+<td><strong>Independent Verification</strong></td>
+<td>Third-party audit of privacy guarantees and implementation correctness</td>
+</tr>
+<tr>
+<td><strong>Attack Testing</strong></td>
+<td>Regular testing of membership inference, gradient inversion, and other privacy attacks</td>
+</tr>
+<tr>
+<td><strong>Transparency Reports</strong></td>
+<td>Publish what data types, what ε values, and what techniques are used</td>
+</tr>
+<tr>
+<td><strong>Consent Management</strong></td>
+<td>Ensure all data subjects have consented to the specific federated use</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Federated Learning — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>FedAvg Algorithm</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Initialise</strong></td>
+<td>Server initialises global model w₀</td>
+</tr>
+<tr>
+<td><strong>2. Select Clients</strong></td>
+<td>Each round, server selects a subset of K clients</td>
+</tr>
+<tr>
+<td><strong>3. Distribute</strong></td>
+<td>Server sends current global model wₜ to selected clients</td>
+</tr>
+<tr>
+<td><strong>4. Local Training</strong></td>
+<td>Each client k trains on local data for E epochs; produces local model wₜᵏ</td>
+</tr>
+<tr>
+<td><strong>5. Upload</strong></td>
+<td>Each client sends model update (wₜᵏ - wₜ) to server</td>
+</tr>
+<tr>
+<td><strong>6. Aggregate</strong></td>
+<td>Server computes weighted average: wₜ₊₁ = Σ (nₖ/n) · wₜᵏ</td>
+</tr>
+<tr>
+<td><strong>7. Repeat</strong></td>
+<td>Return to step 2; continue for T rounds</td>
+</tr>
+</tbody>
+</table>
+<h3>Federated Learning Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Non-IID Data</strong></td>
+<td>Each client's data is not identically distributed — different label distributions, data quality, volume</td>
+<td>FedProx, SCAFFOLD, personalisation layers</td>
+</tr>
+<tr>
+<td><strong>Communication Cost</strong></td>
+<td>Sending model updates over limited bandwidth (especially mobile)</td>
+<td>Gradient compression, quantisation, sparse updates</td>
+</tr>
+<tr>
+<td><strong>System Heterogeneity</strong></td>
+<td>Clients have different compute capabilities, network speeds, and availability</td>
+<td>Asynchronous FL, client selection strategies</td>
+</tr>
+<tr>
+<td><strong>Privacy Leakage</strong></td>
+<td>Model gradients can leak information about training data (gradient inversion attacks)</td>
+<td>Secure aggregation + differential privacy</td>
+</tr>
+<tr>
+<td><strong>Model Poisoning</strong></td>
+<td>Malicious clients send corrupted updates to degrade the global model</td>
+<td>Byzantine-robust aggregation (Krum, Trimmed Mean)</td>
+</tr>
+<tr>
+<td><strong>Free-Riding</strong></td>
+<td>Clients benefit from the global model without contributing genuine updates</td>
+<td>Contribution measurement, incentive mechanisms</td>
+</tr>
+<tr>
+<td><strong>Fairness</strong></td>
+<td>Global model may perform well on majority data but poorly on minority clients</td>
+<td>Fair aggregation, personalisation</td>
+</tr>
+</tbody>
+</table>
+<h3>Federated Learning Variants</h3>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FedAvg</strong></td>
+<td>Baseline: average model weights across clients</td>
+</tr>
+<tr>
+<td><strong>FedProx</strong></td>
+<td>Adds a proximal term to handle non-IID data and system heterogeneity</td>
+</tr>
+<tr>
+<td><strong>FedMA</strong></td>
+<td>Matches and merges neurons across client models for heterogeneous architectures</td>
+</tr>
+<tr>
+<td><strong>SCAFFOLD</strong></td>
+<td>Uses control variates to reduce client drift in non-IID settings</td>
+</tr>
+<tr>
+<td><strong>Per-FedAvg</strong></td>
+<td>Personalised federated averaging — learn a global model that can be quickly fine-tuned to each client</td>
+</tr>
+<tr>
+<td><strong>FedBN</strong></td>
+<td>Keeps batch normalisation layers local to each client for domain adaptation</td>
+</tr>
+<tr>
+<td><strong>Split Learning</strong></td>
+<td>Model is split between client and server; each trains their portion; reduces compute on client</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Differential Privacy — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Formal Definition</h3>
+<p>A randomised mechanism M satisfies <strong>(ε, δ)-differential privacy</strong> if for all datasets D₁ and D₂ differing on a single individual and for all possible outputs S:</p>
+<p><strong>P[M(D₁) ∈ S] ≤ e^ε · P[M(D₂) ∈ S] + δ</strong></p>
+<p>In plain language: whether or not any single individual's data is included in the dataset, the output of the computation is nearly the same.</p>
+<h3>Key DP Mechanisms</h3>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>How It Works</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Laplace Mechanism</strong></td>
+<td>Adds Laplace noise calibrated to the query sensitivity</td>
+<td>Numeric queries (count, sum, average)</td>
+</tr>
+<tr>
+<td><strong>Gaussian Mechanism</strong></td>
+<td>Adds Gaussian noise; used with (ε, δ)-DP</td>
+<td>Numeric queries; more flexible than Laplace</td>
+</tr>
+<tr>
+<td><strong>Exponential Mechanism</strong></td>
+<td>Selects an output from a set with probability proportional to a quality score</td>
+<td>Non-numeric outputs (selection queries)</td>
+</tr>
+<tr>
+<td><strong>DP-SGD</strong></td>
+<td>Clips per-sample gradients and adds Gaussian noise during model training</td>
+<td>Training ML models with differential privacy</td>
+</tr>
+<tr>
+<td><strong>RAPPOR</strong></td>
+<td>Randomised Aggregatable Privacy-Preserving Ordinal Response — local DP for frequency estimation</td>
+<td>Google Chrome telemetry</td>
+</tr>
+<tr>
+<td><strong>Private Selection / Sparse Vector Technique</strong></td>
+<td>Privately answers threshold queries using minimal privacy budget</td>
+<td>Multiple queries with limited budget</td>
+</tr>
+</tbody>
+</table>
+<h3>DP in Practice</h3>
+<table>
+<thead>
+<tr>
+<th>Deployment</th>
+<th>ε Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apple (iOS)</strong></td>
+<td>ε = 1–8 per day (estimated)</td>
+<td>Local DP for emoji, QuickType, health, safari suggestions</td>
+</tr>
+<tr>
+<td><strong>Google (RAPPOR)</strong></td>
+<td>ε = 1–9 per report</td>
+<td>Local DP for Chrome usage statistics</td>
+</tr>
+<tr>
+<td><strong>US Census Bureau (2020)</strong></td>
+<td>ε ≈ 19.6 (total budget)</td>
+<td>DP applied to 2020 Census redistricting data</td>
+</tr>
+<tr>
+<td><strong>Meta</strong></td>
+<td>ε varies by use case</td>
+<td>DP for analytics and ad measurement</td>
+</tr>
+<tr>
+<td><strong>LinkedIn</strong></td>
+<td>ε varies</td>
+<td>DP for talent insights and analytics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Secure Computation Techniques</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Homomorphic Encryption In-Depth</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ HOMOMORPHIC ENCRYPTION PIPELINE │
+│ │
+│ DATA OWNER CLOUD / SERVER DATA OWNER │
+│ ────────────── ────────────── ────────────── │
+│ Encrypt data Compute on Decrypt │
+│ with HE key encrypted data result with │
+│ (addition, mult) private key │
+│ │
+│ Plaintext: x Ciphertext: E(x) Plaintext: f(x) │
+│ → Encrypt(x) ────────► Eval(f, E(x)) ────────► Decrypt(E(f(x))) │
+│ = E(f(x)) = f(x) │
+│ │
+│ ──── SERVER NEVER SEES PLAINTEXT DATA OR RESULT ────── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Secure Multi-Party Computation In-Depth</h3>
+<table>
+<thead>
+<tr>
+<th>Protocol Family</th>
+<th>How It Works</th>
+<th>Strengths</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Secret Sharing</strong></td>
+<td>Each party holds a "share" of the data; computation proceeds on shares; result is reconstructed by combining shares</td>
+<td>Efficient for arithmetic circuits; low per-operation cost</td>
+</tr>
+<tr>
+<td><strong>Garbled Circuits</strong></td>
+<td>One party "garbles" a Boolean circuit; the other party evaluates it using oblivious transfer</td>
+<td>General-purpose; any function can be computed</td>
+</tr>
+<tr>
+<td><strong>Oblivious Transfer</strong></td>
+<td>A protocol where a sender has multiple messages; the receiver gets exactly one without the sender knowing which</td>
+<td>Foundational building block for garbled circuits</td>
+</tr>
+</tbody>
+</table>
+<h3>Private Set Intersection (PSI)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What It Is</strong></td>
+<td>Two parties each have a set of items; they learn only which items appear in both sets (intersection) — nothing else</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>Enables ad measurement (did users who saw ads also buy?), contact matching, and fraud detection across organisations without sharing customer lists</td>
+</tr>
+<tr>
+<td><strong>Used By</strong></td>
+<td>Google (ads conversion), Meta (ad measurement), Apple (Private Relay), financial crime detection collaborations</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>Typically based on Diffie-Hellman key exchange, oblivious PRF, or Bloom filter techniques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Federated and Privacy-Preserving AI</strong> encompasses a family of techniques that enable AI training, inference, and analysis <strong>without centralising or exposing raw data</strong>. Instead of moving data to a central server, these techniques either bring the computation to the data (federated learning), add mathematical privacy guarantees (differential privacy), or perform computation on encrypted data (secure computation).</p>
+<p>This is not a single AI type in the way that generative or predictive AI is — it is a <strong>cross-cutting set of techniques and architectures</strong> that can be applied to almost any AI system to protect data privacy. Federated learning can train a generative model; differential privacy can protect a predictive model; and secure computation can enable analytical AI across organisations.</p>
+<p>The motivation is clear: the most valuable AI would learn from the world's most sensitive data — medical records, financial transactions, personal communications, government intelligence. But centralising this data is often legally prohibited (GDPR, HIPAA), commercially impossible (competitors won't share data), or ethically unacceptable. Privacy-preserving AI resolves this tension by enabling the learning without the sharing.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Protects — enables AI training and inference without exposing, centralising, or compromising the privacy of underlying data</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Federated learning, differential privacy, homomorphic encryption, secure multi-party computation, trusted execution environments</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Privacy-preserving models, encrypted inferences, mathematically private statistics, cross-organisational insights</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Data never leaves its source — models come to data, not data to models; privacy is mathematical, not just policy</td>
+</tr>
+</tbody>
+</table>
+<h3>Privacy-Preserving AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated model training across hospitals</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously with tools, memory, and planning</td>
+<td>Research agent, coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from data</td>
+<td>BI dashboards, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue with users</td>
+<td>Chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new content from learned patterns</td>
+<td>Text generation, image synthesis</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical data</td>
+<td>Fraud detection, disease prediction</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input with no memory or learning</td>
+<td>Thermostat, ABS braking system</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction: Cross-Cutting Technique, Not Independent Type.</strong> Privacy-Preserving AI is not a standalone AI type — it is a set of techniques applied to other AI types. You can have a privacy-preserving predictive model, a federated generative model, or a differentially private analytical system.</p>
+<p><strong>Key Distinction from Standard Centralised AI:</strong> Standard AI centralises all training data on one server. Privacy-preserving AI keeps data distributed; only model updates, encrypted computations, or noisy aggregates are shared.</p>
+<p><strong>Key Distinction from Anonymisation:</strong> Traditional anonymisation de-identifies data before sharing. Privacy-preserving AI goes further — data is never shared at all, or computation occurs on encrypted data with mathematical guarantees.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── Tab Navigation ── */
+document.querySelectorAll('#nav button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('#nav button').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ const target = document.getElementById('sec-' + btn.dataset.tab);
+ if (target) { target.classList.add('active'); target.style.animation = 'none'; target.offsetHeight; target.style.animation = ''; }
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+ });
+});
+
+/* ── Chart.js Global Config ── */
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
+
+/* ── PIPELINE DATA ── */
+const pipelineInfo = [
+ { title: 'Step 1 — Data Owners', text: 'Individual participants (devices, hospitals, banks) hold their own private datasets. Each data owner trains a local copy of the shared model on their local data, without exposing raw records to anyone else.' },
+ { title: 'Step 2 — Local Model Updates', text: 'After local training, each participant computes model updates (gradients or weight deltas). Only these updates — not the underlying data — are prepared for transmission to the coordination server.' },
+ { title: 'Step 3 — Privacy Enhancement', text: 'Before sending updates, privacy-enhancing techniques are applied: differential privacy adds calibrated noise, secure aggregation encrypts updates, and homomorphic encryption allows computation on ciphertext. This step is the core privacy barrier.' },
+ { title: 'Step 4 — Aggregation Server', text: 'The central (or decentralised) aggregation server collects the privacy-enhanced updates from all participants and combines them using algorithms like FedAvg, FedProx, or SCAFFOLD to produce a single improved global model.' },
+ { title: 'Step 5 — Global Model Update', text: 'The aggregated model represents the collective intelligence of all participants without any single party\'s data being revealed. The global model is validated against held-out metrics before distribution.' },
+ { title: 'Step 6 — Distribute', text: 'The updated global model is pushed back to all participating data owners, replacing their previous local model. Each client now has a model that benefits from the entire federation\'s data.' },
+ { title: 'Step 7 — Repeat', text: 'The cycle repeats for multiple communication rounds until the global model converges. Typical FL training requires 50–500 rounds depending on data heterogeneity and model complexity.' }
+];
+document.querySelectorAll('#pipeline-flow .pipeline-step').forEach(step => {
+ step.addEventListener('click', () => {
+ const info = pipelineInfo[+step.dataset.step];
+ const el = document.getElementById('pipeline-info');
+ el.innerHTML = '<h3>' + info.title + '</h3><p>' + info.text + '</p>';
+ });
+});
+
+/* ── 8-LAYER STACK ── */
+const stackData = [
+ { num: 8, title: 'Governance & Compliance', bg: 'bg-purple', color: 'c-purple', detail: 'Regulatory compliance (GDPR, HIPAA, CCPA), data governance policies, privacy impact assessments, consent management, audit trails, and cross-border data transfer rules.' },
+ { num: 7, title: 'Audit & Verification', bg: 'bg-orange', color: 'c-orange', detail: 'Privacy budget accounting, formal verification of DP guarantees, compliance attestation, third-party audits of FL pipelines, and cryptographic proof of correct aggregation.' },
+ { num: 6, title: 'Inference & Serving', bg: 'bg-blue', color: 'c-blue', detail: 'Privacy-preserving inference via homomorphic encryption, secure enclaves, or on-device execution. Ensures predictions don\'t leak training data — model inversion defenses, output perturbation.' },
+ { num: 5, title: 'Model Layer', bg: 'bg-green', color: 'c-green', detail: 'Model architectures adapted for FL: split learning, personalization layers, knowledge distillation, mixture-of-experts, and privacy-aware model compression for edge deployment.' },
+ { num: 4, title: 'Aggregation & Coordination', bg: 'bg-red', color: 'c-red', detail: 'Server-side aggregation algorithms (FedAvg, FedProx, FedMA, SCAFFOLD), secure aggregation protocols, participant selection, contribution weighting, and Byzantine-robust aggregation.' },
+ { num: 3, title: 'Federated Training', bg: 'bg-purple', color: 'c-purple', detail: 'Distributed training orchestration: local SGD steps, gradient compression, communication scheduling, client sampling strategies, and handling stragglers and dropouts.' },
+ { num: 2, title: 'Privacy Mechanisms', bg: 'bg-orange', color: 'c-orange', detail: 'Core privacy technologies: differential privacy (Gaussian/Laplace noise, DP-SGD), homomorphic encryption (BFV, CKKS, TFHE), secure multi-party computation (secret sharing, garbled circuits), and trusted execution environments.' },
+ { num: 1, title: 'Data Layer', bg: 'bg-blue', color: 'c-blue', detail: 'Local data storage, preprocessing, and partitioning. Data stays on-premise — only model updates leave. Includes data quality checks, feature engineering, handling non-IID distributions, and synthetic data augmentation.' }
+];
+(function buildStack() {
+ const container = document.getElementById('stack');
+ stackData.forEach(l => {
+ const div = document.createElement('div');
+ div.className = 'stack-layer ' + l.bg;
+ div.innerHTML = '<div class="layer-head"><span class="layer-num ' + l.bg + ' ' + l.color + '">' + l.num + '</span><span class="layer-title">' + l.title + '</span><span class="expand-icon">▼</span></div><div class="layer-detail">' + l.detail + '</div>';
+ div.addEventListener('click', () => div.classList.toggle('expanded'));
+ container.appendChild(div);
+ });
+})();
+
+/* ── SUB-TYPES ── */
+const subTypes = [
+ { title: 'Cross-Device FL', badge: 'FL Topology', badgeCls: 'bg-blue c-blue', desc: 'Millions of edge devices (phones, IoT) each with tiny data. Extreme scale, high client dropout. Pioneered by Google Gboard for next-word prediction.' },
+ { title: 'Cross-Silo FL', badge: 'FL Topology', badgeCls: 'bg-blue c-blue', desc: 'Few organisations (~5–100) each with large datasets. Common in healthcare (hospital networks) and finance (banking consortia). Reliable connectivity, stable participants.' },
+ { title: 'Vertical FL', badge: 'FL Topology', badgeCls: 'bg-green c-green', desc: 'Different features for the same individuals across organisations. Example: bank has financial data, telecom has usage data — combined for credit scoring without sharing raw records.' },
+ { title: 'Horizontal FL', badge: 'FL Topology', badgeCls: 'bg-green c-green', desc: 'Same features across different individuals. Example: a network of hospitals each with patient records sharing the same schema — the most common FL setup.' },
+ { title: 'Differential Privacy', badge: 'Mathematical', badgeCls: 'bg-purple c-purple', desc: 'Provides a mathematical privacy guarantee: adding or removing one individual\'s data changes the output distribution by at most a bounded amount (ε). Mechanisms include Gaussian and Laplace noise injection.' },
+ { title: 'Homomorphic Encryption', badge: 'Cryptographic', badgeCls: 'bg-orange c-orange', desc: 'Enables computation directly on encrypted data (ciphertext) without ever decrypting. Fully Homomorphic Encryption (FHE) is extremely powerful but 1,000–1,000,000× slower than plaintext computation.' },
+ { title: 'Secure Multi-Party Computation', badge: 'Cryptographic', badgeCls: 'bg-orange c-orange', desc: 'Multiple parties jointly compute a function over their inputs while keeping each input private. Uses secret sharing, garbled circuits, and oblivious transfer. No single party sees another\'s raw data.' },
+ { title: 'Trusted Execution Environments', badge: 'Hardware', badgeCls: 'bg-red c-red', desc: 'Hardware-based isolation (Intel SGX, AMD SEV, ARM TrustZone) creates secure enclaves where code and data are protected from the host OS. Fast but relies on hardware trust assumptions.' },
+ { title: 'Synthetic Data Generation', badge: 'Data-Centric', badgeCls: 'bg-purple c-purple', desc: 'Uses GANs, VAEs, or diffusion models to generate artificial data that preserves the statistical properties of real data while eliminating individual-level privacy risk.' }
+];
+(function buildSubTypes() {
+ const grid = document.getElementById('subtypes-grid');
+ subTypes.forEach(s => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = '<span class="badge ' + s.badgeCls + '">' + s.badge + '</span><h3>' + s.title + '</h3><p>' + s.desc + '</p>';
+ grid.appendChild(card);
+ });
+})();
+
+/* ── CORE ARCHITECTURES ── */
+const architectures = [
+ { title: 'Federated Learning', color: 'c-blue', items: ['FedAvg — weighted averaging of client models', 'FedProx — proximal term for heterogeneous data', 'FedMA — matched averaging via neuron matching', 'SCAFFOLD — variance reduction with control variates', 'Per-FedAvg — MAML-based personalisation for FL'] },
+ { title: 'Differential Privacy', color: 'c-green', items: ['Laplace Mechanism — calibrated Laplace noise', 'Gaussian Mechanism — Gaussian noise with (ε,δ)-DP', 'DP-SGD — per-sample gradient clipping + noise', 'RAPPOR — randomised aggregatable privacy-preserving ordinal response'] },
+ { title: 'Secure Computation', color: 'c-purple', items: ['Secret Sharing — split data across parties (Shamir, additive)', 'Garbled Circuits — encrypted Boolean circuit evaluation', 'Oblivious Transfer — sender-receiver protocol for private selection', 'Private Set Intersection (PSI) — find common elements without revealing sets'] },
+ { title: 'Trusted Execution', color: 'c-orange', items: ['Intel SGX — software guard extensions; user-space enclaves', 'AMD SEV — secure encrypted virtualisation; VM-level isolation', 'ARM TrustZone — hardware separation on mobile/IoT processors'] },
+ { title: 'Synthetic Data', color: 'c-red', items: ['GANs — generative adversarial networks for tabular/image data', 'VAEs — variational autoencoders for structured generation', 'Diffusion Models — iterative denoising for high-fidelity synthesis'] }
+];
+(function buildArchitectures() {
+ const grid = document.getElementById('arch-grid');
+ architectures.forEach(a => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = '<h3 class="' + a.color + '">' + a.title + '</h3><ul>' + a.items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
+ grid.appendChild(card);
+ });
+})();
+
+/* ── USE CASES ── */
+const useCases = [
+ { title: ' Multi-Hospital Training', body: 'Federated learning enables hospitals to collaboratively train diagnostic AI models (e.g., radiology, pathology) without sharing protected health information (PHI). Each hospital trains locally; only encrypted model updates are exchanged. Examples include federated tumour segmentation across 70+ institutions.' },
+ { title: ' Rare Disease Research', body: 'Rare diseases suffer from small, fragmented datasets. FL allows institutions worldwide to pool statistical power without centralising sensitive patient data. Cross-silo FL with differential privacy enables genome-wide association studies across borders while complying with GDPR and HIPAA.' },
+ { title: ' Drug Discovery (MELLODDY)', body: 'The MELLODDY consortium demonstrated cross-pharmaceutical federated screening: 10 pharma companies trained shared molecular activity models without exposing proprietary compound libraries. MPC and DP ensured no company could reverse-engineer another\'s intellectual property.' },
+ { title: ' Genomics (Privacy-Preserving GWAS)', body: 'Genome-wide association studies require vast cohorts. Privacy-preserving GWAS via secure multi-party computation allows institutions to jointly compute allele frequencies, p-values, and effect sizes without any party accessing another\'s genomic data.' },
+ { title: ' Cross-Bank Fraud Detection', body: 'Banks use FL and MPC to train shared fraud detection models across institutions. Transaction patterns are never shared — only encrypted gradient updates flow between participants. This increases detection rates by 15–25% compared to single-bank models while preserving customer privacy.' },
+ { title: ' AML Collaboration (Private Set Intersection)', body: 'Anti-money laundering efforts use Private Set Intersection to identify suspicious entities across banks without revealing customer lists. PSI allows two or more banks to find common entries (e.g., flagged accounts) without exposing their full datasets to each other.' }
+];
+(function buildUseCases() {
+ const acc = document.getElementById('usecases-acc');
+ useCases.forEach(u => {
+ const div = document.createElement('div');
+ div.className = 'domain-item';
+ div.innerHTML = '<div class="domain-header"><span>' + u.title + '</span></div><div class="domain-body"><p>' + u.body + '</p></div>';
+ div.querySelector('.domain-header').addEventListener('click', () => div.classList.toggle('open'));
+ acc.appendChild(div);
+ });
+})();
+
+/* ── BENCHMARKS CHARTS ── */
+(function buildBenchmarks() {
+ /* Privacy Metrics */
+ new Chart(document.getElementById('chart-privacy'), {
+ type: 'bar',
+ data: {
+ labels: ['Privacy Budget (ε)', 'Membership Inference', 'Attribute Inference', 'Model Inversion Risk'],
+ datasets: [{
+ label: 'Score',
+ data: [3.0, 0.52, 0.48, 0.15],
+ backgroundColor: ['rgba(88,166,255,0.7)', 'rgba(63,185,80,0.7)', 'rgba(210,168,255,0.7)', 'rgba(240,136,62,0.7)'],
+ borderColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ indexAxis: 'y',
+ plugins: { legend: { display: false }, tooltip: {
+ callbacks: {
+ label: function(ctx) {
+ const labels = ['ε = 3.0 (moderate privacy)', 'AUC 0.52 (near random — good)', 'AUC 0.48 (near random — good)', 'Low risk'];
+ return labels[ctx.dataIndex];
+ }
+ }
+ }},
+ scales: { x: { grid: { color: '#30363d' }, beginAtZero: true }, y: { grid: { display: false } } }
+ }
+ });
+ /* FL Performance */
+ new Chart(document.getElementById('chart-fl-perf'), {
+ type: 'bar',
+ data: {
+ labels: ['Convergence Rounds', 'Communication (GB)', 'Per-Client Accuracy (%)', 'Fairness Gap (%)'],
+ datasets: [{
+ label: 'Value',
+ data: [50, 12, 92, 3],
+ backgroundColor: ['rgba(88,166,255,0.7)', 'rgba(255,123,114,0.7)', 'rgba(63,185,80,0.7)', 'rgba(210,168,255,0.7)'],
+ borderColor: ['#c9a84c', '#bf7570', '#5b9e6f', '#9684bf'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ indexAxis: 'y',
+ plugins: { legend: { display: false }, tooltip: {
+ callbacks: {
+ label: function(ctx) {
+ const labels = ['50 rounds to convergence', '12 GB total communication', '92% per-client accuracy', '3% fairness gap across clients'];
+ return labels[ctx.dataIndex];
+ }
+ }
+ }},
+ scales: { x: { grid: { color: '#30363d' }, beginAtZero: true }, y: { grid: { display: false } } }
+ }
+ });
+})();
+
+/* ── MARKET CHARTS ── */
+(function buildMarket() {
+ /* Market Segments */
+ new Chart(document.getElementById('chart-segments'), {
+ type: 'bar',
+ data: {
+ labels: ['Federated Learning', 'Privacy-Enhancing Tech', 'Confidential Computing'],
+ datasets: [{
+ label: '2024 Market ($B)',
+ data: [0.195, 2.2, 4.8],
+ backgroundColor: ['rgba(88,166,255,0.7)', 'rgba(63,185,80,0.7)', 'rgba(210,168,255,0.7)'],
+ borderColor: ['#c9a84c', '#5b9e6f', '#9684bf'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false }, tooltip: {
+ callbacks: {
+ label: function(ctx) {
+ const vals = ['$195M', '$2.2B', '$4.8B'];
+ return vals[ctx.dataIndex];
+ }
+ }
+ }},
+ scales: { y: { grid: { color: '#30363d' }, beginAtZero: true, title: { display: true, text: 'Billion USD', color: '#8b949e' } }, x: { grid: { display: false } } }
+ }
+ });
+ /* FL Growth */
+ new Chart(document.getElementById('chart-growth'), {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028'],
+ datasets: [{
+ label: 'FL Market ($M)',
+ data: [195, 230, 270, 320, 420],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.10)',
+ fill: true,
+ tension: 0.35,
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 5,
+ pointHoverRadius: 8
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { labels: { color: '#e6edf3' } } },
+ scales: {
+ y: { grid: { color: '#30363d' }, beginAtZero: false, title: { display: true, text: 'Million USD', color: '#8b949e' } },
+ x: { grid: { color: '#30363d' } }
+ }
+ }
+ });
+})();
+
+/* ── RISKS ── */
+const risks = [
+ { title: 'Privacy-Utility Tradeoff', text: 'Stronger privacy guarantees (lower ε) require more noise injection, which directly reduces model accuracy and utility. Finding the optimal balance is a fundamental challenge.', color: 'var(--accent5)' },
+ { title: 'Computational Overhead', text: 'Homomorphic encryption and secure multi-party computation introduce massive overhead — HE operations can be 1,000× to 1,000,000× slower than plaintext, limiting real-time applications.', color: 'var(--accent4)' },
+ { title: 'Communication Cost', text: 'Federated learning is bandwidth-intensive for large models. Each round requires transmitting full model updates from all clients. Gradient compression and sparsification help but add complexity.', color: 'var(--accent3)' },
+ { title: 'Non-IID Data', text: 'FL data is typically non-identically distributed across clients (non-IID), which degrades convergence and model quality. Personalisation and robust aggregation methods partially mitigate this.', color: 'var(--accent)' },
+ { title: 'Implementation Complexity', text: 'Correctly implementing privacy-preserving systems is extremely difficult. Subtle bugs in DP accounting, encryption parameters, or protocol design can silently void privacy guarantees.', color: 'var(--accent2)' },
+ { title: 'Incomplete Protection', text: 'FL alone does not prevent gradient inversion attacks — adversaries can reconstruct training data from shared gradients. Defense requires combining FL with DP, secure aggregation, or MPC.', color: 'var(--accent5)' }
+];
+(function buildRisks() {
+ const grid = document.getElementById('risk-grid');
+ risks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = 'risk-card';
+ card.style.borderLeftColor = r.color;
+ card.innerHTML = '<h4 style="color:' + r.color + '">' + r.title + '</h4><p>' + r.text + '</p>';
+ grid.appendChild(card);
+ });
+})();
+
+/* ── GLOSSARY ── */
+const glossary = [
+ { term: 'Central DP', def: 'Differential privacy applied by a trusted central server after collecting raw data. Contrasts with local DP where noise is added on-device before transmission.' },
+ { term: 'Confidential Computing', def: 'Hardware-based technology that protects data in use by performing computation in a secure, attested enclave (e.g., Intel SGX, AMD SEV).' },
+ { term: 'Cross-Device FL', def: 'Federated learning across millions of edge devices (smartphones, IoT). Characterised by massive scale, tiny per-device data, and high dropout rates.' },
+ { term: 'Cross-Silo FL', def: 'Federated learning across a small number of organisations (5–100), each holding large datasets. Common in healthcare and finance consortia.' },
+ { term: 'Data Minimisation', def: 'Privacy principle requiring that only the minimum necessary data is collected, processed, and retained for a specific purpose.' },
+ { term: 'Differential Privacy', def: 'A mathematical framework guaranteeing that the output of a computation changes by at most a bounded amount when any single individual\'s data is added or removed.' },
+ { term: 'DP-SGD', def: 'Differentially Private Stochastic Gradient Descent. Clips per-sample gradients and adds calibrated Gaussian noise during training to provide formal privacy guarantees.' },
+ { term: 'Epsilon (ε)', def: 'The privacy budget parameter in differential privacy. Lower ε means stronger privacy but more noise. Typical values range from 1 to 10 for practical deployments.' },
+ { term: 'FedAvg', def: 'Federated Averaging. The foundational FL algorithm: clients train locally for multiple SGD steps, then the server averages their model updates weighted by dataset size.' },
+ { term: 'Federated Learning', def: 'A machine learning paradigm where a model is trained across multiple decentralised data sources without exchanging raw data. Only model updates are shared.' },
+ { term: 'FHE (Fully Homomorphic Encryption)', def: 'An encryption scheme that allows arbitrary computations on ciphertext, producing encrypted results that, when decrypted, match the plaintext computation.' },
+ { term: 'Gradient Inversion Attack', def: 'An attack where an adversary reconstructs training data from shared model gradients. Demonstrates that FL alone (without DP or secure aggregation) is insufficient for privacy.' },
+ { term: 'Horizontal FL', def: 'Federated learning where participants share the same feature space but have different samples. The most common FL setting (e.g., hospitals with the same medical record schema).' },
+ { term: 'Homomorphic Encryption', def: 'Encryption that permits computations on encrypted data without decryption. Partial HE supports limited operations; FHE supports arbitrary computation but at extreme computational cost.' },
+ { term: 'k-Anonymity', def: 'A privacy model requiring that each record is indistinguishable from at least k−1 other records with respect to quasi-identifier attributes.' },
+ { term: 'FedProx', def: 'Variant of FedAvg adding a proximal term to handle heterogeneous client data distributions.' },
+ { term: 'Non-IID Data', def: 'Non-Independently and Identically Distributed — data that varies in distribution across federated clients.' },
+ { term: 'Privacy Budget', def: 'Total allowed privacy loss across all queries; once exhausted, no more queries can be answered.' },
+ { term: 'Gradient Clipping', def: 'Bounding gradient norms to limit individual data influence — essential for DP-SGD.' },
+ { term: 'Membership Inference Attack', def: 'Attack determining whether a specific record was used in a model training data.' },
+ { term: 'Model Inversion Attack', def: 'Attack reconstructing training data features from model outputs or parameters.' },
+ { term: 'Confidential Computing', def: 'Protecting data in use via hardware-based TEEs — complement to encryption at rest and in transit.' },
+];
+(function buildGlossary() {
+ const listEl = document.getElementById('glossary-list');
+ function render(items) {
+ listEl.innerHTML = items.map(g => '<div class="glossary-entry"><strong>' + g.term + '</strong><span>' + g.def + '</span></div>').join('');
+ }
+ render(glossary);
+ document.getElementById('glossary-search').addEventListener('input', function() {
+ const q = this.value.toLowerCase();
+ render(glossary.filter(g => g.term.toLowerCase().includes(q) || g.def.toLowerCase().includes(q)));
+ });
+})();
+
+</script>
+<nav class="chapter-nav">
+ <a href="explainable-ai.html"><span>&larr;</span><div><small>Previous</small>Explainable AI (XAI)</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="generative-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Generative AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

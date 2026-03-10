@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical / Embodied AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Physical / Embodied AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Physical AI — the sense-act loop, 8-layer stack, robot morphologies, sim-to-real transfer, benchmarks, market data, and more.</p>
+ <span class="reading-time">~51 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/13-physical-embodied-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="loop">Sense-Act Loop</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools &amp; Platforms</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════ TAB 1 — SENSE-ACT LOOP ════════ -->
+<section class="section active" id="tab-loop">
+ <h2>Sense-Act Loop</h2>
+ <p class="desc">The continuous feedback cycle at the heart of every embodied AI system — sense the environment, build a world model, plan actions, execute, observe outcomes, and repeat.</p>
+
+ <div class="loop-container">
+ <svg class="loop-svg" style="max-width:660px" viewBox="0 0 660 440" xmlns="http://www.w3.org/2000/svg">
+ <!-- Circular arrow path -->
+ <defs>
+ <marker id="arrowHead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+ <path d="M0,0 L10,4 L0,8 Z" fill="#58a6ff"/>
+ </marker>
+ </defs>
+ <!-- Elliptical guide path -->
+ <ellipse cx="330" cy="220" rx="240" ry="160" fill="none" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+ <!-- NODES -->
+ <!-- Sense -->
+ <g class="loop-node" data-node="sense" style="cursor:pointer">
+ <rect x="260" y="30" width="140" height="50" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+ <text x="330" y="61" text-anchor="middle" fill="#58a6ff" font-size="15" font-weight="700">Sense</text>
+ <text x="330" y="21" text-anchor="middle" fill="#8b949e" font-size="11">(Perception)</text>
+ </g>
+ <!-- Perceive -->
+ <g class="loop-node" data-node="perceive" style="cursor:pointer">
+ <rect x="490" y="110" width="155" height="50" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+ <text x="567" y="141" text-anchor="middle" fill="#3fb950" font-size="15" font-weight="700">Perceive</text>
+ <text x="567" y="100" text-anchor="middle" fill="#8b949e" font-size="11">(World Model)</text>
+ </g>
+ <!-- Plan -->
+ <g class="loop-node" data-node="plan" style="cursor:pointer">
+ <rect x="490" y="260" width="155" height="50" rx="12" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/>
+ <text x="567" y="291" text-anchor="middle" fill="#d2a8ff" font-size="15" font-weight="700">Plan</text>
+ <text x="567" y="250" text-anchor="middle" fill="#8b949e" font-size="11">(Task / Motion)</text>
+ </g>
+ <!-- Act -->
+ <g class="loop-node" data-node="act" style="cursor:pointer">
+ <rect x="260" y="360" width="140" height="50" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="2"/>
+ <text x="330" y="391" text-anchor="middle" fill="#f0883e" font-size="15" font-weight="700">Act</text>
+ <text x="330" y="351" text-anchor="middle" fill="#8b949e" font-size="11">(Control / Execution)</text>
+ </g>
+ <!-- Observe -->
+ <g class="loop-node" data-node="observe" style="cursor:pointer">
+ <rect x="15" y="185" width="155" height="50" rx="12" fill="#161b22" stroke="#ff7b72" stroke-width="2"/>
+ <text x="92" y="216" text-anchor="middle" fill="#ff7b72" font-size="15" font-weight="700">Observe</text>
+ <text x="92" y="175" text-anchor="middle" fill="#8b949e" font-size="11">(Outcome)</text>
+ </g>
+
+ <!-- ARROWS -->
+ <line x1="400" y1="55" x2="490" y2="120" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowHead)"/>
+ <line x1="567" y1="160" x2="567" y2="260" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowHead)"/>
+ <line x1="490" y1="300" x2="400" y2="370" stroke="#d2a8ff" stroke-width="2" marker-end="url(#arrowHead)"/>
+ <line x1="260" y1="385" x2="170" y2="230" stroke="#f0883e" stroke-width="2" marker-end="url(#arrowHead)"/>
+ <line x1="92" y1="185" x2="280" y2="80" stroke="#ff7b72" stroke-width="2" marker-end="url(#arrowHead)"/>
+ </svg>
+ </div>
+
+ <div class="loop-info" id="loopInfo">
+ <h3>Click a stage to learn more</h3>
+ <p>Each stage in the sense-act loop feeds into the next, forming a continuous cycle that allows embodied AI to interact with and learn from its physical environment.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-loop')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-loop">
+<h3>How Physical AI Works — The Sense-Plan-Act Pipeline</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│ PHYSICAL AI PIPELINE │
+│ │
+│ 1. SENSE 2. PERCEIVE 3. PLAN 4. ACT │
+│ ────────────── ────────────── ────────────── ──────── │
+│ Raw sensor data: Understand the Generate motion Execute │
+│ cameras, LiDAR, scene: objects, plans, paths, physical │
+│ IMU, force/ poses, semantics, trajectories, actions │
+│ torque, GPS, maps, free space grasps, and via │
+│ radar, tactile collision-free motors, │
+│ actions joints, │
+│ wheels │
+│ │
+│ ──── REAL-TIME LOOP — SAFETY CONSTRAINTS — IRREVERSIBLE ACTIONS ───── │
+└─────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Physical AI Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensing</strong></td>
+<td>Raw data collected from cameras, LiDAR, radar, IMU, GPS, force/torque sensors, tactile sensors, microphones</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>Sensor fusion, object detection, semantic segmentation, depth estimation, 3D scene reconstruction, SLAM</td>
+</tr>
+<tr>
+<td><strong>World Modelling</strong></td>
+<td>Build and maintain an internal representation of the environment — occupancy grids, scene graphs, physics models</td>
+</tr>
+<tr>
+<td><strong>Task Planning</strong></td>
+<td>High-level reasoning about what to do — sequence of sub-goals, task decomposition</td>
+</tr>
+<tr>
+<td><strong>Motion Planning</strong></td>
+<td>Generate collision-free trajectories that achieve the task plan — path planning, grasp planning</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Low-level motor commands to follow the planned trajectory — PID, torque control, compliance control</td>
+</tr>
+<tr>
+<td><strong>Execution</strong></td>
+<td>Physical actuators move the robot, vehicle, or drone through the real world</td>
+</tr>
+<tr>
+<td><strong>Feedback</strong></td>
+<td>Sensory feedback closes the loop — correcting for errors, disturbances, and unexpected obstacles</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Physical AI Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensor Update Rate</strong></td>
+<td>Frequency of sensory data acquisition — typically 10–100 Hz for cameras, 100–1000 Hz for IMU/force</td>
+</tr>
+<tr>
+<td><strong>Control Loop Frequency</strong></td>
+<td>How often motor commands are updated — 100–1000 Hz for real-time control</td>
+</tr>
+<tr>
+<td><strong>Planning Horizon</strong></td>
+<td>How far ahead the system plans — seconds (local avoidance) to minutes (route planning)</td>
+</tr>
+<tr>
+<td><strong>Safety Margin</strong></td>
+<td>Minimum clearance from obstacles, humans, and hazards</td>
+</tr>
+<tr>
+<td><strong>Payload Capacity</strong></td>
+<td>Maximum weight the system can carry or manipulate</td>
+</tr>
+<tr>
+<td><strong>Degrees of Freedom (DoF)</strong></td>
+<td>Number of independent joints or axes of motion — 6 DoF for a standard robot arm, 30+ for a humanoid</td>
+</tr>
+<tr>
+<td><strong>Localisation Accuracy</strong></td>
+<td>Precision of the system's knowledge of its own position — centimetre to sub-millimetre</td>
+</tr>
+<tr>
+<td><strong>Latency Budget</strong></td>
+<td>Maximum allowable time from sensing to actuation — milliseconds for safety-critical actions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Boston Dynamics' Atlas robot can perform parkour, backflips, and navigate complex terrain autonomously.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>The autonomous vehicle industry has logged over 100 million miles of real-world testing data.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Surgical robots like da Vinci have assisted in over 12 million procedures worldwide.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What does "sim-to-real transfer" refer to?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Moving simulations to cloud</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Transferring policies trained in simulation to physical robots</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Converting digital twins</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Simulating real data</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> Which sensor provides 3D depth information for robots?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Microphone</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">LiDAR</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Thermometer</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Accelerometer</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What is SLAM in robotics?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Supervised Learning for Autonomous Machines</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Simultaneous Localisation and Mapping</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Sequential Linear Attention Mechanism</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Structured Layer Activation Method</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════ TAB 2 — 8-LAYER STACK ════════ -->
+<section class="section" id="tab-stack">
+ <h2>8-Layer Stack</h2>
+ <p class="desc">The full technology stack for Physical / Embodied AI, from hardware platform up to fleet orchestration. Click each layer to expand details.</p>
+
+ <div class="stack-layers">
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(88,166,255,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-blue c-blue">8</span>
+ <span class="layer-title">Fleet Management &amp; Orchestration</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Multi-robot coordination, task allocation across heterogeneous fleets, cloud dashboards for monitoring, remote teleoperation fallback, OTA firmware updates, and fleet-level analytics.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(63,185,80,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-green c-green">7</span>
+ <span class="layer-title">Task Planning</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Hierarchical task decomposition, behaviour trees for modular execution, PDDL-based symbolic planning, large language model (LLM) task translators that convert natural language instructions into executable plans.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(210,168,255,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-purple c-purple">6</span>
+ <span class="layer-title">Motion Planning &amp; Control</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Trajectory optimisation, Model Predictive Control (MPC), impedance/admittance control for compliant manipulation, collision-free path planning (RRT*, A*), and real-time servo-level feedback loops.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(240,136,62,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-orange c-orange">5</span>
+ <span class="layer-title">World Modelling</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">3D scene graphs, occupancy grids, Neural Radiance Field (NeRF) reconstruction, digital twins, semantic maps linking objects to affordances, and predictive physics models for forward simulation.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(255,123,114,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-red c-red">4</span>
+ <span class="layer-title">Perception</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Object detection and segmentation, SLAM (Simultaneous Localisation and Mapping), monocular/stereo depth estimation, tactile signal processing, pose estimation, and anomaly detection from sensor streams.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(121,192,255,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-cyan c-cyan">3</span>
+ <span class="layer-title">Sensor Fusion</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Multi-modal fusion combining LiDAR, camera (RGB/thermal), IMU, tactile arrays, GPS/RTK, and radar into a unified representation. Extended Kalman filters, transformer-based fusion, and temporal alignment.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(88,166,255,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-blue c-blue">2</span>
+ <span class="layer-title">Actuators &amp; End-Effectors</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Electric/hydraulic motors, precision servo drives, parallel-jaw and soft grippers, suction cups, dexterous hands, haptic feedback arrays, and compliant actuators for safe human interaction.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleStack(this)" style="background:rgba(63,185,80,0.06)">
+ <div class="layer-head">
+ <span class="layer-num bg-green c-green">1</span>
+ <span class="layer-title">Hardware Platform</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Robot chassis/frame (wheeled, legged, aerial), onboard compute (NVIDIA Jetson, GPU clusters), battery/power systems, connectivity (5G, Wi-Fi 6E, mesh radio), and ruggedised enclosures.</div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Physical AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Hardware / Body</strong></td>
+<td>Actuators (motors, servos, hydraulics), sensors (cameras, LiDAR, IMU, tactile), compute (edge GPU, FPGA), power (batteries, fuel cells)</td>
+</tr>
+<tr>
+<td><strong>2. Low-Level Control</strong></td>
+<td>Motor controllers, PID loops, torque control, joint-level safety limits</td>
+</tr>
+<tr>
+<td><strong>3. Perception</strong></td>
+<td>Object detection, semantic segmentation, depth estimation, SLAM, 3D reconstruction, sensor fusion</td>
+</tr>
+<tr>
+<td><strong>4. World Model</strong></td>
+<td>Occupancy grids, scene graphs, physics simulators, digital twins</td>
+</tr>
+<tr>
+<td><strong>5. Planning &amp; Decision</strong></td>
+<td>Task planning, motion planning, grasp planning, behaviour trees, state machines</td>
+</tr>
+<tr>
+<td><strong>6. Learning &amp; Adaptation</strong></td>
+<td>RL policies, imitation learning, foundation model inference, online adaptation</td>
+</tr>
+<tr>
+<td><strong>7. Communication</strong></td>
+<td>Robot-to-robot coordination, cloud connectivity, fleet management, V2X for vehicles</td>
+</tr>
+<tr>
+<td><strong>8. Safety &amp; Compliance</strong></td>
+<td>Emergency stops, collision avoidance, functional safety (ISO 13849), regulatory compliance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 3 — SUB-TYPES ════════ -->
+<section class="section" id="tab-subtypes">
+ <h2>Sub-Types of Embodied AI</h2>
+ <p class="desc">The primary morphological categories of Physical AI systems, each designed for distinct environments and tasks.</p>
+
+ <div class="cards cards-3">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Industrial</span>
+ <h3>Industrial Robots</h3>
+ <ul>
+ <li>Fixed and articulated robotic arms</li>
+ <li>Welding, assembly, painting, palletising</li>
+ <li>Key players: Fanuc, ABB, KUKA</li>
+ <li>High precision, repeatability, 24/7 uptime</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Autonomous Vehicles</span>
+ <h3>Autonomous Vehicles (AVs)</h3>
+ <ul>
+ <li>Self-driving cars, trucks, and shuttles</li>
+ <li>Key players: Waymo, Cruise, Aurora</li>
+ <li>L4/L5 autonomy; lidar + camera + radar stacks</li>
+ <li>Geofenced commercial deployments</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Humanoid</span>
+ <h3>Humanoid Robots</h3>
+ <ul>
+ <li>Bipedal general-purpose robots</li>
+ <li>Key players: Figure 02, Tesla Optimus, 1X NEO</li>
+ <li>Household, factory, and service tasks</li>
+ <li>Human-compatible form factor for existing spaces</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Aerial</span>
+ <h3>Drones / UAVs</h3>
+ <ul>
+ <li>Aerial robots for delivery, inspection, agriculture</li>
+ <li>Key players: Skydio, DJI, Zipline</li>
+ <li>Defence, mapping, search &amp; rescue</li>
+ <li>VTOL, fixed-wing, and hybrid configurations</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">Logistics</span>
+ <h3>Autonomous Mobile Robots (AMRs)</h3>
+ <ul>
+ <li>Warehouse, hospital, and campus logistics</li>
+ <li>Key players: Locus, Fetch, MiR</li>
+ <li>SLAM-based navigation; goods-to-person</li>
+ <li>Fleet coordination via cloud orchestration</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Medical</span>
+ <h3>Surgical / Medical Robots</h3>
+ <ul>
+ <li>Minimally-invasive surgical procedures</li>
+ <li>Key players: da Vinci (Intuitive), Medtronic Hugo</li>
+ <li>Sub-millimetre precision; tremor filtering</li>
+ <li>Tele-surgery and AI-assisted guidance</li>
+ </ul>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Form Factor</h3>
+<h3>Industrial Robots</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Fixed or mobile robots operating in manufacturing environments for assembly, welding, painting, and material handling</td>
+</tr>
+<tr>
+<td><strong>Form Factors</strong></td>
+<td>6-axis articulated arms, SCARA robots, delta robots, gantry systems</td>
+</tr>
+<tr>
+<td><strong>Key Vendors</strong></td>
+<td>Fanuc, ABB, KUKA, Yaskawa, Universal Robots (cobots)</td>
+</tr>
+<tr>
+<td><strong>Global Installed Base (2024)</strong></td>
+<td>~4.2 million industrial robots (IFR — International Federation of Robotics)</td>
+</tr>
+<tr>
+<td><strong>Trends</strong></td>
+<td>Cobots (collaborative robots), AI-powered quality inspection, flexible manufacturing</td>
+</tr>
+</tbody>
+</table>
+<h3>Autonomous Vehicles</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Vehicles that navigate and drive without human intervention, from driver assistance to full autonomy</td>
+</tr>
+<tr>
+<td><strong>SAE Levels</strong></td>
+<td>L0 (no automation) → L1 (driver assistance) → L2 (partial) → L3 (conditional) → L4 (high) → L5 (full)</td>
+</tr>
+<tr>
+<td><strong>Key Players</strong></td>
+<td>Waymo (L4 robotaxi), Tesla (L2+ FSD), Cruise, Zoox, Aurora, Mercedes (L3 highway), Mobileye</td>
+</tr>
+<tr>
+<td><strong>Sensor Suite</strong></td>
+<td>Cameras, LiDAR, radar, ultrasonic, GPS/GNSS, HD maps</td>
+</tr>
+<tr>
+<td><strong>Key Challenge</strong></td>
+<td>Long-tail edge cases — rare, unexpected scenarios that the system must handle safely</td>
+</tr>
+</tbody>
+</table>
+<h3>Humanoid Robots</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Robots with human-like form factors — bipedal locomotion, arms, hands, head — designed to operate in human environments</td>
+</tr>
+<tr>
+<td><strong>Key Players</strong></td>
+<td>Tesla Optimus, Figure (Figure 02), Boston Dynamics Atlas, Agility Robotics Digit, 1X (NEO), Unitree</td>
+</tr>
+<tr>
+<td><strong>Why Humanoid</strong></td>
+<td>Human environments (stairs, doors, tools, workspaces) are designed for the human body; a humanoid form factor can operate without infrastructure changes</td>
+</tr>
+<tr>
+<td><strong>Challenges</strong></td>
+<td>Bipedal balance, dexterous manipulation, power/energy efficiency, cost</td>
+</tr>
+<tr>
+<td><strong>Status (2026)</strong></td>
+<td>Early deployment in warehouses and manufacturing; rapid progress in locomotion and manipulation</td>
+</tr>
+</tbody>
+</table>
+<h3>Drones (UAVs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Unmanned aerial vehicles with AI-powered autonomous flight, navigation, and task execution</td>
+</tr>
+<tr>
+<td><strong>Form Factors</strong></td>
+<td>Multirotor (quadcopter), fixed-wing, VTOL (vertical take-off and landing), hybrid</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Aerial inspection, delivery, agriculture (crop spraying), mapping/survey, search &amp; rescue, defence</td>
+</tr>
+<tr>
+<td><strong>Key Players</strong></td>
+<td>DJI, Skydio (autonomous drones), Wing (Alphabet delivery), Zipline (medical delivery)</td>
+</tr>
+<tr>
+<td><strong>Autonomy</strong></td>
+<td>Ranges from remote-piloted to fully autonomous obstacle avoidance and mission planning</td>
+</tr>
+</tbody>
+</table>
+<h3>Autonomous Mobile Robots (AMRs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Wheeled or tracked robots that autonomously navigate indoor environments (warehouses, hospitals, offices)</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Warehouse picking and transport, hospital logistics, last-mile delivery, cleaning</td>
+</tr>
+<tr>
+<td><strong>Key Players</strong></td>
+<td>Amazon Robotics (Kiva), Locus Robotics, 6 River Systems, Fetch Robotics, ANYbotics (quadruped)</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td>SLAM-based; dynamic obstacle avoidance; fleet coordination</td>
+</tr>
+</tbody>
+</table>
+<h3>Surgical &amp; Medical Robots</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Robotic systems that assist or perform surgical procedures with superhuman precision</td>
+</tr>
+<tr>
+<td><strong>Key Systems</strong></td>
+<td>Intuitive Surgical da Vinci, Medtronic Hugo, Johnson &amp; Johnson Ottava, CMR Versius</td>
+</tr>
+<tr>
+<td><strong>Autonomy Level</strong></td>
+<td>Currently teleoperated (surgeon controls); moving toward semi-autonomous sub-task execution</td>
+</tr>
+<tr>
+<td><strong>Market</strong></td>
+<td>~$7.2 billion (2024); growing rapidly with expanding surgical indications</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 4 — CORE ARCHITECTURES ════════ -->
+<section class="section" id="tab-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">The fundamental control and planning paradigms that drive embodied AI systems — from fast reflexes to foundation-model planners.</p>
+
+ <div class="cards cards-3">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Reactive</span>
+ <h3>Reactive Control</h3>
+ <ul>
+ <li>Direct sensor-to-actuator mapping</li>
+ <li>Subsumption architecture (Brooks)</li>
+ <li>Ultra-fast reflexive responses (&lt;1 ms)</li>
+ <li>No internal world model required</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Deliberative</span>
+ <h3>Deliberative Planning</h3>
+ <ul>
+ <li>PDDL, hierarchical task networks (HTN)</li>
+ <li>Plans fully before acting</li>
+ <li>Slower but globally optimal solutions</li>
+ <li>Requires accurate world model</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Modular</span>
+ <h3>Behaviour Trees</h3>
+ <ul>
+ <li>Modular hierarchical task structure</li>
+ <li>Widely used in game AI and robotics</li>
+ <li>Tick-based execution; composable nodes</li>
+ <li>Easy to debug and extend</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">End-to-End</span>
+ <h3>End-to-End Learning</h3>
+ <ul>
+ <li>Raw sensor input → control output</li>
+ <li>Imitation learning, reinforcement learning</li>
+ <li>Tesla FSD approach; minimal hand-engineering</li>
+ <li>Requires massive data; hard to interpret</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">Sim-to-Real</span>
+ <h3>Sim-to-Real Transfer</h3>
+ <ul>
+ <li>Train in simulation (Isaac Sim, MuJoCo)</li>
+ <li>Deploy policies on real hardware</li>
+ <li>Domain randomisation for robustness</li>
+ <li>Closes the reality gap iteratively</li>
+ </ul>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Foundation</span>
+ <h3>Foundation Models for Robotics</h3>
+ <ul>
+ <li>VLMs (RT-2, PaLM-E) as high-level planners</li>
+ <li>Language-conditioned manipulation</li>
+ <li>Zero-shot generalisation to novel tasks</li>
+ <li>Bridges semantic understanding and motor control</li>
+ </ul>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Techniques</h3>
+<h3>Classical Robotics (Sense-Plan-Act)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Architecture</strong></td>
+<td>Sequential pipeline: sense → build world model → plan → act; each stage processes independently</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>Computer vision, point cloud processing, feature extraction, object recognition</td>
+</tr>
+<tr>
+<td><strong>Planning</strong></td>
+<td>A*, RRT (Rapidly-exploring Random Trees), PRM (Probabilistic Roadmap), optimisation-based planners</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>PID controllers, computed torque control, impedance control</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Well-understood, modular, testable; dominant in industrial robotics</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Brittle in unstructured environments; slow to adapt; perception errors cascade</td>
+</tr>
+</tbody>
+</table>
+<h3>Behaviour-Based / Subsumption Architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Proposed by Rodney Brooks (1986); instead of a central model, intelligence emerges from layers of simple behaviour modules</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Parallel behaviour layers (e.g., avoid obstacle, follow wall, seek goal) compete for control; higher layers subsume lower ones</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Robust to sensor noise; fast response; works in unstructured environments</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Difficult to scale to complex, multi-step tasks; limited reasoning capability</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Early mobile robots (iRobot Roomba ancestors), insect-inspired robotics</td>
+</tr>
+</tbody>
+</table>
+<h3>Learning-Based Control (End-to-End)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Learn a direct mapping from sensory input to motor output using neural networks; bypass explicit perception, planning, and control modules</td>
+</tr>
+<tr>
+<td><strong>Imitation Learning</strong></td>
+<td>Learn by observing human demonstrations (behavioural cloning, DAgger)</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning</strong></td>
+<td>Learn by trial and error in simulation, then transfer to real world</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Can handle unstructured environments; learns complex sensorimotor skills; adapts to new situations</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Requires massive data/simulation; difficult to verify safety; opaque decision-making</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Autonomous driving (Tesla FSD), dexterous manipulation, locomotion</td>
+</tr>
+</tbody>
+</table>
+<h3>Robot Foundation Models</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Large pre-trained models that provide general-purpose perception, language understanding, and robotic control; fine-tuned for specific tasks</td>
+</tr>
+<tr>
+<td><strong>Vision-Language-Action (VLA) Models</strong></td>
+<td>Models that take visual observations and language instructions as input and output robot actions</td>
+</tr>
+<tr>
+<td><strong>Key Examples</strong></td>
+<td>Google RT-2, Octo, OpenVLA, NVIDIA GR00T</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Generalise across tasks and environments; leverage internet-scale pre-training; support natural language commands</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Still early; real-time inference is challenging; safety guarantees are difficult</td>
+</tr>
+</tbody>
+</table>
+<h3>SLAM (Simultaneous Localisation and Mapping)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Problem</strong></td>
+<td>Build a map of an unknown environment while simultaneously tracking the robot's position within it</td>
+</tr>
+<tr>
+<td><strong>Visual SLAM</strong></td>
+<td>Uses camera images (ORB-SLAM, LSD-SLAM, RTAB-MAP)</td>
+</tr>
+<tr>
+<td><strong>LiDAR SLAM</strong></td>
+<td>Uses laser scanner point clouds (Cartographer, LOAM, LeGO-LOAM)</td>
+</tr>
+<tr>
+<td><strong>Sensor Fusion SLAM</strong></td>
+<td>Combines visual, LiDAR, and IMU data for robust localisation</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Autonomous vehicles, warehouse robots, AR/VR headsets, drones</td>
+</tr>
+</tbody>
+</table>
+<h3>Motion Planning Algorithms</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Description</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong>*</td>
+<td>Optimal graph search; complete and optimal with admissible heuristic</td>
+<td>Grid-based path planning</td>
+</tr>
+<tr>
+<td><strong>RRT / RRT</strong>*</td>
+<td>Sampling-based; grows a random tree through configuration space; RRT* converges to optimal</td>
+<td>Robot arm motion planning</td>
+</tr>
+<tr>
+<td><strong>PRM (Probabilistic Roadmap)</strong></td>
+<td>Pre-computes a roadmap of the free space; queries find paths through the roadmap</td>
+<td>Multi-query environments</td>
+</tr>
+<tr>
+<td><strong>CHOMP / TrajOpt</strong></td>
+<td>Optimisation-based trajectory planning; smooths and optimises initial trajectories</td>
+<td>Collaborative robots, manipulation</td>
+</tr>
+<tr>
+<td><strong>MPC (Model Predictive Control)</strong></td>
+<td>Optimises action sequence over a receding horizon using a dynamics model</td>
+<td>Autonomous driving, drone control</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 5 — TOOLS & PLATFORMS ════════ -->
+<section class="section" id="tab-tools">
+ <h2>Tools &amp; Platforms</h2>
+ <p class="desc">The essential middleware, simulators, and frameworks powering Physical AI development and deployment.</p>
+
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Provider</th><th>Focus</th></tr>
+ </thead>
+ <tbody>
+ <tr><td style="color:var(--accent);font-weight:600">ROS 2</td><td>Open Robotics</td><td>De facto robot middleware; pub/sub, transforms, navigation stack</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">NVIDIA Isaac Sim</td><td>NVIDIA</td><td>GPU-accelerated robot simulation; synthetic data generation</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">MuJoCo</td><td>Google DeepMind</td><td>Fast physics engine; contact-rich manipulation research</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">Gazebo</td><td>Open Robotics</td><td>Classic 3D robot simulator; ROS-integrated</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">PyBullet</td><td>Erwin Coumans</td><td>Lightweight Python physics sim; RL research</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">CARLA</td><td>Intel / Barcelona</td><td>Open-source autonomous vehicle driving simulator</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">AirSim</td><td>Microsoft</td><td>Drone / car simulator built on Unreal Engine</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">Autoware</td><td>Autoware Foundation</td><td>Full open-source AV stack (perception → planning → control)</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">Apollo</td><td>Baidu</td><td>Chinese AV autonomy platform; HD mapping, planning</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">MoveIt 2</td><td>PickNik</td><td>ROS 2 motion planning framework; manipulation pipelines</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">Open3D</td><td>Intel ISL</td><td>3D point cloud processing library; registration, visualisation</td></tr>
+ <tr><td style="color:var(--accent);font-weight:600">Drake</td><td>MIT / TRI</td><td>Model-based robot design and control; optimisation-based planning</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Robot Operating System &amp; Middleware</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Deployment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROS 2 (Robot Operating System 2)</strong></td>
+<td>Open-Source (Linux Ubuntu 22.04+; x86 or ARM; CPU-based; Docker supported)</td>
+<td>Industry standard middleware for robotics; pub/sub messaging, hardware abstraction, libraries</td>
+</tr>
+<tr>
+<td><strong>NVIDIA Isaac ROS</strong></td>
+<td>Open-Source (Linux; NVIDIA Jetson Orin or x86 + NVIDIA GPU; CUDA 11.4+)</td>
+<td>GPU-accelerated computer vision and AI for ROS 2; DNN acceleration on Jetson</td>
+</tr>
+<tr>
+<td><strong>micro-ROS</strong></td>
+<td>Open-Source (embedded MCUs — STM32, ESP32, NXP; RTOS: FreeRTOS/Zephyr)</td>
+<td>ROS 2 for microcontrollers; bringing the ROS ecosystem to embedded systems</td>
+</tr>
+<tr>
+<td><strong>MoveIt 2</strong></td>
+<td>Open-Source (Linux Ubuntu 22.04+; x86 or ARM; CPU-based; ROS 2 required)</td>
+<td>Motion planning framework for ROS 2; arms, manipulators, and mobile bases</td>
+</tr>
+</tbody>
+</table>
+<h3>Simulation Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA Isaac Sim</strong></td>
+<td>NVIDIA</td>
+<td>On-Prem (Linux; NVIDIA RTX GPU required) / Cloud (AWS EC2 G5/P4d; GCP A2; NVIDIA Omniverse Cloud)</td>
+<td>GPU-accelerated physics, photorealistic rendering, domain randomisation, digital twin</td>
+</tr>
+<tr>
+<td><strong>MuJoCo</strong></td>
+<td>DeepMind (open-source)</td>
+<td>Open-Source (Linux/macOS/Windows; C; CPU-only)</td>
+<td>Fast, accurate physics for RL research; contact-rich manipulation and locomotion</td>
+</tr>
+<tr>
+<td><strong>Gazebo</strong></td>
+<td>Open Robotics (open-source)</td>
+<td>Open-Source (Linux Ubuntu; x86; CPU + optional GPU for rendering)</td>
+<td>Standard ROS simulator; multi-robot, sensor simulation</td>
+</tr>
+<tr>
+<td><strong>Unity Robotics</strong></td>
+<td>Unity</td>
+<td>On-Prem (Windows/Linux/macOS; NVIDIA GPU recommended for rendering)</td>
+<td>3D game engine adapted for robotics simulation; visual realism</td>
+</tr>
+<tr>
+<td><strong>Unreal + AirSim</strong></td>
+<td>Microsoft / Epic</td>
+<td>On-Prem (Windows/Linux; NVIDIA GPU required for photorealistic rendering)</td>
+<td>Photorealistic drone and car simulation</td>
+</tr>
+<tr>
+<td><strong>PyBullet</strong></td>
+<td>Open-source</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>Python physics simulator; quick prototyping; RL integration</td>
+</tr>
+<tr>
+<td><strong>CARLA</strong></td>
+<td>Open-source</td>
+<td>Open-Source (Linux/Windows; NVIDIA GPU — GTX 1080+ recommended; Unreal Engine)</td>
+<td>Autonomous driving simulator; weather, traffic, sensors</td>
+</tr>
+</tbody>
+</table>
+<h3>Autonomous Vehicle Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA DRIVE</strong></td>
+<td>NVIDIA</td>
+<td>Edge (NVIDIA DRIVE Orin / Thor SoC on vehicle; development on Linux x86 + NVIDIA GPU)</td>
+<td>End-to-end AV platform; perception, planning, mapping on NVIDIA hardware</td>
+</tr>
+<tr>
+<td><strong>Apollo</strong></td>
+<td>Baidu (open-source)</td>
+<td>Open-Source (Linux; x86 + NVIDIA GPU; Docker; vehicle-mounted compute unit)</td>
+<td>Full-stack AV platform; perception, planning, control</td>
+</tr>
+<tr>
+<td><strong>Autoware</strong></td>
+<td>Open-source</td>
+<td>Open-Source (Linux Ubuntu; x86 + NVIDIA GPU; ROS 2; vehicle-mounted compute)</td>
+<td>ROS-based AV software stack; used in research and commercial deployments</td>
+</tr>
+<tr>
+<td><strong>Waymo Driver</strong></td>
+<td>Waymo (Alphabet)</td>
+<td>Edge (custom compute module in vehicle; GCP for cloud training and HD map processing)</td>
+<td>Proprietary L4 software stack; ~$10B+ invested</td>
+</tr>
+<tr>
+<td><strong>Tesla FSD</strong></td>
+<td>Tesla</td>
+<td>Edge (Tesla HW4 computer — dual AI chips; in-vehicle only)</td>
+<td>Vision-only approach; end-to-end neural network; deployed at scale</td>
+</tr>
+<tr>
+<td><strong>Mobileye EyeQ</strong></td>
+<td>Mobileye (Intel)</td>
+<td>Edge (Mobileye EyeQ Ultra SoC; in-vehicle)</td>
+<td>ADAS and AV chipset and software; camera-first approach</td>
+</tr>
+</tbody>
+</table>
+<h3>Robot Foundation Model Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Model / Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RT-2 / RT-X</strong></td>
+<td>Google DeepMind</td>
+<td>Cloud (GCP — TPU for training; Jetson/GPU for on-robot inference)</td>
+<td>Vision-Language-Action model; generalises across tasks and embodiments</td>
+</tr>
+<tr>
+<td><strong>Octo</strong></td>
+<td>UC Berkeley et al.</td>
+<td>Open-Source (Linux; Python 3.9+; NVIDIA GPU — A100 recommended for training; Jetson for inference)</td>
+<td>Open-source robot foundation model; diverse data, multi-task</td>
+</tr>
+<tr>
+<td><strong>GR00T</strong></td>
+<td>NVIDIA</td>
+<td>Cloud (NVIDIA DGX Cloud for training) / Edge (Jetson Thor for on-robot inference)</td>
+<td>Foundation model for humanoid robots; multimodal input, action output</td>
+</tr>
+<tr>
+<td><strong>OpenVLA</strong></td>
+<td>Stanford et al.</td>
+<td>Open-Source (Linux; Python 3.9+; NVIDIA GPU — A100 for training; smaller GPU for inference)</td>
+<td>Open-source Vision-Language-Action model; fine-tunable for specific robots</td>
+</tr>
+<tr>
+<td><strong>pi0</strong></td>
+<td>Physical Intelligence</td>
+<td>Cloud (private GPU infrastructure for training; robot-mounted compute for inference)</td>
+<td>General-purpose robot foundation model; manipulation and locomotion</td>
+</tr>
+</tbody>
+</table>
+<h3>Hardware Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA Jetson (Orin / Thor)</strong></td>
+<td>Edge (ARM SoC with integrated NVIDIA GPU; 15–275 W; Linux)</td>
+<td>Edge AI compute for robots and autonomous machines; GPU inference</td>
+</tr>
+<tr>
+<td><strong>Qualcomm Robotics RB5/RB7</strong></td>
+<td>Edge (ARM SoC with Qualcomm AI Engine; low-power; Linux)</td>
+<td>Low-power AI compute for mobile robots and drones</td>
+</tr>
+<tr>
+<td><strong>Intel RealSense</strong></td>
+<td>Edge (USB depth camera; works with any x86/ARM host running Linux/Windows)</td>
+<td>Depth cameras for robot perception (being sunset; legacy installed base)</td>
+</tr>
+<tr>
+<td><strong>Universal Robots (UR)</strong></td>
+<td>On-Prem (UR controller box; 6-axis cobot arm; 100–240 V AC; ROS 2 driver available)</td>
+<td>Collaborative robot arms; easy programming; dominant in SME manufacturing</td>
+</tr>
+<tr>
+<td><strong>Boston Dynamics Spot / Atlas</strong></td>
+<td>On-Prem (self-contained compute on robot; Wi-Fi / Ethernet control; Spot SDK on Linux/macOS/Windows)</td>
+<td>Quadruped (Spot) and humanoid (Atlas) research platforms</td>
+</tr>
+<tr>
+<td><strong>Franka Emika Panda</strong></td>
+<td>On-Prem (Franka control box; 7-axis arm; real-time Linux host PC required; ROS 2 driver)</td>
+<td>Research-grade collaborative arm; open interface; popular in labs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 6 — USE CASES ════════ -->
+<section class="section" id="tab-usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">Real-world deployment domains for Physical / Embodied AI, with concrete examples and impact metrics.</p>
+
+ <div class="domain-acc">
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Manufacturing &amp; Assembly</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>Fanuc and ABB articulated arms perform welding, painting, and pick-and-place at cycle times under 2 seconds</li>
+ <li>Vision-guided bin picking handles unstructured parts with &gt;99% grasp success</li>
+ <li>Inline quality inspection using 3D vision detects defects at line speed</li>
+ <li>Lights-out factories operate 24/7 with minimal human oversight</li>
+ </ul></div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Autonomous Driving</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>Waymo Driver operates geofenced L4 robotaxi fleets in San Francisco, Phoenix, and LA</li>
+ <li>Sensor fusion: lidar + camera + radar produces 360° perception at 10 Hz</li>
+ <li>Cruise Origin purpose-built AV removes steering wheel and pedals entirely</li>
+ <li>Over 40 million autonomous miles driven across major AV programmes</li>
+ </ul></div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Warehouse Logistics</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>Amazon Sparrow and Proteus robots handle goods-to-person picking and transport</li>
+ <li>AMR fleets coordinate via cloud to deliver 3× throughput vs. manual operations</li>
+ <li>SLAM-based navigation enables deployment without fixed infrastructure</li>
+ <li>Dynamic re-routing avoids congestion and adapts to real-time order waves</li>
+ </ul></div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Surgical Robotics</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>da Vinci Xi system: &gt;12 million minimally-invasive procedures completed worldwide</li>
+ <li>Tremor filtering and motion scaling give surgeons sub-millimetre precision</li>
+ <li>Remote tele-surgery demonstrated across continental distances</li>
+ <li>AI-assisted guidance overlays anatomy and suggests optimal instrument paths</li>
+ </ul></div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Agricultural Robotics</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>John Deere See &amp; Spray uses computer vision to target weeds, cutting herbicide use by 77%</li>
+ <li>Autonomous tractors operate GPS-guided row following with cm-level accuracy</li>
+ <li>Robotic harvesters identify ripe fruit via hyperspectral imaging</li>
+ <li>Scout drones survey crops for disease, irrigation needs, and yield prediction</li>
+ </ul></div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span> Delivery &amp; Drones</span>
+ 
+ </div>
+ <div class="domain-body"><div class="domain-body-inner"><ul>
+ <li>Zipline delivers medical supplies via autonomous fixed-wing drones across Rwanda and Ghana</li>
+ <li>Wing (Alphabet) provides last-mile consumer delivery with &lt;10 min flight time</li>
+ <li>Over 500,000 autonomous commercial flights completed per year globally</li>
+ <li>BVLOS (Beyond Visual Line of Sight) operations expanding with regulatory approval</li>
+ </ul></div></div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Manufacturing</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assembly</strong></td>
+<td>Robotic arms assemble components — automotive, electronics, consumer goods</td>
+<td>Fanuc, ABB, KUKA assembly lines</td>
+</tr>
+<tr>
+<td><strong>Welding</strong></td>
+<td>Automated arc welding, spot welding, laser welding</td>
+<td>Automotive body-in-white lines</td>
+</tr>
+<tr>
+<td><strong>Quality Inspection</strong></td>
+<td>AI-powered visual inspection for defects at production speed</td>
+<td>Cognex, Keyence, Landing AI</td>
+</tr>
+<tr>
+<td><strong>Material Handling</strong></td>
+<td>Autonomous transport of parts and materials within facilities</td>
+<td>AGVs, AMRs (Amazon Robotics, Locus)</td>
+</tr>
+<tr>
+<td><strong>Collaborative Assembly</strong></td>
+<td>Cobots working alongside humans for flexible, mixed automation</td>
+<td>Universal Robots, Fanuc CRX</td>
+</tr>
+<tr>
+<td><strong>Bin Picking</strong></td>
+<td>AI-guided manipulation of randomly oriented parts from bins</td>
+<td>Covariant, Plus One Robotics</td>
+</tr>
+</tbody>
+</table>
+<h3>Logistics &amp; Warehousing</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Goods-to-Person</strong></td>
+<td>AMRs bring shelves/bins to human pickers</td>
+<td>Amazon Robotics (Kiva), Geek+</td>
+</tr>
+<tr>
+<td><strong>Autonomous Picking</strong></td>
+<td>Robot arms pick individual items from bins or shelves</td>
+<td>Covariant, Berkshire Grey, RightHand Robotics</td>
+</tr>
+<tr>
+<td><strong>Sorting</strong></td>
+<td>Automated sorting of packages by destination</td>
+<td>Autonomous parcel sorting (FedEx, UPS)</td>
+</tr>
+<tr>
+<td><strong>Last-Mile Delivery</strong></td>
+<td>Autonomous delivery robots and drones</td>
+<td>Starship Technologies, Nuro, Wing</td>
+</tr>
+<tr>
+<td><strong>Autonomous Trucking</strong></td>
+<td>Self-driving long-haul trucks</td>
+<td>Aurora, Kodiak Robotics, Waymo Via <em>(TuSimple rebranded to CreateAI in 2024, pivoted away from trucking)</em></td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Surgical Robotics</strong></td>
+<td>Robot-assisted minimally invasive surgery</td>
+<td>da Vinci (Intuitive), Hugo (Medtronic)</td>
+</tr>
+<tr>
+<td><strong>Hospital Logistics</strong></td>
+<td>AMRs delivering supplies, medications, and meals</td>
+<td>Aethon TUG, Diligent Robotics Moxi</td>
+</tr>
+<tr>
+<td><strong>Rehabilitation</strong></td>
+<td>Robotic exoskeletons and therapy devices</td>
+<td>Ekso, ReWalk, Fourier Intelligence</td>
+</tr>
+<tr>
+<td><strong>Disinfection</strong></td>
+<td>UV-C autonomous disinfection robots</td>
+<td>Xenex, UVD Robots</td>
+</tr>
+</tbody>
+</table>
+<h3>Agriculture</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Tractors</strong></td>
+<td>Self-driving tractors for ploughing, seeding, spraying</td>
+<td>John Deere autonomous, CNH, AGCO</td>
+</tr>
+<tr>
+<td><strong>Crop Monitoring</strong></td>
+<td>Drones for aerial crop health assessment</td>
+<td>DJI Agriculture, PrecisionHawk</td>
+</tr>
+<tr>
+<td><strong>Harvesting Robots</strong></td>
+<td>Autonomous picking of fruits, vegetables, and specialty crops</td>
+<td>Tortuga AgTech, Agrobot <em>(Abundant Robotics shut down 2021)</em></td>
+</tr>
+<tr>
+<td><strong>Weeding Robots</strong></td>
+<td>AI-guided precision weeding to reduce herbicide use</td>
+<td>Blue River (See &amp; Spray), FarmWise</td>
+</tr>
+</tbody>
+</table>
+<h3>Construction &amp; Mining</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Haul Trucks</strong></td>
+<td>Self-driving haul trucks in mining operations</td>
+<td>Caterpillar, Komatsu, Hitachi autonomous trucks</td>
+</tr>
+<tr>
+<td><strong>Autonomous Drilling</strong></td>
+<td>Automated drill rigs in mining and oil &amp; gas</td>
+<td>Epiroc, Sandvik autonomous drills</td>
+</tr>
+<tr>
+<td><strong>Construction Robotics</strong></td>
+<td>Robotic bricklaying, 3D printing, rebar tying</td>
+<td>Hadrian X, ICON 3D printing, Dusty Robotics</td>
+</tr>
+<tr>
+<td><strong>Site Inspection</strong></td>
+<td>Drone and robot-based construction site monitoring</td>
+<td>Skydio, DJI, Spot (Boston Dynamics)</td>
+</tr>
+</tbody>
+</table>
+<h3>Defence &amp; Security</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unmanned Ground Vehicles</strong></td>
+<td>Autonomous or remote-controlled ground vehicles for reconnaissance and EOD</td>
+<td>Various defence contractors</td>
+</tr>
+<tr>
+<td><strong>Unmanned Aerial Vehicles</strong></td>
+<td>Autonomous drones for surveillance, reconnaissance, and delivery</td>
+<td>Military UAV programmes worldwide</td>
+</tr>
+<tr>
+<td><strong>Unmanned Maritime</strong></td>
+<td>Autonomous surface and underwater vehicles</td>
+<td>Navy UUV and USV programmes</td>
+</tr>
+<tr>
+<td><strong>Perimeter Security</strong></td>
+<td>Autonomous patrol robots for facility security</td>
+<td>Knightscope, Cobalt Robotics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 7 — BENCHMARKS ════════ -->
+<section class="section" id="tab-benchmarks">
+ <h2>Benchmarks</h2>
+ <p class="desc">Key performance benchmarks for robot manipulation and autonomous vehicle safety evaluation.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Robot Manipulation Benchmarks (% Success)</h3>
+ <canvas id="chartManipulation"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>AV Safety Benchmarks (Score)</h3>
+ <canvas id="chartAVSafety"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Robot Performance Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Task Success Rate</strong></td>
+<td>% of attempts that achieve the desired outcome (e.g., successful grasp, delivery)</td>
+</tr>
+<tr>
+<td><strong>Cycle Time</strong></td>
+<td>Time to complete one full task cycle (e.g., pick-place, navigation to target)</td>
+</tr>
+<tr>
+<td><strong>Positional Accuracy</strong></td>
+<td>How precisely the robot reaches the intended position — mm or sub-mm</td>
+</tr>
+<tr>
+<td><strong>Repeatability</strong></td>
+<td>Consistency of positioning across repeated motions — key for manufacturing</td>
+</tr>
+<tr>
+<td><strong>Payload Capacity</strong></td>
+<td>Maximum weight the robot can manipulate reliably</td>
+</tr>
+<tr>
+<td><strong>Mean Time Between Failures (MTBF)</strong></td>
+<td>Average operational time before a system failure</td>
+</tr>
+<tr>
+<td><strong>Uptime / Availability</strong></td>
+<td>% of scheduled time the system is operational</td>
+</tr>
+</tbody>
+</table>
+<h3>Autonomous Vehicle Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Miles Between Disengagement</strong></td>
+<td>How far the vehicle drives autonomously before a human must take over</td>
+</tr>
+<tr>
+<td><strong>Collision Rate</strong></td>
+<td>Collisions per million miles driven</td>
+</tr>
+<tr>
+<td><strong>Minimum Risk Condition (MRC) Events</strong></td>
+<td>How often the system must execute an emergency stop or pullover</td>
+</tr>
+<tr>
+<td><strong>Perception Recall / Precision</strong></td>
+<td>Accuracy of object detection for vehicles, pedestrians, cyclists</td>
+</tr>
+<tr>
+<td><strong>Prediction Accuracy</strong></td>
+<td>How well the system predicts the future trajectories of other road users</td>
+</tr>
+<tr>
+<td><strong>Ride Comfort Score</strong></td>
+<td>Passenger comfort metrics: lateral acceleration, jerk, braking smoothness</td>
+</tr>
+</tbody>
+</table>
+<h3>Sim-to-Real Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transfer Success Rate</strong></td>
+<td>% of simulation-trained policies that succeed in the real world without additional training</td>
+</tr>
+<tr>
+<td><strong>Reality Gap</strong></td>
+<td>Performance difference between simulation and real-world deployment</td>
+</tr>
+<tr>
+<td><strong>Fine-Tuning Data Efficiency</strong></td>
+<td>Amount of real-world data needed to close the reality gap</td>
+</tr>
+<tr>
+<td><strong>Domain Randomisation Coverage</strong></td>
+<td>How well the randomised simulation covers the distribution of real-world conditions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 8 — MARKET DATA ════════ -->
+<section class="section" id="tab-market">
+ <h2>Market Data</h2>
+ <p class="desc">Investment and revenue projections across Physical / Embodied AI market segments, with a 2024–2030 growth trajectory.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Market Segments ($B)</h3>
+ <canvas id="chartSegments"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>2024 → 2030 Total Embodied AI Market ($B)</h3>
+ <canvas id="chartGrowth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Context</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Industrial Robot Installations (2024)</strong></td>
+<td>~590,000 units/year</td>
+<td>IFR World Robotics 2024</td>
+</tr>
+<tr>
+<td><strong>Global Industrial Robot Installed Base (2024)</strong></td>
+<td>~4.2 million units</td>
+<td>IFR</td>
+</tr>
+<tr>
+<td><strong>Autonomous Vehicle Market (2024)</strong></td>
+<td>~$54 billion</td>
+<td>Including ADAS and L2+ systems; robotaxi revenue still small</td>
+</tr>
+<tr>
+<td><strong>Service Robot Market (2024)</strong></td>
+<td>~$22 billion</td>
+<td>Logistics, medical, professional, consumer</td>
+</tr>
+<tr>
+<td><strong>Drone Market (2024)</strong></td>
+<td>~$38 billion</td>
+<td>Commercial + defence; DJI dominant in commercial</td>
+</tr>
+<tr>
+<td><strong>Surgical Robotics Market (2024)</strong></td>
+<td>~$7.2 billion</td>
+<td>Intuitive Surgical dominant; Medtronic, J&amp;J entering</td>
+</tr>
+<tr>
+<td><strong>Humanoid Robot Investment (2024)</strong></td>
+<td>~$5.3 billion cumulative</td>
+<td>Tesla, Figure, 1X, Unitree, Agility; explosive growth</td>
+</tr>
+<tr>
+<td><strong>Collaborative Robot Market (2024)</strong></td>
+<td>~$2.4 billion</td>
+<td>Universal Robots, Fanuc CRX, ABB GoFa</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Trends</h3>
+<table>
+<thead>
+<tr>
+<th>Trend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Robot Foundation Models</strong></td>
+<td>VLA models (RT-2, Octo, GR00T) enabling generalisation across tasks and embodiments</td>
+</tr>
+<tr>
+<td><strong>Humanoid Race</strong></td>
+<td>Intense competition among Tesla, Figure, 1X, and others to deploy humanoid robots in real workplaces</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real Maturing</strong></td>
+<td>NVIDIA Isaac and MuJoCo enabling increasingly reliable sim-to-real transfer</td>
+</tr>
+<tr>
+<td><strong>Autonomous Trucking</strong></td>
+<td>Multiple companies nearing commercial L4 autonomous trucking on US highways</td>
+</tr>
+<tr>
+<td><strong>China Robot Boom</strong></td>
+<td>China installed more robots than any other country; aggressive humanoid development</td>
+</tr>
+<tr>
+<td><strong>Surgical Expansion</strong></td>
+<td>Robot-assisted surgery expanding beyond urology to general surgery, orthopaedics, and neurosurgery</td>
+</tr>
+<tr>
+<td><strong>Agriculture Automation</strong></td>
+<td>Labour shortages driving rapid adoption of autonomous tractors and harvesting robots</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 9 — RISKS ════════ -->
+<section class="section" id="tab-risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Critical hazards and open challenges in deploying Physical AI systems at scale.</p>
+
+ <div class="risk-grid">
+ <div class="risk-card b-red">
+ <h4 class="c-red"> Physical Safety</h4>
+ <p>Robots can injure or kill — collision, pinch-point, runaway, and crushing scenarios. Functional safety standards (ISO 13849, IEC 61508) must be rigorously applied.</p>
+ </div>
+ <div class="risk-card b-orange">
+ <h4 class="c-orange"> Sim-to-Real Gap</h4>
+ <p>Models trained in simulation routinely underperform in the messy, unstructured real world. Domain randomisation and system identification help but don't fully close the gap.</p>
+ </div>
+ <div class="risk-card b-purple">
+ <h4 class="c-purple"> Sensor Degradation</h4>
+ <p>Rain, fog, dust, vibration, and extreme temperatures degrade perception quality. Redundancy and graceful degradation strategies are essential for safety-critical deployments.</p>
+ </div>
+ <div class="risk-card b-blue">
+ <h4 class="c-blue"> Regulatory Fragmentation</h4>
+ <p>Inconsistent global standards for autonomous vehicles, drones, and surgical robots create compliance complexity and slow cross-border deployment.</p>
+ </div>
+ <div class="risk-card b-cyan">
+ <h4 class="c-cyan"> Liability &amp; Insurance</h4>
+ <p>Unclear fault attribution when autonomous systems cause harm. Product liability, operator negligence, and software defects create complex legal landscapes.</p>
+ </div>
+ <div class="risk-card b-green">
+ <h4 class="c-green"> Job Displacement</h4>
+ <p>Automation replacing manual labour at scale — warehouse, manufacturing, driving, and agriculture. Requires proactive workforce retraining and social safety nets.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Fundamental Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Real-World Complexity</strong></td>
+<td>The physical world is infinitely variable — lighting, weather, terrain, human behaviour; impossible to fully anticipate</td>
+</tr>
+<tr>
+<td><strong>Safety Criticality</strong></td>
+<td>Physical actions can injure humans, damage property, or cause death; stakes are fundamentally different from software AI</td>
+</tr>
+<tr>
+<td><strong>Irreversibility</strong></td>
+<td>Physical actions cannot be "undone" — a collision, fall, or drop has permanent consequences</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real Gap</strong></td>
+<td>Even the best simulators cannot perfectly replicate real-world physics, sensing, and conditions</td>
+</tr>
+<tr>
+<td><strong>Power &amp; Energy</strong></td>
+<td>Battery life limits operational endurance; heavy computation conflicts with energy efficiency</td>
+</tr>
+<tr>
+<td><strong>Dexterity Gap</strong></td>
+<td>Current manipulation capability is far below human dexterity for fine motor tasks</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Advanced robots remain expensive; ROI justification is challenging for many use cases</td>
+</tr>
+<tr>
+<td><strong>Edge Cases</strong></td>
+<td>Long-tail scenarios (unusual objects, unexpected human behaviour, rare conditions) are extremely difficult to handle</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collision / Impact</strong></td>
+<td>Robot collides with humans, objects, or infrastructure</td>
+<td>Collision detection, force limiting, safety-rated speed zones</td>
+</tr>
+<tr>
+<td><strong>Sensor Failure</strong></td>
+<td>Sensor degradation or failure leads to incorrect perception</td>
+<td>Sensor redundancy, cross-modal validation, degraded-mode operation</td>
+</tr>
+<tr>
+<td><strong>Software Failure</strong></td>
+<td>Bugs, edge cases, or model errors cause dangerous behaviour</td>
+<td>Functional safety standards, extensive testing, runtime monitoring</td>
+</tr>
+<tr>
+<td><strong>Cybersecurity</strong></td>
+<td>Hacked robots or vehicles could be weaponised or caused to malfunction</td>
+<td>Secure communications, OTA update authentication, intrusion detection</td>
+</tr>
+<tr>
+<td><strong>Environmental</strong></td>
+<td>Adverse weather, lighting, or terrain causes system failure</td>
+<td>Robust perception, weather detection, operational domain restrictions</td>
+</tr>
+<tr>
+<td><strong>Human Interaction</strong></td>
+<td>Unpredictable human behaviour near robots causes dangerous situations</td>
+<td>Safety-rated collaborative operation, proximity detection</td>
+</tr>
+</tbody>
+</table>
+<h3>When Physical AI Is the Right Choice</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why Physical AI Excels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Physical Task</strong></td>
+<td>When the task inherently requires acting on the physical world</td>
+</tr>
+<tr>
+<td><strong>Dangerous Environments</strong></td>
+<td>When human presence is dangerous (nuclear, undersea, space, hazardous materials)</td>
+</tr>
+<tr>
+<td><strong>Repetitive Physical Labour</strong></td>
+<td>When the task is physically demanding, repetitive, and consistent</td>
+</tr>
+<tr>
+<td><strong>Scale &amp; Speed</strong></td>
+<td>When throughput requirements exceed human physical capability</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>When sub-millimetre accuracy is required (surgery, microassembly)</td>
+</tr>
+<tr>
+<td><strong>24/7 Operation</strong></td>
+<td>When continuous operation without fatigue is needed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="autonomous-ai.html">Autonomous AI</a>
+<a href="reinforcement-learning-ai.html">Reinforcement Learning AI</a>
+<a href="multimodal-perception-ai.html">Multimodal Perception AI</a>
+<a href="reactive-ai.html">Reactive AI</a>
+<a href="agentic-ai.html">Agentic AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════ TAB 10 — GLOSSARY ════════ -->
+<section class="section" id="tab-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key terms in Physical / Embodied AI. Use the search box to filter.</p>
+
+ <input type="text" class="glossary-search" id="glossaryInput" placeholder="Search glossary…" oninput="filterGlossary()">
+
+ <div class="glossary-list" id="glossaryList">
+ <div class="glossary-entry"><strong>Actuator</strong><span>Device converting energy (electric, hydraulic, pneumatic) into physical motion.</span>
+ <div class="glossary-entry"><strong>SLAM</strong><span>Simultaneous Localisation and Mapping — building a map while tracking the robot's position within it.</span></div>
+ <div class="glossary-entry"><strong>Sim-to-Real Transfer</strong><span>Transferring policies trained in simulation to physical robots, overcoming the reality gap.</span></div>
+ <div class="glossary-entry"><strong>Digital Twin</strong><span>Virtual replica of a physical system used for simulation, monitoring, and predictive maintenance.</span></div>
+ <div class="glossary-entry"><strong>ROS</strong><span>Robot Operating System — open-source middleware providing tools, libraries, and conventions for robotics.</span></div>
+ <div class="glossary-entry"><strong>Inverse Kinematics</strong><span>Computing joint angles needed to place a robotic end-effector at a desired position and orientation.</span></div>
+ <div class="glossary-entry"><strong>Motion Planning</strong><span>Algorithmic computation of collision-free paths for robots in configuration space.</span></div>
+ <div class="glossary-entry"><strong>Grasping</strong><span>Robotic manipulation of objects — involves grasp planning, force control, and tactile sensing.</span></div>
+ <div class="glossary-entry"><strong>LiDAR</strong><span>Light Detection and Ranging — laser-based sensor producing 3D point cloud representations of the environment.</span></div>
+ <div class="glossary-entry"><strong>Proprioception</strong><span>Robot's internal sensing of its own body state (joint positions, velocities, forces).</span></div>
+ <div class="glossary-entry"><strong>End Effector</strong><span>The device at the end of a robotic arm that interacts with the environment (gripper, tool, sensor).</span></div>
+ <div class="glossary-entry"><strong>Path Planning</strong><span>Finding an optimal route from start to goal while avoiding obstacles in the environment.</span></div>
+ <div class="glossary-entry"><strong>Compliant Control</strong><span>Control strategy allowing the robot to adapt forces in response to environmental contact.</span></div>
+ <div class="glossary-entry"><strong>Visual Servoing</strong><span>Using real-time visual feedback to control robot motion towards a target pose.</span></div>
+ <div class="glossary-entry"><strong>Swarm Robotics</strong><span>Coordination of large numbers of simple robots to achieve complex collective behaviours.</span></div>
+ <div class="glossary-entry"><strong>Cobots</strong><span>Collaborative robots designed to work safely alongside humans in shared workspaces.</span></div>
+</div>
+ <div class="glossary-entry"><strong>Behaviour Tree</strong><span>Modular hierarchical task-execution graph with composable condition and action nodes; tick-based control flow.</span></div>
+ <div class="glossary-entry"><strong>Degrees of Freedom (DoF)</strong><span>Independent axes of motion for a joint or robot; a 6-DoF arm can reach any position and orientation.</span></div>
+ <div class="glossary-entry"><strong>Domain Randomisation</strong><span>Varying simulation parameters (texture, lighting, physics) to produce policies robust to real-world variability.</span></div>
+ <div class="glossary-entry"><strong>End-Effector</strong><span>Tool at the end of a robot arm — gripper, welder, suction cup, or dexterous hand.</span></div>
+ <div class="glossary-entry"><strong>GNSS/RTK</strong><span>Global Navigation Satellite System with Real-Time Kinematic corrections; centimetre-level positioning accuracy.</span></div>
+ <div class="glossary-entry"><strong>IMU</strong><span>Inertial Measurement Unit combining accelerometers and gyroscopes; measures orientation and acceleration.</span></div>
+ <div class="glossary-entry"><strong>Kinematics</strong><span>Study of motion without considering forces — maps joint angles to end-effector positions (forward kinematics) and vice versa (inverse kinematics).</span></div>
+ <div class="glossary-entry"><strong>LiDAR</strong><span>Light Detection and Ranging; emits laser pulses and measures returns to create high-resolution 3D point clouds.</span></div>
+ <div class="glossary-entry"><strong>MPC</strong><span>Model Predictive Control; optimises the control trajectory over a rolling time horizon, re-planning at each step.</span></div>
+ <div class="glossary-entry"><strong>Odometry</strong><span>Estimating position change over time from sensor data (wheel encoders, visual features, or IMU integration).</span></div>
+ <div class="glossary-entry"><strong>SLAM</strong><span>Simultaneous Localisation and Mapping — building a map of the environment while tracking the robot's position within it.</span></div>
+ <div class="glossary-entry"><strong>Sim-to-Real</strong><span>Transferring a control policy trained in a physics simulator to a physical robot; often requires domain adaptation techniques.</span></div>
+ <div class="glossary-entry"><strong>Tactile Sensing</strong><span>Contact and force sensing on robot surfaces; enables dexterous manipulation and safe human-robot interaction.</span></div>
+ <div class="glossary-entry"><strong>Teleoperation</strong><span>Remote human control of a robot, often with force feedback; used for hazardous environments and surgical assistance.</span></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actuator</strong></td>
+<td>A physical device (motor, servo, hydraulic cylinder) that converts control signals into physical motion</td>
+</tr>
+<tr>
+<td><strong>AMR (Autonomous Mobile Robot)</strong></td>
+<td>A wheeled or tracked robot that navigates autonomously using onboard sensors and mapping</td>
+</tr>
+<tr>
+<td><strong>AV (Autonomous Vehicle)</strong></td>
+<td>A vehicle capable of driving without human intervention at some level of automation</td>
+</tr>
+<tr>
+<td><strong>Behavioural Cloning</strong></td>
+<td>Imitation learning by training a policy to replicate expert demonstrations via supervised learning</td>
+</tr>
+<tr>
+<td><strong>Cobot (Collaborative Robot)</strong></td>
+<td>A robot designed to work safely alongside humans without safety cages</td>
+</tr>
+<tr>
+<td><strong>DAgger</strong></td>
+<td>Dataset Aggregation — iterative imitation learning that corrects distributional shift by querying the expert</td>
+</tr>
+<tr>
+<td><strong>Degrees of Freedom (DoF)</strong></td>
+<td>Number of independent axes of motion a robot can control</td>
+</tr>
+<tr>
+<td><strong>Digital Twin</strong></td>
+<td>A virtual replica of a physical system, updated with real-time data, used for simulation and monitoring</td>
+</tr>
+<tr>
+<td><strong>Domain Randomisation</strong></td>
+<td>Randomising visual and physical parameters in simulation to produce policies robust to real-world variation</td>
+</tr>
+<tr>
+<td><strong>End Effector</strong></td>
+<td>The tool or gripper attached to the end of a robot arm; the part that interacts with the workpiece</td>
+</tr>
+<tr>
+<td><strong>GNSS</strong></td>
+<td>Global Navigation Satellite System — includes GPS (US), Galileo (EU), GLONASS (Russia), BeiDou (China)</td>
+</tr>
+<tr>
+<td><strong>HD Map</strong></td>
+<td>High-definition map with centimetre-accurate road geometry, lane markings, and traffic features</td>
+</tr>
+<tr>
+<td><strong>Humanoid Robot</strong></td>
+<td>A robot with a human-like body form — bipedal legs, arms, hands, and typically a head</td>
+</tr>
+<tr>
+<td><strong>IFR</strong></td>
+<td>International Federation of Robotics — the industry body tracking global robot deployment statistics</td>
+</tr>
+<tr>
+<td><strong>Imitation Learning</strong></td>
+<td>Learning a policy from demonstrations of desired behaviour (behavioural cloning, DAgger, IRL)</td>
+</tr>
+<tr>
+<td><strong>Inverse Kinematics</strong></td>
+<td>Computing the joint angles needed to place the end effector at a desired position and orientation</td>
+</tr>
+<tr>
+<td><strong>LiDAR</strong></td>
+<td>Light Detection and Ranging — a sensor that measures distances by emitting laser pulses and timing their return</td>
+</tr>
+<tr>
+<td><strong>Localisation</strong></td>
+<td>Determining the robot's or vehicle's precise position and orientation within a map or coordinate frame</td>
+</tr>
+<tr>
+<td><strong>MPC (Model Predictive Control)</strong></td>
+<td>Control strategy that optimises actions over a future horizon using a predictive model of system dynamics</td>
+</tr>
+<tr>
+<td><strong>Odometry</strong></td>
+<td>Estimating position change over time from wheel rotation, visual features, or inertial measurements</td>
+</tr>
+<tr>
+<td><strong>PID Controller</strong></td>
+<td>Proportional-Integral-Derivative controller — the foundational algorithm for low-level actuator control</td>
+</tr>
+<tr>
+<td><strong>Point Cloud</strong></td>
+<td>A set of 3D points (x, y, z) representing the surface geometry of a scene, typically from LiDAR</td>
+</tr>
+<tr>
+<td><strong>ROS (Robot Operating System)</strong></td>
+<td>Open-source middleware framework providing tools, libraries, and conventions for robot software development</td>
+</tr>
+<tr>
+<td><strong>RRT (Rapidly-exploring Random Tree)</strong></td>
+<td>A sampling-based motion planning algorithm that grows a search tree through free space</td>
+</tr>
+<tr>
+<td><strong>SAE Level</strong></td>
+<td>Society of Automotive Engineers automation level (L0–L5) classifying the degree of vehicle autonomy</td>
+</tr>
+<tr>
+<td><strong>Sensor Fusion</strong></td>
+<td>Combining data from multiple sensor modalities to produce more accurate and robust perception</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real</strong></td>
+<td>Transferring a policy trained in simulation to a real-world physical system</td>
+</tr>
+<tr>
+<td><strong>SLAM (Simultaneous Localisation and Mapping)</strong></td>
+<td>Building a map of an unknown environment while simultaneously tracking the robot's position within it</td>
+</tr>
+<tr>
+<td><strong>SOTIF (ISO 21448)</strong></td>
+<td>Safety of the Intended Functionality — a standard addressing performance limitations of automated driving</td>
+</tr>
+<tr>
+<td><strong>Teleoperation</strong></td>
+<td>Remote human control of a robot, typically with visual feedback</td>
+</tr>
+<tr>
+<td><strong>VLA (Vision-Language-Action) Model</strong></td>
+<td>A model that takes visual and language inputs and outputs robot actions; the robotic counterpart of VLMs</td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>The physical volume reachable by a robot's end effector</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Physical / Embodied AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/13-physical-embodied-ai-overview.gif" alt="Physical / Embodied AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Physical / Embodied AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/13-physical-embodied-ai-tech-stack.gif" alt="Physical / Embodied AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Key Regulatory Standards</h3>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Domain</th>
+<th>What It Requires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISO 10218</strong></td>
+<td>Industrial robots</td>
+<td>Safety requirements for industrial robot systems</td>
+</tr>
+<tr>
+<td><strong>ISO 15066</strong></td>
+<td>Collaborative robots</td>
+<td>Safety requirements for collaborative robot operation (force limits, speed limits)</td>
+</tr>
+<tr>
+<td><strong>ISO 13849</strong></td>
+<td>Machinery safety</td>
+<td>Safety-related parts of control systems; Performance Levels (PL a-e)</td>
+</tr>
+<tr>
+<td><strong>IEC 62443</strong></td>
+<td>Industrial cybersecurity</td>
+<td>Security for industrial automation and control systems</td>
+</tr>
+<tr>
+<td><strong>SAE J3016</strong></td>
+<td>Autonomous vehicles</td>
+<td>Defines the 6 levels of driving automation (L0–L5)</td>
+</tr>
+<tr>
+<td><strong>ISO 21448 (SOTIF)</strong></td>
+<td>Autonomous vehicles</td>
+<td>Safety of the intended functionality — addresses performance limitations and misuse</td>
+</tr>
+<tr>
+<td><strong>EASA (EU) / FAA (US)</strong></td>
+<td>Drones</td>
+<td>Drone registration, airspace rules, remote ID, operational categories</td>
+</tr>
+<tr>
+<td><strong>FDA</strong></td>
+<td>Surgical robots</td>
+<td>Classification as medical devices; pre-market clearance or approval</td>
+</tr>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>All high-risk AI</td>
+<td>Conformity assessment for high-risk AI applications including autonomous vehicles and robots</td>
+</tr>
+<tr>
+<td><strong>EU Machinery Regulation (2023/1230)</strong></td>
+<td>Machinery / robots</td>
+<td>Updated regulation covering AI-enabled machinery; replaces Machinery Directive</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Liability</strong></td>
+<td>Who is responsible when an autonomous system causes harm — manufacturer, operator, software provider, or the AI itself?</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>How to certify systems that learn and adapt; deterministic testing is insufficient for learned policies</td>
+</tr>
+<tr>
+<td><strong>Operational Design Domain</strong></td>
+<td>Precisely defining the conditions under which the system is safe to operate</td>
+</tr>
+<tr>
+<td><strong>Continuous Learning</strong></td>
+<td>If robots update policies in the field, every update needs safety re-validation</td>
+</tr>
+<tr>
+<td><strong>Data Privacy</strong></td>
+<td>Robots with cameras in public and private spaces raise significant surveillance and privacy concerns</td>
+</tr>
+<tr>
+<td><strong>Workforce Displacement</strong></td>
+<td>Automation of physical labour has significant social and economic implications</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Perception Systems for Physical AI</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Sensor Modalities</h3>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Data Type</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera (RGB)</strong></td>
+<td>2D images</td>
+<td>Rich semantic information; cheap; high resolution</td>
+<td>No direct depth; affected by lighting</td>
+</tr>
+<tr>
+<td><strong>Stereo Camera</strong></td>
+<td>2D images + depth</td>
+<td>Depth from disparity; moderate cost</td>
+<td>Short-range depth; calibration-sensitive</td>
+</tr>
+<tr>
+<td><strong>LiDAR</strong></td>
+<td>3D point clouds</td>
+<td>Precise 3D geometry; works in dark</td>
+<td>Expensive; sparse data; affected by rain/fog</td>
+</tr>
+<tr>
+<td><strong>Radar</strong></td>
+<td>Range + velocity</td>
+<td>Works in all weather; measures velocity directly</td>
+<td>Low resolution; no semantic information</td>
+</tr>
+<tr>
+<td><strong>Ultrasonic</strong></td>
+<td>Range (short)</td>
+<td>Cheap; good for close-range detection</td>
+<td>Very limited range; no detail</td>
+</tr>
+<tr>
+<td><strong>IMU (Inertial)</strong></td>
+<td>Acceleration + rotation</td>
+<td>Fast (1 kHz+); no external dependencies</td>
+<td>Drifts over time; must be fused with other sensors</td>
+</tr>
+<tr>
+<td><strong>GPS/GNSS</strong></td>
+<td>Global position</td>
+<td>Global reference; ubiquitous</td>
+<td>~1m accuracy outdoor; poor indoor; latency</td>
+</tr>
+<tr>
+<td><strong>Force/Torque</strong></td>
+<td>Contact forces</td>
+<td>Enables compliant manipulation; detects contact</td>
+<td>Only measures at sensor location</td>
+</tr>
+<tr>
+<td><strong>Tactile</strong></td>
+<td>Surface contact patterns</td>
+<td>Enables dexterous manipulation; object property sensing</td>
+<td>Low spatial coverage; emerging technology</td>
+</tr>
+</tbody>
+</table>
+<h3>Perception Tasks</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Description</th>
+<th>Key Techniques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Object Detection</strong></td>
+<td>Identify and localise objects in 2D images</td>
+<td>YOLO, DETR, Faster R-CNN</td>
+</tr>
+<tr>
+<td><strong>Semantic Segmentation</strong></td>
+<td>Classify every pixel/point into a category</td>
+<td>Mask R-CNN, SegFormer, PointNet++</td>
+</tr>
+<tr>
+<td><strong>Depth Estimation</strong></td>
+<td>Estimate distance from camera to each pixel</td>
+<td>Stereo disparity, monocular depth (MiDaS, DPT)</td>
+</tr>
+<tr>
+<td><strong>3D Reconstruction</strong></td>
+<td>Build 3D models of scenes from sensor data</td>
+<td>NeRF, 3D Gaussian Splatting, Structure from Motion</td>
+</tr>
+<tr>
+<td><strong>Pose Estimation</strong></td>
+<td>Determine the 6-DoF position/orientation of objects or humans</td>
+<td>PoseNet, FoundationPose, MediaPipe</td>
+</tr>
+<tr>
+<td><strong>SLAM</strong></td>
+<td>Build a map and localise simultaneously</td>
+<td>ORB-SLAM3, Cartographer, RTAB-MAP</td>
+</tr>
+<tr>
+<td><strong>Semantic Scene Understanding</strong></td>
+<td>Understand spatial relationships, affordances, and meaning</td>
+<td>Scene graphs, VLMs (vision-language models)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Robot Learning & Sim-to-Real Transfer</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Learning Paradigms for Robots</h3>
+<table>
+<thead>
+<tr>
+<th>Paradigm</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Imitation Learning (IL)</strong></td>
+<td>Learn from human demonstrations (teleoperation, motion capture, video)</td>
+<td>Behavioural cloning, DAgger, ACT</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning (RL)</strong></td>
+<td>Learn from reward signals in simulation, then transfer to real world</td>
+<td>PPO in MuJoCo, sim-to-real for locomotion</td>
+</tr>
+<tr>
+<td><strong>Self-Supervised Learning</strong></td>
+<td>Learn representations from unlabeled sensor data (e.g., predicting next frame)</td>
+<td>Robotic pre-training, world models</td>
+</tr>
+<tr>
+<td><strong>Language-Conditioned Learning</strong></td>
+<td>Natural language instructions guide robot behaviour</td>
+<td>RT-2, SayCan, Inner Monologue</td>
+</tr>
+<tr>
+<td><strong>Hybrid IL + RL</strong></td>
+<td>Bootstrap with demonstrations; refine with RL</td>
+<td>Residual RL, demo-augmented RL</td>
+</tr>
+</tbody>
+</table>
+<h3>Sim-to-Real Transfer</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ SIM-TO-REAL PIPELINE │
+│ │
+│ 1. SIMULATE 2. RANDOMISE 3. TRANSFER │
+│ ────────────── ────────────── ────────────── │
+│ Train policy in Apply domain Deploy trained │
+│ high-fidelity randomisation: policy on real │
+│ physics vary physics, robot; fine-tune │
+│ simulator visuals, and with real-world │
+│ dynamics data │
+│ │
+│ NVIDIA Isaac Sim Randomise mass, Zero-shot or │
+│ MuJoCo friction, lighting, few-shot transfer │
+│ PyBullet texture, noise │
+│ │
+│ ──── GOAL: POLICY LEARNED IN SIMULATION WORKS IN REAL WORLD ────── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Key Sim-to-Real Techniques</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domain Randomisation</strong></td>
+<td>Randomise visual and physical parameters in simulation to produce robust, transferable policies</td>
+</tr>
+<tr>
+<td><strong>System Identification</strong></td>
+<td>Measure real-world physical parameters and replicate them accurately in simulation</td>
+</tr>
+<tr>
+<td><strong>Progressive Nets</strong></td>
+<td>Transfer features learned in simulation; fine-tune additional columns on real data</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real + Real-to-Sim</strong></td>
+<td>Iteratively refine the simulator using real-world data; then retrain</td>
+</tr>
+<tr>
+<td><strong>Teacher-Student Distillation</strong></td>
+<td>Train a privileged "teacher" in simulation with full state; distil into a "student" using only real sensor inputs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Autonomous Vehicles & Navigation</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>AV Architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensor Suite</strong></td>
+<td>Cameras (8–16), LiDAR (1–5), radar (4–6), ultrasonic, GPS/IMU</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>3D object detection, lane detection, traffic sign/light recognition, free space estimation</td>
+</tr>
+<tr>
+<td><strong>Prediction</strong></td>
+<td>Predict trajectories of other road users (vehicles, pedestrians, cyclists)</td>
+</tr>
+<tr>
+<td><strong>Planning</strong></td>
+<td>Route planning, behaviour planning (lane change, merge), trajectory optimisation</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Steering, throttle, brake commands — following the planned trajectory</td>
+</tr>
+<tr>
+<td><strong>HD Maps</strong></td>
+<td>Centimetre-accurate maps with lane markings, traffic signs, and road topology</td>
+</tr>
+<tr>
+<td><strong>Localisation</strong></td>
+<td>Fuse GPS, IMU, LiDAR, and camera with HD maps for centimetre-level self-localisation</td>
+</tr>
+</tbody>
+</table>
+<h3>SAE Automation Levels</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L0</strong></td>
+<td>No Automation</td>
+<td>Human performs all driving tasks</td>
+<td>Manual car</td>
+</tr>
+<tr>
+<td><strong>L1</strong></td>
+<td>Driver Assistance</td>
+<td>System controls steering OR acceleration</td>
+<td>Adaptive cruise control</td>
+</tr>
+<tr>
+<td><strong>L2</strong></td>
+<td>Partial Automation</td>
+<td>System controls steering AND acceleration; human monitors</td>
+<td>Tesla Autopilot, GM Super Cruise</td>
+</tr>
+<tr>
+<td><strong>L3</strong></td>
+<td>Conditional Automation</td>
+<td>System handles all driving in defined conditions; human must be ready to take over</td>
+<td>Mercedes Drive Pilot (highway)</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>High Automation</td>
+<td>System handles all driving in defined conditions; no human intervention needed</td>
+<td>Waymo robotaxi (geofenced)</td>
+</tr>
+<tr>
+<td><strong>L5</strong></td>
+<td>Full Automation</td>
+<td>System handles all driving in all conditions</td>
+<td>Not yet achieved</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Physical / Embodied AI</strong> places artificial intelligence inside a physical body that must perceive, navigate, and manipulate the real world. Unlike purely software AI systems that process digital data, embodied AI must deal with the fundamental challenges of the physical world: continuous sensory streams, real-time constraints, noise, uncertainty, safety hazards, and the irreversibility of physical actions.</p>
+<p>Embodied AI bridges the gap between digital intelligence and real-world impact. It encompasses robotics (industrial, service, humanoid), autonomous vehicles (cars, trucks, drones, ships), wearable devices, and smart infrastructure. The defining characteristic is that these systems have a <strong>physical body</strong> with sensors and actuators, and their intelligence is grounded in real-world spatial and temporal experience.</p>
+<p>The field has accelerated dramatically with advances in foundation models for robotics, sim-to-real transfer, and the convergence of vision-language models with physical control. Systems like Google RT-2, NVIDIA's GR00T, Tesla Optimus, and Figure's humanoids represent a new generation of physically embodied intelligence.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Embodies — acts in the physical world through a body with sensors and actuators, perceiving and manipulating real environments</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Sensor fusion, perception, world modelling, motion planning, control, sim-to-real transfer, robot foundation models</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Physical actions — movement, manipulation, navigation, assembly, delivery, inspection</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Grounded in the real world — must handle continuous physics, real-time constraints, safety risks, and irreversible actions</td>
+</tr>
+</tbody>
+</table>
+<h3>Physical AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through a body with sensors and actuators</td>
+<td>Robot arm, autonomous vehicle, drone</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously in digital environments</td>
+<td>Research agent, coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new digital content from learned distributions</td>
+<td>Text generation, image synthesis</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical data</td>
+<td>Fraud detection, demand forecasting</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Maps input to output with no learning or planning</td>
+<td>Thermostat, ABS braking system</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns from reward signals via trial and error</td>
+<td>AlphaGo, RL-based robot policy</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Agentic AI:</strong> Agentic AI operates in digital environments using software tools (APIs, web browsers, code interpreters). Physical AI operates in the real physical world — its actions move matter, consume energy, and carry safety risks.</p>
+<p><strong>Key Distinction from Reactive AI:</strong> Reactive AI responds to stimuli with no planning or learning. Physical AI performs complex planning, learns from experience, and maintains world models — but shares the need for real-time, deterministic safety subsystems.</p>
+<p><strong>Key Distinction from Reinforcement Learning AI:</strong> RL is a learning paradigm — a technique used within Physical AI systems. Physical AI is a deployment domain — a system that exists in the real world and may use RL, supervised learning, foundation models, or classical control.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p><strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</strong></p>
+ <p style="margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── Tab Navigation ── */
+document.querySelectorAll('.nav-bar button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.nav-bar button').forEach(b => b.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ const tab = document.getElementById('tab-' + btn.dataset.tab);
+ if (tab) tab.classList.add('active');
+ /* Lazy-init charts when their tab is first shown */
+ if (btn.dataset.tab === 'benchmarks') initBenchmarkCharts();
+ if (btn.dataset.tab === 'market') initMarketCharts();
+ });
+});
+
+/* ── Sense-Act Loop Interaction ── */
+const loopData = {
+ sense: { title: 'Sense (Perception)', desc: 'Cameras, LiDAR, tactile sensors, IMUs, and microphones capture raw data from the physical environment. Multi-modal sensing provides redundancy and richer representations.' },
+ perceive: { title: 'Perceive (World Model)', desc: 'Raw sensor data is fused into a coherent world model — 3D scene graphs, occupancy grids, semantic maps, and object pose estimates that represent the robot\'s understanding of its surroundings.' },
+ plan: { title: 'Plan (Task / Motion)', desc: 'Given the world model and a goal, the planner decomposes tasks and generates collision-free trajectories. Methods range from classical PDDL to LLM-based task translators and MPC.' },
+ act: { title: 'Act (Control / Execution)', desc: 'Motor commands are sent to actuators — joint torques, wheel velocities, gripper forces. Real-time servo loops run at 100–1000 Hz to track the planned trajectory with precision.' },
+ observe: { title: 'Observe (Outcome)', desc: 'The system evaluates the effect of its actions — did the grasp succeed? Is the vehicle on course? Outcome observation closes the loop, triggering replanning if the result diverges from expectations.' }
+};
+document.querySelectorAll('.loop-node').forEach(node => {
+ node.addEventListener('click', () => {
+ const key = node.dataset.node;
+ const info = loopData[key];
+ if (!info) return;
+ const box = document.getElementById('loopInfo');
+ box.innerHTML = '<h3>' + info.title + '</h3><p>' + info.desc + '</p>';
+ box.style.borderColor = 'var(--accent)';
+ });
+});
+
+/* ── Stack Accordion ── */
+function toggleStack(el) {
+ el.classList.toggle('expanded');
+}
+
+/* ── Domain / Use-Case Accordion ── */
+function toggleDomain(header) {
+ const item = header.parentElement;
+ item.classList.toggle('open');
+}
+
+/* ── Glossary Filter ── */
+function filterGlossary() {
+ const q = document.getElementById('glossaryInput').value.toLowerCase();
+ document.querySelectorAll('.glossary-entry').forEach(e => {
+ const text = e.textContent.toLowerCase();
+ e.style.display = text.includes(q) ? '' : 'none';
+ });
+}
+
+/* ── Chart.js Defaults ── */
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+
+/* ── Benchmark Charts (lazy) ── */
+let benchInit = false;
+function initBenchmarkCharts() {
+ if (benchInit) return;
+ benchInit = true;
+
+ /* Horizontal bar — Manipulation */
+ new Chart(document.getElementById('chartManipulation'), {
+ type: 'bar',
+ data: {
+ labels: ['CALVIN (lang-cond.)', 'RLBench (multi-task)', 'ManiSkill2', 'BEHAVIOR-1K'],
+ datasets: [{
+ label: '% Success',
+ data: [87, 82, 75, 52],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a'],
+ borderRadius: 6,
+ barThickness: 30
+ }]
+ },
+ options: {
+ indexAxis: 'y',
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: { callbacks: { label: ctx => ctx.parsed.x + '%' } }
+ },
+ scales: {
+ x: { max: 100, grid: { color: '#30363d' }, ticks: { callback: v => v + '%' } },
+ y: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Radar — AV Safety */
+ new Chart(document.getElementById('chartAVSafety'), {
+ type: 'radar',
+ data: {
+ labels: ['nuScenes mAP', 'Waymo Open', 'CARLA Leader.', 'KITTI 3D', 'Argoverse'],
+ datasets: [{
+ label: 'Score',
+ data: [78, 82, 68, 90, 75],
+ backgroundColor: 'rgba(201,168,76,0.10)',
+ borderColor: '#c9a84c',
+ pointBackgroundColor: '#c9a84c',
+ pointBorderColor: '#0d1117',
+ pointRadius: 5,
+ borderWidth: 2
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ r: {
+ beginAtZero: true,
+ max: 100,
+ grid: { color: '#30363d' },
+ angleLines: { color: '#30363d' },
+ pointLabels: { font: { size: 11 } },
+ ticks: { stepSize: 20, backdropColor: 'transparent' }
+ }
+ }
+ }
+ });
+}
+
+/* ── Market Charts (lazy) ── */
+let marketInit = false;
+function initMarketCharts() {
+ if (marketInit) return;
+ marketInit = true;
+
+ /* Bar — Segments */
+ new Chart(document.getElementById('chartSegments'), {
+ type: 'bar',
+ data: {
+ labels: ['Autonomous\nVehicles', 'Industrial\nRobots', 'Service\nRobots', 'Drones', 'Surgical\nRobots', 'AMRs'],
+ datasets: [{
+ label: '$B',
+ data: [54, 22, 18, 15, 8.5, 4.8],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570', '#5e96b8'],
+ borderRadius: 6,
+ barThickness: 36
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y + 'B' } }
+ },
+ scales: {
+ y: { grid: { color: '#30363d' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Line — Growth */
+ new Chart(document.getElementById('chartGrowth'), {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+ datasets: [{
+ label: 'Total Market ($B)',
+ data: [122, 142, 165, 192, 224, 262, 310],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(88,166,255,0.10)',
+ fill: true,
+ tension: 0.35,
+ pointBackgroundColor: '#c9a84c',
+ pointBorderColor: '#0d1117',
+ pointRadius: 5,
+ pointHoverRadius: 8,
+ borderWidth: 2.5
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y + 'B' } }
+ },
+ scales: {
+ y: { grid: { color: '#30363d' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: '#30363d' } }
+ }
+ }
+ });
+}
+
+</script>
+<nav class="chapter-nav">
+ <a href="optimisation-operations-research-ai.html"><span>&larr;</span><div><small>Previous</small>Optimisation / OR AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="predictive-discriminative-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Predictive / Discriminative AI</div><span>&rarr;</span></a>
+</nav>
+
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

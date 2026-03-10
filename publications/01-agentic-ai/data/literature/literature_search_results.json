@@ -1,0 +1,2702 @@
+{
+  "search_date": "2026-03-28T23:38:13.773625",
+  "queries": [
+    "LLM autonomous agents survey",
+    "agentic AI architecture framework",
+    "multi-agent LLM systems",
+    "ReAct reasoning acting language models",
+    "Reflexion self-correction language agents",
+    "tool use language models function calling",
+    "SWE-Bench software engineering benchmark",
+    "WebArena web agent benchmark",
+    "agent-to-agent protocol communication",
+    "model context protocol MCP",
+    "LLM agent memory architecture",
+    "human-in-the-loop AI agents",
+    "tree of thoughts deliberate problem solving",
+    "agent benchmark evaluation LLM",
+    "plan and execute language model agent"
+  ],
+  "total_unique_papers": 60,
+  "papers": [
+    {
+      "paperId": "c83b6a023a5c5ec71b44920a41b41fc007266c44",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2503-13657",
+        "ArXiv": "2503.13657",
+        "DOI": "10.48550/arXiv.2503.13657",
+        "CorpusId": 277103715
+      },
+      "title": "Why Do Multi-Agent LLM Systems Fail?",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 260,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-03-17",
+      "authors": [
+        {
+          "authorId": "2183597606",
+          "name": "M. Cemri"
+        },
+        {
+          "authorId": "2350657859",
+          "name": "Melissa Z. Pan"
+        },
+        {
+          "authorId": "2326452801",
+          "name": "Shuyi Yang"
+        },
+        {
+          "authorId": "2347536533",
+          "name": "Lakshya A. Agrawal"
+        },
+        {
+          "authorId": "2356551209",
+          "name": "Bhavya Chopra"
+        },
+        {
+          "authorId": "2119293525",
+          "name": "Rishabh Tiwari"
+        },
+        {
+          "authorId": "2242659602",
+          "name": "Kurt Keutzer"
+        },
+        {
+          "authorId": "2350757088",
+          "name": "Aditya G. Parameswaran"
+        },
+        {
+          "authorId": "2347540207",
+          "name": "Dan Klein"
+        },
+        {
+          "authorId": "2066489854",
+          "name": "K. Ramchandran"
+        },
+        {
+          "authorId": "2221547236",
+          "name": "Matei Zaharia"
+        },
+        {
+          "authorId": "2326242154",
+          "name": "Joseph E. Gonzalez"
+        },
+        {
+          "authorId": "2316149874",
+          "name": "Ion Stoica"
+        }
+      ]
+    },
+    {
+      "paperId": "274c5e690df6ca44c62430a39f3f8e4a6d9e5b79",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2405-07960",
+        "ArXiv": "2405.07960",
+        "DOI": "10.48550/arXiv.2405.07960",
+        "CorpusId": 269757778
+      },
+      "title": "AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments",
+      "venue": "arXiv.org",
+      "year": 2024,
+      "citationCount": 159,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-05-13",
+      "authors": [
+        {
+          "authorId": "1741847434",
+          "name": "Samuel Schmidgall"
+        },
+        {
+          "authorId": "2212401663",
+          "name": "Rojin Ziaei"
+        },
+        {
+          "authorId": "2283934409",
+          "name": "Carl Harris"
+        },
+        {
+          "authorId": "2366017883",
+          "name": "Eduardo Reis"
+        },
+        {
+          "authorId": "2301156454",
+          "name": "Jeffrey Jopling"
+        },
+        {
+          "authorId": "2301157095",
+          "name": "Michael Moor"
+        }
+      ]
+    },
+    {
+      "paperId": "cf270bea2fba82bcff83f380c1f100d346b14ecf",
+      "externalIds": {
+        "DBLP": "conf/nips/MaZZYYJLKH24",
+        "ArXiv": "2401.13178",
+        "DOI": "10.48550/arXiv.2401.13178",
+        "CorpusId": 267199917
+      },
+      "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+      "venue": "Neural Information Processing Systems",
+      "year": 2024,
+      "citationCount": 158,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-01-24",
+      "authors": [
+        {
+          "authorId": "2149147043",
+          "name": "Chang Ma"
+        },
+        {
+          "authorId": "2108012146",
+          "name": "Junlei Zhang"
+        },
+        {
+          "authorId": "2217435907",
+          "name": "Zhihao Zhu"
+        },
+        {
+          "authorId": "2280986528",
+          "name": "Cheng Yang"
+        },
+        {
+          "authorId": "2280977051",
+          "name": "Yujiu Yang"
+        },
+        {
+          "authorId": "2257387631",
+          "name": "Yaohui Jin"
+        },
+        {
+          "authorId": "2327866629",
+          "name": "Zhenzhong Lan"
+        },
+        {
+          "authorId": "2280992367",
+          "name": "Lingpeng Kong"
+        },
+        {
+          "authorId": "2280902241",
+          "name": "Junxian He"
+        }
+      ]
+    },
+    {
+      "paperId": "d4e0d8645fe6972c1974f01300f7a0ffa8d85fff",
+      "externalIds": {
+        "DBLP": "journals/jair/RetzlaffDWMAYSATH24",
+        "DOI": "10.1613/jair.1.15348",
+        "CorpusId": 267448673
+      },
+      "title": "Human-in-the-Loop Reinforcement Learning: A Survey and Position on Requirements, Challenges, and Opportunities",
+      "venue": "Journal of Artificial Intelligence Research",
+      "year": 2024,
+      "citationCount": 121,
+      "openAccessPdf": {
+        "url": "https://jair.org/index.php/jair/article/download/15348/27006",
+        "status": "GOLD",
+        "license": "publisher-specific-oa"
+      },
+      "publicationDate": "2024-01-30",
+      "authors": [
+        {
+          "authorId": "146421615",
+          "name": "Charles Retzlaff"
+        },
+        {
+          "authorId": "2276447200",
+          "name": "Srijita Das"
+        },
+        {
+          "authorId": "3431133",
+          "name": "Christabel Wayllace"
+        },
+        {
+          "authorId": "2218658148",
+          "name": "Payam Mousavi"
+        },
+        {
+          "authorId": "2293400859",
+          "name": "Mohammad Afshari"
+        },
+        {
+          "authorId": "2277465157",
+          "name": "Tianpei Yang"
+        },
+        {
+          "authorId": "1947785",
+          "name": "Anna Saranti"
+        },
+        {
+          "authorId": "2162998870",
+          "name": "Alessa Angerschmid"
+        },
+        {
+          "authorId": "2266169062",
+          "name": "Matthew E. Taylor"
+        },
+        {
+          "authorId": "2282747384",
+          "name": "Andreas Holzinger"
+        }
+      ]
+    },
+    {
+      "paperId": "b93ac10de176c4a7aaa2cc652b90bb25636532cd",
+      "externalIds": {
+        "DBLP": "conf/coling/WangLF0W25",
+        "ArXiv": "2402.11443",
+        "DOI": "10.48550/arXiv.2402.11443",
+        "CorpusId": 267750939
+      },
+      "title": "Benchmark Self-Evolving: A Multi-Agent Framework for Dynamic LLM Evaluation",
+      "venue": "International Conference on Computational Linguistics",
+      "year": 2024,
+      "citationCount": 73,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-02-18",
+      "authors": [
+        {
+          "authorId": "2116420560",
+          "name": "Siyuan Wang"
+        },
+        {
+          "authorId": "2284692290",
+          "name": "Zhuohan Long"
+        },
+        {
+          "authorId": "9610143",
+          "name": "Zhihao Fan"
+        },
+        {
+          "authorId": "2118602528",
+          "name": "Zhongyu Wei"
+        },
+        {
+          "authorId": "2253852592",
+          "name": "Xuanjing Huang"
+        }
+      ]
+    },
+    {
+      "paperId": "30005325950b25248d4c825e48feea5aed160ea9",
+      "externalIds": {
+        "ArXiv": "2410.15164",
+        "DBLP": "journals/corr/abs-2410-15164",
+        "DOI": "10.48550/arXiv.2410.15164",
+        "CorpusId": 273502662
+      },
+      "title": "SPA-Bench: A Comprehensive Benchmark for SmartPhone Agent Evaluation",
+      "venue": "International Conference on Learning Representations",
+      "year": 2024,
+      "citationCount": 55,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-10-19",
+      "authors": [
+        {
+          "authorId": "2276296743",
+          "name": "Jingxuan Chen"
+        },
+        {
+          "authorId": "2326993040",
+          "name": "Derek Yuen"
+        },
+        {
+          "authorId": "2327018556",
+          "name": "Bin Xie"
+        },
+        {
+          "authorId": "2326988547",
+          "name": "Yuhao Yang"
+        },
+        {
+          "authorId": "2267388987",
+          "name": "Gongwei Chen"
+        },
+        {
+          "authorId": "2276250792",
+          "name": "Zhihao Wu"
+        },
+        {
+          "authorId": null,
+          "name": "Yixing Li"
+        },
+        {
+          "authorId": "2327132703",
+          "name": "Xurui Zhou"
+        },
+        {
+          "authorId": "2281903918",
+          "name": "Weiwen Liu"
+        },
+        {
+          "authorId": "2327032191",
+          "name": "Shuai Wang"
+        },
+        {
+          "authorId": "2327689218",
+          "name": "Kaiwen Zhou"
+        },
+        {
+          "authorId": "2267332946",
+          "name": "Rui Shao"
+        },
+        {
+          "authorId": "2258952251",
+          "name": "Liqiang Nie"
+        },
+        {
+          "authorId": "2282544603",
+          "name": "Yasheng Wang"
+        },
+        {
+          "authorId": "2327843646",
+          "name": "Jianye Hao"
+        },
+        {
+          "authorId": "2327096473",
+          "name": "Jun Wang"
+        },
+        {
+          "authorId": "2275194161",
+          "name": "Kun Shao"
+        }
+      ]
+    },
+    {
+      "paperId": "361e68a489b714660ef6459952b9e40d88f76f90",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2412-01778",
+        "ArXiv": "2412.01778",
+        "DOI": "10.48550/arXiv.2412.01778",
+        "CorpusId": 274437431
+      },
+      "title": "HackSynth: LLM Agent and Evaluation Framework for Autonomous Penetration Testing",
+      "venue": "arXiv.org",
+      "year": 2024,
+      "citationCount": 42,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-12-02",
+      "authors": [
+        {
+          "authorId": "2326994313",
+          "name": "Lajos Muzsai"
+        },
+        {
+          "authorId": "2333364166",
+          "name": "David Imolai"
+        },
+        {
+          "authorId": "49203835",
+          "name": "Andr\u00e1s Luk\u00e1cs"
+        }
+      ]
+    },
+    {
+      "paperId": "5f0913ff752271bdb958b73e13f6b46577554379",
+      "externalIds": {
+        "ArXiv": "2410.12855",
+        "DBLP": "journals/corr/abs-2410-12855",
+        "DOI": "10.48550/arXiv.2410.12855",
+        "CorpusId": 273404094
+      },
+      "title": "JAILJUDGE: A Comprehensive Jailbreak Judge Benchmark with Multi-Agent Enhanced Explanation Evaluation Framework",
+      "venue": "arXiv.org",
+      "year": 2024,
+      "citationCount": 39,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-10-11",
+      "authors": [
+        {
+          "authorId": "2305735046",
+          "name": "Fan Liu"
+        },
+        {
+          "authorId": "2326805997",
+          "name": "Yue Feng"
+        },
+        {
+          "authorId": "2276485346",
+          "name": "Zhao Xu"
+        },
+        {
+          "authorId": "2261149457",
+          "name": "Lixin Su"
+        },
+        {
+          "authorId": "2265517632",
+          "name": "Xinyu Ma"
+        },
+        {
+          "authorId": "2326302293",
+          "name": "Dawei Yin"
+        },
+        {
+          "authorId": "2306141860",
+          "name": "Hao Liu"
+        }
+      ]
+    },
+    {
+      "paperId": "c4c9f7a2e76a1edfb4ab39eb78b99ff72763111c",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2502-13897",
+        "ArXiv": "2502.13897",
+        "DOI": "10.48550/arXiv.2502.13897",
+        "CorpusId": 276449961
+      },
+      "title": "DataSciBench: An LLM Agent Benchmark for Data Science",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 37,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-02-19",
+      "authors": [
+        {
+          "authorId": "2215493789",
+          "name": "Dan Zhang"
+        },
+        {
+          "authorId": "2279543303",
+          "name": "Sining Zhoubian"
+        },
+        {
+          "authorId": "2256981123",
+          "name": "Min Cai"
+        },
+        {
+          "authorId": "2346264272",
+          "name": "Fengzu Li"
+        },
+        {
+          "authorId": "2346274414",
+          "name": "Lekang Yang"
+        },
+        {
+          "authorId": "2378729923",
+          "name": "Wei Wang"
+        },
+        {
+          "authorId": "2061034259",
+          "name": "Tian Dong"
+        },
+        {
+          "authorId": "2279661467",
+          "name": "Ziniu Hu"
+        },
+        {
+          "authorId": "2261087802",
+          "name": "Jie Tang"
+        },
+        {
+          "authorId": "2279544073",
+          "name": "Yisong Yue"
+        }
+      ]
+    },
+    {
+      "paperId": "40d8e46e117013f3e3143bb2ad03b3fb5c58f00b",
+      "externalIds": {
+        "DBLP": "conf/acl/YangZWWYWHLWW25",
+        "ArXiv": "2502.12904",
+        "DOI": "10.48550/arXiv.2502.12904",
+        "CorpusId": 276421961
+      },
+      "title": "Fraud-R1 : A Multi-Round Benchmark for Assessing the Robustness of LLM Against Augmented Fraud and Phishing Inducements",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "year": 2025,
+      "citationCount": 27,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-02-18",
+      "authors": [
+        {
+          "authorId": "2261365449",
+          "name": "Shu Yang"
+        },
+        {
+          "authorId": "2326209762",
+          "name": "Shenzhe Zhu"
+        },
+        {
+          "authorId": "2345970008",
+          "name": "Zeyu Wu"
+        },
+        {
+          "authorId": "2345926181",
+          "name": "Keyu Wang"
+        },
+        {
+          "authorId": "2348073490",
+          "name": "Junchi Yao"
+        },
+        {
+          "authorId": "2258673220",
+          "name": "Junchao Wu"
+        },
+        {
+          "authorId": "2153121378",
+          "name": "Lijie Hu"
+        },
+        {
+          "authorId": "2294515958",
+          "name": "Mengdi Li"
+        },
+        {
+          "authorId": "2345926662",
+          "name": "Derek Wong"
+        },
+        {
+          "authorId": "2346720668",
+          "name": "Di Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "dd78cb0e63d3821713db3b4a347984eb3c1c157e",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2507-22358",
+        "ArXiv": "2507.22358",
+        "DOI": "10.48550/arXiv.2507.22358",
+        "CorpusId": 280391757
+      },
+      "title": "Magentic-UI: Towards Human-in-the-loop Agentic Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 23,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-07-30",
+      "authors": [
+        {
+          "authorId": "1389741476",
+          "name": "Hussein Mozannar"
+        },
+        {
+          "authorId": "2253477657",
+          "name": "Gagan Bansal"
+        },
+        {
+          "authorId": "2330393790",
+          "name": "Cheng Tan"
+        },
+        {
+          "authorId": "2284065834",
+          "name": "Adam Fourney"
+        },
+        {
+          "authorId": "3353344",
+          "name": "Victor C. Dibia"
+        },
+        {
+          "authorId": "2317128289",
+          "name": "Jingya Chen"
+        },
+        {
+          "authorId": "2329557508",
+          "name": "Jack Gerrits"
+        },
+        {
+          "authorId": "2374057252",
+          "name": "Tyler Payne"
+        },
+        {
+          "authorId": "2336959196",
+          "name": "Matheus Kunzler Maldaner"
+        },
+        {
+          "authorId": "2374056905",
+          "name": "Madeleine Grunde-McLaughlin"
+        },
+        {
+          "authorId": "2374047943",
+          "name": "Eric Zhu"
+        },
+        {
+          "authorId": "2329557867",
+          "name": "Griffin Bassman"
+        },
+        {
+          "authorId": "2329556120",
+          "name": "Jacob Alber"
+        },
+        {
+          "authorId": "2330145463",
+          "name": "Peter Chang"
+        },
+        {
+          "authorId": "2815483",
+          "name": "Ricky Loynd"
+        },
+        {
+          "authorId": "2329556659",
+          "name": "Friederike Niedtner"
+        },
+        {
+          "authorId": "2247662058",
+          "name": "Ece Kamar"
+        },
+        {
+          "authorId": "2374049243",
+          "name": "Maya Murad"
+        },
+        {
+          "authorId": "2686501",
+          "name": "Rafah Hosn"
+        },
+        {
+          "authorId": "1719124",
+          "name": "Saleema Amershi"
+        }
+      ]
+    },
+    {
+      "paperId": "d5676076ac122b8767126e76cb3a1867e1e50741",
+      "externalIds": {
+        "DBLP": "conf/acl/Guo0X24",
+        "DOI": "10.18653/v1/2024.findings-acl.928",
+        "CorpusId": 271953942
+      },
+      "title": "CToolEval: A Chinese Benchmark for LLM-Powered Agent Evaluation in Real-World API Interactions",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "year": 2024,
+      "citationCount": 21,
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null
+      },
+      "publicationDate": null,
+      "authors": [
+        {
+          "authorId": "2246789578",
+          "name": "Zishan Guo"
+        },
+        {
+          "authorId": "2263648395",
+          "name": "Yufei Huang"
+        },
+        {
+          "authorId": "2310434485",
+          "name": "Deyi Xiong"
+        }
+      ]
+    },
+    {
+      "paperId": "6abbebb1516f705feb2723df5b9d4d37a9220d63",
+      "externalIds": {
+        "ArXiv": "2501.14654",
+        "CorpusId": 275906711
+      },
+      "title": "MedAgentBench: A Realistic Virtual EHR Environment to Benchmark Medical LLM Agents",
+      "venue": "",
+      "year": 2025,
+      "citationCount": 18,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-01-24",
+      "authors": [
+        {
+          "authorId": "2275838560",
+          "name": "Yixing Jiang"
+        },
+        {
+          "authorId": "2144552475",
+          "name": "K. Black"
+        },
+        {
+          "authorId": "2342277600",
+          "name": "Gloria Geng"
+        },
+        {
+          "authorId": "2343294736",
+          "name": "Danny Park"
+        },
+        {
+          "authorId": "2276186656",
+          "name": "James Zou"
+        },
+        {
+          "authorId": "2275325197",
+          "name": "Andrew Y. Ng"
+        },
+        {
+          "authorId": "2301503096",
+          "name": "Jonathan H. Chen"
+        }
+      ]
+    },
+    {
+      "paperId": "7706de6db48c21e19895fb2907359aeb2c450476",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2506-23719",
+        "ArXiv": "2506.23719",
+        "DOI": "10.48550/arXiv.2506.23719",
+        "CorpusId": 280011042
+      },
+      "title": "DABstep: Data Agent Benchmark for Multi-step Reasoning",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 17,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-30",
+      "authors": [
+        {
+          "authorId": "2333361813",
+          "name": "Alex Egg"
+        },
+        {
+          "authorId": "2371069251",
+          "name": "Martin Iglesias Goyanes"
+        },
+        {
+          "authorId": "2371069907",
+          "name": "Friso Kingma"
+        },
+        {
+          "authorId": "2371070056",
+          "name": "Andreu Mora"
+        },
+        {
+          "authorId": "51128119",
+          "name": "L. V. Werra"
+        },
+        {
+          "authorId": "2354240405",
+          "name": "Thomas Wolf"
+        }
+      ]
+    },
+    {
+      "paperId": "fe6e201cbb8f05cd5035f74b156f227c5b580678",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2501-18645",
+        "ArXiv": "2501.18645",
+        "DOI": "10.48550/arXiv.2501.18645",
+        "CorpusId": 276079474
+      },
+      "title": "Layered Chain-of-Thought Prompting for Multi-Agent LLM Systems: A Comprehensive Approach to Explainable Large Language Models",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 15,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-01-29",
+      "authors": [
+        {
+          "authorId": "1491637336",
+          "name": "Manish Sanwal"
+        }
+      ]
+    },
+    {
+      "paperId": "a8bb8d35fed1e69da71c5668f1fe1fa43c0dde29",
+      "externalIds": {
+        "DBLP": "journals/jcheminf/NahalMMHKJNEK24",
+        "PubMedCentral": "11629536",
+        "DOI": "10.1186/s13321-024-00924-y",
+        "CorpusId": 274606589,
+        "PubMed": "39654043"
+      },
+      "title": "Human-in-the-loop active learning for goal-oriented molecule generation",
+      "venue": "Journal of Cheminformatics",
+      "year": 2024,
+      "citationCount": 15,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": "CCBY"
+      },
+      "publicationDate": "2024-12-01",
+      "authors": [
+        {
+          "authorId": "2316102087",
+          "name": "Yasmine Nahal"
+        },
+        {
+          "authorId": "2316102095",
+          "name": "Janosch Menke"
+        },
+        {
+          "authorId": "2302803897",
+          "name": "Julien Martinelli"
+        },
+        {
+          "authorId": "34066178",
+          "name": "M. Heinonen"
+        },
+        {
+          "authorId": "2275338852",
+          "name": "Mikhail Kabeshov"
+        },
+        {
+          "authorId": "2284772857",
+          "name": "J. Janet"
+        },
+        {
+          "authorId": "2501828",
+          "name": "Eva Nittinger"
+        },
+        {
+          "authorId": "2268590953",
+          "name": "Ola Engkvist"
+        },
+        {
+          "authorId": "2306574165",
+          "name": "Samuel Kaski"
+        }
+      ]
+    },
+    {
+      "paperId": "8be6b0b0c7af16da10938c252db05cd8dd2f74d0",
+      "externalIds": {
+        "ArXiv": "2504.00218",
+        "DBLP": "journals/corr/abs-2504-00218",
+        "DOI": "10.48550/arXiv.2504.00218",
+        "CorpusId": 277468592
+      },
+      "title": "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "year": 2025,
+      "citationCount": 14,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-03-31",
+      "authors": [
+        {
+          "authorId": "2204648295",
+          "name": "Rana Muhammad Shahroz Khan"
+        },
+        {
+          "authorId": "2354228808",
+          "name": "Zhen Tan"
+        },
+        {
+          "authorId": "2324246676",
+          "name": "Sukwon Yun"
+        },
+        {
+          "authorId": "80104349",
+          "name": "Charles Flemming"
+        },
+        {
+          "authorId": "2353158386",
+          "name": "Tianlong Chen"
+        }
+      ]
+    },
+    {
+      "paperId": "f7a636f9fba4e3e2107569a68580ed1acbb5f639",
+      "externalIds": {
+        "ArXiv": "2504.02051",
+        "DBLP": "journals/corr/abs-2504-02051",
+        "DOI": "10.48550/arXiv.2504.02051",
+        "CorpusId": 277509979
+      },
+      "title": "Self-Resource Allocation in Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 13,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-04-02",
+      "authors": [
+        {
+          "authorId": "2039956094",
+          "name": "Alfonso Amayuelas"
+        },
+        {
+          "authorId": "2320144920",
+          "name": "Jingbo Yang"
+        },
+        {
+          "authorId": "2081814989",
+          "name": "Saaket Agashe"
+        },
+        {
+          "authorId": "2353382304",
+          "name": "Ashwin Nagarajan"
+        },
+        {
+          "authorId": "2264484459",
+          "name": "Antonis Antoniades"
+        },
+        {
+          "authorId": "2325785593",
+          "name": "Xin Eric Wang"
+        },
+        {
+          "authorId": "2310569060",
+          "name": "W. Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "ebf945c38d6bccbbd337246f9bd8ddd3de192e8d",
+      "externalIds": {
+        "ArXiv": "2505.13516",
+        "DBLP": "journals/corr/abs-2505-13516",
+        "DOI": "10.48550/arXiv.2505.13516",
+        "CorpusId": 278768556
+      },
+      "title": "HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 11,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-05-17",
+      "authors": [
+        {
+          "authorId": "2307312578",
+          "name": "Zhipeng Hou"
+        },
+        {
+          "authorId": "2287398029",
+          "name": "Junyi Tang"
+        },
+        {
+          "authorId": "2258419495",
+          "name": "Yipeng Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "4022081711542ac1b1d82ca455f2a4282d6359aa",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2505-23847",
+        "ArXiv": "2505.23847",
+        "DOI": "10.48550/arXiv.2505.23847",
+        "CorpusId": 279070585
+      },
+      "title": "Seven Security Challenges That Must be Solved in Cross-domain Multi-agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 10,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-05-28",
+      "authors": [
+        {
+          "authorId": "2330174791",
+          "name": "Ronny Ko"
+        },
+        {
+          "authorId": "2365448949",
+          "name": "Jiseong Jeong"
+        },
+        {
+          "authorId": "2266803478",
+          "name": "Shuyuan Zheng"
+        },
+        {
+          "authorId": "2284717877",
+          "name": "Chuan Xiao"
+        },
+        {
+          "authorId": "2364688966",
+          "name": "Taewan Kim"
+        },
+        {
+          "authorId": "2266396584",
+          "name": "Makoto Onizuka"
+        },
+        {
+          "authorId": "2364683254",
+          "name": "Wonyong Shin"
+        }
+      ]
+    },
+    {
+      "paperId": "bf675da72e7f157aef6f88fa753fc15e5497cba7",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2510-04851",
+        "ArXiv": "2510.04851",
+        "DOI": "10.48550/arXiv.2510.04851",
+        "CorpusId": 281843936
+      },
+      "title": "LEGOMem: Modular Procedural Memory for Multi-agent LLM Systems for Workflow Automation",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 10,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-10-06",
+      "authors": [
+        {
+          "authorId": "2366459229",
+          "name": "Dongge Han"
+        },
+        {
+          "authorId": "2356855299",
+          "name": "Camille Couturier"
+        },
+        {
+          "authorId": "2224651036",
+          "name": "Daniel Madrigal Diaz"
+        },
+        {
+          "authorId": "2239159562",
+          "name": "Xuchao Zhang"
+        },
+        {
+          "authorId": "3898805",
+          "name": "Victor R\u00fchle"
+        },
+        {
+          "authorId": "2336867866",
+          "name": "Saravan Rajmohan"
+        }
+      ]
+    },
+    {
+      "paperId": "25d2c50c05e9109f56b275f13948b0965edd103b",
+      "externalIds": {
+        "ArXiv": "2508.04903",
+        "DBLP": "journals/corr/abs-2508-04903",
+        "DOI": "10.48550/arXiv.2508.04903",
+        "CorpusId": 280546606
+      },
+      "title": "RCR-Router: Efficient Role-Aware Context Routing for Multi-Agent LLM Systems with Structured Memory",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 9,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-08-06",
+      "authors": [
+        {
+          "authorId": "2290562780",
+          "name": "Jun Liu"
+        },
+        {
+          "authorId": "32409528",
+          "name": "Zhenglun Kong"
+        },
+        {
+          "authorId": "2243019970",
+          "name": "Changdi Yang"
+        },
+        {
+          "authorId": "2374459036",
+          "name": "Fan Yang"
+        },
+        {
+          "authorId": "2363094629",
+          "name": "Tianqi Li"
+        },
+        {
+          "authorId": "2052289825",
+          "name": "Peiyan Dong"
+        },
+        {
+          "authorId": "66290418",
+          "name": "Joannah Nanjekye"
+        },
+        {
+          "authorId": "2290540583",
+          "name": "Hao Tang"
+        },
+        {
+          "authorId": "2339773412",
+          "name": "Geng Yuan"
+        },
+        {
+          "authorId": "2260347943",
+          "name": "Wei Niu"
+        },
+        {
+          "authorId": "2323523681",
+          "name": "Wenbin Zhang"
+        },
+        {
+          "authorId": "2241612245",
+          "name": "Pu Zhao"
+        },
+        {
+          "authorId": "2322988586",
+          "name": "Xue Lin"
+        },
+        {
+          "authorId": "2334241033",
+          "name": "Dong-Xu Huang"
+        },
+        {
+          "authorId": "2290628977",
+          "name": "Yanzhi Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "74dcc00b879fc7c482a8769f2b8722113092209e",
+      "externalIds": {
+        "ArXiv": "2506.01839",
+        "DBLP": "journals/corr/abs-2506-01839",
+        "DOI": "10.48550/arXiv.2506.01839",
+        "CorpusId": 279118505
+      },
+      "title": "Beyond Static Responses: Multi-Agent LLM Systems as a New Paradigm for Social Science Research",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 8,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-02",
+      "authors": [
+        {
+          "authorId": "2244620651",
+          "name": "Jennifer Haase"
+        },
+        {
+          "authorId": "145729210",
+          "name": "S. Pokutta"
+        }
+      ]
+    },
+    {
+      "paperId": "973eed2ad54fdb551b88b114355bdc53ce0b808b",
+      "externalIds": {
+        "PubMedCentral": "12647001",
+        "DBLP": "journals/corr/abs-2503-05854",
+        "ArXiv": "2503.05854",
+        "DOI": "10.3389/frai.2025.1674927",
+        "CorpusId": 276903398,
+        "PubMed": "41312024"
+      },
+      "title": "Accelerating earth science discovery via multi-agent LLM systems",
+      "venue": "Frontiers Artif. Intell.",
+      "year": 2025,
+      "citationCount": 8,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": "CCBY"
+      },
+      "publicationDate": "2025-03-07",
+      "authors": [
+        {
+          "authorId": "2349384705",
+          "name": "Dmitrii Pantiukhin"
+        },
+        {
+          "authorId": "2349384389",
+          "name": "Boris Shapkin"
+        },
+        {
+          "authorId": "2349382556",
+          "name": "Ivan Kuznetsov"
+        },
+        {
+          "authorId": "2349384713",
+          "name": "Antonia Anna Jost"
+        },
+        {
+          "authorId": "74657494",
+          "name": "Nikolay Koldunov"
+        }
+      ]
+    },
+    {
+      "paperId": "0649854974b42995dd4b61c21905c932b8c5cbc9",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2506-15253",
+        "ArXiv": "2506.15253",
+        "DOI": "10.48550/arXiv.2506.15253",
+        "CorpusId": 279448055
+      },
+      "title": "RAS-Eval: A Comprehensive Benchmark for Security Evaluation of LLM Agents in Real-World Environments",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 8,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-18",
+      "authors": [
+        {
+          "authorId": "2367694080",
+          "name": "Yuchuan Fu"
+        },
+        {
+          "authorId": "2267877864",
+          "name": "Xiaohan Yuan"
+        },
+        {
+          "authorId": "2335812930",
+          "name": "Dongxia Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "4f2e66aa384ecc488cfa35a980ea97fd3ce13496",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2410-09114",
+        "ArXiv": "2410.09114",
+        "DOI": "10.48550/arXiv.2410.09114",
+        "CorpusId": 273346139
+      },
+      "title": "Catastrophic Cyber Capabilities Benchmark (3CB): Robustly Evaluating LLM Agent Cyber Offense Capabilities",
+      "venue": "arXiv.org",
+      "year": 2024,
+      "citationCount": 8,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-10-10",
+      "authors": [
+        {
+          "authorId": "2325908862",
+          "name": "Andrey Anurin"
+        },
+        {
+          "authorId": "2055592712",
+          "name": "Jonathan Ng"
+        },
+        {
+          "authorId": "2325906804",
+          "name": "K. Schaffer"
+        },
+        {
+          "authorId": "2378467993",
+          "name": "Ziyue Wang"
+        },
+        {
+          "authorId": "2325906687",
+          "name": "Jason Schreiber"
+        },
+        {
+          "authorId": "2005663935",
+          "name": "Esben Kran"
+        }
+      ]
+    },
+    {
+      "paperId": "bb23a6573d3323b575aec1d6d43dcda202f8513b",
+      "externalIds": {
+        "DOI": "10.1016/j.sftr.2025.101152",
+        "CorpusId": 280735466
+      },
+      "title": "Beyond human-in-the-loop: Sensemaking between artificial intelligence and human intelligence collaboration",
+      "venue": "Sustainable Futures",
+      "year": 2025,
+      "citationCount": 7,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-12-01",
+      "authors": [
+        {
+          "authorId": "2279786763",
+          "name": "Xinyue Hao"
+        },
+        {
+          "authorId": "2370389229",
+          "name": "Emrah Demir"
+        },
+        {
+          "authorId": "2345546338",
+          "name": "D. Eyers"
+        }
+      ]
+    },
+    {
+      "paperId": "750212f3622acde7262c031e6ba1c11804974c7f",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2507-17061",
+        "ArXiv": "2507.17061",
+        "DOI": "10.48550/arXiv.2507.17061",
+        "CorpusId": 280220236
+      },
+      "title": "Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 6,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-07-22",
+      "authors": [
+        {
+          "authorId": "2355571856",
+          "name": "Chengxuan Xia"
+        },
+        {
+          "authorId": "2356127062",
+          "name": "Qianye Wu"
+        },
+        {
+          "authorId": "2357987359",
+          "name": "Sixuan Tian"
+        },
+        {
+          "authorId": "2374191554",
+          "name": "Yilun Hao"
+        }
+      ]
+    },
+    {
+      "paperId": "6dafab866aee42bac0e0df26f9206170e711f0e1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2508-08997",
+        "ArXiv": "2508.08997",
+        "DOI": "10.48550/arXiv.2508.08997",
+        "CorpusId": 280635601
+      },
+      "title": "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 6,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-08-12",
+      "authors": [
+        {
+          "authorId": "2122962281",
+          "name": "Sizhe Yuen"
+        },
+        {
+          "authorId": "2120326643",
+          "name": "Francisco Gomez Medina"
+        },
+        {
+          "authorId": "2362430750",
+          "name": "Ting Su"
+        },
+        {
+          "authorId": "2362605118",
+          "name": "Yali Du"
+        },
+        {
+          "authorId": "2266134809",
+          "name": "A. Sobey"
+        }
+      ]
+    },
+    {
+      "paperId": "f1c9f9f11204015d2822b14d5b5595723c20ee8a",
+      "externalIds": {
+        "ArXiv": "2408.13406",
+        "CorpusId": 271956586
+      },
+      "title": "Collaboration Dynamics and Reliability Challenges of Multi-Agent LLM Systems in Finite Element Analysis",
+      "venue": "",
+      "year": 2024,
+      "citationCount": 6,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-08-23",
+      "authors": [
+        {
+          "authorId": "2250306972",
+          "name": "C. Tian"
+        },
+        {
+          "authorId": "1739210672",
+          "name": "Yilei Zhang"
+        }
+      ]
+    },
+    {
+      "paperId": "521524075179c6b085bd0504860e5b9755554bb1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2505-00820",
+        "ArXiv": "2505.00820",
+        "DOI": "10.48550/arXiv.2505.00820",
+        "CorpusId": 278310859
+      },
+      "title": "HMCF: A Human-in-the-loop Multi-Robot Collaboration Framework Based on Large Language Models",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 5,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-05-01",
+      "authors": [
+        {
+          "authorId": "2353287296",
+          "name": "Zhaoxing Li"
+        },
+        {
+          "authorId": "2359158687",
+          "name": "Wenbo Wu"
+        },
+        {
+          "authorId": "2353314796",
+          "name": "Yue Wang"
+        },
+        {
+          "authorId": "2368092807",
+          "name": "Yanran Xu"
+        },
+        {
+          "authorId": "2212098546",
+          "name": "William Hunt"
+        },
+        {
+          "authorId": "2300286824",
+          "name": "Sebastian Stein"
+        }
+      ]
+    },
+    {
+      "paperId": "15a3dd1719b12b30f245bef6f946371034f5253c",
+      "externalIds": {
+        "DBLP": "journals/thms/YauSCFEC24",
+        "DOI": "10.1109/THMS.2024.3467370",
+        "CorpusId": 273465934
+      },
+      "title": "The Augmented Intelligence Perspective on Human-in-the-Loop Reinforcement Learning: Review, Concept Designs, and Future Directions",
+      "venue": "IEEE Transactions on Human-Machine Systems",
+      "year": 2024,
+      "citationCount": 5,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-12-01",
+      "authors": [
+        {
+          "authorId": "34896884",
+          "name": "K. Yau"
+        },
+        {
+          "authorId": "2316871829",
+          "name": "Yasir Saleem"
+        },
+        {
+          "authorId": "3093013",
+          "name": "Yung-Wey Chong"
+        },
+        {
+          "authorId": "2244625566",
+          "name": "Xiumei Fan"
+        },
+        {
+          "authorId": "2326724624",
+          "name": "Jer Min Eyu"
+        },
+        {
+          "authorId": "2278351127",
+          "name": "David Chieng"
+        }
+      ]
+    },
+    {
+      "paperId": "a722d114b78182585c159f678fe86c9a7aae8181",
+      "externalIds": {
+        "ArXiv": "2406.15341",
+        "CorpusId": 270688133
+      },
+      "title": "GenoTEX: An LLM Agent Benchmark for Automated Gene Expression Data Analysis",
+      "venue": "",
+      "year": 2024,
+      "citationCount": 5,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2024-06-21",
+      "authors": [
+        {
+          "authorId": "2268636670",
+          "name": "Haoyang Liu"
+        },
+        {
+          "authorId": "2301538159",
+          "name": "Shuyu Chen"
+        },
+        {
+          "authorId": "2378029521",
+          "name": "Ye Zhang"
+        },
+        {
+          "authorId": "2256769627",
+          "name": "Haohan Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "7c2222819c7bbe9f13ecce02718ee73649308abe",
+      "externalIds": {
+        "ArXiv": "2504.08113",
+        "DBLP": "conf/pts/NooyensBBD25",
+        "DOI": "10.48550/arXiv.2504.08113",
+        "CorpusId": 277741368
+      },
+      "title": "Test Amplification for REST APIs via Single and Multi-Agent LLM Systems",
+      "venue": "International Conference on Testing Software and Systems",
+      "year": 2025,
+      "citationCount": 4,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-04-10",
+      "authors": [
+        {
+          "authorId": "2355099338",
+          "name": "Robbe Nooyens"
+        },
+        {
+          "authorId": "2300648346",
+          "name": "Tolgahan Bardakci"
+        },
+        {
+          "authorId": "3203537",
+          "name": "Mutlu Beyaz\u0131t"
+        },
+        {
+          "authorId": "2265671851",
+          "name": "Serge Demeyer"
+        }
+      ]
+    },
+    {
+      "paperId": "7e4d3b819547212190325d0771cafebcd009f241",
+      "externalIds": {
+        "ArXiv": "2511.13998",
+        "DBLP": "journals/corr/abs-2511-13998",
+        "DOI": "10.48550/arXiv.2511.13998",
+        "CorpusId": 283080288
+      },
+      "title": "LoCoBench-Agent: An Interactive Benchmark for LLM Agents in Long-Context Software Engineering",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 4,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-11-17",
+      "authors": [
+        {
+          "authorId": "2375300635",
+          "name": "Jielin Qiu"
+        },
+        {
+          "authorId": "2286595352",
+          "name": "Zuxin Liu"
+        },
+        {
+          "authorId": "2223887365",
+          "name": "Zhiwei Liu"
+        },
+        {
+          "authorId": "2223748790",
+          "name": "Rithesh Murthy"
+        },
+        {
+          "authorId": "2312345256",
+          "name": "Jianguo Zhang"
+        },
+        {
+          "authorId": "2319965998",
+          "name": "Haolin Chen"
+        },
+        {
+          "authorId": "2352883539",
+          "name": "Shiyu Wang"
+        },
+        {
+          "authorId": "2308423944",
+          "name": "Ming Zhu"
+        },
+        {
+          "authorId": "2354128342",
+          "name": "Liangwei Yang"
+        },
+        {
+          "authorId": "2286700513",
+          "name": "Juntao Tan"
+        },
+        {
+          "authorId": "2372863501",
+          "name": "Roshan Ram"
+        },
+        {
+          "authorId": "116606529",
+          "name": "Akshara Prabhakar"
+        },
+        {
+          "authorId": "2047548223",
+          "name": "T. Awalgaonkar"
+        },
+        {
+          "authorId": "2389218943",
+          "name": "Zixiang Chen"
+        },
+        {
+          "authorId": "2060909365",
+          "name": "Zhepeng Cen"
+        },
+        {
+          "authorId": "2380062516",
+          "name": "Cheng Qian"
+        },
+        {
+          "authorId": "71926704",
+          "name": "Shelby Heinecke"
+        },
+        {
+          "authorId": "2275161304",
+          "name": "Weiran Yao"
+        },
+        {
+          "authorId": "2238207181",
+          "name": "Silvio Savarese"
+        },
+        {
+          "authorId": "2256976968",
+          "name": "Caiming Xiong"
+        },
+        {
+          "authorId": "2258793468",
+          "name": "Huan Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "8622333e08ee2c1911efe78fbaeeec86240d3e8f",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2512-00417",
+        "ArXiv": "2512.00417",
+        "DOI": "10.48550/arXiv.2512.00417",
+        "CorpusId": 283449288
+      },
+      "title": "CryptoBench: A Dynamic Benchmark for Expert-Level Evaluation of LLM Agents in Cryptocurrency",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 4,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-11-29",
+      "authors": [
+        {
+          "authorId": "2319146416",
+          "name": "Jiacheng Guo"
+        },
+        {
+          "authorId": "2395712177",
+          "name": "Suozhi Huang"
+        },
+        {
+          "authorId": "2356822616",
+          "name": "Zixin Yao"
+        },
+        {
+          "authorId": "2401630679",
+          "name": "Yifan Zhang"
+        },
+        {
+          "authorId": "2327002550",
+          "name": "Yifu Lu"
+        },
+        {
+          "authorId": "2380796696",
+          "name": "Jiashuo Liu"
+        },
+        {
+          "authorId": "2334822989",
+          "name": "Zihao Li"
+        },
+        {
+          "authorId": "2395890335",
+          "name": "Nicholas Deng"
+        },
+        {
+          "authorId": "2397572710",
+          "name": "Qixin Xiao"
+        },
+        {
+          "authorId": "2397573271",
+          "name": "J. Tian"
+        },
+        {
+          "authorId": "2376394773",
+          "name": "Kanghong Zhan"
+        },
+        {
+          "authorId": "2376486877",
+          "name": "Tianyi Li"
+        },
+        {
+          "authorId": "2395676342",
+          "name": "Xiaochen Liu"
+        },
+        {
+          "authorId": "2065023241",
+          "name": "J. Ge"
+        },
+        {
+          "authorId": "2395722933",
+          "name": "Chaoyang He"
+        },
+        {
+          "authorId": "2242535459",
+          "name": "Kaixuan Huang"
+        },
+        {
+          "authorId": "2349330382",
+          "name": "Lin Yang"
+        },
+        {
+          "authorId": "2397349829",
+          "name": "Wenhao Huang"
+        },
+        {
+          "authorId": "2381580561",
+          "name": "Mengdi Wang"
+        }
+      ]
+    },
+    {
+      "paperId": "08d2962e065bfd2f7f0055932db62f5407a98d27",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2506-10467",
+        "ArXiv": "2506.10467",
+        "DOI": "10.1109/Cyber-AI66431.2025.11233474",
+        "CorpusId": 279319076
+      },
+      "title": "Specification and Evaluation of Multi-Agent LLM Systems - Prototype and Cybersecurity Applications",
+      "venue": "2025 International Conference on Cybersecurity and AI-Based Systems (Cyber-AI)",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-12",
+      "authors": [
+        {
+          "authorId": "29434170",
+          "name": "Felix H\u00e4rer"
+        }
+      ]
+    },
+    {
+      "paperId": "bd7107b697981c50cf683b6b5df762f8a82b81e6",
+      "externalIds": {
+        "ArXiv": "2505.19405",
+        "DBLP": "journals/corr/abs-2505-19405",
+        "DOI": "10.48550/arXiv.2505.19405",
+        "CorpusId": 278904576
+      },
+      "title": "CoTGuard: Using Chain-of-Thought Triggering for Copyright Protection in Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-05-26",
+      "authors": [
+        {
+          "authorId": "2344213037",
+          "name": "Yan Wen"
+        },
+        {
+          "authorId": "2275765198",
+          "name": "Junfeng Guo"
+        },
+        {
+          "authorId": "2261394090",
+          "name": "Heng Huang"
+        }
+      ]
+    },
+    {
+      "paperId": "7cac6fd998b511d0e58d6463e8212a0c3d3c28cd",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2504-07303",
+        "ArXiv": "2504.07303",
+        "DOI": "10.48550/arXiv.2504.07303",
+        "CorpusId": 277667780
+      },
+      "title": "Modeling Response Consistency in Multi-Agent LLM Systems: A Comparative Analysis of Shared and Separate Context Approaches",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-04-09",
+      "authors": [
+        {
+          "authorId": "3085146",
+          "name": "Tooraj Helmi"
+        }
+      ]
+    },
+    {
+      "paperId": "b281a29ea6a293a5c9533439901758cdf425d48d",
+      "externalIds": {
+        "DBLP": "conf/iccv/BellosLSDSC25",
+        "ArXiv": "2507.18374",
+        "DOI": "10.1109/ICCVW69036.2025.00264",
+        "CorpusId": 280017670
+      },
+      "title": "Towards Effective Human-in-the-Loop Assistive AI Agents",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-07-24",
+      "authors": [
+        {
+          "authorId": "2291361308",
+          "name": "Filippos Bellos"
+        },
+        {
+          "authorId": "2291437798",
+          "name": "Yayuan Li"
+        },
+        {
+          "authorId": "2371992858",
+          "name": "C. Shu"
+        },
+        {
+          "authorId": "2371994375",
+          "name": "Ruey Day"
+        },
+        {
+          "authorId": "1737754",
+          "name": "J. Siskind"
+        },
+        {
+          "authorId": "2291361321",
+          "name": "Jason J. Corso"
+        }
+      ]
+    },
+    {
+      "paperId": "3725df5fdccbe583dd057f63b4256e710d19989f",
+      "externalIds": {
+        "ArXiv": "2512.25055",
+        "DBLP": "journals/corr/abs-2512-25055",
+        "DOI": "10.48550/arXiv.2512.25055",
+        "CorpusId": 284350912
+      },
+      "title": "Context-aware LLM-based AI Agents for Human-centered Energy Management Systems in Smart Buildings",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-12-31",
+      "authors": [
+        {
+          "authorId": "2118328652",
+          "name": "Tianzhi He"
+        },
+        {
+          "authorId": "2080729",
+          "name": "F. Jazizadeh"
+        }
+      ]
+    },
+    {
+      "paperId": "c4ed686f8994dcd9fc3efe8cabc0ad24c0f5f0b9",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2507-06864",
+        "ArXiv": "2507.06864",
+        "DOI": "10.1145/3750069.3750114",
+        "CorpusId": 280149142
+      },
+      "title": "Toward Neurodivergent-Aware Productivity: A Systems andAI-Based Human-in-the-Loop Framework for ADHD-AffectedProfessionals",
+      "venue": "ACM SIGCHI Italian Chapter International Conference on Computer-Human Interaction",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-07-09",
+      "authors": [
+        {
+          "authorId": "2372779220",
+          "name": "Raghavendra Deshmukh"
+        }
+      ]
+    },
+    {
+      "paperId": "4a222dc3bf0c3faef606cd7e376e9f401b8a97ff",
+      "externalIds": {
+        "ArXiv": "2507.01019",
+        "DBLP": "journals/corr/abs-2507-01019",
+        "DOI": "10.48550/arXiv.2507.01019",
+        "CorpusId": 280146537
+      },
+      "title": "MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-04-10",
+      "authors": [
+        {
+          "authorId": "2274032484",
+          "name": "Imran M. Mirza"
+        },
+        {
+          "authorId": "2372944760",
+          "name": "Cole Huang"
+        },
+        {
+          "authorId": "2373018930",
+          "name": "Ishwara Vasista"
+        },
+        {
+          "authorId": "2253471177",
+          "name": "Rohan Patil"
+        },
+        {
+          "authorId": "2327866177",
+          "name": "Aslihan Akalin"
+        },
+        {
+          "authorId": "2348096381",
+          "name": "Sean O'Brien"
+        },
+        {
+          "authorId": "2312105716",
+          "name": "Kevin Zhu"
+        }
+      ]
+    },
+    {
+      "paperId": "fbfe74a4b0afe303b738057a0571cd4a999767fd",
+      "externalIds": {
+        "ArXiv": "2510.24358",
+        "DBLP": "journals/corr/abs-2510-24358",
+        "DOI": "10.65109/HJFB4234",
+        "CorpusId": 282400651
+      },
+      "title": "Automatically Benchmarking LLM Code Agents through Agent-Driven Annotation and Evaluation",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 3,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-10-28",
+      "authors": [
+        {
+          "authorId": "2171109846",
+          "name": "Lingyue Fu"
+        },
+        {
+          "authorId": "2366788946",
+          "name": "Bolun Zhang"
+        },
+        {
+          "authorId": "2309177994",
+          "name": "Hao Guan"
+        },
+        {
+          "authorId": "2366990420",
+          "name": "Yaoming Zhu"
+        },
+        {
+          "authorId": "2344051706",
+          "name": "Lin Qiu"
+        },
+        {
+          "authorId": "2375764292",
+          "name": "Weiwen Liu"
+        },
+        {
+          "authorId": "2238182663",
+          "name": "Xuezhi Cao"
+        },
+        {
+          "authorId": "2350441548",
+          "name": "Xunliang Cai"
+        },
+        {
+          "authorId": "2240768092",
+          "name": "Weinan Zhang"
+        },
+        {
+          "authorId": "2388589551",
+          "name": "Yong Yu"
+        }
+      ]
+    },
+    {
+      "paperId": "d626f3d94501d01ee537017640ebae5a8493bf0b",
+      "externalIds": {
+        "DBLP": "conf/lak/Sankaranarayanan25",
+        "CorpusId": 280408212
+      },
+      "title": "Automating Thematic Analysis with Multi-Agent LLM Systems",
+      "venue": "LAK Workshops",
+      "year": 2025,
+      "citationCount": 2,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": null,
+      "authors": [
+        {
+          "authorId": "3069162",
+          "name": "Sreecharan Sankaranarayanan"
+        },
+        {
+          "authorId": "2366796483",
+          "name": "Conrad Borchers"
+        },
+        {
+          "authorId": "2366762405",
+          "name": "Sebastian Simon"
+        },
+        {
+          "authorId": "2366807473",
+          "name": "Elham Tajik"
+        },
+        {
+          "authorId": "35609767",
+          "name": "Amine Hatun Ata\u015f"
+        },
+        {
+          "authorId": "2366714929",
+          "name": "Berkan Celik"
+        },
+        {
+          "authorId": "2366807425",
+          "name": "Francesco Balzan"
+        },
+        {
+          "authorId": "2179451430",
+          "name": "Bahar Shahrokhian"
+        }
+      ]
+    },
+    {
+      "paperId": "cfc66734f49232637339326710ed578a6e1f32b7",
+      "externalIds": {
+        "DBLP": "conf/sui/GrandiCK25",
+        "DOI": "10.1145/3694907.3765923",
+        "CorpusId": 282394993
+      },
+      "title": "Human-in-the-Loop VR Training with Live Actor Embodiment for Police Traffic Stop De-escalation",
+      "venue": "Symposium on Spatial User Interaction",
+      "year": 2025,
+      "citationCount": 2,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-11-09",
+      "authors": [
+        {
+          "authorId": "3394328",
+          "name": "J. Grandi"
+        },
+        {
+          "authorId": "2276754403",
+          "name": "D. B. Costa"
+        },
+        {
+          "authorId": "2257351437",
+          "name": "Regis Kopper"
+        }
+      ]
+    },
+    {
+      "paperId": "d69c44c5692a0af2d1263f62689922f58b22e10b",
+      "externalIds": {
+        "ArXiv": "2508.15940",
+        "DBLP": "journals/corr/abs-2508-15940",
+        "DOI": "10.1109/ICLAD65226.2025.00033",
+        "CorpusId": 280652332
+      },
+      "title": "ASIC-Agent: An Autonomous Multi-Agent System for ASIC Design with Benchmark Evaluation",
+      "venue": "2025 IEEE International Conference on LLM-Aided Design (ICLAD)",
+      "year": 2025,
+      "citationCount": 2,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-26",
+      "authors": [
+        {
+          "authorId": "2303402115",
+          "name": "Ahmed Allam"
+        },
+        {
+          "authorId": "2283151419",
+          "name": "Youssef Mansour"
+        },
+        {
+          "authorId": "2303404381",
+          "name": "Mohamed Shalan"
+        }
+      ]
+    },
+    {
+      "paperId": "5e1e0cf1bb6c1c70149fcd88b0060ed881cc481e",
+      "externalIds": {
+        "DBLP": "journals/tmlr/0001KD25",
+        "CorpusId": 279393274
+      },
+      "title": "Solving Multi-agent Path Finding as an LLM Benchmark: How, How Good and Why",
+      "venue": "Trans. Mach. Learn. Res.",
+      "year": 2025,
+      "citationCount": 2,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": null,
+      "authors": [
+        {
+          "authorId": "2278582297",
+          "name": "Weizhe Chen"
+        },
+        {
+          "authorId": "2256845651",
+          "name": "Sven Koenig"
+        },
+        {
+          "authorId": "1796375",
+          "name": "B. Dilkina"
+        }
+      ]
+    },
+    {
+      "paperId": "6aba9c3fc42286af5e8d42712c07a1033a763cc2",
+      "externalIds": {
+        "ArXiv": "2511.05269",
+        "DBLP": "journals/corr/abs-2511-05269",
+        "DOI": "10.48550/arXiv.2511.05269",
+        "CorpusId": 282889657
+      },
+      "title": "TAMAS: Benchmarking Adversarial Risks in Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 1,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-11-07",
+      "authors": [
+        {
+          "authorId": "2284590307",
+          "name": "Ishan Kavathekar"
+        },
+        {
+          "authorId": "2331417271",
+          "name": "Hemang Jain"
+        },
+        {
+          "authorId": "2391514707",
+          "name": "Ameya Rathod"
+        },
+        {
+          "authorId": "1734731",
+          "name": "P. Kumaraguru"
+        },
+        {
+          "authorId": "1785978",
+          "name": "Tanuja Ganu"
+        }
+      ]
+    },
+    {
+      "paperId": "34857543592ddf59a7531f7b77ebece5e2197c4b",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2507-15015",
+        "DOI": "10.48550/arXiv.2507.15015",
+        "CorpusId": 280272175
+      },
+      "title": "EduThink4AI: Translating Educational Critical Thinking into Multi-Agent LLM Systems",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 1,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": null,
+      "authors": [
+        {
+          "authorId": "2333890367",
+          "name": "Xinmeng Hou"
+        },
+        {
+          "authorId": "2373419891",
+          "name": "Zhouquan Lu"
+        },
+        {
+          "authorId": "2341444398",
+          "name": "Wenli Chen"
+        },
+        {
+          "authorId": "2118878378",
+          "name": "Hai Hu"
+        },
+        {
+          "authorId": "2374418778",
+          "name": "Qing Guo"
+        }
+      ]
+    },
+    {
+      "paperId": "f46e7e843b11aae497e1a5514af11948ed4d75b8",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2512-12950",
+        "ArXiv": "2512.12950",
+        "DOI": "10.1007/s10506-025-09490-6",
+        "CorpusId": 282968159
+      },
+      "title": "Building from Scratch: A Multi-Agent Framework with Human-in-the-Loop for Multilingual Legal Terminology Mapping",
+      "venue": "Artificial Intelligence and Law",
+      "year": 2025,
+      "citationCount": 1,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-11-11",
+      "authors": [
+        {
+          "authorId": "2393375588",
+          "name": "Lingyi Meng"
+        },
+        {
+          "authorId": "2331369191",
+          "name": "Maolin Liu"
+        },
+        {
+          "authorId": "2392339642",
+          "name": "Hao Wang"
+        },
+        {
+          "authorId": "2392749783",
+          "name": "Yilan Cheng"
+        },
+        {
+          "authorId": "2216718276",
+          "name": "Qi Yang"
+        },
+        {
+          "authorId": "2392140077",
+          "name": "Idlkaid Mohanmmed"
+        }
+      ]
+    },
+    {
+      "paperId": "4905fd2173e6ea6aa766e7da3631926dd1e71e26",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2506-04606",
+        "ArXiv": "2506.04606",
+        "DOI": "10.48550/arXiv.2506.04606",
+        "CorpusId": 279243075
+      },
+      "title": "SmartAvatar: Text- and Image-Guided Human Avatar Generation with VLM AI Agents",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 1,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-05",
+      "authors": [
+        {
+          "authorId": "2366006966",
+          "name": "Alexander Huang-Menders"
+        },
+        {
+          "authorId": "2144483892",
+          "name": "Xinhang Liu"
+        },
+        {
+          "authorId": "2212095894",
+          "name": "Andy Xu"
+        },
+        {
+          "authorId": "2269797219",
+          "name": "Yuyao Zhang"
+        },
+        {
+          "authorId": "2238101157",
+          "name": "Chi-Keung Tang"
+        },
+        {
+          "authorId": "2237983377",
+          "name": "Yu-Wing Tai"
+        }
+      ]
+    },
+    {
+      "paperId": "98bad1a9948b84ccbb81eed3dfaf117080639d04",
+      "externalIds": {
+        "ArXiv": "2504.21185",
+        "DBLP": "journals/corr/abs-2504-21185",
+        "DOI": "10.48550/arXiv.2504.21185",
+        "CorpusId": 278208257
+      },
+      "title": "AI-in-the-Loop Planning for Transportation Electrification: Case Studies from Austin, Texas",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 1,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-04-29",
+      "authors": [
+        {
+          "authorId": "2155629737",
+          "name": "S. Choi"
+        }
+      ]
+    },
+    {
+      "paperId": "25cc8cc96ea810b2dd4a2edec371254a2766bbdf",
+      "externalIds": {
+        "DBLP": "conf/icsa/SeraK25a",
+        "DOI": "10.1109/ICSA-C65153.2025.00053",
+        "CorpusId": 279003941
+      },
+      "title": "Dynamic Architectures Leveraging AI Agents and Human-in-the-Loop for Data Center Management",
+      "venue": "2025 IEEE 22nd International Conference on Software Architecture Companion (ICSA-C)",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-03-31",
+      "authors": [
+        {
+          "authorId": "2364191967",
+          "name": "Violet Deepa Sera"
+        },
+        {
+          "authorId": "40646345",
+          "name": "S. Kalra"
+        }
+      ]
+    },
+    {
+      "paperId": "5724ec9a7d06191b3b3b64f752076efb56148683",
+      "externalIds": {
+        "DOI": "10.55057/ijbtm.2025.7.10.18",
+        "CorpusId": 283989189
+      },
+      "title": "Human-in-the-Loop and Generative AI Dilemma: A Hybrid Strategy for Effective Customer Service in Enterprise CRM",
+      "venue": "International Journal of Business and Technology Management",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-12-01",
+      "authors": []
+    },
+    {
+      "paperId": "ce86a45765a936b3e719bb82686f8a21ffd80cd3",
+      "externalIds": {
+        "DOI": "10.1177/10711813251358791",
+        "CorpusId": 280137364
+      },
+      "title": "A Driver-in-the-Loop Study of Human-AI Joint Replanning",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-07-13",
+      "authors": [
+        {
+          "authorId": "2324671589",
+          "name": "Salvatore Hargis"
+        },
+        {
+          "authorId": "2260738604",
+          "name": "Connor Kannally"
+        },
+        {
+          "authorId": "50982883",
+          "name": "Martijn Ijtsma"
+        }
+      ]
+    },
+    {
+      "paperId": "a61328444984845c84fa15c78761d03229b36438",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2502-00005",
+        "ArXiv": "2502.00005",
+        "DOI": "10.48550/arXiv.2502.00005",
+        "CorpusId": 276094364
+      },
+      "title": "A Study about Distribution and Acceptance of Conversational Agents for Mental Health in Germany: Keep the Human in the Loop?",
+      "venue": "arXiv.org",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-01-05",
+      "authors": [
+        {
+          "authorId": "2343634210",
+          "name": "Christina Lukas"
+        }
+      ]
+    },
+    {
+      "paperId": "aa6be0adc03a7861818b3cc36afd13705cac9007",
+      "externalIds": {
+        "DOI": "10.32996/jcsts.2025.4.2.7",
+        "CorpusId": 285828979
+      },
+      "title": "Ethical and Trustworthy Autonomous Agents in Network SecOps: Transparency, Auditing, and Human-in-the-Loop Overrides",
+      "venue": "Frontiers in Computer Science and Artificial Intelligence",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-02-19",
+      "authors": [
+        {
+          "authorId": "2403788425",
+          "name": "Amar Gurajapu"
+        },
+        {
+          "authorId": "2404338874",
+          "name": "Swapna Anumolu"
+        },
+        {
+          "authorId": "2410818182",
+          "name": "Vardhan Garimella"
+        },
+        {
+          "authorId": "2416347995",
+          "name": "Venkata Manikanta"
+        },
+        {
+          "authorId": "2416314121",
+          "name": "Sai Ramakrishna Chundi"
+        },
+        {
+          "authorId": "2223524",
+          "name": "V. Sita"
+        },
+        {
+          "authorId": "2416314852",
+          "name": "Anand Prakash Gubbala"
+        }
+      ]
+    },
+    {
+      "paperId": "8052b7585af6fe936a2c7b44cef54fb01605253a",
+      "externalIds": {
+        "DOI": "10.30574/wjaets.2025.15.3.1110",
+        "CorpusId": 279542148
+      },
+      "title": "Orchestrating Trustworthy Text-to-SQL: Leveraging Stateful Graph Frameworks like LangGraph for Human-in-the-Loop Validation in Enterprise Environments",
+      "venue": "World Journal of Advanced Engineering Technology and Sciences",
+      "year": 2025,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2025-06-30",
+      "authors": [
+        {
+          "authorId": "2368163050",
+          "name": "Junaid Syed"
+        },
+        {
+          "authorId": "2368153346",
+          "name": "Sultan Syed"
+        },
+        {
+          "authorId": "2368153945",
+          "name": "Bushra Aijaz"
+        },
+        {
+          "authorId": "2368163811",
+          "name": "Mohammad Ahmad"
+        }
+      ]
+    },
+    {
+      "paperId": "46cdc6ec766d04e4c35aba1b59b86a61079af940",
+      "externalIds": {
+        "DBLP": "conf/fdg/KleinmanLLE23",
+        "DOI": "10.1145/3582437.3587179",
+        "CorpusId": 258050998
+      },
+      "title": "Towards a Human-in-the-Loop System for Authoring Game AI using Behavior Languages",
+      "venue": "International Conference on Foundations of Digital Games",
+      "year": 2023,
+      "citationCount": 0,
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null
+      },
+      "publicationDate": "2023-04-12",
+      "authors": [
+        {
+          "authorId": "2252170",
+          "name": "Erica Kleinman"
+        },
+        {
+          "authorId": "2120211238",
+          "name": "Spencer Lynn"
+        },
+        {
+          "authorId": "2080344327",
+          "name": "Bryan Loyall"
+        },
+        {
+          "authorId": "1381933697",
+          "name": "M. S. El-Nasr"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete AI Systems Landscape — Interactive Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+
+
+<header class="hero">
+ <h1>The Complete AI Systems Landscape</h1>
+ <p class="subtitle">An interactive master reference of all 19 AI system types — taxonomy, classification, architectures, market data, and cross-system comparisons for 2026.</p>
+ <span class="reading-time">~18 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2);font-weight:400;font-size:0.88rem;margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="publications/00-unified-taxonomy/submission/ACM%20TIST%20Formatted%20Paper%20-%20A%20Unified%20Taxonomy%20of%2019%20AI%20System%20Types.pdf" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper — Unified Taxonomy</a></p>
+ <div class="book-meta"><span>19 AI System Types</span><span class="dot">&bull;</span><span>Interactive Charts &amp; Data</span><span class="dot">&bull;</span><span>2026 Edition</span></div>
+</header>
+
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="taxonomy">Taxonomy</button>
+ <button data-tab="classification">Classification</button>
+ <button data-tab="comparison">Comparison</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="combinations">System Combos</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="aitypes">Explore All 19 Types</button>
+ <button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ═══ TAXONOMY ═══ -->
+<div class="section active" id="sec-taxonomy">
+ <h2>The 19 AI System Types</h2>
+ <p class="desc">A comprehensive taxonomy of every major AI paradigm in the 2026 landscape — grouped by primary function.</p>
+ <div class="cards cards-3">
+ <div class="card"><span class="badge bg-purple c-purple">Act</span><h3>1. Agentic AI</h3><p>Autonomous goal-driven agents that plan, use tools, maintain memory, and execute multi-step workflows.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Analyse</span><h3>2. Analytical AI</h3><p>Discovers patterns, surfaces insights, and explains data through BI, augmented analytics, and NLQ.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Automate</span><h3>3. Autonomous AI (Non-Agentic)</h3><p>Self-managing systems — auto-scaling, autopilot, algorithmic trading — within fixed boundaries.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Probabilistic</span><h3>4. Bayesian / Probabilistic AI</h3><p>Principled uncertainty quantification — MCMC, GPs, Bayesian deep learning, probabilistic programming.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Hybrid</span><h3>5. Cognitive / Neuro-Symbolic AI</h3><p>Neural + symbolic integration — knowledge-guided networks, LLM+KG, neural theorem provers.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Converse</span><h3>6. Conversational AI</h3><p>Enables natural multi-turn dialogue via chatbots, voice assistants, and conversational search.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Evolve</span><h3>7. Evolutionary / Genetic AI</h3><p>Genetic algorithms, neuroevolution, NAS — population-based optimisation inspired by evolution.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Explain</span><h3>8. Explainable AI (XAI)</h3><p>SHAP, LIME, Grad-CAM, counterfactuals — making black-box models interpretable.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Privacy</span><h3>9. Federated / Privacy-Preserving AI</h3><p>Train models without sharing raw data — FL, DP, MPC, homomorphic encryption, TEEs.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Generate</span><h3>10. Generative AI</h3><p>Creates novel content — text, images, video, audio, code, 3D, molecules — from learned distributions.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Perceive</span><h3>11. Multimodal Perception AI</h3><p>Fuses vision, language, audio, depth — VLMs, sensor fusion, any-to-any models.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Optimise</span><h3>12. Optimisation / Operations Research AI</h3><p>LP, MIP, constraint programming — mathematical optimisation for logistics, scheduling, routing.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Embody</span><h3>13. Physical / Embodied AI</h3><p>Robots, autonomous vehicles, drones — AI that senses, plans, and acts in the physical world.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Predict</span><h3>14. Predictive / Discriminative AI</h3><p>Classifies, scores, forecasts, and detects anomalies from structured and unstructured data.</p></div>
+ <div class="card"><span class="badge bg-red c-red">React</span><h3>15. Reactive AI</h3><p>Stateless stimulus-response systems — rule engines, PLCs, game minimax — no memory or learning.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Recommend</span><h3>16. Recommendation / Retrieval AI</h3><p>Collaborative filtering, neural retrieval, RAG — personalised content and search.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Learn</span><h3>17. Reinforcement Learning AI</h3><p>Learns by trial-and-error in environments — maximising cumulative reward via policy optimisation.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Simulate</span><h3>18. Scientific / Simulation AI</h3><p>PINNs, GNNs, neural operators — accelerating drug discovery, materials science, climate modelling.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Reason</span><h3>19. Symbolic / Rule-Based AI</h3><p>Knowledge graphs, ontologies, expert systems, theorem provers — explicit symbolic reasoning.</p></div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-taxonomy')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-taxonomy">
+<pre><code>Artificial Intelligence
+│
+├── 1. Agentic AI
+├── 2. Analytical AI
+├── 3. Autonomous AI (Non-Agentic)
+├── 4. Bayesian / Probabilistic AI
+├── 5. Cognitive / Neuro-Symbolic AI
+├── 6. Conversational AI
+├── 7. Evolutionary / Genetic AI
+├── 8. Explainable AI (XAI)
+├── 9. Federated / Privacy-Preserving AI
+├── 10. Generative AI
+├── 11. Multimodal Perception AI
+├── 12. Optimisation / Operations Research AI
+├── 13. Physical / Embodied AI
+├── 14. Predictive / Discriminative AI
+├── 15. Reactive AI
+├── 16. Recommendation / Retrieval AI
+├── 17. Reinforcement Learning AI
+├── 18. Scientific / Simulation AI
+└── 19. Symbolic / Rule-Based AI
+</code></pre>
+<hr />
+</div>
+
+ </div>
+</div>
+
+<!-- ═══ CLASSIFICATION ═══ -->
+<div class="section" id="sec-classification">
+ <h2>Classification Dimensions</h2>
+ <p class="desc">Every AI system can be classified along these 9 orthogonal dimensions, revealing its capabilities and limitations.</p>
+ <div class="cards cards-3">
+ <div class="card"><h3 class="c-blue">Learning Paradigm</h3><p>Supervised · Unsupervised · Self-Supervised · Reinforcement · Few-Shot · Zero-Shot · Meta-Learning</p></div>
+ <div class="card"><h3 class="c-green">Reasoning Method</h3><p>Statistical/Connectionist · Symbolic/Logical · Hybrid Neuro-Symbolic · Probabilistic · Evolutionary</p></div>
+ <div class="card"><h3 class="c-purple">Output Type</h3><p>Classification · Regression · Generation · Actions · Explanations · Decisions · Recommendations</p></div>
+ <div class="card"><h3 class="c-orange">Data Modality</h3><p>Text · Image · Video · Audio · Tabular · Graph · Point Cloud · Molecular · Time Series</p></div>
+ <div class="card"><h3 class="c-red">Autonomy Level</h3><p>Human-in-the-Loop · Human-on-the-Loop · Human-out-of-the-Loop · Fully Autonomous</p></div>
+ <div class="card"><h3 class="c-blue">Deployment Mode</h3><p>Cloud API · On-Premise · Edge · Embedded · Hybrid · Federated</p></div>
+ <div class="card"><h3 class="c-green">Interpretability</h3><p>White-Box · Glass-Box · Grey-Box · Black-Box · Post-Hoc Explainable</p></div>
+ <div class="card"><h3 class="c-purple">Temporal Behaviour</h3><p>Stateless/Reactive · Session-Stateful · Persistent Memory · Continual Learning</p></div>
+ <div class="card"><h3 class="c-orange">Scale</h3><p>Single-Device · Multi-Device · Cluster · Geo-Distributed · Federated Cross-Silo</p></div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-classification')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-classification">
+<p>AI systems can also be classified along these cross-cutting dimensions:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Capability Level</strong></td>
+<td>Narrow AI (ANI) → General AI (AGI) → Superintelligent AI (ASI)</td>
+</tr>
+<tr>
+<td><strong>Learning Paradigm</strong></td>
+<td>Supervised → Unsupervised → Semi-supervised → Self-supervised → Reinforcement</td>
+</tr>
+<tr>
+<td><strong>Deployment Model</strong></td>
+<td>Cloud → Edge → On-device → Hybrid</td>
+</tr>
+<tr>
+<td><strong>Openness</strong></td>
+<td>Proprietary → Open-weight → Fully open-source</td>
+</tr>
+<tr>
+<td><strong>Input Modality</strong></td>
+<td>Text → Image → Audio → Video → 3D → Tabular → Molecular → Multimodal</td>
+</tr>
+<tr>
+<td><strong>Output Modality</strong></td>
+<td>Text → Image → Audio → Video → Label → Score → Action → Simulation</td>
+</tr>
+<tr>
+<td><strong>Regulation Tier (EU AI Act)</strong></td>
+<td>Minimal risk → Limited risk → High risk → Unacceptable risk</td>
+</tr>
+<tr>
+<td><strong>Reasoning Style</strong></td>
+<td>Statistical → Logical → Causal → Probabilistic → Hybrid</td>
+</tr>
+<tr>
+<td><strong>Memory Type</strong></td>
+<td>None (Reactive) → In-context → External (RAG) → Long-term persistent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+ </div>
+</div>
+
+<!-- ═══ COMPARISON ═══ -->
+<div class="section" id="sec-comparison">
+ <h2>Master Comparison Table</h2>
+ <p class="desc">Side-by-side comparison of all 19 AI system types across core purpose, primary output, and key differentiator.</p>
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead><tr><th>#</th><th>AI System Type</th><th>Core Purpose</th><th>Primary Output</th><th>Key Differentiator</th></tr></thead>
+ <tbody>
+ <tr><td>1</td><td>Agentic AI</td><td>Autonomous goal execution</td><td>Actions, tool calls, workflows</td><td>Plan → Act → Observe loop with tool use</td></tr>
+ <tr><td>2</td><td>Analytical AI</td><td>Discover &amp; explain patterns</td><td>Insights, dashboards, narratives</td><td>Augmented analytics &amp; NLQ interfaces</td></tr>
+ <tr><td>3</td><td>Autonomous AI</td><td>Self-management</td><td>Automated operations</td><td>Operates within fixed authority boundaries</td></tr>
+ <tr><td>4</td><td>Bayesian AI</td><td>Reasoning under uncertainty</td><td>Posterior distributions</td><td>Principled uncertainty quantification</td></tr>
+ <tr><td>5</td><td>Cognitive AI</td><td>Neuro-symbolic reasoning</td><td>Grounded inferences</td><td>Neural perception + symbolic logic</td></tr>
+ <tr><td>6</td><td>Conversational AI</td><td>Natural dialogue</td><td>Text/voice responses</td><td>Multi-turn context-aware conversation</td></tr>
+ <tr><td>7</td><td>Evolutionary AI</td><td>Population-based search</td><td>Optimised solutions</td><td>Selection, crossover, mutation over generations</td></tr>
+ <tr><td>8</td><td>Explainable AI</td><td>Model interpretability</td><td>Explanations, attributions</td><td>Post-hoc or inherent transparency</td></tr>
+ <tr><td>9</td><td>Federated AI</td><td>Privacy-preserving learning</td><td>Shared models</td><td>Data never leaves local device</td></tr>
+ <tr><td>10</td><td>Generative AI</td><td>Create novel content</td><td>Text, images, video, audio, code</td><td>Produces new artifacts from learned distributions</td></tr>
+ <tr><td>11</td><td>Multimodal AI</td><td>Cross-modal understanding</td><td>Fused representations</td><td>Multiple modalities jointly processed</td></tr>
+ <tr><td>12</td><td>Optimisation AI</td><td>Mathematical optimisation</td><td>Optimal decisions</td><td>Exact solvers for LP/MIP/CP formulations</td></tr>
+ <tr><td>13</td><td>Physical AI</td><td>Real-world embodiment</td><td>Motor commands, navigation</td><td>Sense-plan-act in physical world</td></tr>
+ <tr><td>14</td><td>Predictive AI</td><td>Classify and forecast</td><td>Scores, labels, predictions</td><td>Discriminative modelling on labelled data</td></tr>
+ <tr><td>15</td><td>Reactive AI</td><td>Stimulus-response</td><td>Immediate actions</td><td>Stateless — no memory, no learning</td></tr>
+ <tr><td>16</td><td>Recommendation AI</td><td>Personalised ranking</td><td>Ranked item lists</td><td>Collaborative + content-based filtering</td></tr>
+ <tr><td>17</td><td>RL AI</td><td>Sequential decision-making</td><td>Policies, actions</td><td>Trial-and-error reward maximisation</td></tr>
+ <tr><td>18</td><td>Scientific AI</td><td>Accelerate discovery</td><td>Predictions, simulations</td><td>Physics-informed architecture</td></tr>
+ <tr><td>19</td><td>Symbolic AI</td><td>Formal reasoning</td><td>Logical conclusions, proofs</td><td>Explicit knowledge representation &amp; rules</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div style="text-align:center;margin-top:18px;">
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-comparison')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-comparison">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>AI System Type</th>
+<th>Core Purpose</th>
+<th>Primary Output</th>
+<th>Key Differentiator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Agentic AI</td>
+<td>Pursue goals autonomously</td>
+<td>Actions, decisions, workflows</td>
+<td>Plans, reasons, uses tools, self-corrects</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Analytical AI</td>
+<td>Extract insights from data</td>
+<td>Dashboards, explanations, reports</td>
+<td>Explains and surfaces meaning in data</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Autonomous AI</td>
+<td>Self-directed domain tasks</td>
+<td>Domain-specific task completion</td>
+<td>Narrow autonomy without goal decomposition</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bayesian / Probabilistic AI</td>
+<td>Reason under uncertainty</td>
+<td>Distributions, credible intervals</td>
+<td>Explicitly models what is known vs. unknown</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Neuro-Symbolic AI</td>
+<td>Combine learning + reasoning</td>
+<td>Structured reasoning outputs</td>
+<td>Bridges neural and symbolic approaches</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Conversational AI</td>
+<td>Enable natural dialogue</td>
+<td>Text or speech responses</td>
+<td>Manages multi-turn human-machine dialogue</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Evolutionary / Genetic AI</td>
+<td>Evolve optimal solutions</td>
+<td>Designs, architectures, trade-offs</td>
+<td>Population-based, gradient-free search</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Explainable AI (XAI)</td>
+<td>Make AI transparent</td>
+<td>Explanations, attributions</td>
+<td>Answers "why" the AI decided what it did</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Federated / Privacy AI</td>
+<td>Learn without centralising data</td>
+<td>Distributed model updates</td>
+<td>Data stays local; privacy by design</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Generative AI</td>
+<td>Create new content</td>
+<td>Text, image, video, audio, code</td>
+<td>Produces novel original content</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Multimodal Perception AI</td>
+<td>Understand multi-sensory input</td>
+<td>Classifications, transcriptions</td>
+<td>Perceives the world — does not generate it</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Optimisation / OR AI</td>
+<td>Find optimal constrained solutions</td>
+<td>Schedules, routes, allocations</td>
+<td>Solves explicit mathematical formulations</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Physical / Embodied AI</td>
+<td>Act in the physical world</td>
+<td>Physical actions via robots</td>
+<td>Has a body; operates in real-world space</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Predictive AI</td>
+<td>Classify and forecast</td>
+<td>Labels, scores, probabilities</td>
+<td>Predicts from historical patterns</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Reactive AI</td>
+<td>Respond to current input</td>
+<td>Fixed, deterministic responses</td>
+<td>No memory, no learning, purely stateless</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Recommendation / Retrieval AI</td>
+<td>Surface relevant items</td>
+<td>Ranked lists, retrieved passages</td>
+<td>Surfaces existing items — does not create</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Reinforcement Learning AI</td>
+<td>Learn via reward signals</td>
+<td>Optimal policy / strategy</td>
+<td>Learns from interaction, not labelled data</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Scientific / Simulation AI</td>
+<td>Accelerate scientific discovery</td>
+<td>Predictions, models, simulations</td>
+<td>Purpose-built for formal scientific domains</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Symbolic / Rule-Based AI</td>
+<td>Reason from explicit rules</td>
+<td>Inferences, decisions</td>
+<td>Fully logic-based and interpretable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+ </div>
+</div>
+
+<!-- ═══ MARKET ═══ -->
+<div class="section" id="sec-market">
+ <h2>Market Data &amp; Projections</h2>
+ <p class="desc">2024 market sizes and 2030 projections across all major AI system categories.</p>
+ <div class="chart-row">
+ <div class="chart-box"><h3>Market Size 2024 ($ Billions)</h3><canvas id="chartMarket2024"></canvas></div>
+ <div class="chart-box"><h3>Projected Market Size 2030 ($ Billions)</h3><canvas id="chartMarket2030"></canvas></div>
+ </div>
+ <div class="chart-row">
+ <div class="chart-box"><h3>CAGR % (2024-2030)</h3><canvas id="chartCAGR"></canvas></div>
+ <div class="chart-box"><h3>Top 5 Markets by 2030 Size</h3><canvas id="chartTop5"></canvas></div>
+ </div>
+</div>
+
+<!-- ═══ COMBINATIONS ═══ -->
+<div class="section" id="sec-combinations">
+ <h2>Real-World System Combinations</h2>
+ <p class="desc">Modern AI products rarely use a single paradigm — they combine multiple system types. Here are the most common real-world combinations.</p>
+ <div class="cards cards-2">
+ <div class="card"><h3 class="c-blue">ChatGPT / Claude / Gemini</h3><p><strong>Combines:</strong> Generative + Conversational + Agentic + RL (RLHF)</p><p>Foundation model generates; conversational layer manages dialogue; agent layer uses tools; RLHF aligns behaviour.</p></div>
+ <div class="card"><h3 class="c-green">Tesla FSD / Waymo Driver</h3><p><strong>Combines:</strong> Physical + Multimodal + Predictive + RL + Reactive</p><p>Sensor fusion perceives; predictive models forecast; RL optimises policy; reactive controls handle real-time safety.</p></div>
+ <div class="card"><h3 class="c-purple">Netflix / Spotify Recommendation</h3><p><strong>Combines:</strong> Recommendation + Predictive + RL + Analytical</p><p>Collaborative filtering recommends; predictive models score; RL explores; analytics measure engagement.</p></div>
+ <div class="card"><h3 class="c-orange">AlphaFold / Drug Discovery</h3><p><strong>Combines:</strong> Scientific + Generative + Evolutionary + Bayesian</p><p>GNNs predict structure; generative models design candidates; evolutionary search explores space; Bayesian uncertainty guides selection.</p></div>
+ <div class="card"><h3 class="c-red">Enterprise RAG Chatbot</h3><p><strong>Combines:</strong> Generative + Conversational + Recommendation (Retrieval) + XAI</p><p>Retrieval finds documents; generator produces answers; conversational layer maintains dialogue; XAI provides citations.</p></div>
+ <div class="card"><h3 class="c-blue">Smart Factory / Industry 4.0</h3><p><strong>Combines:</strong> Physical + Autonomous + Analytical + Predictive + Reactive</p><p>Robots execute; autonomous systems self-manage; analytics surface insights; predictive models forecast failures; PLCs react.</p></div>
+ <div class="card"><h3 class="c-green">Healthcare AI Platform</h3><p><strong>Combines:</strong> Predictive + XAI + Federated + Conversational + Analytical</p><p>Models predict risk; XAI explains decisions; federated protects patient privacy; NLQ surfaces insights.</p></div>
+ <div class="card"><h3 class="c-purple">Fraud Detection System</h3><p><strong>Combines:</strong> Reactive (rules) + Predictive (ML) + Autonomous (auto-block) + XAI + Analytical</p><p>Rules catch known patterns; ML detects novel fraud; autonomous layer blocks in real-time; XAI explains to analysts.</p></div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-combinations')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-combinations">
+<p>Most real-world systems combine multiple AI types simultaneously:</p>
+<table>
+<thead>
+<tr>
+<th>Real-World System</th>
+<th>AI Types Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tesla FSD</strong></td>
+<td>Physical AI + Autonomous AI + RL + Multimodal Perception</td>
+</tr>
+<tr>
+<td><strong>ChatGPT (with tools)</strong></td>
+<td>Generative AI + Conversational AI + Agentic AI</td>
+</tr>
+<tr>
+<td><strong>AlphaFold 3</strong></td>
+<td>Scientific AI + Neuro-Symbolic AI + RL</td>
+</tr>
+<tr>
+<td><strong>Waymo</strong></td>
+<td>Physical AI + Autonomous AI + Predictive AI + Multimodal Perception</td>
+</tr>
+<tr>
+<td><strong>Salesforce Agentforce</strong></td>
+<td>Agentic AI + Conversational AI + Predictive AI</td>
+</tr>
+<tr>
+<td><strong>Google Search</strong></td>
+<td>Predictive AI + Analytical AI + Generative AI</td>
+</tr>
+<tr>
+<td><strong>Apple Face ID</strong></td>
+<td>Multimodal Perception AI + Federated / Privacy AI</td>
+</tr>
+<tr>
+<td><strong>FICO Credit Score</strong></td>
+<td>Predictive AI + Explainable AI</td>
+</tr>
+<tr>
+<td><strong>AlphaGo / AlphaZero</strong></td>
+<td>Reinforcement Learning AI + Neuro-Symbolic AI</td>
+</tr>
+<tr>
+<td><strong>NVIDIA Omniverse</strong></td>
+<td>Scientific AI + Physical AI + Generative AI</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot</strong></td>
+<td>Generative AI + Agentic AI + Neuro-Symbolic AI</td>
+</tr>
+<tr>
+<td><strong>Siri / Alexa</strong></td>
+<td>Conversational AI + Reactive AI + Predictive AI</td>
+</tr>
+<tr>
+<td><strong>Netflix</strong></td>
+<td>Recommendation AI + Predictive AI + Analytical AI</td>
+</tr>
+<tr>
+<td><strong>Amazon Supply Chain</strong></td>
+<td>Optimisation AI + Predictive AI + Analytical AI</td>
+</tr>
+<tr>
+<td><strong>Bayesian Clinical Trials</strong></td>
+<td>Bayesian AI + Predictive AI + Scientific AI</td>
+</tr>
+<tr>
+<td><strong>Google NAS (AutoML)</strong></td>
+<td>Evolutionary AI + Predictive AI + Optimisation AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+ </div>
+</div>
+
+<!-- ═══ GLOSSARY ═══ -->
+<div class="section" id="sec-glossary">
+ <h2>Key Terminology Glossary</h2>
+ <p class="desc">Essential terms spanning all 19 AI system types.</p>
+ <input class="glossary-search" id="glossarySearch" placeholder="Search terms…" />
+ <div class="glossary-list" id="glossaryList">
+ <div class="glossary-entry"><strong>Agent</strong><span>Autonomous AI entity that perceives, reasons, plans, and acts to accomplish goals.</span></div>
+ <div class="glossary-entry"><strong>Attention Mechanism</strong><span>Neural architecture computing weighted importance of tokens enabling Transformers.</span></div>
+ <div class="glossary-entry"><strong>Bayesian Inference</strong><span>Updating beliefs about parameters using Bayes' theorem as new data arrives.</span></div>
+ <div class="glossary-entry"><strong>CLIP</strong><span>Contrastive Language-Image Pre-training aligning image and text embeddings.</span></div>
+ <div class="glossary-entry"><strong>Constraint Satisfaction</strong><span>Finding variable assignments that satisfy all given constraints simultaneously.</span></div>
+ <div class="glossary-entry"><strong>Differential Privacy</strong><span>Mathematical guarantee that outputs are statistically similar whether any individual's data is included.</span></div>
+ <div class="glossary-entry"><strong>Diffusion Model</strong><span>Generative model learning to reverse a noise-adding process to produce high-quality samples.</span></div>
+ <div class="glossary-entry"><strong>Embedding</strong><span>Dense vector representation capturing semantic meaning of text, images, or entities.</span></div>
+ <div class="glossary-entry"><strong>Expert System</strong><span>AI system encoding domain expert knowledge as rules for automated decision-making.</span></div>
+ <div class="glossary-entry"><strong>Federated Learning</strong><span>Training a shared model across decentralised data without raw data ever leaving devices.</span></div>
+ <div class="glossary-entry"><strong>Fine-Tuning</strong><span>Adapting a pre-trained model to a specific domain with additional targeted training.</span></div>
+ <div class="glossary-entry"><strong>Foundation Model</strong><span>Large model pre-trained on broad data, adaptable to many downstream tasks.</span></div>
+ <div class="glossary-entry"><strong>GNN</strong><span>Graph Neural Network operating on molecular, social, or knowledge graph structures.</span></div>
+ <div class="glossary-entry"><strong>Hallucination</strong><span>When generative models produce confident but factually incorrect information.</span></div>
+ <div class="glossary-entry"><strong>Knowledge Graph</strong><span>Structured representation of entities and relationships as nodes and edges.</span></div>
+ <div class="glossary-entry"><strong>LoRA</strong><span>Low-Rank Adaptation — efficient fine-tuning that adds small trainable matrices to frozen models.</span></div>
+ <div class="glossary-entry"><strong>MCMC</strong><span>Markov Chain Monte Carlo — sampling from posterior distributions via convergent Markov chains.</span></div>
+ <div class="glossary-entry"><strong>MoE</strong><span>Mixture-of-Experts — architecture routing tokens to specialised sub-networks.</span></div>
+ <div class="glossary-entry"><strong>PINN</strong><span>Physics-Informed Neural Network embedding physical laws into the training loss function.</span></div>
+ <div class="glossary-entry"><strong>RAG</strong><span>Retrieval-Augmented Generation — grounding model outputs with retrieved documents.</span></div>
+ <div class="glossary-entry"><strong>Reinforcement Learning</strong><span>Learning via trial-and-error interaction with an environment to maximise cumulative reward.</span></div>
+ <div class="glossary-entry"><strong>RLHF</strong><span>Reinforcement Learning from Human Feedback — aligning models using human preference data.</span></div>
+ <div class="glossary-entry"><strong>SHAP</strong><span>Shapley Additive Explanations — theoretically grounded feature attribution method.</span></div>
+ <div class="glossary-entry"><strong>Transformer</strong><span>Self-attention architecture powering virtually all modern language and vision models.</span></div>
+ <div class="glossary-entry"><strong>Vector Database</strong><span>Specialised database optimised for storing and querying high-dimensional embeddings.</span></div>
+ 
+ <div class="glossary-entry"><strong>Agentic AI</strong><span>Goal-driven AI systems that plan, reason, use tools, and execute multi-step workflows autonomously.</span></div>
+
+ <div class="glossary-entry"><strong>Autonomous AI</strong><span>Self-managing systems operating within fixed boundaries — auto-scaling, autopilot, algorithmic trading.</span></div>
+
+ <div class="glossary-entry"><strong>Complex Event Processing</strong><span>Real-time detection of patterns and relationships across multiple event streams.</span></div>
+
+ <div class="glossary-entry"><strong>Constitutional AI</strong><span>Alignment technique using AI feedback guided by a written constitution of principles.</span></div>
+
+ <div class="glossary-entry"><strong>Contrastive Learning</strong><span>Self-supervised learning pulling similar pairs together and pushing dissimilar pairs apart.</span></div>
+
+ <div class="glossary-entry"><strong>Data Mesh</strong><span>Decentralised data architecture treating data as a product owned by domain teams.</span></div>
+
+ <div class="glossary-entry"><strong>Digital Twin</strong><span>Virtual replica of a physical system for simulation, monitoring, and predictive analysis.</span></div>
+
+ <div class="glossary-entry"><strong>Distillation</strong><span>Training a smaller student model to replicate a larger teacher model's behaviour.</span></div>
+
+ <div class="glossary-entry"><strong>Embedding Space</strong><span>High-dimensional vector space where semantically similar items are geometrically close.</span></div>
+
+ <div class="glossary-entry"><strong>Evolutionary Algorithm</strong><span>Optimisation using population-based search inspired by natural evolution.</span></div>
+
+ <div class="glossary-entry"><strong>Genetic Algorithm</strong><span>Search heuristic using selection, crossover, and mutation to evolve solutions.</span></div>
+
+ <div class="glossary-entry"><strong>Homomorphic Encryption</strong><span>Encryption allowing computation on ciphertext without decryption.</span></div>
+
+ <div class="glossary-entry"><strong>Mixture of Experts</strong><span>Architecture routing inputs to specialised sub-networks for compute-efficient scaling.</span></div>
+
+ <div class="glossary-entry"><strong>Neural Architecture Search</strong><span>Automated discovery of optimal neural network architectures.</span></div>
+
+ <div class="glossary-entry"><strong>Neural Operator</strong><span>Architecture learning mappings between function spaces for scientific computing.</span></div>
+
+ <div class="glossary-entry"><strong>Neuro-Symbolic AI</strong><span>Hybrid approach combining neural network learning with symbolic reasoning.</span></div>
+
+ <div class="glossary-entry"><strong>Ontology</strong><span>Formal specification of concepts, properties, and relationships within a domain.</span></div>
+
+ <div class="glossary-entry"><strong>Prompt Engineering</strong><span>Crafting effective input prompts to guide generative AI model outputs.</span></div>
+
+ <div class="glossary-entry"><strong>Quantisation</strong><span>Reducing numerical precision of model weights to decrease memory and increase speed.</span></div>
+
+ <div class="glossary-entry"><strong>Sensor Fusion</strong><span>Combining multi-sensor data for more robust and accurate perception.</span></div>
+
+ <div class="glossary-entry"><strong>Sim-to-Real Transfer</strong><span>Moving policies trained in simulation to work on physical hardware.</span></div>
+
+ <div class="glossary-entry"><strong>Speculative Decoding</strong><span>Using a smaller draft model to propose tokens verified by a larger model for faster inference.</span></div>
+</div>
+ <div style="text-align:center;margin-top:18px;">
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foundation Model</strong></td>
+<td>A large model trained on broad data at scale, adaptable to many downstream tasks</td>
+</tr>
+<tr>
+<td><strong>Fine-Tuning</strong></td>
+<td>Adapting a pre-trained model to a specific domain or task</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Running a trained model to produce outputs on new input data</td>
+</tr>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>When an AI generates confident but factually incorrect outputs</td>
+</tr>
+<tr>
+<td><strong>Grounding</strong></td>
+<td>Connecting AI outputs to real, verifiable facts or data sources</td>
+</tr>
+<tr>
+<td><strong>Latent Space</strong></td>
+<td>The compressed internal representation a model learns during training</td>
+</tr>
+<tr>
+<td><strong>Transfer Learning</strong></td>
+<td>Applying knowledge learned in one domain to a different but related domain</td>
+</tr>
+<tr>
+<td><strong>Multimodal</strong></td>
+<td>Involving or processing more than one type of data (e.g., text + image)</td>
+</tr>
+<tr>
+<td><strong>Alignment</strong></td>
+<td>Ensuring AI behaviour matches human values, intentions, and safety requirements</td>
+</tr>
+<tr>
+<td><strong>Emergent Behaviour</strong></td>
+<td>Capabilities that arise in large models not explicitly trained for</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+ </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for The Complete AI Systems Landscape — Master Reference — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="assets/overview-gifs/00-master-reference-overview.gif" alt="The Complete AI Systems Landscape — Master Reference — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · The Complete AI Systems Landscape — Master Reference · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="assets/tech-stack-gifs/00-master-reference-tech-stack.gif" alt="The Complete AI Systems Landscape — Master Reference — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-aitypes">
+ <h2>Explore All 19 AI System Types</h2>
+ <p class="desc">Each card links to a comprehensive interactive deep-dive — complete with architecture diagrams, technology stacks, use cases, benchmarks, market data, and more.</p>
+
+ <div class="ai-search-bar">
+ <input type="text" id="aiTypeSearch" class="glossary-search" placeholder="Search AI system types..." style="max-width:100%;margin-bottom:16px;">
+ </div>
+
+ <div class="ai-explore-grid">
+ <a href="chapters/agentic-ai.html" class="ai-explore-card" data-type="agentic-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">01</span>
+ <span class="badge bg-purple c-purple">Act</span>
+ </div>
+ <h3>1. Agentic AI</h3>
+ <p>Autonomous goal-driven agents that plan, use tools, maintain memory, and execute multi-step workflows.</p>
+ <div class="ai-tags"><span class="ai-tag">ReAct</span><span class="ai-tag">Tool Use</span><span class="ai-tag">Memory</span><span class="ai-tag">Multi-Agent</span><span class="ai-tag">Orchestration</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/analytical-ai.html" class="ai-explore-card" data-type="analytical-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">02</span>
+ <span class="badge bg-blue c-blue">Analyse</span>
+ </div>
+ <h3>2. Analytical AI</h3>
+ <p>Discovers patterns, surfaces insights, and explains data through BI, augmented analytics, and NLQ.</p>
+ <div class="ai-tags"><span class="ai-tag">BI</span><span class="ai-tag">NLQ</span><span class="ai-tag">Clustering</span><span class="ai-tag">Augmented Analytics</span><span class="ai-tag">Data Mining</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/autonomous-ai.html" class="ai-explore-card" data-type="autonomous-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">03</span>
+ <span class="badge bg-blue c-blue">Automate</span>
+ </div>
+ <h3>3. Autonomous AI (Non-Agentic)</h3>
+ <p>Self-managing systems — auto-scaling, autopilot, algorithmic trading — within fixed boundaries.</p>
+ <div class="ai-tags"><span class="ai-tag">Auto-scaling</span><span class="ai-tag">Autopilot</span><span class="ai-tag">Algo Trading</span><span class="ai-tag">Self-Healing</span><span class="ai-tag">AIOps</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/bayesian-probabilistic-ai.html" class="ai-explore-card" data-type="bayesian-probabilistic-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">04</span>
+ <span class="badge bg-orange c-orange">Probabilistic</span>
+ </div>
+ <h3>4. Bayesian / Probabilistic AI</h3>
+ <p>Principled uncertainty quantification — MCMC, GPs, Bayesian deep learning, probabilistic programming.</p>
+ <div class="ai-tags"><span class="ai-tag">MCMC</span><span class="ai-tag">GPs</span><span class="ai-tag">BNNs</span><span class="ai-tag">Probabilistic Programming</span><span class="ai-tag">Uncertainty</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/cognitive-neuro-symbolic-ai.html" class="ai-explore-card" data-type="cognitive-neuro-symbolic-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">05</span>
+ <span class="badge bg-orange c-orange">Hybrid</span>
+ </div>
+ <h3>5. Cognitive / Neuro-Symbolic AI</h3>
+ <p>Neural + symbolic integration — knowledge-guided networks, LLM+KG, neural theorem provers.</p>
+ <div class="ai-tags"><span class="ai-tag">Neuro-Symbolic</span><span class="ai-tag">LLM+KG</span><span class="ai-tag">Hybrid AI</span><span class="ai-tag">Reasoning</span><span class="ai-tag">Cognitive</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/conversational-ai.html" class="ai-explore-card" data-type="conversational-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">06</span>
+ <span class="badge bg-orange c-orange">Converse</span>
+ </div>
+ <h3>6. Conversational AI</h3>
+ <p>Enables natural multi-turn dialogue via chatbots, voice assistants, and conversational search.</p>
+ <div class="ai-tags"><span class="ai-tag">Chatbots</span><span class="ai-tag">Voice</span><span class="ai-tag">NLU</span><span class="ai-tag">Dialogue</span><span class="ai-tag">ASR/TTS</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/evolutionary-genetic-ai.html" class="ai-explore-card" data-type="evolutionary-genetic-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">07</span>
+ <span class="badge bg-green c-green">Evolve</span>
+ </div>
+ <h3>7. Evolutionary / Genetic AI</h3>
+ <p>Genetic algorithms, neuroevolution, NAS — population-based optimisation inspired by evolution.</p>
+ <div class="ai-tags"><span class="ai-tag">GA</span><span class="ai-tag">NAS</span><span class="ai-tag">Neuroevolution</span><span class="ai-tag">NSGA-II</span><span class="ai-tag">CMA-ES</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/explainable-ai.html" class="ai-explore-card" data-type="explainable-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">08</span>
+ <span class="badge bg-green c-green">Explain</span>
+ </div>
+ <h3>8. Explainable AI (XAI)</h3>
+ <p>SHAP, LIME, Grad-CAM, counterfactuals — making black-box models interpretable.</p>
+ <div class="ai-tags"><span class="ai-tag">SHAP</span><span class="ai-tag">LIME</span><span class="ai-tag">Grad-CAM</span><span class="ai-tag">Counterfactuals</span><span class="ai-tag">Interpretability</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/federated-privacy-ai.html" class="ai-explore-card" data-type="federated-privacy-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">09</span>
+ <span class="badge bg-purple c-purple">Privacy</span>
+ </div>
+ <h3>9. Federated / Privacy-Preserving AI</h3>
+ <p>Train models without sharing raw data — FL, DP, MPC, homomorphic encryption, TEEs.</p>
+ <div class="ai-tags"><span class="ai-tag">Federated Learning</span><span class="ai-tag">Differential Privacy</span><span class="ai-tag">MPC</span><span class="ai-tag">HE</span><span class="ai-tag">TEEs</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/generative-ai.html" class="ai-explore-card" data-type="generative-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">10</span>
+ <span class="badge bg-blue c-blue">Generate</span>
+ </div>
+ <h3>10. Generative AI</h3>
+ <p>Creates novel content — text, images, video, audio, code, 3D, molecules — from learned distributions.</p>
+ <div class="ai-tags"><span class="ai-tag">LLMs</span><span class="ai-tag">Diffusion</span><span class="ai-tag">GANs</span><span class="ai-tag">VAEs</span><span class="ai-tag">Transformers</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/multimodal-perception-ai.html" class="ai-explore-card" data-type="multimodal-perception-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">11</span>
+ <span class="badge bg-red c-red">Perceive</span>
+ </div>
+ <h3>11. Multimodal Perception AI</h3>
+ <p>Fuses vision, language, audio, depth — VLMs, sensor fusion, any-to-any models.</p>
+ <div class="ai-tags"><span class="ai-tag">VLMs</span><span class="ai-tag">Sensor Fusion</span><span class="ai-tag">Any-to-Any</span><span class="ai-tag">CLIP</span><span class="ai-tag">Multimodal</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/optimisation-operations-research-ai.html" class="ai-explore-card" data-type="optimisation-operations-research-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">12</span>
+ <span class="badge bg-red c-red">Optimise</span>
+ </div>
+ <h3>12. Optimisation / Operations Research AI</h3>
+ <p>LP, MIP, constraint programming — mathematical optimisation for logistics, scheduling, routing.</p>
+ <div class="ai-tags"><span class="ai-tag">LP</span><span class="ai-tag">MIP</span><span class="ai-tag">CP</span><span class="ai-tag">Gurobi</span><span class="ai-tag">OR-Tools</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/physical-embodied-ai.html" class="ai-explore-card" data-type="physical-embodied-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">13</span>
+ <span class="badge bg-orange c-orange">Embody</span>
+ </div>
+ <h3>13. Physical / Embodied AI</h3>
+ <p>Robots, autonomous vehicles, drones — AI that senses, plans, and acts in the physical world.</p>
+ <div class="ai-tags"><span class="ai-tag">Robotics</span><span class="ai-tag">SLAM</span><span class="ai-tag">Autonomous Vehicles</span><span class="ai-tag">Drones</span><span class="ai-tag">Manipulation</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/predictive-discriminative-ai.html" class="ai-explore-card" data-type="predictive-discriminative-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">14</span>
+ <span class="badge bg-green c-green">Predict</span>
+ </div>
+ <h3>14. Predictive / Discriminative AI</h3>
+ <p>Classifies, scores, forecasts, and detects anomalies from structured and unstructured data.</p>
+ <div class="ai-tags"><span class="ai-tag">XGBoost</span><span class="ai-tag">Neural Nets</span><span class="ai-tag">SVMs</span><span class="ai-tag">Time Series</span><span class="ai-tag">Anomaly Detection</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/reactive-ai.html" class="ai-explore-card" data-type="reactive-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">15</span>
+ <span class="badge bg-red c-red">React</span>
+ </div>
+ <h3>15. Reactive AI</h3>
+ <p>Stateless stimulus-response systems — rule engines, PLCs, game minimax — no memory or learning.</p>
+ <div class="ai-tags"><span class="ai-tag">Rule Engines</span><span class="ai-tag">CEP</span><span class="ai-tag">Minimax</span><span class="ai-tag">PLCs</span><span class="ai-tag">Stream Processing</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/recommendation-retrieval-ai.html" class="ai-explore-card" data-type="recommendation-retrieval-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">16</span>
+ <span class="badge bg-purple c-purple">Recommend</span>
+ </div>
+ <h3>16. Recommendation / Retrieval AI</h3>
+ <p>Collaborative filtering, neural retrieval, RAG — personalised content and search.</p>
+ <div class="ai-tags"><span class="ai-tag">RecSys</span><span class="ai-tag">RAG</span><span class="ai-tag">Embeddings</span><span class="ai-tag">Collaborative Filtering</span><span class="ai-tag">Two-Tower</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/reinforcement-learning-ai.html" class="ai-explore-card" data-type="reinforcement-learning-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">17</span>
+ <span class="badge bg-green c-green">Learn</span>
+ </div>
+ <h3>17. Reinforcement Learning AI</h3>
+ <p>Learns by trial-and-error in environments — maximising cumulative reward via policy optimisation.</p>
+ <div class="ai-tags"><span class="ai-tag">PPO</span><span class="ai-tag">DQN</span><span class="ai-tag">RLHF</span><span class="ai-tag">Multi-Agent RL</span><span class="ai-tag">Sim-to-Real</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/scientific-simulation-ai.html" class="ai-explore-card" data-type="scientific-simulation-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">18</span>
+ <span class="badge bg-blue c-blue">Simulate</span>
+ </div>
+ <h3>18. Scientific / Simulation AI</h3>
+ <p>PINNs, GNNs, neural operators — accelerating drug discovery, materials science, climate modelling.</p>
+ <div class="ai-tags"><span class="ai-tag">PINNs</span><span class="ai-tag">AlphaFold</span><span class="ai-tag">Digital Twins</span><span class="ai-tag">Neural Operators</span><span class="ai-tag">Climate</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ <a href="chapters/symbolic-rule-based-ai.html" class="ai-explore-card" data-type="symbolic-rule-based-ai">
+ <div class="ai-card-header">
+ <span class="ai-card-icon">19</span>
+ <span class="badge bg-purple c-purple">Reason</span>
+ </div>
+ <h3>19. Symbolic / Rule-Based AI</h3>
+ <p>Knowledge graphs, ontologies, expert systems, theorem provers — explicit symbolic reasoning.</p>
+ <div class="ai-tags"><span class="ai-tag">Knowledge Graphs</span><span class="ai-tag">Expert Systems</span><span class="ai-tag">Ontologies</span><span class="ai-tag">Logic</span><span class="ai-tag">Prolog</span></div>
+ <div class="ai-card-cta">Explore Deep Dive <span>&rarr;</span></div>
+ </a>
+ </div>
+</section>
+
+<footer class="footer">
+ <p style="margin-bottom:6px;">The Complete AI Systems Landscape &mdash; 2026 Edition</p>
+ <p>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.</p>
+ <p style="margin-top:8px;font-size:0.78rem;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+</footer>
+
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/components.js"></script>
+<script>
+
+/* ── Tab Navigation ── */
+document.querySelectorAll('.nav-bar button').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+ document.querySelectorAll('.nav-bar button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.getElementById('sec-'+btn.dataset.tab).classList.add('active');
+ if(btn.dataset.tab==='market' && !window._mCharts) initMarketCharts();
+ });
+});
+
+/* ── Domain Accordion ── */
+document.querySelectorAll('.domain-header').forEach(h=>{
+ h.addEventListener('click',()=>h.parentElement.classList.toggle('open'));
+});
+
+/* ── Glossary Search ── */
+document.getElementById('glossarySearch').addEventListener('input',function(){
+ const q=this.value.toLowerCase();
+ document.querySelectorAll('.glossary-entry').forEach(e=>{
+ e.style.display=e.textContent.toLowerCase().includes(q)?'':'none';
+ });
+});
+
+/* ── Market Charts ── */
+function initMarketCharts(){
+ window._mCharts=true;
+ const labels=['Generative','Predictive','BI/Analytics','Conversational','Rec/Retrieval','Optimisation','Digital Twin','XAI','Physical (AV)','RL','Federated','Bayesian','Evolutionary'];
+ const m2024=[67,14.9,29.3,13.2,13.9,12.4,17.5,6.2,54,2.1,0.2,1.8,2.3];
+ const m2030=[1300,67.9,54.3,49.9,29.7,31,110,16.2,120,8,0.42,6.2,7.5];
+ const cagr=[46,28.5,11,24.9,26,16,36.5,21,14,25,13,23,22];
+ const colors=['#c9a84c','#5b9e6f','#9684bf','#c9956a','#bf7570','#5e96b8','#c9a84c','#5b9e6f','#9684bf','#c9956a','#bf7570','#5e96b8','#c9a84c'];
+ const defs={responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color: getComputedStyle(document.documentElement).getPropertyValue('--text2').trim(),font:{size:10}},grid:{color: getComputedStyle(document.documentElement).getPropertyValue('--border').trim()}},y:{ticks:{color: getComputedStyle(document.documentElement).getPropertyValue('--text2').trim()},grid:{color: getComputedStyle(document.documentElement).getPropertyValue('--border').trim()}}}};
+ new Chart(document.getElementById('chartMarket2024'),{type:'bar',data:{labels,datasets:[{data:m2024,backgroundColor:colors}]},options:defs});
+ new Chart(document.getElementById('chartMarket2030'),{type:'bar',data:{labels,datasets:[{data:m2030,backgroundColor:colors}]},options:defs});
+ new Chart(document.getElementById('chartCAGR'),{type:'bar',data:{labels,datasets:[{data:cagr,backgroundColor:colors}]},options:{...defs,indexAxis:'y',scales:{x:{ticks:{color: getComputedStyle(document.documentElement).getPropertyValue('--text2').trim()},grid:{color: getComputedStyle(document.documentElement).getPropertyValue('--border').trim()}},y:{ticks:{color: getComputedStyle(document.documentElement).getPropertyValue('--text2').trim(),font:{size:10}},grid:{color: getComputedStyle(document.documentElement).getPropertyValue('--border').trim()}}}}});
+ new Chart(document.getElementById('chartTop5'),{type:'doughnut',data:{labels:['Generative','Digital Twin','Physical (AV)','Predictive','BI/Analytics'],datasets:[{data:[1300,110,120,67.9,54.3],backgroundColor:['#c9a84c','#5b9e6f','#9684bf','#c9956a','#bf7570']}]},options:{responsive:true,plugins:{legend:{position:'right',labels:{color: getComputedStyle(document.documentElement).getPropertyValue('--text').trim()}}}}});
+}
+
+/* ── AI Type Search Filter ── */
+const aiSearchEl = document.getElementById('aiTypeSearch');
+if (aiSearchEl) {
+ aiSearchEl.addEventListener('input', function() {
+ const q = this.value.toLowerCase();
+ document.querySelectorAll('.ai-explore-card').forEach(card => {
+ const text = card.textContent.toLowerCase();
+ const folder = card.dataset.type || '';
+ card.style.display = (text.includes(q) || folder.includes(q)) ? '' : 'none';
+ });
+ });
+}
+
+
+</script>
+</body>
+</html>

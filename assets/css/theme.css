@@ -1,0 +1,208 @@
+/* ═══════════════════════════════════════════════════════════
+   AI Systems Landscape 2026 — Luxury Dual-Theme System
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+/* ── DARK THEME (Golden Luxury) ── */
+:root, [data-theme="dark"] {
+  --bg: #08090c;
+  --surface: #101218;
+  --surface2: #181b24;
+  --border: #2a2d38;
+  --accent: #c9a84c;
+  --accent2: #a8b87c;
+  --accent3: #b8a0d2;
+  --accent4: #c9956a;
+  --accent5: #c98a82;
+  --accent6: #8aadcc;
+  --text: #e8e4dd;
+  --text2: #9a9690;
+  --glow: rgba(201,168,76,0.10);
+  --hero-gradient: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+  --title-gradient: linear-gradient(135deg, #c9a84c, #e8d5a3);
+  --progress-gradient: linear-gradient(90deg, #c9a84c, #e8d5a3);
+  --card-hover-shadow: 0 8px 32px rgba(201,168,76,0.12);
+  --top-bar-color: #c9a84c;
+  --toggle-bg: #181b24;
+  --toggle-border: #c9a84c;
+  --toggle-text: #c9a84c;
+}
+
+/* ── LIGHT THEME (Aqua Professional) ── */
+[data-theme="light"] {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --surface2: #eef2f6;
+  --border: #d0d7de;
+  --accent: #0a7e8c;
+  --accent2: #1a7f47;
+  --accent3: #6f5daa;
+  --accent4: #b85c1f;
+  --accent5: #c74540;
+  --accent6: #2a6fb5;
+  --text: #1c2028;
+  --text2: #57606a;
+  --glow: rgba(10,126,140,0.08);
+  --hero-gradient: linear-gradient(180deg, rgba(10,126,140,0.05) 0%, transparent 100%);
+  --title-gradient: linear-gradient(135deg, #0a7e8c, #14b8c8);
+  --progress-gradient: linear-gradient(90deg, #0a7e8c, #14b8c8);
+  --card-hover-shadow: 0 8px 32px rgba(10,126,140,0.10);
+  --top-bar-color: #0a7e8c;
+  --toggle-bg: #ffffff;
+  --toggle-border: #0a7e8c;
+  --toggle-text: #0a7e8c;
+}
+
+/* ── THEME TOGGLE BUTTON ── */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--toggle-bg);
+  border: 1.5px solid var(--toggle-border);
+  border-radius: 24px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.theme-toggle-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--toggle-text);
+  font-weight: 600;
+}
+.theme-toggle-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--toggle-text);
+}
+
+/* ═══ LUXURY TYPOGRAPHY & REFINEMENTS ═══ */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+.hero {
+  background: var(--hero-gradient);
+}
+.hero .subtitle {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+.hero .author {
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.reading-progress {
+  background: var(--progress-gradient);
+}
+.nav-bar {
+  background: var(--bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.section h2 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+.card {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+.footer {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* Card icons → styled initials */
+.ai-card-icon {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--glow);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* DYK icon styling */
+.dyk-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glow);
+  border-radius: 6px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* Smooth transitions */
+*, *::before, *::after {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+a, button, .card, .nav-bar button {
+  transition: all 0.25s ease;
+}
+
+/* Section titles refined */
+.deep-dive h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+.deep-dive h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Theme-aware chart colors */
+.chart-box {
+  border-radius: 10px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }

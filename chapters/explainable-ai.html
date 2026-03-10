@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explainable AI (XAI) — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Explainable AI (XAI) — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Explainable AI — the explanation pipeline, 8-layer stack, explanation methods, SHAP/LIME, mechanistic interpretability, benchmarks, market data, and more.</p>
+ <span class="reading-time">~56 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/08-explainable-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="methods">Core Methods</button>
+ <button data-tab="tools">Tools</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 1 — PIPELINE -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-pipeline">
+ <h2>The Explanation Pipeline</h2>
+ <p class="desc">Explainable AI follows a five-step pipeline from raw input through to human-readable explanations. Click each step to learn more.</p>
+
+ <div class="pipeline-container" id="pipeline-flow">
+ <div class="pipeline-step" data-step="0" style="border-color: var(--accent);">
+ 
+ <div class="step-label">INPUT</div>
+ <div class="step-sub">Features / Data</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="1" style="border-color: var(--accent2);">
+ 
+ <div class="step-label">TRAINED MODEL</div>
+ <div class="step-sub">Black Box</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="2" style="border-color: var(--accent3);">
+ 
+ <div class="step-label">RAW OUTPUT</div>
+ <div class="step-sub">Prediction</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="3" style="border-color: var(--accent4);">
+ 
+ <div class="step-label">EXPLANATION ENGINE</div>
+ <div class="step-sub">SHAP, LIME, Grad-CAM</div>
+ </div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step" data-step="4" style="border-color: var(--accent5);">
+ 
+ <div class="step-label">HUMAN-READABLE</div>
+ <div class="step-sub">Explanation</div>
+ </div>
+ </div>
+
+ <div class="pipeline-info" id="pipeline-info">
+ <h3>Click a step above</h3>
+ <p>Explore how data flows through the explanation pipeline — from raw features to final human-understandable explanations.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Explainable AI Works — The Explanation Pipeline</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ EXPLAINABLE AI — EXPLANATION PIPELINE │
+│ │
+│ INPUT MODEL RAW OUTPUT EXPLANATION │
+│ ────── ────── ────────── ─────────── │
+│ │
+│ Features ──► Trained AI ──► Prediction ──► &quot;SHAP says: │
+│ (data) Model (class/score) income was │
+│ (black box) most important │
+│ feature; age was │
+│ │ second&quot; │
+│ │ │
+│ ▼ │
+│ EXPLANATION ENGINE │
+│ ───────────────── │
+│ SHAP | LIME | Grad-CAM | Attention │
+│ Counterfactuals | Concept | Rules │
+│ │ │
+│ ▼ │
+│ ┌──────────────────────────────────┐ │
+│ │ HUMAN-READABLE EXPLANATION │ │
+│ │ • Feature attribution scores │ │
+│ │ • Visual saliency maps │ │
+│ │ • Counterfactual scenarios │ │
+│ │ • Rule-based summaries │ │
+│ │ • Natural language reasoning │ │
+│ └──────────────────────────────────┘ │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The XAI Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Input</strong></td>
+<td>Data instance (or dataset) is presented for explanation</td>
+</tr>
+<tr>
+<td><strong>Model Prediction</strong></td>
+<td>The AI model produces its output (classification, score, generation)</td>
+</tr>
+<tr>
+<td><strong>Explanation Method Selection</strong></td>
+<td>The appropriate XAI technique is chosen — depends on the model type, audience, and explanation need</td>
+</tr>
+<tr>
+<td><strong>Explanation Computation</strong></td>
+<td>The explanation engine analyses the model's behaviour — perturbing inputs, computing gradients, sampling local neighbourhoods, or extracting internal representations</td>
+</tr>
+<tr>
+<td><strong>Attribution / Reasoning</strong></td>
+<td>The technique produces attributions (feature importances), saliency maps, decision rules, counterfactuals, or concept-level reasoning</td>
+</tr>
+<tr>
+<td><strong>Rendering</strong></td>
+<td>The explanation is rendered in a human-understandable format — tables, charts, heatmaps, natural language</td>
+</tr>
+<tr>
+<td><strong>Human Evaluation</strong></td>
+<td>The end user (doctor, loan officer, auditor, data scientist) reviews the explanation</td>
+</tr>
+</tbody>
+</table>
+<h3>Key XAI Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Local (per-instance) vs. global (entire model) explanation</td>
+</tr>
+<tr>
+<td><strong>Audience</strong></td>
+<td>Technical (data scientist) vs. non-technical (business user, consumer)</td>
+</tr>
+<tr>
+<td><strong>Fidelity</strong></td>
+<td>How faithfully the explanation represents the model's actual reasoning</td>
+</tr>
+<tr>
+<td><strong>Granularity</strong></td>
+<td>Feature-level, concept-level, rule-level, or pixel-level attribution</td>
+</tr>
+<tr>
+<td><strong>Model Access</strong></td>
+<td>Black-box (only inputs/outputs) vs. white-box (access to model internals)</td>
+</tr>
+<tr>
+<td><strong>Perturbation Budget</strong></td>
+<td>Number of model evaluations allowed for perturbation-based methods (LIME, SHAP)</td>
+</tr>
+<tr>
+<td><strong>Background Data</strong></td>
+<td>Reference dataset used for computing Shapley values or baseline expectations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>SHAP values are grounded in cooperative game theory — specifically Shapley values from 1953.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>The EU AI Act (2024) mandates explainability for all high-risk AI systems deployed in Europe.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>LIME (Local Interpretable Model-agnostic Explanations) can explain any black-box model's individual predictions.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What do SHAP values measure?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Model accuracy</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Each feature's contribution to a prediction</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Training speed</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Data quality</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What is the difference between global and local explainability?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Global explains one prediction; local explains the whole model</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Global explains overall model behaviour; local explains individual predictions</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">They are the same</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Global uses LIME; local uses SHAP</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> Which regulation mandates AI explainability for high-risk systems?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">GDPR only</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">EU AI Act</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">CCPA</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">SOX</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 2 — 8-LAYER STACK -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-stack">
+ <h2>The 8-Layer XAI Stack</h2>
+ <p class="desc">Explainable AI is organised into eight architectural layers. Click any layer to expand details.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The XAI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Model Layer</strong></td>
+<td>The AI model being explained — architecture, weights, training data, objective</td>
+</tr>
+<tr>
+<td><strong>2. Explanation Method</strong></td>
+<td>The XAI technique(s) applied — SHAP, LIME, Grad-CAM, counterfactuals, circuit analysis</td>
+</tr>
+<tr>
+<td><strong>3. Attribution Engine</strong></td>
+<td>Core computation — Shapley values, gradient computation, perturbation sampling, activation extraction</td>
+</tr>
+<tr>
+<td><strong>4. Aggregation &amp; Summarisation</strong></td>
+<td>Combining per-instance explanations into global summaries; importance rankings; interaction analysis</td>
+</tr>
+<tr>
+<td><strong>5. Visualisation &amp; Rendering</strong></td>
+<td>Charts, heatmaps, saliency maps, interactive dashboards, natural language summaries</td>
+</tr>
+<tr>
+<td><strong>6. Audience Adaptation</strong></td>
+<td>Tailoring explanations to the audience — data scientist vs. loan officer vs. patient vs. regulator</td>
+</tr>
+<tr>
+<td><strong>7. Evaluation &amp; Validation</strong></td>
+<td>Measuring explanation quality — fidelity, stability, human alignment, sufficiency</td>
+</tr>
+<tr>
+<td><strong>8. Governance &amp; Compliance</strong></td>
+<td>Explanation documentation, regulatory compliance (EU AI Act), audit trails, fairness assessments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 3 — SUB-TYPES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-subtypes">
+ <h2>XAI Sub-Types</h2>
+ <p class="desc">Eleven principal sub-types of explainability, organised by Scope, Format, and Access level.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Explanation Method</h3>
+<h3>By Scope</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local Explanation</strong></td>
+<td>Explains a single prediction for one input instance</td>
+<td>"This loan was denied primarily because income was below threshold"</td>
+</tr>
+<tr>
+<td><strong>Global Explanation</strong></td>
+<td>Explains the model's overall behaviour across the entire dataset</td>
+<td>"The model relies primarily on income, credit score, and employment length"</td>
+</tr>
+<tr>
+<td><strong>Cohort Explanation</strong></td>
+<td>Explains model behaviour for a specific group or subpopulation</td>
+<td>"For applicants in the 25–35 age range, the model weights education more heavily"</td>
+</tr>
+</tbody>
+</table>
+<h3>By Explanation Format</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Feature Attribution</strong></td>
+<td>Numerical scores showing each feature's contribution to the prediction</td>
+<td>Data scientists; tabular data</td>
+</tr>
+<tr>
+<td><strong>Saliency Maps / Heatmaps</strong></td>
+<td>Visual overlay showing which regions of an image influenced the prediction</td>
+<td>Image classification; medical imaging</td>
+</tr>
+<tr>
+<td><strong>Counterfactual</strong></td>
+<td>"What would need to change for a different outcome?"</td>
+<td>Business users; consumer explanations; fairness</td>
+</tr>
+<tr>
+<td><strong>Rules / Decision Logic</strong></td>
+<td>If-then rules or decision paths explaining the prediction</td>
+<td>Regulatory compliance; auditors</td>
+</tr>
+<tr>
+<td><strong>Natural Language</strong></td>
+<td>Plain-English (or other language) explanation of the reasoning</td>
+<td>Non-technical users; consumer-facing applications</td>
+</tr>
+<tr>
+<td><strong>Example-Based</strong></td>
+<td>"This prediction is similar to these training examples"</td>
+<td>Intuitive understanding; prototype-based reasoning</td>
+</tr>
+<tr>
+<td><strong>Concept-Based</strong></td>
+<td>Attribution at the level of human-meaningful concepts, not raw features</td>
+<td>High-level understanding; TCAV (Testing with Concept Activation Vectors)</td>
+</tr>
+</tbody>
+</table>
+<h3>By Model Access Requirement</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Access Needed</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Black-Box</strong></td>
+<td>Only inputs and outputs</td>
+<td>LIME, SHAP (KernelSHAP), counterfactuals, anchors</td>
+</tr>
+<tr>
+<td><strong>White-Box</strong></td>
+<td>Access to model internals (gradients, weights, activations)</td>
+<td>Grad-CAM, integrated gradients, LRP, attention, circuit analysis</td>
+</tr>
+<tr>
+<td><strong>Inherent</strong></td>
+<td>Model is interpretable by design</td>
+<td>Decision trees, linear models, EBMs, GAMs, rule lists</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 4 — CORE METHODS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-methods">
+ <h2>Core Explanation Methods</h2>
+ <p class="desc">Five families of explanation methods spanning inherently interpretable models to mechanistic interpretability.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-methods')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-methods">
+<h3>Core Architectures & Techniques</h3>
+<h3>Inherently Interpretable Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Interpretability</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linear Regression</strong></td>
+<td>Coefficients directly show feature importance and direction</td>
+<td>Trivially interpretable; fast</td>
+<td>Limited to linear relationships</td>
+</tr>
+<tr>
+<td><strong>Logistic Regression</strong></td>
+<td>Coefficients as log-odds; feature contributions are additive</td>
+<td>Strong interpretability for classification</td>
+<td>Cannot capture non-linearity</td>
+</tr>
+<tr>
+<td><strong>Decision Trees</strong></td>
+<td>If-then-else rules; can be visualised as a tree</td>
+<td>Intuitive; supports categorical and numerical data</td>
+<td>Unstable; prone to overfitting; accuracy limited</td>
+</tr>
+<tr>
+<td><strong>Rule Lists (CORELS, BRL)</strong></td>
+<td>Ordered list of if-then rules; human-readable</td>
+<td>Very interpretable; optimised for accuracy-interpretability balance</td>
+<td>Computationally expensive to optimise</td>
+</tr>
+<tr>
+<td><strong>GAMs (Generalised Additive Models)</strong></td>
+<td>Additive model: each feature contributes independently</td>
+<td>Per-feature shape functions are visualisable; non-linear but additive</td>
+<td>Cannot capture feature interactions</td>
+</tr>
+<tr>
+<td><strong>EBM (Explainable Boosting Machine)</strong></td>
+<td>GAM trained with boosting; includes pairwise feature interactions</td>
+<td>State-of-the-art accuracy among interpretable models; fast</td>
+<td>Predefined interaction terms; not as flexible as deep nets</td>
+</tr>
+<tr>
+<td><strong>Attention-Based Models</strong></td>
+<td>Attention weights indicate which input tokens/regions were "attended to"</td>
+<td>Built-in importance signal</td>
+<td>Attention ≠ explanation (debated; attention can be misleading)</td>
+</tr>
+</tbody>
+</table>
+<h3>Post-Hoc Explanation Methods — Model-Agnostic</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SHAP (SHapley Additive exPlanations)</strong></td>
+<td>Computes Shapley values from cooperative game theory — each feature's marginal contribution to the prediction</td>
+<td>Per-feature contribution scores; sum to prediction difference from baseline</td>
+</tr>
+<tr>
+<td><strong>LIME (Local Interpretable Model-agnostic Explanations)</strong></td>
+<td>Perturbs input; trains a local linear model in the neighbourhood of the prediction</td>
+<td>Per-feature weights in the local linear model</td>
+</tr>
+<tr>
+<td><strong>Partial Dependence Plots (PDP)</strong></td>
+<td>Shows the marginal effect of one or two features on the predicted outcome</td>
+<td>1D or 2D plots showing feature response</td>
+</tr>
+<tr>
+<td><strong>Individual Conditional Expectation (ICE)</strong></td>
+<td>Like PDP but shows the effect for each instance, not the average</td>
+<td>Per-instance feature response curves</td>
+</tr>
+<tr>
+<td><strong>Accumulated Local Effects (ALE)</strong></td>
+<td>Like PDP but avoids correlation bias; calculates local effects</td>
+<td>Unbiased feature effects</td>
+</tr>
+<tr>
+<td><strong>Counterfactual Explanations</strong></td>
+<td>"What is the smallest change to the input that would change the prediction?"</td>
+<td>Minimal change scenario</td>
+</tr>
+<tr>
+<td><strong>Anchors</strong></td>
+<td>Identifies sufficient conditions (rule-based) for a prediction</td>
+<td>If-then rules that "anchor" the prediction</td>
+</tr>
+<tr>
+<td><strong>Feature Interaction Detection</strong></td>
+<td>Methods like H-statistic, SHAP interactions</td>
+<td>Pairwise and higher-order feature interaction strengths</td>
+</tr>
+</tbody>
+</table>
+<h3>Post-Hoc Explanation Methods — Model-Specific</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Applies To</th>
+<th>How It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grad-CAM</strong></td>
+<td>CNNs (image models)</td>
+<td>Uses gradients of the target class flowing into the final convolutional layer to produce a saliency map</td>
+</tr>
+<tr>
+<td><strong>Integrated Gradients</strong></td>
+<td>Differentiable models (neural nets)</td>
+<td>Accumulates gradients along a path from a baseline input to the actual input</td>
+</tr>
+<tr>
+<td><strong>DeepLIFT</strong></td>
+<td>Neural networks</td>
+<td>Compares activations to a reference and assigns contribution scores</td>
+</tr>
+<tr>
+<td><strong>Layer-wise Relevance Propagation (LRP)</strong></td>
+<td>Neural networks</td>
+<td>Backpropagates relevance scores from output to input through network layers</td>
+</tr>
+<tr>
+<td><strong>Attention Visualisation</strong></td>
+<td>Transformers</td>
+<td>Visualises attention weight matrices across heads and layers</td>
+</tr>
+<tr>
+<td><strong>Probing Classifiers</strong></td>
+<td>LLMs/Transformers</td>
+<td>Trains a simple classifier on intermediate representations to test what information is encoded</td>
+</tr>
+<tr>
+<td><strong>Activation Maximisation</strong></td>
+<td>Neural networks</td>
+<td>Synthesises an input that maximally activates a neuron or class — revealing what the model "looks for"</td>
+</tr>
+<tr>
+<td><strong>Circuit Analysis</strong></td>
+<td>Transformers</td>
+<td>Maps computational circuits (paths through attention heads and MLPs) that implement specific behaviours</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 5 — TOOLS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-tools">
+ <h2>XAI Tools &amp; Frameworks</h2>
+ <p class="desc">The definitive toolkit for building explainable AI systems — from SHAP to cloud-native platforms.</p>
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Creator</th><th>Key Capabilities</th></tr>
+ </thead>
+ <tbody>
+ <tr><td style="color:var(--accent);font-weight:700;">SHAP</td><td>Lundberg</td><td>Shapley values; KernelSHAP, TreeSHAP, DeepSHAP; theoretically grounded</td></tr>
+ <tr><td style="color:var(--accent2);font-weight:700;">LIME</td><td>Ribeiro et al.</td><td>Local perturbation-based; tabular, text, image</td></tr>
+ <tr><td style="color:var(--accent3);font-weight:700;">Captum</td><td>Meta / PyTorch</td><td>Comprehensive attribution; integrated gradients, SHAP, LRP</td></tr>
+ <tr><td style="color:var(--accent4);font-weight:700;">InterpretML</td><td>Microsoft</td><td>EBM + dashboard; glass-box models</td></tr>
+ <tr><td style="color:var(--accent5);font-weight:700;">Alibi</td><td>Seldon</td><td>Counterfactual explanations, anchors, trust scores</td></tr>
+ <tr><td style="color:var(--accent6);font-weight:700;">AIX360</td><td>IBM</td><td>Prototypes, contrastive explanations, boolean rules</td></tr>
+ <tr><td style="color:var(--accent);font-weight:700;">What-If Tool</td><td>Google</td><td>Interactive visual; TensorBoard; fairness</td></tr>
+ <tr><td style="color:var(--accent2);font-weight:700;">Responsible AI Toolbox</td><td>Microsoft</td><td>Error analysis, fairness, interpretation</td></tr>
+ <tr><td style="color:var(--accent3);font-weight:700;">SageMaker Clarify</td><td>AWS</td><td>Bias detection, SHAP-based attributions</td></tr>
+ <tr><td style="color:var(--accent4);font-weight:700;">Azure Responsible AI</td><td>Microsoft</td><td>Interpretability, fairness, error analysis</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Explanation Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SHAP</strong></td>
+<td>Open-source (Lundberg)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU; optional GPU for DeepSHAP)</td>
+<td>The standard for Shapley-based explanations; KernelSHAP, TreeSHAP, DeepSHAP; Python</td>
+</tr>
+<tr>
+<td><strong>LIME</strong></td>
+<td>Open-source (Ribeiro et al.)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>Local explanations via perturbation; tabular, text, image support</td>
+</tr>
+<tr>
+<td><strong>Captum</strong></td>
+<td>Meta (open-source / PyTorch)</td>
+<td>Open-Source (any OS; Python 3.8+; PyTorch; CPU or NVIDIA GPU)</td>
+<td>Comprehensive attribution library for PyTorch models; integrated gradients, SHAP, LRP, GradCAM</td>
+</tr>
+<tr>
+<td><strong>InterpretML</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>EBM (Explainable Boosting Machine) + explanation dashboard; glass-box and black-box methods</td>
+</tr>
+<tr>
+<td><strong>Alibi</strong></td>
+<td>Seldon (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU; optional GPU for deep-learning explainers)</td>
+<td>Counterfactual explanations, anchors, trust scores, integrated gradients</td>
+</tr>
+<tr>
+<td><strong>AI Explainability 360 (AIX360)</strong></td>
+<td>IBM (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>Comprehensive XAI toolkit; prototypes, contrastive explanations, boolean rules</td>
+</tr>
+<tr>
+<td><strong>tf-explain</strong></td>
+<td>Open-source (TensorFlow)</td>
+<td>Open-Source (any OS; Python 3.8+; TensorFlow; CPU or GPU)</td>
+<td>Grad-CAM, occlusion sensitivity, SmoothGrad for TensorFlow/Keras models</td>
+</tr>
+<tr>
+<td><strong>DiCE</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>Diverse Counterfactual Explanations for any ML model</td>
+</tr>
+<tr>
+<td><strong>TransformerLens</strong></td>
+<td>Neel Nanda (open-source)</td>
+<td>Open-Source (any OS; Python 3.9+; PyTorch; NVIDIA GPU recommended for large models)</td>
+<td>Mechanistic interpretability toolkit for Transformer models</td>
+</tr>
+<tr>
+<td><strong>SAE Lens</strong></td>
+<td>Joseph Bloom et al. (open-source)</td>
+<td>Open-Source (any OS; Python 3.9+; PyTorch; NVIDIA GPU recommended)</td>
+<td>Sparse autoencoder training and analysis for mechanistic interpretability</td>
+</tr>
+</tbody>
+</table>
+<h3>Visualisation &amp; Dashboards</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What-If Tool</strong></td>
+<td>Google (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; TensorBoard integration; CPU-only)</td>
+<td>Interactive visual tool for exploring model performance and fairness; integrates with TensorBoard</td>
+</tr>
+<tr>
+<td><strong>Responsible AI Toolbox</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only; integrates with Azure ML)</td>
+<td>Error analysis, fairness assessment, model interpretation in a unified dashboard</td>
+</tr>
+<tr>
+<td><strong>Evidently</strong></td>
+<td>Open-source</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only; Evidently Cloud SaaS on AWS available)</td>
+<td>ML model monitoring with built-in explanation and drift detection</td>
+</tr>
+<tr>
+<td><strong>Neuron Viewer</strong></td>
+<td>Anthropic (public)</td>
+<td>Cloud (Anthropic infrastructure)</td>
+<td>Interactive visualisation of features discovered in LLMs via sparse autoencoders</td>
+</tr>
+<tr>
+<td><strong>LIT (Language Interpretability Tool)</strong></td>
+<td>Google (open-source)</td>
+<td>Open-Source (any OS; Python 3.9+; CPU or GPU; browser-based UI)</td>
+<td>Interactive analysis of NLP models; saliency, attention, counterfactual generation</td>
+</tr>
+</tbody>
+</table>
+<h3>Enterprise Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon SageMaker Clarify</strong></td>
+<td>AWS</td>
+<td>Cloud (AWS — SageMaker on EC2; S3 for data)</td>
+<td>Bias detection and feature attributions (SHAP-based) integrated into SageMaker</td>
+</tr>
+<tr>
+<td><strong>Google Cloud Vertex Explainable AI</strong></td>
+<td>Google Cloud</td>
+<td>Cloud (GCP — Vertex AI on Compute Engine)</td>
+<td>Feature attributions for Vertex AI models; supports tabular, image, and text</td>
+</tr>
+<tr>
+<td><strong>Azure Responsible AI</strong></td>
+<td>Microsoft</td>
+<td>Cloud (Azure — Azure ML on Azure VMs)</td>
+<td>Model interpretability, fairness, error analysis integrated into Azure ML</td>
+</tr>
+<tr>
+<td><strong>Fiddler AI</strong></td>
+<td>Fiddler</td>
+<td>Cloud (Fiddler SaaS on AWS / GCP)</td>
+<td>Model explainability, monitoring, and analytics platform</td>
+</tr>
+<tr>
+<td><strong>Arthur AI</strong></td>
+<td>Arthur</td>
+<td>Cloud (Arthur SaaS on AWS)</td>
+<td>Model monitoring with built-in explainability and bias detection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 6 — USE CASES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">Where Explainable AI delivers real-world value — from regulated finance to life-critical healthcare.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Financial Services</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credit Decisions</strong></td>
+<td>Explain why a loan application was approved or denied; required by regulation</td>
+<td>SHAP for feature importance; counterfactuals for "what would change the decision"</td>
+</tr>
+<tr>
+<td><strong>Fraud Detection</strong></td>
+<td>Explain why a transaction was flagged as fraudulent — enables analyst review</td>
+<td>Feature attributions showing anomalous features</td>
+</tr>
+<tr>
+<td><strong>Algorithmic Trading</strong></td>
+<td>Explain trade signals to portfolio managers and compliance</td>
+<td>Factor decomposition, decision tree surrogates</td>
+</tr>
+<tr>
+<td><strong>Insurance Underwriting</strong></td>
+<td>Explain policy pricing and risk assessment</td>
+<td>EBM for interpretable pricing models</td>
+</tr>
+<tr>
+<td><strong>Regulatory Compliance</strong></td>
+<td>Model risk management (SR 11-7, OCC guidelines) requires model documentation and explanation</td>
+<td>Model cards, SHAP reports, validation frameworks</td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clinical Decision Support</strong></td>
+<td>Explain why an AI system recommended a diagnosis or treatment</td>
+<td>Grad-CAM for radiology; SHAP for clinical risk models</td>
+</tr>
+<tr>
+<td><strong>Medical Imaging</strong></td>
+<td>Show which regions of a scan drove the AI's finding</td>
+<td>Grad-CAM, saliency maps, attention heatmaps</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>Explain which molecular features predict bioactivity</td>
+<td>SHAP on molecular descriptors; attention over molecular graphs</td>
+</tr>
+<tr>
+<td><strong>Patient Risk Stratification</strong></td>
+<td>Explain individual risk scores to clinicians</td>
+<td>EBM models; SHAP waterfall plots</td>
+</tr>
+<tr>
+<td><strong>FDA/CE Clearance</strong></td>
+<td>Regulatory submissions increasingly require model explainability documentation</td>
+<td>FDA AI/ML guidance; EU MDR requirements</td>
+</tr>
+</tbody>
+</table>
+<h3>Criminal Justice &amp; Public Sector</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recidivism Prediction</strong></td>
+<td>Explain risk scores used in sentencing and parole decisions</td>
+<td>Controversy around COMPAS; need for transparent models</td>
+</tr>
+<tr>
+<td><strong>Benefits Eligibility</strong></td>
+<td>Explain automated decisions on welfare, tax, and social services</td>
+<td>GDPR / public sector requiring explanations for automated decisions</td>
+</tr>
+<tr>
+<td><strong>Policing</strong></td>
+<td>Explain predictive policing outputs and risk assessments</td>
+<td>Transparency requirements; civil liberties concerns</td>
+</tr>
+</tbody>
+</table>
+<h3>Technology &amp; Consumer Products</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recommendation Systems</strong></td>
+<td>Explain why a product, video, or article was recommended</td>
+<td>"Because you watched X", content-based explanations</td>
+</tr>
+<tr>
+<td><strong>Content Moderation</strong></td>
+<td>Explain why content was flagged or removed</td>
+<td>Attribution of which elements violated policy</td>
+</tr>
+<tr>
+<td><strong>Search Ranking</strong></td>
+<td>Explain search result ordering to improve relevance and detect bias</td>
+<td>Feature importance for ranking models</td>
+</tr>
+<tr>
+<td><strong>LLM Applications</strong></td>
+<td>Explain chatbot responses, summarisation, and generation decisions</td>
+<td>CoT reasoning traces; retrieval attribution in RAG</td>
+</tr>
+</tbody>
+</table>
+<h3>Automotive &amp; Manufacturing</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Vehicle Decisions</strong></td>
+<td>Explain perception and planning decisions for safety validation</td>
+<td>Saliency maps for object detection; decision tree surrogates for planning</td>
+</tr>
+<tr>
+<td><strong>Quality Control</strong></td>
+<td>Explain defect detection decisions</td>
+<td>Grad-CAM on inspection images</td>
+</tr>
+<tr>
+<td><strong>Predictive Maintenance</strong></td>
+<td>Explain equipment failure predictions to maintenance engineers</td>
+<td>SHAP on sensor features; temporal attribution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 7 — BENCHMARKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-benchmarks">
+ <h2>Benchmarks &amp; Evaluation</h2>
+ <p class="desc">Quantitative measures of explanation quality and impact on human decision-making.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Explanation Quality Metrics</h3>
+ <canvas id="chart-quality"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>User Impact</h3>
+ <canvas id="chart-impact"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Explanation Quality Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fidelity</strong></td>
+<td>How faithfully the explanation represents the model's actual reasoning — does the explanation predict the model's behaviour?</td>
+</tr>
+<tr>
+<td><strong>Stability / Robustness</strong></td>
+<td>Do similar inputs produce similar explanations? (Sensitive to small perturbations = unstable)</td>
+</tr>
+<tr>
+<td><strong>Sparsity / Conciseness</strong></td>
+<td>Does the explanation focus on a small number of key features? (Fewer features = easier to understand)</td>
+</tr>
+<tr>
+<td><strong>Sufficiency</strong></td>
+<td>Are the highlighted features enough to reproduce the prediction? (Mask non-highlighted features — does prediction hold?)</td>
+</tr>
+<tr>
+<td><strong>Necessity</strong></td>
+<td>Are the highlighted features necessary for the prediction? (Mask highlighted features — does prediction change?)</td>
+</tr>
+<tr>
+<td><strong>Plausibility</strong></td>
+<td>Do the explanations align with human intuition and domain knowledge?</td>
+</tr>
+<tr>
+<td><strong>Faithfulness</strong></td>
+<td>Does the explanation truly reflect the model's internal reasoning — or is it a plausible-but-unfaithful rationalisation?</td>
+</tr>
+<tr>
+<td><strong>Comprehensiveness</strong></td>
+<td>Are all important features captured — not just the top ones?</td>
+</tr>
+</tbody>
+</table>
+<h3>Human Evaluation Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User Satisfaction</strong></td>
+<td>Do users find the explanation helpful and understandable? (Survey / Likert scale)</td>
+</tr>
+<tr>
+<td><strong>Task Performance</strong></td>
+<td>Do explanations improve human decision-making accuracy? (Measured via controlled experiments)</td>
+</tr>
+<tr>
+<td><strong>Trust Calibration</strong></td>
+<td>Do explanations help users correctly distinguish reliable vs. unreliable model predictions?</td>
+</tr>
+<tr>
+<td><strong>Cognitive Load</strong></td>
+<td>How much mental effort is required to understand the explanation? Lower = better</td>
+</tr>
+<tr>
+<td><strong>Actionability</strong></td>
+<td>Can users take meaningful action based on the explanation? (Especially for counterfactuals)</td>
+</tr>
+</tbody>
+</table>
+<h3>Computational Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explanation Time</strong></td>
+<td>Wall-clock time to generate an explanation (important for real-time applications)</td>
+</tr>
+<tr>
+<td><strong>Model Evaluations</strong></td>
+<td>Number of forward passes required (perturbation-based methods like LIME, KernelSHAP)</td>
+</tr>
+<tr>
+<td><strong>Memory Overhead</strong></td>
+<td>Additional memory required for explanation computation</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>How explanation cost scales with input dimensionality and model size</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 8 — MARKET DATA -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-market">
+ <h2>Market Data</h2>
+ <p class="desc">XAI market size, adoption metrics, and projected growth through 2028.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>XAI Market Snapshot (2024)</h3>
+ <canvas id="chart-snapshot"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Market Growth 2024 → 2028 (CAGR 21%)</h3>
+ <canvas id="chart-growth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Context</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XAI Market Size (2024)</strong></td>
+<td>~$6.2 billion</td>
+<td>MarketsandMarkets; includes software, services, platforms</td>
+</tr>
+<tr>
+<td><strong>Projected XAI Market (2028)</strong></td>
+<td>~$16.2 billion</td>
+<td>~21% CAGR; driven primarily by regulation</td>
+</tr>
+<tr>
+<td><strong>Organisations Using XAI (2024)</strong></td>
+<td>~35% of organisations deploying AI have some XAI capability</td>
+<td>Gartner; mostly in financial services and healthcare</td>
+</tr>
+<tr>
+<td><strong>Regulatory-Driven Adoption</strong></td>
+<td>~60% of XAI adoption is directly driven by regulatory requirements</td>
+<td>EY survey 2024</td>
+</tr>
+<tr>
+<td><strong>XAI in Healthcare</strong></td>
+<td>~45% of AI-enabled clinical tools include some form of explanation</td>
+<td>FDA AI submissions increasingly require it</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Trends</h3>
+<table>
+<thead>
+<tr>
+<th>Trend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU AI Act Forcing Function</strong></td>
+<td>The EU AI Act's transparency requirements are the single largest driver of XAI investment</td>
+</tr>
+<tr>
+<td><strong>SHAP Dominance</strong></td>
+<td>SHAP is the most widely adopted explanation method in industry; used in ~65% of XAI deployments</td>
+</tr>
+<tr>
+<td><strong>Interpretable Models Resurgence</strong></td>
+<td>EBMs and GAMs gaining traction as alternatives to black-box + post-hoc explanation</td>
+</tr>
+<tr>
+<td><strong>LLM Explainability Demand</strong></td>
+<td>Rapidly growing demand for explaining LLM behaviour; mechanistic interpretability funding increasing</td>
+</tr>
+<tr>
+<td><strong>Integrated Platforms</strong></td>
+<td>Major cloud providers (AWS, Azure, GCP) now bundle XAI with their ML services</td>
+</tr>
+<tr>
+<td><strong>Explanation UX Maturation</strong></td>
+<td>Explanations becoming better integrated into end-user workflows (not just data science tools)</td>
+</tr>
+<tr>
+<td><strong>Mechanistic Interpretability Surge</strong></td>
+<td>Anthropic, DeepMind, and EleutherAI investing heavily in understanding model internals</td>
+</tr>
+<tr>
+<td><strong>Counterfactual Explanations Growing</strong></td>
+<td>Counterfactuals gaining popularity for consumer-facing and compliance use cases</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 9 — RISKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Key risks and open challenges in the Explainable AI ecosystem.</p>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Fundamental Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy-Interpretability Tradeoff</strong></td>
+<td>Inherently interpretable models are often less accurate than complex ones; post-hoc methods approximate but may not perfectly capture the model's reasoning</td>
+</tr>
+<tr>
+<td><strong>Faithfulness Gap</strong></td>
+<td>Post-hoc explanations may not faithfully represent the model's actual internal process — they may be plausible but wrong</td>
+</tr>
+<tr>
+<td><strong>Explanation Gaming</strong></td>
+<td>Models can be designed to produce favourable explanations while hiding discriminatory behaviour ("fairwashing")</td>
+</tr>
+<tr>
+<td><strong>Cognitive Overload</strong></td>
+<td>Too much information (100 features, complex interactions) can overwhelm users rather than help them</td>
+</tr>
+<tr>
+<td><strong>Explanation Disagreement</strong></td>
+<td>Different XAI methods applied to the same model and instance often produce different explanations</td>
+</tr>
+<tr>
+<td><strong>Illusion of Understanding</strong></td>
+<td>Explanations can create false confidence — users may over-trust a model because it "explained" its reasoning</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Many XAI methods are computationally expensive for large models (LLMs, large ensembles)</td>
+</tr>
+<tr>
+<td><strong>No Ground-Truth</strong></td>
+<td>There is no objective "correct" explanation — evaluation ultimately requires human judgement</td>
+</tr>
+</tbody>
+</table>
+<h3>Common Failure Modes</h3>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unstable Explanations</strong></td>
+<td>LIME and some SHAP variants can produce different explanations for the same input across runs</td>
+</tr>
+<tr>
+<td><strong>Misleading Saliency Maps</strong></td>
+<td>Grad-CAM can highlight irrelevant regions (e.g., background instead of the object)</td>
+</tr>
+<tr>
+<td><strong>Unfaithful CoT</strong></td>
+<td>LLMs can generate plausible reasoning that does not reflect their actual computation</td>
+</tr>
+<tr>
+<td><strong>Confirmation Bias</strong></td>
+<td>Users may selectively accept explanations that confirm their prior beliefs</td>
+</tr>
+<tr>
+<td><strong>Feature Attribution Leakage</strong></td>
+<td>Correlated features can cause attributions to shift between correlated features unpredictably</td>
+</tr>
+<tr>
+<td><strong>Adversarial Explanations</strong></td>
+<td>Attackers can craft inputs that produce misleading explanations while achieving a target prediction</td>
+</tr>
+</tbody>
+</table>
+<h3>When XAI Is the Right Choice</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why XAI Excels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-Stakes Decisions</strong></td>
+<td>When AI decisions have significant consequences (healthcare, finance, justice)</td>
+</tr>
+<tr>
+<td><strong>Regulatory Requirements</strong></td>
+<td>When explainability is legally mandated (EU AI Act, GDPR, sector-specific rules)</td>
+</tr>
+<tr>
+<td><strong>Debugging &amp; Development</strong></td>
+<td>When data scientists need to understand and improve model behaviour</td>
+</tr>
+<tr>
+<td><strong>Fairness Auditing</strong></td>
+<td>When organisations need to verify AI systems are not discriminating</td>
+</tr>
+<tr>
+<td><strong>User Trust</strong></td>
+<td>When end users need to understand and trust AI recommendations</td>
+</tr>
+<tr>
+<td><strong>Safety-Critical Systems</strong></td>
+<td>When understanding failure modes is essential for safe deployment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="analytical-ai.html">Analytical AI</a>
+<a href="predictive-discriminative-ai.html">Predictive / Discriminative AI</a>
+<a href="bayesian-probabilistic-ai.html">Bayesian / Probabilistic AI</a>
+<a href="cognitive-neuro-symbolic-ai.html">Cognitive / Neuro-Symbolic AI</a>
+<a href="federated-privacy-ai.html">Federated / Privacy-Preserving AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<!-- ██ SECTION 10 — GLOSSARY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key terms and concepts in Explainable AI.</p>
+ <input type="text" class="glossary-search" id="glossary-search" placeholder="Search terms…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activation Maximisation</strong></td>
+<td>Synthesising an input that maximally activates a specific neuron, revealing what feature it detects</td>
+</tr>
+<tr>
+<td><strong>ALE (Accumulated Local Effects)</strong></td>
+<td>An unbiased alternative to PDP that avoids correlation problems when plotting feature effects</td>
+</tr>
+<tr>
+<td><strong>Anchors</strong></td>
+<td>Sufficient conditions (if-then rules) that "anchor" a model's prediction in a local region</td>
+</tr>
+<tr>
+<td><strong>Attribution</strong></td>
+<td>The process of assigning credit or blame to input features for a model's prediction</td>
+</tr>
+<tr>
+<td><strong>Black-Box</strong></td>
+<td>A model whose internals are not accessible — only inputs and outputs can be observed</td>
+</tr>
+<tr>
+<td><strong>Captum</strong></td>
+<td>Meta's PyTorch-based library for model attribution and interpretability</td>
+</tr>
+<tr>
+<td><strong>Chain-of-Thought (CoT)</strong></td>
+<td>Prompting an LLM to generate step-by-step reasoning before producing an answer</td>
+</tr>
+<tr>
+<td><strong>Circuit Analysis</strong></td>
+<td>Reverse-engineering computational circuits in neural networks to understand information processing</td>
+</tr>
+<tr>
+<td><strong>Concept Activation Vector (CAV)</strong></td>
+<td>A direction in a model's activation space corresponding to a human-defined concept</td>
+</tr>
+<tr>
+<td><strong>Counterfactual Explanation</strong></td>
+<td>The smallest change to an input that would change the model's prediction</td>
+</tr>
+<tr>
+<td><strong>DeepLIFT</strong></td>
+<td>A neural network attribution method that compares activations to a reference input</td>
+</tr>
+<tr>
+<td><strong>EBM (Explainable Boosting Machine)</strong></td>
+<td>A glass-box model combining GAMs with gradient boosting; state-of-the-art interpretable model</td>
+</tr>
+<tr>
+<td><strong>Faithfulness</strong></td>
+<td>Whether an explanation truly reflects the model's actual internal reasoning process</td>
+</tr>
+<tr>
+<td><strong>Feature Attribution</strong></td>
+<td>A numerical score indicating how much each input feature contributed to a prediction</td>
+</tr>
+<tr>
+<td><strong>Fidelity</strong></td>
+<td>How accurately an explanation represents or predicts the model's behaviour</td>
+</tr>
+<tr>
+<td><strong>GAM (Generalised Additive Model)</strong></td>
+<td>A model where the prediction is a sum of individual feature effects, each modelled non-linearly</td>
+</tr>
+<tr>
+<td><strong>Glass-Box Model</strong></td>
+<td>A model that is inherently interpretable — its internal logic can be directly inspected</td>
+</tr>
+<tr>
+<td><strong>Grad-CAM</strong></td>
+<td>Gradient-weighted Class Activation Mapping — produces saliency maps for CNN predictions</td>
+</tr>
+<tr>
+<td><strong>Integrated Gradients</strong></td>
+<td>An attribution method that accumulates gradients along a path from a baseline to the input</td>
+</tr>
+<tr>
+<td><strong>Interpretability</strong></td>
+<td>The degree to which a model's behaviour can be understood by humans without additional tools</td>
+</tr>
+<tr>
+<td><strong>LIME</strong></td>
+<td>Local Interpretable Model-agnostic Explanations — local perturbation-based explanations</td>
+</tr>
+<tr>
+<td><strong>Logit Lens</strong></td>
+<td>A technique that projects intermediate Transformer hidden states to the vocabulary to trace token predictions</td>
+</tr>
+<tr>
+<td><strong>LRP (Layer-wise Relevance Propagation)</strong></td>
+<td>Backpropagates relevance scores from output to input through neural network layers</td>
+</tr>
+<tr>
+<td><strong>Mechanistic Interpretability</strong></td>
+<td>The research programme to reverse-engineer neural network computations at a mechanistic level</td>
+</tr>
+<tr>
+<td><strong>Model Card</strong></td>
+<td>A structured document describing a model's purpose, performance, limitations, and ethical considerations</td>
+</tr>
+<tr>
+<td><strong>PDP (Partial Dependence Plot)</strong></td>
+<td>A plot showing the marginal effect of one or two features on the model's predicted outcome</td>
+</tr>
+<tr>
+<td><strong>Post-Hoc Explanation</strong></td>
+<td>An explanation applied after a model is trained — it explains the model without changing it</td>
+</tr>
+<tr>
+<td><strong>Probing Classifier</strong></td>
+<td>A simple classifier trained on intermediate model representations to discover encoded information</td>
+</tr>
+<tr>
+<td><strong>Saliency Map</strong></td>
+<td>A visualisation showing which input regions (pixels, tokens) most influenced a model's prediction</td>
+</tr>
+<tr>
+<td><strong>SHAP</strong></td>
+<td>SHapley Additive exPlanations — theoretically grounded attribution method based on Shapley values</td>
+</tr>
+<tr>
+<td><strong>Shapley Value</strong></td>
+<td>From game theory: the unique fair allocation of a cooperative game's total payout among players</td>
+</tr>
+<tr>
+<td><strong>Sparse Autoencoder (SAE)</strong></td>
+<td>An autoencoder that learns sparse, interpretable features from dense neural network activations</td>
+</tr>
+<tr>
+<td><strong>Sufficiency</strong></td>
+<td>Whether the highlighted features are enough to reproduce the model's prediction</td>
+</tr>
+<tr>
+<td><strong>TCAV</strong></td>
+<td>Testing with Concept Activation Vectors — tests model sensitivity to human-defined concepts</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>The overall property of an AI system being open, understandable, and inspectable</td>
+</tr>
+<tr>
+<td><strong>White-Box</strong></td>
+<td>A model whose internals (weights, activations, gradients) are fully accessible for inspection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Explainable AI (XAI) — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/08-explainable-ai-overview.gif" alt="Explainable AI (XAI) — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Explainable AI (XAI) · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/08-explainable-ai-tech-stack.gif" alt="Explainable AI (XAI) — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Regulatory Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>XAI Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU AI Act (2024)</strong></td>
+<td>High-risk AI systems must provide "sufficient transparency to enable users to interpret the system's output and use it appropriately"; requires technical documentation of model behaviour</td>
+</tr>
+<tr>
+<td><strong>GDPR (2018) — Article 22</strong></td>
+<td>Data subjects have the right not to be subject to solely automated decisions; organisations must provide "meaningful information about the logic involved"</td>
+</tr>
+<tr>
+<td><strong>ECOA / Reg B (US)</strong></td>
+<td>Creditors must provide "specific reasons" for adverse credit actions — directly requires explainable credit models</td>
+</tr>
+<tr>
+<td><strong>SR 11-7 (US Fed)</strong></td>
+<td>Model Risk Management guidance — requires model documentation, validation, and explanation</td>
+</tr>
+<tr>
+<td><strong>FDA AI/ML Guidance (US)</strong></td>
+<td>AI in medical devices requires transparency about model behaviour and decision-making</td>
+</tr>
+<tr>
+<td><strong>EU MDR (Medical Devices)</strong></td>
+<td>Clinical decision support software must be transparent and understandable</td>
+</tr>
+<tr>
+<td><strong>UK FCA / PRA</strong></td>
+<td>Financial regulators require firms to explain algorithmic decisions and demonstrate model governance</td>
+</tr>
+<tr>
+<td><strong>Singapore MAS FEAT</strong></td>
+<td>Fairness, Ethics, Accountability, and Transparency framework for AI in financial services</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Best Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Cards</strong></td>
+<td>Structured documentation of model purpose, performance, limitations, and intended use (Mitchell et al., 2019)</td>
+</tr>
+<tr>
+<td><strong>Datasheets for Datasets</strong></td>
+<td>Documentation of dataset provenance, composition, collection process, and intended use (Gebru et al., 2021)</td>
+</tr>
+<tr>
+<td><strong>Explanation Logging</strong></td>
+<td>Store explanations alongside predictions for audit and compliance</td>
+</tr>
+<tr>
+<td><strong>Explanation Review Process</strong></td>
+<td>Human review of explanations for high-stakes decisions</td>
+</tr>
+<tr>
+<td><strong>Regular Explanation Audits</strong></td>
+<td>Periodic assessment of explanation fidelity, stability, and alignment with domain knowledge</td>
+</tr>
+<tr>
+<td><strong>Fairness-Explainability Integration</strong></td>
+<td>Use XAI to identify and mitigate bias; SHAP for protected attribute analysis</td>
+</tr>
+<tr>
+<td><strong>Tiered Explanations</strong></td>
+<td>Provide different explanation depths for different audiences (consumer, business, technical, regulatory)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Model-Agnostic Explanation Methods — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>SHAP (SHapley Additive exPlanations)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foundation</strong></td>
+<td>Shapley values from cooperative game theory (Shapley, 1953); applied to ML by Lundberg &amp; Lee (2017)</td>
+</tr>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Each feature is a "player" in a cooperative game; the prediction is the "payout"; Shapley values assign each player a fair contribution</td>
+</tr>
+<tr>
+<td><strong>Mathematical Property</strong></td>
+<td>The only method satisfying local accuracy, missingness, and consistency — axiomatically the "fairest" attribution</td>
+</tr>
+<tr>
+<td><strong>Variants</strong></td>
+<td><strong>KernelSHAP</strong>: model-agnostic, perturbation-based — <strong>TreeSHAP</strong>: exact for tree models (O(TLD²)) — <strong>DeepSHAP</strong>: DeepLIFT + Shapley for neural nets — <strong>FastSHAP</strong>: amortised SHAP via a learned explainer network</td>
+</tr>
+<tr>
+<td><strong>Global Explanations</strong></td>
+<td>Aggregate local SHAP values across the dataset: mean absolute SHAP = global feature importance</td>
+</tr>
+<tr>
+<td><strong>Interaction Values</strong></td>
+<td>SHAP interaction values decompose Shapley values into main and interaction effects</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Theoretically grounded; consistent; both local and global; works on any model</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Computationally expensive for large models (exponential in exact form; KernelSHAP is approximate); baseline choice matters; can be slow for real-time applications</td>
+</tr>
+</tbody>
+</table>
+<h3>LIME (Local Interpretable Model-Agnostic Explanations)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>Ribeiro et al. (2016)</td>
+</tr>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>For a given prediction, perturb the input to generate a local neighbourhood; train a simple interpretable model (linear, decision tree) on the perturbation-prediction pairs; the interpretable model explains the local behaviour</td>
+</tr>
+<tr>
+<td><strong>Process</strong></td>
+<td>1. Select instance → 2. Perturb input → 3. Get model predictions for perturbations → 4. Weight by proximity → 5. Fit sparse linear model → 6. Report coefficients as explanations</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Model-agnostic; intuitive; flexible — works on tabular, text, and image data</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Explanations can be unstable (different runs → different explanations); fidelity to the original model varies; neighbourhood definition is subjective</td>
+</tr>
+</tbody>
+</table>
+<h3>Counterfactual Explanations</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>"What is the smallest change to the input that would result in a different prediction?"</td>
+</tr>
+<tr>
+<td><strong>Example</strong></td>
+<td>"Your loan was denied. If your income were £5,000 higher and you had no outstanding debts, the loan would have been approved."</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Actionable — tells users what to change; intuitive; does not require model internals</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Multiple valid counterfactuals may exist; some changes may be infeasible (cannot change age); need to constrain to plausible changes</td>
+</tr>
+<tr>
+<td><strong>Methods</strong></td>
+<td>Wachter et al. (2017); DiCE (Diverse Counterfactual Explanations, Microsoft); FACE (Feasible Actionable Counterfactual Explanations)</td>
+</tr>
+<tr>
+<td><strong>Legal Relevance</strong></td>
+<td>GDPR's Right to Explanation has been interpreted to require counterfactual-style explanations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Model-Specific Explanation Methods — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Grad-CAM (Gradient-weighted Class Activation Mapping)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Convolutional Neural Networks (CNNs) for image tasks</td>
+</tr>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Compute gradients of the target class score with respect to the feature maps of the last convolutional layer; use the gradient magnitude as weights to produce a heatmap</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>A coarse spatial heatmap highlighting the regions of the input image that were most important for the prediction</td>
+</tr>
+<tr>
+<td><strong>Variants</strong></td>
+<td><strong>Grad-CAM++</strong> (improved multi-object localisation), <strong>Score-CAM</strong> (gradient-free), <strong>Layer-CAM</strong> (finer spatial resolution)</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Fast; no retraining; easy to visualise; widely adopted in medical imaging</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Coarse resolution (limited to the last conv layer); may miss fine-grained features; class-specific only</td>
+</tr>
+</tbody>
+</table>
+<h3>Integrated Gradients</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>Sundararajan et al. (2017)</td>
+</tr>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Accumulate gradients along a straight-line path from a baseline input (e.g., black image, zero vector) to the actual input</td>
+</tr>
+<tr>
+<td><strong>Mathematical Property</strong></td>
+<td>Satisfies sensitivity (if a feature changes the prediction, it gets non-zero attribution) and implementation invariance (same function → same attributions)</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Theoretically grounded; works on any differentiable model; no retraining</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Baseline choice affects results; path integration requires many steps (100+); can be noisy for high-dimensional inputs</td>
+</tr>
+</tbody>
+</table>
+<h3>Mechanistic Interpretability (Circuit Analysis)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What It Is</strong></td>
+<td>A research approach aiming to reverse-engineer the computational mechanisms (circuits) inside neural networks — understanding not just what features matter but how the model processes information internally</td>
+</tr>
+<tr>
+<td><strong>Key Techniques</strong></td>
+<td>Activation patching, causal tracing, sparse autoencoders for feature discovery, circuit identification</td>
+</tr>
+<tr>
+<td><strong>Notable Work</strong></td>
+<td>Anthropic's "Towards Monosemanticity" (2023), "Scaling Monosemanticity" (2024); Neel Nanda's TransformerLens; Chris Olah's "Zoom In"</td>
+</tr>
+<tr>
+<td><strong>Goal</strong></td>
+<td>Move from "what features are important" to "how does the model compute its answer" — true understanding of model internals</td>
+</tr>
+<tr>
+<td><strong>Maturity</strong></td>
+<td>Research-stage; most work on small Transformers; scaling to production LLMs is an active frontier</td>
+</tr>
+<tr>
+<td><strong>Significance</strong></td>
+<td>If successful, mechanistic interpretability could provide definitive answers about model safety, bias, and behaviour — far beyond attribution methods</td>
+</tr>
+</tbody>
+</table>
+<h3>Concept-Based Explanations</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What It Is</strong></td>
+<td>Explanations at the level of human-meaningful concepts (e.g., "stripes", "wings", "loop shape") rather than raw pixel or feature values</td>
+</tr>
+<tr>
+<td><strong>TCAV</strong></td>
+<td>Testing with Concept Activation Vectors (Kim et al., 2018) — tests how sensitive a model's predictions are to the presence of a human-defined concept</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Train a linear classifier to separate activations corresponding to a concept from random activations; use the classifier's direction as a "concept vector"</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Human-meaningful; bridges the gap between model internals and human understanding</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Requires labelled concept datasets; concept definitions can be ambiguous</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Explainability for Large Language Models & Foundation Models</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Unique Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scale</strong></td>
+<td>LLMs have billions of parameters; traditional attribution methods are computationally prohibitive</td>
+</tr>
+<tr>
+<td><strong>Generative Output</strong></td>
+<td>LLMs generate sequences, not single predictions — explaining why each token was generated is complex</td>
+</tr>
+<tr>
+<td><strong>Emergent Behaviour</strong></td>
+<td>Capabilities emerge at scale (in-context learning, reasoning) that are not present in smaller models</td>
+</tr>
+<tr>
+<td><strong>Multimodal Inputs</strong></td>
+<td>Foundation models increasingly handle text, images, and audio — explanation must span modalities</td>
+</tr>
+<tr>
+<td><strong>Prompt Sensitivity</strong></td>
+<td>Small changes in prompts can dramatically change outputs — explanations must account for prompt influence</td>
+</tr>
+<tr>
+<td><strong>Black-Box API Access</strong></td>
+<td>Many LLMs are available only via API — no access to weights, gradients, or activations</td>
+</tr>
+</tbody>
+</table>
+<h3>Current Approaches for LLM Explainability</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chain-of-Thought (CoT)</strong></td>
+<td>Prompting the model to "explain its reasoning" step-by-step — generates a reasoning trace before the answer</td>
+</tr>
+<tr>
+<td><strong>Self-Consistency</strong></td>
+<td>Sampling multiple CoT reasoning paths and checking agreement — higher consistency suggests more reliable reasoning</td>
+</tr>
+<tr>
+<td><strong>Attention Visualisation</strong></td>
+<td>Visualising attention patterns across heads and layers; useful for understanding token dependencies</td>
+</tr>
+<tr>
+<td><strong>Probing</strong></td>
+<td>Training simple classifiers on intermediate representations to discover what information is encoded at each layer</td>
+</tr>
+<tr>
+<td><strong>Mechanistic Interpretability</strong></td>
+<td>Reverse-engineering circuits and features inside Transformer models (Anthropic, EleutherAI, DeepMind)</td>
+</tr>
+<tr>
+<td><strong>Logit Lens / Tuned Lens</strong></td>
+<td>Projecting intermediate hidden states to the vocabulary to trace how the model's "opinion" evolves layer by layer</td>
+</tr>
+<tr>
+<td><strong>Sparse Autoencoders (SAEs)</strong></td>
+<td>Decomposing neuron activations into interpretable features using sparse dictionaries — Anthropic's monosemanticity research</td>
+</tr>
+<tr>
+<td><strong>Retrieval Attribution</strong></td>
+<td>For RAG systems: showing which retrieved documents influenced the response</td>
+</tr>
+<tr>
+<td><strong>Faithfulness Evaluation</strong></td>
+<td>Testing whether CoT explanations actually reflect the model's computation — or are post-hoc rationalisations</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Critical Caveat: CoT explanations may not be faithful.</strong> Recent research (Turpin et al., 2023; Lanham et al., 2023) shows that LLMs' self-explanations often do not accurately reflect the true factors driving their predictions. Chain-of-thought is a useful tool but should not be treated as ground-truth explanation.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Explainable AI (XAI)</strong> is the set of methods, techniques, and design principles that enable humans to understand why an AI system made a particular decision, how it arrived at that decision, and what factors influenced it. XAI bridges the gap between the predictive power of complex AI models and the human need for transparency, trust, and accountability.</p>
+<p>The fundamental tension in modern AI is the <strong>accuracy-interpretability trade-off</strong>: the most accurate models (deep neural networks, large ensembles, LLMs) are often the least interpretable, while the most interpretable models (linear regression, decision trees) are often less powerful. XAI exists to resolve this tension — either by designing inherently interpretable models or by building post-hoc explanation tools around opaque ones.</p>
+<p>XAI is not a standalone AI type — like privacy-preserving AI, it is a <strong>cross-cutting discipline</strong> that applies to any AI system. You can explain a predictive model, a generative model, a recommender system, or an autonomous agent. The techniques differ, but the goal is the same: make AI understandable to humans.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Makes AI decisions understandable, interpretable, and transparent to humans</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Inherently interpretable models, post-hoc explanation methods (SHAP, LIME, attention, gradients), counterfactual analysis, concept-based explanations</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Feature importance scores, attribution maps, counterfactual explanations, concept-level reasoning, natural language explanations</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Does not replace AI models — augments them with human-understandable explanations and accountability</td>
+</tr>
+</tbody>
+</table>
+<h3>Explainable AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explaining a loan denial</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously with tools, memory, and planning</td>
+<td>Research agent, coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights from data</td>
+<td>Anomaly detector, clustering</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new content from learned patterns</td>
+<td>LLM, image generator</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from data</td>
+<td>Fraud detection model</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated learning, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input with no memory or learning</td>
+<td>Thermostat, ABS braking system</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction: XAI Is a Lens, Not a Model.</strong> XAI is not a type of AI model — it is a set of techniques applied to AI models. Any model can be made more explainable; the question is how much interpretability is needed and what explanations are appropriate.</p>
+<p><strong>Key Distinction: Interpretability vs. Explainability.</strong> Interpretability means a model is inherently understandable by design (a decision tree, a linear model). Explainability means post-hoc techniques are applied to make an opaque model understandable. XAI encompasses both.</p>
+<p><strong>Key Distinction from Debugging.</strong> XAI overlaps with model debugging but extends beyond it. Debugging asks "why is the model wrong?" XAI asks "why did the model make this decision?" — for both correct and incorrect predictions.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p>Explainable AI (XAI) — Interactive Architecture Chart · <strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.</strong> · 2026</p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ─── NAV TABS ─── */
+document.querySelectorAll('.nav-bar button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.nav-bar button').forEach(b => b.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ─── PIPELINE INFO ─── */
+const pipelineData = [
+ { title: '1. Input — Features / Data', desc: 'Raw data enters the system: tabular features, images, text, or time-series. The input is the same data the model was trained on — feature vectors, pixel arrays, token sequences. This is the starting point of every explanation.' },
+ { title: '2. Trained Model — Black Box', desc: 'The model processes the input through potentially billions of parameters. Deep neural networks, gradient-boosted ensembles, and transformer architectures are powerful but opaque — their internal reasoning is not directly human-interpretable.' },
+ { title: '3. Raw Output — Prediction', desc: 'The model produces a raw prediction: a class label, probability score, regression value, or generated text. This is the "what" — but not the "why." Without explanation, stakeholders cannot audit, trust, or contest the decision.' },
+ { title: '4. Explanation Engine — SHAP, LIME, Grad-CAM', desc: 'The explanation engine applies post-hoc or intrinsic methods to the model and its output. SHAP computes Shapley values for feature attributions. LIME builds local surrogate models. Grad-CAM produces visual saliency maps. This layer bridges the gap between black-box models and human understanding.' },
+ { title: '5. Human-Readable Explanation', desc: 'The final output is a human-understandable explanation: feature importance charts, saliency heatmaps, counterfactual examples, natural-language reasoning, or decision rules. This enables trust, compliance, debugging, and informed decision-making by domain experts.' },
+];
+document.querySelectorAll('.pipeline-step').forEach(el => {
+ el.addEventListener('click', () => {
+ const d = pipelineData[+el.dataset.step];
+ document.getElementById('pipeline-info').innerHTML = '<h3>' + d.title + '</h3><p>' + d.desc + '</p>';
+ });
+});
+
+/* ─── 8-LAYER STACK ─── */
+const stackData = [
+ { num: 8, title: 'Governance & Compliance', detail: 'Regulatory alignment (EU AI Act, ECOA, GDPR Art. 22), audit trails, explanation logging, compliance reporting, and certification. Ensures explanations meet legal and organisational requirements.', color: 'red' },
+ { num: 7, title: 'Evaluation & Validation', detail: 'Quantitative measurement of explanation quality: fidelity, stability, sparsity, sufficiency, necessity, plausibility, and comprehensiveness. Human evaluation studies and automated benchmarks.', color: 'orange' },
+ { num: 6, title: 'Audience Adaptation', detail: 'Tailoring explanations to the recipient: data scientists get SHAP plots and feature importances; business users get natural-language summaries; regulators get compliance-formatted reports; end users get simple visual cues.', color: 'purple' },
+ { num: 5, title: 'Visualisation & Rendering', detail: 'Presenting explanations visually: force plots, waterfall charts, saliency heatmaps, decision boundary plots, partial dependence curves, interactive dashboards, and counterfactual comparisons.', color: 'blue' },
+ { num: 4, title: 'Aggregation & Summarisation', detail: 'Combining individual feature attributions into coherent narratives. Global summaries from local explanations (SHAP summary plots), concept-level aggregation, and hierarchical feature grouping.', color: 'green' },
+ { num: 3, title: 'Attribution Engine', detail: 'Core computation of feature contributions: Shapley value calculation, gradient computation, perturbation sampling, surrogate model fitting, and attention weight extraction. The mathematical backbone of XAI.', color: 'blue' },
+ { num: 2, title: 'Explanation Method', detail: 'The specific algorithm employed: SHAP, LIME, Integrated Gradients, Grad-CAM, DeepLIFT, LRP, TCAV, Anchors, counterfactual generators, or inherently interpretable model structures.', color: 'purple' },
+ { num: 1, title: 'Model Layer', detail: 'The underlying ML model being explained: deep neural networks, transformers, gradient-boosted trees, random forests, linear models, GAMs, or EBMs. The model\'s architecture determines which explanation methods apply.', color: 'green' },
+];
+const stackEl = document.getElementById('stack');
+stackData.forEach(l => {
+ const accentVar = l.color === 'blue' ? '' : l.color === 'green' ? '2' : l.color === 'purple' ? '3' : l.color === 'orange' ? '4' : '5';
+ const div = document.createElement('div');
+ div.className = 'stack-layer bg-' + l.color;
+ div.innerHTML =
+ '<div class="layer-head">' +
+ '<div class="layer-num b-' + l.color + '" style="border:2px solid; color:var(--accent' + accentVar + ');">' + l.num + '</div>' +
+ '<span class="layer-title">' + l.title + '</span>' +
+ '<span class="expand-icon">▼</span>' +
+ '</div>' +
+ '<div class="layer-detail">' + l.detail + '</div>';
+ div.addEventListener('click', () => div.classList.toggle('expanded'));
+ stackEl.appendChild(div);
+});
+
+/* ─── SUB-TYPES ─── */
+const subtypes = [
+ { name: 'Local', category: 'Scope', badge: 'bg-blue c-blue', desc: 'Single instance explanation — why this specific prediction was made for this specific input. LIME, individual SHAP values, and saliency maps are local methods.' },
+ { name: 'Global', category: 'Scope', badge: 'bg-blue c-blue', desc: 'Model-wide behaviour — what the model has learned overall across the entire dataset. Global feature importance, PDP, ALE, and model summaries.' },
+ { name: 'Feature Attribution', category: 'Format', badge: 'bg-green c-green', desc: 'Per-feature contribution scores showing how much each input feature contributed to the prediction. SHAP values, permutation importance, and integrated gradients.' },
+ { name: 'Saliency Maps', category: 'Format', badge: 'bg-green c-green', desc: 'Visual heatmaps highlighting which image regions most influenced the model\'s prediction. Grad-CAM, Integrated Gradients, and DeepLIFT for CNNs and vision transformers.' },
+ { name: 'Counterfactual', category: 'Format', badge: 'bg-green c-green', desc: 'Minimal change to input that would alter the prediction. "Your loan would have been approved if income were $5K higher." Actionable and intuitive for end users.' },
+ { name: 'Rules / Decision Logic', category: 'Format', badge: 'bg-green c-green', desc: 'If-then rules extracted from or approximating model behaviour. Decision trees, rule lists, Anchors, and boolean rule extraction from neural networks.' },
+ { name: 'Natural Language', category: 'Format', badge: 'bg-green c-green', desc: 'Plain-English reasoning explaining the model\'s decision in human language. Chain-of-thought prompting, LLM-generated rationales, and template-based explanations.' },
+ { name: 'Concept-Based', category: 'Format', badge: 'bg-green c-green', desc: 'Human-meaningful concepts rather than raw features. TCAV (Testing with Concept Activation Vectors) tests whether a model uses concepts like "striped" or "furry" in its predictions.' },
+ { name: 'Black-Box', category: 'Access', badge: 'bg-purple c-purple', desc: 'Only inputs and outputs are accessible — no model internals. LIME, KernelSHAP, and permutation importance work without access to gradients or weights.' },
+ { name: 'White-Box', category: 'Access', badge: 'bg-purple c-purple', desc: 'Full access to model gradients, weights, and activations. Integrated Gradients, Grad-CAM, DeepLIFT, LRP, and attention-based explanations leverage internal model structure.' },
+ { name: 'Inherent', category: 'Access', badge: 'bg-orange c-orange', desc: 'Interpretable by design — no post-hoc explanation needed. Decision trees, linear regression, GAMs, EBMs, and rule-based systems where the model IS the explanation.' },
+];
+const subtypesGrid = document.getElementById('subtypes-grid');
+subtypes.forEach(s => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML =
+ '<div class="badge ' + s.badge + '">' + s.category + '</div>' +
+ '<h3>' + s.name + '</h3>' +
+ '<p>' + s.desc + '</p>';
+ subtypesGrid.appendChild(card);
+});
+
+/* ─── CORE METHODS ─── */
+const methods = [
+ { name: 'Inherently Interpretable', badge: 'bg-green c-green', badgeLabel: 'Glass-Box', items: ['Linear regression — coefficient-based feature importance', 'Decision trees — human-readable branching logic', 'GAMs (Generalised Additive Models) — per-feature shape functions', 'EBMs (Explainable Boosting Machines) — state-of-the-art glass-box models', 'Advantages: faithfulness guaranteed, no post-hoc gap'] },
+ { name: 'Model-Agnostic (Post-Hoc)', badge: 'bg-blue c-blue', badgeLabel: 'Black-Box Compatible', items: ['SHAP — Shapley values for consistent feature attribution', 'LIME — Local surrogate models via perturbation', 'PDP (Partial Dependence Plots) — marginal feature effects', 'ALE (Accumulated Local Effects) — unbiased feature effects', 'Counterfactuals — minimal input changes to alter predictions', 'Anchors — sufficient conditions as if-then rules'] },
+ { name: 'Model-Specific (White-Box)', badge: 'bg-purple c-purple', badgeLabel: 'Gradient Access', items: ['Grad-CAM — gradient-weighted class activation maps for CNNs', 'Integrated Gradients — axiomatic attribution via path integrals', 'DeepLIFT — reference-based activation differences', 'LRP (Layer-wise Relevance Propagation) — backpropagation of relevance', 'Attention mechanisms — transformer attention weight visualisation'] },
+ { name: 'Mechanistic Interpretability', badge: 'bg-orange c-orange', badgeLabel: 'Frontier', items: ['Circuit analysis — identifying computational sub-graphs in networks', 'Sparse autoencoders — decomposing activations into interpretable features', 'Activation patching — causal intervention on hidden states', 'Causal tracing — localising factual knowledge in transformers', 'Logit lens / tuned lens — decoding intermediate representations'] },
+ { name: 'Concept-Based', badge: 'bg-red c-red', badgeLabel: 'Human Concepts', items: ['TCAV — Testing with Concept Activation Vectors', 'Maps model behaviour to human-meaningful concepts', 'Tests whether concepts like "striped" or "male" influence predictions', 'Enables non-technical stakeholders to audit model reasoning', 'Bridges the gap between features and human understanding'] },
+];
+const methodsGrid = document.getElementById('methods-grid');
+methods.forEach(m => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML =
+ '<div class="badge ' + m.badge + '">' + m.badgeLabel + '</div>' +
+ '<h3>' + m.name + '</h3>' +
+ '<ul>' + m.items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
+ methodsGrid.appendChild(card);
+});
+
+/* ─── USE CASES ─── */
+const usecases = [
+ { icon: 'Bk', title: 'Credit Decisions', desc: 'Explain loan approval or denial decisions to applicants and regulators. Required under ECOA (Equal Credit Opportunity Act) and Regulation B. SHAP-based feature attribution reveals which factors (income, credit history, debt ratio) most influenced the decision, enabling adverse action notices and compliance documentation.' },
+ { icon: 'Sr', title: 'Fraud Detection', desc: 'Explain why a transaction was flagged as potentially fraudulent for analyst review. Feature attribution highlights anomalous patterns (unusual location, amount, velocity) enabling faster triage and reducing false-positive fatigue. Counterfactual explanations show what would make the transaction non-suspicious.' },
+ { icon: 'Da', title: 'Algorithmic Trading', desc: 'Explain trade signals and portfolio decisions to compliance officers. Regulatory requirements demand auditability of algorithmic decisions. SHAP values reveal which market indicators, sentiment signals, and technical factors drove each trade recommendation.' },
+ { icon: 'Sh', title: 'Insurance', desc: 'Explain pricing, underwriting, and risk assessment decisions to policyholders and regulators. Transparent risk scoring builds customer trust and ensures non-discriminatory pricing. Feature attribution shows how claims history, demographics, and risk factors affect premiums.' },
+ { icon: 'He', title: 'Clinical Decision Support', desc: 'Explain diagnosis and treatment recommendations to physicians. Medical AI must justify its suggestions to support — not replace — clinical judgment. Concept-based explanations map model features to medical concepts clinicians understand.' },
+ { icon: 'Sc', title: 'Medical Imaging', desc: 'Grad-CAM saliency heatmaps overlaid on X-rays, CT scans, and pathology slides highlight which regions drove the diagnostic finding. Radiologists use visual explanations to validate AI findings, catch errors, and build trust in AI-assisted diagnosis.' },
+];
+const usecasesAcc = document.getElementById('usecases-acc');
+usecases.forEach(u => {
+ const item = document.createElement('div');
+ item.className = 'domain-item';
+ item.innerHTML =
+ '<div class="domain-header">' +
+ '<span>' + u.icon + ' ' + u.title + '</span>' +
+ '' +
+ '</div>' +
+ '<div class="domain-body"><p>' + u.desc + '</p></div>';
+ item.querySelector('.domain-header').addEventListener('click', () => item.classList.toggle('open'));
+ usecasesAcc.appendChild(item);
+});
+
+/* ─── RISKS ─── */
+const risks = [
+ { title: 'Accuracy–Interpretability Tradeoff', desc: 'More interpretable models (linear, trees) often sacrifice predictive accuracy compared to complex black-box models. Choosing the right balance depends on the domain\'s risk tolerance and regulatory requirements.', color: 'var(--accent5)' },
+ { title: 'Faithfulness Gap', desc: 'Post-hoc explanations may not faithfully represent the model\'s actual reasoning process. LIME\'s local surrogate is an approximation; attention weights don\'t always reflect causal attribution. Explanations can be misleadingly confident.', color: 'var(--accent4)' },
+ { title: 'Explanation Gaming ("Fairwashing")', desc: 'Adversarial actors can craft models that produce favorable explanations while hiding discriminatory behaviour. A model can appear fair in its explanations while encoding protected attributes through proxy features.', color: 'var(--accent5)' },
+ { title: 'Cognitive Overload', desc: 'Too much explanatory information overwhelms users, paradoxically reducing understanding. SHAP plots with 50+ features or dense saliency maps can be counterproductive. Explanation design must match the audience\'s capacity.', color: 'var(--accent3)' },
+ { title: 'Explanation Disagreement', desc: 'Different explanation methods (SHAP vs. LIME vs. Integrated Gradients) can disagree on the same model and input. This disagreement erodes trust and raises the question: which explanation is "correct"?', color: 'var(--accent4)' },
+ { title: 'Illusion of Understanding', desc: 'Plausible-sounding explanations can create false confidence. Users may over-trust a model because its explanations "make sense," even when the model is wrong. Explanations can mask rather than reveal model limitations.', color: 'var(--accent5)' },
+];
+const risksGrid = document.getElementById('risks-grid');
+risks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = 'risk-card';
+ card.style.borderLeftColor = r.color;
+ card.innerHTML = '<h4>' + r.title + '</h4><p>' + r.desc + '</p>';
+ risksGrid.appendChild(card);
+});
+
+/* ─── GLOSSARY ─── */
+const glossary = [
+ { term: 'Attribution', def: 'The process of assigning credit or blame to individual input features for a model\'s output. SHAP values and integrated gradients are attribution methods.' },
+ { term: 'Black-Box', def: 'A model or system whose internal workings are not directly observable. Deep neural networks and large ensembles are typically black-box models requiring post-hoc explanation.' },
+ { term: 'Chain-of-Thought', def: 'A prompting technique where LLMs generate step-by-step reasoning before arriving at a final answer. Provides a form of intrinsic explanation for language model predictions.' },
+ { term: 'Circuit Analysis', def: 'A mechanistic interpretability technique that identifies specific computational sub-graphs (circuits) in neural networks responsible for particular behaviours or capabilities.' },
+ { term: 'Counterfactual Explanation', def: 'An explanation describing the smallest change to the input that would alter the model\'s prediction. "Your loan would be approved if income increased by $5,000."' },
+ { term: 'DeepLIFT', def: 'Deep Learning Important FeaTures — a method that computes feature attributions by comparing neuron activations to a reference input, propagating differences through the network.' },
+ { term: 'EBM', def: 'Explainable Boosting Machine — a state-of-the-art glass-box model from Microsoft Research (InterpretML). Combines the accuracy of gradient boosting with the interpretability of GAMs.' },
+ { term: 'Faithfulness', def: 'The degree to which an explanation accurately reflects the model\'s actual reasoning process. A faithful explanation truly represents how the model arrived at its decision.' },
+ { term: 'Feature Attribution', def: 'A score assigned to each input feature indicating its contribution to a specific prediction. Positive values push toward the prediction; negative values push against it.' },
+ { term: 'Fidelity', def: 'How well a surrogate explanation model approximates the original black-box model\'s behaviour. High fidelity means the explanation closely matches the model\'s actual decision boundary.' },
+ { term: 'Grad-CAM', def: 'Gradient-weighted Class Activation Mapping — produces visual heatmaps showing which image regions most influenced a CNN\'s prediction, using gradient information from the final convolutional layer.' },
+ { term: 'LIME', def: 'Local Interpretable Model-agnostic Explanations — explains individual predictions by fitting a simple interpretable model (e.g., linear) to perturbations of the input in the local neighbourhood.' },
+ { term: 'Logit Lens', def: 'A mechanistic interpretability tool that decodes hidden representations at intermediate transformer layers into vocabulary space, revealing how predictions evolve through the network.' },
+ { term: 'PDP', def: 'Partial Dependence Plot — shows the marginal effect of one or two features on the predicted outcome of a model, averaging over the values of all other features.' },
+ { term: 'SHAP', def: 'SHapley Additive exPlanations — a unified framework for feature attribution based on Shapley values from cooperative game theory. Provides consistent, locally accurate, and theoretically grounded explanations.' },
+ { term: 'Anchors', def: 'Rule-based explanations identifying sufficient conditions for a prediction with high precision.' },
+ { term: 'Concept-Based Explanation', def: 'Explanations using high-level human-understandable concepts rather than raw features.' },
+ { term: 'Faithfulness', def: 'Degree to which an explanation accurately reflects the model\'s actual reasoning process.' },
+ { term: 'TCAV', def: 'Testing with Concept Activation Vectors — measuring a model\'s sensitivity to high-level concepts.' },
+ { term: 'Right to Explanation', def: 'Legal requirement (GDPR Art 22, EU AI Act) for explaining automated decisions affecting individuals.' },
+ { term: 'Model Card', def: 'Standardised documentation of a model\'s intended use, performance, limitations, and ethical considerations.' },
+ { term: 'Surrogate Model', def: 'Simple interpretable model trained to approximate a complex black-box model\'s predictions.' },
+];
+
+function renderGlossary(filter) {
+ const el = document.getElementById('glossary-list');
+ const f = (filter || '').toLowerCase();
+ const filtered = glossary.filter(g => !f || g.term.toLowerCase().includes(f) || g.def.toLowerCase().includes(f));
+ el.innerHTML = filtered.map(g =>
+ '<div class="glossary-entry"><strong>' + g.term + '</strong><span>' + g.def + '</span></div>'
+ ).join('');
+}
+renderGlossary('');
+document.getElementById('glossary-search').addEventListener('input', e => renderGlossary(e.target.value));
+
+/* ─── CHARTS ─── */
+let chartsInitialised = false;
+function initCharts() {
+ if (chartsInitialised) return;
+
+ const qualityCanvas = document.getElementById('chart-quality');
+ const impactCanvas = document.getElementById('chart-impact');
+ const snapshotCanvas = document.getElementById('chart-snapshot');
+ const growthCanvas = document.getElementById('chart-growth');
+ if (!qualityCanvas || !impactCanvas || !snapshotCanvas || !growthCanvas) return;
+ if (!qualityCanvas.offsetParent && !impactCanvas.offsetParent && !snapshotCanvas.offsetParent && !growthCanvas.offsetParent) return;
+ chartsInitialised = true;
+
+ /* Explanation Quality Radar */
+ new Chart(qualityCanvas, {
+ type: 'radar',
+ data: {
+ labels: ['Fidelity', 'Stability', 'Sparsity', 'Sufficiency', 'Necessity', 'Plausibility', 'Comprehensiveness'],
+ datasets: [{
+ label: 'Score',
+ data: [90, 85, 88, 82, 80, 87, 78],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.10)',
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 5,
+ pointHoverRadius: 8,
+ borderWidth: 2,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ r: {
+ beginAtZero: true,
+ max: 100,
+ grid: { color: '#21262d' },
+ angleLines: { color: '#21262d' },
+ pointLabels: { color: '#e6edf3', font: { size: 11 } },
+ ticks: { display: false }
+ }
+ }
+ }
+ });
+
+ /* User Impact Bar */
+ new Chart(impactCanvas, {
+ type: 'bar',
+ data: {
+ labels: ['Task\nPerformance', 'Decision\nTime', 'Trust\nCalibration', 'Error\nDetection'],
+ datasets: [{
+ label: 'Impact (%)',
+ data: [22, -15, 18, 25],
+ backgroundColor: ['#5b9e6f', '#c9a84c', '#9684bf', '#c9956a'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: {
+ callbacks: {
+ label: function(ctx) {
+ const v = ctx.parsed.y;
+ return (v > 0 ? '+' : '') + v + '%';
+ }
+ }
+ }
+ },
+ scales: {
+ y: {
+ grid: { color: '#21262d' },
+ ticks: { callback: v => (v > 0 ? '+' : '') + v + '%' }
+ },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Market Snapshot */
+ new Chart(snapshotCanvas, {
+ type: 'bar',
+ data: {
+ labels: ['XAI Market\n($B)', 'Regulatory-\nDriven (%)', 'Healthcare\nAdoption (%)', 'Orgs Using\nXAI (%)'],
+ datasets: [{
+ label: 'Value',
+ data: [6.2, 60, 45, 35],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { grid: { color: '#21262d' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Market Growth Line */
+ new Chart(growthCanvas, {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028 (est.)', '2029 (proj.)'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [6.2, 7.5, 9.1, 11.0, 13.3, 16.2],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.1)',
+ fill: true,
+ tension: 0.4,
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 5,
+ pointHoverRadius: 8,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { grid: { color: '#21262d' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: '#21262d' } }
+ }
+ }
+ });
+}
+
+/* Init charts if benchmarks or market tab is active on load */
+setTimeout(initCharts, 100);
+
+</script>
+
+<nav class="chapter-nav">
+ <a href="evolutionary-genetic-ai.html"><span>&larr;</span><div><small>Previous</small>Evolutionary / Genetic AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="federated-privacy-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Federated / Privacy AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

@@ -1,0 +1,4099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generative AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Generative AI &mdash; Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Generative AI &mdash; the generation pipeline, 8-layer stack, output modalities, foundation models, developer tools, benchmarks, market data, and more.</p>
+ <span class="reading-time">~55 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. &middot; 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/10-generative-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="modalities">Modalities</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="models">Foundation Models</button>
+ <button data-tab="devtools">Dev Tools</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="training">Training</button>
+ <button data-tab="enterprise">Enterprise</button>
+ <button data-tab="consumer">Consumer Tools</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 1 — PIPELINE -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-pipeline">
+ <h2>The Generation Pipeline</h2>
+ <p class="desc">Generative AI follows a five-stage pipeline from raw data to novel content generation. Click any step to learn more.</p>
+
+ <div class="pipeline" id="pipeline">
+ <div class="pipe-step" data-step="0">
+ <div class="pipe-num bg-blue c-blue">1</div>
+ <div class="pipe-title c-blue">DATA</div>
+ <div class="pipe-sub">Collect &amp; clean</div>
+ </div>
+ <div class="pipe-arrow">→</div>
+ <div class="pipe-step" data-step="1">
+ <div class="pipe-num bg-green c-green">2</div>
+ <div class="pipe-title c-green">PRE-TRAINING</div>
+ <div class="pipe-sub">Self-supervised on massive corpus</div>
+ </div>
+ <div class="pipe-arrow">→</div>
+ <div class="pipe-step" data-step="2">
+ <div class="pipe-num bg-purple c-purple">3</div>
+ <div class="pipe-title c-purple">FINE-TUNING</div>
+ <div class="pipe-sub">Domain specialisation, RLHF</div>
+ </div>
+ <div class="pipe-arrow">→</div>
+ <div class="pipe-step" data-step="3">
+ <div class="pipe-num bg-orange c-orange">4</div>
+ <div class="pipe-title c-orange">INFERENCE</div>
+ <div class="pipe-sub">User prompt</div>
+ </div>
+ <div class="pipe-arrow">→</div>
+ <div class="pipe-step" data-step="4">
+ <div class="pipe-num bg-red c-red">5</div>
+ <div class="pipe-title c-red">GENERATION</div>
+ <div class="pipe-sub">Novel content</div>
+ </div>
+ </div>
+
+ <div class="card" id="pipeline-info" style="max-width:900px; margin:0 auto;">
+ <h3 class="c-blue">Click a pipeline step</h3>
+ <p>Select any stage above to see details about that phase of the generative AI pipeline.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Generative AI Works</h3>
+<p>Generative AI systems follow a common high-level pipeline:</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│ GENERATIVE AI PIPELINE │
+│ │
+│ 1. DATA 2. PRE-TRAINING 3. FINE-TUNING │
+│ ───────── ───────────────── ───────────── │
+│ Collect &amp; Train on massive Specialise on │
+│ clean vast unlabelled corpus domain data / │
+│ datasets (self-supervised) RLHF alignment │
+│ │
+│ 4. INFERENCE 5. PROMPTING 6. OUTPUT │
+│ ───────────── ───────────────── ────────── │
+│ Deploy model User provides Model generates │
+│ for generation context/instruction novel content │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Generation Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tokenisation</strong></td>
+<td>Input text is broken into tokens (sub-word units) the model can process</td>
+</tr>
+<tr>
+<td><strong>Encoding</strong></td>
+<td>Tokens are converted into numerical vector representations</td>
+</tr>
+<tr>
+<td><strong>Attention</strong></td>
+<td>The model weighs relationships between all tokens simultaneously (self-attention)</td>
+</tr>
+<tr>
+<td><strong>Forward Pass</strong></td>
+<td>Representations flow through transformer layers, building rich contextual understanding</td>
+</tr>
+<tr>
+<td><strong>Decoding</strong></td>
+<td>The model predicts the next token based on all prior context, one at a time</td>
+</tr>
+<tr>
+<td><strong>Sampling</strong></td>
+<td>Temperature, top-p, and top-k parameters control the randomness of generation</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>Generated tokens are decoded back into human-readable content</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Generation Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>Randomness of output — higher = more creative, lower = more deterministic</td>
+</tr>
+<tr>
+<td><strong>Top-p (Nucleus Sampling)</strong></td>
+<td>Considers only the smallest set of tokens whose cumulative probability exceeds p</td>
+</tr>
+<tr>
+<td><strong>Top-k</strong></td>
+<td>Limits token selection to the k most probable next tokens</td>
+</tr>
+<tr>
+<td><strong>Max Tokens</strong></td>
+<td>Maximum length of the generated output</td>
+</tr>
+<tr>
+<td><strong>System Prompt</strong></td>
+<td>Instructions that shape the model's persona, behaviour, and constraints</td>
+</tr>
+<tr>
+<td><strong>Context Window</strong></td>
+<td>Maximum number of tokens the model can process at once</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>GPT-4 was trained on an estimated 13 trillion tokens — roughly 10 million books' worth of text.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Diffusion models generate images by reversing a noise-addition process over ~1,000 denoising steps.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>The first transformer paper ('Attention Is All You Need', 2017) has been cited over 130,000 times.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> Which architecture is the foundation of most large language models (LLMs)?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Recurrent Neural Network</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Transformer</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Convolutional Neural Network</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Boltzmann Machine</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What technique aligns LLM outputs with human preferences?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Dropout regularisation</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">RLHF (Reinforcement Learning from Human Feedback)</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Batch normalisation</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Data augmentation</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What do diffusion models learn to reverse during image generation?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Pixel shuffling</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Gaussian noise addition</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Feature extraction</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Colour quantisation</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 2 — 8-LAYER STACK -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-stack">
+ <h2>The Generative AI Stack &mdash; 8 Layers</h2>
+ <p class="desc">Click any layer to expand its details. The stack is ordered from foundation (bottom) to application (top).</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Generative AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Foundation Models</strong></td>
+<td>The large pre-trained models at the core</td>
+</tr>
+<tr>
+<td><strong>2. Training Infrastructure</strong></td>
+<td>GPU/TPU compute, distributed training, data pipelines</td>
+</tr>
+<tr>
+<td><strong>3. Model APIs &amp; Hosting</strong></td>
+<td>Access to models via API or managed endpoints</td>
+</tr>
+<tr>
+<td><strong>4. Developer Frameworks</strong></td>
+<td>SDKs, orchestration libraries, prompt management</td>
+</tr>
+<tr>
+<td><strong>5. Fine-Tuning &amp; Alignment</strong></td>
+<td>Domain adaptation, RLHF, instruction tuning</td>
+</tr>
+<tr>
+<td><strong>6. Retrieval &amp; Memory</strong></td>
+<td>RAG systems, vector databases, context management</td>
+</tr>
+<tr>
+<td><strong>7. Applications &amp; Products</strong></td>
+<td>Consumer apps, enterprise software, vertical solutions</td>
+</tr>
+<tr>
+<td><strong>8. Observability &amp; Safety</strong></td>
+<td>Monitoring, guardrails, evaluation, red-teaming</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 3 — MODALITIES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-modalities">
+ <h2>Output Modalities</h2>
+ <p class="desc">Generative AI produces content across an expanding set of modalities — from text to molecules.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-modalities')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-modalities">
+<h3>Sub-Types by Output Modality</h3>
+<h3>Text Generation (Large Language Models)</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Long-Form Writing</strong></td>
+<td>Essays, reports, articles, books, scripts</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Multi-turn dialogue, Q&amp;A, customer support</td>
+</tr>
+<tr>
+<td><strong>Summarisation</strong></td>
+<td>Condense documents, meeting notes, research papers</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>Cross-language content transformation</td>
+</tr>
+<tr>
+<td><strong>Code Generation</strong></td>
+<td>Write, explain, debug, and refactor code</td>
+</tr>
+<tr>
+<td><strong>Reasoning</strong></td>
+<td>Multi-step problem solving, logic, mathematics</td>
+</tr>
+<tr>
+<td><strong>Information Extraction</strong></td>
+<td>Pull structured data from unstructured text</td>
+</tr>
+<tr>
+<td><strong>Classification</strong></td>
+<td>Categorise, label, and score text</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Image Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text-to-Image</strong></td>
+<td>Generate images from text descriptions</td>
+<td>DALL·E 3, Midjourney, Stable Diffusion, Imagen 3</td>
+</tr>
+<tr>
+<td><strong>Image-to-Image</strong></td>
+<td>Transform an image using text or another image</td>
+<td>ControlNet, InstructPix2Pix, Adobe Firefly</td>
+</tr>
+<tr>
+<td><strong>Inpainting</strong></td>
+<td>Fill or replace specific regions of an image</td>
+<td>DALL·E 3, Stable Diffusion Inpainting</td>
+</tr>
+<tr>
+<td><strong>Outpainting</strong></td>
+<td>Extend image content beyond its borders</td>
+<td>Adobe Generative Fill, DALL·E 3</td>
+</tr>
+<tr>
+<td><strong>Style Transfer</strong></td>
+<td>Apply artistic styles to photographs</td>
+<td>StyleGAN, Neural Style Transfer</td>
+</tr>
+<tr>
+<td><strong>Image Upscaling</strong></td>
+<td>Enhance resolution and detail</td>
+<td>Topaz Gigapixel, Magnific AI</td>
+</tr>
+<tr>
+<td><strong>Background Removal</strong></td>
+<td>Automatically remove or replace backgrounds</td>
+<td>Adobe Firefly, Remove.bg AI</td>
+</tr>
+<tr>
+<td><strong>Face / Portrait Generation</strong></td>
+<td>Generate realistic human faces</td>
+<td>StyleGAN3, Midjourney</td>
+</tr>
+<tr>
+<td><strong>Product Image Generation</strong></td>
+<td>Create product images for e-commerce</td>
+<td>Pebblely, Claid.ai</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Video Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text-to-Video</strong></td>
+<td>Generate video clips from text prompts</td>
+<td>Sora (OpenAI), Veo 3 (Google), Kling</td>
+</tr>
+<tr>
+<td><strong>Image-to-Video</strong></td>
+<td>Animate a static image into video</td>
+<td>Runway Gen-3, Pika, Stable Video Diffusion</td>
+</tr>
+<tr>
+<td><strong>Video-to-Video</strong></td>
+<td>Transform or stylise existing video</td>
+<td>Runway Gen-3 Transform, Topaz Video AI</td>
+</tr>
+<tr>
+<td><strong>Video Extension</strong></td>
+<td>Extend short clips forward or backward</td>
+<td>Runway, Pika</td>
+</tr>
+<tr>
+<td><strong>Lip Sync</strong></td>
+<td>Sync AI-generated speech to video faces</td>
+<td>HeyGen, Sync.so, D-ID</td>
+</tr>
+<tr>
+<td><strong>AI Avatar Video</strong></td>
+<td>Talking head videos from text scripts</td>
+<td>Synthesia, HeyGen, Colossyan</td>
+</tr>
+<tr>
+<td><strong>Video Upscaling / Enhancement</strong></td>
+<td>Improve resolution and frame rate</td>
+<td>Topaz Video AI, NVIDIA RTX VSR</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Audio &amp; Speech Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text-to-Speech (TTS)</strong></td>
+<td>Convert text to natural-sounding voice</td>
+<td>ElevenLabs, OpenAI TTS, Amazon Polly</td>
+</tr>
+<tr>
+<td><strong>Voice Cloning</strong></td>
+<td>Clone a specific person's voice from samples</td>
+<td>ElevenLabs, Resemble AI, Play.ht</td>
+</tr>
+<tr>
+<td><strong>Speech-to-Speech</strong></td>
+<td>Transform voice style or accent</td>
+<td>ElevenLabs Voice Changer, RVC</td>
+</tr>
+<tr>
+<td><strong>Conversational Voice AI</strong></td>
+<td>Real-time spoken dialogue with AI</td>
+<td>OpenAI Realtime API, Hume AI</td>
+</tr>
+<tr>
+<td><strong>Sound Effect Generation</strong></td>
+<td>Generate custom sound effects from text</td>
+<td>ElevenLabs Sound Effects, Adobe Project Sound</td>
+</tr>
+<tr>
+<td><strong>AI Dubbing</strong></td>
+<td>Automatically dub video into other languages</td>
+<td>ElevenLabs Dubbing, HeyGen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Music Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text-to-Music</strong></td>
+<td>Generate songs or tracks from text descriptions</td>
+<td>Suno, Udio, MusicLM (Google)</td>
+</tr>
+<tr>
+<td><strong>Instrumental Generation</strong></td>
+<td>Generate backing tracks and instrumentals</td>
+<td>Soundraw, Boomy, Beatoven.ai</td>
+</tr>
+<tr>
+<td><strong>Music Continuation</strong></td>
+<td>Extend or complete an existing musical piece</td>
+<td>Meta MusicGen, AudioCraft</td>
+</tr>
+<tr>
+<td><strong>Stem Separation</strong></td>
+<td>Isolate vocals, drums, bass from mixed audio</td>
+<td>Lalal.ai, Spleeter (Meta)</td>
+</tr>
+<tr>
+<td><strong>Lyrics Generation</strong></td>
+<td>Write song lyrics to a style or theme</td>
+<td>Suno, Udio, ChatGPT</td>
+</tr>
+<tr>
+<td><strong>AI Mastering</strong></td>
+<td>Automatically master audio tracks</td>
+<td>LANDR, Dolby.io AI Mastering</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Code Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code Autocomplete</strong></td>
+<td>Real-time inline code suggestions</td>
+<td>GitHub Copilot, Cursor, Tabnine</td>
+</tr>
+<tr>
+<td><strong>Code Generation from Spec</strong></td>
+<td>Generate functions/classes from natural language</td>
+<td>ChatGPT, Claude, Gemini</td>
+</tr>
+<tr>
+<td><strong>Code Explanation</strong></td>
+<td>Explain what a code snippet does</td>
+<td>GitHub Copilot Chat, Cursor</td>
+</tr>
+<tr>
+<td><strong>Code Debugging</strong></td>
+<td>Identify and fix bugs</td>
+<td>Claude Code, Cursor, Devin</td>
+</tr>
+<tr>
+<td><strong>Code Refactoring</strong></td>
+<td>Improve code quality and structure</td>
+<td>GitHub Copilot, Windsurf</td>
+</tr>
+<tr>
+<td><strong>Test Generation</strong></td>
+<td>Automatically write unit and integration tests</td>
+<td>GitHub Copilot, Codium AI</td>
+</tr>
+<tr>
+<td><strong>Documentation Generation</strong></td>
+<td>Write docs, comments, and READMEs</td>
+<td>Mintlify, GitHub Copilot</td>
+</tr>
+<tr>
+<td><strong>Full Application Generation</strong></td>
+<td>Build entire apps from prompts</td>
+<td>Lovable, Bolt.new, v0 (Vercel)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3D &amp; Spatial Content Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text-to-3D</strong></td>
+<td>Generate 3D objects from text descriptions</td>
+<td>DreamFusion, Magic3D, Shap-E</td>
+</tr>
+<tr>
+<td><strong>Image-to-3D</strong></td>
+<td>Convert 2D images to 3D models</td>
+<td>Luma AI, TripoSR, Zero-1-to-3</td>
+</tr>
+<tr>
+<td><strong>3D Scene Generation</strong></td>
+<td>Generate full 3D environments</td>
+<td>NVIDIA GET3D, SyncDreamer</td>
+</tr>
+<tr>
+<td><strong>Avatar / Character Generation</strong></td>
+<td>Generate 3D digital humans</td>
+<td>Ready Player Me, Reallusion AI</td>
+</tr>
+<tr>
+<td><strong>CAD / Blueprint Generation</strong></td>
+<td>Engineering and architectural designs</td>
+<td>Maket, ArkoAI, Autodesk AI</td>
+</tr>
+<tr>
+<td><strong>NeRF Scene Capture</strong></td>
+<td>Reconstruct 3D from 2D images</td>
+<td>Luma AI NeRF, Instant-NGP (NVIDIA)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Synthetic Data Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabular Data Synthesis</strong></td>
+<td>Create realistic synthetic datasets</td>
+<td>Gretel, Mostly AI, CTGAN</td>
+</tr>
+<tr>
+<td><strong>Text Data Augmentation</strong></td>
+<td>Generate training examples for NLP</td>
+<td>Gretel, DataIQ</td>
+</tr>
+<tr>
+<td><strong>Synthetic Image Data</strong></td>
+<td>Generate labelled images for CV training</td>
+<td>Rendered.ai, NVIDIA Omniverse Replicator</td>
+</tr>
+<tr>
+<td><strong>Privacy-Safe Data</strong></td>
+<td>Generate GDPR/HIPAA-safe synthetic records</td>
+<td>Mostly AI, Syntho, Tonic.ai</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Molecule &amp; Scientific Content Generation</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drug Candidate Generation</strong></td>
+<td>Design novel drug molecules</td>
+<td>Insilico Medicine, Atomwise, Schrödinger</td>
+</tr>
+<tr>
+<td><strong>Protein Structure Generation</strong></td>
+<td>Design novel proteins with target properties</td>
+<td>ProteinMPNN, RFdiffusion</td>
+</tr>
+<tr>
+<td><strong>Material Design</strong></td>
+<td>Generate novel material structures</td>
+<td>GNoME (Google), MatGen</td>
+</tr>
+<tr>
+<td><strong>DNA / Gene Sequence Generation</strong></td>
+<td>Design synthetic genetic sequences</td>
+<td>Nucleotide Transformer, Evo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Multimodal Generation</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>What It Combines</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text + Image</strong></td>
+<td>Generate text and images together</td>
+<td>GPT-4o, Gemini 1.5 Pro</td>
+</tr>
+<tr>
+<td><strong>Text + Audio</strong></td>
+<td>Generate text and voice simultaneously</td>
+<td>GPT-4o Realtime, Gemini Live</td>
+</tr>
+<tr>
+<td><strong>Text + Video + Audio</strong></td>
+<td>Full audio-visual content generation</td>
+<td>Sora with audio, Veo 3</td>
+</tr>
+<tr>
+<td><strong>Text + Code + Execution</strong></td>
+<td>Generate, run, and reason over code</td>
+<td>ChatGPT Code Interpreter</td>
+</tr>
+<tr>
+<td><strong>Any-to-Any</strong></td>
+<td>Process and generate any modality</td>
+<td>GPT-4o, Gemini 2.0, Grok</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 4 — CORE ARCHITECTURES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">The fundamental model architectures that power generative AI across all modalities.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures</h3>
+<h3>Transformer</h3>
+<p>The <strong>dominant architecture</strong> underlying almost all modern Generative AI.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>"Attention Is All You Need" — Vaswani et al., Google, 2017</td>
+</tr>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Self-attention: every token attends to every other token simultaneously</td>
+</tr>
+<tr>
+<td><strong>Why It Dominates</strong></td>
+<td>Parallelisable (fast to train), scales with data and parameters, captures long-range dependencies</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>LLMs, text-to-image, text-to-video, multimodal models</td>
+</tr>
+<tr>
+<td><strong>Variants</strong></td>
+<td>Encoder-only (BERT), Decoder-only (GPT), Encoder-Decoder (T5, BART)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Transformer Innovations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Innovation</th>
+<th>What It Enables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scaled Dot-Product Attention</strong></td>
+<td>Core mechanism for token relationship modelling</td>
+</tr>
+<tr>
+<td><strong>Multi-Head Attention</strong></td>
+<td>Attends to multiple aspects of relationships simultaneously</td>
+</tr>
+<tr>
+<td><strong>Positional Encoding</strong></td>
+<td>Injects sequence order information</td>
+</tr>
+<tr>
+<td><strong>Flash Attention</strong></td>
+<td>Memory-efficient attention; enables longer context windows</td>
+</tr>
+<tr>
+<td><strong>Mixture of Experts (MoE)</strong></td>
+<td>Activates only a subset of parameters per token; enables massive models efficiently</td>
+</tr>
+<tr>
+<td><strong>Rotary Position Embedding (RoPE)</strong></td>
+<td>Better handling of long-context documents</td>
+</tr>
+<tr>
+<td><strong>Group Query Attention (GQA)</strong></td>
+<td>Reduces memory footprint during inference</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Diffusion Models</h3>
+<p>The <strong>state-of-the-art architecture</strong> for image, video, and audio generation.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Learns to reverse a gradual noise-adding process to recover clean data</td>
+</tr>
+<tr>
+<td><strong>Forward Process</strong></td>
+<td>Add Gaussian noise to training data over T steps until it becomes pure noise</td>
+</tr>
+<tr>
+<td><strong>Reverse Process</strong></td>
+<td>Neural network learns to predict and remove noise at each step</td>
+</tr>
+<tr>
+<td><strong>Why It Dominates Images</strong></td>
+<td>Produces high-quality, diverse, controllable outputs; better than GANs at scale</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Text-to-image, text-to-video, audio synthesis, molecule generation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Diffusion Variants:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DDPM</td>
+<td>Denoising Diffusion Probabilistic Models — original formulation</td>
+<td>Ho et al. 2020</td>
+</tr>
+<tr>
+<td>DDIM</td>
+<td>Deterministic sampling; much faster inference</td>
+<td>Enabled faster generation</td>
+</tr>
+<tr>
+<td>Latent Diffusion (LDM)</td>
+<td>Operates in compressed latent space; efficient</td>
+<td>Stable Diffusion, DALL·E 3</td>
+</tr>
+<tr>
+<td>Score-Based Models</td>
+<td>Alternative formulation using score functions</td>
+<td>Song et al.</td>
+</tr>
+<tr>
+<td>Flow Matching</td>
+<td>Faster training convergence; increasingly adopted</td>
+<td>Stable Diffusion 3, Flux</td>
+</tr>
+<tr>
+<td>Consistency Models</td>
+<td>Single-step generation; very fast</td>
+<td>OpenAI Consistency Models</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Generative Adversarial Networks (GANs)</h3>
+<p>The <strong>pioneer architecture</strong> for synthetic image generation (2014–2022 era).</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>Goodfellow et al., 2014</td>
+</tr>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Generator and Discriminator compete in a minimax game</td>
+</tr>
+<tr>
+<td><strong>Generator</strong></td>
+<td>Produces fake data trying to fool the discriminator</td>
+</tr>
+<tr>
+<td><strong>Discriminator</strong></td>
+<td>Tries to distinguish real data from generated fakes</td>
+</tr>
+<tr>
+<td><strong>Training Goal</strong></td>
+<td>Nash equilibrium where generator produces indistinguishable fakes</td>
+</tr>
+<tr>
+<td><strong>Current Status</strong></td>
+<td>Largely superseded by diffusion models for images; still used for specific tasks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key GAN Variants:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCGAN</td>
+<td>Deep convolutional GAN; stable training</td>
+</tr>
+<tr>
+<td>StyleGAN / StyleGAN2</td>
+<td>High-fidelity face synthesis; style-based control</td>
+</tr>
+<tr>
+<td>CycleGAN</td>
+<td>Unpaired image-to-image translation</td>
+</tr>
+<tr>
+<td>BigGAN</td>
+<td>Large-scale class-conditional generation</td>
+</tr>
+<tr>
+<td>Pix2Pix</td>
+<td>Paired image translation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Variational Autoencoders (VAEs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Encodes inputs to a probabilistic latent space; decodes samples into outputs</td>
+</tr>
+<tr>
+<td><strong>Key Property</strong></td>
+<td>Smooth, continuous latent space enables interpolation between outputs</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Tabular data generation, molecule generation, anomaly detection, latent space for diffusion</td>
+</tr>
+<tr>
+<td><strong>Advantage</strong></td>
+<td>Stable training; interpretable latent representations</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Blurrier outputs than diffusion or GANs for images</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Neural Radiance Fields (NeRF) &amp; 3D Architectures</h3>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NeRF</strong></td>
+<td>Represents a 3D scene as a neural function; enables novel view synthesis</td>
+</tr>
+<tr>
+<td><strong>3D Gaussian Splatting</strong></td>
+<td>Faster 3D scene representation; real-time rendering</td>
+</tr>
+<tr>
+<td><strong>Point-E / Shap-E</strong></td>
+<td>OpenAI's 3D object generation from text or images</td>
+</tr>
+<tr>
+<td><strong>DreamFusion</strong></td>
+<td>Text-to-3D using diffusion models as a prior</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Audio &amp; Music Architectures</h3>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>What It Does</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Neural TTS (Tacotron, VITS)</strong></td>
+<td>Text-to-spectrogram-to-audio pipeline</td>
+<td>ElevenLabs, Amazon Polly</td>
+</tr>
+<tr>
+<td><strong>Vocoders (WaveNet, HiFi-GAN)</strong></td>
+<td>Neural audio synthesis from spectrograms</td>
+<td>Speech synthesis</td>
+</tr>
+<tr>
+<td><strong>Codec Language Models (EnCodec)</strong></td>
+<td>Audio as discrete tokens; enables LLM-style generation</td>
+<td>Meta AudioCraft, MusicGen</td>
+</tr>
+<tr>
+<td><strong>Diffusion for Audio (AudioLDM)</strong></td>
+<td>Latent diffusion applied to audio spectrograms</td>
+<td>AudioCraft, Stable Audio</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Architecture Comparison Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>Best For</th>
+<th>Training Stability</th>
+<th>Output Quality</th>
+<th>Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transformer (LLM)</strong></td>
+<td>Text, multimodal</td>
+<td>High</td>
+<td>Excellent</td>
+<td>Fast inference</td>
+</tr>
+<tr>
+<td><strong>Diffusion Models</strong></td>
+<td>Images, video, audio</td>
+<td>High</td>
+<td>Excellent</td>
+<td>Moderate (improving)</td>
+</tr>
+<tr>
+<td><strong>GANs</strong></td>
+<td>Faces, style transfer</td>
+<td>Low (mode collapse)</td>
+<td>Good</td>
+<td>Very fast</td>
+</tr>
+<tr>
+<td><strong>VAEs</strong></td>
+<td>Latent spaces, tabular</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td><strong>NeRF / 3DGS</strong></td>
+<td>3D scenes</td>
+<td>High</td>
+<td>Excellent</td>
+<td>Slow (improving)</td>
+</tr>
+<tr>
+<td><strong>Codec LMs</strong></td>
+<td>Audio, music</td>
+<td>High</td>
+<td>Very Good</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 5 — FOUNDATION MODELS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-models">
+ <h2>Foundation Models</h2>
+ <p class="desc">The leading frontier foundation models driving the generative AI ecosystem in 2026.</p>
+
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Model</th><th>Organisation</th><th>Key Highlights</th></tr>
+ </thead>
+ <tbody>
+ <tr><td style="color:var(--accent); font-weight:600;">GPT-4o / GPT-5</td><td>OpenAI</td><td>Multimodal; leading general reasoning</td></tr>
+ <tr><td style="color:var(--accent2); font-weight:600;">Claude 4 Opus / Sonnet</td><td>Anthropic</td><td>#1 SWE-Bench 77.2%; 200K context</td></tr>
+ <tr><td style="color:var(--accent3); font-weight:600;">Gemini 3 Pro / Flash</td><td>Google DeepMind</td><td>1M+ token context; strong video</td></tr>
+ <tr><td style="color:var(--accent4); font-weight:600;">Llama 4 Scout / Maverick</td><td>Meta</td><td>Open-weight; 10M-400B MoE</td></tr>
+ <tr><td style="color:var(--accent5); font-weight:600;">Mistral Large</td><td>Mistral AI</td><td>European frontier; multilingual</td></tr>
+ <tr><td style="color:var(--accent6); font-weight:600;">DeepSeek R1 / V3</td><td>DeepSeek</td><td>MIT licensed; reasoning; trained &lt;$6M</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-models')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-models">
+<h3>Foundation Models — Frontier (Proprietary)</h3>
+<h3>OpenAI</h3>
+<table>
+<thead>
+<tr>
+<th>Model Family</th>
+<th>Key Models</th>
+<th>Strengths</th>
+<th>Context Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPT-5 Series</strong></td>
+<td>GPT-5, GPT-5.1</td>
+<td>General reasoning, coding, multimodal</td>
+<td>1M tokens</td>
+</tr>
+<tr>
+<td><strong>o-Series (Reasoning)</strong></td>
+<td>o3, o3-mini, o4</td>
+<td>Deep multi-step reasoning, mathematics, science</td>
+<td>200K tokens</td>
+</tr>
+<tr>
+<td><strong>GPT-4o</strong></td>
+<td>GPT-4o, GPT-4o mini</td>
+<td>Multimodal; real-time voice and vision</td>
+<td>128K tokens</td>
+</tr>
+<tr>
+<td><strong>Sora</strong></td>
+<td>Sora (video)</td>
+<td>Text-to-video; cinematic quality</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>DALL·E</strong></td>
+<td>DALL·E 3</td>
+<td>Text-to-image; integrated in ChatGPT</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Codex CLI</strong></td>
+<td>GPT-5.3-Codex</td>
+<td>SWE-Bench Pro SOTA; coding agent</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Whisper</strong></td>
+<td>Whisper v3</td>
+<td>Open-source ASR; 99-language support</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Products:</strong> ChatGPT (700M+ weekly active users), ChatGPT API, OpenAI Platform, Operator</p>
+<hr />
+<h3>Anthropic</h3>
+<table>
+<thead>
+<tr>
+<th>Model Family</th>
+<th>Key Models</th>
+<th>Strengths</th>
+<th>Context Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude 4 Series</strong></td>
+<td>Claude 4 Opus, Claude 4 Sonnet</td>
+<td>Coding (#1 SWE-Bench 77.2%), reasoning, writing</td>
+<td>200K tokens</td>
+</tr>
+<tr>
+<td><strong>Claude 3.7 Series</strong></td>
+<td>Claude 3.7 Sonnet</td>
+<td>Hybrid reasoning; computer use</td>
+<td>200K tokens</td>
+</tr>
+<tr>
+<td><strong>Claude 3.5 Series</strong></td>
+<td>Claude 3.5 Haiku</td>
+<td>Fast, efficient; excellent for tasks</td>
+<td>200K tokens</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Products:</strong> Claude.ai, Claude API, Claude Code (CLI), Computer Use</p>
+<hr />
+<h3>Google DeepMind</h3>
+<table>
+<thead>
+<tr>
+<th>Model Family</th>
+<th>Key Models</th>
+<th>Strengths</th>
+<th>Context Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gemini 3</strong></td>
+<td>Gemini 3 Pro, Gemini 3 Flash</td>
+<td>Multimodal reasoning; replaces Ultra tier</td>
+<td>1M tokens</td>
+</tr>
+<tr>
+<td><strong>Gemini 2.0</strong></td>
+<td>Gemini 2.0 Flash, Flash Thinking</td>
+<td>Speed + reasoning combination</td>
+<td>1M tokens</td>
+</tr>
+<tr>
+<td><strong>Gemini 1.5</strong></td>
+<td>Gemini 1.5 Pro</td>
+<td>Longest context; multimodal</td>
+<td>10M tokens</td>
+</tr>
+<tr>
+<td><strong>Imagen 3</strong></td>
+<td>Imagen 3</td>
+<td>Google's flagship text-to-image</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Veo 3</strong></td>
+<td>Veo 3</td>
+<td>Text-to-video with native audio</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Lyria</strong></td>
+<td>Lyria</td>
+<td>Music generation</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Products:</strong> Gemini (app), Google AI Studio, Vertex AI, NotebookLM, Project Mariner, Jules</p>
+<hr />
+<h3>Mistral AI</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Strengths</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mistral Large</strong></td>
+<td>Reasoning, multilingual</td>
+<td>European frontier model</td>
+</tr>
+<tr>
+<td><strong>Mistral Small</strong></td>
+<td>Fast, efficient</td>
+<td>Cost-effective API</td>
+</tr>
+<tr>
+<td><strong>Mixtral 8x22B</strong></td>
+<td>MoE architecture; strong open-weight model</td>
+<td>Community favourite</td>
+</tr>
+<tr>
+<td><strong>Codestral</strong></td>
+<td>Code generation</td>
+<td>Developer-focused</td>
+</tr>
+<tr>
+<td><strong>Le Chat</strong></td>
+<td>Consumer product with agents</td>
+<td>Gmail/Calendar integration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>xAI</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Strengths</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grok 3</strong></td>
+<td>Real-time X/Twitter data access; strong reasoning</td>
+<td>Integrated into X platform</td>
+</tr>
+<tr>
+<td><strong>Grok 3 Mini</strong></td>
+<td>Efficient reasoning model</td>
+<td>Cost-optimised</td>
+</tr>
+<tr>
+<td><strong>Aurora</strong></td>
+<td>Image generation</td>
+<td>Integrated in X</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Cohere</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Strengths</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Command R+</strong></td>
+<td>Enterprise RAG; 128K context</td>
+<td>100+ language support</td>
+</tr>
+<tr>
+<td><strong>Embed 3</strong></td>
+<td>Multilingual embeddings</td>
+<td>Industry-leading retrieval</td>
+</tr>
+<tr>
+<td><strong>Rerank 3</strong></td>
+<td>Semantic reranking for search</td>
+<td>Production RAG pipelines</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr>
+<h3>Foundation Models — Open-Source / Open-Weight</h3>
+<h3>Meta — Llama Series</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Llama 4 Scout</strong></td>
+<td>17B active (109B total MoE)</td>
+<td>10M context window; on-device capable</td>
+</tr>
+<tr>
+<td><strong>Llama 4 Maverick</strong></td>
+<td>17B active (400B total MoE)</td>
+<td>Outperforms GPT-4o on most benchmarks</td>
+</tr>
+<tr>
+<td><strong>Llama 4 Behemoth</strong></td>
+<td>288B active (2T total MoE)</td>
+<td>Frontier-class; in training</td>
+</tr>
+<tr>
+<td><strong>Llama 3.3</strong></td>
+<td>70B</td>
+<td>Best open-weight 70B model</td>
+</tr>
+<tr>
+<td><strong>Llama 3.2</strong></td>
+<td>1B, 3B, 11B, 90B</td>
+<td>On-device and multimodal variants</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License:</strong> Llama Community License (open-weight; usage restrictions at scale)</p>
+<hr />
+<h3>DeepSeek</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepSeek R1</strong></td>
+<td>671B (MoE)</td>
+<td>Reasoning model; MIT licensed; trained for ~$6M</td>
+</tr>
+<tr>
+<td><strong>DeepSeek V3</strong></td>
+<td>671B (MoE)</td>
+<td>Strong general capabilities; competitive with GPT-4o</td>
+</tr>
+<tr>
+<td><strong>DeepSeek R1-Distill</strong></td>
+<td>1.5B–70B</td>
+<td>Distilled reasoning models for deployment</td>
+</tr>
+<tr>
+<td><strong>DeepSeek Coder V2</strong></td>
+<td>236B</td>
+<td>Top open-source coding model</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License:</strong> MIT (fully open; commercial use allowed)</p>
+<hr />
+<h3>Alibaba — Qwen Series</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qwen 2.5</strong></td>
+<td>0.5B–72B</td>
+<td>300M+ downloads; 100K+ derivatives on HuggingFace</td>
+</tr>
+<tr>
+<td><strong>Qwen 2.5 Coder</strong></td>
+<td>7B–32B</td>
+<td>Top-tier open-source coding model</td>
+</tr>
+<tr>
+<td><strong>Qwen 2.5 VL</strong></td>
+<td>7B–72B</td>
+<td>Vision-language; strong multimodal</td>
+</tr>
+<tr>
+<td><strong>QwQ-32B</strong></td>
+<td>32B</td>
+<td>DeepSeek R1-level reasoning; open-weight</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License:</strong> Apache 2.0 (fully open; commercial use allowed)</p>
+<hr />
+<h3>Google — Gemma Series</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gemma 3</strong></td>
+<td>1B–27B</td>
+<td>Runs on consumer hardware; 128K context</td>
+</tr>
+<tr>
+<td><strong>Gemma 3 27B</strong></td>
+<td>27B</td>
+<td>Outperforms Llama 3 70B on many tasks</td>
+</tr>
+<tr>
+<td><strong>CodeGemma</strong></td>
+<td>7B</td>
+<td>Code-specialised Gemma variant</td>
+</tr>
+<tr>
+<td><strong>PaliGemma</strong></td>
+<td>3B</td>
+<td>Vision-language model; open-weight</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License:</strong> Gemma Terms of Use (permissive; commercial use allowed)</p>
+<hr />
+<h3>Mistral Open-Weight Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mistral 7B</strong></td>
+<td>7B</td>
+<td>Original; outperformed LLaMA 2 13B</td>
+</tr>
+<tr>
+<td><strong>Mixtral 8x7B</strong></td>
+<td>47B (MoE)</td>
+<td>Apache 2.0; strong multilingual reasoning</td>
+</tr>
+<tr>
+<td><strong>Mixtral 8x22B</strong></td>
+<td>141B (MoE)</td>
+<td>Frontier-competitive; fully open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Other Notable Open Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Organisation</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Falcon 180B</strong></td>
+<td>TII (UAE)</td>
+<td>Apache 2.0; 180B parameter open model</td>
+</tr>
+<tr>
+<td><strong>Phi-3 / Phi-4</strong></td>
+<td>Microsoft</td>
+<td>Small but powerful; excellent on-device models</td>
+</tr>
+<tr>
+<td><strong>StarCoder 2</strong></td>
+<td>HuggingFace / ServiceNow</td>
+<td>Open-source code model</td>
+</tr>
+<tr>
+<td><strong>Orca 3</strong></td>
+<td>Microsoft</td>
+<td>Distilled reasoning; instruction-following</td>
+</tr>
+<tr>
+<td><strong>Yi 1.5</strong></td>
+<td>01.AI (China)</td>
+<td>Strong bilingual (EN/ZH) model</td>
+</tr>
+<tr>
+<td><strong>Command R (Open)</strong></td>
+<td>Cohere</td>
+<td>Apache 2.0; RAG-optimised</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 6 — DEV TOOLS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-devtools">
+ <h2>Developer Tools &amp; Ecosystem</h2>
+ <p class="desc">The frameworks, databases, and tooling that power generative AI application development.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Orchestration Frameworks</h3>
+ <table class="fw-table">
+ <thead><tr><th>Framework</th><th>Focus</th></tr></thead>
+ <tbody>
+ <tr><td style="color:var(--accent); font-weight:600;">LangChain</td><td>Chain-based LLM orchestration &amp; agents</td></tr>
+ <tr><td style="color:var(--accent2); font-weight:600;">LlamaIndex</td><td>Data ingestion, indexing &amp; RAG pipelines</td></tr>
+ <tr><td style="color:var(--accent3); font-weight:600;">Haystack</td><td>End-to-end NLP &amp; retrieval pipelines</td></tr>
+ <tr><td style="color:var(--accent4); font-weight:600;">DSPy</td><td>Programmatic prompt optimisation</td></tr>
+ <tr><td style="color:var(--accent5); font-weight:600;">Semantic Kernel</td><td>Microsoft SDK for AI orchestration</td></tr>
+ <tr><td style="color:var(--accent6); font-weight:600;">Instructor</td><td>Structured output extraction from LLMs</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="chart-box">
+ <h3>Vector Databases</h3>
+ <table class="fw-table">
+ <thead><tr><th>Database</th><th>Focus</th></tr></thead>
+ <tbody>
+ <tr><td style="color:var(--accent); font-weight:600;">Pinecone</td><td>Managed vector search; serverless</td></tr>
+ <tr><td style="color:var(--accent2); font-weight:600;">Weaviate</td><td>Open-source; hybrid search</td></tr>
+ <tr><td style="color:var(--accent3); font-weight:600;">Qdrant</td><td>Rust-powered; high performance</td></tr>
+ <tr><td style="color:var(--accent4); font-weight:600;">Chroma</td><td>Lightweight; developer-friendly</td></tr>
+ <tr><td style="color:var(--accent5); font-weight:600;">Milvus / Zilliz</td><td>Scalable; GPU-accelerated</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-devtools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-devtools">
+<h3>Vector Databases & Retrieval (RAG Infrastructure)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pinecone</strong></td>
+<td>Cloud (AWS, Azure, GCP — serverless or pod-based)</td>
+<td>Most widely used managed vector DB; serverless option</td>
+</tr>
+<tr>
+<td><strong>Weaviate</strong></td>
+<td>Open-Source / Cloud (self-host on any infra; Weaviate Cloud on AWS / GCP)</td>
+<td>Hybrid search; multi-tenancy; GraphQL API</td>
+</tr>
+<tr>
+<td><strong>Qdrant</strong></td>
+<td>Open-Source / Cloud (self-host Docker/K8s; Qdrant Cloud on AWS, GCP, Azure)</td>
+<td>Rust-based; fast; payload filtering</td>
+</tr>
+<tr>
+<td><strong>Chroma</strong></td>
+<td>Open-Source (local; any machine with Python 3.8+)</td>
+<td>Lightweight; developer-friendly; local-first</td>
+</tr>
+<tr>
+<td><strong>Milvus / Zilliz</strong></td>
+<td>Open-Source / Cloud (self-host K8s; Zilliz Cloud on AWS, GCP, Azure)</td>
+<td>High-scale; GPU-accelerated similarity search</td>
+</tr>
+<tr>
+<td><strong>pgvector</strong></td>
+<td>Open-Source (any PostgreSQL host; AWS RDS, Azure, GCP Cloud SQL, Supabase)</td>
+<td>Add vector search to existing Postgres databases</td>
+</tr>
+<tr>
+<td><strong>Redis Vector</strong></td>
+<td>Open-Source / Cloud (self-host; Redis Cloud on AWS, GCP, Azure)</td>
+<td>Low-latency vector search in Redis</td>
+</tr>
+<tr>
+<td><strong>Elasticsearch</strong></td>
+<td>Open-Source / Cloud (self-host; Elastic Cloud on AWS, GCP, Azure)</td>
+<td>Hybrid keyword + vector search at scale</td>
+</tr>
+<tr>
+<td><strong>MongoDB Atlas Vector</strong></td>
+<td>Cloud (AWS, Azure, GCP — via MongoDB Atlas)</td>
+<td>Integrated vector search in MongoDB</td>
+</tr>
+<tr>
+<td><strong>Azure AI Search</strong></td>
+<td>Cloud (Azure)</td>
+<td>Microsoft's managed hybrid search service</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 7 — USE CASES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-usecases">
+ <h2>Industry Use Cases</h2>
+ <p class="desc">Real-world generative AI deployments transforming healthcare, legal, and scientific industries.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clinical Documentation</strong></td>
+<td>Auto-generate clinical notes from doctor-patient conversations</td>
+<td>Nuance DAX, Suki AI, Abridge</td>
+</tr>
+<tr>
+<td><strong>Medical Coding &amp; Billing</strong></td>
+<td>Extract ICD codes from clinical notes</td>
+<td>Fathom Health, Optum AI</td>
+</tr>
+<tr>
+<td><strong>Radiology AI</strong></td>
+<td>Generate structured reports from medical images</td>
+<td>Nuance PowerScribe AI, Aidoc</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>Generate and screen novel drug molecule candidates</td>
+<td>Insilico Medicine, Schrödinger, Recursion</td>
+</tr>
+<tr>
+<td><strong>Patient Communication</strong></td>
+<td>Personalised patient education and discharge summaries</td>
+<td>Nabla, Notable Health</td>
+</tr>
+<tr>
+<td><strong>Literature Summarisation</strong></td>
+<td>Summarise medical research papers</td>
+<td>Consensus, Elicit, Semantic Scholar AI</td>
+</tr>
+<tr>
+<td><strong>Protein Design</strong></td>
+<td>Design novel therapeutic proteins</td>
+<td>RFdiffusion, ProteinMPNN, AlphaFold 3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Legal &amp; Compliance</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contract Review</strong></td>
+<td>Identify risks, obligations, and missing clauses</td>
+<td>Harvey, Ironclad AI, Kira Systems</td>
+</tr>
+<tr>
+<td><strong>Contract Drafting</strong></td>
+<td>Generate first-draft contracts and legal documents</td>
+<td>Harvey, Clio Duo</td>
+</tr>
+<tr>
+<td><strong>Legal Research</strong></td>
+<td>Search and summarise case law and statutes</td>
+<td>Westlaw AI, LexisNexis AI, Casetext</td>
+</tr>
+<tr>
+<td><strong>Due Diligence</strong></td>
+<td>Review M&amp;A documents at scale</td>
+<td>Luminance, Kira, Relativity AI</td>
+</tr>
+<tr>
+<td><strong>Compliance Monitoring</strong></td>
+<td>Monitor communications for regulatory violations</td>
+<td>Behavox, NICE Actimize AI</td>
+</tr>
+<tr>
+<td><strong>eDiscovery</strong></td>
+<td>Classify and review documents in litigation</td>
+<td>Relativity aiR, Logikcull AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Finance &amp; Banking</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Earnings Report Generation</strong></td>
+<td>Draft investor reports and commentary</td>
+<td>Bloomberg AI, Morningstar AI</td>
+</tr>
+<tr>
+<td><strong>Financial Research</strong></td>
+<td>Summarise filings, news, market events</td>
+<td>Bloomberg GPT, Kensho, AlphaSense</td>
+</tr>
+<tr>
+<td><strong>Fraud Detection Narrative</strong></td>
+<td>Explain fraud signals in natural language</td>
+<td>Darktrace, Featurespace</td>
+</tr>
+<tr>
+<td><strong>Customer Communication</strong></td>
+<td>Generate personalised financial advice and alerts</td>
+<td>Personetics, Kasisto</td>
+</tr>
+<tr>
+<td><strong>Code for Quant Models</strong></td>
+<td>Generate quantitative trading code</td>
+<td>Kensho, internal AI at major banks</td>
+</tr>
+<tr>
+<td><strong>Regulatory Filing Drafts</strong></td>
+<td>Generate first drafts of regulatory submissions</td>
+<td>Various internal LLM deployments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Education</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Personalised Tutoring</strong></td>
+<td>Adaptive 1-on-1 tutoring at scale</td>
+<td>Khan Academy Khanmigo, Synthesis AI</td>
+</tr>
+<tr>
+<td><strong>Content Generation</strong></td>
+<td>Create lesson plans, quizzes, and worksheets</td>
+<td>MagicSchool AI, Diffit, Curipod</td>
+</tr>
+<tr>
+<td><strong>Essay Feedback</strong></td>
+<td>Detailed writing feedback and coaching</td>
+<td>Turnitin AI, EssayGrader, Writable</td>
+</tr>
+<tr>
+<td><strong>Language Learning</strong></td>
+<td>Conversational AI for language practice</td>
+<td>Duolingo Max, Speak AI, Elsa</td>
+</tr>
+<tr>
+<td><strong>Accessibility</strong></td>
+<td>Auto-caption, translate, simplify complex content</td>
+<td>Microsoft Accessibility AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Marketing &amp; Advertising</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ad Creative Generation</strong></td>
+<td>Generate images, copy, and video ads at scale</td>
+<td>AdCreative.ai, Pencil, Persado</td>
+</tr>
+<tr>
+<td><strong>SEO Content</strong></td>
+<td>Generate optimised blog posts and landing pages</td>
+<td>Jasper, Surfer SEO AI, Copy.ai</td>
+</tr>
+<tr>
+<td><strong>Personalisation at Scale</strong></td>
+<td>Customised email, SMS, push at individual level</td>
+<td>Persado, Movable Ink, Brafton</td>
+</tr>
+<tr>
+<td><strong>Social Media Content</strong></td>
+<td>Generate posts, captions, hashtags</td>
+<td>Lately AI, Publer AI, Hootsuite AI</td>
+</tr>
+<tr>
+<td><strong>Product Descriptions</strong></td>
+<td>E-commerce product copy at scale</td>
+<td>Producti AI, Anyword</td>
+</tr>
+<tr>
+<td><strong>Campaign Analysis</strong></td>
+<td>Summarise campaign performance and suggest actions</td>
+<td>Salesforce Einstein AI, HubSpot AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Software Engineering</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code Generation</strong></td>
+<td>Generate functions, classes, scripts</td>
+<td>GitHub Copilot, Cursor, Claude Code</td>
+</tr>
+<tr>
+<td><strong>Code Review</strong></td>
+<td>Automated PR review; security and quality</td>
+<td>GitHub Copilot for PRs, Coderabbit</td>
+</tr>
+<tr>
+<td><strong>Documentation</strong></td>
+<td>Auto-generate READMEs, docstrings, API docs</td>
+<td>Mintlify, GitHub Copilot</td>
+</tr>
+<tr>
+<td><strong>Test Generation</strong></td>
+<td>Write unit, integration, and E2E tests</td>
+<td>Codium AI, GitHub Copilot, Diffblue</td>
+</tr>
+<tr>
+<td><strong>Bug Fixing</strong></td>
+<td>Identify and patch bugs automatically</td>
+<td>Devin, SWE-Agent, Claude Code</td>
+</tr>
+<tr>
+<td><strong>App Generation</strong></td>
+<td>Build full-stack apps from natural language</td>
+<td>Lovable, Bolt.new, v0</td>
+</tr>
+<tr>
+<td><strong>DevOps Automation</strong></td>
+<td>Generate IaC, CI/CD pipelines, Kubernetes configs</td>
+<td>GitHub Copilot, Terraform AI, Pulumi AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Media &amp; Entertainment</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scriptwriting</strong></td>
+<td>Generate screenplays, dialogue, story outlines</td>
+<td>Sudowrite, ChatGPT, Claude</td>
+</tr>
+<tr>
+<td><strong>VFX &amp; Visual Effects</strong></td>
+<td>AI-assisted compositing, upscaling, cleanup</td>
+<td>Runway, Adobe Firefly Video, Topaz</td>
+</tr>
+<tr>
+<td><strong>Video Localisation</strong></td>
+<td>AI dubbing and lip-sync in 30+ languages</td>
+<td>ElevenLabs Dubbing, HeyGen, Papercup</td>
+</tr>
+<tr>
+<td><strong>Music for Sync</strong></td>
+<td>Generate royalty-free music for film/TV</td>
+<td>Suno, Udio, Soundraw</td>
+</tr>
+<tr>
+<td><strong>Game Asset Generation</strong></td>
+<td>Generate 2D/3D assets, textures, environments</td>
+<td>Scenario.gg, Meshy, NVIDIA GET3D</td>
+</tr>
+<tr>
+<td><strong>Game NPC Dialogue</strong></td>
+<td>Dynamic AI-generated NPC conversations</td>
+<td>Inworld AI, Convai, NVIDIA ACE</td>
+</tr>
+<tr>
+<td><strong>News Summarisation</strong></td>
+<td>Auto-summarise news for readers</td>
+<td>Artifact, Perplexity, Briefing AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 8 — BENCHMARKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-benchmarks">
+ <h2>Benchmarks</h2>
+ <p class="desc">Key performance metrics and arena rankings for leading generative AI models.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Model Benchmarks (% score)</h3>
+ <canvas id="chart-benchmarks"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Arena Rankings (Elo)</h3>
+ <canvas id="chart-arena"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Benchmarks</h3>
+<h3>Language &amp; Reasoning Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>What It Tests</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MMLU</strong></td>
+<td>57-subject academic knowledge</td>
+<td>Most widely cited general benchmark</td>
+</tr>
+<tr>
+<td><strong>GPQA Diamond</strong></td>
+<td>PhD-level science questions</td>
+<td>Hard science reasoning ceiling test</td>
+</tr>
+<tr>
+<td><strong>HumanEval</strong></td>
+<td>Python coding; pass@1 accuracy</td>
+<td>Standard code generation benchmark</td>
+</tr>
+<tr>
+<td><strong>SWE-Bench Verified</strong></td>
+<td>Real GitHub issue resolution</td>
+<td>Gold standard for software engineering agents</td>
+</tr>
+<tr>
+<td><strong>MATH / AIME</strong></td>
+<td>Competition mathematics</td>
+<td>Tests mathematical reasoning depth</td>
+</tr>
+<tr>
+<td><strong>BigBench Hard</strong></td>
+<td>23 challenging reasoning tasks</td>
+<td>Requires multi-step reasoning</td>
+</tr>
+<tr>
+<td><strong>HellaSwag</strong></td>
+<td>Commonsense NLI; sentence completion</td>
+<td>Near-saturated by frontier models</td>
+</tr>
+<tr>
+<td><strong>TruthfulQA</strong></td>
+<td>Measures tendency to hallucinate</td>
+<td>Truthfulness evaluation</td>
+</tr>
+<tr>
+<td><strong>IFEval</strong></td>
+<td>Instruction following evaluation</td>
+<td>Tests prompt adherence</td>
+</tr>
+<tr>
+<td><strong>Arena (LMSYS Chatbot Arena)</strong></td>
+<td>Human preference via blind A/B battles</td>
+<td>Most human-validated ranking</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Multimodal &amp; Specialised Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MMMU</strong></td>
+<td>Massive Multidisciplinary Multimodal Understanding</td>
+</tr>
+<tr>
+<td><strong>DocVQA</strong></td>
+<td>Document understanding and question answering</td>
+</tr>
+<tr>
+<td><strong>VQAv2</strong></td>
+<td>Visual question answering</td>
+</tr>
+<tr>
+<td><strong>TextVQA</strong></td>
+<td>Reading text within images</td>
+</tr>
+<tr>
+<td><strong>EvalBench (Video)</strong></td>
+<td>Video understanding and temporal reasoning</td>
+</tr>
+<tr>
+<td><strong>AudioBench</strong></td>
+<td>Audio understanding and generation quality</td>
+</tr>
+<tr>
+<td><strong>CyberSecEval</strong></td>
+<td>Security and safety of code generation</td>
+</tr>
+<tr>
+<td><strong>MedQA / MedMCQA</strong></td>
+<td>Medical knowledge and clinical reasoning</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Evaluation Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangSmith</strong></td>
+<td>LLM evaluation pipelines; dataset management</td>
+</tr>
+<tr>
+<td><strong>Ragas</strong></td>
+<td>RAG pipeline evaluation; faithfulness, relevance</td>
+</tr>
+<tr>
+<td><strong>EleutherAI LM Eval Harness</strong></td>
+<td>Open-source benchmark runner</td>
+</tr>
+<tr>
+<td><strong>OpenAI Evals</strong></td>
+<td>Framework for creating custom evaluations</td>
+</tr>
+<tr>
+<td><strong>Braintrust</strong></td>
+<td>AI evaluation and testing platform</td>
+</tr>
+<tr>
+<td><strong>HumanEval+</strong></td>
+<td>Extended coding benchmark with edge cases</td>
+</tr>
+<tr>
+<td><strong>MT-Bench</strong></td>
+<td>Multi-turn conversation quality evaluation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 9 — MARKET DATA -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-market">
+ <h2>Market Data</h2>
+ <p class="desc">Global generative AI market sizing, enterprise spend, and projected growth trajectory.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Market Snapshot (2024)</h3>
+ <canvas id="chart-market-snap"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Gen AI Market Growth — 2024–2030 (CAGR 46%)</h3>
+ <canvas id="chart-market-growth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Size</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Gen AI Market (2024)</strong></td>
+<td>~$67 billion</td>
+</tr>
+<tr>
+<td><strong>Projected Market (2030)</strong></td>
+<td>~$1.3 trillion (Goldman Sachs)</td>
+</tr>
+<tr>
+<td><strong>CAGR</strong></td>
+<td>~46% (2024–2030)</td>
+</tr>
+<tr>
+<td><strong>Enterprise AI Spend (2025)</strong></td>
+<td>&gt;$200 billion globally</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Adoption Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ChatGPT Weekly Active Users (2025)</strong></td>
+<td>700 million+</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot Subscribers</strong></td>
+<td>1.8 million+ developers</td>
+</tr>
+<tr>
+<td><strong>Midjourney Registered Users</strong></td>
+<td>20 million+</td>
+</tr>
+<tr>
+<td><strong>% Fortune 500 Using Gen AI</strong></td>
+<td>92% (as of Q1 2025)</td>
+</tr>
+<tr>
+<td><strong>ElevenLabs API Calls / Month</strong></td>
+<td>1 billion+ voice generations</td>
+</tr>
+<tr>
+<td><strong>HuggingFace Models</strong></td>
+<td>1 million+ models; 500k+ datasets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Investment Landscape (2024–2025)</h3>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Funding Round</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>Cumulative</td>
+<td>$57 billion+</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>Series E</td>
+<td>$7.3 billion (Amazon anchor)</td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td>Series B</td>
+<td>$6 billion</td>
+</tr>
+<tr>
+<td><strong>Mistral AI</strong></td>
+<td>Series B</td>
+<td>$1.1 billion</td>
+</tr>
+<tr>
+<td><strong>Cohere</strong></td>
+<td>Series D</td>
+<td>$500 million</td>
+</tr>
+<tr>
+<td><strong>Stability AI</strong></td>
+<td>Various</td>
+<td>$101 million</td>
+</tr>
+<tr>
+<td><strong>Runway</strong></td>
+<td>Series D</td>
+<td>$308 million</td>
+</tr>
+<tr>
+<td><strong>ElevenLabs</strong></td>
+<td>Series B</td>
+<td>$180 million</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>Series C</td>
+<td>$500 million</td>
+</tr>
+<tr>
+<td><strong>Harvey AI</strong></td>
+<td>Series C</td>
+<td>$300 million</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 10 — RISKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-risks">
+ <h2>Risks &amp; Limitations</h2>
+ <p class="desc">Critical limitations and failure modes to consider when deploying generative AI systems.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Ethics</h3>
+<h3>Technical Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>Models confidently generate false information; a fundamental probabilistic limitation</td>
+</tr>
+<tr>
+<td><strong>Context Window Limits</strong></td>
+<td>Models lose coherence over very long documents; though windows now reach 10M tokens</td>
+</tr>
+<tr>
+<td><strong>Stale Knowledge</strong></td>
+<td>Training data has a cutoff date; models lack real-time awareness without tools</td>
+</tr>
+<tr>
+<td><strong>Reasoning Failures</strong></td>
+<td>Models can fail on seemingly simple logic, counting, and spatial reasoning tasks</td>
+</tr>
+<tr>
+<td><strong>Prompt Sensitivity</strong></td>
+<td>Small changes in phrasing can produce very different outputs</td>
+</tr>
+<tr>
+<td><strong>Lack of Causal Understanding</strong></td>
+<td>Models learn correlations, not causal mechanisms</td>
+</tr>
+<tr>
+<td><strong>Inconsistency</strong></td>
+<td>Same prompt can produce different outputs across runs</td>
+</tr>
+<tr>
+<td><strong>Benchmark Gaming</strong></td>
+<td>Models may be trained on benchmark data, inflating reported performance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Safety &amp; Misuse Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disinformation &amp; Deepfakes</strong></td>
+<td>Generate convincing fake news, images, audio, or video of real people</td>
+</tr>
+<tr>
+<td><strong>Phishing &amp; Social Engineering</strong></td>
+<td>Generate highly personalised, convincing scam content at scale</td>
+</tr>
+<tr>
+<td><strong>Synthetic CSAM</strong></td>
+<td>Image/video generation models can be misused to generate illegal content</td>
+</tr>
+<tr>
+<td><strong>Automated Cyberattacks</strong></td>
+<td>Generate malware, exploit code, phishing pages</td>
+</tr>
+<tr>
+<td><strong>Mass Manipulation</strong></td>
+<td>Generate targeted propaganda at individual or societal scale</td>
+</tr>
+<tr>
+<td><strong>Identity Fraud</strong></td>
+<td>Voice cloning and face generation for impersonation</td>
+</tr>
+<tr>
+<td><strong>Academic Fraud</strong></td>
+<td>Ghostwriting essays, research papers, exam submissions</td>
+</tr>
+<tr>
+<td><strong>IP Violation</strong></td>
+<td>Models trained on copyrighted content; unclear legal status of outputs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Bias &amp; Fairness</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training Data Bias</strong></td>
+<td>Models reflect societal biases present in internet-scale training data</td>
+</tr>
+<tr>
+<td><strong>Demographic Representation</strong></td>
+<td>Under/over-representation of genders, ethnicities, cultures in image generation</td>
+</tr>
+<tr>
+<td><strong>Language Bias</strong></td>
+<td>Models perform significantly better in English than other languages</td>
+</tr>
+<tr>
+<td><strong>Occupational Stereotyping</strong></td>
+<td>Associate certain professions with specific genders or ethnicities by default</td>
+</tr>
+<tr>
+<td><strong>Cultural Bias</strong></td>
+<td>Western-centric worldviews baked into responses and values</td>
+</tr>
+<tr>
+<td><strong>Amplification</strong></td>
+<td>AI may amplify existing human biases at scale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Environmental Impact</h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training Energy</strong></td>
+<td>Training GPT-4 estimated at 50+ GWh; equivalent to thousands of homes annually</td>
+</tr>
+<tr>
+<td><strong>Inference Energy</strong></td>
+<td>Each ChatGPT query uses ~10x more energy than a Google search</td>
+</tr>
+<tr>
+<td><strong>Water Cooling</strong></td>
+<td>Data centres use millions of litres of water for cooling</td>
+</tr>
+<tr>
+<td><strong>Carbon Footprint</strong></td>
+<td>Growing AI compute footprint contributes meaningfully to global carbon emissions</td>
+</tr>
+<tr>
+<td><strong>Hardware Waste</strong></td>
+<td>GPU production and replacement cycles create e-waste</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mitigation Trends:</strong> Model efficiency improvements (MoE, quantisation), renewable energy commitments by hyperscalers, smaller specialised models for most tasks.</p>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="agentic-ai.html">Agentic AI</a>
+<a href="conversational-ai.html">Conversational AI</a>
+<a href="multimodal-perception-ai.html">Multimodal Perception AI</a>
+<a href="recommendation-retrieval-ai.html">Recommendation / Retrieval AI</a>
+<a href="explainable-ai.html">Explainable AI (XAI)</a>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<!-- ██ SECTION 11 — GLOSSARY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key terms and concepts in generative AI — searchable and always accessible.</p>
+
+ <input class="glossary-search" id="glossary-search" type="text" placeholder="Search terms…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Token</strong></td>
+<td>The basic unit of text a model processes; approximately 0.75 words on average</td>
+</tr>
+<tr>
+<td><strong>Context Window</strong></td>
+<td>Maximum number of tokens a model can process in a single interaction</td>
+</tr>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>Controls output randomness; higher = more creative, lower = more deterministic</td>
+</tr>
+<tr>
+<td><strong>Top-p (Nucleus Sampling)</strong></td>
+<td>Selects from the smallest set of tokens whose cumulative probability exceeds p</td>
+</tr>
+<tr>
+<td><strong>Top-k</strong></td>
+<td>Limits token selection to the k most probable next tokens</td>
+</tr>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>When a model generates confident but factually incorrect information</td>
+</tr>
+<tr>
+<td><strong>Grounding</strong></td>
+<td>Connecting AI output to verified real-world facts, documents, or data sources</td>
+</tr>
+<tr>
+<td><strong>Fine-Tuning</strong></td>
+<td>Adapting a pre-trained model to a specific domain or task using additional training</td>
+</tr>
+<tr>
+<td><strong>LoRA</strong></td>
+<td>Low-Rank Adaptation — efficient fine-tuning by adding small trainable matrices to a frozen model</td>
+</tr>
+<tr>
+<td><strong>QLoRA</strong></td>
+<td>Quantised LoRA — fine-tune a 4-bit quantised model using LoRA; consumer GPU friendly</td>
+</tr>
+<tr>
+<td><strong>RLHF</strong></td>
+<td>Reinforcement Learning from Human Feedback — alignment technique using human preference labels</td>
+</tr>
+<tr>
+<td><strong>DPO</strong></td>
+<td>Direct Preference Optimisation — alignment without a separate reward model</td>
+</tr>
+<tr>
+<td><strong>Constitutional AI</strong></td>
+<td>Anthropic's method of using AI feedback guided by a written constitution for alignment</td>
+</tr>
+<tr>
+<td><strong>RAG</strong></td>
+<td>Retrieval-Augmented Generation — augment model generation with retrieved external documents</td>
+</tr>
+<tr>
+<td><strong>Embeddings</strong></td>
+<td>Dense vector representations of text or images that capture semantic meaning</td>
+</tr>
+<tr>
+<td><strong>Vector Database</strong></td>
+<td>Database optimised for storing and querying high-dimensional embedding vectors</td>
+</tr>
+<tr>
+<td><strong>Latent Space</strong></td>
+<td>The compressed internal representation a model learns during training</td>
+</tr>
+<tr>
+<td><strong>Diffusion Model</strong></td>
+<td>Architecture that generates outputs by learning to reverse a noise-adding process</td>
+</tr>
+<tr>
+<td><strong>MoE (Mixture of Experts)</strong></td>
+<td>Architecture where only a subset of model parameters activates per token; enables scale efficiency</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Running a trained model on new input data to produce an output</td>
+</tr>
+<tr>
+<td><strong>Foundation Model</strong></td>
+<td>A large model trained on broad data at scale, adaptable to many downstream tasks</td>
+</tr>
+<tr>
+<td><strong>Transfer Learning</strong></td>
+<td>Applying knowledge learned in one domain to a different but related domain</td>
+</tr>
+<tr>
+<td><strong>Multimodal</strong></td>
+<td>Involving or processing more than one type of data modality (e.g., text + image + audio)</td>
+</tr>
+<tr>
+<td><strong>Alignment</strong></td>
+<td>Ensuring AI behaviour matches human values, intentions, and safety requirements</td>
+</tr>
+<tr>
+<td><strong>Emergent Behaviour</strong></td>
+<td>Capabilities that arise in large models that were not explicitly trained for</td>
+</tr>
+<tr>
+<td><strong>Prompt Injection</strong></td>
+<td>Malicious input designed to override a model's system prompt or instructions</td>
+</tr>
+<tr>
+<td><strong>Guardrails</strong></td>
+<td>Rules or filters applied at runtime to prevent harmful or off-policy model outputs</td>
+</tr>
+<tr>
+<td><strong>System Prompt</strong></td>
+<td>Instructions given to a model before the conversation begins to shape its behaviour</td>
+</tr>
+<tr>
+<td><strong>SFT (Supervised Fine-Tuning)</strong></td>
+<td>Fine-tuning a model on labelled (input, output) demonstration pairs</td>
+</tr>
+<tr>
+<td><strong>PEFT</strong></td>
+<td>Parameter-Efficient Fine-Tuning — umbrella of methods that fine-tune a small subset of weights</td>
+</tr>
+<tr>
+<td><strong>Speculative Decoding</strong></td>
+<td>Use a small draft model to propose tokens; large model verifies; speeds up inference 2–3x</td>
+</tr>
+<tr>
+<td><strong>Flash Attention</strong></td>
+<td>Memory-efficient attention algorithm enabling longer context windows and faster training</td>
+</tr>
+<tr>
+<td><strong>KV Cache</strong></td>
+<td>Key-Value cache that stores prior token computations to speed up autoregressive generation</td>
+</tr>
+<tr>
+<td><strong>Watermarking</strong></td>
+<td>Embedding imperceptible signals in AI-generated content to enable provenance verification</td>
+</tr>
+<tr>
+<td><strong>C2PA</strong></td>
+<td>Coalition for Content Provenance and Authenticity — open standard for AI content labelling</td>
+</tr>
+<tr>
+<td><strong>Benchmark Saturation</strong></td>
+<td>When a model scores so highly on a benchmark it no longer meaningfully differentiates models</td>
+</tr>
+<tr>
+<td><strong>Distillation</strong></td>
+<td>Training a smaller "student" model to mimic the outputs of a larger "teacher" model</td>
+</tr>
+<tr>
+<td><strong>Quantisation</strong></td>
+<td>Reducing the numerical precision of model weights to reduce memory and increase inference speed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Generative AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/10-generative-ai-overview.gif" alt="Generative AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Generative AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/10-generative-ai-tech-stack.gif" alt="Generative AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>EU AI Act</h3>
+<table>
+<thead>
+<tr>
+<th>Risk Tier</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unacceptable Risk</strong></td>
+<td>Banned outright</td>
+<td>Social scoring, subliminal manipulation, real-time biometric surveillance</td>
+</tr>
+<tr>
+<td><strong>High Risk</strong></td>
+<td>Strict requirements: conformity assessments, documentation, human oversight</td>
+<td>CV screening, credit scoring, medical devices, critical infrastructure</td>
+</tr>
+<tr>
+<td><strong>Limited Risk</strong></td>
+<td>Transparency obligations</td>
+<td>Chatbots must disclose AI nature; deepfakes must be labelled</td>
+</tr>
+<tr>
+<td><strong>Minimal Risk</strong></td>
+<td>No requirements</td>
+<td>Spam filters, AI in video games, generative content tools</td>
+</tr>
+<tr>
+<td><strong>GPAI Models</strong></td>
+<td>General-purpose AI model requirements</td>
+<td>Transparency, copyright compliance, safety testing for frontier models</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Provisions for Generative AI:</strong></p>
+<ul>
+<li>Foundation model providers must disclose training data summaries</li>
+<li>Watermarking / labelling requirements for AI-generated content</li>
+<li>Frontier models (&gt;10^25 FLOPs) face additional systemic risk obligations</li>
+</ul>
+<hr />
+<h3>United States</h3>
+<table>
+<thead>
+<tr>
+<th>Initiative</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Executive Order on AI (Oct 2023)</strong></td>
+<td>Broad safety, security, and trust directives for federal AI</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>Voluntary AI Risk Management Framework; widely adopted</td>
+</tr>
+<tr>
+<td><strong>State-Level Laws</strong></td>
+<td>California (SB 1047 vetoed; AB 2013 passed), Colorado AI Act</td>
+</tr>
+<tr>
+<td><strong>FTC Guidance</strong></td>
+<td>Unfair and deceptive practices rules applied to AI</td>
+</tr>
+<tr>
+<td><strong>FDA AI/ML Guidance</strong></td>
+<td>Regulation of AI-enabled medical devices</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Global Regulatory Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU</strong></td>
+<td>Risk-based regulation; legally binding; AI Act in force</td>
+</tr>
+<tr>
+<td><strong>UK</strong></td>
+<td>Pro-innovation; sector-led; no AI-specific law; AI Safety Institute</td>
+</tr>
+<tr>
+<td><strong>USA</strong></td>
+<td>Sector-specific; voluntary frameworks; state-level laws emerging</td>
+</tr>
+<tr>
+<td><strong>China</strong></td>
+<td>Algorithmic recommendation rules; deep synthesis (deepfake) rules; GPAI regulations</td>
+</tr>
+<tr>
+<td><strong>Canada</strong></td>
+<td>AIDA (Artificial Intelligence and Data Act) — in progress</td>
+</tr>
+<tr>
+<td><strong>Brazil</strong></td>
+<td>AI Bill — in legislative process</td>
+</tr>
+<tr>
+<td><strong>India</strong></td>
+<td>Advisory-based; no binding AI law yet</td>
+</tr>
+<tr>
+<td><strong>Japan</strong></td>
+<td>Principle-based; light-touch; "AI-friendly" positioning</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Content Authenticity &amp; Watermarking</h3>
+<table>
+<thead>
+<tr>
+<th>Initiative</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C2PA (Content Credentials)</strong></td>
+<td>Open standard for content provenance metadata; Adobe, Microsoft, OpenAI, Google</td>
+</tr>
+<tr>
+<td><strong>SynthID (Google DeepMind)</strong></td>
+<td>Imperceptible watermarking for AI-generated images, audio, video, and text</td>
+</tr>
+<tr>
+<td><strong>DALL·E Watermarking</strong></td>
+<td>OpenAI embeds C2PA metadata in all DALL·E outputs</td>
+</tr>
+<tr>
+<td><strong>EU AI Act Requirement</strong></td>
+<td>AI-generated content must be labelled as such</td>
+</tr>
+<tr>
+<td><strong>Platform Policies</strong></td>
+<td>Meta, YouTube, TikTok all require disclosure of AI-generated content</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-training">
+ <h2>Training</h2>
+ <p class="desc">Detailed reference content for training.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Training Techniques</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Pre-Training</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Next Token Prediction</strong></td>
+<td>Train model to predict the next token given all prior tokens (GPT-style)</td>
+</tr>
+<tr>
+<td><strong>Masked Language Modelling</strong></td>
+<td>Randomly mask tokens; train to predict them (BERT-style)</td>
+</tr>
+<tr>
+<td><strong>Contrastive Learning</strong></td>
+<td>Train model to align related pairs (image + text in CLIP)</td>
+</tr>
+<tr>
+<td><strong>Denoising</strong></td>
+<td>Train model to reconstruct original data from corrupted versions</td>
+</tr>
+<tr>
+<td><strong>Mixture of Experts (MoE)</strong></td>
+<td>Route tokens to specialised sub-networks; scale efficiently</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Fine-Tuning Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full Fine-Tuning</strong></td>
+<td>Update all model weights on domain data</td>
+<td>Small models; maximum domain performance</td>
+</tr>
+<tr>
+<td><strong>LoRA (Low-Rank Adaptation)</strong></td>
+<td>Add trainable low-rank matrices; freeze base weights</td>
+<td>Most fine-tuning scenarios; cost-efficient</td>
+</tr>
+<tr>
+<td><strong>QLoRA</strong></td>
+<td>Quantised LoRA; 4-bit base model + LoRA adapters</td>
+<td>Consumer GPU fine-tuning (24GB VRAM)</td>
+</tr>
+<tr>
+<td><strong>Prefix Tuning</strong></td>
+<td>Prepend trainable tokens to input; keep model frozen</td>
+<td>Style and tone adaptation</td>
+</tr>
+<tr>
+<td><strong>Adapter Layers</strong></td>
+<td>Insert small trainable modules between frozen layers</td>
+<td>Multi-task adaptation</td>
+</tr>
+<tr>
+<td><strong>PEFT (Parameter-Efficient FT)</strong></td>
+<td>Umbrella of LoRA, adapters, prefix; HuggingFace library</td>
+<td>All efficient fine-tuning</td>
+</tr>
+<tr>
+<td><strong>Instruction Fine-Tuning</strong></td>
+<td>Train on (instruction, response) pairs</td>
+<td>Making models follow instructions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Alignment Techniques</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RLHF</strong></td>
+<td>Human labellers rank outputs; train reward model; PPO optimise</td>
+<td>ChatGPT, Claude, Gemini</td>
+</tr>
+<tr>
+<td><strong>RLAIF</strong></td>
+<td>Use AI instead of humans to generate preference labels</td>
+<td>Constitutional AI (Anthropic)</td>
+</tr>
+<tr>
+<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td>Train directly on preference pairs; no reward model needed</td>
+<td>LLaMA 3, Mistral, most open models</td>
+</tr>
+<tr>
+<td><strong>Constitutional AI (CAI)</strong></td>
+<td>AI critiques and revises its own outputs against a constitution</td>
+<td>Claude (Anthropic)</td>
+</tr>
+<tr>
+<td><strong>ORPO</strong></td>
+<td>Combines SFT and preference learning in one step</td>
+<td>Efficient alignment</td>
+</tr>
+<tr>
+<td><strong>PPO</strong></td>
+<td>Proximal Policy Optimisation; core RL algorithm for RLHF</td>
+<td>Original ChatGPT training</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Quantisation &amp; Efficiency</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>INT8 Quantisation</strong></td>
+<td>8-bit integer weights instead of 32-bit float</td>
+<td>4x memory reduction</td>
+</tr>
+<tr>
+<td><strong>INT4 / GPTQ</strong></td>
+<td>4-bit quantisation; minimal quality loss</td>
+<td>8x memory reduction</td>
+</tr>
+<tr>
+<td><strong>GGUF (llama.cpp)</strong></td>
+<td>Format for running quantised models locally</td>
+<td>CPU/GPU inference on consumer hardware</td>
+</tr>
+<tr>
+<td><strong>AWQ</strong></td>
+<td>Activation-aware weight quantisation; better quality</td>
+<td>Deployment on edge devices</td>
+</tr>
+<tr>
+<td><strong>Speculative Decoding</strong></td>
+<td>Small draft model proposes tokens; large model verifies</td>
+<td>2-3x faster inference</td>
+</tr>
+<tr>
+<td><strong>Flash Attention 2/3</strong></td>
+<td>Memory-efficient attention computation</td>
+<td>Longer contexts; faster training</td>
+</tr>
+<tr>
+<td><strong>KV Cache</strong></td>
+<td>Cache key-value pairs from previous tokens</td>
+<td>Faster multi-turn inference</td>
+</tr>
+<tr>
+<td><strong>Continuous Batching</strong></td>
+<td>Process multiple requests simultaneously</td>
+<td>Higher throughput in serving</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-enterprise">
+ <h2>Enterprise</h2>
+ <p class="desc">Detailed reference content for enterprise.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Enterprise Platforms</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Cloud Provider AI Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Key Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure OpenAI Service</strong></td>
+<td>Microsoft</td>
+<td>GPT-5, o3, DALL·E, Whisper via Azure; enterprise SLAs</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AI</strong></td>
+<td>Google</td>
+<td>Gemini, Imagen, PaLM; MLOps; Model Garden</td>
+</tr>
+<tr>
+<td><strong>AWS Bedrock</strong></td>
+<td>Amazon</td>
+<td>Claude, Llama, Titan, Mistral; multi-model; RAG</td>
+</tr>
+<tr>
+<td><strong>AWS SageMaker</strong></td>
+<td>Amazon</td>
+<td>Custom model training, fine-tuning, deployment</td>
+</tr>
+<tr>
+<td><strong>IBM watsonx.ai</strong></td>
+<td>IBM</td>
+<td>Granite models; enterprise governance; OpenScale</td>
+</tr>
+<tr>
+<td><strong>Oracle OCI AI</strong></td>
+<td>Oracle</td>
+<td>Database-native AI; Cohere integration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Enterprise AI Application Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microsoft Copilot 365</strong></td>
+<td>Microsoft</td>
+<td>AI across Word, Excel, Teams, Outlook, PowerPoint</td>
+</tr>
+<tr>
+<td><strong>Salesforce Einstein</strong></td>
+<td>Salesforce</td>
+<td>CRM-native AI; Agentforce agents</td>
+</tr>
+<tr>
+<td><strong>ServiceNow AI</strong></td>
+<td>ServiceNow</td>
+<td>IT, HR, and customer service workflow AI</td>
+</tr>
+<tr>
+<td><strong>Workday AI</strong></td>
+<td>Workday</td>
+<td>HR, finance, and planning AI</td>
+</tr>
+<tr>
+<td><strong>SAP Joule</strong></td>
+<td>SAP</td>
+<td>Copilot across SAP ERP ecosystem</td>
+</tr>
+<tr>
+<td><strong>Adobe Firefly Enterprise</strong></td>
+<td>Adobe</td>
+<td>Brand-safe generative AI for creative workflows</td>
+</tr>
+<tr>
+<td><strong>Box AI</strong></td>
+<td>Box</td>
+<td>Document intelligence; summarisation; Q&amp;A</td>
+</tr>
+<tr>
+<td><strong>Slack AI</strong></td>
+<td>Salesforce</td>
+<td>Thread summarisation; search; workflow AI</td>
+</tr>
+<tr>
+<td><strong>Zoom AI Companion</strong></td>
+<td>Zoom</td>
+<td>Meeting summarisation; smart compose; coaching</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>AI Gateway &amp; Inference Optimisation</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LiteLLM</strong></td>
+<td>Universal LLM proxy; route between 100+ models</td>
+</tr>
+<tr>
+<td><strong>Kong AI Gateway</strong></td>
+<td>Enterprise API gateway for LLM traffic</td>
+</tr>
+<tr>
+<td><strong>Portkey</strong></td>
+<td>AI gateway; fallbacks, retries, cost control</td>
+</tr>
+<tr>
+<td><strong>Martian</strong></td>
+<td>Intelligent LLM routing based on task type and cost</td>
+</tr>
+<tr>
+<td><strong>Not Diamond</strong></td>
+<td>Automatic best-model selection per query</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-consumer">
+ <h2>Consumer Tools</h2>
+ <p class="desc">Detailed reference content for consumer tools.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Consumer & Prosumer Tools</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>General-Purpose AI Assistants</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ChatGPT</strong></td>
+<td>OpenAI</td>
+<td>700M+ weekly users; GPT-5, o3; multimodal; tool use</td>
+</tr>
+<tr>
+<td><strong>Claude.ai</strong></td>
+<td>Anthropic</td>
+<td>Claude 4 Opus/Sonnet; 200K context; best for writing and coding</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong></td>
+<td>Google</td>
+<td>Gemini 2.0/3; integrates with Google Workspace</td>
+</tr>
+<tr>
+<td><strong>Copilot</strong></td>
+<td>Microsoft</td>
+<td>GPT-5 powered; integrated across Microsoft 365</td>
+</tr>
+<tr>
+<td><strong>Le Chat</strong></td>
+<td>Mistral</td>
+<td>European alternative; fast inference; Gmail integration</td>
+</tr>
+<tr>
+<td><strong>Grok</strong></td>
+<td>xAI</td>
+<td>Real-time X/Twitter data; Grok 3 reasoning</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>Perplexity AI</td>
+<td>Web-grounded answers; citations; research assistant</td>
+</tr>
+<tr>
+<td><strong>You.com</strong></td>
+<td>You.com</td>
+<td>Search + AI assistant with app integrations</td>
+</tr>
+<tr>
+<td><strong>HuggingChat</strong></td>
+<td>HuggingFace</td>
+<td>Open-source models; free; no login required</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Image Generation Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Midjourney</strong></td>
+<td>Midjourney</td>
+<td>Most aesthetically refined; v7; subscription-based</td>
+</tr>
+<tr>
+<td><strong>DALL·E 3</strong></td>
+<td>OpenAI</td>
+<td>Integrated in ChatGPT; prompt adherence; inpainting</td>
+</tr>
+<tr>
+<td><strong>Stable Diffusion</strong></td>
+<td>Stability AI</td>
+<td>Open-source; fully customisable; runs locally</td>
+</tr>
+<tr>
+<td><strong>Adobe Firefly</strong></td>
+<td>Adobe</td>
+<td>Commercially safe; integrated in Photoshop/Illustrator</td>
+</tr>
+<tr>
+<td><strong>Imagen 3</strong></td>
+<td>Google</td>
+<td>Google's highest-quality text-to-image model</td>
+</tr>
+<tr>
+<td><strong>Ideogram</strong></td>
+<td>Ideogram</td>
+<td>Excellent text rendering within images</td>
+</tr>
+<tr>
+<td><strong>Flux</strong></td>
+<td>Black Forest Labs</td>
+<td>Open-weight; state-of-the-art quality; fast</td>
+</tr>
+<tr>
+<td><strong>Leonardo.ai</strong></td>
+<td>Leonardo</td>
+<td>Game asset and concept art generation</td>
+</tr>
+<tr>
+<td><strong>Canva AI</strong></td>
+<td>Canva</td>
+<td>Magic Generate; design-integrated image generation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Video Generation Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sora</strong></td>
+<td>OpenAI</td>
+<td>1080p; up to 60s; cinematic quality</td>
+</tr>
+<tr>
+<td><strong>Veo 3</strong></td>
+<td>Google</td>
+<td>Native audio generation; YouTube integration</td>
+</tr>
+<tr>
+<td><strong>Runway Gen-3 Alpha</strong></td>
+<td>Runway</td>
+<td>Professional VFX-grade; image-to-video</td>
+</tr>
+<tr>
+<td><strong>Kling 2.0</strong></td>
+<td>Kuaishou</td>
+<td>High-fidelity motion; strong physics simulation</td>
+</tr>
+<tr>
+<td><strong>Pika 2.0</strong></td>
+<td>Pika Labs</td>
+<td>Fast generation; scene modification features</td>
+</tr>
+<tr>
+<td><strong>HeyGen</strong></td>
+<td>HeyGen</td>
+<td>Avatar video; AI dubbing; lip sync</td>
+</tr>
+<tr>
+<td><strong>Synthesia</strong></td>
+<td>Synthesia</td>
+<td>Enterprise avatar video for training and comms</td>
+</tr>
+<tr>
+<td><strong>Luma Dream Machine</strong></td>
+<td>Luma AI</td>
+<td>Fast; smooth motion; 3D-grounded generation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Audio &amp; Voice Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ElevenLabs</strong></td>
+<td>ElevenLabs</td>
+<td>Best-in-class TTS, voice cloning, dubbing</td>
+</tr>
+<tr>
+<td><strong>OpenAI Voice</strong></td>
+<td>OpenAI</td>
+<td>Natural realtime conversational voice in ChatGPT</td>
+</tr>
+<tr>
+<td><strong>Suno</strong></td>
+<td>Suno</td>
+<td>Full song generation from text; v4 model</td>
+</tr>
+<tr>
+<td><strong>Udio</strong></td>
+<td>Udio</td>
+<td>Music generation; style control; 3-minute tracks</td>
+</tr>
+<tr>
+<td><strong>Descript</strong></td>
+<td>Descript</td>
+<td>AI podcast and video editing; voice cloning</td>
+</tr>
+<tr>
+<td><strong>Adobe Podcast</strong></td>
+<td>Adobe</td>
+<td>AI audio enhancement and transcription</td>
+</tr>
+<tr>
+<td><strong>Murf</strong></td>
+<td>Murf</td>
+<td>Professional TTS for presentations and e-learning</td>
+</tr>
+<tr>
+<td><strong>Play.ht</strong></td>
+<td>Play.ht</td>
+<td>TTS API; voice cloning; 900+ voices</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Writing &amp; Content Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notion AI</strong></td>
+<td>Notion</td>
+<td>Integrated writing assistant; summarisation; Q&amp;A</td>
+</tr>
+<tr>
+<td><strong>Jasper</strong></td>
+<td>Jasper</td>
+<td>Marketing copy; brand voice training</td>
+</tr>
+<tr>
+<td><strong>Copy.ai</strong></td>
+<td>Copy.ai</td>
+<td>Marketing and sales content generation</td>
+</tr>
+<tr>
+<td><strong>Grammarly</strong></td>
+<td>Grammarly</td>
+<td>AI writing assistant; rewriting; tone adjustment</td>
+</tr>
+<tr>
+<td><strong>Writesonic</strong></td>
+<td>Writesonic</td>
+<td>Blog posts, ads, product descriptions</td>
+</tr>
+<tr>
+<td><strong>Sudowrite</strong></td>
+<td>Sudowrite</td>
+<td>AI for fiction and creative writing</td>
+</tr>
+<tr>
+<td><strong>Hemingway Editor AI</strong></td>
+<td>Hemingway</td>
+<td>Clarity and readability scoring with suggestions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Coding Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub Copilot</strong></td>
+<td>GitHub / OpenAI</td>
+<td>#1 coding assistant; GPT-4o + Claude 4</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>Cursor</td>
+<td>AI-native IDE; multi-file editing; composer mode</td>
+</tr>
+<tr>
+<td><strong>Windsurf</strong></td>
+<td>Codeium</td>
+<td>Agent-native IDE; Cascade multi-file agent</td>
+</tr>
+<tr>
+<td><strong>Bolt.new</strong></td>
+<td>StackBlitz</td>
+<td>Build full-stack web apps in browser from prompts</td>
+</tr>
+<tr>
+<td><strong>Lovable</strong></td>
+<td>Lovable</td>
+<td>Generate full React apps from natural language</td>
+</tr>
+<tr>
+<td><strong>v0</strong></td>
+<td>Vercel</td>
+<td>Generate and edit UI components with AI</td>
+</tr>
+<tr>
+<td><strong>Replit Agent</strong></td>
+<td>Replit</td>
+<td>Build and deploy apps in natural language</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Anthropic</td>
+<td>CLI coding agent; top SWE-Bench performance</td>
+</tr>
+<tr>
+<td><strong>Devin</strong></td>
+<td>Cognition</td>
+<td>Autonomous software engineering agent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Generative AI</strong> is the branch of artificial intelligence focused on systems that can <strong>produce new content</strong> — text, images, video, audio, music, code, 3D models, molecules, and more — that did not exist before the generation event.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Creates — does not just classify, predict, retrieve, or respond with pre-written text</td>
+</tr>
+<tr>
+<td><strong>How It Learns</strong></td>
+<td>Learns the statistical patterns and distributions of massive training datasets</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Novel outputs that are plausible, coherent, and contextually appropriate</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Output is generative, not extractive — the model synthesises, it does not copy</td>
+</tr>
+</tbody>
+</table>
+<h3>Generative AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new original content from learned distributions</td>
+<td>Write an essay, generate an image, synthesise a video</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously using tools, memory, and planning</td>
+<td>Research agent, coding agent, autonomous workflow</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from existing data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical patterns</td>
+<td>Spam filter, credit score, churn prediction</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current inputs with no memory or learning</td>
+<td>Chess engine move evaluation, thermostat</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. &middot; 2026
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ─── TAB NAVIGATION ─── */
+const nav = document.getElementById('nav');
+const tabs = nav.querySelectorAll('button');
+const sections = document.querySelectorAll('.section');
+
+tabs.forEach(btn => {
+ btn.addEventListener('click', () => {
+ tabs.forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ const target = 'sec-' + btn.dataset.tab;
+ sections.forEach(s => s.classList.toggle('active', s.id === target));
+ if (btn.dataset.tab === 'benchmarks' || btn.dataset.tab === 'market') initCharts();
+ });
+});
+
+/* ─── PIPELINE INFO ─── */
+const pipelineData = [
+ { title: '1 — DATA', color: 'var(--accent)', desc: 'Collect and clean massive datasets from the web, books, code repositories, images, audio, and video. Data quality, deduplication, and filtering are critical — garbage in, garbage out. Datasets can reach trillions of tokens.' },
+ { title: '2 — PRE-TRAINING', color: 'var(--accent2)', desc: 'Self-supervised learning on the collected corpus. The model learns statistical patterns, language structure, world knowledge, and reasoning capabilities. This phase requires thousands of GPUs and weeks to months of compute.' },
+ { title: '3 — FINE-TUNING', color: 'var(--accent3)', desc: 'Adapt the base model for specific domains or behaviours. Techniques include supervised fine-tuning (SFT), reinforcement learning from human feedback (RLHF), direct preference optimisation (DPO), and parameter-efficient methods like LoRA/QLoRA.' },
+ { title: '4 — INFERENCE', color: 'var(--accent4)', desc: 'The user submits a prompt — text, image, audio, or multimodal input. The system tokenises the input, applies any system instructions, retrieves context (RAG), and feeds the sequence to the model for autoregressive generation.' },
+ { title: '5 — GENERATION', color: 'var(--accent5)', desc: 'The model produces novel content token-by-token (text), pixel-by-pixel (images), or frame-by-frame (video). Sampling strategies (temperature, top-p, top-k) control creativity vs. determinism. Post-processing filters may apply safety checks.' },
+];
+
+document.querySelectorAll('.pipe-step').forEach(step => {
+ step.addEventListener('click', () => {
+ const idx = parseInt(step.dataset.step);
+ const d = pipelineData[idx];
+ const info = document.getElementById('pipeline-info');
+ info.innerHTML = `<h3 style="color:${d.color}">${d.title}</h3><p>${d.desc}</p>`;
+ });
+});
+
+/* ─── 8-LAYER STACK ─── */
+const stackData = [
+ { num: 8, title: 'Observability & Safety', color: '#bf7570', detail: 'Monitoring, guardrails, content moderation, watermarking, red-teaming, bias detection, and compliance tooling. Tools: Langfuse, Arize, Weights & Biases, Lakera Guard.' },
+ { num: 7, title: 'Applications & Products', color: '#c9956a', detail: 'End-user products built on generative AI — ChatGPT, Midjourney, GitHub Copilot, Suno, Runway, Jasper, Notion AI, and thousands of vertical SaaS products.' },
+ { num: 6, title: 'Retrieval & Memory (RAG)', color: '#9684bf', detail: 'Retrieval-Augmented Generation pipelines that ground model outputs in external knowledge — vector stores, embedding models, chunking strategies, hybrid search, and memory management.' },
+ { num: 5, title: 'Fine-Tuning & Alignment', color: '#5b9e6f', detail: 'Supervised fine-tuning (SFT), RLHF, DPO, Constitutional AI, LoRA, QLoRA, and adapter-based training. Alignment ensures models are helpful, harmless, and honest.' },
+ { num: 4, title: 'Developer Frameworks', color: '#c9a84c', detail: 'Orchestration and abstraction layers — LangChain, LlamaIndex, DSPy, Semantic Kernel, Haystack, Instructor. Provide chains, agents, structured output, and workflow building blocks.' },
+ { num: 3, title: 'Model APIs & Hosting', color: '#5e96b8', detail: 'Inference endpoints and serving infrastructure — OpenAI API, Anthropic API, Google Vertex AI, AWS Bedrock, Hugging Face Inference Endpoints, vLLM, TGI, Ollama.' },
+ { num: 2, title: 'Training Infrastructure', color: '#c9956a', detail: 'GPU/TPU clusters, distributed training frameworks, and MLOps platforms — NVIDIA H100/B200, Google TPU v5, AWS Trainium, DeepSpeed, Megatron-LM, Ray.' },
+ { num: 1, title: 'Foundation Models', color: '#bf7570', detail: 'Large-scale pre-trained models — GPT-4o/5, Claude 4, Gemini 3, Llama 4, Mistral Large, DeepSeek R1/V3. These models encode broad world knowledge and serve as the base for all downstream applications.' },
+];
+
+const stackEl = document.getElementById('stack');
+stackData.forEach(layer => {
+ const div = document.createElement('div');
+ div.className = 'stack-layer';
+ div.innerHTML = `
+ <div class="layer-head">
+ <div class="layer-num" style="background:${layer.color}22; color:${layer.color};">${layer.num}</div>
+ <span class="layer-title">${layer.title}</span>
+ <span class="expand-icon">▾</span>
+ </div>
+ <div class="layer-detail">${layer.detail}</div>`;
+ div.addEventListener('click', () => div.classList.toggle('expanded'));
+ stackEl.appendChild(div);
+});
+
+/* ─── MODALITIES ─── */
+const modalities = [
+ { icon: 'Tx', title: 'Text', color: '--accent', items: ['Writing & conversation', 'Summarisation & translation', 'Code generation', 'Reasoning & analysis'] },
+ { icon: 'Im', title: 'Image', color: '--accent2', items: ['Text-to-image', 'Inpainting & outpainting', 'Style transfer', 'Upscaling & enhancement'] },
+ { icon: 'Vi', title: 'Video', color: '--accent3', items: ['Text-to-video', 'Image-to-video', 'Lip sync & dubbing', 'Avatar generation'] },
+ { icon: 'Au', title: 'Audio', color: '--accent4', items: ['Text-to-speech (TTS)', 'Voice cloning', 'Speech-to-speech', 'Conversational voice AI'] },
+ { icon: 'Mu', title: 'Music', color: '--accent5', items: ['Text-to-music', 'Instrumental generation', 'Stem separation', 'Sound effects'] },
+ { icon: 'Co', title: 'Code', color: '--accent6', items: ['Autocomplete & generation', 'Debugging assistance', 'Refactoring suggestions', 'Test generation'] },
+ { icon: '3D', title: '3D', color: '--accent', items: ['Text-to-3D objects', 'Scene generation', 'Avatar creation', 'NeRF reconstruction'] },
+ { icon: 'Da', title: 'Synthetic Data', color: '--accent2', items: ['Tabular data generation', 'Text augmentation', 'Labelled image synthesis', 'Privacy-safe datasets'] },
+ { icon: 'Mo', title: 'Molecules', color: '--accent3', items: ['Drug candidates', 'Protein design', 'Materials science', 'DNA sequence generation'] },
+ { icon: 'Mm', title: 'Multimodal', color: '--accent4', items: ['Text + image generation', 'Text + audio synthesis', 'Video + audio + text combined'] },
+];
+
+const modalGrid = document.getElementById('modalities-grid');
+modalities.forEach(m => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `
+ <div style="font-size:1.8rem; margin-bottom:8px;">${m.icon}</div>
+ <h3 style="color:var(${m.color})">${m.title}</h3>
+ <ul>${m.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+ modalGrid.appendChild(card);
+});
+
+/* ─── CORE ARCHITECTURES ─── */
+const architectures = [
+ { title: 'Transformer', color: '--accent', desc: 'Self-attention mechanism enabling parallelisable training. Backbone of all modern LLMs.', tags: ['Flash Attention', 'MoE', 'Decoder-only', 'Encoder-Decoder'] },
+ { title: 'Diffusion Models', color: '--accent2', desc: 'Learn to reverse a noise process; state-of-the-art for images and video generation.', tags: ['DDPM', 'Latent Diffusion', 'Stable Diffusion', 'Consistency Models'] },
+ { title: 'GANs', color: '--accent3', desc: 'Generator vs. discriminator adversarial training; pioneered realistic image synthesis.', tags: ['StyleGAN', 'BigGAN', 'CycleGAN', 'Pix2Pix'] },
+ { title: 'VAEs', color: '--accent4', desc: 'Probabilistic latent-space models; stable training with explicit likelihood objective.', tags: ['β-VAE', 'VQ-VAE', 'NVAE', 'Hierarchical VAE'] },
+ { title: 'NeRF / 3D Gaussian Splatting', color: '--accent5', desc: 'Neural implicit 3D representation from 2D images; real-time novel view synthesis.', tags: ['Instant-NGP', '3D-GS', 'DreamGaussian', 'NeRFStudio'] },
+ { title: 'Neural TTS', color: '--accent6', desc: 'Spectrogram-based speech synthesis pipeline producing near-human vocal quality.', tags: ['Tacotron', 'VITS', 'HiFi-GAN', 'VALL-E'] },
+ { title: 'Codec Language Models', color: '--accent', desc: 'Treat audio as discrete token sequences; enabling LLM-style generation for speech and music.', tags: ['EnCodec', 'SoundStream', 'AudioLM', 'MusicGen'] },
+];
+
+const archGrid = document.getElementById('arch-grid');
+architectures.forEach(a => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `
+ <h3 style="color:var(${a.color})">${a.title}</h3>
+ <p>${a.desc}</p>
+ <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;">
+ ${a.tags.map(t => `<span class="badge" style="background:var(${a.color})22; color:var(${a.color}); border:1px solid var(${a.color})44;">${t}</span>`).join('')}
+ </div>`;
+ archGrid.appendChild(card);
+});
+
+/* ─── USE CASES ─── */
+const useCases = [
+ { title: ' Clinical Documentation', sector: 'Healthcare', desc: 'Auto-generate clinical notes from patient-physician conversations in real time, reducing physician burnout and documentation time.', tools: 'Nuance DAX, Suki AI, Abridge' },
+ { title: ' Medical Coding', sector: 'Healthcare', desc: 'Extract ICD-10/CPT codes from clinical documentation automatically, improving accuracy and revenue cycle speed.', tools: 'Fathom Health, 3M M*Modal' },
+ { title: ' Drug Discovery', sector: 'Pharma / Biotech', desc: 'Generate novel molecular candidates and predict binding affinity, drastically reducing early-stage drug discovery timelines.', tools: 'Insilico Medicine, Recursion, Isomorphic Labs' },
+ { title: ' Contract Review', sector: 'Legal', desc: 'Identify risks, non-standard clauses, and compliance issues across thousands of contracts in minutes.', tools: 'Harvey, Ironclad, Luminance' },
+ { title: ' Contract Drafting', sector: 'Legal', desc: 'Generate first-draft contracts from templates and negotiation parameters, dramatically reducing attorney hours.', tools: 'Harvey, Spellbook, CoCounsel' },
+ { title: ' Radiology AI', sector: 'Healthcare', desc: 'Generate structured radiology reports from medical images, reducing turnaround time and improving consistency.', tools: 'Nuance PowerScribe, Rad AI, Annalise.ai' },
+];
+
+const ucAcc = document.getElementById('usecases-acc');
+useCases.forEach(uc => {
+ const item = document.createElement('div');
+ item.className = 'domain-item';
+ item.innerHTML = `
+ <div class="domain-header">
+ <span>${uc.title}</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <p><strong style="color:var(--accent);">Sector:</strong> ${uc.sector}</p>
+ <p>${uc.desc}</p>
+ <p style="margin-top:8px;"><strong style="color:var(--accent2);">Tools:</strong> ${uc.tools}</p>
+ </div>`;
+ item.querySelector('.domain-header').addEventListener('click', () => {
+ item.classList.toggle('open');
+ });
+ ucAcc.appendChild(item);
+});
+
+/* ─── RISKS ─── */
+const risks = [
+ { title: 'Hallucination', desc: 'Confidently generates false information — fabricated facts, citations, code, or data that appears plausible but is incorrect.', color: 'var(--accent5)' },
+ { title: 'Context Window Limits', desc: 'Loses coherence, drops key details, or introduces contradictions when processing very long documents beyond effective context range.', color: 'var(--accent4)' },
+ { title: 'Stale Knowledge', desc: 'Training cutoff date means no real-time awareness — model cannot know recent events, pricing, regulations, or breaking news.', color: 'var(--accent3)' },
+ { title: 'Reasoning Failures', desc: 'Fails on multi-step logic, arithmetic, spatial reasoning, and counting tasks — especially when the problem requires true symbolic reasoning.', color: 'var(--accent)' },
+ { title: 'Prompt Sensitivity', desc: 'Small phrasing changes, word order variations, or formatting differences can produce dramatically different outputs from the same underlying question.', color: 'var(--accent2)' },
+ { title: 'Lack of Causal Understanding', desc: 'Identifies correlations and patterns but does not understand true causal mechanisms — can lead to misleading conclusions in critical domains.', color: 'var(--accent6)' },
+];
+
+const risksGrid = document.getElementById('risks-grid');
+risks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = 'risk-card';
+ card.style.borderLeftColor = r.color;
+ card.innerHTML = `<h4 style="color:${r.color}">${r.title}</h4><p>${r.desc}</p>`;
+ risksGrid.appendChild(card);
+});
+
+/* ─── GLOSSARY ─── */
+const glossary = [
+ ['Token', 'The smallest unit of text processed by an LLM — typically a word, subword, or character depending on the tokeniser (e.g., BPE, SentencePiece).'],
+ ['Context Window', 'The maximum number of tokens a model can process in a single forward pass — includes both input prompt and generated output.'],
+ ['Temperature', 'A sampling parameter controlling randomness. Lower values (0.0–0.3) produce deterministic output; higher values (0.7–1.5) increase creativity and diversity.'],
+ ['Top-p (Nucleus Sampling)', 'Sampling strategy that considers only the smallest set of tokens whose cumulative probability exceeds threshold p, filtering low-probability tokens.'],
+ ['Top-k', 'Sampling strategy that restricts generation to the k most probable next tokens at each step, discarding all others regardless of probability.'],
+ ['Hallucination', 'When a model generates plausible-sounding but factually incorrect, fabricated, or unsupported content — a fundamental limitation of statistical generation.'],
+ ['Grounding', 'Techniques that anchor model outputs in verifiable external sources — RAG, tool use, citations — to reduce hallucination and improve factual accuracy.'],
+ ['Fine-Tuning', 'Supervised training on a domain-specific or task-specific dataset to adapt a pre-trained model for particular use cases or behavioural requirements.'],
+ ['LoRA (Low-Rank Adaptation)', 'Parameter-efficient fine-tuning method that trains small rank-decomposition matrices instead of full model weights — typically <1% of parameters.'],
+ ['QLoRA', 'Quantised LoRA — combines 4-bit model quantisation with LoRA adapters, enabling fine-tuning of large models on consumer GPUs.'],
+ ['RLHF', 'Reinforcement Learning from Human Feedback — training a reward model from human preference data, then optimising the LLM policy using PPO or similar RL algorithms.'],
+ ['DPO (Direct Preference Optimisation)', 'Alignment technique that directly optimises the policy from preference pairs without needing a separate reward model — simpler than RLHF.'],
+ ['Constitutional AI', 'Anthropic\'s alignment approach where the model critiques and revises its own outputs according to a set of written principles (a "constitution").'],
+ ['RAG (Retrieval-Augmented Generation)', 'Architecture that retrieves relevant documents from an external knowledge base and injects them into the prompt context before generation.'],
+ ['Embeddings', 'Dense vector representations of text, images, or other data in a continuous space where semantic similarity corresponds to geometric proximity.'],
+];
+
+const gList = document.getElementById('glossary-list');
+function renderGlossary(filter) {
+ const f = (filter || '').toLowerCase();
+ gList.innerHTML = glossary
+ .filter(([term, def]) => !f || term.toLowerCase().includes(f) || def.toLowerCase().includes(f))
+ .map(([term, def]) => `<div class="glossary-entry"><strong>${term}</strong><span>${def}</span></div>`)
+ .join('');
+}
+renderGlossary('');
+document.getElementById('glossary-search').addEventListener('input', e => renderGlossary(e.target.value));
+
+/* ─── CHARTS (lazy init) ─── */
+let chartsInitialized = false;
+function initCharts() {
+ if (chartsInitialized) return;
+ const benchCtx = document.getElementById('chart-benchmarks');
+ const arenaCtx = document.getElementById('chart-arena');
+ const snapCtx = document.getElementById('chart-market-snap');
+ const growthCtx = document.getElementById('chart-market-growth');
+ if ((!benchCtx || !benchCtx.offsetParent) && (!snapCtx || !snapCtx.offsetParent)) return;
+ chartsInitialized = true;
+
+ Chart.defaults.color = '#e6edf3';
+ Chart.defaults.borderColor = '#30363d';
+
+ /* Benchmarks bar chart */
+ if (benchCtx) {
+ new Chart(benchCtx, {
+ type: 'bar',
+ data: {
+ labels: ['MMLU', 'GPQA\nDiamond', 'HumanEval', 'SWE-Bench', 'MATH', 'TruthfulQA'],
+ datasets: [{
+ label: 'Score (%)',
+ data: [90, 72, 92, 77, 95, 82],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570', '#5e96b8'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { max: 100, grid: { color: '#21262d' }, ticks: { callback: v => v + '%' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* Arena Elo bar chart */
+ if (arenaCtx) {
+ new Chart(arenaCtx, {
+ type: 'bar',
+ data: {
+ labels: ['GPT-4o', 'Claude 4', 'Gemini 3', 'Llama 4', 'DeepSeek R1'],
+ datasets: [{
+ label: 'Elo Rating',
+ data: [1290, 1285, 1275, 1250, 1245],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ indexAxis: 'y',
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ x: { min: 1200, grid: { color: '#21262d' } },
+ y: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* Market snapshot */
+ if (snapCtx) {
+ new Chart(snapCtx, {
+ type: 'bar',
+ data: {
+ labels: ['Global Gen AI\nRevenue', 'Enterprise\nAI Spend', 'ChatGPT\nWAU'],
+ datasets: [{
+ label: 'Value',
+ data: [67, 200, 700],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: {
+ callbacks: {
+ label: function(ctx) {
+ const labels = ['$67B (2024)', '$200B+ (2024)', '700M+ WAU'];
+ return labels[ctx.dataIndex];
+ }
+ }
+ }
+ },
+ scales: {
+ y: { grid: { color: '#21262d' }, ticks: { callback: function(v) { return v; } } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* Market growth line chart */
+ if (growthCtx) {
+ new Chart(growthCtx, {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [67, 98, 143, 210, 450, 750, 1300],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.1)',
+ fill: true,
+ tension: 0.4,
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 6,
+ pointHoverRadius: 10,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { grid: { color: '#21262d' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: '#21262d' } }
+ }
+ }
+ });
+ }
+}
+
+/* Init charts if visible tab is active on load */
+setTimeout(initCharts, 100);
+
+</script>
+
+<nav class="chapter-nav">
+ <a href="federated-privacy-ai.html"><span>&larr;</span><div><small>Previous</small>Federated / Privacy AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="multimodal-perception-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Multimodal Perception AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

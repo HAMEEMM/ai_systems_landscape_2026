@@ -1,0 +1,4 @@
+agent,organisation,gaia_score_pct,level,date,source
+Manus,Manus AI,86.5,Overall,2025-04,HuggingFace leaderboard
+AutoGLM + QwQ,Tsinghua/Alibaba,78.2,Overall,2025-03,HuggingFace leaderboard
+Langchain x Anthropic,LangChain,73.1,Overall,2025-02,HuggingFace leaderboard

@@ -1,0 +1,6 @@
+agent,organisation,swebench_verified_pct,webarena_pct,gaia_pct,date
+Claude Code,Anthropic,72.5,,,2025-05
+Codex CLI,OpenAI,69.1,,,2025-05
+Manus,Manus AI,,,86.5,2025-04
+Devin,Cognition,48.8,,,2025-01
+GPT-4o + SoM,OpenAI,,35.8,,2024-12

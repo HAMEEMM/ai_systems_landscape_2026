@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symbolic / Rule-Based AI — Interactive Architecture Chart</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/chapter-alt.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- Hero -->
+<header class="hero">
+ <h1>Symbolic / Rule-Based AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Symbolic AI — the knowledge-reasoning pipeline, 8-layer stack, production rules, knowledge graphs, theorem provers, benchmarks, market data, and more.</p>
+ <span class="reading-time">~40 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.</p>
+ <p style="margin-top:12px;"><a href="../publications/19-symbolic-rule-based-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- Tabs -->
+<nav class="tab-bar" id="tabBar">
+ <button class="tab-btn active" data-tab="pipeline">Knowledge-Reasoning Pipeline</button>
+ <button class="tab-btn" data-tab="stack">8-Layer Stack</button>
+ <button class="tab-btn" data-tab="subtypes">Sub-Types</button>
+ <button class="tab-btn" data-tab="architectures">Core Architectures</button>
+ <button class="tab-btn" data-tab="tools">Tools &amp; Platforms</button>
+ <button class="tab-btn" data-tab="usecases">Use Cases</button>
+ <button class="tab-btn" data-tab="benchmarks">Benchmarks</button>
+ <button class="tab-btn" data-tab="market">Market Data</button>
+ <button class="tab-btn" data-tab="risks">Risks</button>
+ <button class="tab-btn" data-tab="glossary">Glossary</button>
+ <button class="tab-btn" data-tab="regulation">Regulation</button>
+ <button class="tab-btn" data-tab="deepdives">Deep Dives</button>
+ <button class="tab-btn" data-tab="overview">Overview</button>
+<button class="tab-btn" data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- TAB 1 — Pipeline -->
+<section class="tab-panel active" id="tab-pipeline">
+ <h2 class="section-title">Knowledge-Reasoning Pipeline</h2>
+ <p class="section-desc">Five-stage flow from domain formalisation to actionable output.</p>
+ <div class="pipeline">
+ <div class="pipeline-step"><span class="step-num">1</span><h3>Knowledge Encoding</h3><p>Formalise domain expertise into rules, ontologies &amp; logical statements</p></div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step"><span class="step-num">2</span><h3>Knowledge Base</h3><p>Structured storage of facts, rules &amp; relationships</p></div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step"><span class="step-num">3</span><h3>Inference Engine</h3><p>Apply reasoning — forward/backward chaining, resolution, unification</p></div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step"><span class="step-num">4</span><h3>Explanation Generation</h3><p>Produce inference traces &amp; human-readable justifications</p></div>
+ <div class="pipeline-arrow">→</div>
+ <div class="pipeline-step"><span class="step-num">5</span><h3>Decision / Action Output</h3><p>Deliver final decision, recommendation or triggered action</p></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Symbolic AI Works — The Knowledge-Reasoning Pipeline</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ SYMBOLIC AI PIPELINE │
+│ │
+│ 1. KNOWLEDGE 2. INFERENCE 3. EXPLANATION │
+│ ENCODING ENGINE &amp; OUTPUT │
+│ ────────────── ────────────── ────────────── │
+│ Experts encode Reasoning engine System produces │
+│ domain knowledge chains rules, conclusion plus │
+│ as rules, facts, applies logic, full audit trail │
+│ ontologies, and resolves queries of reasoning │
+│ constraints against knowledge steps │
+│ base │
+│ │
+│ ─── KNOWLEDGE IS EXPLICIT, HUMAN-AUTHORED, AND FULLY TRACEABLE ───── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Symbolic Reasoning Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Acquisition</strong></td>
+<td>Domain experts articulate their knowledge — typically working with knowledge engineers</td>
+</tr>
+<tr>
+<td><strong>Knowledge Encoding</strong></td>
+<td>Knowledge is formalised into rules, facts, ontologies, or logical statements</td>
+</tr>
+<tr>
+<td><strong>Knowledge Base Storage</strong></td>
+<td>Encoded knowledge is stored in a structured knowledge base or ontology repository</td>
+</tr>
+<tr>
+<td><strong>Query / Input</strong></td>
+<td>A user or system poses a question, provides case data, or requests a classification</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>The reasoning engine applies logic (forward chaining, backward chaining, resolution) to derive conclusions</td>
+</tr>
+<tr>
+<td><strong>Conflict Resolution</strong></td>
+<td>When multiple rules fire, the system applies a conflict resolution strategy (priority, specificity, recency)</td>
+</tr>
+<tr>
+<td><strong>Explanation</strong></td>
+<td>The system provides a full trace of which rules and facts were used to reach its conclusion</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>The conclusion, recommendation, diagnosis, or classification is presented to the user</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Symbolic AI Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base Size</strong></td>
+<td>Number of rules, facts, and relationships encoded in the system</td>
+</tr>
+<tr>
+<td><strong>Inference Strategy</strong></td>
+<td>Forward chaining (data-driven) vs. backward chaining (goal-driven) vs. hybrid</td>
+</tr>
+<tr>
+<td><strong>Certainty Factors</strong></td>
+<td>Confidence weights attached to rules when dealing with uncertain knowledge</td>
+</tr>
+<tr>
+<td><strong>Conflict Resolution</strong></td>
+<td>Strategy for choosing which rule to apply when multiple rules match</td>
+</tr>
+<tr>
+<td><strong>Ontology Depth</strong></td>
+<td>How many levels of class hierarchy and relationship types the ontology supports</td>
+</tr>
+<tr>
+<td><strong>Open/Closed World</strong></td>
+<td>Whether unknown facts are assumed false (closed world) or simply unknown (open world)</td>
+</tr>
+<tr>
+<td><strong>Reasoning Depth Limit</strong></td>
+<td>Maximum number of inference steps before the system halts (prevents infinite loops)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>MYCIN (1976) diagnosed bacterial infections with 69% accuracy — outperforming most physicians at the time.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Prolog, a key symbolic AI language, was chosen as the core of Japan's Fifth Generation Computer Project in 1982.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Expert systems generated over $1 billion in annual revenue by the late 1980s before the 'AI Winter'.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What reasoning method do expert systems primarily use?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Gradient descent</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Forward/backward chaining</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Backpropagation</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Monte Carlo sampling</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What is an ontology in the context of symbolic AI?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A neural network architecture</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">A formal representation of knowledge domains</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A training dataset</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">An optimisation algorithm</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> Which language is most associated with symbolic AI programming?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Python</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Prolog</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">JavaScript</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Rust</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- TAB 2 — 8-Layer Stack -->
+<section class="tab-panel" id="tab-stack">
+ <h2 class="section-title">8-Layer Stack</h2>
+ <p class="section-desc">Layered architecture of a complete symbolic AI system — from domain expertise to human interface.</p>
+ <div class="accordion" id="stackAccordion">
+ <div class="acc-item open">
+ <button class="acc-header">Layer 8 — Human Interface<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Explanation UI</strong> · Query interface · Natural-language translation layer. Enables non-technical users to interact with, query, and understand system outputs via intuitive interfaces and generated explanations.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 7 — Explanation &amp; Audit<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Inference traces</strong> · Why / why-not reasoning · Compliance logs. Provides full audit trails showing exactly which rules fired, which facts were used, and why alternative conclusions were rejected.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 6 — Inference Engine<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Forward &amp; backward chaining</strong> · Resolution · Unification · Constraint propagation. The computational core that derives new knowledge from existing facts and rules using formal reasoning algorithms.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 5 — Knowledge Representation<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Rules</strong> · Frames · Ontologies · Semantic networks · Description logics. Defines the formal languages and structures used to encode domain knowledge in machine-processable form.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 4 — Knowledge Acquisition<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Elicitation from experts</strong> · Automated extraction · Ontology learning. Covers methods and tools for capturing, extracting, and formalising knowledge from human experts and unstructured sources.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 3 — Knowledge Validation<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Consistency checking</strong> · Completeness analysis · Conflict resolution. Ensures the knowledge base is logically sound, free of contradictions, and handles edge cases appropriately.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 2 — Knowledge Storage<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Triple stores</strong> · Graph databases · Rule repositories · Ontology servers. Persistent storage infrastructure optimised for structured knowledge, supporting efficient retrieval and querying.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Layer 1 — Domain Expertise<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner"><strong>Subject matter experts</strong> · Regulatory texts · Standards · Manuals. The foundational human and documentary knowledge that the system encodes, including laws, best practices, and professional expertise.</div></div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Symbolic AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Knowledge Acquisition</strong></td>
+<td>Interviews, domain analysis, text extraction, expert workshops, documentation review</td>
+</tr>
+<tr>
+<td><strong>2. Knowledge Representation</strong></td>
+<td>Rules, ontologies (OWL/RDF), knowledge graphs, frames, logical formulas, case libraries</td>
+</tr>
+<tr>
+<td><strong>3. Knowledge Base</strong></td>
+<td>Rule repositories, triple stores (RDF), graph databases, ontology registries</td>
+</tr>
+<tr>
+<td><strong>4. Inference Engine</strong></td>
+<td>Forward/backward chaining, resolution, RETE algorithm, OWL reasoners, constraint solvers</td>
+</tr>
+<tr>
+<td><strong>5. Explanation &amp; Justification</strong></td>
+<td>Rule traces, proof trees, reasoning paths, natural language explanation generation</td>
+</tr>
+<tr>
+<td><strong>6. Query &amp; Interaction</strong></td>
+<td>SPARQL endpoints, natural language query interfaces, rule execution APIs</td>
+</tr>
+<tr>
+<td><strong>7. Knowledge Maintenance</strong></td>
+<td>Versioning, consistency checking, rule lifecycle management, ontology evolution</td>
+</tr>
+<tr>
+<td><strong>8. Governance &amp; Compliance</strong></td>
+<td>Rule audit trails, knowledge provenance, access control, regulatory traceability</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 3 — Sub-Types -->
+<section class="tab-panel" id="tab-subtypes">
+ <h2 class="section-title">Sub-Types</h2>
+ <p class="section-desc">Six major families of symbolic and rule-based AI systems.</p>
+ <div class="card-grid">
+ <div class="card">
+ <h3>Production Rule Systems</h3>
+ <p>IF-THEN rules forming the backbone of expert systems and business rule engines. The Rete algorithm enables efficient pattern matching across large rule sets at scale.</p>
+ <span class="tag">Drools</span><span class="tag">CLIPS</span><span class="tag">Rete Algorithm</span><span class="tag">Expert Systems</span>
+ </div>
+ <div class="card">
+ <h3>First-Order Logic (FOL)</h3>
+ <p>Predicates, quantifiers, and unification provide expressive formal reasoning. Theorem provers and Prolog implementations enable automated deduction and proof search.</p>
+ <span class="tag">Prolog</span><span class="tag">Theorem Provers</span><span class="tag">Unification</span><span class="tag">Formal Reasoning</span>
+ </div>
+ <div class="card">
+ <h3>Knowledge Graphs</h3>
+ <p>Entity-relation triples encoding real-world knowledge. Google Knowledge Graph, Wikidata, and enterprise graphs power semantic search, data integration, and question answering.</p>
+ <span class="tag">Neo4j</span><span class="tag">RDF/OWL</span><span class="tag">Google KG</span><span class="tag">Enterprise Knowledge</span>
+ </div>
+ <div class="card">
+ <h3>Constraint Satisfaction (CSP)</h3>
+ <p>Variables, domains, and constraints model combinatorial problems. Backtracking with constraint propagation solves scheduling, configuration, and puzzle-type problems efficiently.</p>
+ <span class="tag">Scheduling</span><span class="tag">Configuration</span><span class="tag">Backtracking</span><span class="tag">Propagation</span>
+ </div>
+ <div class="card">
+ <h3>Case-Based Reasoning (CBR)</h3>
+ <p>Solve new problems by retrieving and adapting similar past cases. The retrieve-reuse-revise-retain cycle enables learning from experience in legal, medical, and help-desk domains.</p>
+ <span class="tag">Legal AI</span><span class="tag">Help Desks</span><span class="tag">Retrieve-Reuse-Revise-Retain</span>
+ </div>
+ <div class="card">
+ <h3>Semantic Web / Ontologies</h3>
+ <p>OWL, RDF, and SPARQL form the W3C standards stack for linked data and interoperable knowledge. Protégé enables collaborative ontology engineering and knowledge modelling.</p>
+ <span class="tag">OWL</span><span class="tag">RDF</span><span class="tag">SPARQL</span><span class="tag">Protégé</span>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Reasoning Paradigm</h3>
+<h3>Expert Systems</h3>
+<p>The most commercially successful form of Symbolic AI, especially in the 1980s.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Systems that capture expert knowledge in a specific domain and provide expert-level advice, diagnosis, or classification</td>
+</tr>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Knowledge base (rules + facts) + Inference engine + Explanation facility + User interface</td>
+</tr>
+<tr>
+<td><strong>Famous Examples</strong></td>
+<td>MYCIN (bacterial infections), DENDRAL (chemical structure), R1/XCON (DEC computer configuration)</td>
+</tr>
+<tr>
+<td><strong>Peak Adoption</strong></td>
+<td>1980s — billions invested; thousands of systems deployed across industries</td>
+</tr>
+<tr>
+<td><strong>Decline</strong></td>
+<td>Late 1980s–1990s: knowledge acquisition bottleneck, maintenance costs, limited scalability, rise of statistical ML</td>
+</tr>
+</tbody>
+</table>
+<h3>Knowledge Graph Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Systems that store, query, and reason over entity-relationship graphs at scale</td>
+</tr>
+<tr>
+<td><strong>Key Examples</strong></td>
+<td>Google Knowledge Graph, Wikidata, DBpedia, SNOMED CT (medical), Gene Ontology</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Google's Knowledge Graph contains billions of entities and trillions of relationships</td>
+</tr>
+<tr>
+<td><strong>Modern Role</strong></td>
+<td>Powers search enrichment, question answering, recommendation, and data integration</td>
+</tr>
+</tbody>
+</table>
+<h3>Formal Verification Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Systems that use logic and theorem proving to mathematically verify that software or hardware meets its specification</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>Coq, Isabelle/HOL, TLA+, Z3 (SMT solver), SPIN (model checker)</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Chip design verification (Intel, AMD), safety-critical software (aviation, nuclear), smart contract verification</td>
+</tr>
+<tr>
+<td><strong>Guarantee</strong></td>
+<td>Mathematical proof of correctness — not just testing, but verification that properties hold for all possible inputs</td>
+</tr>
+</tbody>
+</table>
+<h3>Planning Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Systems that use symbolic representations to generate sequences of actions that achieve a goal from a given initial state</td>
+</tr>
+<tr>
+<td><strong>Classical Planners</strong></td>
+<td>STRIPS, GraphPlan, Fast-Forward (FF), PDDL-based planners</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Logistics planning, robot task planning, military operations planning, spacecraft operations</td>
+</tr>
+<tr>
+<td><strong>Modern Role</strong></td>
+<td>Symbolic planners increasingly combined with neural approaches (e.g., LLM + symbolic planner)</td>
+</tr>
+</tbody>
+</table>
+<h3>Semantic Web Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Systems built on W3C standards (RDF, OWL, SPARQL) that enable machine-readable, interoperable knowledge on the web</td>
+</tr>
+<tr>
+<td><strong>Vision</strong></td>
+<td>Tim Berners-Lee's Semantic Web — a web of data that machines can process, reason over, and integrate automatically</td>
+</tr>
+<tr>
+<td><strong>Standards</strong></td>
+<td>RDF (Resource Description Framework), OWL (Web Ontology Language), SPARQL (query language)</td>
+</tr>
+<tr>
+<td><strong>Adoption</strong></td>
+<td>Widely used in life sciences, government open data, and enterprise data integration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 4 — Core Architectures -->
+<section class="tab-panel" id="tab-architectures">
+ <h2 class="section-title">Core Architectures</h2>
+ <p class="section-desc">Foundational reasoning architectures powering symbolic AI systems.</p>
+ <div class="card-grid">
+ <div class="card">
+ <h3>Forward Chaining</h3>
+ <p>Data-driven reasoning: start from known facts and iteratively apply rules to derive new conclusions. The Rete algorithm optimises pattern matching for high-throughput rule evaluation.</p>
+ <span class="tag">Drools</span><span class="tag">CLIPS</span><span class="tag">Rete</span><span class="tag">Data-Driven</span>
+ </div>
+ <div class="card">
+ <h3>Backward Chaining</h3>
+ <p>Goal-driven reasoning: start from a query or hypothesis and trace back through rules to find supporting facts. The core mechanism of Prolog and logic programming systems.</p>
+ <span class="tag">Prolog</span><span class="tag">Goal-Driven</span><span class="tag">SLD Resolution</span>
+ </div>
+ <div class="card">
+ <h3>Description Logic Reasoning</h3>
+ <p>TBox (terminological) and ABox (assertional) reasoning; subsumption and classification over OWL-DL ontologies using reasoners like HermiT and Pellet.</p>
+ <span class="tag">OWL-DL</span><span class="tag">HermiT</span><span class="tag">Pellet</span><span class="tag">Classification</span>
+ </div>
+ <div class="card">
+ <h3>Graph-Based Inference</h3>
+ <p>Traverse entity-relation graphs via path queries and graph patterns. SPARQL and Cypher enable declarative querying over knowledge graphs for semantic reasoning.</p>
+ <span class="tag">SPARQL</span><span class="tag">Cypher</span><span class="tag">Graph Patterns</span>
+ </div>
+ <div class="card">
+ <h3>Constraint Propagation &amp; Search</h3>
+ <p>Arc consistency and systematic backtracking enable constraint satisfaction solvers to prune search spaces. Applied in scheduling, resource allocation, and configuration problems.</p>
+ <span class="tag">CP Solvers</span><span class="tag">Arc Consistency</span><span class="tag">Scheduling</span>
+ </div>
+ <div class="card">
+ <h3>Formal Verification</h3>
+ <p>Machine-checked mathematical proofs of software and hardware correctness. Coq, Lean, and Isabelle enable theorem proving with dependent types and proof automation.</p>
+ <span class="tag">Coq</span><span class="tag">Lean</span><span class="tag">Isabelle</span><span class="tag">Software Verification</span>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Techniques</h3>
+<h3>Production Rule Systems</h3>
+<p>The <strong>dominant architecture</strong> for classical Symbolic AI — IF-THEN rules with an inference engine.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Knowledge encoded as "IF condition THEN action" rules; an inference engine matches rules to facts in working memory</td>
+</tr>
+<tr>
+<td><strong>Forward Chaining</strong></td>
+<td>Data-driven: starts from known facts, fires all applicable rules, derives new facts until no more rules apply</td>
+</tr>
+<tr>
+<td><strong>Backward Chaining</strong></td>
+<td>Goal-driven: starts from a goal, identifies rules that could produce it, recursively seeks to satisfy their conditions</td>
+</tr>
+<tr>
+<td><strong>Conflict Resolution</strong></td>
+<td>When multiple rules match: priority ordering, specificity (most specific rule wins), recency, or random</td>
+</tr>
+<tr>
+<td><strong>Key Algorithm</strong></td>
+<td>RETE algorithm — efficient pattern matching for large rule sets; builds a network of partial matches</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Transparent, auditable, explainable; no training data required; domain experts can author rules</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Knowledge acquisition bottleneck; brittle when encountering situations outside encoded knowledge</td>
+</tr>
+<tr>
+<td><strong>Famous Examples</strong></td>
+<td>MYCIN, R1/XCON, Drools, IBM ODM</td>
+</tr>
+</tbody>
+</table>
+<h3>First-Order Logic &amp; Theorem Proving</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Knowledge expressed as logical formulas with variables, predicates, quantifiers, and connectives; automated theorem provers derive conclusions</td>
+</tr>
+<tr>
+<td><strong>Resolution Principle</strong></td>
+<td>Robinson (1965) — a single inference rule sufficient for complete first-order logic theorem proving</td>
+</tr>
+<tr>
+<td><strong>Unification</strong></td>
+<td>Process of finding variable substitutions that make two logical expressions identical — key to automated reasoning</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Mathematically rigorous; complete for first-order logic; can prove properties of systems</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Computationally expensive (semi-decidable for FOL); impractical for large, uncertain domains</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Formal verification, program verification, mathematical proof assistants</td>
+</tr>
+</tbody>
+</table>
+<h3>Knowledge Graphs &amp; Ontologies</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Knowledge stored as entities (nodes) and relationships (edges) in a graph structure; ontologies define the schema of categories and relationship types</td>
+</tr>
+<tr>
+<td><strong>Query Languages</strong></td>
+<td>SPARQL for RDF graphs; Cypher for property graphs; Gremlin for Apache TinkerPop</td>
+</tr>
+<tr>
+<td><strong>Ontology Languages</strong></td>
+<td>OWL (Web Ontology Language), RDF Schema, SKOS</td>
+</tr>
+<tr>
+<td><strong>Reasoning</strong></td>
+<td>OWL reasoners (HermiT, Pellet, FaCT++) can infer new relationships from ontology axioms</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Powerful for representing structured domain knowledge; enables semantic search and inference</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Expensive to build and maintain; ontology alignment across domains is very difficult</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Google Knowledge Graph, Wikidata, biomedical ontologies, enterprise knowledge management</td>
+</tr>
+</tbody>
+</table>
+<h3>Constraint Satisfaction &amp; Logic Programming</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Constraint Satisfaction Problems (CSP)</strong></td>
+<td>Define variables, domains, and constraints; solver finds assignments satisfying all constraints</td>
+</tr>
+<tr>
+<td><strong>SAT Solvers</strong></td>
+<td>Determine satisfiability of Boolean formulas; foundation for many combinatorial reasoning tasks</td>
+</tr>
+<tr>
+<td><strong>Logic Programming</strong></td>
+<td>Prolog — declares facts and rules; queries are answered by backward chaining with unification</td>
+</tr>
+<tr>
+<td><strong>Constraint Logic Programming</strong></td>
+<td>Combines logic programming with constraint solving for scheduling, planning, configuration</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Excellent for combinatorial optimisation, scheduling, resource allocation, and configuration</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Airline crew scheduling, factory scheduling, product configurators, Sudoku solvers</td>
+</tr>
+</tbody>
+</table>
+<h3>Frame-Based &amp; Semantic Network Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Knowledge represented as frames (structured records with slots and values) connected in a semantic network of IS-A and HAS-A relationships</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Properties propagate through the IS-A hierarchy — a "sparrow" inherits "can fly" from "bird"</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Natural representation of object-oriented domain knowledge; supports default reasoning</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Difficulty handling exceptions to inherited properties; less formal than logic-based approaches</td>
+</tr>
+<tr>
+<td><strong>Influence</strong></td>
+<td>Directly inspired object-oriented programming and modern ontology design</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>KRL, FRL, early knowledge representation systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Case-Based Reasoning (CBR)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Solves new problems by retrieving and adapting solutions from similar past cases stored in a case library</td>
+</tr>
+<tr>
+<td><strong>Process</strong></td>
+<td>Retrieve similar cases → Reuse solution → Revise (adapt to new situation) → Retain (store the solved case)</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Handles novel situations by analogy; learns by accumulating cases; combines symbolic knowledge with experience</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Performance depends on quality and coverage of case library; similarity metrics are domain-dependent</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Legal reasoning, help desk diagnosis, medical diagnosis, design reuse</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 5 — Tools & Platforms -->
+<section class="tab-panel" id="tab-tools">
+ <h2 class="section-title">Tools &amp; Platforms</h2>
+ <p class="section-desc">Key tools, engines, and frameworks in the symbolic AI ecosystem.</p>
+ <div class="table-wrap">
+ <table>
+ <thead><tr><th>Tool</th><th>Provider</th><th>Focus</th></tr></thead>
+ <tbody>
+ <tr><td>Drools</td><td>Red Hat</td><td>Production rules; BRMS; Rete-based; Java</td></tr>
+ <tr><td>CLIPS</td><td>NASA</td><td>Expert system shell; forward chaining; C</td></tr>
+ <tr><td>SWI-Prolog</td><td>Open-source</td><td>Standard Prolog implementation; backward chaining</td></tr>
+ <tr><td>Neo4j</td><td>Neo4j</td><td>Graph database; Cypher query language; knowledge graphs</td></tr>
+ <tr><td>Protégé</td><td>Stanford</td><td>Ontology editor; OWL; knowledge modelling</td></tr>
+ <tr><td>Apache Jena</td><td>Apache</td><td>RDF/SPARQL framework; semantic web; Java</td></tr>
+ <tr><td>Stardog</td><td>Stardog</td><td>Enterprise knowledge graph; OWL reasoning; SPARQL</td></tr>
+ <tr><td>GraphDB</td><td>Ontotext</td><td>RDF triplestore; semantic reasoning; linked data</td></tr>
+ <tr><td>Z3</td><td>Microsoft</td><td>SMT solver; formal verification; constraint solving</td></tr>
+ <tr><td>Coq</td><td>Inria</td><td>Interactive theorem prover; dependent types; formal proofs</td></tr>
+ <tr><td>Lean 4</td><td>Microsoft</td><td>Modern theorem prover; Mathlib; mathematical formalisation</td></tr>
+ <tr><td>Isabelle</td><td>TU Munich / Cambridge</td><td>HOL theorem prover; proof automation</td></tr>
+ <tr><td>OPA</td><td>CNCF</td><td>Policy-as-code; Rego language; cloud-native governance</td></tr>
+ <tr><td>MiniZinc</td><td>Monash</td><td>Constraint modelling language; solver-independent</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Rule Engine Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drools</strong></td>
+<td>Red Hat (open-source)</td>
+<td>Open-Source (any OS; Java 11+; self-host Docker/K8s or bare-metal)</td>
+<td>Production rule system; RETE-based; Java; widely used in enterprise</td>
+</tr>
+<tr>
+<td><strong>IBM Operational Decision Manager</strong></td>
+<td>IBM</td>
+<td>On-Prem (Linux/Windows/AIX on x86/POWER servers) / Cloud (IBM Cloud; AWS; Azure)</td>
+<td>Enterprise decision management; compliance automation</td>
+</tr>
+<tr>
+<td><strong>FICO Blaze Advisor</strong></td>
+<td>FICO</td>
+<td>On-Prem (Linux/Windows servers; x86)</td>
+<td>Financial rule management; credit and fraud rules</td>
+</tr>
+<tr>
+<td><strong>CLIPS</strong></td>
+<td>NASA / open-source</td>
+<td>Open-Source (any OS; C compiler; CPU-only)</td>
+<td>Classic expert system shell; C-based; still used in education</td>
+</tr>
+<tr>
+<td><strong>Jess</strong></td>
+<td>Sandia Labs</td>
+<td>On-Prem (any OS; Java 8+; CPU-only)</td>
+<td>Java-based rule engine; RETE algorithm; extends CLIPS for Java</td>
+</tr>
+<tr>
+<td><strong>SWI-Prolog</strong></td>
+<td>Open-source</td>
+<td>Open-Source (any OS; C / Prolog; CPU-only)</td>
+<td>Full Prolog implementation; logic programming; semantic web support</td>
+</tr>
+</tbody>
+</table>
+<h3>Knowledge Graph &amp; Ontology Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Neo4j</strong></td>
+<td>Neo4j</td>
+<td>Open-Source / Cloud (self-host Docker/K8s; Neo4j AuraDB on AWS / GCP)</td>
+<td>Leading graph database; Cypher query language; enterprise knowledge graphs</td>
+</tr>
+<tr>
+<td><strong>Amazon Neptune</strong></td>
+<td>AWS</td>
+<td>Cloud (AWS)</td>
+<td>Managed graph database; supports RDF and property graphs</td>
+</tr>
+<tr>
+<td><strong>Stardog</strong></td>
+<td>Stardog</td>
+<td>Cloud (Stardog Cloud on AWS) / On-Prem (Linux/Windows servers; Java 11+)</td>
+<td>Enterprise knowledge graph platform; OWL reasoning; SPARQL</td>
+</tr>
+<tr>
+<td><strong>Protégé</strong></td>
+<td>Stanford (open-source)</td>
+<td>Open-Source (any OS; Java 11+; CPU-only)</td>
+<td>Leading ontology editor; OWL support; widely used in research</td>
+</tr>
+<tr>
+<td><strong>Apache Jena</strong></td>
+<td>Apache (open-source)</td>
+<td>Open-Source (any OS; Java 11+; CPU-only)</td>
+<td>Java RDF framework; SPARQL engine; OWL reasoning</td>
+</tr>
+<tr>
+<td><strong>Blazegraph</strong></td>
+<td>Open-source</td>
+<td>Open-Source (any OS; Java 8+; high-memory x86 server recommended)</td>
+<td>High-performance RDF triple store; powers Wikidata Query Service</td>
+</tr>
+<tr>
+<td><strong>GraphDB</strong></td>
+<td>Ontotext</td>
+<td>On-Prem (Linux/Windows servers; Java 11+) / Cloud (GraphDB Cloud on AWS)</td>
+<td>RDF database with OWL reasoning; enterprise semantic data management</td>
+</tr>
+</tbody>
+</table>
+<h3>Theorem Provers &amp; Formal Verification</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coq</strong></td>
+<td>Open-Source (any OS; OCaml; CPU-only)</td>
+<td>Interactive theorem prover; used in verified compilers (CompCert) and formalised mathematics</td>
+</tr>
+<tr>
+<td><strong>Isabelle/HOL</strong></td>
+<td>Open-Source (any OS; Scala/ML; CPU-only)</td>
+<td>Interactive theorem prover; higher-order logic; seL4 verified microkernel</td>
+</tr>
+<tr>
+<td><strong>Z3</strong></td>
+<td>Open-Source (any OS; C++; CPU-only; available via pip / NuGet)</td>
+<td>Microsoft SMT solver; SAT and constraints; widely used in program analysis</td>
+</tr>
+<tr>
+<td><strong>TLA+</strong></td>
+<td>Open-Source (any OS; Java TLC model checker; CPU-only)</td>
+<td>Leslie Lamport's specification language; used at Amazon (AWS) for distributed systems verification</td>
+</tr>
+<tr>
+<td><strong>SPIN</strong></td>
+<td>Open-Source (any OS; C; CPU-only)</td>
+<td>Model checker for concurrent systems; used in protocol verification</td>
+</tr>
+<tr>
+<td><strong>Lean 4</strong></td>
+<td>Open-Source (any OS; C++ / Lean; CPU-only)</td>
+<td>Modern theorem prover; growing community; mathematical formalisation</td>
+</tr>
+</tbody>
+</table>
+<h3>Constraint Solvers &amp; Planners</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google OR-Tools</strong></td>
+<td>Open-Source (any OS; Python / C++ / Java; CPU-only)</td>
+<td>Open-source constraint and optimisation solver; scheduling, routing, assignment</td>
+</tr>
+<tr>
+<td><strong>IBM CPLEX</strong></td>
+<td>On-Prem (Linux/Windows/macOS; x86) / Cloud (IBM Cloud; available on AWS/Azure Marketplace)</td>
+<td>Commercial mathematical programming solver; linear, integer, and constraint programming</td>
+</tr>
+<tr>
+<td><strong>Gurobi</strong></td>
+<td>On-Prem (Linux/Windows/macOS; x86) / Cloud (Gurobi on AWS / Azure / GCP Marketplace)</td>
+<td>Commercial optimisation solver; LP, MIP, QP</td>
+</tr>
+<tr>
+<td><strong>MiniZinc</strong></td>
+<td>Open-Source (any OS; CPU-only)</td>
+<td>Constraint modelling language; interfaces with multiple solvers</td>
+</tr>
+<tr>
+<td><strong>Fast Downward</strong></td>
+<td>Open-Source (Linux/macOS; C++ / Python; CPU-only)</td>
+<td>Classical AI planning system; PDDL-based; state-of-the-art heuristic search planner</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 6 — Use Cases -->
+<section class="tab-panel" id="tab-usecases">
+ <h2 class="section-title">Use Cases</h2>
+ <p class="section-desc">Real-world applications of symbolic and rule-based AI across industries.</p>
+ <div class="accordion" id="useCaseAccordion">
+ <div class="acc-item open">
+ <button class="acc-header">Clinical Decision Support<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Expert system rules encode medical guidelines for diagnosis, treatment pathways, and drug interaction checking. HL7 CDS Hooks integrate rule-based recommendations directly into EHR workflows, alerting physicians to contraindications, dosage risks, and evidence-based treatment options in real time.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Legal &amp; Compliance<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Regulatory rules are encoded as formal logic to automate GDPR, SOX, and AML compliance checks. Legal reasoning engines can trace obligations, determine applicability of regulations, and generate audit-ready compliance reports with full rule-trace explanations.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Configuration &amp; Product Design<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Configure-Price-Quote (CPQ) systems use constraint satisfaction to ensure valid product configurations. SAP Variant Configuration and similar tools encode complex assembly rules, compatibility matrices, and pricing logic for manufacturing, automotive, and telecommunications industries.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Fraud Detection Rules<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Real-time IF-THEN rules screen financial transactions against known fraud patterns. Visa and Mastercard deploy rule engines as a first-pass filter before ML models, catching obvious violations (velocity checks, geo-anomalies, amount thresholds) with sub-millisecond latency and full explainability.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Knowledge Management<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Enterprise knowledge graphs built on Neo4j, Stardog, or GraphDB unify siloed data into a connected semantic layer. Semantic search, entity resolution, and data integration enable employees to discover and reason over organisational knowledge across departments and systems.</div></div>
+ </div>
+ <div class="acc-item">
+ <button class="acc-header">Formal Software Verification<span class="chevron">▼</span></button>
+ <div class="acc-body"><div class="acc-body-inner">Theorem provers like Coq and Lean mathematically prove program correctness. CompCert (verified C compiler) and seL4 (verified microkernel) demonstrate that critical software in aerospace, finance, and defence can be guaranteed free of entire classes of bugs through formal proofs.</div></div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clinical Decision Support</strong></td>
+<td>Rule-based alerts for drug interactions, dosage checks, contraindications</td>
+<td>Epic, Cerner CDS rules; MYCIN descendants</td>
+</tr>
+<tr>
+<td><strong>Biomedical Ontologies</strong></td>
+<td>Standardised vocabularies enabling cross-study data integration</td>
+<td>SNOMED CT, Gene Ontology, MeSH</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery Knowledge Graphs</strong></td>
+<td>Entity-relationship graphs linking genes, proteins, drugs, diseases, and pathways</td>
+<td>BioGRID, ChEMBL, UniProt</td>
+</tr>
+<tr>
+<td><strong>Clinical Trial Matching</strong></td>
+<td>Rule-based patient-trial matching on eligibility criteria</td>
+<td>FHIR-based CDS systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Financial Services</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Regulatory Compliance</strong></td>
+<td>Encode regulations as executable rules; automate compliance checking</td>
+<td>FIBO ontology, RegTech rule engines</td>
+</tr>
+<tr>
+<td><strong>Fraud Rule Engines</strong></td>
+<td>First-layer rule-based fraud detection with hard business rules</td>
+<td>FICO, SAS, NICE Actimize</td>
+</tr>
+<tr>
+<td><strong>KYC &amp; AML</strong></td>
+<td>Entity resolution and sanctions screening using knowledge graphs</td>
+<td>Financial crime KGs</td>
+</tr>
+<tr>
+<td><strong>Credit Policy Rules</strong></td>
+<td>Hard-coded lending rules (e.g., reject if DTI &gt; 43%) applied before ML scoring</td>
+<td>Bank credit decision engines</td>
+</tr>
+</tbody>
+</table>
+<h3>Legal &amp; Government</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Legal Reasoning</strong></td>
+<td>Formalise statutes and regulations as logical rules; automated legal analysis</td>
+<td>Neota Logic, legal AI research</td>
+</tr>
+<tr>
+<td><strong>Tax Computation</strong></td>
+<td>Encode tax law as rules; compute tax liability deterministically</td>
+<td>Government tax engines</td>
+</tr>
+<tr>
+<td><strong>Benefits Eligibility</strong></td>
+<td>Rule-based assessment of citizen eligibility for government programmes</td>
+<td>Social services systems</td>
+</tr>
+<tr>
+<td><strong>Open Government Data</strong></td>
+<td>Semantic web standards for publishing and linking government datasets</td>
+<td>data.gov, EU Open Data Portal</td>
+</tr>
+</tbody>
+</table>
+<h3>Technology &amp; Engineering</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chip Design Verification</strong></td>
+<td>Formal verification of hardware designs before fabrication</td>
+<td>Intel, AMD, and ARM verification flows</td>
+</tr>
+<tr>
+<td><strong>Software Verification</strong></td>
+<td>Static analysis and theorem proving for safety-critical software</td>
+<td>Astree (Airbus), CompCert verified compiler</td>
+</tr>
+<tr>
+<td><strong>Product Configuration</strong></td>
+<td>Constraint-based configurators for complex products</td>
+<td>SAP Variant Configuration, CPQ platforms</td>
+</tr>
+<tr>
+<td><strong>Enterprise Data Integration</strong></td>
+<td>Ontology-based semantic layers for data federation across silos</td>
+<td>Enterprise knowledge graph platforms</td>
+</tr>
+</tbody>
+</table>
+<h3>Manufacturing &amp; Supply Chain</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Production Scheduling</strong></td>
+<td>Constraint satisfaction for factory scheduling and resource allocation</td>
+<td>OR-Tools, CPLEX, Gurobi</td>
+</tr>
+<tr>
+<td><strong>Quality Assurance Rules</strong></td>
+<td>Inspection and acceptance criteria encoded as formal rules</td>
+<td>Manufacturing execution systems</td>
+</tr>
+<tr>
+<td><strong>Supply Chain Optimisation</strong></td>
+<td>Constraint programming for logistics routing and inventory placement</td>
+<td>Supply chain planners</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 7 — Benchmarks -->
+<section class="tab-panel" id="tab-benchmarks">
+ <h2 class="section-title">Benchmarks</h2>
+ <p class="section-desc">Performance benchmarks and property analysis for symbolic AI systems.</p>
+ <div class="chart-container">
+ <h3>Reasoning Benchmarks</h3>
+ <div class="chart-wrap"><canvas id="benchBarChart"></canvas></div>
+ </div>
+ <div class="chart-container">
+ <h3>Symbolic AI Properties</h3>
+ <div class="chart-wrap"><canvas id="benchRadarChart"></canvas></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Reasoning Quality Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inference Accuracy</strong></td>
+<td>% of conclusions that match ground truth expert judgements</td>
+</tr>
+<tr>
+<td><strong>Completeness</strong></td>
+<td>% of correct conclusions the system is able to derive (recall over valid inferences)</td>
+</tr>
+<tr>
+<td><strong>Soundness</strong></td>
+<td>% of derived conclusions that are logically valid (no spurious inferences)</td>
+</tr>
+<tr>
+<td><strong>Explanation Fidelity</strong></td>
+<td>Whether the provided explanation accurately reflects the reasoning path used</td>
+</tr>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>% of domain cases that the knowledge base can address</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Whether the knowledge base is free from logical contradictions</td>
+</tr>
+</tbody>
+</table>
+<h3>Knowledge Base Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule Count</strong></td>
+<td>Total number of production rules or logical axioms</td>
+</tr>
+<tr>
+<td><strong>Ontology Size</strong></td>
+<td>Number of classes, properties, and individuals in the ontology</td>
+</tr>
+<tr>
+<td><strong>Knowledge Freshness</strong></td>
+<td>Age of the most recently updated knowledge; indicator of staleness</td>
+</tr>
+<tr>
+<td><strong>Dead Rule Rate</strong></td>
+<td>% of rules that never fire on real-world inputs</td>
+</tr>
+<tr>
+<td><strong>Redundancy Rate</strong></td>
+<td>% of rules that are logically subsumed by other rules</td>
+</tr>
+<tr>
+<td><strong>Mean Inference Steps</strong></td>
+<td>Average length of reasoning chains — indicator of knowledge complexity</td>
+</tr>
+</tbody>
+</table>
+<h3>Performance Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inference Throughput</strong></td>
+<td>Queries or rule evaluations per second</td>
+</tr>
+<tr>
+<td><strong>Response Latency</strong></td>
+<td>Time from query to conclusion</td>
+</tr>
+<tr>
+<td><strong>SPARQL Query Time</strong></td>
+<td>Execution time for knowledge graph queries</td>
+</tr>
+<tr>
+<td><strong>Memory Usage</strong></td>
+<td>RAM required for knowledge base and inference engine</td>
+</tr>
+<tr>
+<td><strong>Ontology Reasoning Time</strong></td>
+<td>Time for OWL reasoner to classify and check consistency</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 8 — Market Data -->
+<section class="tab-panel" id="tab-market">
+ <h2 class="section-title">Market Data</h2>
+ <p class="section-desc">Market sizing, segmentation, and growth projections for symbolic AI.</p>
+ <div class="chart-container">
+ <h3>Market Segments ($B)</h3>
+ <div class="chart-wrap"><canvas id="marketBarChart"></canvas></div>
+ </div>
+ <div class="chart-container">
+ <h3>Symbolic AI Market 2024 → 2030 (CAGR ~17%)</h3>
+ <div class="chart-wrap"><canvas id="marketLineChart"></canvas></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Context</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Graph Market (2024)</strong></td>
+<td>~$1.1 billion</td>
+<td>Grand View Research; growing at ~22% CAGR</td>
+</tr>
+<tr>
+<td><strong>Business Rules Management System Market (2024)</strong></td>
+<td>~$1.6 billion</td>
+<td>Shared with reactive AI systems; compliance-driven growth</td>
+</tr>
+<tr>
+<td><strong>Formal Verification Market (2024)</strong></td>
+<td>~$1.2 billion</td>
+<td>Synopsys, Cadence, Mentor (Siemens) dominate</td>
+</tr>
+<tr>
+<td><strong>Constraint Optimisation Market (2024)</strong></td>
+<td>~$800 million</td>
+<td>Growing with supply chain complexity</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Trends</h3>
+<table>
+<thead>
+<tr>
+<th>Trend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Neuro-Symbolic Resurgence</strong></td>
+<td>Major research investment in combining neural and symbolic approaches (IBM, DeepMind, MIT, Stanford)</td>
+</tr>
+<tr>
+<td><strong>Knowledge Graphs Booming</strong></td>
+<td>Enterprise adoption growing rapidly for data integration, search, and AI grounding</td>
+</tr>
+<tr>
+<td><strong>LLM + KG Integration</strong></td>
+<td>Using knowledge graphs to ground and fact-check LLM outputs; reducing hallucination</td>
+</tr>
+<tr>
+<td><strong>Formal Verification Growth</strong></td>
+<td>Growing demand in chip design, autonomous vehicles, and smart contract security</td>
+</tr>
+<tr>
+<td><strong>Compliance Automation</strong></td>
+<td>RegTech driving renewed adoption of rule engines for regulatory compliance</td>
+</tr>
+<tr>
+<td><strong>Declining Pure Expert Systems</strong></td>
+<td>Standalone expert systems declining; being replaced by hybrid ML + rules architectures</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- TAB 9 — Risks -->
+<section class="tab-panel" id="tab-risks">
+ <h2 class="section-title">Risks &amp; Limitations</h2>
+ <p class="section-desc">Key challenges and failure modes of symbolic AI systems.</p>
+ <div class="card-grid">
+ <div class="card risk-card">
+ <h3>Knowledge Bottleneck</h3>
+ <p>Acquiring and encoding expert knowledge is slow, expensive, and error-prone. Domain experts' time is limited, tacit knowledge is hard to formalise, and the encoding process introduces translation errors.</p>
+ </div>
+ <div class="card risk-card">
+ <h3>Brittleness</h3>
+ <p>Rules break on edge cases not anticipated during knowledge engineering. Symbolic systems cannot generalise beyond their encoded knowledge, failing silently on novel inputs outside the rule set's coverage.</p>
+ </div>
+ <div class="card risk-card">
+ <h3>Scalability Limits</h3>
+ <p>Reasoning over millions of rules or triples can become computationally intractable. Combinatorial explosion in constraint satisfaction and ontology reasoning limits practical system size.</p>
+ </div>
+ <div class="card risk-card">
+ <h3>Maintenance Burden</h3>
+ <p>Large rule bases drift out of date as domains evolve. Constant expert curation is required to keep knowledge current, resolve conflicts between rules, and prune obsolete logic.</p>
+ </div>
+ <div class="card risk-card">
+ <h3>No Learning</h3>
+ <p>Pure symbolic systems cannot learn from data or adapt to new patterns. Every change requires manual rule authoring, making them unable to improve autonomously from operational feedback.</p>
+ </div>
+ <div class="card risk-card">
+ <h3>Integration Gap</h3>
+ <p>Symbolic systems struggle to interface with modern ML and data pipelines. Bridging structured rule-based reasoning with statistical models requires complex neuro-symbolic hybrid architectures.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Fundamental Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Acquisition Bottleneck</strong></td>
+<td>Extracting, encoding, and validating expert knowledge is slow, expensive, and labour-intensive</td>
+</tr>
+<tr>
+<td><strong>Brittleness</strong></td>
+<td>Systems fail unpredictably when encountering inputs outside the encoded knowledge scope</td>
+</tr>
+<tr>
+<td><strong>No Learning from Data</strong></td>
+<td>Cannot learn new patterns from data; all knowledge must be explicitly authored</td>
+</tr>
+<tr>
+<td><strong>Scaling Difficulty</strong></td>
+<td>Rule interactions grow combinatorially; large systems become opaque and hard to maintain</td>
+</tr>
+<tr>
+<td><strong>Handling Uncertainty</strong></td>
+<td>Formal logic struggles with probabilistic, vague, or incomplete information</td>
+</tr>
+<tr>
+<td><strong>Common Sense Gap</strong></td>
+<td>Encoding common sense — obvious background knowledge that humans take for granted — remains largely unsolved</td>
+</tr>
+<tr>
+<td><strong>Domain Specificity</strong></td>
+<td>Systems are narrow; knowledge does not transfer across domains</td>
+</tr>
+</tbody>
+</table>
+<h3>Operational Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Decay</strong></td>
+<td>Encoded knowledge becomes outdated as the domain evolves</td>
+<td>Scheduled review cycles; sunset policies</td>
+</tr>
+<tr>
+<td><strong>Expert Dependency</strong></td>
+<td>System quality depends entirely on the quality and availability of domain experts</td>
+<td>Multi-expert validation; structured elicitation methods</td>
+</tr>
+<tr>
+<td><strong>Inconsistency</strong></td>
+<td>Large knowledge bases may contain contradictory rules</td>
+<td>Automated consistency checking; OWL reasoners</td>
+</tr>
+<tr>
+<td><strong>Maintenance Complexity</strong></td>
+<td>Changes to one rule can have cascading effects across the knowledge base</td>
+<td>Impact analysis tools; modular rule design</td>
+</tr>
+<tr>
+<td><strong>Completeness Illusion</strong></td>
+<td>Users trust the system as exhaustive when it only covers a fraction of the domain</td>
+<td>Clearly communicate coverage boundaries</td>
+</tr>
+</tbody>
+</table>
+<h3>When Symbolic AI Is the Right Choice</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why Symbolic AI Excels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explainability Required</strong></td>
+<td>When every decision must have a human-interpretable justification</td>
+</tr>
+<tr>
+<td><strong>Regulatory Compliance</strong></td>
+<td>When rules must map directly to statutes, regulations, or policies</td>
+</tr>
+<tr>
+<td><strong>No Training Data</strong></td>
+<td>When labelled data is unavailable but expert knowledge exists</td>
+</tr>
+<tr>
+<td><strong>Formal Guarantees</strong></td>
+<td>When mathematical proof of correctness is required (verification)</td>
+</tr>
+<tr>
+<td><strong>Structured Domains</strong></td>
+<td>When the domain is well-defined with clear rules and categories</td>
+</tr>
+<tr>
+<td><strong>Knowledge Integration</strong></td>
+<td>When heterogeneous data sources need semantic alignment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="cognitive-neuro-symbolic-ai.html">Cognitive / Neuro-Symbolic AI</a>
+<a href="explainable-ai.html">Explainable AI (XAI)</a>
+<a href="autonomous-ai.html">Autonomous AI</a>
+<a href="reactive-ai.html">Reactive AI</a>
+<a href="analytical-ai.html">Analytical AI</a>
+</div>
+</div>
+</section>
+
+<!-- TAB 10 — Glossary -->
+<section class="tab-panel" id="tab-glossary">
+ <h2 class="section-title">Glossary</h2>
+ <p class="section-desc">Key terms in symbolic and rule-based AI — searchable.</p>
+ <input type="text" class="glossary-search" id="glossarySearch" placeholder="Search glossary…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backward Chaining</strong></td>
+<td>Goal-driven reasoning that starts from a hypothesis and works backward to find supporting evidence</td>
+</tr>
+<tr>
+<td><strong>Case-Based Reasoning (CBR)</strong></td>
+<td>Solving new problems by retrieving and adapting solutions from similar past cases</td>
+</tr>
+<tr>
+<td><strong>Certainty Factor</strong></td>
+<td>A numeric weight (e.g., -1 to +1) expressing the degree of confidence in a rule's conclusion</td>
+</tr>
+<tr>
+<td><strong>Closed World Assumption</strong></td>
+<td>The assumption that anything not stated or derivable as true is false</td>
+</tr>
+<tr>
+<td><strong>Conflict Resolution</strong></td>
+<td>The strategy for selecting which rule to fire when multiple rules match the current working memory</td>
+</tr>
+<tr>
+<td><strong>Constraint Satisfaction Problem (CSP)</strong></td>
+<td>A problem defined by variables, domains, and constraints; the solver finds assignments satisfying all constraints</td>
+</tr>
+<tr>
+<td><strong>Expert System</strong></td>
+<td>An AI system that captures expert knowledge in a specific domain and provides expert-level advice or diagnosis</td>
+</tr>
+<tr>
+<td><strong>First-Order Logic (FOL)</strong></td>
+<td>A formal logical system using variables, predicates, quantifiers (∀, ∃), and connectives (∧, ∨, ¬, →)</td>
+</tr>
+<tr>
+<td><strong>Forward Chaining</strong></td>
+<td>Data-driven reasoning that starts from known facts and applies rules to derive new conclusions</td>
+</tr>
+<tr>
+<td><strong>Frame</strong></td>
+<td>A structured knowledge representation with named slots and default values, representing a concept or object</td>
+</tr>
+<tr>
+<td><strong>GOFAI</strong></td>
+<td>Good Old-Fashioned AI — the approach of encoding intelligence as symbol manipulation and logical reasoning</td>
+</tr>
+<tr>
+<td><strong>Inference Engine</strong></td>
+<td>The component that applies logical rules to the knowledge base to derive new conclusions</td>
+</tr>
+<tr>
+<td><strong>Knowledge Acquisition</strong></td>
+<td>The process of eliciting, structuring, and encoding domain expert knowledge into a machine-readable form</td>
+</tr>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>The repository containing all encoded rules, facts, and relationships for a symbolic AI system</td>
+</tr>
+<tr>
+<td><strong>Knowledge Graph</strong></td>
+<td>A graph-structured knowledge base storing entities as nodes and relationships as edges</td>
+</tr>
+<tr>
+<td><strong>Ontology</strong></td>
+<td>A formal, explicit specification of a shared conceptualisation — defines classes, properties, and relationships in a domain</td>
+</tr>
+<tr>
+<td><strong>Open World Assumption</strong></td>
+<td>The assumption that lack of evidence for a statement does not mean it is false — it is simply unknown</td>
+</tr>
+<tr>
+<td><strong>OWL (Web Ontology Language)</strong></td>
+<td>W3C standard for defining ontologies with formal semantics; enables automated reasoning</td>
+</tr>
+<tr>
+<td><strong>Production Rule</strong></td>
+<td>An IF-THEN rule: IF conditions are met THEN perform actions or derive conclusions</td>
+</tr>
+<tr>
+<td><strong>Prolog</strong></td>
+<td>A logic programming language where programs are expressed as facts and rules; queries are solved by backward chaining</td>
+</tr>
+<tr>
+<td><strong>RDF (Resource Description Framework)</strong></td>
+<td>W3C standard for expressing information as subject-predicate-object triples</td>
+</tr>
+<tr>
+<td><strong>RETE Algorithm</strong></td>
+<td>An efficient pattern-matching algorithm for production rule systems developed by Charles Forgy (1979)</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong></td>
+<td>A single inference rule sufficient for automated theorem proving in first-order logic</td>
+</tr>
+<tr>
+<td><strong>SAT Solver</strong></td>
+<td>An algorithm that determines whether a Boolean formula can be satisfied by some assignment of variables</td>
+</tr>
+<tr>
+<td><strong>Semantic Network</strong></td>
+<td>A knowledge representation using labelled nodes (concepts) and labelled edges (relationships)</td>
+</tr>
+<tr>
+<td><strong>Semantic Web</strong></td>
+<td>Tim Berners-Lee's vision of a machine-readable web of data using RDF, OWL, and SPARQL</td>
+</tr>
+<tr>
+<td><strong>SMT Solver</strong></td>
+<td>Satisfiability Modulo Theories — extends SAT solving with support for arithmetic, arrays, and other theories</td>
+</tr>
+<tr>
+<td><strong>SPARQL</strong></td>
+<td>A query language for RDF graphs; the SQL equivalent for knowledge graphs</td>
+</tr>
+<tr>
+<td><strong>Symbolic AI</strong></td>
+<td>AI systems that reason using explicitly encoded symbols, rules, and logic rather than statistical patterns</td>
+</tr>
+<tr>
+<td><strong>Theorem Prover</strong></td>
+<td>An automated system that constructs mathematical proofs to verify logical statements</td>
+</tr>
+<tr>
+<td><strong>Triple</strong></td>
+<td>A subject-predicate-object statement in RDF (e.g., Einstein – bornIn – Ulm)</td>
+</tr>
+<tr>
+<td><strong>Unification</strong></td>
+<td>The process of finding variable substitutions that make two logical expressions identical</td>
+</tr>
+<tr>
+<td><strong>Working Memory</strong></td>
+<td>The component of a production system that stores the current facts and intermediate conclusions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- Footer -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="tab-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Symbolic / Rule-Based AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/19-symbolic-rule-based-ai-overview.gif" alt="Symbolic / Rule-Based AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Symbolic / Rule-Based AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/19-symbolic-rule-based-ai-tech-stack.gif" alt="Symbolic / Rule-Based AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="tab-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Relevant Regulatory Context</h3>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>Relevance to Symbolic AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>Symbolic AI's inherent explainability is a compliance advantage for high-risk applications</td>
+</tr>
+<tr>
+<td><strong>GDPR Article 22</strong></td>
+<td>Right to explanation for automated decisions — Symbolic AI can provide full reasoning traces</td>
+</tr>
+<tr>
+<td><strong>FDA Software as Medical Device (SaMD)</strong></td>
+<td>Clinical decision support rules must be validated, documented, and version-controlled</td>
+</tr>
+<tr>
+<td><strong>Basel III/IV</strong></td>
+<td>Banking regulators require explainable credit decision rules alongside model governance</td>
+</tr>
+<tr>
+<td><strong>SOX (Sarbanes-Oxley)</strong></td>
+<td>Financial controls encoded as rules require audit trails and change management</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Advantages</h3>
+<table>
+<thead>
+<tr>
+<th>Advantage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full Traceability</strong></td>
+<td>Every conclusion traces to specific rules and facts — ideal for audit</td>
+</tr>
+<tr>
+<td><strong>Version-Controlled Knowledge</strong></td>
+<td>Rules can be versioned like code; every change is tracked</td>
+</tr>
+<tr>
+<td><strong>Deterministic Testing</strong></td>
+<td>Same inputs always produce same outputs — straightforward to verify</td>
+</tr>
+<tr>
+<td><strong>Human-Readable Rules</strong></td>
+<td>Rules are authored in human-understandable terms; no "black box"</td>
+</tr>
+<tr>
+<td><strong>Regulatory Mapping</strong></td>
+<td>Rules can be directly linked to the regulation they implement</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule Proliferation</strong></td>
+<td>Unchecked rule growth makes governance overhead unsustainable</td>
+</tr>
+<tr>
+<td><strong>Expert Bias</strong></td>
+<td>Rules encode the biases and blind spots of the experts who wrote them</td>
+</tr>
+<tr>
+<td><strong>Provenance Tracking</strong></td>
+<td>Knowing who wrote each rule, when, why, and based on what evidence</td>
+</tr>
+<tr>
+<td><strong>Cross-System Consistency</strong></td>
+<td>Ensuring rules are consistent across multiple systems that encode overlapping domain knowledge</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="tab-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Knowledge Representation & Ontologies</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Ontology Design Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clarity</strong></td>
+<td>Terms should be defined objectively with formal, documented definitions</td>
+</tr>
+<tr>
+<td><strong>Coherence</strong></td>
+<td>Axioms and definitions should be logically consistent; no contradictions</td>
+</tr>
+<tr>
+<td><strong>Extendibility</strong></td>
+<td>New terms should be definable without revising existing definitions</td>
+</tr>
+<tr>
+<td><strong>Minimal Encoding Bias</strong></td>
+<td>Conceptualisation should not depend on a particular representation language</td>
+</tr>
+<tr>
+<td><strong>Minimal Ontological Commitment</strong></td>
+<td>Define only what is necessary; avoid unnecessary constraints on the world model</td>
+</tr>
+</tbody>
+</table>
+<h3>Major Ontologies</h3>
+<table>
+<thead>
+<tr>
+<th>Ontology</th>
+<th>Domain</th>
+<th>Entities</th>
+<th>Used By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SNOMED CT</strong></td>
+<td>Clinical medicine</td>
+<td>350,000+ concepts</td>
+<td>NHS, US Federal Health IT, 40+ countries</td>
+</tr>
+<tr>
+<td><strong>Gene Ontology (GO)</strong></td>
+<td>Molecular biology</td>
+<td>44,000+ terms</td>
+<td>Genomics research worldwide</td>
+</tr>
+<tr>
+<td><strong>FIBO</strong></td>
+<td>Financial services</td>
+<td>~1,300 classes</td>
+<td>Banking regulatory compliance, data integration</td>
+</tr>
+<tr>
+<td><strong>Schema.org</strong></td>
+<td>Web content</td>
+<td>~800 types</td>
+<td>Google, Bing, Yahoo, Yandex — structured data markup</td>
+</tr>
+<tr>
+<td><strong>Dublin Core</strong></td>
+<td>Metadata</td>
+<td>15 core elements</td>
+<td>Digital libraries, document management</td>
+</tr>
+<tr>
+<td><strong>Wikidata</strong></td>
+<td>General knowledge</td>
+<td>100M+ items</td>
+<td>Wikipedia, academic research, AI systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Knowledge Graph Architecture</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────┐
+│ KNOWLEDGE GRAPH ARCHITECTURE │
+│ │
+│ ENTITIES RELATIONSHIPS ONTOLOGY │
+│ ────────────── ────────────── ────────────── │
+│ [Person: Einstein] ──born_in──► Classes: Person, │
+│ [City: Ulm] ──works_at──► City, Theory │
+│ [Theory: Relativity] ──developed──► Relations: born_in, │
+│ works_at, developed │
+│ │
+│ TRIPLE STORE REASONER QUERY ENGINE │
+│ ────────────── ────────────── ────────────── │
+│ Subject-Predicate- Infers new triples SPARQL queries │
+│ Object triples from ontology over stored + │
+│ (RDF) axioms inferred triples │
+└──────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Expert Systems — Architecture & Legacy</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Classical Expert System Architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>Contains the domain rules (IF-THEN) and factual assertions</td>
+</tr>
+<tr>
+<td><strong>Working Memory</strong></td>
+<td>Stores the current case data and intermediate conclusions</td>
+</tr>
+<tr>
+<td><strong>Inference Engine</strong></td>
+<td>Applies rules to working memory to derive new conclusions</td>
+</tr>
+<tr>
+<td><strong>Explanation Facility</strong></td>
+<td>Traces the chain of rules used to reach any conclusion; answers "why" and "how" queries</td>
+</tr>
+<tr>
+<td><strong>Knowledge Acquisition Module</strong></td>
+<td>Tools for domain experts to encode and validate rules</td>
+</tr>
+<tr>
+<td><strong>User Interface</strong></td>
+<td>Dialogue system that gathers case information and presents recommendations</td>
+</tr>
+</tbody>
+</table>
+<h3>Landmark Expert Systems</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Year</th>
+<th>Domain</th>
+<th>Achievement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DENDRAL</strong></td>
+<td>1965</td>
+<td>Chemistry</td>
+<td>First expert system; inferred molecular structure from mass spectrometry</td>
+</tr>
+<tr>
+<td><strong>MYCIN</strong></td>
+<td>1972</td>
+<td>Medicine</td>
+<td>Diagnosed bacterial infections; outperformed junior doctors in studies</td>
+</tr>
+<tr>
+<td><strong>R1/XCON</strong></td>
+<td>1980</td>
+<td>Computer hardware</td>
+<td>Configured DEC VAX computers; saved DEC $25M+/year</td>
+</tr>
+<tr>
+<td><strong>PROSPECTOR</strong></td>
+<td>1979</td>
+<td>Geology</td>
+<td>Mineral deposit identification; guided discovery of a molybdenum deposit</td>
+</tr>
+<tr>
+<td><strong>CLIPS</strong></td>
+<td>1985</td>
+<td>General</td>
+<td>NASA-developed expert system shell; widely used in research and education</td>
+</tr>
+<tr>
+<td><strong>Cyc</strong></td>
+<td>1984</td>
+<td>Common sense</td>
+<td>Attempted to encode all common-sense knowledge; 25M+ assertions</td>
+</tr>
+</tbody>
+</table>
+<h3>The AI Winter and Lessons Learned</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Acquisition Bottleneck</strong></td>
+<td>Extracting and encoding expert knowledge is slow, expensive, and error-prone</td>
+</tr>
+<tr>
+<td><strong>Brittleness</strong></td>
+<td>Systems failed silently outside their narrow domain; couldn't say "I don't know"</td>
+</tr>
+<tr>
+<td><strong>Maintenance Burden</strong></td>
+<td>Large rule bases became impossible to maintain, debug, or update safely</td>
+</tr>
+<tr>
+<td><strong>Scaling Failure</strong></td>
+<td>Exponential complexity growth as rules interacted in unexpected ways</td>
+</tr>
+<tr>
+<td><strong>Overpromise</strong></td>
+<td>Industry expectations exceeded what the technology could deliver, leading to disillusionment</td>
+</tr>
+<tr>
+<td><strong>Legacy</strong></td>
+<td>Lessons directly inform modern AI governance: explainability, knowledge management, human-in-the-loop</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Symbolic AI in the Modern Era</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>The Neuro-Symbolic Convergence</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM + Knowledge Graph</strong></td>
+<td>Ground LLM outputs in verified knowledge graph facts to reduce hallucination</td>
+</tr>
+<tr>
+<td><strong>Neural Theorem Proving</strong></td>
+<td>Use neural networks to guide symbolic proof search (e.g., AlphaProof)</td>
+</tr>
+<tr>
+<td><strong>Ontology-Guided ML</strong></td>
+<td>Use ontology structure to constrain and interpret ML model outputs</td>
+</tr>
+<tr>
+<td><strong>Symbolic Planning + Neural Execution</strong></td>
+<td>Symbolic planner generates high-level plan; neural policies execute low-level actions</td>
+</tr>
+<tr>
+<td><strong>RAG with Structured Knowledge</strong></td>
+<td>Retrieval-Augmented Generation pulling from knowledge graphs rather than unstructured text</td>
+</tr>
+</tbody>
+</table>
+<h3>Modern Use of Symbolic AI</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>How Symbolic AI Contributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Regulatory Compliance</strong></td>
+<td>Encode regulations as formal rules; automate compliance checking</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>Biomedical ontologies (Gene Ontology, ChEBI) power knowledge-driven drug target identification</td>
+</tr>
+<tr>
+<td><strong>Enterprise Data Integration</strong></td>
+<td>Ontologies provide semantic layers for integrating heterogeneous data sources</td>
+</tr>
+<tr>
+<td><strong>Question Answering</strong></td>
+<td>Knowledge graphs power factual QA in search engines and virtual assistants</td>
+</tr>
+<tr>
+<td><strong>Configuration Management</strong></td>
+<td>Constraint satisfaction solves complex product configuration problems</td>
+</tr>
+<tr>
+<td><strong>Formal Verification</strong></td>
+<td>Mathematical proofs verify chip designs, safety-critical software, and smart contracts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="tab-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Symbolic AI</strong> — also known as <strong>Rule-Based AI</strong> or <strong>GOFAI</strong> (Good Old-Fashioned AI) — represents the oldest and most established paradigm in artificial intelligence: the idea that intelligence can be achieved by encoding human knowledge as <strong>formal symbols, rules, and logic</strong>, then manipulating those symbols computationally to derive new knowledge.</p>
+<p>Unlike statistical and neural approaches that learn patterns from data, Symbolic AI operates on explicitly stated knowledge. Every piece of reasoning is traceable back to the rules and facts that produced it. This makes Symbolic AI inherently <strong>transparent, auditable, and explainable</strong> — qualities that are increasingly valued in regulated industries.</p>
+<p>Symbolic AI dominated the field from the 1950s through the 1980s, producing landmark systems like MYCIN, DENDRAL, and R1/XCON. While eclipsed by machine learning in many domains, Symbolic AI has experienced a significant resurgence as part of <strong>neuro-symbolic architectures</strong> that combine the learning power of neural networks with the reasoning rigour of symbolic systems.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Codifies — encodes human knowledge as formal rules, logic, and ontologies, then reasons over them to derive conclusions</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Knowledge graphs, production rules, first-order logic, ontologies, constraint solvers, semantic reasoners</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Logical inferences, explanations, classifications, diagnoses, constraint-satisfying solutions, knowledge-graph answers</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Knowledge is explicit and human-authored — every conclusion can be traced to the rules and facts that produced it</td>
+</tr>
+</tbody>
+</table>
+<h3>Symbolic AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over human-authored knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously with planning and tool use</td>
+<td>Research agent, autonomous coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from data</td>
+<td>Business intelligence, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new content from learned patterns</td>
+<td>GPT writing text, DALL-E generating images</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from statistical patterns in data</td>
+<td>Credit scoring, disease risk prediction</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Maps current input to output with no reasoning or memory</td>
+<td>Thermostat, ABS braking</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Reactive AI:</strong> Reactive AI simply matches input to output with no reasoning chain. Symbolic AI performs multi-step logical reasoning — it derives new conclusions by chaining rules together and can explain its reasoning path.</p>
+<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI learns statistical patterns from labelled data without explicit knowledge. Symbolic AI uses explicitly encoded knowledge and does not require training data — but equally, it cannot learn from data on its own.</p>
+<p><strong>Key Distinction from Generative AI:</strong> Generative AI produces probabilistic outputs from neural networks; its internal reasoning is opaque. Symbolic AI produces deterministic, fully traceable outputs from explicitly stated rules and logic.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer>
+ <div class="name">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</div>
+ <div class="role">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</div>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── Tabs ── */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+ document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+ document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ── Accordions ── */
+document.querySelectorAll('.acc-header').forEach(h=>{
+ h.addEventListener('click',()=>{
+ const item=h.parentElement;
+ item.classList.toggle('open');
+ });
+});
+
+/* ── Glossary ── */
+const glossaryTerms=[
+ {term:'Backward Chaining',def:'Goal-driven inference; trace from conclusion to supporting facts.'},
+ {term:'BRMS',def:'Business Rule Management System; enterprise rule lifecycle management.'},
+ {term:'Constraint Satisfaction Problem (CSP)',def:'Finding variable assignments satisfying all constraints simultaneously.'},
+ {term:'Description Logic',def:'Formal logic underpinning OWL ontologies; decidable reasoning over TBox/ABox.'},
+ {term:'Expert System',def:'AI system encoding domain expert knowledge as rules for automated decision-making.'},
+ {term:'Forward Chaining',def:'Data-driven inference; derive new facts from existing knowledge by applying rules.'},
+ {term:'Knowledge Graph',def:'Network of entities and relationships stored as triples (subject-predicate-object).'},
+ {term:'Ontology',def:'Formal specification of concepts and relationships in a domain.'},
+ {term:'OWL',def:'Web Ontology Language; W3C standard for defining and sharing ontologies.'},
+ {term:'Predicate Logic',def:'Logic with variables, quantifiers (∀, ∃), and predicates for expressive formal reasoning.'},
+ {term:'Production Rule',def:'IF condition THEN action; basic building block of rule-based systems.'},
+ {term:'RDF',def:'Resource Description Framework; W3C triple-based data model for the semantic web.'},
+ {term:'Rete Algorithm',def:'Efficient pattern-matching algorithm for production rule systems; used in Drools, CLIPS.'},
+ {term:'SPARQL',def:'Query language for RDF data; enables graph pattern matching over triplestores.'},
+ {term:'Unification',def:'Finding variable substitutions to make two logical expressions identical; core to Prolog.'},
+ {term:'First-Order Logic',def:'Formal logic system with quantifiers, predicates, and functions over objects.'},
+ {term:'Closed-World Assumption',def:'Assumption that anything not known or provable is false; used in databases and Prolog.'},
+ {term:'Frame Representation',def:'Knowledge structure representing stereotypical situations with slots for attributes and default values.'},
+ {term:'Monotonic Reasoning',def:'Reasoning where adding new information never invalidates existing conclusions.'},
+ {term:'Theorem Prover',def:'System automatically proving mathematical theorems or verifying logical statements.'},
+ {term:'Backward Chaining',def:'Goal-driven reasoning; starting from a hypothesis and working backward to find supporting facts.'},
+ {term:'Truth Maintenance System',def:'Component tracking logical dependencies between beliefs to maintain consistency.'}
+];
+
+function renderGlossary(filter=''){
+ const list=document.getElementById('glossaryList');
+ const f=filter.toLowerCase();
+ list.innerHTML=glossaryTerms.filter(g=>g.term.toLowerCase().includes(f)||g.def.toLowerCase().includes(f))
+ .map(g=>`<div class="glossary-item"><div class="term">${g.term}</div><div class="def">${g.def}</div></div>`).join('');
+}
+renderGlossary();
+document.getElementById('glossarySearch').addEventListener('input',e=>renderGlossary(e.target.value));
+
+/* ── Chart.js ── */
+const chartInstances={};
+function initCharts(){
+ const cs=getComputedStyle(document.documentElement);
+ const accent=cs.getPropertyValue('--accent').trim();
+ const accent2=cs.getPropertyValue('--accent2').trim();
+ const accent3=cs.getPropertyValue('--accent3').trim();
+ const accent4=cs.getPropertyValue('--accent4').trim();
+ const accent5=cs.getPropertyValue('--accent5').trim();
+ const accent6=cs.getPropertyValue('--accent6').trim();
+ const text2=cs.getPropertyValue('--text2').trim();
+ const text=cs.getPropertyValue('--text').trim();
+ const gridColor='rgba(48,54,61,0.6)';
+
+ const defaults={responsive:true,maintainAspectRatio:true,plugins:{legend:{labels:{color:text2,font:{size:11}}}}};
+
+ /* Benchmark Bar */
+ const bbCtx=document.getElementById('benchBarChart');
+ if(bbCtx && bbCtx.offsetParent!==null && !chartInstances.benchBar){
+ chartInstances.benchBar=new Chart(bbCtx,{type:'bar',data:{
+ labels:['SWRL Rules/sec','Drools Rules/sec','Neo4j Traversals/sec','Z3 Solve Time (s)','SPARQL Queries/sec'],
+ datasets:[{label:'Performance',data:[12000,500000,1000000,0.1,50000],
+ backgroundColor:[accent,accent2,accent3,accent4,accent6],borderColor:[accent,accent2,accent3,accent4,accent6],borderWidth:1}]
+ },options:{...defaults,indexAxis:'y',scales:{
+ x:{type:'logarithmic',ticks:{color:text2,callback:v=>{if(v>=1e6)return(v/1e6)+'M';if(v>=1e3)return(v/1e3)+'K';return v}},grid:{color:gridColor}},
+ y:{ticks:{color:text2},grid:{color:gridColor}}
+ },plugins:{...defaults.plugins,tooltip:{callbacks:{label:ctx=>{const v=ctx.raw;if(ctx.dataIndex===3)return v+'s (median)';if(v>=1e6)return(v/1e6)+'M';if(v>=1e3)return(v/1e3)+'K';return v}}}}}});
+ }
+
+ /* Benchmark Radar */
+ const brCtx=document.getElementById('benchRadarChart');
+ if(brCtx && brCtx.offsetParent!==null && !chartInstances.benchRadar){
+ chartInstances.benchRadar=new Chart(brCtx,{type:'radar',data:{
+ labels:['Interpretability','Accuracy\n(defined domain)','Scalability','Learning\nAbility','Handling\nUncertainty','Development\nSpeed'],
+ datasets:[{label:'Symbolic AI',data:[95,98,40,15,20,35],
+ backgroundColor:'rgba(201,168,76,0.10)',borderColor:accent,pointBackgroundColor:accent,pointBorderColor:accent,borderWidth:2}]
+ },options:{...defaults,scales:{r:{beginAtZero:true,max:100,ticks:{stepSize:20,color:text2,backdropColor:'transparent'},grid:{color:gridColor},pointLabels:{color:text2,font:{size:11}}}}}});
+ }
+
+ /* Market Bar */
+ const mbCtx=document.getElementById('marketBarChart');
+ if(mbCtx && mbCtx.offsetParent!==null && !chartInstances.marketBar){
+ chartInstances.marketBar=new Chart(mbCtx,{type:'bar',data:{
+ labels:['Knowledge Graphs','BRMS','Semantic Web','Theorem Provers','Expert Systems','Constraint Solvers'],
+ datasets:[{label:'Market Size ($B)',data:[1.1,1.6,0.8,0.3,0.5,0.4],
+ backgroundColor:[accent,accent2,accent3,accent4,accent5,accent6],borderColor:[accent,accent2,accent3,accent4,accent5,accent6],borderWidth:1,borderRadius:4}]
+ },options:{...defaults,scales:{
+ x:{ticks:{color:text2},grid:{color:gridColor}},
+ y:{ticks:{color:text2,callback:v=>'$'+v+'B'},grid:{color:gridColor}}
+ }}});
+ }
+
+ /* Market Line */
+ const mlCtx=document.getElementById('marketLineChart');
+ if(mlCtx && mlCtx.offsetParent!==null && !chartInstances.marketLine){
+ chartInstances.marketLine=new Chart(mlCtx,{type:'line',data:{
+ labels:['2024','2025','2026','2027','2028','2029','2030'],
+ datasets:[{label:'Market Size ($B)',data:[4.7,5.5,6.4,7.5,8.8,10.3,12.1],
+ borderColor:accent2,backgroundColor:'rgba(63,185,80,0.1)',fill:true,tension:.35,pointBackgroundColor:accent2,pointBorderColor:accent2,pointRadius:5,pointHoverRadius:7,borderWidth:2.5}]
+ },options:{...defaults,scales:{
+ x:{ticks:{color:text2},grid:{color:gridColor}},
+ y:{ticks:{color:text2,callback:v=>'$'+v+'B'},grid:{color:gridColor}}
+ }}});
+ }
+}
+
+/* Init charts when visible */
+initCharts();
+
+</script>
+<nav class="chapter-nav">
+ <a href="scientific-simulation-ai.html"><span>&larr;</span><div><small>Previous</small>Scientific / Simulation AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ 
+</nav>
+
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

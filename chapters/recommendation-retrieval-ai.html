@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommendation / Retrieval AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Recommendation / Retrieval AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Recommendation AI — the multi-stage retrieval pipeline, 8-layer stack, collaborative filtering, embeddings, vector search, benchmarks, market data, and more.</p>
+ <span class="reading-time">~52 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/16-recommendation-retrieval-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">Retrieval Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools &amp; Platforms</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════ TAB 1 — RETRIEVAL PIPELINE ════════ -->
+<section class="section active" id="pipeline">
+ <h2>Multi-Stage Retrieval Pipeline</h2>
+ <p class="desc">Modern recommendation systems use a multi-stage funnel that progressively narrows the candidate set — from millions of items to a handful of personalised results served in real time.</p>
+ <div class="funnel-container">
+ <svg class="funnel-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+ <!-- Stage 1 — Candidate Generation -->
+ <polygon points="50,10 650,10 610,80 90,80" fill="rgba(88,166,255,0.18)" stroke="#58a6ff" stroke-width="1.5" class="funnel-stage" data-stage="0" style="cursor:pointer"/>
+ <text x="350" y="38" text-anchor="middle" fill="#58a6ff" font-size="14" font-weight="700">Candidate Generation</text>
+ <text x="350" y="60" text-anchor="middle" fill="#8b949e" font-size="11">Millions → Thousands</text>
+ <!-- Stage 2 — Scoring / Ranking -->
+ <polygon points="90,90 610,90 570,160 130,160" fill="rgba(63,185,80,0.18)" stroke="#3fb950" stroke-width="1.5" class="funnel-stage" data-stage="1" style="cursor:pointer"/>
+ <text x="350" y="118" text-anchor="middle" fill="#3fb950" font-size="14" font-weight="700">Scoring / Ranking</text>
+ <text x="350" y="140" text-anchor="middle" fill="#8b949e" font-size="11">Thousands → Hundreds</text>
+ <!-- Stage 3 — Re-Ranking -->
+ <polygon points="130,170 570,170 530,240 170,240" fill="rgba(210,168,255,0.18)" stroke="#d2a8ff" stroke-width="1.5" class="funnel-stage" data-stage="2" style="cursor:pointer"/>
+ <text x="350" y="198" text-anchor="middle" fill="#d2a8ff" font-size="14" font-weight="700">Re-Ranking</text>
+ <text x="350" y="220" text-anchor="middle" fill="#8b949e" font-size="11">Hundreds → Tens</text>
+ <!-- Stage 4 — Business Rules / Filtering -->
+ <polygon points="170,250 530,250 490,320 210,320" fill="rgba(240,136,62,0.18)" stroke="#f0883e" stroke-width="1.5" class="funnel-stage" data-stage="3" style="cursor:pointer"/>
+ <text x="350" y="278" text-anchor="middle" fill="#f0883e" font-size="14" font-weight="700">Business Rules / Filtering</text>
+ <text x="350" y="300" text-anchor="middle" fill="#8b949e" font-size="11">Policy &amp; Constraint Application</text>
+ <!-- Stage 5 — Serving -->
+ <polygon points="210,330 490,330 450,400 250,400" fill="rgba(121,192,255,0.18)" stroke="#79c0ff" stroke-width="1.5" class="funnel-stage" data-stage="4" style="cursor:pointer"/>
+ <text x="350" y="358" text-anchor="middle" fill="#79c0ff" font-size="14" font-weight="700">Serving</text>
+ <text x="350" y="380" text-anchor="middle" fill="#8b949e" font-size="11">Personalised Results</text>
+ </svg>
+ </div>
+ <div class="funnel-info" id="funnelInfo">
+ <h3>Click a stage above to learn more</h3>
+ <p>Each stage in the retrieval funnel progressively filters and refines candidates to deliver personalised recommendations with low latency.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Recommendation & Retrieval AI Works — The Retrieval-Ranking Pipeline</h3>
+<p>Modern recommendation and retrieval systems follow a multi-stage pipeline designed for scale:</p>
+<pre><code>+------------------------------------------------------------------------+
+| RECOMMENDATION / RETRIEVAL PIPELINE |
+| |
+| 1. CANDIDATE 2. SCORING / 3. RE-RANKING |
+| GENERATION RANKING &amp; FILTERING |
+| ---------------- ---------------- ---------------- |
+| Retrieve a broad Score candidates Apply business rules, |
+| set of candidates with a fine-grained diversity, freshness, |
+| from the full model that predicts and de-duplication |
+| catalogue (fast) user engagement constraints |
+| |
+| 4. SERVING &amp; 5. FEEDBACK 6. MODEL |
+| PRESENTATION COLLECTION RETRAINING |
+| ---------------- ---------------- ---------------- |
+| Present ranked Collect clicks, Retrain models on |
+| results to the views, purchases, new interaction data |
+| user in real time and dwell time continuously |
++------------------------------------------------------------------------+
+</code></pre>
+<h3>The Retrieval Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Query Understanding</strong></td>
+<td>Parse and expand user query (search) or build user profile (recommendation) from behavioural signals</td>
+</tr>
+<tr>
+<td><strong>Candidate Generation</strong></td>
+<td>Retrieve ~100s to ~1000s of candidate items from millions using approximate nearest neighbour (ANN) search</td>
+</tr>
+<tr>
+<td><strong>Feature Assembly</strong></td>
+<td>Assemble features for each (user, item) pair — user history, item metadata, contextual signals</td>
+</tr>
+<tr>
+<td><strong>Scoring / Ranking</strong></td>
+<td>A ranking model scores each candidate by predicted relevance, engagement, or conversion probability</td>
+</tr>
+<tr>
+<td><strong>Re-Ranking</strong></td>
+<td>Apply business rules, diversity constraints, freshness boosts, and policy filters</td>
+</tr>
+<tr>
+<td><strong>Serving</strong></td>
+<td>Return the final ranked list to the user in real time (typically &lt;100ms end-to-end)</td>
+</tr>
+<tr>
+<td><strong>Feedback Collection</strong></td>
+<td>Track user interactions (clicks, skips, purchases, dwell time) as implicit training signal</td>
+</tr>
+<tr>
+<td><strong>Continuous Retraining</strong></td>
+<td>Models are retrained on fresh interaction data on daily or hourly cycles</td>
+</tr>
+</tbody>
+</table>
+<h3>Key System Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Embedding Dimension</strong></td>
+<td>Size of learned vector representations; higher = more expressive, slower</td>
+</tr>
+<tr>
+<td><strong>Number of Candidates (top-K)</strong></td>
+<td>How many items the candidate generation stage retrieves</td>
+</tr>
+<tr>
+<td><strong>Similarity Metric</strong></td>
+<td>Cosine, dot product, or Euclidean distance for nearest neighbour search</td>
+</tr>
+<tr>
+<td><strong>ANN Index Type</strong></td>
+<td>HNSW, IVF, ScaNN — controls the speed-accuracy trade-off for vector search</td>
+</tr>
+<tr>
+<td><strong>Personalisation Weight</strong></td>
+<td>Balance between global popularity and individual preference signals</td>
+</tr>
+<tr>
+<td><strong>Exploration vs. Exploitation</strong></td>
+<td>Degree to which the system surfaces novel items versus safe, high-confidence suggestions</td>
+</tr>
+<tr>
+<td><strong>Freshness Decay</strong></td>
+<td>How quickly older content is deprioritised in favour of new items</td>
+</tr>
+<tr>
+<td><strong>Diversity Constraint</strong></td>
+<td>Minimum variety across categories, creators, or topics in the result set</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Netflix's recommendation engine drives 80% of content watched on the platform.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Amazon attributes 35% of its revenue directly to its recommendation algorithm.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Spotify's Discover Weekly playlist, powered by collaborative filtering, reaches 100+ million users weekly.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What is collaborative filtering?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Filtering spam collaboratively</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Recommending items based on similar users' preferences</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Group file sharing</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Distributed data cleaning</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What does RAG stand for?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Random Access Generation</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Retrieval-Augmented Generation</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Recursive Attention Graph</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Ranked Aggregate Grouping</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What is the "cold start" problem in recommendation systems?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Server boot time</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Inability to recommend for new users/items with no history</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Low GPU temperature</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Slow model loading</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════ TAB 2 — 8-LAYER STACK ════════ -->
+<section class="section" id="stack">
+ <h2>8-Layer Recommendation Stack</h2>
+ <p class="desc">A full-stack view of modern recommendation systems — from raw data ingestion through to live A/B experimentation. Click any layer to expand details.</p>
+ <div class="stack-layers">
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-blue c-blue">8</div>
+ <div class="layer-title">A/B Testing &amp; Experimentation</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Online experimentation platforms for measuring recommendation quality. Includes interleaving experiments, multi-armed bandits for explore/exploit trade-offs, and statistical significance testing for model comparisons.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-green c-green">7</div>
+ <div class="layer-title">Model Serving</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Real-time inference infrastructure serving recommendations under strict latency SLAs (&lt;50 ms). Includes feature store lookups, model caching, GPU/CPU serving clusters, and dynamic batching for throughput optimisation.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-purple c-purple">6</div>
+ <div class="layer-title">Re-Ranking &amp; Policies</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Post-scoring re-ranking for diversity, freshness, and business rule enforcement. Applies fairness constraints, content deduplication, publisher diversity quotas, and regulatory compliance filters before final slate assembly.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-orange c-orange">5</div>
+ <div class="layer-title">Scoring Models</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Deep ranking networks that score candidate relevance. Architectures include two-tower models, cross-attention networks, DLRM (Deep Learning Recommendation Model), and DCN (Deep &amp; Cross Network) for capturing complex feature interactions.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-red c-red">4</div>
+ <div class="layer-title">Candidate Retrieval</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Approximate Nearest Neighbour (ANN) search over embedding spaces, collaborative filtering recall sets, and content-based retrieval. Fetches thousands of candidates from billions of items using HNSW, IVF, or ScaNN indices.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-cyan c-cyan">3</div>
+ <div class="layer-title">Feature Engineering</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">User features (demographics, history), item features (metadata, embeddings), interaction features (click/skip/dwell), and contextual signals (time, device, location). Feature stores ensure consistent online/offline feature computation.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-blue c-blue">2</div>
+ <div class="layer-title">Data Pipelines</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Ingestion of clickstreams, impressions, purchases, session logs, and explicit ratings. ETL/ELT pipelines process terabytes of behavioural data daily. Streaming pipelines (Kafka, Flink) enable near-real-time feature updates.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <div class="layer-num bg-green c-green">1</div>
+ <div class="layer-title">User &amp; Item Catalogues</div>
+ <span class="expand-icon">&#9662;</span>
+ </div>
+ <div class="layer-detail">Foundational data layer: user profiles (preferences, demographics, subscription tier), product/content metadata (title, category, tags, descriptions), and content taxonomy/ontology for structured item organisation.</div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Recommendation AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Name</th>
+<th>Role</th>
+<th>Key Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td><strong>User Experience</strong></td>
+<td>Present recommendations in the UI; explainability and transparency</td>
+<td>Personalised feeds, "Because you watched...", explanation UIs</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Serving &amp; APIs</strong></td>
+<td>Deploy ranking models and serve personalised results in real time</td>
+<td>TensorFlow Serving, Triton, Feast, Redis</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Re-Ranking</strong></td>
+<td>Apply business rules, diversity, freshness, and fairness constraints</td>
+<td>Rule engines, MMR, fairness-aware re-rankers</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Ranking Models</strong></td>
+<td>Score and rank candidates by predicted user engagement or relevance</td>
+<td>LambdaMART, deep ranking models, cross-encoders</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Candidate Gen</strong></td>
+<td>Retrieve a broad set of candidates from the full catalogue using fast approximate search</td>
+<td>Two-tower models, ANN indices, BM25, hybrid retrieval</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Embeddings</strong></td>
+<td>Learn dense vector representations for users, items, queries, and documents</td>
+<td>BERT, sentence-transformers, Word2Vec, item2vec</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Feature Store</strong></td>
+<td>Compute, store, and serve features consistently across training and inference</td>
+<td>Feast, Tecton, Vertex Feature Store, Hopsworks</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Data Layer</strong></td>
+<td>Collect, store, and process user interactions, item metadata, and contextual signals</td>
+<td>Kafka, Spark, BigQuery, Snowflake, event streams</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 3 — SUB-TYPES ════════ -->
+<section class="section" id="subtypes">
+ <h2>Recommendation Sub-Types</h2>
+ <p class="desc">Ten major families of recommendation and retrieval systems — from classical collaborative filtering to modern retrieval-augmented generation.</p>
+ <div class="cards cards-2">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Memory-Based</span>
+ <h3>Collaborative Filtering (User-Based)</h3>
+ <p>Similar users like similar items. Uses user-user similarity matrices to find neighbours with overlapping preferences. Foundational approach behind early Netflix recommendations. Struggles with cold-start and sparsity at scale.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Item Similarity</span>
+ <h3>Collaborative Filtering (Item-Based)</h3>
+ <p>Computes item-item similarity from co-occurrence in user histories. Powers Amazon's "Customers who bought this also bought" feature. More stable than user-based CF since item relationships change less frequently.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Latent Factors</span>
+ <h3>Matrix Factorisation</h3>
+ <p>Decomposes the sparse user-item interaction matrix into low-rank latent factor matrices via SVD or ALS. Won the Netflix Prize ($1M). Captures latent taste dimensions — e.g., preference for art-house vs. action films.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Feature Matching</span>
+ <h3>Content-Based Filtering</h3>
+ <p>Matches item feature vectors (TF-IDF, embeddings, metadata) to learned user profiles. No dependency on other users' data — works for new users if item features are rich. Common in news and document recommendation.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Constraint-Based</span>
+ <h3>Knowledge-Based</h3>
+ <p>Uses explicit domain knowledge and constraints for high-value, infrequent purchases (cars, real estate, financial products). Case-based reasoning matches past solutions. No cold-start problem since recommendations are constraint-driven.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-blue c-blue">Ensemble</span>
+ <h3>Hybrid Recommenders</h3>
+ <p>Combines collaborative filtering, content-based, and knowledge-based signals. Strategies include weighted blending, switching (choose method by context), cascading (coarse → fine), and stacking (meta-learner over base models).</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Neural</span>
+ <h3>Deep Learning Recommenders</h3>
+ <p>Two-tower models, DLRM, DCN, and autoencoders that learn complex non-linear feature interactions from massive datasets. Handle sparse categorical features via learned embedding tables. Power modern production systems at scale.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Temporal</span>
+ <h3>Sequential / Session-Based</h3>
+ <p>Models user interaction sequences with GRU4Rec, SASRec, and BERT4Rec. Captures temporal dynamics — what you clicked 5 minutes ago matters more than last month. Critical for e-commerce sessions and music playlists.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Dialogue</span>
+ <h3>Conversational Recommenders</h3>
+ <p>Dialogue-driven preference elicitation: the system asks clarifying questions to narrow preferences ("Do you prefer sci-fi or drama?"). Reduces cold-start and improves user satisfaction through interactive refinement of recommendations.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">LLM + Retrieval</span>
+ <h3>Retrieval-Augmented Generation (RAG)</h3>
+ <p>Combines large language models with vector retrieval for knowledge-grounded generation. Retrieved documents are injected as context to reduce hallucination. Powers enterprise search, customer support, and knowledge management systems.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Recommendation Strategy</h3>
+<table>
+<thead>
+<tr>
+<th>Sub-Type</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collaborative Filtering</strong></td>
+<td>Recommends items based on similar users' behaviour</td>
+<td>Netflix, Amazon "Customers who bought..."</td>
+</tr>
+<tr>
+<td><strong>Content-Based Filtering</strong></td>
+<td>Recommends items with features similar to what the user previously liked</td>
+<td>Spotify audio features, news article similarity</td>
+</tr>
+<tr>
+<td><strong>Hybrid Recommendation</strong></td>
+<td>Combines collaborative + content-based + contextual signals</td>
+<td>YouTube, TikTok, LinkedIn Feed</td>
+</tr>
+<tr>
+<td><strong>Session-Based Recommendation</strong></td>
+<td>Recommends based on the current browsing session only (no long-term history)</td>
+<td>E-commerce anonymous visitors, news apps</td>
+</tr>
+<tr>
+<td><strong>Context-Aware Recommendation</strong></td>
+<td>Incorporates time, location, device, and situation into ranking</td>
+<td>Uber Eats (time + location), Spotify (activity)</td>
+</tr>
+<tr>
+<td><strong>Knowledge-Graph Recommendation</strong></td>
+<td>Uses structured entity relationships to enhance recommendations</td>
+<td>Amazon product graph, Google Shopping</td>
+</tr>
+<tr>
+<td><strong>Conversational Recommendation</strong></td>
+<td>Recommends through interactive dialogue, refining preferences through questions</td>
+<td>Shopping assistants, travel planning chatbots</td>
+</tr>
+<tr>
+<td><strong>Sequential / Next-Item Prediction</strong></td>
+<td>Predicts the next item in a user's consumption sequence</td>
+<td>Spotify next song, Netflix next episode</td>
+</tr>
+<tr>
+<td><strong>Cross-Domain Recommendation</strong></td>
+<td>Transfers preferences learned in one domain to another</td>
+<td>Amazon Books to Kindle, Google Play to YouTube</td>
+</tr>
+<tr>
+<td><strong>Group Recommendation</strong></td>
+<td>Recommends for a group of users with potentially different preferences</td>
+<td>Spotify Blend, family movie night</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 4 — CORE ARCHITECTURES ════════ -->
+<section class="section" id="architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">Seven foundational model architectures that power modern recommendation and retrieval systems at scale.</p>
+ <div class="cards cards-2">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Dual Encoder</span>
+ <h3>Two-Tower Model</h3>
+ <p>Separate user and item encoder towers produce embeddings; relevance scored via dot product or cosine similarity. Enables pre-computation of item embeddings for sub-millisecond ANN retrieval. Used in YouTube DNN, Google, and Spotify.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Meta</span>
+ <h3>DLRM (Deep Learning Recommendation Model)</h3>
+ <p>Meta's architecture combining sparse categorical features (via embedding tables) with dense numerical features through bottom MLPs and feature interaction layers. Handles click-through rate prediction at trillion-scale interactions.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Google</span>
+ <h3>DCN (Deep &amp; Cross Network)</h3>
+ <p>Explicit feature cross layers that learn bounded-degree interactions alongside deep layers for implicit patterns. Efficiently captures high-order feature crosses without exponential parameter growth. Used in Google's ad ranking systems.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Hybrid</span>
+ <h3>Wide &amp; Deep</h3>
+ <p>Memorisation (wide linear model with cross-product features) + generalisation (deep neural network). Originally deployed for Google Play app recommendations. Balances learning specific feature co-occurrences with broad generalisable patterns.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Attention</span>
+ <h3>Transformer-based Sequential</h3>
+ <p>SASRec and BERT4Rec apply self-attention over user interaction histories. Captures long-range dependencies and position-aware item relationships. Outperforms RNN-based sequential models on most benchmarks for next-item prediction.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">Graph</span>
+ <h3>Graph Neural Networks</h3>
+ <p>User-item bipartite graphs with message passing for embedding learning. PinSage (Pinterest) scales to billions of nodes via random-walk sampling. Captures social signals, co-purchase patterns, and multi-hop relational information.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-blue c-blue">Vector Search</span>
+ <h3>Approximate Nearest Neighbour (ANN)</h3>
+ <p>HNSW, IVF, and ScaNN algorithms for billion-scale vector similarity search. Trade small recall loss for orders-of-magnitude speed gains. Foundation of the retrieval stage — enabling sub-10ms candidate generation from massive catalogues.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Algorithms</h3>
+<h3>Collaborative Filtering</h3>
+<p>The foundational approach to recommendation — predict user preferences based on the behaviour of similar users.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Users who agreed in the past will agree in the future; exploit the user-item interaction matrix</td>
+</tr>
+<tr>
+<td><strong>User-Based CF</strong></td>
+<td>Find users similar to the target user; recommend what they liked</td>
+</tr>
+<tr>
+<td><strong>Item-Based CF</strong></td>
+<td>Find items similar to what the user liked; recommend those</td>
+</tr>
+<tr>
+<td><strong>Matrix Factorisation</strong></td>
+<td>Decompose the sparse user-item matrix into low-rank user and item embeddings (SVD, ALS, NMF)</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>No content features required — works purely from interaction data</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Cold start problem — cannot recommend for new users or new items with no interaction history</td>
+</tr>
+</tbody>
+</table>
+<h3>Content-Based Filtering</h3>
+<p>Recommend items similar to what the user previously engaged with, based on item features.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Build an item profile from content features (genre, keywords, attributes); match to user taste</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>No cold start for items — new items with known features can be recommended immediately</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Limited serendipity — tends to recommend items too similar to past consumption (filter bubble)</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>News, e-commerce product similarity, document retrieval</td>
+</tr>
+</tbody>
+</table>
+<h3>Two-Tower (Dual Encoder) Models</h3>
+<p>The <strong>dominant architecture</strong> in modern large-scale recommendation and retrieval.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Separate neural networks encode user features and item features into a shared embedding space</td>
+</tr>
+<tr>
+<td><strong>Training</strong></td>
+<td>Train on (user, item) interaction pairs; maximise similarity for positive pairs, minimise for negative</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Pre-compute item embeddings; at serving time, compute user embedding and retrieve nearest item embeddings</td>
+</tr>
+<tr>
+<td><strong>Why It Dominates</strong></td>
+<td>Decouples user and item encoding — enables pre-computation and ANN search at scale</td>
+</tr>
+<tr>
+<td><strong>Key Implementations</strong></td>
+<td>Google DSSM, YouTube DNN, Facebook EBR, Airbnb Listing Embeddings</td>
+</tr>
+</tbody>
+</table>
+<h3>Learning-to-Rank (LTR)</h3>
+<p>Models specifically designed to optimise ranking quality rather than pointwise prediction.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pointwise</strong></td>
+<td>Treat ranking as regression or classification — predict relevance of each item independently</td>
+</tr>
+<tr>
+<td><strong>Pairwise</strong></td>
+<td>Learn to correctly order pairs of items; minimise inversions (e.g., RankNet, LambdaRank)</td>
+</tr>
+<tr>
+<td><strong>Listwise</strong></td>
+<td>Optimise the entire ranked list directly against ranking metrics (e.g., LambdaMART, ApproxNDCG)</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Directly optimises ranking quality metrics (NDCG, MAP) rather than pointwise accuracy</td>
+</tr>
+<tr>
+<td><strong>Dominant Algorithm</strong></td>
+<td>LambdaMART (XGBoost-based) remains the production standard for re-ranking stages</td>
+</tr>
+</tbody>
+</table>
+<h3>Dense Retrieval / Neural Information Retrieval</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Encode queries and documents as dense vectors using Transformer encoders; retrieve by vector similarity</td>
+</tr>
+<tr>
+<td><strong>Key Models</strong></td>
+<td>DPR (Facebook), ColBERT (Stanford), Contriever, E5, BGE, GTE, Cohere Embed, OpenAI Embeddings</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>Captures semantic meaning — retrieves documents that are conceptually relevant, not just keyword-matching</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Understands synonyms, paraphrases, and conceptual similarity without exact term overlap</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Computationally heavier than sparse retrieval; ANN indexing required for scale</td>
+</tr>
+</tbody>
+</table>
+<h3>Sparse Retrieval (BM25 / TF-IDF)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Score documents by term frequency and inverse document frequency against a query</td>
+</tr>
+<tr>
+<td><strong>BM25</strong></td>
+<td>The industry-standard sparse retrieval algorithm; used in Elasticsearch, OpenSearch, Solr</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Fast, interpretable, robust, and reliable baseline; no training required</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Cannot handle synonyms, paraphrases, or conceptual similarity — purely lexical</td>
+</tr>
+<tr>
+<td><strong>Current Role</strong></td>
+<td>Often used as a first-stage retriever in hybrid retrieval pipelines alongside dense models</td>
+</tr>
+</tbody>
+</table>
+<h3>Hybrid Retrieval</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Combine sparse (BM25) and dense (embedding) retrieval; merge and re-rank candidate lists</td>
+</tr>
+<tr>
+<td><strong>Why It Works</strong></td>
+<td>Captures both exact keyword matches and semantic relevance — best of both worlds</td>
+</tr>
+<tr>
+<td><strong>Fusion Methods</strong></td>
+<td>Reciprocal Rank Fusion (RRF), weighted score combination, cross-encoder re-ranking</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Consistently outperforms either approach alone; robustness across diverse query types</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Enterprise search, RAG pipelines, e-commerce search, legal and medical document retrieval</td>
+</tr>
+</tbody>
+</table>
+<h3>Graph-Based Recommendation</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Model user-item interactions as a bipartite graph; propagate information through graph neural networks</td>
+</tr>
+<tr>
+<td><strong>Key Models</strong></td>
+<td>PinSage (Pinterest), LightGCN, NGCF</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Naturally captures multi-hop relationships (user-liked-item-also-liked-by-user)</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Social networks, Pinterest visual discovery, knowledge graph-enhanced recommendation</td>
+</tr>
+</tbody>
+</table>
+<h3>Reinforcement Learning for Recommendation</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Model recommendation as a sequential decision process; optimise for long-term user engagement, not single clicks</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Considers long-term impact — avoids clickbait and engagement traps; balances exploration and exploitation</td>
+</tr>
+<tr>
+<td><strong>Used By</strong></td>
+<td>YouTube (RL-based ranking), Spotify (contextual bandits for Discover Weekly), DoorDash, ByteDance</td>
+</tr>
+<tr>
+<td><strong>Key Challenge</strong></td>
+<td>Requires careful reward design; risk of optimising for addictive rather than valuable content</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 5 — TOOLS & PLATFORMS ════════ -->
+<section class="section" id="tools">
+ <h2>Tools &amp; Platforms</h2>
+ <p class="desc">Key tools, services, and frameworks powering recommendation and retrieval systems in production — from managed cloud services to open-source libraries.</p>
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Provider</th><th>Focus</th></tr>
+ </thead>
+ <tbody>
+ <tr><td class="c-blue">Amazon Personalize</td><td>AWS</td><td>Managed recommender service; real-time personalisation</td></tr>
+ <tr><td class="c-blue">Google Recommendations AI</td><td>Google</td><td>Retail-focused; managed; Discovery AI</td></tr>
+ <tr><td class="c-green">Merlin / NVTabular</td><td>NVIDIA</td><td>GPU-accelerated RecSys training + feature engineering</td></tr>
+ <tr><td class="c-green">FAISS</td><td>Meta</td><td>Billion-scale ANN vector search; GPU-optimised</td></tr>
+ <tr><td class="c-purple">Pinecone</td><td>Pinecone</td><td>Managed vector database; serverless; hybrid search</td></tr>
+ <tr><td class="c-purple">Weaviate</td><td>Weaviate</td><td>Open-source vector DB; hybrid search; modules</td></tr>
+ <tr><td class="c-orange">Milvus</td><td>Zilliz</td><td>Open-source vector DB; distributed; cloud-native</td></tr>
+ <tr><td class="c-orange">Qdrant</td><td>Qdrant</td><td>Rust-based vector DB; filtering + payload search</td></tr>
+ <tr><td class="c-cyan">Algolia</td><td>Algolia</td><td>Search-as-a-service; instant search; ranking rules</td></tr>
+ <tr><td class="c-cyan">Elasticsearch</td><td>Elastic</td><td>Full-text + vector search; kNN; hybrid retrieval</td></tr>
+ <tr><td class="c-red">LensKit</td><td>Open-source</td><td>Python RecSys toolkit; evaluation; reproducible research</td></tr>
+ <tr><td class="c-red">Surprise</td><td>Open-source</td><td>Python CF library; SVD, KNN, baselines</td></tr>
+ <tr><td class="c-blue">RecBole</td><td>Open-source</td><td>Unified RecSys framework; 70+ models; benchmarking</td></tr>
+ <tr><td class="c-green">LlamaIndex</td><td>LlamaIndex</td><td>RAG framework; data connectors; retrieval pipelines</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Cloud &amp; Managed Services</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon Personalize</strong></td>
+<td>AWS</td>
+<td>Managed recommendation service; real-time personalisation; no ML expertise required</td>
+</tr>
+<tr>
+<td><strong>Google Recommendations AI</strong></td>
+<td>Google Cloud</td>
+<td>Retail-focused; deep integration with Google Merchant Center</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AI Search</strong></td>
+<td>Google Cloud</td>
+<td>Enterprise search + RAG; combines retrieval, ranking, and grounding</td>
+</tr>
+<tr>
+<td><strong>Azure AI Personalizer</strong></td>
+<td>Microsoft</td>
+<td>Contextual bandit-based; real-time content personalisation</td>
+</tr>
+<tr>
+<td><strong>Algolia</strong></td>
+<td>SaaS</td>
+<td>Developer-friendly search-as-a-service; AI-powered ranking</td>
+</tr>
+<tr>
+<td><strong>Elastic (Elasticsearch)</strong></td>
+<td>Open-source</td>
+<td>BM25 + vector search; hybrid retrieval; enterprise search standard</td>
+</tr>
+<tr>
+<td><strong>Coveo</strong></td>
+<td>SaaS</td>
+<td>Enterprise search and recommendation; AI-ranked results + analytics</td>
+</tr>
+</tbody>
+</table>
+<h3>Open-Source Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Focus</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merlin (NVIDIA)</strong></td>
+<td>Deep learning recommendation</td>
+<td>End-to-end GPU-accelerated recommendation; ETL to training to serving</td>
+</tr>
+<tr>
+<td><strong>LensKit</strong></td>
+<td>Research recommendation</td>
+<td>Research-focused; reproducible recommendation experiments</td>
+</tr>
+<tr>
+<td><strong>Surprise</strong></td>
+<td>Collaborative filtering</td>
+<td>Python library for CF algorithms; easy benchmarking</td>
+</tr>
+<tr>
+<td><strong>LightFM</strong></td>
+<td>Hybrid recommendation</td>
+<td>Combines collaborative and content-based in one model</td>
+</tr>
+<tr>
+<td><strong>RecBole</strong></td>
+<td>Unified recommendation</td>
+<td>90+ algorithms; standardised evaluation; PyTorch-based</td>
+</tr>
+<tr>
+<td><strong>LlamaIndex</strong></td>
+<td>RAG framework</td>
+<td>Data ingestion, indexing, and retrieval for LLM applications</td>
+</tr>
+<tr>
+<td><strong>LangChain</strong></td>
+<td>RAG + agent framework</td>
+<td>Retrieval chains, vector store integrations, and LLM orchestration</td>
+</tr>
+<tr>
+<td><strong>Haystack (deepset)</strong></td>
+<td>Search + RAG pipeline</td>
+<td>Modular NLP pipeline; document retrieval + question answering</td>
+</tr>
+<tr>
+<td><strong>FAISS (Meta)</strong></td>
+<td>ANN search library</td>
+<td>Billion-scale vector search; GPU-accelerated; industry standard</td>
+</tr>
+<tr>
+<td><strong>Annoy (Spotify)</strong></td>
+<td>ANN search library</td>
+<td>Memory-efficient; optimised for static indices; used in Spotify</td>
+</tr>
+</tbody>
+</table>
+<h3>Embedding &amp; Retrieval Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model / API</th>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>text-embedding-3-large</strong></td>
+<td>OpenAI</td>
+<td>3072-dim embeddings; strong multilingual performance</td>
+</tr>
+<tr>
+<td><strong>Cohere Embed v3</strong></td>
+<td>Cohere</td>
+<td>100+ languages; compression-aware; leading multilingual embeddings</td>
+</tr>
+<tr>
+<td><strong>Voyage AI</strong></td>
+<td>Voyage</td>
+<td>Domain-specific embedding models (code, law, finance)</td>
+</tr>
+<tr>
+<td><strong>BGE / GTE</strong></td>
+<td>BAAI / Alibaba</td>
+<td>Open-source; competitive with proprietary models</td>
+</tr>
+<tr>
+<td><strong>E5-Mistral</strong></td>
+<td>Microsoft</td>
+<td>Instruction-tuned; strong zero-shot retrieval</td>
+</tr>
+<tr>
+<td><strong>Jina Embeddings v3</strong></td>
+<td>Jina AI</td>
+<td>Multi-task; adjustable output dimensions; open-source</td>
+</tr>
+<tr>
+<td><strong>Cohere Rerank</strong></td>
+<td>Cohere</td>
+<td>Cross-encoder reranker API; improves retrieval quality significantly</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 6 — USE CASES ════════ -->
+<section class="section" id="usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">How recommendation and retrieval AI is deployed across industries — from e-commerce to enterprise knowledge management.</p>
+ <div class="domain-acc">
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-blue">E-Commerce Product Recommendations</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>Powers "You may also like" and "Frequently bought together" on Amazon, Shopify, and Alibaba</li>
+ <li>Drives an estimated 35% of Amazon's total revenue through recommendation engines</li>
+ <li>Uses hybrid collaborative filtering + deep ranking for personalised product feeds</li>
+ <li>Real-time re-ranking based on session context, cart contents, and purchase history</li>
+ </ul>
+ </div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-green">Video / Music Streaming</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>Netflix personalises artwork, row ordering, and content selection for 250M+ subscribers</li>
+ <li>YouTube's two-tower DNN generates candidates from billions of videos in milliseconds</li>
+ <li>Spotify Discover Weekly uses collaborative filtering + audio embeddings for music discovery</li>
+ <li>Watch/listen history and implicit signals (skip, replay, completion) drive personalised feeds</li>
+ </ul>
+ </div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-purple">Social Media Feeds</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>TikTok's For You page uses a multi-stage funnel with heavy sequential modelling</li>
+ <li>Instagram Explore surfaces content from unfollowed creators based on engagement patterns</li>
+ <li>Twitter/X timeline ranking blends social graph signals with content relevance scoring</li>
+ <li>Engagement optimisation balanced with content diversity and safety policies</li>
+ </ul>
+ </div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-orange">Job / Talent Matching</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>LinkedIn matches job seekers and recruiters using two-sided recommendation models</li>
+ <li>Skill-role compatibility scoring with dense embeddings of job descriptions and resumes</li>
+ <li>Indeed and Glassdoor personalise job suggestions based on search history and application patterns</li>
+ <li>Two-tower models encode candidates and roles separately for scalable matching</li>
+ </ul>
+ </div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-cyan">News &amp; Content Personalisation</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>Google News and Apple News blend freshness, relevance, and diversity signals</li>
+ <li>Real-time re-ranking to surface breaking stories and reduce stale content</li>
+ <li>Content-based filtering with NLP embeddings of article text and user reading history</li>
+ <li>Editorial diversity quotas to mitigate filter bubbles and ensure topic breadth</li>
+ </ul>
+ </div></div>
+ </div>
+ <div class="domain-item">
+ <div class="domain-header" onclick="toggleDomain(this)">
+ <span class="c-red">Enterprise Search / RAG</span>
+ <span class="arrow">&#9654;</span>
+ </div>
+ <div class="domain-body"><div class="domain-body-inner">
+ <ul>
+ <li>Internal knowledge retrieval powered by Glean, Coveo, and custom RAG pipelines</li>
+ <li>LLM-augmented search: retrieve relevant documents then generate grounded answers</li>
+ <li>Vector databases index internal wikis, Slack messages, tickets, and documentation</li>
+ <li>Hybrid search combining lexical (BM25) and semantic (dense embedding) retrieval</li>
+ </ul>
+ </div></div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Media &amp; Entertainment</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Video Recommendation</strong></td>
+<td>Personalised video feeds and "next watch" suggestions</td>
+<td>Netflix, YouTube, TikTok, Disney+</td>
+</tr>
+<tr>
+<td><strong>Music Discovery</strong></td>
+<td>Personalised playlists and artist recommendations</td>
+<td>Spotify Discover Weekly, Apple Music, Pandora</td>
+</tr>
+<tr>
+<td><strong>News Personalisation</strong></td>
+<td>Curated news feeds based on reading behaviour and interests</td>
+<td>Google News, Apple News, Flipboard, SmartNews</td>
+</tr>
+<tr>
+<td><strong>Podcast Recommendation</strong></td>
+<td>Surface relevant podcasts from growing catalogues</td>
+<td>Spotify, Apple Podcasts, Pocket Casts</td>
+</tr>
+<tr>
+<td><strong>Content Curation for Creators</strong></td>
+<td>Help creators find trending topics and audience interests</td>
+<td>YouTube Studio analytics, TikTok Creator Centre</td>
+</tr>
+</tbody>
+</table>
+<h3>E-Commerce &amp; Retail</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product Recommendation</strong></td>
+<td>"Customers who bought this also bought..." and personalised homepages</td>
+<td>Amazon, Shopify, eBay, Walmart</td>
+</tr>
+<tr>
+<td><strong>Search Ranking</strong></td>
+<td>AI-ranked product search results optimised for relevance and conversion</td>
+<td>Amazon A9, Algolia, Google Shopping</td>
+</tr>
+<tr>
+<td><strong>Visual Similarity Search</strong></td>
+<td>Find products that look like an uploaded image</td>
+<td>Pinterest Lens, Google Lens, ASOS Visual Search</td>
+</tr>
+<tr>
+<td><strong>Bundle / Cross-Sell</strong></td>
+<td>Recommend complementary products bought together</td>
+<td>Amazon "Frequently Bought Together"</td>
+</tr>
+<tr>
+<td><strong>Size &amp; Fit Recommendation</strong></td>
+<td>Predict correct sizing from past returns and preferences</td>
+<td>True Fit, Stitch Fix, Zalando</td>
+</tr>
+</tbody>
+</table>
+<h3>Enterprise Search &amp; Knowledge Management</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal Document Search</strong></td>
+<td>Find relevant documents, policies, and knowledge articles</td>
+<td>Glean, Elastic, Coveo, Google Cloud Search</td>
+</tr>
+<tr>
+<td><strong>Code Search</strong></td>
+<td>Retrieve relevant code snippets and documentation for developers</td>
+<td>GitHub Code Search, Sourcegraph, Greptile</td>
+</tr>
+<tr>
+<td><strong>Customer Support Knowledge Retrieval</strong></td>
+<td>Surface relevant help articles for agents and self-service customers</td>
+<td>Zendesk AI, Intercom Fin, Salesforce Einstein</td>
+</tr>
+<tr>
+<td><strong>Legal Document Retrieval</strong></td>
+<td>Find relevant case law, contracts, and regulatory documents</td>
+<td>Harvey AI, Casetext (Thomson Reuters), Westlaw</td>
+</tr>
+<tr>
+<td><strong>RAG-Powered Enterprise Q&amp;A</strong></td>
+<td>Answer employee questions grounded in internal knowledge bases</td>
+<td>Glean, Vectara, Google Vertex AI Search</td>
+</tr>
+</tbody>
+</table>
+<h3>Advertising &amp; Marketplace</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ad Targeting</strong></td>
+<td>Match ads to users most likely to engage or convert</td>
+<td>Google Ads, Meta Ads, The Trade Desk</td>
+</tr>
+<tr>
+<td><strong>Job-Candidate Matching</strong></td>
+<td>Match job listings to candidates and vice versa</td>
+<td>LinkedIn, Indeed, ZipRecruiter</td>
+</tr>
+<tr>
+<td><strong>Real Estate Matching</strong></td>
+<td>Match property listings to buyer preferences</td>
+<td>Zillow, Redfin, Rightmove</td>
+</tr>
+<tr>
+<td><strong>Dating / Social Matching</strong></td>
+<td>Match users based on preferences and compatibility signals</td>
+<td>Hinge, Bumble, Tinder</td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clinical Literature Retrieval</strong></td>
+<td>Surface relevant medical papers for clinicians and researchers</td>
+<td>PubMed AI, Semantic Scholar, Elicit</td>
+</tr>
+<tr>
+<td><strong>Drug Repurposing Retrieval</strong></td>
+<td>Find existing drugs with potential new therapeutic uses</td>
+<td>BenevolentAI, Insilico Medicine</td>
+</tr>
+<tr>
+<td><strong>Patient-Trial Matching</strong></td>
+<td>Match patients to eligible clinical trials</td>
+<td>Deep 6 AI, Mendel AI, TrialSpark</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 7 — BENCHMARKS ════════ -->
+<section class="section" id="benchmarks">
+ <h2>Benchmarks</h2>
+ <p class="desc">Performance benchmarks for recommendation quality and vector search efficiency across standard datasets and systems.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>RecSys Benchmarks (NDCG@10)</h3>
+ <canvas id="chartNDCG"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>ANN Search (Recall@10 at QPS)</h3>
+ <canvas id="chartANN"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Retrieval Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recall@K</strong></td>
+<td>Fraction of relevant items found in the top-K results</td>
+<td>Candidate generation evaluation</td>
+</tr>
+<tr>
+<td><strong>Precision@K</strong></td>
+<td>Fraction of top-K results that are relevant</td>
+<td>When result set size matters</td>
+</tr>
+<tr>
+<td><strong>MRR (Mean Reciprocal Rank)</strong></td>
+<td>Average inverse rank of the first relevant result</td>
+<td>When the first correct result matters most</td>
+</tr>
+<tr>
+<td><strong>NDCG (Normalised Discounted Cumulative Gain)</strong></td>
+<td>Measures ranking quality accounting for position and graded relevance</td>
+<td>Gold-standard for ranked list quality</td>
+</tr>
+<tr>
+<td><strong>MAP (Mean Average Precision)</strong></td>
+<td>Average precision across all relevant items in the ranked list</td>
+<td>Multiple relevant items per query</td>
+</tr>
+<tr>
+<td><strong>Hit Rate</strong></td>
+<td>Fraction of queries where at least one relevant item appears in top-K</td>
+<td>Binary relevance; quick system comparison</td>
+</tr>
+</tbody>
+</table>
+<h3>Recommendation Quality Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CTR (Click-Through Rate)</strong></td>
+<td>Fraction of recommended items that are clicked</td>
+<td>Direct engagement signal; primary online metric</td>
+</tr>
+<tr>
+<td><strong>Conversion Rate</strong></td>
+<td>Fraction of recommendations that lead to purchase, signup, or target action</td>
+<td>Business outcome metric</td>
+</tr>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>Fraction of the item catalogue that appears in recommendations</td>
+<td>Prevents popularity bias; ensures long-tail discovery</td>
+</tr>
+<tr>
+<td><strong>Diversity</strong></td>
+<td>Variety across recommended items (category, genre, creator)</td>
+<td>User satisfaction; prevents monotony</td>
+</tr>
+<tr>
+<td><strong>Serendipity</strong></td>
+<td>Degree to which recommendations surprise the user while remaining relevant</td>
+<td>Distinguishes good systems from trivial popularity lists</td>
+</tr>
+<tr>
+<td><strong>Novelty</strong></td>
+<td>How unfamiliar the recommended items are to the user</td>
+<td>Counters filter bubbles; drives exploration</td>
+</tr>
+<tr>
+<td><strong>User Satisfaction (CSAT/NPS)</strong></td>
+<td>Direct user feedback on recommendation quality</td>
+<td>Ground truth for long-term recommendation value</td>
+</tr>
+<tr>
+<td><strong>Session Length / Dwell Time</strong></td>
+<td>How long users engage with the platform after recommendations</td>
+<td>Proxy for recommendation-driven engagement</td>
+</tr>
+</tbody>
+</table>
+<h3>Retrieval Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Domain</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BEIR</strong></td>
+<td>Multi-domain retrieval</td>
+<td>Zero-shot retrieval across 18 diverse datasets</td>
+</tr>
+<tr>
+<td><strong>MTEB</strong></td>
+<td>Embedding quality</td>
+<td>Massive Text Embedding Benchmark; 56+ tasks across 8 categories</td>
+</tr>
+<tr>
+<td><strong>MS MARCO</strong></td>
+<td>Passage retrieval</td>
+<td>Real Bing queries; standard benchmark for passage ranking</td>
+</tr>
+<tr>
+<td><strong>Natural Questions</strong></td>
+<td>Open-domain QA</td>
+<td>Google Search questions; factoid question answering</td>
+</tr>
+<tr>
+<td><strong>TREC Deep Learning</strong></td>
+<td>Document retrieval</td>
+<td>Annual NIST evaluation for retrieval systems</td>
+</tr>
+<tr>
+<td><strong>KILT</strong></td>
+<td>Knowledge-intensive NLP</td>
+<td>Retrieval for fact verification, QA, and entity linking</td>
+</tr>
+<tr>
+<td><strong>RecBole Benchmarks</strong></td>
+<td>Recommendation</td>
+<td>Standardised evaluation across 90+ recommendation algorithms</td>
+</tr>
+<tr>
+<td><strong>MovieLens / Amazon</strong></td>
+<td>Collaborative filtering</td>
+<td>Classic recommendation benchmarks; user-item interaction datasets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 8 — MARKET DATA ════════ -->
+<section class="section" id="market">
+ <h2>Market Data</h2>
+ <p class="desc">Market sizing and growth projections for the recommendation, personalisation, and retrieval AI ecosystem.</p>
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Market Segments ($B)</h3>
+ <canvas id="chartSegments"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Market Growth 2024 → 2030 (CAGR ~20%)</h3>
+ <canvas id="chartGrowth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Size &amp; Growth</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Recommendation Engine Market (2024)</strong></td>
+<td>~$5.2 billion</td>
+<td>MarketsandMarkets; includes all recommendation system deployments</td>
+</tr>
+<tr>
+<td><strong>Projected Market Size (2030)</strong></td>
+<td>~$21.0 billion</td>
+<td>CAGR ~26%; driven by e-commerce, streaming, and enterprise search</td>
+</tr>
+<tr>
+<td><strong>Search &amp; Retrieval AI Market (2024)</strong></td>
+<td>~$8.7 billion</td>
+<td>Includes enterprise search, vector search, and retrieval platforms</td>
+</tr>
+<tr>
+<td><strong>% of Netflix Views from Recommendations</strong></td>
+<td>~80%</td>
+<td>Netflix publicly reported figure</td>
+</tr>
+<tr>
+<td><strong>% of Amazon Revenue from Recommendations</strong></td>
+<td>~35%</td>
+<td>McKinsey estimate; product recommendation-driven purchases</td>
+</tr>
+<tr>
+<td><strong>% of YouTube Watch Time from Recommendations</strong></td>
+<td>~70%</td>
+<td>YouTube/Google reported figure</td>
+</tr>
+<tr>
+<td><strong>Vector Database Market (2024)</strong></td>
+<td>~$1.5 billion</td>
+<td>Growing rapidly; driven by RAG and semantic search adoption</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Vendors &amp; Competitive Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Leaders</th>
+<th>Challengers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cloud Recommendation Services</strong></td>
+<td>Amazon Personalize, Google Recommendations AI</td>
+<td>Azure AI Personalizer, Alibaba PAI</td>
+</tr>
+<tr>
+<td><strong>Enterprise Search</strong></td>
+<td>Elastic, Coveo, Algolia, Google Cloud Search</td>
+<td>Glean, Vectara, Sinequa</td>
+</tr>
+<tr>
+<td><strong>Vector Databases</strong></td>
+<td>Pinecone, Weaviate, Milvus</td>
+<td>Qdrant, Chroma, pgvector</td>
+</tr>
+<tr>
+<td><strong>RAG Frameworks</strong></td>
+<td>LangChain, LlamaIndex, Haystack</td>
+<td>Vectara, Ragas, AutoRAG</td>
+</tr>
+<tr>
+<td><strong>Embedding Models</strong></td>
+<td>OpenAI, Cohere, Voyage AI</td>
+<td>Jina AI, BAAI (BGE), Microsoft (E5)</td>
+</tr>
+<tr>
+<td><strong>Recommendation Frameworks</strong></td>
+<td>NVIDIA Merlin, RecBole, LightFM</td>
+<td>Surprise, LensKit, TensorFlow Recommenders</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 9 — RISKS ════════ -->
+<section class="section" id="risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Key risks and ethical concerns in deploying recommendation and retrieval AI systems at scale.</p>
+ <div class="risk-grid">
+ <div class="risk-card b-blue">
+ <h4 class="c-blue">Filter Bubbles</h4>
+ <p>Over-personalisation narrows user exposure to a shrinking set of topics and viewpoints, creating echo chambers that reinforce existing beliefs and reduce serendipitous discovery.</p>
+ </div>
+ <div class="risk-card b-green">
+ <h4 class="c-green">Cold Start</h4>
+ <p>New users and items have no interaction history, leading to poor initial recommendations. Workarounds include content-based fallbacks, knowledge-based methods, and active preference elicitation.</p>
+ </div>
+ <div class="risk-card b-purple">
+ <h4 class="c-purple">Popularity Bias</h4>
+ <p>Systems disproportionately favour popular items with more interaction data, suppressing long-tail items and niche creators. Calibration and diversity-aware re-ranking help counteract this bias.</p>
+ </div>
+ <div class="risk-card b-orange">
+ <h4 class="c-orange">Privacy &amp; Tracking</h4>
+ <p>Behavioural data collection (clicks, dwell time, purchase history) raises consent and surveillance concerns. GDPR, CCPA, and emerging AI regulations demand transparency and user control over personal data usage.</p>
+ </div>
+ <div class="risk-card b-red">
+ <h4 class="c-red">Manipulation &amp; Gaming</h4>
+ <p>Sellers, creators, and bad actors game recommendation algorithms for visibility through fake reviews, click farms, and engagement manipulation — degrading recommendation quality for all users.</p>
+ </div>
+ <div class="risk-card b-cyan">
+ <h4 class="c-cyan">Fairness &amp; Diversity</h4>
+ <p>Systematic under-recommendation of minority content and creators. Feedback loops amplify historical biases in training data. Fairness-aware algorithms and auditing frameworks are critical safeguards.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Technical Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cold Start Problem</strong></td>
+<td>Cannot recommend for new users (no history) or new items (no interactions); requires fallback strategies</td>
+</tr>
+<tr>
+<td><strong>Popularity Bias</strong></td>
+<td>Systems over-recommend popular items; long-tail items rarely surface</td>
+</tr>
+<tr>
+<td><strong>Filter Bubbles / Echo Chambers</strong></td>
+<td>Users are trapped in increasingly narrow content loops that reinforce existing preferences</td>
+</tr>
+<tr>
+<td><strong>Data Sparsity</strong></td>
+<td>User-item interaction matrices are extremely sparse; most users interact with a tiny fraction of the catalogue</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Ranking millions of items per request in real time requires significant infrastructure engineering</td>
+</tr>
+<tr>
+<td><strong>Implicit Feedback Noise</strong></td>
+<td>Clicks and views are noisy signals — a click does not mean satisfaction; absence does not mean disinterest</td>
+</tr>
+<tr>
+<td><strong>Cross-Domain Transfer</strong></td>
+<td>Preferences learned in one domain (movies) may not transfer well to another (books)</td>
+</tr>
+<tr>
+<td><strong>Temporal Dynamics</strong></td>
+<td>User tastes change over time; models trained on stale data deliver increasingly irrelevant recommendations</td>
+</tr>
+</tbody>
+</table>
+<h3>Ethical &amp; Societal Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithmic Amplification</strong></td>
+<td>Recommendation algorithms amplify engagement-maximising content — which may be sensational, divisive, or harmful</td>
+</tr>
+<tr>
+<td><strong>Radicalisation Pathways</strong></td>
+<td>Sequential recommendation can lead users progressively toward extreme content</td>
+</tr>
+<tr>
+<td><strong>Addiction &amp; Dark Patterns</strong></td>
+<td>Optimising for engagement can trap users in compulsive consumption loops</td>
+</tr>
+<tr>
+<td><strong>Discrimination in Matching</strong></td>
+<td>Job or housing recommendations may discriminate by age, race, or gender</td>
+</tr>
+<tr>
+<td><strong>Privacy Intrusion</strong></td>
+<td>Building detailed user profiles from behavioural data raises significant privacy concerns</td>
+</tr>
+<tr>
+<td><strong>Manipulation &amp; Astroturfing</strong></td>
+<td>Bad actors can game recommendation algorithms to promote content, products, or misinformation</td>
+</tr>
+<tr>
+<td><strong>Lack of Transparency</strong></td>
+<td>Users typically have no visibility into why specific items are recommended to them</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety Design Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Diversity Injection</strong></td>
+<td>Enforce minimum diversity in recommendations to prevent filter bubbles</td>
+</tr>
+<tr>
+<td><strong>Transparency &amp; Explainability</strong></td>
+<td>Show users why items are recommended ("Because you watched...", "Popular in your area")</td>
+</tr>
+<tr>
+<td><strong>User Control</strong></td>
+<td>Allow users to adjust preferences, hide topics, and provide explicit feedback</td>
+</tr>
+<tr>
+<td><strong>Content Quality Signals</strong></td>
+<td>Incorporate quality, authority, and safety signals alongside engagement metrics</td>
+</tr>
+<tr>
+<td><strong>Fairness Auditing</strong></td>
+<td>Regularly audit recommendations for demographic disparities in exposure and opportunity</td>
+</tr>
+<tr>
+<td><strong>Responsible Engagement Metrics</strong></td>
+<td>Balance engagement metrics with user satisfaction, session quality, and regret minimisation</td>
+</tr>
+<tr>
+<td><strong>Guardrails Against Harmful Content</strong></td>
+<td>Integrate content safety classifiers into the ranking pipeline</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="generative-ai.html">Generative AI</a>
+<a href="predictive-discriminative-ai.html">Predictive / Discriminative AI</a>
+<a href="analytical-ai.html">Analytical AI</a>
+<a href="conversational-ai.html">Conversational AI</a>
+<a href="multimodal-perception-ai.html">Multimodal Perception AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════ TAB 10 — GLOSSARY ════════ -->
+<section class="section" id="glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key terms in recommendation and retrieval AI — search to filter.</p>
+ <input class="glossary-search" id="glossarySearch" type="text" placeholder="Search glossary…">
+ <div class="glossary-list" id="glossaryList">
+ <div class="glossary-entry"><strong>ANN</strong><span>Approximate Nearest Neighbour; fast similarity search that trades small recall loss for massive speed gains over exact search.</span>
+ <div class="glossary-entry"><strong>Collaborative Filtering</strong><span>Recommending items based on the preferences of similar users (user-based or item-based).</span></div>
+ <div class="glossary-entry"><strong>Content-Based Filtering</strong><span>Recommending items similar to those a user has liked, based on item features.</span></div>
+ <div class="glossary-entry"><strong>Hybrid Recommender</strong><span>Combining collaborative and content-based approaches for improved recommendation accuracy.</span></div>
+ <div class="glossary-entry"><strong>Matrix Factorisation</strong><span>Decomposing the user-item interaction matrix into latent factor representations.</span></div>
+ <div class="glossary-entry"><strong>Embedding</strong><span>Dense vector representation of users, items, or queries in a continuous semantic space.</span></div>
+ <div class="glossary-entry"><strong>RAG</strong><span>Retrieval-Augmented Generation — retrieving relevant documents to ground and enhance generative model outputs.</span></div>
+ <div class="glossary-entry"><strong>Vector Search</strong><span>Finding nearest neighbours in high-dimensional embedding spaces using approximate algorithms (HNSW, IVF).</span></div>
+ <div class="glossary-entry"><strong>Two-Tower Model</strong><span>Architecture with separate encoders for queries and items, compared via inner product or cosine similarity.</span></div>
+ <div class="glossary-entry"><strong>Cold Start Problem</strong><span>Difficulty recommending for new users or items with insufficient interaction history.</span></div>
+ <div class="glossary-entry"><strong>Click-Through Rate</strong><span>Fraction of users who click on a recommended item — primary online metric for recommender systems.</span></div>
+ <div class="glossary-entry"><strong>A/B Testing</strong><span>Controlled experiment comparing two variants to measure the impact of changes on user behaviour.</span></div>
+ <div class="glossary-entry"><strong>Personalisation</strong><span>Tailoring content, products, or experiences to individual user preferences and behaviour.</span></div>
+ <div class="glossary-entry"><strong>HNSW</strong><span>Hierarchical Navigable Small World — graph-based algorithm for fast approximate nearest neighbour search.</span></div>
+ <div class="glossary-entry"><strong>Re-Ranking</strong><span>Second-stage scoring of retrieved candidates incorporating business rules, diversity, or fairness constraints.</span></div>
+ <div class="glossary-entry"><strong>Session-Based Recommendation</strong><span>Recommending based on the current browsing session without long-term user profiles.</span></div>
+</div>
+ <div class="glossary-entry"><strong>Click-Through Rate (CTR)</strong><span>Fraction of impressions resulting in clicks; primary online metric for ranking model evaluation.</span></div>
+ <div class="glossary-entry"><strong>Collaborative Filtering</strong><span>Recommendations derived from collective user behaviour patterns — users who agreed in the past will agree in the future.</span></div>
+ <div class="glossary-entry"><strong>Cold Start</strong><span>The challenge of recommending for new users or items with no interaction history.</span></div>
+ <div class="glossary-entry"><strong>Content-Based Filtering</strong><span>Recommendations based on matching item features (metadata, embeddings) to a user's preference profile.</span></div>
+ <div class="glossary-entry"><strong>Embedding</strong><span>Dense vector representation of users or items in a continuous latent space, enabling similarity computation via dot product or cosine distance.</span></div>
+ <div class="glossary-entry"><strong>HNSW</strong><span>Hierarchical Navigable Small World graph — a state-of-the-art algorithm for approximate nearest neighbour search with high recall and speed.</span></div>
+ <div class="glossary-entry"><strong>Hybrid Recommender</strong><span>A system combining multiple recommendation strategies (CF, content-based, knowledge-based) for improved accuracy and coverage.</span></div>
+ <div class="glossary-entry"><strong>Implicit Feedback</strong><span>Inferred user signals (clicks, views, dwell time, skips) as opposed to explicit ratings. More abundant but noisier data source.</span></div>
+ <div class="glossary-entry"><strong>Matrix Factorisation</strong><span>Decomposing the sparse user-item interaction matrix into low-rank latent factor matrices to predict missing entries.</span></div>
+ <div class="glossary-entry"><strong>NDCG</strong><span>Normalised Discounted Cumulative Gain; a ranking quality metric that accounts for position-dependent relevance — items ranked higher contribute more.</span></div>
+ <div class="glossary-entry"><strong>Personalisation</strong><span>Tailoring content, results, and experiences to individual user preferences, context, and behaviour history.</span></div>
+ <div class="glossary-entry"><strong>RAG</strong><span>Retrieval-Augmented Generation; grounding large language model outputs with retrieved documents to reduce hallucination and improve factuality.</span></div>
+ <div class="glossary-entry"><strong>Two-Tower Model</strong><span>Dual-encoder architecture with separate user and item towers producing embeddings for scalable dot-product retrieval.</span></div>
+ <div class="glossary-entry"><strong>Vector Database</strong><span>Specialised database optimised for storing, indexing, and querying high-dimensional embedding vectors at scale.</span></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ANN (Approximate Nearest Neighbour)</strong></td>
+<td>Algorithms that find approximately similar vectors to a query vector in sub-linear time; core to large-scale retrieval</td>
+</tr>
+<tr>
+<td><strong>BM25</strong></td>
+<td>A probabilistic sparse retrieval algorithm based on term frequency and inverse document frequency; the baseline for document search</td>
+</tr>
+<tr>
+<td><strong>Candidate Generation</strong></td>
+<td>The first stage of a recommendation pipeline that retrieves a broad set of potentially relevant items from the full catalogue</td>
+</tr>
+<tr>
+<td><strong>Click-Through Rate (CTR)</strong></td>
+<td>The ratio of users who click on a recommended item to the total number of users who saw it</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>The inability to make quality recommendations for new users or items that lack interaction history</td>
+</tr>
+<tr>
+<td><strong>Collaborative Filtering</strong></td>
+<td>A recommendation technique that predicts preferences based on the collective behaviour of similar users</td>
+</tr>
+<tr>
+<td><strong>Content-Based Filtering</strong></td>
+<td>A recommendation technique based on matching item features to user preference profiles</td>
+</tr>
+<tr>
+<td><strong>Cross-Encoder</strong></td>
+<td>A model that jointly encodes a query-document pair for fine-grained relevance scoring; slower but more accurate than bi-encoders</td>
+</tr>
+<tr>
+<td><strong>Dense Retrieval</strong></td>
+<td>Retrieving documents by computing similarity between dense vector representations of queries and documents</td>
+</tr>
+<tr>
+<td><strong>Dual Encoder / Two-Tower Model</strong></td>
+<td>An architecture with separate encoders for queries and items, enabling independent pre-computation of embeddings</td>
+</tr>
+<tr>
+<td><strong>Embedding</strong></td>
+<td>A dense, low-dimensional vector representation of an entity (user, item, query, document) that captures semantic meaning</td>
+</tr>
+<tr>
+<td><strong>Exploration vs. Exploitation</strong></td>
+<td>The trade-off between recommending known-good items (exploit) and surfacing novel items to learn more (explore)</td>
+</tr>
+<tr>
+<td><strong>Filter Bubble</strong></td>
+<td>The effect where recommendation algorithms progressively narrow the content a user is exposed to</td>
+</tr>
+<tr>
+<td><strong>HNSW (Hierarchical Navigable Small World)</strong></td>
+<td>A graph-based ANN index that provides fast, high-recall approximate nearest neighbour search</td>
+</tr>
+<tr>
+<td><strong>Hybrid Retrieval</strong></td>
+<td>Combining sparse (BM25) and dense (embedding) retrieval methods and merging their results</td>
+</tr>
+<tr>
+<td><strong>Implicit Feedback</strong></td>
+<td>User signals inferred from behaviour (clicks, views, dwell time) rather than explicit ratings</td>
+</tr>
+<tr>
+<td><strong>Inverted Index</strong></td>
+<td>A data structure mapping terms to documents containing them; the foundation of traditional keyword search</td>
+</tr>
+<tr>
+<td><strong>Learning-to-Rank (LTR)</strong></td>
+<td>A family of ML algorithms that directly optimise the ordering quality of a ranked list</td>
+</tr>
+<tr>
+<td><strong>LambdaMART</strong></td>
+<td>A gradient-boosted learning-to-rank algorithm that directly optimises NDCG; dominant in production re-ranking</td>
+</tr>
+<tr>
+<td><strong>Matrix Factorisation</strong></td>
+<td>Decomposing a user-item interaction matrix into low-rank user and item factor matrices to predict missing entries</td>
+</tr>
+<tr>
+<td><strong>NDCG (Normalised Discounted Cumulative Gain)</strong></td>
+<td>A ranking quality metric that accounts for both relevance and position; rewards relevant items ranked higher</td>
+</tr>
+<tr>
+<td><strong>Personalisation</strong></td>
+<td>Tailoring content, search results, or recommendations to an individual user based on their profile and behaviour</td>
+</tr>
+<tr>
+<td><strong>Query Expansion</strong></td>
+<td>Augmenting a user's query with synonyms, related terms, or learned representations to improve retrieval coverage</td>
+</tr>
+<tr>
+<td><strong>RAG (Retrieval-Augmented Generation)</strong></td>
+<td>An architecture where a retrieval system fetches relevant documents that are then used as context for a generative model</td>
+</tr>
+<tr>
+<td><strong>Re-Ranking</strong></td>
+<td>A second-stage model that re-scores a candidate set with a more accurate but computationally expensive model</td>
+</tr>
+<tr>
+<td><strong>Reciprocal Rank Fusion (RRF)</strong></td>
+<td>A method for combining ranked lists from multiple retrieval sources into a single merged ranking</td>
+</tr>
+<tr>
+<td><strong>Semantic Search</strong></td>
+<td>Search based on the meaning of queries and documents rather than exact keyword matching</td>
+</tr>
+<tr>
+<td><strong>Session-Based Recommendation</strong></td>
+<td>Recommendation based on the current browsing session only, without requiring long-term user history</td>
+</tr>
+<tr>
+<td><strong>Sparse Retrieval</strong></td>
+<td>Retrieval based on term-level matching using inverted indices and algorithms like BM25</td>
+</tr>
+<tr>
+<td><strong>Two-Tower Model</strong></td>
+<td>See Dual Encoder</td>
+</tr>
+<tr>
+<td><strong>Vector Database</strong></td>
+<td>A database optimised for storing, indexing, and querying dense vector embeddings at scale</td>
+</tr>
+<tr>
+<td><strong>Vector Search</strong></td>
+<td>Finding items by computing similarity between their vector embeddings and a query vector</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Recommendation / Retrieval AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/16-recommendation-retrieval-ai-overview.gif" alt="Recommendation / Retrieval AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Recommendation / Retrieval AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/16-recommendation-retrieval-ai-tech-stack.gif" alt="Recommendation / Retrieval AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Key Regulatory Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>Jurisdiction</th>
+<th>Relevance to Recommendation / Retrieval AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU Digital Services Act (DSA)</strong></td>
+<td>EU</td>
+<td>Mandates transparency of recommender systems; requires non-profiling-based recommendation option</td>
+</tr>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>EU</td>
+<td>Recommender systems may be classified as limited or high risk depending on deployment context</td>
+</tr>
+<tr>
+<td><strong>GDPR</strong></td>
+<td>EU</td>
+<td>Consent for profiling; right to explanation; data minimisation for personalisation</td>
+</tr>
+<tr>
+<td><strong>California CPRA</strong></td>
+<td>US (CA)</td>
+<td>Consumer right to opt out of profiling and automated decision-making</td>
+</tr>
+<tr>
+<td><strong>UK Online Safety Act</strong></td>
+<td>UK</td>
+<td>Platforms must address algorithmic amplification of harmful content</td>
+</tr>
+<tr>
+<td><strong>FTC Section 5</strong></td>
+<td>US</td>
+<td>Unfair or deceptive algorithmic practices; ad targeting discrimination</td>
+</tr>
+<tr>
+<td><strong>China Algorithmic Recommendation Regulations</strong></td>
+<td>China</td>
+<td>Requires algorithm registration; user opt-out; transparency of recommendation logic</td>
+</tr>
+</tbody>
+</table>
+<h3>Transparency Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithmic Transparency</strong></td>
+<td>Explain the main parameters and criteria used by recommender systems (DSA Art. 27)</td>
+</tr>
+<tr>
+<td><strong>Non-Profiling Alternative</strong></td>
+<td>Offer a recommendation option not based on user profiling (DSA Art. 38)</td>
+</tr>
+<tr>
+<td><strong>Audit Access</strong></td>
+<td>Provide researcher and regulator access to recommendation system data (DSA Art. 40)</td>
+</tr>
+<tr>
+<td><strong>User Notification</strong></td>
+<td>Inform users when content is recommended vs. organically surfaced</td>
+</tr>
+<tr>
+<td><strong>Ad Library &amp; Transparency</strong></td>
+<td>Maintain public archives of targeted advertising and recommendation criteria</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Neural Information Retrieval — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>The Evolution from Lexical to Semantic Search</h3>
+<table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>Era</th>
+<th>Approach</th>
+<th>Key Technology</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st</td>
+<td>1990s</td>
+<td>Boolean keyword matching</td>
+<td>Inverted indices</td>
+<td>No ranking; exact match only</td>
+</tr>
+<tr>
+<td>2nd</td>
+<td>2000s</td>
+<td>Statistical term weighting</td>
+<td>TF-IDF, BM25</td>
+<td>Lexical gap — misses synonyms and paraphrases</td>
+</tr>
+<tr>
+<td>3rd</td>
+<td>2018+</td>
+<td>Dense neural retrieval</td>
+<td>BERT, DPR, ColBERT</td>
+<td>Computationally expensive; requires training data</td>
+</tr>
+<tr>
+<td>4th</td>
+<td>2024+</td>
+<td>Generative retrieval &amp; RAG</td>
+<td>Differentiable search indices, LLM + retrieval</td>
+<td>Active research area; architectures still evolving</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Dense Retrieval Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Architecture</th>
+<th>Key Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DPR</strong></td>
+<td>Dual BERT encoders</td>
+<td>First effective dense retriever; outperformed BM25 on open-domain QA</td>
+</tr>
+<tr>
+<td><strong>ColBERT</strong></td>
+<td>Late interaction dual encoder</td>
+<td>Token-level interaction for fine-grained matching; fast with pre-computation</td>
+</tr>
+<tr>
+<td><strong>Contriever</strong></td>
+<td>Contrastive unsupervised BERT</td>
+<td>No labelled data needed for training; strong zero-shot retrieval</td>
+</tr>
+<tr>
+<td><strong>E5</strong></td>
+<td>Unified text embedding model</td>
+<td>Instruction-tuned for diverse retrieval tasks</td>
+</tr>
+<tr>
+<td><strong>BGE / GTE</strong></td>
+<td>BERT-based general embeddings</td>
+<td>Open-source; competitive with proprietary embedding models</td>
+</tr>
+<tr>
+<td><strong>OpenAI Embeddings</strong></td>
+<td>text-embedding-3-large</td>
+<td>High-quality proprietary embeddings; 3072 dimensions</td>
+</tr>
+<tr>
+<td><strong>Cohere Embed v3</strong></td>
+<td>Multi-stage trained embedding</td>
+<td>Supports 100+ languages; compression-friendly</td>
+</tr>
+<tr>
+<td><strong>Google Gecko</strong></td>
+<td>Distilled from large LM</td>
+<td>Compact embedding model; efficient for on-device retrieval</td>
+</tr>
+</tbody>
+</table>
+<h3>Vector Databases &amp; ANN Search</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Type</th>
+<th>Key Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pinecone</strong></td>
+<td>Managed vector DB</td>
+<td>Fully managed; real-time indexing; metadata filtering</td>
+</tr>
+<tr>
+<td><strong>Weaviate</strong></td>
+<td>Open-source vector DB</td>
+<td>Hybrid search (vector + keyword); multi-modal; GraphQL API</td>
+</tr>
+<tr>
+<td><strong>Qdrant</strong></td>
+<td>Open-source vector DB</td>
+<td>Rust-based; fast and memory-efficient; filtering during search</td>
+</tr>
+<tr>
+<td><strong>Milvus / Zilliz</strong></td>
+<td>Open-source vector DB</td>
+<td>Large-scale; distributed architecture; GPU-accelerated</td>
+</tr>
+<tr>
+<td><strong>Chroma</strong></td>
+<td>Lightweight vector DB</td>
+<td>Developer-friendly; embedded or client-server; popular for RAG</td>
+</tr>
+<tr>
+<td><strong>pgvector</strong></td>
+<td>PostgreSQL extension</td>
+<td>Vector search inside existing Postgres infrastructure</td>
+</tr>
+<tr>
+<td><strong>Elasticsearch / ESRE</strong></td>
+<td>Hybrid search engine</td>
+<td>BM25 + dense vector search; enterprise standard</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AI Search</strong></td>
+<td>Managed search + RAG</td>
+<td>Grounding + retrieval + ranking in one managed service</td>
+</tr>
+<tr>
+<td><strong>FAISS (Meta)</strong></td>
+<td>ANN library</td>
+<td>Industry-standard ANN search library; GPU-optimised; billions of vectors</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Retrieval-Augmented Generation (RAG) — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>RAG bridges Recommendation/Retrieval AI and Generative AI — using retrieval to ground generative models in real, verifiable information.</p>
+<h3>RAG Architecture</h3>
+<pre><code>+------------------------------------------------------------------------+
+| RAG PIPELINE |
+| |
+| USER QUERY --&gt; RETRIEVER --&gt; TOP-K DOCUMENTS --&gt; LLM GENERATOR |
+| (dense / (relevant (generates answer |
+| sparse / context from grounded in |
+| hybrid) knowledge base) retrieved docs) |
++------------------------------------------------------------------------+
+</code></pre>
+<h3>RAG Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+<th>Key Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document Ingestion</strong></td>
+<td>Chunk, embed, and index source documents</td>
+<td>LangChain, LlamaIndex, Unstructured</td>
+</tr>
+<tr>
+<td><strong>Embedding Model</strong></td>
+<td>Convert text chunks into dense vectors</td>
+<td>OpenAI Embeddings, Cohere Embed, E5, BGE</td>
+</tr>
+<tr>
+<td><strong>Vector Store</strong></td>
+<td>Store and retrieve embeddings by similarity</td>
+<td>Pinecone, Weaviate, Qdrant, Chroma, pgvector</td>
+</tr>
+<tr>
+<td><strong>Retriever</strong></td>
+<td>Find the most relevant chunks for a query</td>
+<td>Dense, sparse, or hybrid retrieval</td>
+</tr>
+<tr>
+<td><strong>Re-Ranker</strong></td>
+<td>Re-score retrieved chunks for fine-grained relevance before passing to the LLM</td>
+<td>Cross-encoders (Cohere Rerank, BGE Reranker)</td>
+</tr>
+<tr>
+<td><strong>Generator (LLM)</strong></td>
+<td>Synthesise an answer from the retrieved context</td>
+<td>GPT-4, Claude, Gemini, Llama, Mistral</td>
+</tr>
+<tr>
+<td><strong>Grounding / Citation</strong></td>
+<td>Map generated claims back to source documents for verifiability</td>
+<td>Source attribution layers, inline citations</td>
+</tr>
+</tbody>
+</table>
+<h3>Advanced RAG Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Naive RAG</strong></td>
+<td>Simple retrieve-then-generate; single retrieval pass</td>
+</tr>
+<tr>
+<td><strong>Advanced RAG</strong></td>
+<td>Query rewriting, multi-step retrieval, re-ranking, chunk optimisation</td>
+</tr>
+<tr>
+<td><strong>Modular RAG</strong></td>
+<td>Composable pipeline with pluggable retriever, reranker, and generator components</td>
+</tr>
+<tr>
+<td><strong>Corrective RAG (CRAG)</strong></td>
+<td>Evaluates retrieved documents for relevance; triggers web search if quality is low</td>
+</tr>
+<tr>
+<td><strong>Self-RAG</strong></td>
+<td>LLM decides when to retrieve, what to retrieve, and whether retrieved docs are useful</td>
+</tr>
+<tr>
+<td><strong>Graph RAG</strong></td>
+<td>Combines knowledge graph traversal with vector retrieval for structured + unstructured data</td>
+</tr>
+<tr>
+<td><strong>Agentic RAG</strong></td>
+<td>Agent loop that iteratively queries, evaluates, and refines retrieval</td>
+</tr>
+<tr>
+<td><strong>Multi-Modal RAG</strong></td>
+<td>Retrieves across text, images, tables, and other modalities</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Real-Time Personalisation & Session-Based Recommendation</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Session-Based Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model / Approach</th>
+<th>Architecture</th>
+<th>Key Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GRU4Rec</strong></td>
+<td>GRU (Recurrent Neural Network)</td>
+<td>First neural session-based recommender; models click sequences</td>
+</tr>
+<tr>
+<td><strong>SASRec</strong></td>
+<td>Self-Attention (Transformer)</td>
+<td>Applies self-attention to user action sequences; captures long-range deps</td>
+</tr>
+<tr>
+<td><strong>BERT4Rec</strong></td>
+<td>Masked Transformer</td>
+<td>Bidirectional self-attention for sequential recommendation</td>
+</tr>
+<tr>
+<td><strong>Transformers4Rec (NVIDIA)</strong></td>
+<td>Modular Transformer framework</td>
+<td>Production-ready; supports multiple architectures and feature types</td>
+</tr>
+<tr>
+<td><strong>Recbole</strong></td>
+<td>Unified framework</td>
+<td>90+ recommendation algorithms in a standardised framework</td>
+</tr>
+</tbody>
+</table>
+<h3>Contextual Bandits for Exploration</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Model recommendation as an explore/exploit trade-off; learn from partial feedback</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>Overcomes popularity bias; discovers niche content that greedy ranking would never surface</td>
+</tr>
+<tr>
+<td><strong>Key Algorithms</strong></td>
+<td>LinUCB, Thompson Sampling, epsilon-greedy, neural contextual bandits</td>
+</tr>
+<tr>
+<td><strong>Real-World Usage</strong></td>
+<td>Spotify Discover Weekly, news personalisation, ad selection, homepage curation</td>
+</tr>
+<tr>
+<td><strong>Connection to RL</strong></td>
+<td>Contextual bandits are a simplified (single-step) form of reinforcement learning</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Recommendation and Retrieval AI</strong> is the branch of artificial intelligence focused on systems that <strong>find, rank, and present the most relevant items from large collections</strong> — matching users to products, content, documents, or search results based on preferences, behaviour, and context. It is arguably the most widely deployed form of AI in production today, powering the core experience of Google Search, Netflix, Amazon, Spotify, YouTube, TikTok, LinkedIn, and virtually every digital platform.</p>
+<p>Retrieval and recommendation are two sides of the same coin. <strong>Retrieval AI</strong> focuses on finding relevant items in response to a query (search). <strong>Recommendation AI</strong> focuses on proactively surfacing items a user is likely to want, often without an explicit query. Modern systems blur this boundary: a Netflix homepage is recommendation without a query; a YouTube search is retrieval with personalisation; and RAG (retrieval-augmented generation) is retrieval embedded inside generative AI.</p>
+<p>The defining characteristic is <strong>selection from an existing corpus</strong> — the system does not create new content (Generative AI), predict a numeric outcome (Predictive AI), or reason about goals (Agentic AI). It selects, ranks, and presents what already exists.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Retrieves and ranks — surfaces the most relevant items from large catalogues for a given user or query</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Collaborative filtering, content-based filtering, embedding-based retrieval, two-tower models, learning-to-rank</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Ranked lists of items, personalised feeds, search results, content recommendations, document retrievals</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Selects from what exists — it does not generate new content, predict a label, or pursue autonomous goals</td>
+</tr>
+</tbody>
+</table>
+<h3>Recommendation / Retrieval AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals and queries</td>
+<td>Netflix suggestions, Google Search, Spotify Discover Weekly</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously using tools, memory, and planning</td>
+<td>Research agent, coding agent, autonomous workflow</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from existing data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new original content from learned distributions</td>
+<td>Write an essay, generate an image, synthesise a video</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical patterns</td>
+<td>Fraud score, churn probability, demand forecast</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input with no learning or memory</td>
+<td>Chess engine, rule-based spam filter</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI assigns a label, score, or forecast to an individual input. Recommendation AI selects and ranks items from a collection for a user — the output is a ranked list, not a single prediction.</p>
+<p><strong>Key Distinction from Generative AI:</strong> Generative AI creates new content. Recommendation AI selects from existing content. RAG bridges both by retrieving existing documents and feeding them to a generative model.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p><strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</strong></p>
+ <p style="margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── TAB NAVIGATION ── */
+document.querySelectorAll('#nav button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('#nav button').forEach(b => b.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById(btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ── FUNNEL INTERACTION ── */
+const funnelData = [
+ { title: 'Stage 1 — Candidate Generation', desc: 'Retrieves thousands of candidates from a catalogue of millions using lightweight models: ANN vector search over embeddings, collaborative filtering recall sets, and content-based heuristics. Optimised for high recall at low computational cost.' },
+ { title: 'Stage 2 — Scoring / Ranking', desc: 'Deep ranking models (two-tower, DLRM, DCN) score each candidate on relevance. Uses rich user/item features and interaction signals. Reduces thousands of candidates to hundreds with precise relevance estimates.' },
+ { title: 'Stage 3 — Re-Ranking', desc: 'Applies diversity, freshness, and fairness constraints to the ranked list. Balances relevance with business objectives — ensuring topic variety, deduplication, and exposure fairness across content creators.' },
+ { title: 'Stage 4 — Business Rules / Filtering', desc: 'Applies hard constraints: legal compliance (age-gating, geo-restrictions), inventory availability, advertiser commitments, content safety policies, and publisher-specific business rules.' },
+ { title: 'Stage 5 — Serving', desc: 'Final personalised results delivered to the user under strict latency SLAs (<50ms). Includes real-time feature lookups, model caching, and A/B experiment assignment for continuous optimisation.' }
+];
+document.querySelectorAll('.funnel-stage').forEach(stage => {
+ stage.addEventListener('click', () => {
+ const d = funnelData[parseInt(stage.dataset.stage)];
+ const info = document.getElementById('funnelInfo');
+ info.innerHTML = '<h3>' + d.title + '</h3><p>' + d.desc + '</p>';
+ });
+ stage.addEventListener('mouseenter', function() { this.style.opacity = '0.8'; });
+ stage.addEventListener('mouseleave', function() { this.style.opacity = '1'; });
+});
+
+/* ── STACK LAYER TOGGLE ── */
+function toggleLayer(el) {
+ el.classList.toggle('expanded');
+}
+
+/* ── DOMAIN ACCORDION ── */
+function toggleDomain(header) {
+ const item = header.parentElement;
+ item.classList.toggle('open');
+}
+
+/* ── GLOSSARY SEARCH ── */
+document.getElementById('glossarySearch').addEventListener('input', function() {
+ const q = this.value.toLowerCase();
+ document.querySelectorAll('.glossary-entry').forEach(e => {
+ const text = e.textContent.toLowerCase();
+ e.style.display = text.includes(q) ? '' : 'none';
+ });
+});
+
+/* ── CHART.JS ── */
+const chartDefaults = {
+ color: '#8b949e',
+ borderColor: '#30363d',
+ font: { family: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }
+};
+Chart.defaults.color = chartDefaults.color;
+Chart.defaults.borderColor = chartDefaults.borderColor;
+Chart.defaults.font.family = chartDefaults.font.family;
+
+let chartsInitialised = false;
+function initCharts() {
+ if (chartsInitialised) return;
+
+ /* ── NDCG Bar Chart ── */
+ const ctxNDCG = document.getElementById('chartNDCG');
+ if (ctxNDCG && ctxNDCG.getContext) {
+ new Chart(ctxNDCG, {
+ type: 'bar',
+ data: {
+ labels: ['MovieLens-1M', 'Amazon Reviews', 'Yelp', 'Gowalla', 'Steam'],
+ datasets: [{
+ label: 'NDCG@10',
+ data: [0.42, 0.38, 0.35, 0.31, 0.29],
+ backgroundColor: ['rgba(88,166,255,0.7)', 'rgba(63,185,80,0.7)', 'rgba(210,168,255,0.7)', 'rgba(240,136,62,0.7)', 'rgba(255,123,114,0.7)'],
+ borderColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { beginAtZero: true, max: 0.5, grid: { color: 'rgba(48,54,61,0.5)' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* ── ANN Radar Chart ── */
+ const ctxANN = document.getElementById('chartANN');
+ if (ctxANN && ctxANN.getContext) {
+ new Chart(ctxANN, {
+ type: 'radar',
+ data: {
+ labels: ['FAISS-HNSW', 'Pinecone', 'Milvus', 'Qdrant', 'Weaviate', 'ScaNN'],
+ datasets: [{
+ label: 'Recall@10',
+ data: [95, 93, 91, 92, 88, 96],
+ backgroundColor: 'rgba(201,168,76,0.10)',
+ borderColor: '#c9a84c',
+ pointBackgroundColor: '#c9a84c',
+ pointBorderColor: '#c9a84c',
+ borderWidth: 2
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { position: 'bottom' } },
+ scales: {
+ r: {
+ beginAtZero: false,
+ min: 80,
+ max: 100,
+ angleLines: { color: 'rgba(48,54,61,0.5)' },
+ grid: { color: 'rgba(48,54,61,0.5)' },
+ pointLabels: { color: '#e6edf3', font: { size: 11 } },
+ ticks: { backdropColor: 'transparent', color: '#8b949e', stepSize: 5 }
+ }
+ }
+ }
+ });
+ }
+
+ /* ── Market Segments Bar Chart ── */
+ const ctxSeg = document.getElementById('chartSegments');
+ if (ctxSeg && ctxSeg.getContext) {
+ new Chart(ctxSeg, {
+ type: 'bar',
+ data: {
+ labels: ['Recommendation\nEngines', 'Vector\nDatabases', 'Personalisation\nPlatforms', 'Enterprise\nSearch', 'RAG\nInfrastructure'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [5.2, 1.8, 3.4, 2.9, 1.1],
+ backgroundColor: ['rgba(88,166,255,0.7)', 'rgba(63,185,80,0.7)', 'rgba(210,168,255,0.7)', 'rgba(240,136,62,0.7)', 'rgba(121,192,255,0.7)'],
+ borderColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#5e96b8'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { beginAtZero: true, grid: { color: 'rgba(48,54,61,0.5)' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* ── Market Growth Line Chart ── */
+ const ctxGrowth = document.getElementById('chartGrowth');
+ if (ctxGrowth && ctxGrowth.getContext) {
+ new Chart(ctxGrowth, {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+ datasets: [{
+ label: 'Total Market ($B)',
+ data: [14.4, 17.3, 20.7, 24.9, 29.8, 35.8, 43.0],
+ borderColor: '#5b9e6f',
+ backgroundColor: 'rgba(63,185,80,0.1)',
+ fill: true,
+ tension: 0.35,
+ pointBackgroundColor: '#5b9e6f',
+ pointBorderColor: '#5b9e6f',
+ pointRadius: 5,
+ pointHoverRadius: 7,
+ borderWidth: 2.5
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { position: 'bottom' } },
+ scales: {
+ y: { beginAtZero: false, grid: { color: 'rgba(48,54,61,0.5)' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: 'rgba(48,54,61,0.3)' } }
+ }
+ }
+ });
+ }
+
+ chartsInitialised = true;
+}
+
+/* Initialise charts if benchmarks or market tab is active on load */
+initCharts();
+
+</script>
+<nav class="chapter-nav">
+ <a href="reactive-ai.html"><span>&larr;</span><div><small>Previous</small>Reactive AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="reinforcement-learning-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Reinforcement Learning AI</div><span>&rarr;</span></a>
+</nav>
+
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+agent,organisation,webarena_score_pct,date,source
+GPT-4o + SoM,OpenAI,35.8,2024-12,webarena.dev leaderboard
+Agent-E,Emergence AI,31.1,2024-10,webarena.dev leaderboard
+WebVoyager,Zhejiang Univ,30.1,2024-08,arXiv:2401.13919

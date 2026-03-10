@@ -1,0 +1,7 @@
+agent,organisation,swebench_verified_pct,date,source
+Claude Code,Anthropic,72.5,2025-05,swebench.com leaderboard
+Codex CLI,OpenAI,69.1,2025-05,swebench.com leaderboard
+DevIn v2,Cognition,55.0,2025-03,swebench.com leaderboard
+Devin,Cognition,48.8,2025-01,swebench.com leaderboard
+AutoCodeRover-v2,NUS,40.6,2024-10,arXiv:2404.05427
+SWE-Agent,Princeton,33.2,2024-06,arXiv:2405.15793

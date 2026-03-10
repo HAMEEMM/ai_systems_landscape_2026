@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════════════════════
+   AI Systems Landscape 2026 — Alternate Chapter Layout
+   Used by: scientific-simulation-ai, symbolic-rule-based-ai
+   These chapters use .tab-bar/.tab-btn instead of .nav-bar
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── HERO — scientific-simulation variant ── */
+.hero {
+  text-align: center;
+  padding: 3.5rem 1.5rem 2.5rem;
+  background: var(--hero-gradient);
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 800;
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: .6rem;
+}
+.hero .subtitle {
+  color: var(--text2);
+  font-size: clamp(.85rem, 1.8vw, 1.05rem);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.hero .author {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+/* ── TABS ── */
+.tab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: .35rem .5rem 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.tab-bar::-webkit-scrollbar { height: 4px; }
+.tab-bar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: .55rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text2);
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); background: var(--glow); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--surface2); }
+
+/* ── PANELS ── */
+.tab-panel { display: none; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+.tab-panel.active { display: block; }
+.tab-panel h2 { font-size: 1.55rem; margin-bottom: 1.2rem; color: var(--accent); }
+.tab-panel h3 { font-size: 1.15rem; color: var(--accent3); margin: 1.2rem 0 .6rem; }
+
+/* ── SECTION TITLES (symbolic variant) ── */
+.section-title { font-size: 1.55rem; font-weight: 700; margin-bottom: .4rem; color: var(--text); }
+.section-desc { color: var(--text2); margin-bottom: 1.5rem; font-size: .92rem; }
+
+/* ── CARD GRID ── */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.1rem; margin-top: 1rem; }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px var(--glow); border-color: var(--accent); }
+.card .card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: .45rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.card .card-title .icon { font-size: 1.2rem; }
+.card h3 { font-size: 1rem; color: var(--accent); margin-bottom: .4rem; }
+.card p, .card .card-body { color: var(--text2); font-size: .92rem; line-height: 1.55; }
+.card .tag {
+  display: inline-block;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .1rem .45rem;
+  font-size: .7rem;
+  color: var(--accent3);
+  margin-top: .5rem;
+  margin-right: .3rem;
+}
+
+/* ── ACCORDION — scientific variant ── */
+.accordion { margin-top: 1rem; }
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: .6rem;
+  overflow: hidden;
+  background: var(--surface);
+}
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  transition: background .2s;
+}
+.accordion-header:hover { background: var(--surface2); }
+.accordion-header .layer-num { color: var(--accent); margin-right: .5rem; min-width: 60px; }
+.accordion-header .arrow { transition: transform .3s; color: var(--text2); font-size: .8rem; }
+.accordion-item.open .accordion-header .arrow { transform: rotate(180deg); }
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+  padding: 0 1.2rem;
+}
+.accordion-item.open .accordion-body { max-height: 600px; padding: .2rem 1.2rem 1rem; }
+.accordion-body p { color: var(--text2); font-size: .92rem; line-height: 1.6; }
+
+/* ── ACCORDION — symbolic variant ── */
+.acc-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.accordion { display: flex; flex-direction: column; gap: .5rem; }
+.acc-header {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background .2s;
+}
+.acc-header:hover { background: var(--surface2); }
+.acc-header .chevron { transition: transform .25s; color: var(--accent); font-size: .8rem; }
+.acc-item.open .acc-header .chevron { transform: rotate(180deg); }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.acc-item.open .acc-body { max-height: 600px; }
+.acc-body-inner { padding: 0 1.15rem 1rem; font-size: .84rem; color: var(--text2); line-height: 1.65; }
+.acc-body-inner strong { color: var(--accent6); }
+
+/* ── PIPELINE — scientific variant ── */
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 2rem 0;
+}
+.pipeline-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.4rem;
+  text-align: center;
+  min-width: 160px;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.pipeline-step:hover { transform: translateY(-3px); box-shadow: 0 4px 20px var(--glow); }
+.pipeline-step .step-num {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: .82rem;
+  margin-bottom: .4rem;
+}
+.pipeline-step .step-title { font-weight: 700; font-size: .95rem; color: var(--text); }
+.pipeline-step .step-desc { color: var(--text2); font-size: .82rem; margin-top: .25rem; }
+.pipeline-step h3 { font-size: .92rem; margin-bottom: .3rem; color: var(--accent6); }
+.pipeline-step p { font-size: .78rem; color: var(--text2); }
+.pipeline-arrow { color: var(--accent); font-size: 1.6rem; padding: 0 .3rem; user-select: none; flex-shrink: 0; }
+@media (max-width: 900px) {
+  .pipeline { flex-direction: column; align-items: center; }
+  .pipeline-arrow { transform: rotate(90deg); }
+}
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; margin-top: 1rem; border: 1px solid var(--border); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+thead { background: var(--surface2); }
+th { padding: .75rem 1rem; text-align: left; color: var(--accent); font-weight: 700; border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text2); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--glow); }
+
+/* ── CHARTS ── */
+.chart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.2rem 0;
+  max-width: 700px;
+}
+.chart-container.wide { max-width: 900px; }
+.chart-container h3 { font-size: 1rem; color: var(--accent); margin-bottom: .75rem; text-align: center; }
+.chart-row { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.chart-row .chart-container { flex: 1; min-width: 320px; }
+.chart-wrap { position: relative; max-width: 700px; margin: 0 auto; }
+
+/* ── GLOSSARY — scientific variant ── */
+.search-box {
+  width: 100%;
+  max-width: 480px;
+  padding: .7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .95rem;
+  font-family: inherit;
+  margin-bottom: 1.2rem;
+}
+.search-box:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--glow); }
+
+/* ── GLOSSARY — shared Group C ── */
+.glossary-list { display: flex; flex-direction: column; gap: .55rem; }
+.glossary-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .85rem 1.1rem;
+}
+.glossary-item .term { font-weight: 700; color: var(--accent); font-size: .9rem; }
+.glossary-item .def { color: var(--text2); font-size: .92rem; margin-top: .2rem; }
+
+/* ── RISK OVERRIDE ── */
+.risk-card h3 { color: var(--accent5); }
+
+/* ── FOOTER ── */
+footer { text-align: center; padding: 2.5rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+footer .name { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+footer .role { color: var(--text2); font-size: .88rem; margin-top: .3rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .hero h1 { font-size: 1.6rem; }
+  .tab-btn { font-size: .78rem; padding: .45rem .65rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .pipeline { flex-direction: column; align-items: center; }
+  .pipeline-arrow { transform: rotate(90deg); }
+}

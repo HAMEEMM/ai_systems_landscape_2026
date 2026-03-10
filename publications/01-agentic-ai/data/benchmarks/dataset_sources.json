@@ -1,0 +1,107 @@
+{
+  "last_updated": "2026-03-28T23:24:36.594005",
+  "datasets": [
+    {
+      "name": "SWE-Bench",
+      "description": "Real-world GitHub issue resolution tasks",
+      "url": "https://github.com/princeton-nlp/SWE-bench",
+      "huggingface": "princeton-nlp/SWE-bench_Verified",
+      "size": "500 verified instances",
+      "license": "MIT",
+      "download": "pip install datasets; load_dataset('princeton-nlp/SWE-bench_Verified')",
+      "free": true
+    },
+    {
+      "name": "GAIA",
+      "description": "General AI Assistant benchmark \u2014 multi-step reasoning",
+      "url": "https://huggingface.co/datasets/gaia-benchmark/GAIA",
+      "huggingface": "gaia-benchmark/GAIA",
+      "size": "466 questions across 3 difficulty levels",
+      "license": "CC-BY-4.0",
+      "download": "pip install datasets; load_dataset('gaia-benchmark/GAIA', '2023_all')",
+      "free": true
+    },
+    {
+      "name": "WebArena",
+      "description": "Realistic web environment for autonomous agents",
+      "url": "https://github.com/web-arena-x/webarena",
+      "size": "812 web tasks across 5 websites",
+      "license": "Apache-2.0",
+      "download": "git clone https://github.com/web-arena-x/webarena.git",
+      "free": true
+    },
+    {
+      "name": "AgentBench",
+      "description": "Multi-environment agent benchmark (8 domains)",
+      "url": "https://github.com/THUDM/AgentBench",
+      "size": "8 environment types, 1000+ tasks",
+      "license": "Apache-2.0",
+      "download": "git clone https://github.com/THUDM/AgentBench.git",
+      "free": true
+    },
+    {
+      "name": "OSWorld",
+      "description": "OS-level task completion benchmark",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "size": "369 real computer tasks",
+      "license": "Apache-2.0",
+      "download": "git clone https://github.com/xlang-ai/OSWorld.git",
+      "free": true
+    },
+    {
+      "name": "\u03c4-bench",
+      "description": "Tool-Agent-User interaction benchmark",
+      "url": "https://github.com/sierra-research/tau-bench",
+      "size": "Multiple retail and airline task scenarios",
+      "license": "MIT",
+      "download": "git clone https://github.com/sierra-research/tau-bench.git",
+      "free": true
+    },
+    {
+      "name": "HumanEval",
+      "description": "Code generation benchmark (used for coding agents)",
+      "url": "https://github.com/openai/human-eval",
+      "huggingface": "openai/openai_humaneval",
+      "size": "164 programming problems",
+      "license": "MIT",
+      "download": "pip install datasets; load_dataset('openai/openai_humaneval')",
+      "free": true
+    },
+    {
+      "name": "HotpotQA",
+      "description": "Multi-hop question answering (used for ReAct evaluation)",
+      "url": "https://hotpotqa.github.io/",
+      "huggingface": "hotpot_qa",
+      "size": "113k question-answer pairs",
+      "license": "CC-BY-SA-4.0",
+      "download": "pip install datasets; load_dataset('hotpot_qa', 'fullwiki')",
+      "free": true
+    },
+    {
+      "name": "ALFWorld",
+      "description": "Text-based household tasks (used for agent planning eval)",
+      "url": "https://github.com/alfworld/alfworld",
+      "size": "3500+ interactive tasks",
+      "license": "MIT",
+      "download": "pip install alfworld",
+      "free": true
+    },
+    {
+      "name": "ToolBench",
+      "description": "Tool-use benchmark with 16,000+ real APIs",
+      "url": "https://github.com/OpenBMB/ToolBench",
+      "huggingface": "Toolbench/ToolBench",
+      "size": "16,000+ real APIs, 49 categories",
+      "license": "Apache-2.0",
+      "download": "git clone https://github.com/OpenBMB/ToolBench.git",
+      "free": true
+    }
+  ],
+  "additional_sources": {
+    "Google Dataset Search": "https://datasetsearch.research.google.com/ \u2014 search for 'LLM agent' or 'autonomous agent'",
+    "Kaggle": "https://www.kaggle.com/datasets \u2014 search for 'AI agent benchmark'",
+    "HuggingFace Hub": "https://huggingface.co/datasets \u2014 filter by task: 'question-answering', 'text-generation'",
+    "Papers With Code": "https://paperswithcode.com/datasets \u2014 search by benchmark name",
+    "GitHub Topics": "https://github.com/topics/agent-benchmark"
+  }
+}

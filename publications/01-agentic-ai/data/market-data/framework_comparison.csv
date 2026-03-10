@@ -1,0 +1,24 @@
+name,repo,category,stars,forks,open_issues,language,license,created_at,updated_at,description,url
+LangChain,langchain-ai/langchain,Foundation,131425,21656,497,Python,MIT,2022-10-17,2026-03-29,The agent engineering platform,https://github.com/langchain-ai/langchain
+Browser Use,browser-use/browser-use,Browser Tool,84868,9826,204,Python,MIT,2024-10-31,2026-03-26,🌐 Make websites accessible for AI agents. Automate tasks online with ease.,https://github.com/browser-use/browser-use
+AutoGen,microsoft/autogen,Multi-Agent,56350,8472,716,Python,CC-BY-4.0,2023-08-18,2026-03-26,A programming framework for agentic AI,https://github.com/microsoft/autogen
+Mem0,mem0ai/mem0,Memory,51350,5745,268,Python,Apache-2.0,2023-06-20,2026-03-29,Universal memory layer for AI Agents,https://github.com/mem0ai/mem0
+CrewAI,crewAIInc/crewAI,Multi-Agent,47441,6423,485,Python,MIT,2023-10-27,2026-03-28,"Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intellige",https://github.com/crewAIInc/crewAI
+LangGraph,langchain-ai/langgraph,Orchestration,27795,4765,478,Python,MIT,2023-08-09,2026-03-29,Build resilient language agents as graphs.,https://github.com/langchain-ai/langgraph
+Semantic Kernel,microsoft/semantic-kernel,Orchestration,27582,4528,494,C#,MIT,2023-02-27,2026-03-29,Integrate cutting-edge LLM technology quickly and easily into your apps,https://github.com/microsoft/semantic-kernel
+Composio,composiohq/composio,Integration,27563,4498,79,TypeScript,MIT,2024-02-23,2026-03-28,"Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed wor",https://github.com/ComposioHQ/composio
+Smolagents,huggingface/smolagents,Orchestration,26319,2409,453,Python,Apache-2.0,2024-12-05,2026-03-13,🤗 smolagents: a barebones library for agents that think in code.,https://github.com/huggingface/smolagents
+Langfuse,langfuse/langfuse,Observability,23953,2414,598,TypeScript,NOASSERTION,2023-05-18,2026-03-27,"🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playgr",https://github.com/langfuse/langfuse
+Letta (MemGPT),letta-ai/letta,Memory,21789,2299,92,Python,Apache-2.0,2023-10-11,2026-03-28,Letta is the platform for building stateful agents: AI with advanced memory that can learn and self-,https://github.com/letta-ai/letta
+Skyvern,Skyvern-AI/skyvern,Browser Tool,20975,1876,149,Python,AGPL-3.0,2024-02-28,2026-03-29,Automate browser based workflows with AI,https://github.com/Skyvern-AI/skyvern
+OpenAI Agents SDK,openai/openai-agents-python,Orchestration,20378,3338,73,Python,MIT,2025-03-11,2026-03-28,"A lightweight, powerful framework for multi-agent workflows",https://github.com/openai/openai-agents-python
+Google ADK,google/adk-python,Orchestration,18647,3141,655,Python,Apache-2.0,2025-04-01,2026-03-28,"An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI a",https://github.com/google/adk-python
+Pydantic AI,pydantic/pydantic-ai,Orchestration,15902,1840,620,Python,MIT,2024-06-21,2026-03-28,"AI Agent Framework, the Pydantic way",https://github.com/pydantic/pydantic-ai
+E2B,e2b-dev/e2b,Code Execution,11485,816,63,Python,Apache-2.0,2023-03-04,2026-03-27,"Open-source, secure environment with real-world tools for enterprise-grade agents.",https://github.com/e2b-dev/E2B
+Arize Phoenix,Arize-ai/phoenix,Observability,9074,780,501,Jupyter Notebook,NOASSERTION,2022-11-09,2026-03-29,AI Observability & Evaluation,https://github.com/Arize-ai/phoenix
+SWE-Bench,princeton-nlp/SWE-bench,Benchmark,4570,809,87,Python,MIT,2023-10-04,2026-03-26,SWE-bench: Can Language Models Resolve Real-world Github Issues?,https://github.com/SWE-bench/SWE-bench
+Zep,getzep/zep,Memory,4323,597,23,Python,Apache-2.0,2023-04-29,2026-03-28,"Zep | Examples, Integrations, & More",https://github.com/getzep/zep
+AgentBench,THUDM/AgentBench,Benchmark,3276,242,68,Python,Apache-2.0,2023-07-28,2026-02-08,A Comprehensive Benchmark to Evaluate LLMs as Agents (ICLR'24),https://github.com/THUDM/AgentBench
+OSWorld,xlang-ai/OSWorld,Benchmark,2717,430,148,Python,Apache-2.0,2023-10-16,2026-03-27,[NeurIPS 2024] OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environ,https://github.com/xlang-ai/OSWorld
+WebArena,web-arena-x/webarena,Benchmark,1414,230,92,Python,Apache-2.0,2023-07-24,2025-11-26,"Code repo for ""WebArena: A Realistic Web Environment for Building Autonomous Agents""",https://github.com/web-arena-x/webarena
+Tavily,tavily-ai/tavily-python,Search Tool,1128,140,6,Python,MIT,2023-09-01,2026-03-09,"The Tavily Python SDK allows for easy interaction with the Tavily API, offering the full range of ou",https://github.com/tavily-ai/tavily-python

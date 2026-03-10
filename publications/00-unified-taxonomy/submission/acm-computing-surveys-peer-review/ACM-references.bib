@@ -1,0 +1,254 @@
+%% references.bib
+%% BibTeX database for: A Unified Taxonomy of 19 AI System Types
+%% ACM TIST submission — uses ACM-Reference-Format via acmart class
+%%
+%% HOW THIS WORKS:
+%% ───────────────
+%% Instead of writing references inline in the .tex file using
+%% \begin{thebibliography}...\end{thebibliography}, this .bib file
+%% stores every reference as a structured BibTeX entry.
+%%
+%% In the .tex file, you simply write:
+%%   \bibliography{references}
+%% (no .bib extension needed). The acmart class automatically loads
+%% \bibliographystyle{ACM-Reference-Format}, so you do NOT set it manually.
+%%
+%% When you compile, run these commands in order:
+%%   1. pdflatex paper.tex     (first pass — collects \cite keys)
+%%   2. bibtex paper           (reads .bib, generates .bbl)
+%%   3. pdflatex paper.tex     (inserts bibliography)
+%%   4. pdflatex paper.tex     (resolves cross-references)
+%%
+%% BENEFITS:
+%%   • ACM-compliant formatting is automatic
+%%   • Easy to add/remove references without touching the .tex
+%%   • Reusable across papers
+%%   • Consistent formatting guaranteed by BibTeX style
+%% ═══════════════════════════════════════════════════════════════════
+
+%% ─── BOOKS ──────────────────────────────────────────────────────
+
+@book{russell2021artificial,
+  author    = {Stuart Russell and Peter Norvig},
+  title     = {Artificial Intelligence: A Modern Approach},
+  edition   = {4th},
+  publisher = {Pearson},
+  year      = {2021}
+}
+
+@book{goodfellow2016deep,
+  author    = {Ian Goodfellow and Yoshua Bengio and Aaron Courville},
+  title     = {Deep Learning},
+  publisher = {MIT Press},
+  year      = {2016}
+}
+
+@book{wooldridge2009introduction,
+  author    = {Michael Wooldridge},
+  title     = {An Introduction to MultiAgent Systems},
+  edition   = {2nd},
+  publisher = {John Wiley \& Sons},
+  year      = {2009}
+}
+
+@book{sutton2018reinforcement,
+  author    = {Richard S. Sutton and Andrew G. Barto},
+  title     = {Reinforcement Learning: An Introduction},
+  edition   = {2nd},
+  publisher = {MIT Press},
+  year      = {2018}
+}
+
+@book{pearl2009causality,
+  author    = {Judea Pearl},
+  title     = {Causality: Models, Reasoning, and Inference},
+  edition   = {2nd},
+  publisher = {Cambridge University Press},
+  year      = {2009}
+}
+
+@book{eiben2015introduction,
+  author    = {Agoston E. Eiben and James E. Smith},
+  title     = {Introduction to Evolutionary Computing},
+  edition   = {2nd},
+  publisher = {Springer},
+  year      = {2015}
+}
+
+%% ─── CONFERENCE PAPERS ──────────────────────────────────────────
+
+@inproceedings{yao2023react,
+  author    = {Shunyu Yao and Jeffrey Zhao and Dian Yu and Nan Du and Izhak Shafran and Karthik Narasimhan and Yuan Cao},
+  title     = {{ReAct}: Synergizing Reasoning and Acting in Language Models},
+  booktitle = {Proceedings of the International Conference on Learning Representations (ICLR)},
+  year      = {2023}
+}
+
+@inproceedings{goodfellow2014generative,
+  author    = {Ian J. Goodfellow and Jean Pouget-Abadie and Mehdi Mirza and Bing Xu and David Warde-Farley and Sherjil Ozair and Aaron Courville and Yoshua Bengio},
+  title     = {Generative Adversarial Nets},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {27},
+  pages     = {2672--2680},
+  year      = {2014}
+}
+
+@inproceedings{vaswani2017attention,
+  author    = {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and {\L}ukasz Kaiser and Illia Polosukhin},
+  title     = {Attention Is All You Need},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {30},
+  pages     = {5998--6008},
+  year      = {2017}
+}
+
+@inproceedings{mcmahan2017communication,
+  author    = {Brendan McMahan and Eider Moore and Daniel Ramage and Seth Hampson and Blaise {Ag\"{u}era y Arcas}},
+  title     = {Communication-Efficient Learning of Deep Networks from Decentralized Data},
+  booktitle = {Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  pages     = {1273--1282},
+  year      = {2017}
+}
+
+@inproceedings{brown2020language,
+  author    = {Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and others},
+  title     = {Language Models Are Few-Shot Learners},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {33},
+  pages     = {1877--1901},
+  year      = {2020}
+}
+
+@inproceedings{dietterich2000ensemble,
+  author    = {Thomas G. Dietterich},
+  title     = {Ensemble Methods in Machine Learning},
+  booktitle = {International Workshop on Multiple Classifier Systems},
+  publisher = {Springer},
+  pages     = {1--15},
+  year      = {2000}
+}
+
+%% ─── JOURNAL ARTICLES ───────────────────────────────────────────
+
+@article{lecun2015deep,
+  author  = {Yann LeCun and Yoshua Bengio and Geoffrey Hinton},
+  title   = {Deep Learning},
+  journal = {Nature},
+  volume  = {521},
+  number  = {7553},
+  pages   = {436--444},
+  year    = {2015}
+}
+
+@article{jumper2021highly,
+  author  = {John Jumper and Richard Evans and Alexander Pritzel and Tim Green and Michael Figurnov and Olaf Ronneberger and Kathryn Tunyasuvunakool and Russ Bates and Augustin {\v{Z}}{\'\i}dek and Anna Potapenko and others},
+  title   = {Highly Accurate Protein Structure Prediction with {AlphaFold}},
+  journal = {Nature},
+  volume  = {596},
+  number  = {7873},
+  pages   = {583--589},
+  year    = {2021}
+}
+
+@article{jordan2015machine,
+  author  = {Michael I. Jordan and Tom M. Mitchell},
+  title   = {Machine Learning: Trends, Perspectives, and Prospects},
+  journal = {Science},
+  volume  = {349},
+  number  = {6245},
+  pages   = {255--260},
+  year    = {2015}
+}
+
+@article{lake2017building,
+  author  = {Brenden M. Lake and Tomer D. Ullman and Joshua B. Tenenbaum and Samuel J. Gershman},
+  title   = {Building Machines That Learn and Think Like People},
+  journal = {Behavioral and Brain Sciences},
+  volume  = {40},
+  pages   = {e253},
+  year    = {2017}
+}
+
+@article{bengio2013representation,
+  author  = {Yoshua Bengio and Aaron Courville and Pascal Vincent},
+  title   = {Representation Learning: A Review and New Perspectives},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume  = {35},
+  number  = {8},
+  pages   = {1798--1828},
+  year    = {2013}
+}
+
+@article{kaelbling1996reinforcement,
+  author  = {Leslie Pack Kaelbling and Michael L. Littman and Andrew W. Moore},
+  title   = {Reinforcement Learning: A Survey},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {4},
+  pages   = {237--285},
+  year    = {1996}
+}
+
+@article{lecun1998gradient,
+  author  = {Yann LeCun and L\'{e}on Bottou and Yoshua Bengio and Patrick Haffner},
+  title   = {Gradient-Based Learning Applied to Document Recognition},
+  journal = {Proceedings of the IEEE},
+  volume  = {86},
+  number  = {11},
+  pages   = {2278--2324},
+  year    = {1998}
+}
+
+@article{silver2016mastering,
+  author  = {David Silver and Aja Huang and Chris J. Maddison and Arthur Guez and Laurent Sifre and George van den Driessche and Julian Schrittwieser and Ioannis Antonoglou and Veda Panneershelvam and Marc Lanctot and others},
+  title   = {Mastering the Game of {Go} with Deep Neural Networks and Tree Search},
+  journal = {Nature},
+  volume  = {529},
+  number  = {7587},
+  pages   = {484--489},
+  year    = {2016}
+}
+
+@article{dwork2014algorithmic,
+  author  = {Cynthia Dwork and Aaron Roth},
+  title   = {The Algorithmic Foundations of Differential Privacy},
+  journal = {Foundations and Trends in Theoretical Computer Science},
+  volume  = {9},
+  number  = {3--4},
+  pages   = {211--407},
+  year    = {2014}
+}
+
+@article{garcez2019neural,
+  author  = {Artur d'Avila Garcez and Marco Gori and Luis C. Lamb and Luciano Serafini and Michael Spranger and Son N. Tran},
+  title   = {Neural-Symbolic Computing: An Effective Methodology for Principled Integration of Machine Learning and Reasoning},
+  journal = {Journal of Applied Logics},
+  volume  = {6},
+  number  = {4},
+  pages   = {611--632},
+  year    = {2019}
+}
+
+@article{arrieta2020explainable,
+  author  = {Alejandro Barredo Arrieta and Natalia D{\'\i}az-Rodr{\'\i}guez and Javier Del Ser and Adrien Bennetot and Siham Tabik and Alberto Barbado and Salvador Garc{\'\i}a and Sergio Gil-L{\'o}pez and Daniel Molina and Richard Benjamins and others},
+  title   = {Explainable Artificial Intelligence ({XAI}): Concepts, Taxonomies, Opportunities and Challenges toward Responsible {AI}},
+  journal = {Information Fusion},
+  volume  = {58},
+  pages   = {82--115},
+  year    = {2020}
+}
+
+%% ─── PREPRINTS / TECHNICAL REPORTS ──────────────────────────────
+
+@article{marcus2020next,
+  author  = {Gary Marcus},
+  title   = {The Next Decade in {AI}: Four Steps Towards Robust Artificial Intelligence},
+  journal = {arXiv preprint arXiv:2002.06177},
+  year    = {2020}
+}
+
+@article{bommasani2021opportunities,
+  author  = {Rishi Bommasani and Drew A. Hudson and Ehsan Adeli and Russ Altman and Simran Arora and Sydney von Arx and Michael S. Bernstein and Jeannette Bohg and Antoine Bosselut and Emma Brunskill and others},
+  title   = {On the Opportunities and Risks of Foundation Models},
+  journal = {arXiv preprint arXiv:2108.07258},
+  year    = {2021}
+}

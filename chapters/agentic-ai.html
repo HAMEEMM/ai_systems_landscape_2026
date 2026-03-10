@@ -1,0 +1,3798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Agentic AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Agentic AI systems — the agent loop, 8-layer stack, design patterns, multi-agent topologies, protocols, benchmarks, market data, and more.</p>
+ <span class="reading-time">~68 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/01-agentic-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="loop">Agent Loop</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="patterns">Design Patterns</button>
+ <button data-tab="memory">Memory</button>
+ <button data-tab="multiagent">Multi-Agent</button>
+ <button data-tab="protocols">Protocols</button>
+ <button data-tab="frameworks">Frameworks</button>
+ <button data-tab="domains">Agent Domains</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks & Safety</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="enterprise">Enterprise</button>
+ <button data-tab="tooluse">Tool Use</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 1 — AGENT LOOP -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-loop">
+ <h2>The Agent Loop</h2>
+ <p class="desc">Agentic systems follow a continuous perception-reasoning-action cycle. Hover over each step to learn more.</p>
+
+ <div class="loop-container">
+ <svg class="loop-svg" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg">
+ <!-- Outer ring -->
+ <circle cx="300" cy="240" r="190" fill="none" stroke="#30363d" stroke-width="2" stroke-dasharray="6 4"/>
+ <!-- Center label -->
+ <text x="300" y="232" text-anchor="middle" fill="#58a6ff" font-size="16" font-weight="800">AGENT</text>
+ <text x="300" y="254" text-anchor="middle" fill="#8b949e" font-size="12">LOOP</text>
+ <!-- Steps positioned around circle -->
+ <g class="loop-step" data-step="0" style="cursor:pointer">
+ <circle cx="300" cy="42" r="38" fill="#161b22" stroke="#58a6ff" stroke-width="2.5"/>
+ <text x="300" y="38" text-anchor="middle" fill="#58a6ff" font-size="20"></text>
+ <text x="300" y="56" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">GOAL</text>
+ </g>
+ <g class="loop-step" data-step="1" style="cursor:pointer">
+ <circle cx="485" cy="135" r="38" fill="#161b22" stroke="#3fb950" stroke-width="2.5"/>
+ <text x="485" y="131" text-anchor="middle" fill="#3fb950" font-size="20"></text>
+ <text x="485" y="149" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">REASON</text>
+ </g>
+ <g class="loop-step" data-step="2" style="cursor:pointer">
+ <circle cx="520" cy="300" r="38" fill="#161b22" stroke="#d2a8ff" stroke-width="2.5"/>
+ <text x="520" y="296" text-anchor="middle" fill="#d2a8ff" font-size="20"></text>
+ <text x="520" y="314" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">PLAN</text>
+ </g>
+ <g class="loop-step" data-step="3" style="cursor:pointer">
+ <circle cx="420" cy="430" r="38" fill="#161b22" stroke="#f0883e" stroke-width="2.5"/>
+ <text x="420" y="426" text-anchor="middle" fill="#f0883e" font-size="20"></text>
+ <text x="420" y="444" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">ACT</text>
+ </g>
+ <g class="loop-step" data-step="4" style="cursor:pointer">
+ <circle cx="180" cy="430" r="38" fill="#161b22" stroke="#ff7b72" stroke-width="2.5"/>
+ <text x="180" y="426" text-anchor="middle" fill="#ff7b72" font-size="20"></text>
+ <text x="180" y="444" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">OBSERVE</text>
+ </g>
+ <g class="loop-step" data-step="5" style="cursor:pointer">
+ <circle cx="80" cy="300" r="38" fill="#161b22" stroke="#79c0ff" stroke-width="2.5"/>
+ <text x="80" y="296" text-anchor="middle" fill="#79c0ff" font-size="20"></text>
+ <text x="80" y="314" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">REFLECT</text>
+ </g>
+ <g class="loop-step" data-step="6" style="cursor:pointer">
+ <circle cx="115" cy="135" r="38" fill="#161b22" stroke="#f778ba" stroke-width="2.5"/>
+ <text x="115" y="131" text-anchor="middle" fill="#f778ba" font-size="20"></text>
+ <text x="115" y="149" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="700">MEMORY</text>
+ </g>
+ <!-- Arrows (simplified arcs) -->
+ <defs><marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8b949e"/></marker></defs>
+ <line x1="330" y1="60" x2="455" y2="108" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="510" y1="170" x2="525" y2="260" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="505" y1="330" x2="455" y2="400" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="385" y1="445" x2="220" y2="445" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="148" y1="410" x2="95" y2="335" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="78" y1="262" x2="100" y2="172" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <line x1="145" y1="108" x2="270" y2="62" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+ <!-- Bottom label -->
+ <text x="300" y="505" text-anchor="middle" fill="#8b949e" font-size="11">── Loop continues until goal is achieved ──</text>
+ </svg>
+ </div>
+
+ <div class="loop-info" id="loop-info">
+ <h3>Hover over a step</h3>
+ <p>Move your cursor over any step in the agent loop to see what happens at that stage.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-loop')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-loop">
+<h3>How Agentic AI Works — The Agent Loop</h3>
+<p>Agentic systems follow a continuous perception-reasoning-action cycle:</p>
+<pre><code>┌───────────────────────────────────────────────────────────────────┐
+│ THE AGENT LOOP │
+│ │
+│ 1. GOAL 2. PLANNING 3. ACTION │
+│ ───────────── ────────────────── ────────────── │
+│ User defines Agent decomposes Agent selects &amp; │
+│ objective or goal into sub-tasks calls tools / │
+│ task &amp; reasoning chain executes steps │
+│ │
+│ 4. OBSERVATION 5. REFLECTION 6. MEMORY │
+│ ────────────── ───────────────── ────────────── │
+│ Agent receives Agent evaluates Results stored │
+│ tool outputs &amp; result; updates in short or │
+│ environmental plan if needed long-term memory │
+│ feedback │
+│ │
+│ ──────────── LOOP CONTINUES UNTIL GOAL IS ACHIEVED ─────────── │
+└───────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Reasoning-Action Cycle</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Perceive</strong></td>
+<td>Agent receives the goal, available context, and prior memory</td>
+</tr>
+<tr>
+<td><strong>Reason</strong></td>
+<td>Agent generates an internal reasoning trace — what to do and why</td>
+</tr>
+<tr>
+<td><strong>Plan</strong></td>
+<td>Agent decomposes the goal into an ordered sequence of sub-tasks</td>
+</tr>
+<tr>
+<td><strong>Act</strong></td>
+<td>Agent selects and calls a tool, API, browser, or executes code</td>
+</tr>
+<tr>
+<td><strong>Observe</strong></td>
+<td>Agent receives the result of the action from the environment</td>
+</tr>
+<tr>
+<td><strong>Reflect</strong></td>
+<td>Agent critiques the result; decides to continue, retry, or revise</td>
+</tr>
+<tr>
+<td><strong>Update</strong></td>
+<td>Agent stores relevant results in memory; updates its working plan</td>
+</tr>
+<tr>
+<td><strong>Complete</strong></td>
+<td>Agent determines the goal is met and returns a final output</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Agentic Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Max Iterations</strong></td>
+<td>Maximum number of agent loop cycles before forced termination</td>
+</tr>
+<tr>
+<td><strong>Tool List</strong></td>
+<td>Set of external tools and APIs the agent is permitted to call</td>
+</tr>
+<tr>
+<td><strong>Memory Scope</strong></td>
+<td>What the agent remembers: in-context only, session-level, or persistent</td>
+</tr>
+<tr>
+<td><strong>Human-in-the-Loop Gates</strong></td>
+<td>Points at which the agent must pause and await human approval</td>
+</tr>
+<tr>
+<td><strong>Planner Model</strong></td>
+<td>The underlying LLM powering reasoning (e.g., GPT-5, Claude 4 Opus)</td>
+</tr>
+<tr>
+<td><strong>Worker Models</strong></td>
+<td>Specialised sub-models or agents delegated specific sub-tasks</td>
+</tr>
+<tr>
+<td><strong>Timeout / Budget</strong></td>
+<td>Time and token budget constraints on agent execution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Auto-GPT became the fastest-growing GitHub repo in history within weeks of its 2023 release.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Modern AI agents can chain 50+ tool calls in a single task execution without human intervention.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>The ReAct (Reasoning + Acting) framework showed that interleaving thought and action improves agent accuracy by 30%+.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What does the ReAct framework combine?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Retrieval and Caching</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Reasoning and Acting</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Reinforcement and Classification</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Regression and Attention</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> Which component stores an AI agent's past interactions?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Actuator</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Memory module</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Loss function</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Activation layer</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What is "tool use" in the context of AI agents?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Using physical tools</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Calling external APIs or functions</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Optimising gradient descent</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Pruning neural networks</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 2 — 8-LAYER STACK -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-stack">
+ <h2>The Agentic AI Stack — 8 Layers</h2>
+ <p class="desc">Click any layer to expand its details. The stack is ordered from infrastructure (bottom) to application (top).</p>
+
+ <div class="stack-layers" id="stack">
+ <!-- Layers are rendered bottom-up visually but top-down in DOM for reading order -->
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Agentic AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Foundation Models</strong></td>
+<td>The LLMs powering reasoning and generation at the core</td>
+</tr>
+<tr>
+<td><strong>2. Agent Runtime &amp; Orchestration</strong></td>
+<td>Frameworks managing the agent loop, state, and execution</td>
+</tr>
+<tr>
+<td><strong>3. Memory Systems</strong></td>
+<td>Short-term context, long-term storage, and retrieval infrastructure</td>
+</tr>
+<tr>
+<td><strong>4. Tool &amp; Integration Layer</strong></td>
+<td>APIs, code executors, browsers, databases, and external services</td>
+</tr>
+<tr>
+<td><strong>5. Inter-Agent Protocols</strong></td>
+<td>Standards enabling agent-to-agent and agent-to-tool communication</td>
+</tr>
+<tr>
+<td><strong>6. Planning &amp; Reflection Layer</strong></td>
+<td>CoT, ToT, self-critique, and task decomposition strategies</td>
+</tr>
+<tr>
+<td><strong>7. Applications &amp; Products</strong></td>
+<td>Consumer agents, enterprise platforms, and vertical AI solutions</td>
+</tr>
+<tr>
+<td><strong>8. Observability, Safety &amp; Control</strong></td>
+<td>Monitoring, guardrails, evaluation, audit logs, and HITL gates</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 3 — DESIGN PATTERNS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-patterns">
+ <h2>Core Agent Design Patterns</h2>
+ <p class="desc">The foundational architectural patterns that power modern agentic AI systems.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-patterns')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-patterns">
+<h3>Core Agent Design Patterns</h3>
+<h3>ReAct (Reason + Act)</h3>
+<p>The <strong>foundational pattern</strong> underlying most production agents.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>"ReAct: Synergizing Reasoning and Acting in Language Models" — Yao et al., 2022</td>
+</tr>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Interleaves chain-of-thought reasoning traces with tool-use actions in a loop</td>
+</tr>
+<tr>
+<td><strong>Why It Works</strong></td>
+<td>Reasoning grounds actions; observations from actions inform further reasoning</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>LangChain agents, LangGraph, OpenAI Agents SDK, most general-purpose agents</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Can get stuck in repetitive loops; requires iteration limits and error handling</td>
+</tr>
+</tbody>
+</table>
+<h3>Reflection</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Agent generates an output, then critiques it against the original goal</td>
+</tr>
+<tr>
+<td><strong>Variants</strong></td>
+<td>Self-Refine, Reflexion (with persistent memory of past failures)</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Writing, code review, quality improvement, factual accuracy checks</td>
+</tr>
+<tr>
+<td><strong>Key Benefit</strong></td>
+<td>Substantially improves output quality without additional human review</td>
+</tr>
+</tbody>
+</table>
+<h3>Planning Architectures</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chain of Thought (CoT)</strong></td>
+<td>Linear step-by-step reasoning before acting</td>
+<td>Simple sequential tasks</td>
+</tr>
+<tr>
+<td><strong>Tree of Thought (ToT)</strong></td>
+<td>Explores multiple reasoning branches in parallel; selects best path</td>
+<td>Complex decision trees, strategic reasoning</td>
+</tr>
+<tr>
+<td><strong>Plan-and-Execute</strong></td>
+<td>Agent creates a full upfront plan, then dispatches sub-tasks</td>
+<td>Structured, predictable multi-step workflows</td>
+</tr>
+<tr>
+<td><strong>Dynamic Re-planning</strong></td>
+<td>Agent updates its plan at each step based on new observations</td>
+<td>Open-ended research and exploration tasks</td>
+</tr>
+<tr>
+<td><strong>MCTS (Monte Carlo Tree Search)</strong></td>
+<td>Probabilistic exploration of decision branches with backpropagation</td>
+<td>Game-like or optimisation problems</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Planning Innovations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Innovation</th>
+<th>What It Enables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scratchpad / Working Memory</strong></td>
+<td>Temporary reasoning space for intermediate thoughts</td>
+</tr>
+<tr>
+<td><strong>Step-Back Prompting</strong></td>
+<td>Agent zooms out to consider higher-level principles before acting</td>
+</tr>
+<tr>
+<td><strong>Chain-of-Draft</strong></td>
+<td>Generate concise reasoning steps to reduce token consumption</td>
+</tr>
+<tr>
+<td><strong>Skeleton-of-Thought</strong></td>
+<td>Plan structure first, then fill in details in parallel</td>
+</tr>
+<tr>
+<td><strong>LLM-as-Judge</strong></td>
+<td>A second model evaluates plan quality before execution begins</td>
+</tr>
+</tbody>
+</table>
+<h3>Human-in-the-Loop (HITL)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Agent pauses at pre-defined checkpoints and requests human approval</td>
+</tr>
+<tr>
+<td><strong>Approval Types</strong></td>
+<td>Binary approve/reject; annotated feedback; redirect with new instructions</td>
+</tr>
+<tr>
+<td><strong>When Required</strong></td>
+<td>Irreversible actions, financial transactions, external communications, deployments</td>
+</tr>
+<tr>
+<td><strong>Frameworks</strong></td>
+<td>LangGraph interrupt nodes, OpenAI Agents SDK handoffs, CrewAI human tasks</td>
+</tr>
+</tbody>
+</table>
+<h3>Tool Use</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Agent calls external functions, APIs, or services to retrieve or act on real-world data</td>
+</tr>
+<tr>
+<td><strong>Tool Types</strong></td>
+<td>Web search, code execution, database queries, file I/O, browser control, API calls</td>
+</tr>
+<tr>
+<td><strong>Tool Selection</strong></td>
+<td>Agent reasons about which tool to use based on task context and tool descriptions</td>
+</tr>
+<tr>
+<td><strong>Error Handling</strong></td>
+<td>Self-healing agents detect tool failures and retry with modified inputs</td>
+</tr>
+</tbody>
+</table>
+<h3>Retrieval-Augmented Generation (RAG)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Agent fetches relevant documents from a vector store before generating a response</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>Grounds agent outputs in authoritative, up-to-date knowledge</td>
+</tr>
+<tr>
+<td><strong>Advanced Patterns</strong></td>
+<td>Agentic RAG (multi-hop), Self-RAG (decides when to retrieve), Corrective RAG</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Vector databases (Pinecone, Weaviate, Qdrant), embedding models, chunking strategies</td>
+</tr>
+</tbody>
+</table>
+<h3>Self-Healing / Auto-Retry</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Agent detects errors in tool call results or reasoning; automatically retries or reroutes</td>
+</tr>
+<tr>
+<td><strong>Failure Types</strong></td>
+<td>Tool timeout, malformed output, API rate limit, logic inconsistency</td>
+</tr>
+<tr>
+<td><strong>Strategies</strong></td>
+<td>Exponential backoff, alternative tool selection, sub-task reassignment to another agent</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Production reliability, long-running autonomous workflows</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 4 — MEMORY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-memory">
+ <h2>Memory Architecture</h2>
+ <p class="desc">Memory is the defining capability that separates agents from one-shot generative systems.</p>
+
+ 
+
+ <h3 style="margin-top:40px; margin-bottom:16px; color:var(--accent3);">Memory Operations</h3>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-memory')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-memory">
+<h3>Memory Architecture</h3>
+<p>Memory is the defining capability that separates agents from one-shot generative systems. Agents can maintain state across steps, sessions, and time.</p>
+<h3>Memory Types</h3>
+<table>
+<thead>
+<tr>
+<th>Memory Type</th>
+<th>Scope</th>
+<th>What It Stores</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>In-Context (Working)</strong></td>
+<td>Current session</td>
+<td>Active reasoning trace, task state, recent tool results</td>
+<td>LLM context window</td>
+</tr>
+<tr>
+<td><strong>Short-Term (Session)</strong></td>
+<td>Single session</td>
+<td>Conversation history, intermediate outputs, user preferences</td>
+<td>In-memory store, Redis</td>
+</tr>
+<tr>
+<td><strong>Long-Term (Persistent)</strong></td>
+<td>Across sessions</td>
+<td>User facts, preferences, domain knowledge, prior decisions</td>
+<td>Vector DB, SQL, graph DB</td>
+</tr>
+<tr>
+<td><strong>Episodic</strong></td>
+<td>Across sessions</td>
+<td>Specific past events and interactions</td>
+<td>Vector DB (semantic search)</td>
+</tr>
+<tr>
+<td><strong>Semantic</strong></td>
+<td>Persistent</td>
+<td>General facts and domain knowledge</td>
+<td>Knowledge graph, RAG store</td>
+</tr>
+<tr>
+<td><strong>Procedural</strong></td>
+<td>Persistent</td>
+<td>How-to knowledge; agent workflow instructions</td>
+<td>Prompt store, fine-tuning</td>
+</tr>
+<tr>
+<td><strong>Sensory</strong></td>
+<td>Immediate</td>
+<td>Raw inputs before processing (screenshots, audio)</td>
+<td>Transient buffer</td>
+</tr>
+</tbody>
+</table>
+<h3>Memory Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Write</strong></td>
+<td>Store new information after an action or observation</td>
+</tr>
+<tr>
+<td><strong>Read / Retrieve</strong></td>
+<td>Fetch relevant memory via semantic search or exact lookup</td>
+</tr>
+<tr>
+<td><strong>Update</strong></td>
+<td>Modify an existing memory record with newer information</td>
+</tr>
+<tr>
+<td><strong>Forget / Expire</strong></td>
+<td>Remove outdated or low-relevance memories to prevent noise</td>
+</tr>
+<tr>
+<td><strong>Summarise</strong></td>
+<td>Compress long memory histories into concise representations</td>
+</tr>
+</tbody>
+</table>
+<h3>Memory Infrastructure Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Type</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mem0</strong></td>
+<td>Open-source / SaaS</td>
+<td>Personalised persistent memory layer for AI agents; cross-session</td>
+</tr>
+<tr>
+<td><strong>Zep</strong></td>
+<td>Open-source / SaaS</td>
+<td>Long-term memory for conversational agents; temporal awareness</td>
+</tr>
+<tr>
+<td><strong>Letta (MemGPT)</strong></td>
+<td>Open-source</td>
+<td>Self-editing memory; agents manage their own memory paging</td>
+</tr>
+<tr>
+<td><strong>LangMem</strong></td>
+<td>Open-source</td>
+<td>LangChain-native long-term memory layer</td>
+</tr>
+<tr>
+<td><strong>Pinecone</strong></td>
+<td>Managed SaaS</td>
+<td>Vector DB for semantic long-term memory retrieval</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>Open-source / SaaS</td>
+<td>Low-latency short-term session memory store</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 5 — MULTI-AGENT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-multiagent">
+ <h2>Multi-Agent Systems</h2>
+ <p class="desc">Multi-agent systems distribute intelligence across specialised agents working in concert.</p>
+
+ <h3 style="margin-bottom:16px; color:var(--accent3);">Topologies</h3>
+ 
+
+ <h3 style="margin-top:40px; margin-bottom:16px; color:var(--accent4);">Agent Roles</h3>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-multiagent')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-multiagent">
+<h3>Multi-Agent Systems</h3>
+<p>Multi-agent systems distribute intelligence across specialised agents working in concert — enabling parallelism, specialisation, and horizontal scaling of intelligence.</p>
+<h3>Multi-Agent Topologies</h3>
+<table>
+<thead>
+<tr>
+<th>Topology</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orchestrator-Worker</strong></td>
+<td>A central orchestrator delegates sub-tasks to specialised worker agents</td>
+<td>Structured pipelines with clear task decomposition</td>
+</tr>
+<tr>
+<td><strong>Hierarchical</strong></td>
+<td>Nested layers of orchestrators and sub-agents; recursive task delegation</td>
+<td>Complex enterprise workflows with deep specialisation</td>
+</tr>
+<tr>
+<td><strong>Peer-to-Peer (Flat)</strong></td>
+<td>Agents communicate directly without a central coordinator</td>
+<td>Collaborative reasoning and debate tasks</td>
+</tr>
+<tr>
+<td><strong>Sequential Pipeline</strong></td>
+<td>Output of one agent becomes the input of the next</td>
+<td>Document processing, content refinement chains</td>
+</tr>
+<tr>
+<td><strong>Parallel Fan-Out</strong></td>
+<td>Multiple agents execute different sub-tasks simultaneously; results are merged</td>
+<td>Research aggregation, parallel analysis</td>
+</tr>
+<tr>
+<td><strong>Competitive / Debate</strong></td>
+<td>Multiple agents propose competing solutions; a judge selects the best</td>
+<td>Decision quality improvement, adversarial validation</td>
+</tr>
+</tbody>
+</table>
+<h3>Agent Roles in Multi-Agent Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orchestrator / Planner</strong></td>
+<td>Decomposes the goal; assigns tasks to worker agents; monitors progress</td>
+</tr>
+<tr>
+<td><strong>Worker / Executor</strong></td>
+<td>Carries out a specific assigned sub-task using its specialised tools</td>
+</tr>
+<tr>
+<td><strong>Critic / Reviewer</strong></td>
+<td>Evaluates outputs from workers; provides feedback for improvement</td>
+</tr>
+<tr>
+<td><strong>Researcher</strong></td>
+<td>Gathers information from the web, documents, or databases</td>
+</tr>
+<tr>
+<td><strong>Synthesiser</strong></td>
+<td>Combines and reconciles outputs from multiple worker agents</td>
+</tr>
+<tr>
+<td><strong>Tool Specialist</strong></td>
+<td>Agent with exclusive or primary access to a specific toolset (e.g., code, search)</td>
+</tr>
+<tr>
+<td><strong>Human Proxy</strong></td>
+<td>Represents a human decision-maker in the agent network; holds approval authority</td>
+</tr>
+</tbody>
+</table>
+<h3>Inter-Agent Communication</h3>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shared Message Queue</strong></td>
+<td>Agents post and consume messages from a central queue</td>
+</tr>
+<tr>
+<td><strong>Direct Handoff</strong></td>
+<td>Orchestrator transfers control and context directly to a sub-agent</td>
+</tr>
+<tr>
+<td><strong>Shared State Store</strong></td>
+<td>Agents read and write to a common key-value or graph-based state object</td>
+</tr>
+<tr>
+<td><strong>A2A Protocol</strong></td>
+<td>Standardised agent discovery, task delegation, and result streaming (Google/Linux Foundation)</td>
+</tr>
+<tr>
+<td><strong>Event-Driven</strong></td>
+<td>Agents subscribe to events; react when triggered by upstream agent actions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 6 — PROTOCOLS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-protocols">
+ <h2>Agentic Protocols & Interoperability</h2>
+ <p class="desc">The defining infrastructure shift of 2025–2026 — enabling agents to discover and collaborate across frameworks. Click each layer to expand.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-protocols')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-protocols">
+<h3>Agentic Protocols & Interoperability Standards</h3>
+<p>The emergence of agent interoperability protocols is the defining infrastructure shift of 2025–2026 — enabling agents built by different teams, in different frameworks, to discover and collaborate with each other.</p>
+<h3>The Three Core Protocols</h3>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Full Name</th>
+<th>Created By</th>
+<th>Donated To</th>
+<th>Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Model Context Protocol</td>
+<td>Anthropic</td>
+<td>Linux Foundation</td>
+<td>Agent ↔ Tool / Data Source</td>
+</tr>
+<tr>
+<td><strong>A2A</strong></td>
+<td>Agent-to-Agent Protocol</td>
+<td>Google</td>
+<td>Linux Foundation</td>
+<td>Agent ↔ Agent</td>
+</tr>
+<tr>
+<td><strong>AG-UI</strong></td>
+<td>Agent-User Interaction Protocol</td>
+<td>CopilotKit</td>
+<td>Open-source community</td>
+<td>Agent ↔ Frontend / Human</td>
+</tr>
+</tbody>
+</table>
+<h3>MCP — Model Context Protocol</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Standardise how AI agents connect to tools, APIs, files, and data sources</td>
+</tr>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Client-server: MCP client (agent) connects to MCP server (tool/data host)</td>
+</tr>
+<tr>
+<td><strong>Core Primitives</strong></td>
+<td>Tools (callable functions), Resources (data), Prompts (templates)</td>
+</tr>
+<tr>
+<td><strong>Transport</strong></td>
+<td>stdio (local) or SSE/HTTP (remote)</td>
+</tr>
+<tr>
+<td><strong>Adoption</strong></td>
+<td>5,000+ MCP servers published as of early 2026; supported by all major model providers</td>
+</tr>
+<tr>
+<td><strong>Key Integrations</strong></td>
+<td>GitHub, Slack, Google Drive, Postgres, Brave Search, Filesystem, and hundreds more</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why MCP Matters:</strong></p>
+<blockquote>
+<p>Before MCP, every tool required a custom integration with every framework. MCP creates a universal plug — any agent can use any MCP-compatible tool without bespoke code.</p>
+</blockquote>
+<h3>A2A — Agent-to-Agent Protocol</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Enable agents to discover, communicate with, and delegate tasks to other agents</td>
+</tr>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Each agent hosts an "Agent Card" (JSON manifest) describing its capabilities and endpoints</td>
+</tr>
+<tr>
+<td><strong>Core Operations</strong></td>
+<td>Task creation, streaming progress updates, result delivery, multi-turn collaboration</td>
+</tr>
+<tr>
+<td><strong>Agent Card</strong></td>
+<td>JSON document published at <code>/.well-known/agent.json</code>; declares skills, auth, and schema</td>
+</tr>
+<tr>
+<td><strong>Relationship to MCP</strong></td>
+<td>Complementary — MCP connects agents to tools; A2A connects agents to agents</td>
+</tr>
+<tr>
+<td><strong>Key Use Case</strong></td>
+<td>Enterprise multi-agent orchestration; marketplace of specialised agents</td>
+</tr>
+</tbody>
+</table>
+<h3>AG-UI — Agent-User Interaction Protocol</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Standardise real-time communication between agent backends and frontend user interfaces</td>
+</tr>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Event-streaming protocol; agent emits typed events (text chunks, tool calls, state updates)</td>
+</tr>
+<tr>
+<td><strong>Key Events</strong></td>
+<td><code>TEXT_MESSAGE_CHUNK</code>, <code>TOOL_CALL_START</code>, <code>TOOL_CALL_END</code>, <code>STATE_SNAPSHOT</code>, <code>CUSTOM</code></td>
+</tr>
+<tr>
+<td><strong>Frontend Compatibility</strong></td>
+<td>React, Vue, Angular, any EventSource-compatible frontend</td>
+</tr>
+<tr>
+<td><strong>Key Benefit</strong></td>
+<td>Enables agents to stream live progress, show intermediate steps, and push UI updates in real time</td>
+</tr>
+</tbody>
+</table>
+<h3>Protocol Ecosystem Overview</h3>
+<pre><code>┌────────────────────────────────────────────────────────────────┐
+│ AGENTIC PROTOCOL STACK │
+│ │
+│ HUMAN / USER INTERFACE │
+│ │ AG-UI (Agent ↔ Frontend) │
+│ ▼ │
+│ ORCHESTRATOR AGENT │
+│ │ A2A (Agent ↔ Agent) │
+│ ▼ │
+│ WORKER AGENT 1 ── WORKER AGENT 2 ── WORKER AGENT N │
+│ │ │ │ │
+│ MCP (Agent ↔ Tool) MCP (Agent ↔ Tool) MCP │
+│ ▼ ▼ ▼ │
+│ [Web Search] [Code Executor] [Database] │
+└────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 7 — FRAMEWORKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-frameworks">
+ <h2>Leading Agent Frameworks</h2>
+ <p class="desc">Production-ready frameworks for building agentic AI systems.</p>
+
+ <div style="overflow-x:auto;">
+ <table class="fw-table" id="fw-table"></table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-frameworks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-frameworks">
+<h3>Leading Agent Frameworks</h3>
+<h3>Production-Ready Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Language</th>
+<th>Architecture Style</th>
+<th>Deployment</th>
+<th>Highlights</th>
+<th>GitHub Stars</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>Python</td>
+<td>Graph-based, stateful</td>
+<td>Open-Source (any cloud / on-prem; Python 3.9+)</td>
+<td>Nodes and edges define agent state machines; first-class HITL; cycles and branching</td>
+<td>18k+</td>
+</tr>
+<tr>
+<td><strong>OpenAI Agents SDK</strong></td>
+<td>Python</td>
+<td>Lightweight, handoff-based</td>
+<td>Open-Source (any cloud / on-prem; Python 3.9+)</td>
+<td>Minimalist production framework; Swarm-inspired; native OpenAI tooling</td>
+<td>11k+</td>
+</tr>
+<tr>
+<td><strong>Google ADK</strong></td>
+<td>Python</td>
+<td>Modular, hierarchical</td>
+<td>Open-Source (any cloud / on-prem; optimised for GCP Vertex AI)</td>
+<td>Optimised for Gemini; works with any model; A2A compatible; multi-agent native</td>
+<td>7k+</td>
+</tr>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>Python</td>
+<td>Role-based teams</td>
+<td>Open-Source (any cloud / on-prem; Python 3.10+)</td>
+<td>Define agents as crew members with roles, backstories, and task assignments</td>
+<td>31k+</td>
+</tr>
+<tr>
+<td><strong>AutoGen (Microsoft)</strong></td>
+<td>Python</td>
+<td>Conversation-driven</td>
+<td>Open-Source (any cloud / on-prem; optimised for Azure)</td>
+<td>Multi-agent conversations; GroupChat; teachable agents; enterprise-grade</td>
+<td>43k+</td>
+</tr>
+<tr>
+<td><strong>Semantic Kernel</strong></td>
+<td>Python / C# / Java</td>
+<td>Plugin-based, enterprise</td>
+<td>Open-Source (any cloud / on-prem; optimised for Azure)</td>
+<td>Microsoft's enterprise agent SDK; deep Azure and M365 integration</td>
+<td>27k+</td>
+</tr>
+<tr>
+<td><strong>LangChain</strong></td>
+<td>Python</td>
+<td>Chain + Agent primitives</td>
+<td>Open-Source (any cloud / on-prem; Python 3.9+)</td>
+<td>Foundational library; extensive integrations; AgentExecutor and LCEL</td>
+<td>126k+</td>
+</tr>
+<tr>
+<td><strong>Smolagents</strong></td>
+<td>Python</td>
+<td>Code-first</td>
+<td>Open-Source (any cloud / on-prem; Python 3.9+)</td>
+<td>HuggingFace framework; agents write and execute Python, not JSON</td>
+<td>18k+</td>
+</tr>
+<tr>
+<td><strong>Pydantic AI</strong></td>
+<td>Python</td>
+<td>Type-safe, validation-first</td>
+<td>Open-Source (any cloud / on-prem; Python 3.10+)</td>
+<td>Strongly typed agent framework; production-grade validation; built on Pydantic</td>
+<td>11k+</td>
+</tr>
+</tbody>
+</table>
+<h3>No-Code / Low-Code Agent Builders</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>n8n AI</strong></td>
+<td>Open-Source / Cloud (self-host Docker/K8s; n8n Cloud on AWS)</td>
+<td>Visual workflow builder with native AI agent nodes; self-hostable</td>
+</tr>
+<tr>
+<td><strong>Zapier Agents</strong></td>
+<td>Cloud (Zapier SaaS on AWS)</td>
+<td>Connect 6,000+ apps; natural language workflow creation; no code</td>
+</tr>
+<tr>
+<td><strong>Lindy AI</strong></td>
+<td>Cloud (Lindy SaaS)</td>
+<td>Personal and team agent builder; email, calendar, CRM integrations</td>
+</tr>
+<tr>
+<td><strong>Relevance AI</strong></td>
+<td>Cloud (Relevance SaaS on AWS)</td>
+<td>No-code tool and agent builder; enterprise workflow automation</td>
+</tr>
+<tr>
+<td><strong>Dify</strong></td>
+<td>Open-Source / Cloud (self-host Docker/K8s; Dify Cloud on AWS)</td>
+<td>Visual LLM app builder with agent capabilities; widely adopted</td>
+</tr>
+<tr>
+<td><strong>FlowiseAI</strong></td>
+<td>Open-Source (self-host any infra; Node.js 18+)</td>
+<td>Drag-and-drop LangChain-compatible agent builder</td>
+</tr>
+<tr>
+<td><strong>Voiceflow</strong></td>
+<td>Cloud (Voiceflow SaaS on AWS)</td>
+<td>Conversational and agentic AI builder for customer-facing deployments</td>
+</tr>
+</tbody>
+</table>
+<h3>Framework Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>LangGraph</th>
+<th>OpenAI Agents SDK</th>
+<th>CrewAI</th>
+<th>AutoGen</th>
+<th>Google ADK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Graph / State Machine</td>
+<td>Lightweight Handoffs</td>
+<td>Role-based Teams</td>
+<td>Conversation Groups</td>
+<td>Hierarchical Modular</td>
+</tr>
+<tr>
+<td><strong>State Management</strong></td>
+<td>First-class, persistent</td>
+<td>Basic, context-passing</td>
+<td>Task-based</td>
+<td>Message thread</td>
+<td>Session-based</td>
+</tr>
+<tr>
+<td><strong>HITL Support</strong></td>
+<td>Excellent (interrupt nodes)</td>
+<td>Good (handoff to human)</td>
+<td>Moderate</td>
+<td>Good</td>
+<td>Good</td>
+</tr>
+<tr>
+<td><strong>Multi-Agent</strong></td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td><strong>Learning Curve</strong></td>
+<td>Moderate-High</td>
+<td>Low</td>
+<td>Low-Moderate</td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Complex, production workflows</td>
+<td>Rapid prototyping</td>
+<td>Team-based task delegation</td>
+<td>Research and debate agents</td>
+<td>Gemini-centric deployments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 8 — AGENT DOMAINS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-domains">
+ <h2>Agent Categories by Domain</h2>
+ <p class="desc">Click any domain category to explore agent types and real-world examples.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-domains')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-domains">
+<h3>Agent Categories by Domain</h3>
+<h3>Research &amp; Knowledge Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deep Research Agents</strong></td>
+<td>Multi-step web search, synthesis, and long-form report generation</td>
+<td>OpenAI Deep Research, Gemini Deep Research, Perplexity</td>
+</tr>
+<tr>
+<td><strong>Literature Review Agents</strong></td>
+<td>Search and synthesise academic papers</td>
+<td>Elicit, Consensus AI, Semantic Scholar AI</td>
+</tr>
+<tr>
+<td><strong>Competitive Intelligence</strong></td>
+<td>Monitor and summarise competitor activity from web sources</td>
+<td>Crayon AI, Klue, Perplexity Pro</td>
+</tr>
+<tr>
+<td><strong>News &amp; Monitoring</strong></td>
+<td>Track and summarise topics across news sources</td>
+<td>Perplexity, Feedly AI, Briefing AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Coding &amp; Software Engineering Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Coding Agents</strong></td>
+<td>Write, debug, test, and deploy code end-to-end</td>
+<td>Devin (Cognition), SWE-Agent, OpenAI Codex CLI</td>
+</tr>
+<tr>
+<td><strong>CLI Coding Agents</strong></td>
+<td>Code generation and debugging via command-line interface</td>
+<td>Claude Code, Gemini CLI, Codex CLI</td>
+</tr>
+<tr>
+<td><strong>IDE-Integrated Agents</strong></td>
+<td>Multi-file editing, refactoring, and agentic code completion inside the IDE</td>
+<td>Cursor Agent Mode, Windsurf Cascade, GitHub Copilot Agent</td>
+</tr>
+<tr>
+<td><strong>Pull Request Agents</strong></td>
+<td>Autonomous PR creation, review, and merge</td>
+<td>GitHub Copilot for PRs, Coderabbit, Graphite AI</td>
+</tr>
+<tr>
+<td><strong>DevOps Agents</strong></td>
+<td>Monitor infrastructure, auto-remediate incidents, manage CI/CD</td>
+<td>PagerDuty AI, ServiceNow AI, GitHub Actions AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Browser &amp; Web Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>General Web Agents</strong></td>
+<td>Navigate the web, fill forms, extract data, take actions</td>
+<td>OpenAI Operator, Browser Use, Skyvern</td>
+</tr>
+<tr>
+<td><strong>RPA-Replacement Agents</strong></td>
+<td>Automate repetitive web-based business tasks</td>
+<td>Skyvern, HARPA AI, Robocorp AI</td>
+</tr>
+<tr>
+<td><strong>E-Commerce Agents</strong></td>
+<td>Search, compare, and purchase products online</td>
+<td>OpenAI Operator, Perplexity Buy Mode</td>
+</tr>
+<tr>
+<td><strong>Data Extraction Agents</strong></td>
+<td>Scrape, parse, and structure web content at scale</td>
+<td>Firecrawl, Apify AI, Browse AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Data &amp; Analytics Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Analysis Agents</strong></td>
+<td>Query databases, run code, and generate insights from data</td>
+<td>ChatGPT Code Interpreter, Julius AI, Noteable</td>
+</tr>
+<tr>
+<td><strong>SQL Agents</strong></td>
+<td>Translate natural language to SQL; query databases</td>
+<td>Text2SQL agents, Databricks Genie, Defog</td>
+</tr>
+<tr>
+<td><strong>BI Agents</strong></td>
+<td>Generate dashboard insights and commentary autonomously</td>
+<td>Tableau AI, Power BI Copilot, ThoughtSpot Sage</td>
+</tr>
+<tr>
+<td><strong>Financial Data Agents</strong></td>
+<td>Analyse financial filings, markets, and performance data</td>
+<td>Bloomberg AI, Kensho, AlphaSense</td>
+</tr>
+</tbody>
+</table>
+<h3>Customer Service Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Support Ticket Agents</strong></td>
+<td>Triage, classify, route, and resolve customer tickets</td>
+<td>Salesforce Agentforce, Intercom Fin, Zendesk AI</td>
+</tr>
+<tr>
+<td><strong>Voice Support Agents</strong></td>
+<td>Handle inbound customer calls autonomously</td>
+<td>Twilio AI, Retell AI, Bland AI</td>
+</tr>
+<tr>
+<td><strong>Escalation Agents</strong></td>
+<td>Detect when to escalate to a human and hand off seamlessly</td>
+<td>Freshdesk AI, Kore.ai</td>
+</tr>
+<tr>
+<td><strong>Outbound Sales Agents</strong></td>
+<td>Prospect, qualify, and personalise outreach at scale</td>
+<td>11x.ai, Artisan AI, Relevance AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Workflow Automation Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No-Code Workflow Agents</strong></td>
+<td>Connect apps and automate multi-step business processes</td>
+<td>Zapier Agents, n8n AI, Make (Integromat)</td>
+</tr>
+<tr>
+<td><strong>Personal Productivity Agents</strong></td>
+<td>Manage calendar, email, tasks, and scheduling</td>
+<td>Lindy AI, Dot (Personal AI), Notion AI</td>
+</tr>
+<tr>
+<td><strong>Document Processing Agents</strong></td>
+<td>Extract, transform, and route document data</td>
+<td>Reducto AI, Unstructured.io, LlamaParse</td>
+</tr>
+<tr>
+<td><strong>Meeting Agents</strong></td>
+<td>Transcribe, summarise, and extract action items from meetings</td>
+<td>Otter.ai AI Agents, Fireflies AI, Granola</td>
+</tr>
+</tbody>
+</table>
+<h3>Finance &amp; Operations Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invoice Processing Agents</strong></td>
+<td>Extract data from invoices; route for approval; update ERP</td>
+<td>SAP Joule, Workday Agents, Palette AI</td>
+</tr>
+<tr>
+<td><strong>HR &amp; People Ops Agents</strong></td>
+<td>Answer HR queries, manage onboarding workflows, process requests</td>
+<td>Workday AI, Leena AI, ServiceNow HR</td>
+</tr>
+<tr>
+<td><strong>Procurement Agents</strong></td>
+<td>Source vendors, request quotes, manage POs</td>
+<td>Zip AI, Coupa AI, GEP SMART AI</td>
+</tr>
+<tr>
+<td><strong>Legal Ops Agents</strong></td>
+<td>Draft contracts, review clauses, manage compliance workflows</td>
+<td>Harvey, Ironclad AI, Spellbook</td>
+</tr>
+</tbody>
+</table>
+<h3>Security Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Detection Agents</strong></td>
+<td>Monitor networks and logs for anomalies and attack patterns</td>
+<td>CrowdStrike Charlotte AI, Exabeam Nova</td>
+</tr>
+<tr>
+<td><strong>Incident Response Agents</strong></td>
+<td>Triage alerts, investigate incidents, and recommend remediation</td>
+<td>Palo Alto Cortex XSOAR AI, Splunk AI</td>
+</tr>
+<tr>
+<td><strong>Penetration Testing Agents</strong></td>
+<td>Autonomously probe systems for vulnerabilities</td>
+<td>Horizon3 AI, Pentera, Radiant Security</td>
+</tr>
+<tr>
+<td><strong>SOC Automation Agents</strong></td>
+<td>Automate Security Operations Centre workflows</td>
+<td>Darktrace AI, Vectra AI, Microsoft Sentinel AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Scientific &amp; Research Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drug Discovery Agents</strong></td>
+<td>Design, screen, and optimise drug candidates</td>
+<td>Insilico Medicine, Recursion, Schrödinger</td>
+</tr>
+<tr>
+<td><strong>Protein Design Agents</strong></td>
+<td>Generate novel protein sequences with target properties</td>
+<td>AlphaFold 3, RFdiffusion, ESMFold</td>
+</tr>
+<tr>
+<td><strong>Hypothesis Generation Agents</strong></td>
+<td>Surface novel scientific hypotheses from literature</td>
+<td>Exa AI, FutureHouse agents</td>
+</tr>
+<tr>
+<td><strong>Lab Automation Agents</strong></td>
+<td>Design and interpret wet lab experiments autonomously</td>
+<td>Emerald Cloud Lab, TetraScience</td>
+</tr>
+</tbody>
+</table>
+<h3>Multimodal Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>What It Does</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Computer Use Agents</strong></td>
+<td>Perceive a computer screen and interact with any desktop/web app</td>
+<td>Claude Computer Use, OpenAI Operator</td>
+</tr>
+<tr>
+<td><strong>Vision-Language Agents</strong></td>
+<td>See, reason about, and act on visual information</td>
+<td>GPT-4o, Gemini 2.0 Flash, Claude 3.7 Sonnet</td>
+</tr>
+<tr>
+<td><strong>Audio-Active Agents</strong></td>
+<td>Engage in real-time spoken dialogue while using tools</td>
+<td>OpenAI Realtime API agents, Hume AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 9 — BENCHMARKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-benchmarks">
+ <h2>Evaluation & Benchmarks</h2>
+ <p class="desc">How agentic AI systems are measured and ranked.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Coding Agent Benchmark — SWE-Bench Verified (2026)</h3>
+ <canvas id="chart-swe"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Multi-Step & Research Benchmarks (2026)</h3>
+ <canvas id="chart-research"></canvas>
+ </div>
+ </div>
+
+ <h3 style="margin-bottom:16px; color:var(--accent3);">Core Agent Benchmarks</h3>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Benchmarks</h3>
+<h3>Core Agent Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>What It Tests</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SWE-Bench Verified</strong></td>
+<td>Real GitHub issue resolution (500 verified tasks)</td>
+<td>Gold standard for software engineering agents; Claude 4 Opus leads</td>
+</tr>
+<tr>
+<td><strong>SWE-Bench Lite</strong></td>
+<td>Subset of 300 SWE-Bench tasks</td>
+<td>Faster, cheaper evaluation of coding agents</td>
+</tr>
+<tr>
+<td><strong>WebArena</strong></td>
+<td>Navigate and complete tasks on realistic web environments</td>
+<td>Tests browser agents; booking, shopping, CMS tasks</td>
+</tr>
+<tr>
+<td><strong>WorkArena</strong></td>
+<td>ServiceNow-based enterprise task completion</td>
+<td>Enterprise workflow agent benchmark</td>
+</tr>
+<tr>
+<td><strong>GAIA</strong></td>
+<td>Real-world question answering requiring multi-step tool use</td>
+<td>"General AI Assistants" benchmark; measures end-to-end agent capability</td>
+</tr>
+<tr>
+<td><strong>BrowseComp</strong></td>
+<td>Complex research questions requiring multi-hop web browsing</td>
+<td>OpenAI benchmark; tests deep web research agents</td>
+</tr>
+<tr>
+<td><strong>Humanity's Last Exam</strong></td>
+<td>Extremely hard expert-level questions across all domains</td>
+<td>Frontier capability ceiling test; OpenAI Deep Research leads</td>
+</tr>
+<tr>
+<td><strong>AssistGUI</strong></td>
+<td>GUI task completion on desktop applications</td>
+<td>Tests computer use agents</td>
+</tr>
+<tr>
+<td><strong>OSWorld</strong></td>
+<td>Open-ended computer tasks across OS environments</td>
+<td>Measures autonomous computer-use performance</td>
+</tr>
+<tr>
+<td><strong>τ-bench (Tau-bench)</strong></td>
+<td>Tool-use agent evaluation under realistic dialogue conditions</td>
+<td>Multi-turn tool use realism benchmark</td>
+</tr>
+</tbody>
+</table>
+<h3>Coding Agent Benchmark Leaderboard (2026)</h3>
+<table>
+<thead>
+<tr>
+<th>Model / Agent</th>
+<th>SWE-Bench Verified</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude 4 Opus (Claude Code)</strong></td>
+<td>~72.5%</td>
+<td>Top overall; best on complex, multi-file tasks</td>
+</tr>
+<tr>
+<td><strong>OpenAI Codex CLI (GPT-5.3)</strong></td>
+<td>~69.1%</td>
+<td>SWE-Bench Pro SOTA; OpenAI's dedicated coding agent</td>
+</tr>
+<tr>
+<td><strong>Gemini 3 Pro</strong></td>
+<td>~65.0%</td>
+<td>Strong; integrates with Google's dev ecosystem</td>
+</tr>
+<tr>
+<td><strong>Devin 2.0</strong></td>
+<td>~53.6%</td>
+<td>First general SWE agent; now enhanced with new models</td>
+</tr>
+<tr>
+<td><strong>SWE-Agent (Claude)</strong></td>
+<td>~48.9%</td>
+<td>Open-source research agent; academic baseline</td>
+</tr>
+</tbody>
+</table>
+<h3>Multi-Step &amp; Research Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Top Performer (2026)</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GAIA (Test set)</strong></td>
+<td>Manus</td>
+<td>86.5%</td>
+</tr>
+<tr>
+<td><strong>BrowseComp</strong></td>
+<td>OpenAI Deep Research</td>
+<td>68.9%</td>
+</tr>
+<tr>
+<td><strong>Humanity's Last Exam</strong></td>
+<td>OpenAI Deep Research</td>
+<td>26.6%</td>
+</tr>
+<tr>
+<td><strong>WebArena</strong></td>
+<td>OpenAI Operator</td>
+<td>38.1%</td>
+</tr>
+<tr>
+<td><strong>OSWorld</strong></td>
+<td>Claude Computer Use</td>
+<td>~39%</td>
+</tr>
+</tbody>
+</table>
+<h3>Agent Evaluation Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AgentBench</strong></td>
+<td>Comprehensive agent evaluation across 8 environments</td>
+</tr>
+<tr>
+<td><strong>LangSmith</strong></td>
+<td>Agent tracing, evaluation datasets, and run monitoring</td>
+</tr>
+<tr>
+<td><strong>Braintrust</strong></td>
+<td>AI evaluation and prompt testing for agent pipelines</td>
+</tr>
+<tr>
+<td><strong>Langfuse</strong></td>
+<td>Open-source LLM observability; traces multi-step agent runs</td>
+</tr>
+<tr>
+<td><strong>Ragas</strong></td>
+<td>Evaluate RAG components within agent pipelines</td>
+</tr>
+<tr>
+<td><strong>PromptFoo</strong></td>
+<td>CLI-based LLM and agent testing framework</td>
+</tr>
+<tr>
+<td><strong>Arize Phoenix</strong></td>
+<td>LLM observability and agent tracing platform</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 10 — MARKET DATA -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-market">
+ <h2>Market & Adoption Data</h2>
+ <p class="desc">The agentic AI market is projected to grow from ~$7.5B (2025) to ~$160B+ by 2034.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Projected Market Growth ($B)</h3>
+ <canvas id="chart-market"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Top Investments (2024–2026)</h3>
+ <canvas id="chart-invest"></canvas>
+ </div>
+ </div>
+
+ <h3 style="margin-top:16px; margin-bottom:16px; color:var(--accent2);">Adoption Metrics</h3>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Size</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Agentic AI Market (2025)</strong></td>
+<td>~$7.3–7.6 billion</td>
+</tr>
+<tr>
+<td><strong>Projected Market (2034)</strong></td>
+<td>~$139–182 billion (CAGR ~45–50%)</td>
+</tr>
+<tr>
+<td><strong>CAGR (2026–2033)</strong></td>
+<td>~49.6% (Grand View Research)</td>
+</tr>
+<tr>
+<td><strong>Enterprise AI Agent Spend (2025)</strong></td>
+<td>Included within &gt;$200 billion total enterprise AI spend</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>% Organisations with Some Agentic AI Adoption</strong></td>
+<td>79% as of 2025 (Landbase survey)</td>
+</tr>
+<tr>
+<td><strong>% Senior Executives Using AI Agents</strong></td>
+<td>50%+ as of early 2026 (Talkwalker)</td>
+</tr>
+<tr>
+<td><strong>Gartner Prediction: Enterprise Apps with Embedded Agents</strong></td>
+<td>40% by 2026</td>
+</tr>
+<tr>
+<td><strong>% Fortune 500 Piloting Agentic Workflows</strong></td>
+<td>~60% (various surveys, 2025)</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot Agent Mode Activations</strong></td>
+<td>Available to 1.8M+ subscribers</td>
+</tr>
+<tr>
+<td><strong>Salesforce Agentforce Deployments</strong></td>
+<td>1,000+ enterprise customers in first 90 days post-launch</td>
+</tr>
+<tr>
+<td><strong>OpenAI Operator Users</strong></td>
+<td>Available to all ChatGPT Pro subscribers (700M+ user base)</td>
+</tr>
+</tbody>
+</table>
+<h3>Investment Landscape (2024–2026)</h3>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Stage / Round</th>
+<th>Amount</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cognition AI (Devin)</strong></td>
+<td>Series B</td>
+<td>$175 million</td>
+<td>Autonomous SWE agents</td>
+</tr>
+<tr>
+<td><strong>Harvey</strong></td>
+<td>Series C</td>
+<td>$300 million</td>
+<td>Legal AI agents</td>
+</tr>
+<tr>
+<td><strong>11x.ai</strong></td>
+<td>Series A</td>
+<td>$50 million</td>
+<td>Autonomous sales agents</td>
+</tr>
+<tr>
+<td><strong>Hebbia</strong></td>
+<td>Series B</td>
+<td>$130 million</td>
+<td>Knowledge work agents</td>
+</tr>
+<tr>
+<td><strong>Sierra AI</strong></td>
+<td>Series B</td>
+<td>$175 million</td>
+<td>Customer service agents</td>
+</tr>
+<tr>
+<td><strong>Ema</strong></td>
+<td>Series A</td>
+<td>$61 million</td>
+<td>Universal employee agents</td>
+</tr>
+<tr>
+<td><strong>Artisan AI</strong></td>
+<td>Series A</td>
+<td>$25 million</td>
+<td>Sales automation agents</td>
+</tr>
+<tr>
+<td><strong>Lindy AI</strong></td>
+<td>Series A</td>
+<td>$10 million</td>
+<td>Personal productivity agents</td>
+</tr>
+<tr>
+<td><strong>Relevance AI</strong></td>
+<td>Series B</td>
+<td>$24 million</td>
+<td>No-code agent builder</td>
+</tr>
+<tr>
+<td><strong>Skyvern</strong></td>
+<td>Series A</td>
+<td>$23 million</td>
+<td>Browser automation agents</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Market Drivers</h3>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Labour Efficiency</strong></td>
+<td>Enterprises seeking to automate knowledge work at scale without equivalent headcount growth</td>
+</tr>
+<tr>
+<td><strong>Foundation Model Capability</strong></td>
+<td>Rapid improvement in reasoning, tool use, and instruction following enables reliable agents</td>
+</tr>
+<tr>
+<td><strong>Protocol Standardisation</strong></td>
+<td>MCP, A2A, and AG-UI reduce integration cost, accelerating enterprise adoption</td>
+</tr>
+<tr>
+<td><strong>Cost of Inference</strong></td>
+<td>Token costs dropped ~100x from 2023–2025, making multi-step agent workflows economically viable</td>
+</tr>
+<tr>
+<td><strong>Enterprise Platform Integration</strong></td>
+<td>Salesforce, Microsoft, ServiceNow, SAP embedding agents directly into existing workflows</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 11 — RISKS & SAFETY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-risks">
+ <h2>Risks, Limitations & Safety</h2>
+ <p class="desc">Critical challenges and safety design principles for agentic AI systems.</p>
+
+ <h3 style="margin-bottom:16px; color:var(--accent5);">Technical Limitations</h3>
+ 
+
+ <h3 style="margin-top:32px; margin-bottom:16px; color:var(--accent4);">Safety & Misuse Risks</h3>
+ 
+
+ <h3 style="margin-top:32px; margin-bottom:16px; color:var(--accent2);">Safety Design Principles</h3>
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Safety</h3>
+<h3>Technical Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compounding Errors</strong></td>
+<td>Mistakes in early steps cascade through multi-step pipelines; errors multiply</td>
+</tr>
+<tr>
+<td><strong>Hallucinated Tool Calls</strong></td>
+<td>Agents may invent tool parameters or call tools that do not exist</td>
+</tr>
+<tr>
+<td><strong>Context Window Exhaustion</strong></td>
+<td>Long-running agents can exhaust their context window; early information is forgotten</td>
+</tr>
+<tr>
+<td><strong>Infinite Loops</strong></td>
+<td>Agents can get stuck in repetitive retry cycles without proper loop detection</td>
+</tr>
+<tr>
+<td><strong>Tool Unreliability</strong></td>
+<td>Agents have no inherent understanding of when external tools are rate-limited or down</td>
+</tr>
+<tr>
+<td><strong>Goal Misinterpretation</strong></td>
+<td>Ambiguous instructions lead to agents pursuing the wrong objective entirely</td>
+</tr>
+<tr>
+<td><strong>Temporal Blindness</strong></td>
+<td>Agents may not know how much time has passed or account for asynchronous delays</td>
+</tr>
+<tr>
+<td><strong>Benchmark Gaming</strong></td>
+<td>Agent benchmarks can be over-optimised; real-world performance often differs</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety &amp; Misuse Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prompt Injection</strong></td>
+<td>Malicious content in the environment (web pages, documents) hijacks agent instructions</td>
+</tr>
+<tr>
+<td><strong>Indirect Prompt Injection</strong></td>
+<td>Agent is directed by adversarial data it retrieves — without the user's knowledge</td>
+</tr>
+<tr>
+<td><strong>Unintended Real-World Actions</strong></td>
+<td>Agents with access to email, payments, or APIs can cause irreversible damage</td>
+</tr>
+<tr>
+<td><strong>Data Exfiltration</strong></td>
+<td>Compromised agents can be manipulated into sending sensitive data to external endpoints</td>
+</tr>
+<tr>
+<td><strong>Autonomous Decision in High-Stakes Contexts</strong></td>
+<td>Agents making medical, financial, or legal decisions without appropriate oversight</td>
+</tr>
+<tr>
+<td><strong>Supply Chain Attacks</strong></td>
+<td>Malicious MCP servers or tools that poison agent behaviour</td>
+</tr>
+<tr>
+<td><strong>Reputational Damage</strong></td>
+<td>Agents communicating on behalf of an organisation can produce harmful or inaccurate outputs publicly</td>
+</tr>
+<tr>
+<td><strong>Resource Abuse</strong></td>
+<td>Agents spinning up infinite compute, API calls, or storage without spending limits</td>
+</tr>
+</tbody>
+</table>
+<h3>Trust &amp; Control Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opacity</strong></td>
+<td>Multi-step agent reasoning is difficult to audit; intermediate steps may not be logged</td>
+</tr>
+<tr>
+<td><strong>Accountability Gap</strong></td>
+<td>When agents cause harm, responsibility between provider, developer, and deployer is unclear</td>
+</tr>
+<tr>
+<td><strong>Minimal Footprint Principle</strong></td>
+<td>Agents should request only the permissions needed for the current task — hard to enforce in practice</td>
+</tr>
+<tr>
+<td><strong>Consent &amp; Transparency</strong></td>
+<td>Users interacting with agent-powered systems may not know they are dealing with an autonomous system</td>
+</tr>
+<tr>
+<td><strong>Alignment Drift</strong></td>
+<td>Long-running agents may gradually deviate from the original user intention</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety Design Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimal Footprint</strong></td>
+<td>Agents should request only necessary permissions, avoid storing sensitive data, prefer reversible actions</td>
+</tr>
+<tr>
+<td><strong>Explicit Confirmation</strong></td>
+<td>Require human approval before irreversible actions (send email, make payment, delete data)</td>
+</tr>
+<tr>
+<td><strong>Sandboxed Execution</strong></td>
+<td>Run agent code and browser actions in isolated, permission-limited environments</td>
+</tr>
+<tr>
+<td><strong>Audit Logging</strong></td>
+<td>Log every tool call, reasoning step, and state transition for post-hoc review</td>
+</tr>
+<tr>
+<td><strong>Guardrails at Every Layer</strong></td>
+<td>Input filters, output validators, and real-time monitoring at the framework and API layers</td>
+</tr>
+<tr>
+<td><strong>Kill Switch / Circuit Breaker</strong></td>
+<td>Ability to halt any running agent immediately; automatic stop on anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Scope Limitation</strong></td>
+<td>Define explicit boundaries on what domains, tools, and data sources an agent can access</td>
+</tr>
+<tr>
+<td><strong>Red-Teaming</strong></td>
+<td>Proactively attack agent systems to discover prompt injection and misuse vectors</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="generative-ai.html">Generative AI</a>
+<a href="conversational-ai.html">Conversational AI</a>
+<a href="reinforcement-learning-ai.html">Reinforcement Learning AI</a>
+<a href="autonomous-ai.html">Autonomous AI</a>
+<a href="multimodal-perception-ai.html">Multimodal Perception AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<!-- ██ SECTION 12 — GLOSSARY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-glossary">
+ <h2>Key Terminology Glossary</h2>
+ <p class="desc">Search or browse 35+ agentic AI terms.</p>
+
+ <input type="text" class="glossary-search" id="glossary-search" placeholder="Search terms…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent</strong></td>
+<td>An AI system that perceives its environment, reasons about it, and takes actions to achieve a defined goal</td>
+</tr>
+<tr>
+<td><strong>Agent Loop</strong></td>
+<td>The continuous cycle of Perceive → Reason → Plan → Act → Observe → Reflect executed by an agent</td>
+</tr>
+<tr>
+<td><strong>Orchestrator</strong></td>
+<td>The top-level agent or component responsible for decomposing goals and delegating sub-tasks to worker agents</td>
+</tr>
+<tr>
+<td><strong>Worker Agent</strong></td>
+<td>A specialised sub-agent that executes a specific assigned sub-task within a multi-agent system</td>
+</tr>
+<tr>
+<td><strong>Tool</strong></td>
+<td>An external function, API, or service that an agent can call to take real-world actions or retrieve data</td>
+</tr>
+<tr>
+<td><strong>Tool Calling / Function Calling</strong></td>
+<td>The mechanism by which a model selects and invokes external functions based on structured schema definitions</td>
+</tr>
+<tr>
+<td><strong>ReAct</strong></td>
+<td>Reason + Act — the pattern of interleaving reasoning traces with tool-use actions in an agent loop</td>
+</tr>
+<tr>
+<td><strong>Reflection</strong></td>
+<td>An agent pattern where the model critiques and revises its own outputs against the original goal</td>
+</tr>
+<tr>
+<td><strong>Planning</strong></td>
+<td>The process of decomposing a goal into an ordered sequence of sub-tasks before taking action</td>
+</tr>
+<tr>
+<td><strong>Human-in-the-Loop (HITL)</strong></td>
+<td>A safety mechanism requiring human approval before the agent proceeds past a defined checkpoint</td>
+</tr>
+<tr>
+<td><strong>Hallucinated Tool Call</strong></td>
+<td>When an agent invents non-existent tools or fabricates tool parameters in its output</td>
+</tr>
+<tr>
+<td><strong>Prompt Injection</strong></td>
+<td>Malicious content embedded in the agent's environment that overrides its original instructions</td>
+</tr>
+<tr>
+<td><strong>Indirect Prompt Injection</strong></td>
+<td>Adversarial instructions embedded in data the agent retrieves, not in the user's original input</td>
+</tr>
+<tr>
+<td><strong>MCP (Model Context Protocol)</strong></td>
+<td>Anthropic's open standard for connecting agents to tools and data sources via a universal interface</td>
+</tr>
+<tr>
+<td><strong>A2A (Agent-to-Agent Protocol)</strong></td>
+<td>Google's open standard enabling agents to discover, communicate with, and delegate tasks to other agents</td>
+</tr>
+<tr>
+<td><strong>AG-UI</strong></td>
+<td>CopilotKit's open protocol for real-time streaming communication between agent backends and frontend UIs</td>
+</tr>
+<tr>
+<td><strong>Agent Card</strong></td>
+<td>A JSON manifest document that describes an agent's capabilities, skills, authentication, and API endpoints (A2A)</td>
+</tr>
+<tr>
+<td><strong>MCP Server</strong></td>
+<td>A server that hosts tools, resources, or data and exposes them to MCP-compatible agents</td>
+</tr>
+<tr>
+<td><strong>Memory (Short-Term)</strong></td>
+<td>In-context or session-scoped storage of the agent's recent observations and intermediate results</td>
+</tr>
+<tr>
+<td><strong>Memory (Long-Term)</strong></td>
+<td>Persistent storage of facts, user preferences, and past events that persists across sessions</td>
+</tr>
+<tr>
+<td><strong>Episodic Memory</strong></td>
+<td>Memory of specific past events and interactions, retrievable by semantic search</td>
+</tr>
+<tr>
+<td><strong>Semantic Memory</strong></td>
+<td>Persistent storage of general facts and domain knowledge</td>
+</tr>
+<tr>
+<td><strong>Procedural Memory</strong></td>
+<td>Stored instructions and how-to knowledge that guides agent behaviour on specific task types</td>
+</tr>
+<tr>
+<td><strong>RAG (Retrieval-Augmented Generation)</strong></td>
+<td>Augmenting agent generation with documents retrieved from an external knowledge store</td>
+</tr>
+<tr>
+<td><strong>Agentic RAG</strong></td>
+<td>Multi-hop RAG where the agent decides what to retrieve, when, and from where across multiple steps</td>
+</tr>
+<tr>
+<td><strong>Minimal Footprint Principle</strong></td>
+<td>Safety principle: agents should request only necessary permissions and prefer reversible actions</td>
+</tr>
+<tr>
+<td><strong>SWE-Bench</strong></td>
+<td>The leading benchmark for evaluating software engineering agents on real GitHub issue resolution</td>
+</tr>
+<tr>
+<td><strong>GAIA</strong></td>
+<td>"General AI Assistants" benchmark testing multi-step tool-use on real-world questions</td>
+</tr>
+<tr>
+<td><strong>Multi-Agent System</strong></td>
+<td>An architecture where multiple specialised agents collaborate to complete a complex shared goal</td>
+</tr>
+<tr>
+<td><strong>Handoff</strong></td>
+<td>The transfer of task context and control from one agent (or human) to another</td>
+</tr>
+<tr>
+<td><strong>Sandbox</strong></td>
+<td>An isolated execution environment preventing agent code or browser actions from affecting production systems</td>
+</tr>
+<tr>
+<td><strong>Guardrails</strong></td>
+<td>Rules, filters, or monitoring systems applied at runtime to constrain agent behaviour within safe bounds</td>
+</tr>
+<tr>
+<td><strong>Circuit Breaker</strong></td>
+<td>An automatic mechanism that halts agent execution when anomalous behaviour or spending thresholds are detected</td>
+</tr>
+<tr>
+<td><strong>Speculative Execution</strong></td>
+<td>Running multiple plan branches in parallel and selecting the best result to reduce latency</td>
+</tr>
+<tr>
+<td><strong>Event-Driven Agent</strong></td>
+<td>An agent triggered by an external event (email received, alert fired) rather than an explicit user prompt</td>
+</tr>
+<tr>
+<td><strong>Stateful Agent</strong></td>
+<td>An agent that maintains persistent state across multiple interactions, sessions, or task executions</td>
+</tr>
+<tr>
+<td><strong>Stateless Agent</strong></td>
+<td>An agent with no memory between invocations; each run starts from scratch</td>
+</tr>
+<tr>
+<td><strong>Agent Benchmark Saturation</strong></td>
+<td>When benchmark performance no longer meaningfully distinguishes between agent capability levels</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Agentic AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/01-agentic-ai-overview.gif" alt="Agentic AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Agentic AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/01-agentic-ai-tech-stack.gif" alt="Agentic AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>EU AI Act — Agentic AI Implications</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Impact on Agentic AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-Risk Classification</strong></td>
+<td>Agents deployed in hiring, credit, healthcare, law enforcement, or critical infrastructure face strict conformity requirements</td>
+</tr>
+<tr>
+<td><strong>Transparency Requirements</strong></td>
+<td>Users must be informed when interacting with an AI agent, not a human</td>
+</tr>
+<tr>
+<td><strong>Human Oversight</strong></td>
+<td>High-risk agentic systems must include mechanisms for human intervention and override</td>
+</tr>
+<tr>
+<td><strong>Accountability</strong></td>
+<td>Deployers of agentic systems are responsible for ensuring compliance within their use context</td>
+</tr>
+<tr>
+<td><strong>GPAI Obligations</strong></td>
+<td>Foundation models powering agents with &gt;10^25 FLOPs training compute face systemic risk obligations</td>
+</tr>
+<tr>
+<td><strong>Logging Requirements</strong></td>
+<td>High-risk agent systems must maintain logs sufficient for post-deployment audit</td>
+</tr>
+</tbody>
+</table>
+<h3>Emerging Regulatory Themes Globally</h3>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Description</th>
+<th>Jurisdictions Active</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent Disclosure</strong></td>
+<td>Require disclosure when autonomous agents act on behalf of an organisation</td>
+<td>EU, UK, California</td>
+</tr>
+<tr>
+<td><strong>Agentic Action Limits</strong></td>
+<td>Restrict the types of irreversible actions agents can take autonomously</td>
+<td>Emerging; no binding law yet</td>
+</tr>
+<tr>
+<td><strong>Liability Frameworks</strong></td>
+<td>Clarify who is liable when an agent causes harm — provider, developer, or deployer</td>
+<td>EU Product Liability Directive, US FTC</td>
+</tr>
+<tr>
+<td><strong>Financial Services</strong></td>
+<td>Apply existing fiduciary and conduct rules to autonomous financial agents</td>
+<td>SEC, FCA, ESMA guidance</td>
+</tr>
+<tr>
+<td><strong>Healthcare AI</strong></td>
+<td>Require clinical validation and physician oversight for diagnostic or prescribing agents</td>
+<td>FDA, EMA, MHRA</td>
+</tr>
+<tr>
+<td><strong>Data Privacy</strong></td>
+<td>Agent memory and logging practices must comply with GDPR, CCPA, and sectoral equivalents</td>
+<td>EU, California, Brazil, Canada</td>
+</tr>
+</tbody>
+</table>
+<h3>Responsible Agentic AI — Industry Standards</h3>
+<table>
+<thead>
+<tr>
+<th>Initiative</th>
+<th>Organisation</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>NIST (US)</td>
+<td>Risk management framework applicable to agentic deployments</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>ISO</td>
+<td>AI management system standard; governance and accountability</td>
+</tr>
+<tr>
+<td><strong>Anthropic's Responsible Scaling Policy</strong></td>
+<td>Anthropic</td>
+<td>Model capability thresholds that trigger enhanced safety requirements</td>
+</tr>
+<tr>
+<td><strong>OpenAI Preparedness Framework</strong></td>
+<td>OpenAI</td>
+<td>Evaluates and classifies risk before deploying new agentic capabilities</td>
+</tr>
+<tr>
+<td><strong>Google DeepMind Safety Frameworks</strong></td>
+<td>Google</td>
+<td>Alignment and safety research informing Gemini agent deployments</td>
+</tr>
+<tr>
+<td><strong>Partnership on AI</strong></td>
+<td>Industry Consortium</td>
+<td>Best practices for transparency, safety, and fairness in AI agents</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">Detailed reference content for use cases.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Industry Use Cases</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Software Engineering &amp; DevOps</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Bug Fixing</strong></td>
+<td>Agent reads issue, locates bug, writes fix, opens PR</td>
+<td>Devin, SWE-Agent, GitHub Copilot Autofix</td>
+</tr>
+<tr>
+<td><strong>Code Review Automation</strong></td>
+<td>Agent reviews every PR for quality, security, and style</td>
+<td>Coderabbit, GitHub Copilot for PRs, Graphite AI</td>
+</tr>
+<tr>
+<td><strong>Full App Generation</strong></td>
+<td>Agent builds full-stack applications from a natural language spec</td>
+<td>Lovable, Bolt.new, Replit Agent</td>
+</tr>
+<tr>
+<td><strong>Infrastructure as Code</strong></td>
+<td>Agent generates and validates Terraform, Kubernetes, Helm configs</td>
+<td>Pulumi AI, GitHub Copilot, Infracost AI</td>
+</tr>
+<tr>
+<td><strong>CI/CD Pipeline Automation</strong></td>
+<td>Agent monitors build failures, diagnoses root cause, retries or patches</td>
+<td>GitHub Actions AI, GitLab Duo</td>
+</tr>
+<tr>
+<td><strong>Documentation Agents</strong></td>
+<td>Continuously keep docs in sync with codebase changes</td>
+<td>Mintlify, Swimm AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Sales &amp; Marketing</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous SDR</strong></td>
+<td>Agent prospects accounts, researches leads, drafts personalised outreach</td>
+<td>11x.ai (Alice), Artisan (Ava), AiSDR</td>
+</tr>
+<tr>
+<td><strong>Lead Enrichment</strong></td>
+<td>Agent augments CRM records with firmographic and intent data</td>
+<td>Clay, Datagma, People.ai</td>
+</tr>
+<tr>
+<td><strong>Campaign Management</strong></td>
+<td>Agent monitors campaigns, adjusts bids, and rewrites underperforming copy</td>
+<td>Adept AI, Jasper Campaigns, Persado</td>
+</tr>
+<tr>
+<td><strong>Sales Coaching</strong></td>
+<td>Agent listens to calls, scores performance, suggests improvements</td>
+<td>Gong AI, Chorus AI, Salesloft AI</td>
+</tr>
+<tr>
+<td><strong>RFP Response Agents</strong></td>
+<td>Agent reads RFPs and auto-drafts proposal responses</td>
+<td>Responsive, RFPIO AI, Loopio AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Customer Service &amp; Support</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tier-1 Resolution</strong></td>
+<td>Agent resolves common support queries without human involvement</td>
+<td>Salesforce Agentforce, Intercom Fin, Zendesk AI</td>
+</tr>
+<tr>
+<td><strong>Ticket Triage &amp; Routing</strong></td>
+<td>Agent classifies and routes tickets to correct team</td>
+<td>Freshdesk AI, Kore.ai, Zendesk</td>
+</tr>
+<tr>
+<td><strong>Proactive Outreach</strong></td>
+<td>Agent detects at-risk customers and initiates resolution before complaint</td>
+<td>Salesforce Service AI, Gainsight AI</td>
+</tr>
+<tr>
+<td><strong>Voice Support Agents</strong></td>
+<td>Agent handles inbound calls autonomously; books appointments</td>
+<td>Bland AI, Retell AI, Twilio Alpha</td>
+</tr>
+<tr>
+<td><strong>Knowledge Base Maintenance</strong></td>
+<td>Agent identifies gaps in help docs and drafts new articles from resolved tickets</td>
+<td>Intercom, Guru AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Finance &amp; Accounting</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Invoice Processing</strong></td>
+<td>Agent extracts invoice data, validates against PO, routes for approval</td>
+<td>Palette AI, SAP Joule, Tipalti AI</td>
+</tr>
+<tr>
+<td><strong>Financial Report Drafting</strong></td>
+<td>Agent generates quarterly commentary and variance analysis</td>
+<td>Bloomberg AI, Workiva AI</td>
+</tr>
+<tr>
+<td><strong>Audit &amp; Compliance Agents</strong></td>
+<td>Agent monitors transactions for policy violations and flags anomalies</td>
+<td>AuditBoard AI, Workiva, BlackLine AI</td>
+</tr>
+<tr>
+<td><strong>FP&amp;A Automation</strong></td>
+<td>Agent pulls actuals, updates forecasts, and generates board-ready reports</td>
+<td>Mosaic Tech, Pigment AI, Anaplan AI</td>
+</tr>
+<tr>
+<td><strong>Tax Filing Agents</strong></td>
+<td>Agent retrieves documents, classifies expenses, and prepares filing drafts</td>
+<td>Pilot AI, TaxDome AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ambient Clinical Documentation</strong></td>
+<td>Agent listens to patient-provider conversation; generates clinical note</td>
+<td>Abridge, Suki AI, Nuance DAX Copilot</td>
+</tr>
+<tr>
+<td><strong>Prior Authorisation</strong></td>
+<td>Agent handles insurance pre-auth workflows autonomously</td>
+<td>Infinitus AI, Waystar AI</td>
+</tr>
+<tr>
+<td><strong>Clinical Trial Matching</strong></td>
+<td>Agent screens patients against trial eligibility criteria</td>
+<td>TrialSpark, Mendel AI</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery Agents</strong></td>
+<td>Multi-step hypothesis, synthesis, and screening workflows</td>
+<td>Insilico Medicine, Recursion, Schrödinger</td>
+</tr>
+<tr>
+<td><strong>Radiology Report Agents</strong></td>
+<td>Agent reads imaging study results and drafts structured report</td>
+<td>Nuance PowerScribe AI, Aidoc</td>
+</tr>
+</tbody>
+</table>
+<h3>Legal &amp; Professional Services</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contract Negotiation Agents</strong></td>
+<td>Agent identifies risky clauses, proposes redlines, tracks changes</td>
+<td>Harvey, Ironclad, Spellbook</td>
+</tr>
+<tr>
+<td><strong>Legal Research Agents</strong></td>
+<td>Agent searches and synthesises case law and statutory guidance</td>
+<td>Harvey, Westlaw AI, Casetext</td>
+</tr>
+<tr>
+<td><strong>Due Diligence Agents</strong></td>
+<td>Agent reviews thousands of documents in M&amp;A data rooms</td>
+<td>Luminance, Kira, Relativity aiR</td>
+</tr>
+<tr>
+<td><strong>Regulatory Monitoring</strong></td>
+<td>Agent tracks and summarises changes in regulations relevant to the firm</td>
+<td>Veriphy AI, LexisNexis Regulatory Compliance</td>
+</tr>
+<tr>
+<td><strong>eDiscovery Agents</strong></td>
+<td>Agent classifies and prioritises document review in litigation</td>
+<td>Relativity aiR, Reveal AI, Logikcull AI</td>
+</tr>
+</tbody>
+</table>
+<h3>IT &amp; Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ITSM Ticket Automation</strong></td>
+<td>Agent triages, diagnoses, and resolves IT tickets autonomously</td>
+<td>ServiceNow AI, Jira AI, Freshservice AI</td>
+</tr>
+<tr>
+<td><strong>Incident Response</strong></td>
+<td>Agent detects alerts, correlates signals, and initiates remediation</td>
+<td>PagerDuty AI, Opsgenie AI, Moogsoft</td>
+</tr>
+<tr>
+<td><strong>Onboarding Automation</strong></td>
+<td>Agent provisions accounts, grants access, and guides new hires</td>
+<td>Okta AI Workflows, Rippling AI, Leena AI</td>
+</tr>
+<tr>
+<td><strong>IT Procurement</strong></td>
+<td>Agent sources, evaluates, and recommends hardware/software purchases</td>
+<td>Zip AI, Coupa AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-enterprise">
+ <h2>Enterprise</h2>
+ <p class="desc">Detailed reference content for enterprise.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Enterprise Platforms & Products</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Frontier Agent Products</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Provider</th>
+<th>Core Capability</th>
+<th>Notable Benchmarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAI Deep Research</strong></td>
+<td>OpenAI</td>
+<td>Multi-step web research; long-form synthesis reports</td>
+<td>26.6% Humanity's Last Exam</td>
+</tr>
+<tr>
+<td><strong>OpenAI Operator</strong></td>
+<td>OpenAI</td>
+<td>Browser agent; web task automation</td>
+<td>38.1% WebArena</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Anthropic</td>
+<td>CLI coding agent; full repo-level engineering</td>
+<td>72.5% SWE-Bench Verified</td>
+</tr>
+<tr>
+<td><strong>Gemini Deep Research</strong></td>
+<td>Google</td>
+<td>Deep research with Gemini 2.0 / 3; Google Search grounded</td>
+<td>Competitive with OpenAI Deep Research</td>
+</tr>
+<tr>
+<td><strong>Project Mariner</strong></td>
+<td>Google</td>
+<td>Browser agent integrated into Chrome</td>
+<td>Broad web task automation</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot Agent Mode</strong></td>
+<td>GitHub / Microsoft</td>
+<td>Autonomous multi-file coding in IDEs</td>
+<td>Integrated into 1.8M+ developer workflow</td>
+</tr>
+<tr>
+<td><strong>Devin</strong></td>
+<td>Cognition AI</td>
+<td>Fully autonomous SWE agent with full dev environment</td>
+<td>13.86% original SWE-Bench (first AI to score &gt;10%)</td>
+</tr>
+<tr>
+<td><strong>Manus</strong></td>
+<td>Monica AI</td>
+<td>General-purpose autonomous agent; broad task completion</td>
+<td>GAIA benchmark leader (March 2025)</td>
+</tr>
+</tbody>
+</table>
+<h3>Enterprise Platform Agents</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Agent Capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agentforce</strong></td>
+<td>Salesforce</td>
+<td>Build and deploy agents across Sales, Service, Marketing, and Commerce</td>
+</tr>
+<tr>
+<td><strong>Microsoft Copilot Studio</strong></td>
+<td>Microsoft</td>
+<td>No-code and pro-code agent builder; M365 native; Power Platform integration</td>
+</tr>
+<tr>
+<td><strong>ServiceNow AI Agents</strong></td>
+<td>ServiceNow</td>
+<td>IT, HR, legal, and customer service workflow automation</td>
+</tr>
+<tr>
+<td><strong>Workday AI Agents</strong></td>
+<td>Workday</td>
+<td>HR, finance, and supply chain agentic automation</td>
+</tr>
+<tr>
+<td><strong>SAP Joule Agents</strong></td>
+<td>SAP</td>
+<td>Cross-ERP agentic assistant; S/4HANA, Ariba, SuccessFactors</td>
+</tr>
+<tr>
+<td><strong>Oracle AI Agents</strong></td>
+<td>Oracle</td>
+<td>Finance, supply chain, and HR agents native in Oracle Cloud</td>
+</tr>
+<tr>
+<td><strong>IBM Watson Orchestrate</strong></td>
+<td>IBM</td>
+<td>Enterprise multi-agent orchestration platform</td>
+</tr>
+<tr>
+<td><strong>AWS Bedrock Agents</strong></td>
+<td>Amazon</td>
+<td>Fully managed agent builder on AWS; knowledge bases; action groups</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AI Agent Builder</strong></td>
+<td>Google</td>
+<td>No-code agent builder; Gemini-powered; Dialogflow successor</td>
+</tr>
+<tr>
+<td><strong>Azure AI Agent Service</strong></td>
+<td>Microsoft</td>
+<td>Managed agentic service; LangChain, Semantic Kernel, AutoGen compatible</td>
+</tr>
+</tbody>
+</table>
+<h3>Vertical-Specific Agent Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Vertical</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Harvey</strong></td>
+<td>Legal</td>
+<td>Contract review, legal research, drafting — purpose-built LLM agents for law firms</td>
+</tr>
+<tr>
+<td><strong>Abridge</strong></td>
+<td>Healthcare</td>
+<td>Ambient clinical documentation agent; real-time AI medical scribe</td>
+</tr>
+<tr>
+<td><strong>Suki AI</strong></td>
+<td>Healthcare</td>
+<td>Voice-based clinical note agent integrated with EHR systems</td>
+</tr>
+<tr>
+<td><strong>Ema (Enterprise AI)</strong></td>
+<td>HR / Operations</td>
+<td>Universal employee agent; answers HR, IT, and policy queries</td>
+</tr>
+<tr>
+<td><strong>11x.ai</strong></td>
+<td>Sales</td>
+<td>Autonomous SDR agent Alice — prospecting, outreach, qualification</td>
+</tr>
+<tr>
+<td><strong>Artisan AI</strong></td>
+<td>Sales</td>
+<td>AI BDR "Ava" — full-cycle outbound sales automation agent</td>
+</tr>
+<tr>
+<td><strong>Hebbia</strong></td>
+<td>Finance / Legal</td>
+<td>Matrix agent for document-intensive knowledge work</td>
+</tr>
+<tr>
+<td><strong>Glean</strong></td>
+<td>Enterprise Search</td>
+<td>Workplace knowledge agent across all enterprise apps</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-tooluse">
+ <h2>Tool Use</h2>
+ <p class="desc">Detailed reference content for tool use.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Tool Use & Integration</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>Tools are what make agents genuinely useful — they extend the agent's reach from pure language generation into real-world action.</p>
+<h3>Tool Categories</h3>
+<table>
+<thead>
+<tr>
+<th>Tool Category</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web Search</strong></td>
+<td>Query the live internet for real-time information</td>
+<td>Tavily, Brave Search API, Exa AI, Serper</td>
+</tr>
+<tr>
+<td><strong>Code Execution</strong></td>
+<td>Run Python, JavaScript, or shell commands in a sandbox</td>
+<td>E2B, Modal, Daytona, Replit, Code Interpreter</td>
+</tr>
+<tr>
+<td><strong>Browser / Web Navigation</strong></td>
+<td>Autonomously visit, click, fill, and extract from websites</td>
+<td>Playwright, Selenium, Skyvern, Browser Use</td>
+</tr>
+<tr>
+<td><strong>File I/O</strong></td>
+<td>Read, write, and transform files and documents</td>
+<td>Local FS, Google Drive API, SharePoint</td>
+</tr>
+<tr>
+<td><strong>Database Query</strong></td>
+<td>Query SQL, NoSQL, or vector databases</td>
+<td>PostgreSQL, MongoDB, Pinecone, Qdrant</td>
+</tr>
+<tr>
+<td><strong>API Calls</strong></td>
+<td>Invoke any REST or GraphQL endpoint</td>
+<td>OpenAPI/Swagger tool generation, function calling</td>
+</tr>
+<tr>
+<td><strong>Email &amp; Calendar</strong></td>
+<td>Send emails, schedule meetings, manage inboxes</td>
+<td>Gmail API, Outlook, Google Calendar</td>
+</tr>
+<tr>
+<td><strong>Data Analysis</strong></td>
+<td>Run statistical analysis and generate visualisations</td>
+<td>Pandas, Matplotlib, Code Interpreter</td>
+</tr>
+<tr>
+<td><strong>Image / Vision</strong></td>
+<td>Process, describe, or reason over images</td>
+<td>GPT-4o vision, Claude vision, Gemini Vision</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Post to Slack, Teams, or messaging platforms</td>
+<td>Slack API, Teams API, Twilio</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Interact with cloud, containers, and CI/CD systems</td>
+<td>AWS SDK, kubectl, GitHub Actions API</td>
+</tr>
+<tr>
+<td><strong>Memory Read/Write</strong></td>
+<td>Read from or write to the agent's long-term memory store</td>
+<td>Mem0, Zep, vector DB APIs</td>
+</tr>
+</tbody>
+</table>
+<h3>Function Calling / Tool Use Standards</h3>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Provider</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Function Calling</strong></td>
+<td>OpenAI</td>
+<td>Structured JSON schema defines available tools; model selects and invokes</td>
+</tr>
+<tr>
+<td><strong>Tool Use</strong></td>
+<td>Anthropic</td>
+<td>Claude's native tool-calling mechanism; strongly typed</td>
+</tr>
+<tr>
+<td><strong>Function Declarations</strong></td>
+<td>Google</td>
+<td>Gemini's parallel function calling support</td>
+</tr>
+<tr>
+<td><strong>MCP Tool Servers</strong></td>
+<td>Anthropic / Linux Foundation</td>
+<td>Standardised tool hosting via Model Context Protocol</td>
+</tr>
+<tr>
+<td><strong>OpenAPI Tool Generation</strong></td>
+<td>Various</td>
+<td>Auto-generate tool definitions from any OpenAPI specification</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Tool Infrastructure Providers</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tavily</strong></td>
+<td>Purpose-built search API for AI agents; structured results optimised for LLMs</td>
+</tr>
+<tr>
+<td><strong>E2B</strong></td>
+<td>Secure code execution sandbox; isolated cloud environments per agent run</td>
+</tr>
+<tr>
+<td><strong>Skyvern</strong></td>
+<td>Browser automation via computer vision; does not require DOM scraping</td>
+</tr>
+<tr>
+<td><strong>Browser Use</strong></td>
+<td>LLM-native browser control; open-source; Playwright-backed</td>
+</tr>
+<tr>
+<td><strong>Exa AI</strong></td>
+<td>Semantic web search for AI; returns full document content, not just snippets</td>
+</tr>
+<tr>
+<td><strong>Composio</strong></td>
+<td>250+ pre-built tool integrations for AI agents; one-line connection</td>
+</tr>
+<tr>
+<td><strong>Browserbase</strong></td>
+<td>Cloud browser infrastructure for AI agent web navigation at scale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Agentic AI</strong> is the branch of artificial intelligence focused on systems that can <strong>pursue goals autonomously</strong> — going far beyond generating a single response to an input. An agent perceives its environment, reasons about what to do next, selects and calls tools, maintains memory across steps, and self-corrects when things go wrong.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Acts — does not merely respond; pursues goals through multi-step reasoning and execution</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Built on top of foundation models enhanced with planning loops, tool integrations, and memory systems</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Actions, completed workflows, tool call results, delegated sub-task outputs, and decisions</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Output is agentic, not generative in isolation — the system plans and executes, it does not just predict</td>
+</tr>
+</tbody>
+</table>
+<h3>Agentic AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues multi-step goals autonomously using tools, memory, and planning</td>
+<td>Research agent that searches, reads, synthesises, and writes a report</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from existing data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Executes fixed-domain tasks independently without general-purpose goal decomposition</td>
+<td>Tesla FSD, autopilot, auto-scaling</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new content from a single prompt</td>
+<td>Write an essay, generate an image</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical patterns</td>
+<td>Fraud score, churn probability, demand forecast</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input only; no memory or planning</td>
+<td>Chess engine evaluating a position, thermostat</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Generative AI:</strong> Generative AI <em>responds</em> to a prompt. Agentic AI <em>pursues</em> a goal — it takes sequences of actions, checks results, adapts its plan, and continues until the objective is achieved or it determines it cannot proceed.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p>Agentic AI — Interactive Architecture Chart · <strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.</strong> · 2026</p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ─── NAV TABS ─── */
+document.querySelectorAll('.nav-bar button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.nav-bar button').forEach(b => b.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ─── AGENT LOOP INFO ─── */
+const loopData = [
+ { title: '1. Goal', desc: 'The user defines an objective or task. The agent receives the goal along with available context, tools, and constraints. This is the entry point of every agentic workflow.' },
+ { title: '2. Reason', desc: 'The agent generates an internal reasoning trace — what to do and why. This is powered by the underlying LLM (e.g., GPT-5, Claude 4 Opus) producing chain-of-thought reasoning before any action is taken.' },
+ { title: '3. Plan', desc: 'The agent decomposes the goal into an ordered sequence of sub-tasks. Patterns include Chain of Thought (linear), Tree of Thought (branching), Plan-and-Execute (upfront), or Dynamic Re-planning (adaptive).' },
+ { title: '4. Act', desc: 'The agent selects and calls a tool, API, browser, or executes code. Tool types include web search, code execution, database queries, file I/O, browser control, email, and more.' },
+ { title: '5. Observe', desc: 'The agent receives the result of the action from the environment — tool outputs, API responses, error messages, or environmental feedback that inform the next reasoning step.' },
+ { title: '6. Reflect', desc: 'The agent critiques the result against the original goal — deciding whether to continue, retry with modified inputs, revise the plan, or escalate to a human. This self-correction is what makes agents agentic.' },
+ { title: '7. Memory', desc: 'Results are stored in short-term (session) or long-term (persistent) memory. Memory types include working, episodic, semantic, and procedural — enabling state maintenance across steps and sessions.' },
+];
+document.querySelectorAll('.loop-step').forEach(el => {
+ el.addEventListener('mouseenter', () => {
+ const d = loopData[+el.dataset.step];
+ document.getElementById('loop-info').innerHTML = `<h3>${d.title}</h3><p>${d.desc}</p>`;
+ });
+});
+
+/* ─── 8-LAYER STACK ─── */
+const stackData = [
+ { num: 8, title: 'Observability, Safety & Control', detail: 'Monitoring, guardrails, evaluation, audit logs, HITL gates, kill switches, and circuit breakers. Tools: LangSmith, Langfuse, Arize Phoenix, Braintrust.', color: 'red' },
+ { num: 7, title: 'Applications & Products', detail: 'Consumer agents (Deep Research, Operator, Claude Code), enterprise platforms (Agentforce, Copilot Studio), and vertical solutions (Harvey, Abridge, 11x.ai).', color: 'orange' },
+ { num: 6, title: 'Planning & Reflection Layer', detail: 'Chain-of-Thought, Tree-of-Thought, Plan-and-Execute, Dynamic Re-planning, Self-Refine, Reflexion, LLM-as-Judge, Skeleton-of-Thought, Step-Back Prompting.', color: 'purple' },
+ { num: 5, title: 'Inter-Agent Protocols', detail: 'MCP (Agent ↔ Tool), A2A (Agent ↔ Agent), AG-UI (Agent ↔ Frontend). Standardised discovery, delegation, and streaming across frameworks.', color: 'blue' },
+ { num: 4, title: 'Tool & Integration Layer', detail: 'Web search (Tavily, Exa), code execution (E2B), browser (Skyvern, Browser Use), databases, APIs, email, calendar, file I/O — the real-world action layer.', color: 'green' },
+ { num: 3, title: 'Memory Systems', detail: 'In-context working memory, short-term session storage (Redis), long-term persistent memory (Mem0, Zep, Pinecone), episodic, semantic, and procedural memory types.', color: 'blue' },
+ { num: 2, title: 'Agent Runtime & Orchestration', detail: 'Frameworks managing the agent loop, state, and execution: LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Google ADK, Semantic Kernel, Pydantic AI.', color: 'purple' },
+ { num: 1, title: 'Foundation Models', detail: 'The LLMs powering reasoning and generation: GPT-5, Claude 4 Opus, Gemini 3 Pro, Llama 4, Mistral Large — the cognitive core of every agent.', color: 'green' },
+];
+const stackEl = document.getElementById('stack');
+stackData.forEach(l => {
+ const div = document.createElement('div');
+ div.className = `stack-layer bg-${l.color}`;
+ div.innerHTML = `
+ <div class="layer-head">
+ <div class="layer-num b-${l.color}" style="border:2px solid; color:var(--accent${l.color === 'blue' ? '' : l.color === 'green' ? '2' : l.color === 'purple' ? '3' : l.color === 'orange' ? '4' : '5'});">${l.num}</div>
+ <span class="layer-title">${l.title}</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">${l.detail}</div>`;
+ div.addEventListener('click', () => div.classList.toggle('expanded'));
+ stackEl.appendChild(div);
+});
+
+/* ─── DESIGN PATTERNS ─── */
+const patterns = [
+ { name: 'ReAct (Reason + Act)', badge: 'Foundational', badgeClass: 'bg-blue c-blue', items: ['Interleaves reasoning traces with tool-use actions in a loop', 'Reasoning grounds actions; observations inform further reasoning', 'Used in LangChain, LangGraph, OpenAI Agents SDK', 'Introduced: Yao et al., 2022'] },
+ { name: 'Reflection', badge: 'Quality', badgeClass: 'bg-purple c-purple', items: ['Agent generates output, then critiques it against the original goal', 'Variants: Self-Refine, Reflexion (with persistent memory)', 'Substantially improves quality without human review', 'Best for writing, code review, factual accuracy'] },
+ { name: 'Plan-and-Execute', badge: 'Structured', badgeClass: 'bg-green c-green', items: ['Creates a full upfront plan, then dispatches sub-tasks', 'Best for structured, predictable multi-step workflows', 'Plans can be static or dynamically re-planned', 'Builds on Chain-of-Thought decomposition'] },
+ { name: 'Tree of Thought', badge: 'Advanced', badgeClass: 'bg-orange c-orange', items: ['Explores multiple reasoning branches in parallel', 'Selects the best path based on evaluation', 'Best for complex decision trees and strategic reasoning', 'Inspired by MCTS (Monte Carlo Tree Search)'] },
+ { name: 'Human-in-the-Loop', badge: 'Safety', badgeClass: 'bg-red c-red', items: ['Agent pauses at checkpoints for human approval', 'Required for irreversible actions and high-stakes decisions', 'Approval types: binary, annotated feedback, redirect', 'LangGraph interrupt nodes, OpenAI handoffs'] },
+ { name: 'RAG (Retrieval-Augmented)', badge: 'Knowledge', badgeClass: 'bg-blue c-blue', items: ['Agent fetches documents from vector store before generating', 'Grounds outputs in authoritative, up-to-date knowledge', 'Advanced: Agentic RAG, Self-RAG, Corrective RAG', 'Infrastructure: Pinecone, Weaviate, Qdrant'] },
+ { name: 'Tool Use', badge: 'Action', badgeClass: 'bg-green c-green', items: ['Agent calls external functions, APIs, or services', 'Types: web search, code exec, DB, browser, email, APIs', 'Self-healing agents detect failures and retry', 'Standards: OpenAI Function Calling, MCP, Anthropic Tool Use'] },
+ { name: 'Self-Healing / Auto-Retry', badge: 'Resilience', badgeClass: 'bg-orange c-orange', items: ['Detects errors in tool calls or reasoning automatically', 'Strategies: exponential backoff, alternative tools, reassignment', 'Handles: timeout, malformed output, rate limits, logic errors', 'Critical for production reliability'] },
+ { name: 'Dynamic Re-planning', badge: 'Adaptive', badgeClass: 'bg-purple c-purple', items: ['Updates plan at each step based on new observations', 'Best for open-ended research and exploration', 'Combines with reflection for maximum adaptability', 'No fixed plan — strategy emerges from interaction'] },
+];
+const pGrid = document.getElementById('patterns-grid');
+patterns.forEach(p => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<span class="badge ${p.badgeClass}">${p.badge}</span><h3>${p.name}</h3><ul>${p.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+ pGrid.appendChild(card);
+});
+
+/* ─── MEMORY ─── */
+const memTypes = [
+ { name: 'In-Context (Working)', scope: 'Current session', stores: 'Active reasoning trace, task state, recent tool results', impl: 'LLM context window', color: 'blue' },
+ { name: 'Short-Term (Session)', scope: 'Single session', stores: 'Conversation history, intermediate outputs, user preferences', impl: 'In-memory store, Redis', color: 'green' },
+ { name: 'Long-Term (Persistent)', scope: 'Across sessions', stores: 'User facts, preferences, domain knowledge, prior decisions', impl: 'Vector DB, SQL, Graph DB', color: 'purple' },
+ { name: 'Episodic', scope: 'Across sessions', stores: 'Specific past events and interactions', impl: 'Vector DB (semantic search)', color: 'orange' },
+ { name: 'Semantic', scope: 'Persistent', stores: 'General facts and domain knowledge', impl: 'Knowledge graph, RAG store', color: 'blue' },
+ { name: 'Procedural', scope: 'Persistent', stores: 'How-to knowledge; agent workflow instructions', impl: 'Prompt store, fine-tuning', color: 'green' },
+];
+const mGrid = document.getElementById('memory-grid');
+memTypes.forEach(m => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<span class="badge bg-${m.color} c-${m.color}">${m.scope}</span><h3>${m.name}</h3><p><strong style="color:var(--text)">Stores:</strong> ${m.stores}</p><p style="margin-top:6px"><strong style="color:var(--text)">Implementation:</strong> ${m.impl}</p>`;
+ mGrid.appendChild(card);
+});
+
+const memOps = [
+ { name: 'Write', desc: 'Store new information after an action or observation' },
+ { name: 'Read / Retrieve', desc: 'Fetch relevant memory via semantic search or exact lookup' },
+ { name: 'Update', desc: 'Modify an existing record with newer information' },
+ { name: 'Forget / Expire', desc: 'Remove outdated or low-relevance memories' },
+ { name: 'Summarise', desc: 'Compress long histories into concise representations' },
+];
+const moGrid = document.getElementById('memops-grid');
+memOps.forEach(o => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<h3>${o.name}</h3><p>${o.desc}</p>`;
+ moGrid.appendChild(card);
+});
+
+/* ─── MULTI-AGENT TOPOLOGIES ─── */
+const topos = [
+ { name: 'Orchestrator-Worker', desc: 'Central orchestrator delegates sub-tasks to specialised worker agents.', best: 'Structured pipelines with clear task decomposition' },
+ { name: 'Hierarchical', desc: 'Nested layers of orchestrators and sub-agents; recursive task delegation.', best: 'Complex enterprise workflows with deep specialisation' },
+ { name: 'Peer-to-Peer (Flat)', desc: 'Agents communicate directly without a central coordinator.', best: 'Collaborative reasoning and debate tasks' },
+ { name: 'Sequential Pipeline', desc: 'Output of one agent becomes the input of the next.', best: 'Document processing, content refinement chains' },
+ { name: 'Parallel Fan-Out', desc: 'Multiple agents execute different sub-tasks simultaneously; results merged.', best: 'Research aggregation, parallel analysis' },
+ { name: 'Competitive / Debate', desc: 'Multiple agents propose competing solutions; a judge selects the best.', best: 'Decision quality improvement, adversarial validation' },
+];
+const tGrid = document.getElementById('topo-grid');
+topos.forEach(t => {
+ const d = document.createElement('div');
+ d.className = 'topo-card';
+ d.innerHTML = `<h4>${t.name}</h4><p class="topo-desc">${t.desc}</p><p class="topo-best">Best for: ${t.best}</p>`;
+ tGrid.appendChild(d);
+});
+
+const roles = [
+ { name: 'Orchestrator / Planner', desc: 'Decomposes the goal; assigns tasks; monitors progress' },
+ { name: 'Worker / Executor', desc: 'Carries out a specific assigned sub-task using specialised tools' },
+ { name: 'Critic / Reviewer', desc: 'Evaluates outputs from workers; provides feedback' },
+ { name: 'Researcher', desc: 'Gathers information from web, documents, or databases' },
+ { name: 'Synthesiser', desc: 'Combines and reconciles outputs from multiple agents' },
+ { name: 'Human Proxy', desc: 'Represents a human decision-maker; holds approval authority' },
+];
+const rGrid = document.getElementById('roles-grid');
+roles.forEach(r => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<h3>${r.name}</h3><p>${r.desc}</p>`;
+ rGrid.appendChild(card);
+});
+
+/* ─── PROTOCOLS ─── */
+const protos = [
+ { label: 'Human / User Interface', sub: 'React, Vue, Angular — any frontend', proto: 'AG-UI', detail: '<strong>AG-UI (Agent-User Interaction Protocol)</strong> — Created by CopilotKit. Standardises real-time streaming between agent backends and frontend UIs. Events: TEXT_MESSAGE_CHUNK, TOOL_CALL_START/END, STATE_SNAPSHOT. Enables live progress updates and intermediate step rendering.', color: 'purple' },
+ { label: 'Orchestrator Agent', sub: 'Central agent managing the workflow', proto: 'A2A', detail: '<strong>A2A (Agent-to-Agent Protocol)</strong> — Created by Google, donated to Linux Foundation. Enables agents to discover, communicate with, and delegate tasks to other agents. Each agent publishes an "Agent Card" JSON manifest at /.well-known/agent.json. Core operations: task creation, streaming updates, result delivery.', color: 'blue' },
+ { label: 'Worker Agents', sub: 'Specialised agents executing sub-tasks', proto: 'A2A', detail: 'Worker agents receive tasks via A2A protocol from the orchestrator. They execute using their specialised tools and stream results back. Multiple workers can operate in parallel, each with distinct capabilities described in their Agent Cards.', color: 'green' },
+ { label: 'Tools & Data Sources', sub: 'APIs, databases, search, code, browser', proto: 'MCP', detail: '<strong>MCP (Model Context Protocol)</strong> — Created by Anthropic, donated to Linux Foundation. Standardises how agents connect to tools, APIs, files, and data sources. Client-server architecture with Tools (callable functions), Resources (data), Prompts (templates). 5,000+ MCP servers published as of 2026.', color: 'orange' },
+];
+const psEl = document.getElementById('proto-stack');
+protos.forEach((p, i) => {
+ const div = document.createElement('div');
+ div.className = `proto-layer bg-${p.color}`;
+ div.style.borderColor = `var(--accent${p.color === 'blue' ? '' : p.color === 'green' ? '2' : p.color === 'purple' ? '3' : '4'})`;
+ div.innerHTML = `
+ <div class="proto-label">${p.label}</div>
+ <div class="proto-sub">${p.proto} · ${p.sub}</div>
+ <div class="proto-detail">${p.detail}</div>`;
+ div.addEventListener('click', () => div.classList.toggle('open'));
+ psEl.appendChild(div);
+ if (i < protos.length - 1) {
+ const arrow = document.createElement('div');
+ arrow.className = 'proto-arrow';
+ arrow.textContent = '▼';
+ psEl.appendChild(arrow);
+ }
+});
+
+/* ─── FRAMEWORKS TABLE ─── */
+const fwData = [
+ ['LangGraph', 'Python', 'Graph-based, stateful', '18k+', 'Nodes/edges define state machines; first-class HITL; cycles & branching'],
+ ['OpenAI Agents SDK', 'Python', 'Lightweight, handoff-based', '11k+', 'Minimalist; Swarm-inspired; native OpenAI tooling'],
+ ['Google ADK', 'Python', 'Modular, hierarchical', '7k+', 'Optimised for Gemini; A2A compatible; multi-agent native'],
+ ['CrewAI', 'Python', 'Role-based teams', '31k+', 'Agents as crew members with roles, backstories, task assignments'],
+ ['AutoGen (Microsoft)', 'Python', 'Conversation-driven', '43k+', 'GroupChat; teachable agents; enterprise-grade'],
+ ['Semantic Kernel', 'Python / C# / Java', 'Plugin-based, enterprise', '27k+', 'Microsoft enterprise SDK; deep Azure & M365 integration'],
+ ['LangChain', 'Python', 'Chain + Agent primitives', '126k+', 'Foundational library; extensive integrations; AgentExecutor & LCEL'],
+ ['Smolagents', 'Python', 'Code-first', '18k+', 'HuggingFace; agents write & execute Python, not JSON'],
+ ['Pydantic AI', 'Python', 'Type-safe, validation-first', '11k+', 'Strongly typed; production-grade validation; built on Pydantic'],
+];
+const fwTable = document.getElementById('fw-table');
+fwTable.innerHTML = `<thead><tr><th>Framework</th><th>Language</th><th>Architecture</th><th> Stars</th><th>Highlights</th></tr></thead><tbody>${fwData.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>`;
+
+/* ─── DOMAIN ACCORDION ─── */
+const domains = [
+ { name: ' Research & Knowledge Agents', items: [['Deep Research', 'Multi-step web search, synthesis, long-form reports', 'OpenAI Deep Research, Gemini Deep Research, Perplexity'], ['Literature Review', 'Search and synthesise academic papers', 'Elicit, Consensus AI, Semantic Scholar AI'], ['Competitive Intelligence', 'Monitor and summarise competitor activity', 'Crayon AI, Klue, Perplexity Pro']] },
+ { name: ' Coding & Software Engineering', items: [['Autonomous Coding', 'Write, debug, test, and deploy code end-to-end', 'Devin, SWE-Agent, OpenAI Codex CLI'], ['CLI Coding Agents', 'Code generation and debugging via CLI', 'Claude Code, Gemini CLI, Codex CLI'], ['IDE-Integrated', 'Multi-file editing, refactoring, agentic completion', 'Cursor Agent Mode, Windsurf, GitHub Copilot Agent'], ['Pull Request Agents', 'Autonomous PR creation, review, merge', 'GitHub Copilot PRs, Coderabbit, Graphite AI']] },
+ { name: ' Browser & Web Agents', items: [['General Web Agents', 'Navigate, fill forms, extract data, take actions', 'OpenAI Operator, Browser Use, Skyvern'], ['E-Commerce Agents', 'Search, compare, and purchase products', 'OpenAI Operator, Perplexity Buy Mode'], ['Data Extraction', 'Scrape, parse, structure web content at scale', 'Firecrawl, Apify AI, Browse AI']] },
+ { name: ' Data & Analytics Agents', items: [['Data Analysis', 'Query databases, run code, generate insights', 'ChatGPT Code Interpreter, Julius AI'], ['SQL Agents', 'Natural language to SQL; query databases', 'Databricks Genie, Defog'], ['BI Agents', 'Dashboard insights and commentary', 'Tableau AI, Power BI Copilot, ThoughtSpot Sage']] },
+ { name: ' Customer Service Agents', items: [['Tier-1 Resolution', 'Resolve common queries without human involvement', 'Salesforce Agentforce, Intercom Fin, Zendesk AI'], ['Voice Support', 'Handle inbound calls autonomously', 'Twilio AI, Retell AI, Bland AI'], ['Outbound Sales', 'Prospect, qualify, personalise outreach at scale', '11x.ai, Artisan AI, Relevance AI']] },
+ { name: ' Workflow Automation', items: [['No-Code Workflows', 'Connect apps and automate multi-step processes', 'Zapier Agents, n8n AI, Make'], ['Personal Productivity', 'Calendar, email, tasks, scheduling', 'Lindy AI, Notion AI'], ['Document Processing', 'Extract, transform, route document data', 'Reducto AI, Unstructured.io, LlamaParse']] },
+ { name: ' Finance & Operations', items: [['Invoice Processing', 'Extract data, validate, route for approval', 'SAP Joule, Workday Agents'], ['Legal Ops', 'Draft contracts, review clauses, compliance', 'Harvey, Ironclad AI, Spellbook'], ['FP&A Automation', 'Pull actuals, update forecasts, generate reports', 'Mosaic Tech, Pigment AI']] },
+ { name: ' Security Agents', items: [['Threat Detection', 'Monitor networks and logs for anomalies', 'CrowdStrike Charlotte AI, Exabeam Nova'], ['Incident Response', 'Triage alerts, investigate, recommend remediation', 'Palo Alto Cortex XSOAR AI, Splunk AI'], ['SOC Automation', 'Automate Security Operations Centre workflows', 'Darktrace AI, Vectra AI, Microsoft Sentinel AI']] },
+ { name: ' Scientific & Research', items: [['Drug Discovery', 'Design, screen, optimise drug candidates', 'Insilico Medicine, Recursion, Schrödinger'], ['Protein Design', 'Generate novel protein sequences', 'AlphaFold 3, RFdiffusion, ESMFold'], ['Lab Automation', 'Design and interpret experiments autonomously', 'Emerald Cloud Lab, TetraScience']] },
+ { name: ' Multimodal Agents', items: [['Computer Use', 'Perceive screen, interact with any desktop/web app', 'Claude Computer Use, OpenAI Operator'], ['Vision-Language', 'See, reason about, act on visual information', 'GPT-4o, Gemini 2.0 Flash, Claude 3.7'], ['Audio-Active', 'Real-time spoken dialogue with tool use', 'OpenAI Realtime API, Hume AI']] },
+];
+const dAcc = document.getElementById('domain-acc');
+domains.forEach(d => {
+ const div = document.createElement('div');
+ div.className = 'domain-item';
+ div.innerHTML = `
+ <div class="domain-header"><span>${d.name}</span></div>
+ <div class="domain-body"><table><thead><tr><th>Agent Type</th><th>What It Does</th><th>Examples</th></tr></thead><tbody>${d.items.map(r => `<tr><td style="color:var(--text);font-weight:600">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div>`;
+ div.querySelector('.domain-header').addEventListener('click', () => div.classList.toggle('open'));
+ dAcc.appendChild(div);
+});
+
+/* ─── BENCHMARKS CARDS ─── */
+const benchmarks = [
+ { name: 'SWE-Bench Verified', desc: 'Real GitHub issue resolution (500 verified tasks). Gold standard for software engineering agents.' },
+ { name: 'WebArena', desc: 'Navigate and complete tasks on realistic web environments — booking, shopping, CMS tasks.' },
+ { name: 'GAIA', desc: '"General AI Assistants" benchmark. Real-world question answering requiring multi-step tool use.' },
+ { name: 'BrowseComp', desc: 'Complex research questions requiring multi-hop web browsing. OpenAI benchmark.' },
+ { name: "Humanity's Last Exam", desc: 'Extremely hard expert-level questions across all domains. Frontier capability ceiling test.' },
+ { name: 'τ-bench (Tau-bench)', desc: 'Tool-use agent evaluation under realistic multi-turn dialogue conditions.' },
+];
+const bGrid = document.getElementById('bench-grid');
+benchmarks.forEach(b => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<h3>${b.name}</h3><p>${b.desc}</p>`;
+ bGrid.appendChild(card);
+});
+
+/* ─── ADOPTION CARDS ─── */
+const adoption = [
+ { stat: '79%', label: 'Organisations with some agentic AI adoption (2025)' },
+ { stat: '50%+', label: 'Senior executives using AI agents (early 2026)' },
+ { stat: '40%', label: 'Enterprise apps with embedded agents by 2026 (Gartner)' },
+ { stat: '~60%', label: 'Fortune 500 piloting agentic workflows' },
+ { stat: '1.8M+', label: 'GitHub Copilot Agent Mode subscribers' },
+ { stat: '1,000+', label: 'Agentforce enterprise customers (first 90 days)' },
+];
+const aGrid = document.getElementById('adoption-grid');
+adoption.forEach(a => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<h3 style="font-size:1.8rem; color:var(--accent);">${a.stat}</h3><p>${a.label}</p>`;
+ aGrid.appendChild(card);
+});
+
+/* ─── RISKS ─── */
+const techRisks = [
+ { title: 'Compounding Errors', desc: 'Mistakes in early steps cascade through multi-step pipelines; errors multiply with each subsequent action.', color: 'red' },
+ { title: 'Hallucinated Tool Calls', desc: 'Agents may invent tool parameters or call tools that do not exist, causing unpredictable failures.', color: 'orange' },
+ { title: 'Context Window Exhaustion', desc: 'Long-running agents exhaust their context window; early information is forgotten mid-task.', color: 'red' },
+ { title: 'Infinite Loops', desc: 'Agents get stuck in repetitive retry cycles without proper loop detection or iteration limits.', color: 'orange' },
+ { title: 'Goal Misinterpretation', desc: 'Ambiguous instructions lead agents to pursue the wrong objective entirely.', color: 'red' },
+ { title: 'Benchmark Gaming', desc: 'Agent benchmarks can be over-optimised; real-world performance often differs significantly.', color: 'orange' },
+];
+const rtEl = document.getElementById('risk-tech');
+techRisks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = `risk-card b-${r.color}`;
+ card.innerHTML = `<h4 class="c-${r.color}">${r.title}</h4><p>${r.desc}</p>`;
+ rtEl.appendChild(card);
+});
+
+const safetyRisks = [
+ { title: 'Prompt Injection', desc: 'Malicious content in the environment hijacks agent instructions and redirects behaviour.', color: 'red' },
+ { title: 'Indirect Prompt Injection', desc: 'Adversarial instructions embedded in retrieved data — without user knowledge.', color: 'red' },
+ { title: 'Unintended Real-World Actions', desc: 'Agents with access to email, payments, or APIs can cause irreversible damage.', color: 'orange' },
+ { title: 'Data Exfiltration', desc: 'Compromised agents manipulated into sending sensitive data to external endpoints.', color: 'red' },
+ { title: 'Supply Chain Attacks', desc: 'Malicious MCP servers or tools that poison agent behaviour.', color: 'orange' },
+ { title: 'Resource Abuse', desc: 'Agents spinning up infinite compute, API calls, or storage without spending limits.', color: 'orange' },
+];
+const rsEl = document.getElementById('risk-safety');
+safetyRisks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = `risk-card b-${r.color}`;
+ card.innerHTML = `<h4 class="c-${r.color}">${r.title}</h4><p>${r.desc}</p>`;
+ rsEl.appendChild(card);
+});
+
+const safetyPrinciples = [
+ { name: 'Minimal Footprint', desc: 'Request only necessary permissions; avoid storing sensitive data; prefer reversible actions.' },
+ { name: 'Explicit Confirmation', desc: 'Require human approval before irreversible actions — send email, make payment, delete data.' },
+ { name: 'Sandboxed Execution', desc: 'Run agent code and browser actions in isolated, permission-limited environments.' },
+ { name: 'Audit Logging', desc: 'Log every tool call, reasoning step, and state transition for post-hoc review.' },
+ { name: 'Guardrails at Every Layer', desc: 'Input filters, output validators, and real-time monitoring at framework and API layers.' },
+ { name: 'Kill Switch / Circuit Breaker', desc: 'Halt any running agent immediately; automatic stop on anomaly detection.' },
+];
+const sGrid = document.getElementById('safety-grid');
+safetyPrinciples.forEach(s => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<h3 style="color:var(--accent2)">${s.name}</h3><p>${s.desc}</p>`;
+ sGrid.appendChild(card);
+});
+
+/* ─── GLOSSARY ─── */
+const glossary = [
+ ['Agent', 'An AI system that perceives its environment, reasons about it, and takes actions to achieve a defined goal.'],
+ ['Agent Loop', 'The continuous cycle of Perceive → Reason → Plan → Act → Observe → Reflect executed by an agent.'],
+ ['Orchestrator', 'The top-level agent responsible for decomposing goals and delegating sub-tasks to worker agents.'],
+ ['Worker Agent', 'A specialised sub-agent that executes a specific assigned sub-task within a multi-agent system.'],
+ ['Tool', 'An external function, API, or service that an agent can call to take real-world actions or retrieve data.'],
+ ['Tool Calling', 'The mechanism by which a model selects and invokes external functions based on structured schema definitions.'],
+ ['ReAct', 'Reason + Act — interleaving reasoning traces with tool-use actions in an agent loop.'],
+ ['Reflection', 'An agent pattern where the model critiques and revises its own outputs against the original goal.'],
+ ['Planning', 'Decomposing a goal into an ordered sequence of sub-tasks before taking action.'],
+ ['Human-in-the-Loop (HITL)', 'A safety mechanism requiring human approval before the agent proceeds past a checkpoint.'],
+ ['Hallucinated Tool Call', 'When an agent invents non-existent tools or fabricates parameters in its output.'],
+ ['Prompt Injection', 'Malicious content embedded in the environment that overrides original instructions.'],
+ ['MCP', 'Model Context Protocol — Anthropic\'s open standard for connecting agents to tools and data sources.'],
+ ['A2A', 'Agent-to-Agent Protocol — Google\'s open standard enabling agent discovery, communication, and delegation.'],
+ ['AG-UI', 'CopilotKit\'s open protocol for real-time streaming between agent backends and frontend UIs.'],
+ ['Agent Card', 'A JSON manifest describing an agent\'s capabilities, skills, authentication, and API endpoints (A2A).'],
+ ['MCP Server', 'A server that hosts tools, resources, or data and exposes them to MCP-compatible agents.'],
+ ['Memory (Short-Term)', 'In-context or session-scoped storage of recent observations and intermediate results.'],
+ ['Memory (Long-Term)', 'Persistent storage of facts, user preferences, and past events across sessions.'],
+ ['Episodic Memory', 'Memory of specific past events and interactions, retrievable by semantic search.'],
+ ['RAG', 'Retrieval-Augmented Generation — augmenting generation with externally retrieved documents.'],
+ ['Agentic RAG', 'Multi-hop RAG where the agent decides what to retrieve, when, and from where.'],
+ ['Minimal Footprint', 'Safety principle: agents should request only necessary permissions and prefer reversible actions.'],
+ ['SWE-Bench', 'Leading benchmark for evaluating software engineering agents on real GitHub issue resolution.'],
+ ['GAIA', '"General AI Assistants" benchmark testing multi-step tool-use on real-world questions.'],
+ ['Multi-Agent System', 'Architecture where multiple specialised agents collaborate to complete a shared goal.'],
+ ['Handoff', 'Transfer of task context and control from one agent (or human) to another.'],
+ ['Sandbox', 'Isolated execution environment preventing agent actions from affecting production systems.'],
+ ['Guardrails', 'Rules, filters, or monitoring applied at runtime to constrain agent behaviour.'],
+ ['Circuit Breaker', 'Automatic mechanism that halts execution when anomalous behaviour or spending thresholds are detected.'],
+ ['Speculative Execution', 'Running multiple plan branches in parallel and selecting the best result.'],
+ ['Stateful Agent', 'An agent that maintains persistent state across multiple interactions or sessions.'],
+];
+const gList = document.getElementById('glossary-list');
+function renderGlossary(filter) {
+ const f = (filter || '').toLowerCase();
+ gList.innerHTML = glossary
+ .filter(([term, def]) => !f || term.toLowerCase().includes(f) || def.toLowerCase().includes(f))
+ .map(([term, def]) => `<div class="glossary-entry"><strong>${term}</strong><span>${def}</span></div>`)
+ .join('');
+}
+renderGlossary('');
+document.getElementById('glossary-search').addEventListener('input', e => renderGlossary(e.target.value));
+
+/* ─── CHARTS (lazy init) ─── */
+let chartsInitialized = false;
+function initCharts() {
+ if (chartsInitialized) return;
+ /* SWE-Bench */
+ const sweCtx = document.getElementById('chart-swe');
+ if (!sweCtx || !sweCtx.offsetParent) return;
+ chartsInitialized = true;
+
+ const chartDefaults = {
+ color: '#e6edf3',
+ borderColor: '#30363d',
+ font: { family: '-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif' }
+ };
+ Chart.defaults.color = chartDefaults.color;
+ Chart.defaults.borderColor = chartDefaults.borderColor;
+
+ new Chart(sweCtx, {
+ type: 'bar',
+ data: {
+ labels: ['Claude 4 Opus', 'OpenAI Codex CLI', 'Gemini 3 Pro', 'Devin 2.0', 'SWE-Agent'],
+ datasets: [{
+ label: 'SWE-Bench Verified (%)',
+ data: [72.5, 69.1, 65.0, 53.6, 48.9],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ indexAxis: 'y',
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ x: { max: 100, grid: { color: '#21262d' }, ticks: { callback: v => v + '%' } },
+ y: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Research benchmarks */
+ new Chart(document.getElementById('chart-research'), {
+ type: 'bar',
+ data: {
+ labels: ['GAIA\n(Manus)', 'BrowseComp\n(Deep Research)', "Humanity's Last\n(Deep Research)", 'WebArena\n(Operator)', 'OSWorld\n(Claude)'],
+ datasets: [{
+ label: 'Score (%)',
+ data: [86.5, 68.9, 26.6, 38.1, 39],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { max: 100, grid: { color: '#21262d' }, ticks: { callback: v => v + '%' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+
+ /* Market growth */
+ new Chart(document.getElementById('chart-market'), {
+ type: 'line',
+ data: {
+ labels: ['2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [7.5, 11.2, 16.7, 24.9, 37.2, 55.5, 82.9, 110, 139, 165],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.1)',
+ fill: true,
+ tension: 0.4,
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 5,
+ pointHoverRadius: 8,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { grid: { color: '#21262d' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: '#21262d' } }
+ }
+ }
+ });
+
+ /* Investments */
+ new Chart(document.getElementById('chart-invest'), {
+ type: 'bar',
+ data: {
+ labels: ['Harvey\n(Legal)', 'Cognition\n(Devin)', 'Sierra AI\n(Support)', 'Hebbia\n(Knowledge)', 'Ema\n(Enterprise)', '11x.ai\n(Sales)'],
+ datasets: [{
+ label: 'Funding ($M)',
+ data: [300, 175, 175, 130, 61, 50],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570', '#5e96b8'],
+ borderRadius: 6,
+ borderSkipped: false,
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { grid: { color: '#21262d' }, ticks: { callback: v => '$' + v + 'M' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+}
+
+/* Init charts if benchmarks or market tab is active on load */
+setTimeout(initCharts, 100);
+
+</script>
+
+<nav class="chapter-nav">
+ 
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="analytical-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Analytical AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

@@ -1,0 +1,2809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinforcement Learning AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Reinforcement Learning AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of RL AI — the agent-environment loop, 8-layer stack, policy gradient, Q-learning, RLHF, benchmarks, market data, and more.</p>
+ <span class="reading-time">~52 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/17-reinforcement-learning-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="loop">Agent-Environment Loop</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools &amp; Frameworks</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════ TAB 1 — AGENT-ENVIRONMENT LOOP ════════ -->
+<section class="section active" id="tab-loop">
+ <h2>Agent-Environment Loop</h2>
+ <p class="desc">The fundamental RL interaction cycle: the agent observes a state, selects an action, receives a reward, and updates its policy — repeating indefinitely.</p>
+
+ <div class="loop-container">
+ <svg class="loop-svg" style="max-width:760px" viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg">
+ <!-- Agent Box -->
+ <rect x="260" y="20" width="240" height="90" rx="14" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+ <text x="380" y="55" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="800" font-family="system-ui">AGENT</text>
+ <text x="380" y="80" text-anchor="middle" fill="#8b949e" font-size="13" font-family="system-ui">Policy π(a|s)</text>
+
+ <!-- Environment Box -->
+ <rect x="260" y="310" width="240" height="90" rx="14" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+ <text x="380" y="345" text-anchor="middle" fill="#3fb950" font-size="18" font-weight="800" font-family="system-ui">ENVIRONMENT</text>
+ <text x="380" y="370" text-anchor="middle" fill="#8b949e" font-size="13" font-family="system-ui">Dynamics P(s'|s,a)</text>
+
+ <!-- Action arrow (Agent → Environment) — right side -->
+ <line x1="520" y1="110" x2="520" y2="310" stroke="#d2a8ff" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+ <rect x="530" y="185" width="120" height="44" rx="8" fill="#1c2333" stroke="#d2a8ff" stroke-width="1"/>
+ <text x="590" y="203" text-anchor="middle" fill="#d2a8ff" font-size="13" font-weight="700" font-family="system-ui">Action a<tspan baseline-shift="sub" font-size="10">t</tspan></text>
+ <text x="590" y="220" text-anchor="middle" fill="#8b949e" font-size="11" font-family="system-ui">Agent selects</text>
+
+ <!-- State + Reward arrow (Environment → Agent) — left side -->
+ <line x1="240" y1="310" x2="240" y2="110" stroke="#f0883e" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+ <rect x="70" y="160" width="160" height="62" rx="8" fill="#1c2333" stroke="#f0883e" stroke-width="1"/>
+ <text x="150" y="181" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="700" font-family="system-ui">State s<tspan baseline-shift="sub" font-size="10">t+1</tspan></text>
+ <text x="150" y="198" text-anchor="middle" fill="#ff7b72" font-size="13" font-weight="700" font-family="system-ui">Reward r<tspan baseline-shift="sub" font-size="10">t</tspan></text>
+ <text x="150" y="215" text-anchor="middle" fill="#8b949e" font-size="11" font-family="system-ui">Env returns</text>
+
+ <!-- Policy Update label -->
+ <rect x="300" y="180" width="160" height="52" rx="10" fill="rgba(88,166,255,0.1)" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="6 3"/>
+ <text x="380" y="201" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="700" font-family="system-ui">Policy Update</text>
+ <text x="380" y="220" text-anchor="middle" fill="#8b949e" font-size="11" font-family="system-ui">∇θ J(π<tspan baseline-shift="sub" font-size="9">θ</tspan>)</text>
+
+ <!-- Arrow markers -->
+ <defs>
+ <marker id="arrowPurple" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+ <path d="M0,0 L10,4 L0,8 Z" fill="#d2a8ff"/>
+ </marker>
+ <marker id="arrowOrange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+ <path d="M0,0 L10,4 L0,8 Z" fill="#f0883e"/>
+ </marker>
+ </defs>
+ </svg>
+ </div>
+
+ <div class="cards cards-3" style="margin-top: 12px;">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Step 1</span>
+ <h3 class="c-blue">State Observation (s<sub>t</sub>)</h3>
+ <p>The agent observes the current state of the environment — a numerical vector, image, or structured representation of the world.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Step 2</span>
+ <h3 class="c-purple">Action Selection (a<sub>t</sub>)</h3>
+ <p>The agent uses its policy π(a|s) to select an action — either deterministic or sampled from a probability distribution over actions.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Step 3</span>
+ <h3 class="c-green">Environment Transition</h3>
+ <p>The environment receives the action, transitions to a new state s<sub>t+1</sub> according to its dynamics P(s'|s,a), and computes a reward.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Step 4</span>
+ <h3 class="c-orange">Reward Signal (r<sub>t</sub>)</h3>
+ <p>The environment emits a scalar reward r<sub>t</sub> — the only training signal. The agent's goal: maximise cumulative discounted reward Σ γ<sup>t</sup>r<sub>t</sub>.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Step 5</span>
+ <h3 class="c-cyan">Policy Update</h3>
+ <p>The agent updates its policy parameters θ using the collected (s, a, r, s') transitions — via gradient ascent, temporal-difference learning, or value iteration.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-loop')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-loop">
+<h3>How Reinforcement Learning Works — The Agent-Environment Loop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ RL AGENT-ENVIRONMENT LOOP │
+│ │
+│ ┌──────────────┐ │
+│ │ ENVIRONMENT │ │
+│ │ │ │
+│ state(t) │ produces │ reward(t) │
+│ ┌───────────┤ next state ├───────────┐ │
+│ │ │ + reward │ │ │
+│ ▼ └──────▲───────┘ ▼ │
+│ ┌──────────────┐ │ ┌──────────────┐ │
+│ │ OBSERVE │ │ │ RECEIVE │ │
+│ │ current │ action(t) │ reward │ │
+│ │ state │ │ │ signal │ │
+│ └──────┬───────┘ │ └──────┬───────┘ │
+│ │ │ │ │
+│ ▼ │ ▼ │
+│ ┌──────────────────────────────────────────────────┐ │
+│ │ AGENT │ │
+│ │ Policy: π(state) → action │ │
+│ │ Updates policy to maximise cumulative reward │ │
+│ └──────────────────────────────────────────────────┘ │
+│ │
+│ ──── LOOP REPEATS: observe → act → receive reward → learn → repeat ──── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The RL Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>State Observation</strong></td>
+<td>Agent observes the current state of the environment (e.g., board position, sensor readings, system metrics)</td>
+</tr>
+<tr>
+<td><strong>Action Selection</strong></td>
+<td>Agent uses its current policy to choose an action — balancing exploitation (best known action) vs. exploration (trying new actions)</td>
+</tr>
+<tr>
+<td><strong>Environment Transition</strong></td>
+<td>Environment transitions to a new state based on the action taken (and possibly stochastic dynamics)</td>
+</tr>
+<tr>
+<td><strong>Reward Signal</strong></td>
+<td>Agent receives a scalar reward signal indicating how good the action was</td>
+</tr>
+<tr>
+<td><strong>Policy Update</strong></td>
+<td>Agent updates its policy (and/or value function) to improve future decisions based on the observed reward</td>
+</tr>
+<tr>
+<td><strong>Iteration</strong></td>
+<td>Process repeats for thousands to billions of episodes until the policy converges to near-optimal</td>
+</tr>
+</tbody>
+</table>
+<h3>Key RL Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Learning Rate (α)</strong></td>
+<td>How much the agent updates its value estimates on each step; high = fast but unstable; low = stable but slow</td>
+</tr>
+<tr>
+<td><strong>Discount Factor (γ)</strong></td>
+<td>How much the agent values future rewards vs. immediate rewards; γ near 1 = long-term thinking; γ near 0 = myopic</td>
+</tr>
+<tr>
+<td><strong>Exploration Rate (ε)</strong></td>
+<td>Probability of taking a random action (ε-greedy) to discover new strategies vs. exploiting current best</td>
+</tr>
+<tr>
+<td><strong>Batch Size</strong></td>
+<td>Number of experience samples processed per policy update (in deep RL)</td>
+</tr>
+<tr>
+<td><strong>Replay Buffer Size</strong></td>
+<td>How many past experiences are stored for off-policy learning (experience replay)</td>
+</tr>
+<tr>
+<td><strong>Episode Length</strong></td>
+<td>Maximum number of steps per training episode</td>
+</tr>
+<tr>
+<td><strong>Reward Shaping</strong></td>
+<td>Design of the reward function — the single most critical design choice in RL</td>
+</tr>
+<tr>
+<td><strong>Entropy Bonus</strong></td>
+<td>Bonus reward for maintaining action diversity, preventing premature convergence</td>
+</tr>
+<tr>
+<td><strong>Clip Range</strong></td>
+<td>In PPO, bounds the policy update ratio to prevent destructively large updates</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>AlphaGo's victory over Lee Sedol in 2016 required 1,920 CPUs and 280 GPUs running simultaneously.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>OpenAI Five (Dota 2) accumulated over 45,000 years of simulated gameplay during training.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>MuZero learned to master Go, chess, shogi, and Atari games without being told the rules of any game.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What signal drives learning in reinforcement learning?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Labelled examples</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Reward signals from the environment</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Pre-trained weights</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Rule-based feedback</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What does the "exploration vs exploitation" trade-off refer to?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Training vs testing</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Trying new actions vs using known good actions</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">CPU vs GPU usage</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Online vs offline learning</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> Which algorithm did AlphaGo use to defeat Lee Sedol?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Q-Learning</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Monte Carlo Tree Search + deep RL</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Simple policy gradient</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Decision trees</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════ TAB 2 — 8-LAYER STACK ════════ -->
+<section class="section" id="tab-stack">
+ <h2>8-Layer RL Stack</h2>
+ <p class="desc">A layered view of the reinforcement learning system — from simulation environments at the base to deployment and safety at the top.</p>
+
+ <div class="stack-layers">
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-blue c-blue">8</span>
+ <span class="layer-title">Deployment &amp; Safety</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Safe RL, constrained optimisation (CMDPs), human oversight loops, reward auditing, action veto mechanisms, deployment monitoring, and rollback strategies for production RL systems.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-green c-green">7</span>
+ <span class="layer-title">Evaluation</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Reward curves, episode returns, regret analysis, zero-shot / few-shot transfer evaluation, ablation studies, human evaluation for RLHF, and off-policy evaluation (OPE) methods.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-purple c-purple">6</span>
+ <span class="layer-title">Policy Optimisation</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">PPO, SAC, DQN, REINFORCE, actor-critic methods (A2C/A3C), TD3, trust-region methods (TRPO), natural policy gradient, and evolutionary strategies as optimisation alternatives.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-orange c-orange">5</span>
+ <span class="layer-title">Reward Engineering</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Reward shaping, RLHF / DPO pipelines, learned reward models, intrinsic motivation (curiosity-driven exploration), potential-based shaping, and multi-objective reward decomposition.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-red c-red">4</span>
+ <span class="layer-title">Representation Learning</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">State encoders (CNNs, transformers), world models (Dreamer, IRIS), attention over observations, contrastive learning for state representations, and latent-space dynamics models.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-cyan c-cyan">3</span>
+ <span class="layer-title">Experience Collection</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Rollout workers, replay buffers (uniform, prioritised, hindsight), off-policy vs on-policy data pipelines, distributed experience collection, and trajectory storage.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-purple c-purple">2</span>
+ <span class="layer-title">Environment Interface</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Gym / Gymnasium API (step, reset, render), vectorised environments for parallel rollouts, observation/action wrappers, reward wrappers, and environment registration.</div>
+ </div>
+ <div class="stack-layer" onclick="toggleLayer(this)">
+ <div class="layer-head">
+ <span class="layer-num bg-green c-green">1</span>
+ <span class="layer-title">Simulation / World</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">Atari (ALE), MuJoCo physics engine, game engines (Unity, Unreal), real-world robotic environments, LLM environments (text games, tool use), and procedurally generated worlds.</div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The RL AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Environment</strong></td>
+<td>Simulators (MuJoCo, Unity, Gymnasium), real-world interfaces (robots, trading), game engines</td>
+</tr>
+<tr>
+<td><strong>2. State Representation</strong></td>
+<td>Raw observations, feature engineering, learned embeddings, attention over observations</td>
+</tr>
+<tr>
+<td><strong>3. Policy Architecture</strong></td>
+<td>MLPs, CNNs (for visual), RNNs/Transformers (for sequential), actor-critic networks</td>
+</tr>
+<tr>
+<td><strong>4. Learning Algorithm</strong></td>
+<td>DQN, PPO, SAC, TRPO, A3C, model-based planning, offline RL</td>
+</tr>
+<tr>
+<td><strong>5. Exploration Strategy</strong></td>
+<td>ε-greedy, Boltzmann, curiosity-driven, count-based, entropy regularisation</td>
+</tr>
+<tr>
+<td><strong>6. Reward Engineering</strong></td>
+<td>Reward shaping, sparse vs. dense rewards, reward models (RLHF), intrinsic motivation</td>
+</tr>
+<tr>
+<td><strong>7. Training Infrastructure</strong></td>
+<td>Distributed training (Ray/RLlib), GPU/TPU clusters, parallel environment rollouts</td>
+</tr>
+<tr>
+<td><strong>8. Deployment &amp; Safety</strong></td>
+<td>Policy distillation, safety constraints, sim-to-real transfer, monitoring, guardrails</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 3 — SUB-TYPES ════════ -->
+<section class="section" id="tab-subtypes">
+ <h2>Sub-Types of Reinforcement Learning</h2>
+ <p class="desc">Six major paradigms within RL — each with distinct data usage, model assumptions, and application profiles.</p>
+
+ <div class="cards cards-2">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Model-Free</span>
+ <h3 class="c-blue">Model-Free RL</h3>
+ <p>Learn policy or value function directly from experience without building an environment model. Includes value-based (DQN) and policy-based (PPO, SAC) methods. Simpler but sample-inefficient.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Model-Based</span>
+ <h3 class="c-green">Model-Based RL</h3>
+ <p>Learn a model of environment dynamics and use it for planning. Dreamer, MuZero, MBPO. More sample-efficient; trades off model accuracy for data efficiency.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">On-Policy</span>
+ <h3 class="c-purple">On-Policy</h3>
+ <p>Use data only from the current policy for updates. PPO, A3C. Training is stable but sample-inefficient — collected data is discarded after each update.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Off-Policy</span>
+ <h3 class="c-orange">Off-Policy</h3>
+ <p>Reuse data from any policy via replay buffers. DQN, SAC, TD3. Much more sample-efficient; enables experience replay and batch learning from historical data.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Multi-Agent</span>
+ <h3 class="c-cyan">Multi-Agent RL (MARL)</h3>
+ <p>Multiple agents learning simultaneously in shared environments. Cooperative (QMIX, MAPPO), competitive (self-play), or mixed. Combinatorial complexity in coordination and credit assignment.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">RLHF</span>
+ <h3 class="c-red">RL from Human Feedback (RLHF)</h3>
+ <p>Human preferences serve as the reward signal instead of a hand-crafted function. Core technique for LLM alignment — InstructGPT, ChatGPT, Claude, Gemini. Paired with DPO as an alternative.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Learning Paradigm</h3>
+<h3>Model-Free vs. Model-Based</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model-Free</strong></td>
+<td>Learns policy directly from experience without building an environment model</td>
+<td>DQN, PPO, SAC, A3C</td>
+</tr>
+<tr>
+<td><strong>Model-Based</strong></td>
+<td>Learns a model of the environment, then plans within the model</td>
+<td>MuZero, Dreamer, Dyna-Q, World Models</td>
+</tr>
+</tbody>
+</table>
+<h3>On-Policy vs. Off-Policy</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>On-Policy</strong></td>
+<td>Learns from data generated by the current policy; data is discarded after each update</td>
+<td>PPO, A3C, SARSA</td>
+</tr>
+<tr>
+<td><strong>Off-Policy</strong></td>
+<td>Can learn from data generated by any policy (including past versions or demonstrations)</td>
+<td>DQN, SAC, offline RL</td>
+</tr>
+</tbody>
+</table>
+<h3>Single-Agent vs. Multi-Agent</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single-Agent</strong></td>
+<td>One agent interacts with the environment</td>
+<td>Classic game-playing, robotic manipulation</td>
+</tr>
+<tr>
+<td><strong>Multi-Agent (MARL)</strong></td>
+<td>Multiple agents interact, cooperate, or compete in a shared environment</td>
+<td>OpenAI Five (Dota 2), multi-robot coordination, traffic signal control</td>
+</tr>
+</tbody>
+</table>
+<h3>Hierarchical RL</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Decompose complex tasks into a hierarchy of sub-tasks with sub-goals</td>
+</tr>
+<tr>
+<td><strong>Options Framework</strong></td>
+<td>High-level policy selects "options" (temporally extended actions); low-level policy executes them</td>
+</tr>
+<tr>
+<td><strong>Feudal Networks</strong></td>
+<td>Manager-worker architecture: manager sets goals, workers achieve them</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Long-horizon tasks, navigation, complex game strategies</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 4 — CORE ARCHITECTURES ════════ -->
+<section class="section" id="tab-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">Eight foundational RL architectures — from value-based DQN to the RLHF pipeline powering modern LLMs.</p>
+
+ <div class="cards cards-2">
+ <div class="card">
+ <span class="badge bg-blue c-blue">Value-Based</span>
+ <h3 class="c-blue">DQN (Deep Q-Network)</h3>
+ <p>Value-based method that combines deep neural networks with Q-learning. Introduced experience replay and target networks. Achieved superhuman Atari play (DeepMind, 2015).</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">Policy Gradient</span>
+ <h3 class="c-green">PPO (Proximal Policy Optimisation)</h3>
+ <p>Policy gradient method with clipped surrogate objective for stable updates. Default RL algorithm at OpenAI. Balances simplicity, stability, and performance across domains.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Actor-Critic</span>
+ <h3 class="c-purple">SAC (Soft Actor-Critic)</h3>
+ <p>Off-policy actor-critic with entropy regularisation for maximum exploration. State-of-the-art for continuous control. Sample-efficient via replay buffer and twin critics.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-orange c-orange">Parallel</span>
+ <h3 class="c-orange">A3C / A2C</h3>
+ <p>Asynchronous (A3C) and synchronous (A2C) advantage actor-critic. Multiple parallel workers collect experience independently. Pioneered by DeepMind for scalable training.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-cyan c-cyan">Deterministic</span>
+ <h3 class="c-cyan">TD3 (Twin Delayed DDPG)</h3>
+ <p>Off-policy deterministic policy gradient with twin critics to reduce overestimation, delayed policy updates, and target policy smoothing. Designed for continuous action spaces.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-green c-green">World Model</span>
+ <h3 class="c-green">Dreamer (v3)</h3>
+ <p>Model-based method that learns a world model in latent space and trains the policy entirely through imagined trajectories. Extremely sample-efficient; works across diverse domains.</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-purple c-purple">Planning</span>
+ <h3 class="c-purple">MuZero</h3>
+ <p>Model-based planning without access to environment rules. Learns dynamics, reward, and value models jointly. Masters Go, chess, shogi, and Atari from raw pixels (DeepMind).</p>
+ </div>
+ <div class="card">
+ <span class="badge bg-red c-red">LLM Alignment</span>
+ <h3 class="c-red">RLHF Pipeline</h3>
+ <p>Reward model trained on human preference comparisons → PPO fine-tuning of LLM → KL-divergence constraint to base model. Powers ChatGPT, Claude, and Gemini instruction following.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Techniques</h3>
+<h3>Value-Based Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Learn a value function that estimates the expected cumulative reward from each state (or state-action pair); act greedily with respect to this value</td>
+</tr>
+<tr>
+<td><strong>Q-Learning</strong></td>
+<td>Off-policy algorithm that learns Q(s, a) — the value of taking action a in state s; updates toward the maximum future value</td>
+</tr>
+<tr>
+<td><strong>SARSA</strong></td>
+<td>On-policy variant that updates toward the value of the action actually taken under the current policy</td>
+</tr>
+<tr>
+<td><strong>Deep Q-Network (DQN)</strong></td>
+<td>Uses a deep neural network to approximate Q-values; introduced experience replay and target networks for stability (Mnih et al., 2015)</td>
+</tr>
+<tr>
+<td><strong>Double DQN</strong></td>
+<td>Addresses overestimation bias in DQN by separating action selection and evaluation</td>
+</tr>
+<tr>
+<td><strong>Dueling DQN</strong></td>
+<td>Splits Q-value into state-value and advantage streams for more efficient learning</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Well-understood theoretically; convergence guarantees in tabular settings; effective for discrete action spaces</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Struggles with continuous action spaces; value function approximation can be unstable</td>
+</tr>
+</tbody>
+</table>
+<h3>Policy Gradient Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Directly parameterise the policy π(a</td>
+</tr>
+<tr>
+<td><strong>REINFORCE</strong></td>
+<td>Simplest policy gradient; uses Monte Carlo returns to estimate the policy gradient</td>
+</tr>
+<tr>
+<td><strong>Actor-Critic</strong></td>
+<td>Combines policy gradient (actor) with a learned value function (critic) to reduce variance</td>
+</tr>
+<tr>
+<td><strong>A2C / A3C</strong></td>
+<td>Advantage Actor-Critic; A3C uses asynchronous parallel workers for faster training</td>
+</tr>
+<tr>
+<td><strong>PPO (Proximal Policy Optimisation)</strong></td>
+<td>OpenAI (2017); clips policy updates to prevent catastrophic changes; the most widely used RL algorithm today</td>
+</tr>
+<tr>
+<td><strong>TRPO (Trust Region Policy Optimisation)</strong></td>
+<td>Constrains policy updates to a trust region for stability; more theoretically principled but slower than PPO</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Naturally handles continuous action spaces; can learn stochastic policies; scalable to complex problems</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>High variance; sample-inefficient; sensitive to hyperparameter tuning</td>
+</tr>
+</tbody>
+</table>
+<h3>Model-Based Reinforcement Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Learn a model of the environment (transition dynamics and reward function), then use it to plan actions without further real-world interaction</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Agent builds a learned simulator of the environment → plans by simulating trajectories → executes the best plan</td>
+</tr>
+<tr>
+<td><strong>Dyna-Q</strong></td>
+<td>Hybrid approach: real experience updates the model and the policy; simulated experience from the model provides additional policy updates</td>
+</tr>
+<tr>
+<td><strong>World Models</strong></td>
+<td>Neural networks that learn compressed representations of environment dynamics; agent plans within the learned "dream"</td>
+</tr>
+<tr>
+<td><strong>MuZero</strong></td>
+<td>DeepMind (2020); learns a model of the environment end-to-end without knowing the rules; achieves superhuman in Go, chess, shogi, and Atari</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Dramatically more sample-efficient; can plan ahead; can transfer models across tasks</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Model errors compound in long-horizon planning; model learning can be as hard as the original problem</td>
+</tr>
+</tbody>
+</table>
+<h3>Offline / Batch Reinforcement Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Learn a policy entirely from a fixed dataset of past interactions — no further environment interaction required</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>In many real-world domains (healthcare, finance, autonomous driving), exploration is dangerous or impossible</td>
+</tr>
+<tr>
+<td><strong>Algorithms</strong></td>
+<td>Conservative Q-Learning (CQL), Decision Transformer, Implicit Q-Learning (IQL)</td>
+</tr>
+<tr>
+<td><strong>Strengths</strong></td>
+<td>Safe — no risky exploration; can leverage existing historical data</td>
+</tr>
+<tr>
+<td><strong>Weaknesses</strong></td>
+<td>Limited by the quality and coverage of the historical dataset; distribution shift challenges</td>
+</tr>
+</tbody>
+</table>
+<h3>Inverse Reinforcement Learning (IRL)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Idea</strong></td>
+<td>Infer the reward function from observed expert behaviour — learn<em>what</em> the expert is optimising for</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>In many tasks, specifying a good reward function is harder than demonstrating the desired behaviour</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Learning driving behaviour from human demonstrations, robot imitation learning</td>
+</tr>
+<tr>
+<td><strong>Relationship to RLHF</strong></td>
+<td>RLHF is conceptually related — learning a reward model from human preferences rather than human demonstrations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 5 — TOOLS & FRAMEWORKS ════════ -->
+<section class="section" id="tab-tools">
+ <h2>Tools &amp; Frameworks</h2>
+ <p class="desc">The leading libraries, environments, and platforms for reinforcement learning research and production.</p>
+
+ <div style="overflow-x:auto;">
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Provider</th><th>Focus</th></tr>
+ </thead>
+ <tbody>
+ <tr><td class="c-blue" style="font-weight:700">Stable-Baselines3</td><td>DLR</td><td>PyTorch RL algorithms; PPO, SAC, DQN, TD3; research-ready</td></tr>
+ <tr><td class="c-green" style="font-weight:700">RLlib</td><td>Anyscale / Ray</td><td>Scalable distributed RL; multi-agent; production-grade</td></tr>
+ <tr><td class="c-purple" style="font-weight:700">CleanRL</td><td>Open-source</td><td>Single-file RL implementations; educational; reproducible</td></tr>
+ <tr><td class="c-orange" style="font-weight:700">TRL (Transformer RL)</td><td>Hugging Face</td><td>RLHF / DPO for LLMs; PPO trainer; reward modelling</td></tr>
+ <tr><td class="c-cyan" style="font-weight:700">Gymnasium</td><td>Farama Foundation</td><td>Standard RL environment API; successor to OpenAI Gym</td></tr>
+ <tr><td class="c-red" style="font-weight:700">PettingZoo</td><td>Farama Foundation</td><td>Multi-agent RL environments; AEC and parallel APIs</td></tr>
+ <tr><td class="c-blue" style="font-weight:700">MuJoCo</td><td>Google DeepMind</td><td>Physics engine; contact-rich continuous control; free</td></tr>
+ <tr><td class="c-green" style="font-weight:700">Isaac Gym</td><td>NVIDIA</td><td>GPU-accelerated massively parallel RL environments</td></tr>
+ <tr><td class="c-purple" style="font-weight:700">Unity ML-Agents</td><td>Unity</td><td>RL in 3D game environments; visual observations</td></tr>
+ <tr><td class="c-orange" style="font-weight:700">Tianshou</td><td>Tsinghua</td><td>Fast, modular PyTorch RL library; batch simulation</td></tr>
+ <tr><td class="c-cyan" style="font-weight:700">DeepMind Acme</td><td>DeepMind</td><td>Research RL framework; distributed; actor-learner</td></tr>
+ <tr><td class="c-red" style="font-weight:700">OpenSpiel</td><td>DeepMind</td><td>Game theory + MARL; poker, negotiation, auctions</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>RL Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stable-Baselines3</strong></td>
+<td>Open-source (PyTorch)</td>
+<td>Open-Source (any OS; Python 3.8+; NVIDIA GPU recommended; CUDA 11.8+)</td>
+<td>Reliable implementations of PPO, DQN, SAC, A2C, TD3; the go-to for research</td>
+</tr>
+<tr>
+<td><strong>Ray RLlib</strong></td>
+<td>Anyscale (open-source)</td>
+<td>Open-Source (any OS; Python 3.8+; multi-node clusters; NVIDIA GPU optional; Anyscale Cloud on AWS / GCP)</td>
+<td>Scalable distributed RL; supports multi-agent; production-grade</td>
+</tr>
+<tr>
+<td><strong>CleanRL</strong></td>
+<td>Open-source</td>
+<td>Open-Source (any OS; Python 3.8+; NVIDIA GPU recommended)</td>
+<td>Single-file RL implementations; optimised for clarity and reproducibility</td>
+</tr>
+<tr>
+<td><strong>TF-Agents</strong></td>
+<td>Google (TensorFlow)</td>
+<td>Open-Source (any OS; Python 3.8+; NVIDIA GPU or TPU; CUDA 11.8+)</td>
+<td>TensorFlow-native RL library; DQN, REINFORCE, PPO, SAC</td>
+</tr>
+<tr>
+<td><strong>Tianshou</strong></td>
+<td>Open-source (PyTorch)</td>
+<td>Open-Source (any OS; Python 3.8+; NVIDIA GPU recommended)</td>
+<td>Modular RL framework; emphasises code quality and flexibility</td>
+</tr>
+<tr>
+<td><strong>Acme</strong></td>
+<td>DeepMind</td>
+<td>Open-Source (any OS; Python 3.9+; NVIDIA GPU or TPU; distributed on GCP)</td>
+<td>Research RL framework; distributed actors and learners; advanced algorithms</td>
+</tr>
+<tr>
+<td><strong>PettingZoo</strong></td>
+<td>Farama Foundation</td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only for most envs)</td>
+<td>Multi-agent RL environment API; standardised interface for MARL</td>
+</tr>
+</tbody>
+</table>
+<h3>Environments &amp; Simulators</h3>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Deployment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gymnasium (OpenAI Gym)</strong></td>
+<td>Open-Source (any OS; Python 3.8+; CPU for classic envs; GPU for Atari)</td>
+<td>Standard API for RL environments; CartPole, MountainCar, Atari, and hundreds more</td>
+</tr>
+<tr>
+<td><strong>MuJoCo</strong></td>
+<td>Open-Source (Linux/macOS/Windows; C; CPU-only for simulation)</td>
+<td>High-fidelity physics simulator; continuous control; robotics locomotion</td>
+</tr>
+<tr>
+<td><strong>Unity ML-Agents</strong></td>
+<td>Open-Source (Windows/Linux/macOS; Unity Editor + Python 3.8+)</td>
+<td>RL in Unity 3D environments; visual, complex, and customisable</td>
+</tr>
+<tr>
+<td><strong>NVIDIA Isaac Sim</strong></td>
+<td>On-Prem (Linux; NVIDIA RTX GPU required) / Cloud (AWS EC2 G5/P4d; GCP A2 instances; NVIDIA Omniverse Cloud)</td>
+<td>Robot simulation with GPU-accelerated physics; sim-to-real for robotics</td>
+</tr>
+<tr>
+<td><strong>PySC2 / SMACv2</strong></td>
+<td>Open-Source (Linux/Windows; Python 3.8+; StarCraft II client required)</td>
+<td>StarCraft II RL environments; multi-agent and single-agent tasks</td>
+</tr>
+<tr>
+<td><strong>Minigrid / MiniWorld</strong></td>
+<td>Open-Source (any OS; Python 3.8+; CPU-only)</td>
+<td>Lightweight gridworld and 3D environments for fast prototyping</td>
+</tr>
+<tr>
+<td><strong>dm_control</strong></td>
+<td>Open-Source (Linux/macOS; Python 3.8+; MuJoCo; CPU-only)</td>
+<td>DeepMind continuous control environments; diverse locomotion and manipulation tasks</td>
+</tr>
+<tr>
+<td><strong>MetaWorld</strong></td>
+<td>Open-Source (Linux/macOS; Python 3.8+; MuJoCo; CPU-only)</td>
+<td>Multi-task robotics manipulation benchmark; 50 distinct tasks</td>
+</tr>
+</tbody>
+</table>
+<h3>RLHF &amp; Alignment Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TRL (Transformers Reinforcement Learning)</strong></td>
+<td>Open-Source (any OS; Python 3.9+; NVIDIA GPU; CUDA 11.8+; 40 GB+ VRAM for large models)</td>
+<td>Hugging Face library for RLHF, DPO, SFT; integrates with Transformers</td>
+</tr>
+<tr>
+<td><strong>DeepSpeed-Chat</strong></td>
+<td>Open-Source (Linux; Python 3.9+; multi-GPU NVIDIA A100/H100; CUDA 11.8+)</td>
+<td>Microsoft; end-to-end RLHF pipeline with ZeRO optimisation for large models</td>
+</tr>
+<tr>
+<td><strong>OpenRLHF</strong></td>
+<td>Open-Source (Linux; Python 3.9+; NVIDIA GPU; CUDA 11.8+; Ray cluster for scale)</td>
+<td>Open-source RLHF framework; scalable with Ray and vLLM</td>
+</tr>
+<tr>
+<td><strong>Axolotl</strong></td>
+<td>Open-Source (Linux; Python 3.10+; NVIDIA GPU; CUDA 11.8+)</td>
+<td>Fine-tuning framework supporting RLHF/DPO workflows</td>
+</tr>
+<tr>
+<td><strong>OAIF (Open Assistant)</strong></td>
+<td>Open-Source (Linux; Python 3.10+; NVIDIA GPU for training)</td>
+<td>Open-source RLHF dataset and pipeline</td>
+</tr>
+</tbody>
+</table>
+<h3>Distributed Training Infrastructure</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ray</strong></td>
+<td>Open-Source (any OS; Python 3.8+; multi-node clusters; NVIDIA GPU optional; Anyscale Cloud on AWS / GCP)</td>
+<td>Distributed computing framework; RLlib, Tune, and Serve for end-to-end RL</td>
+</tr>
+<tr>
+<td><strong>NVIDIA NeMo Aligner</strong></td>
+<td>Open-Source (Linux; NVIDIA GPU — A100/H100; CUDA 12+; multi-node DGX or cloud GPU instances)</td>
+<td>RLHF and alignment training at scale on NVIDIA infrastructure</td>
+</tr>
+<tr>
+<td><strong>SampleFactory</strong></td>
+<td>Open-Source (Linux; Python 3.8+; multi-core CPU; NVIDIA GPU recommended)</td>
+<td>High-throughput RL training; asynchronous environment stepping</td>
+</tr>
+<tr>
+<td><strong>EnvPool</strong></td>
+<td>Open-Source (Linux; Python 3.8+; C++17 compiler; multi-core CPU)</td>
+<td>C++-based vectorised environment execution; dramatically faster environment stepping</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 6 — USE CASES ════════ -->
+<section class="section" id="tab-usecases">
+ <h2>Use Cases</h2>
+ <p class="desc">Where reinforcement learning delivers real-world impact — from LLM alignment to chip design and autonomous driving.</p>
+
+ <div class="domain-acc">
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> LLM Alignment (RLHF / DPO)</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>Core technique behind ChatGPT, Claude, and Gemini instruction following and safety</li>
+ <li>Human preference data collected via pairwise comparisons of model outputs</li>
+ <li>Reward model trained, then PPO fine-tunes the LLM with KL constraint</li>
+ <li>DPO (Direct Preference Optimisation) eliminates the explicit reward model step</li>
+ <li>Responsible for the qualitative leap from GPT-3 base to ChatGPT-level assistants</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> Game Playing</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>AlphaGo / AlphaZero — superhuman Go, chess, shogi from self-play</li>
+ <li>OpenAI Five — Dota 2 team-level coordination at professional level</li>
+ <li>AlphaStar — StarCraft II Grandmaster via population-based RL</li>
+ <li>Agent57 — first agent to surpass human performance on all 57 Atari games</li>
+ <li>Games serve as primary benchmarks and proving grounds for RL algorithms</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> Robotics Control</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>Dexterous manipulation — in-hand rotation, grasping, assembly</li>
+ <li>Locomotion — quadruped and humanoid walking, running, recovery</li>
+ <li>Sim-to-real transfer — train in MuJoCo/Isaac Gym, deploy on real hardware</li>
+ <li>Companies: Boston Dynamics, Google DeepMind, NVIDIA, Tesla (Optimus)</li>
+ <li>Domain randomisation and teacher-student distillation bridge the sim-to-real gap</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> Chip Design</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>AlphaChip (Google) — RL-based floorplanning for chip macro placement</li>
+ <li>Optimises wire length, timing, and area simultaneously</li>
+ <li>Used in Google TPU v5 chip design pipeline</li>
+ <li>Reduces chip design time from weeks/months to hours</li>
+ <li>Generalises across chip netlists — trains once, applies to new designs</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> Autonomous Driving</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>Decision-making at intersections, roundabouts, and merges</li>
+ <li>Lane changing and highway driving policy optimisation</li>
+ <li>Wayve — end-to-end RL-based driving in urban environments</li>
+ <li>Simulation training in CARLA, then transfer to real vehicles</li>
+ <li>Combined with imitation learning for safe exploration in deployment</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="domain-item" onclick="toggleDomain(this)">
+ <div class="domain-header">
+ <span> Resource Management</span>
+ <span class="arrow">▸</span>
+ </div>
+ <div class="domain-body">
+ <div class="domain-body-inner">
+ <ul>
+ <li>Data centre cooling — DeepMind / Google achieved 40% energy reduction</li>
+ <li>Network routing and congestion control optimisation</li>
+ <li>Cloud scheduling — dynamic VM allocation and autoscaling</li>
+ <li>Power grid management — balancing supply and demand in real-time</li>
+ <li>Inventory and supply-chain optimisation under uncertainty</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Gaming &amp; Entertainment</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Game AI</strong></td>
+<td>RL agents that achieve superhuman performance in board games, video games, and card games</td>
+<td>AlphaGo/Zero, AlphaStar, OpenAI Five</td>
+</tr>
+<tr>
+<td><strong>NPC Behaviour</strong></td>
+<td>Learning realistic non-player character behaviour through self-play</td>
+<td>Game studios experimenting with RL-driven NPCs</td>
+</tr>
+<tr>
+<td><strong>Game Testing</strong></td>
+<td>RL agents automatically play-test games to discover bugs and balance issues</td>
+<td>Unity ML-Agents, EA research</td>
+</tr>
+<tr>
+<td><strong>Content Generation</strong></td>
+<td>RL for procedural level design and game balancing</td>
+<td>Adaptive difficulty systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Robotics &amp; Control</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Locomotion</strong></td>
+<td>Learning walking, running, and acrobatic behaviours for legged robots</td>
+<td>Boston Dynamics-style locomotion, sim-to-real</td>
+</tr>
+<tr>
+<td><strong>Manipulation</strong></td>
+<td>Learning grasping, assembly, and dexterous manipulation from trial and error</td>
+<td>OpenAI Rubik's Cube, Google robotic manipulation</td>
+</tr>
+<tr>
+<td><strong>Drone Control</strong></td>
+<td>Autonomous drone flight, racing, and coordination</td>
+<td>Swift (autonomous drone racing champion)</td>
+</tr>
+<tr>
+<td><strong>Chip Design</strong></td>
+<td>RL for optimising semiconductor chip floorplanning</td>
+<td>Google (Nature, 2021) — chip placement in hours</td>
+</tr>
+</tbody>
+</table>
+<h3>LLM Alignment &amp; AI Safety</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RLHF for LLMs</strong></td>
+<td>Fine-tuning language models to follow instructions and align with human preferences</td>
+<td>GPT-4, Claude, Gemini, Llama</td>
+</tr>
+<tr>
+<td><strong>Constitutional AI</strong></td>
+<td>RLHF with AI-generated feedback based on a constitution of principles</td>
+<td>Anthropic Claude</td>
+</tr>
+<tr>
+<td><strong>Red-teaming</strong></td>
+<td>RL-trained adversarial agents that probe LLMs for vulnerabilities</td>
+<td>Automated safety testing</td>
+</tr>
+<tr>
+<td><strong>Reasoning Enhancement</strong></td>
+<td>RL-based training for improved mathematical and logical reasoning</td>
+<td>DeepSeek-R1, OpenAI o1/o3</td>
+</tr>
+</tbody>
+</table>
+<h3>Finance &amp; Trading</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithmic Trading</strong></td>
+<td>RL agents that learn execution strategies to minimise market impact</td>
+<td>JP Morgan LOXM, quantitative hedge funds</td>
+</tr>
+<tr>
+<td><strong>Portfolio Optimisation</strong></td>
+<td>Dynamic asset allocation using RL to adapt to market conditions</td>
+<td>Research labs, proprietary trading firms</td>
+</tr>
+<tr>
+<td><strong>Order Execution</strong></td>
+<td>Learning optimal order splitting and timing strategies</td>
+<td>Execution management systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Operations &amp; Supply Chain</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Centre Cooling</strong></td>
+<td>RL for optimising cooling energy in data centres</td>
+<td>Google DeepMind — 40% reduction in cooling energy</td>
+</tr>
+<tr>
+<td><strong>Inventory Management</strong></td>
+<td>Learning reorder policies that adapt to demand patterns</td>
+<td>Amazon, supply chain research</td>
+</tr>
+<tr>
+<td><strong>Traffic Signal Control</strong></td>
+<td>RL for adaptive traffic signal timing to reduce congestion</td>
+<td>Smart city pilots in multiple countries</td>
+</tr>
+<tr>
+<td><strong>Network Optimisation</strong></td>
+<td>Resource allocation and routing optimisation in telecom networks</td>
+<td>5G network slicing, CDN optimisation</td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Treatment Planning</strong></td>
+<td>Learning personalised treatment strategies from patient data</td>
+<td>Sepsis treatment, cancer dosing</td>
+</tr>
+<tr>
+<td><strong>Clinical Trial Design</strong></td>
+<td>Adaptive trial designs using RL to allocate patients to treatments</td>
+<td>Bayesian adaptive trials</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>RL for molecular design — generating molecules with desired properties</td>
+<td>Insilico Medicine, Recursion</td>
+</tr>
+</tbody>
+</table>
+<h3>Science &amp; Research</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protein Structure</strong></td>
+<td>RL-inspired techniques for protein folding and design</td>
+<td>AlphaFold 2 (Note: uses supervised learning, not RL — included for historical context of DeepMind), RFdiffusion</td>
+</tr>
+<tr>
+<td><strong>Materials Discovery</strong></td>
+<td>RL agents explore chemical space for novel materials</td>
+<td>GNoME (DeepMind), battery materials</td>
+</tr>
+<tr>
+<td><strong>Plasma Control</strong></td>
+<td>RL for tokamak plasma shape control in fusion reactors</td>
+<td>DeepMind + EPFL (2022)</td>
+</tr>
+<tr>
+<td><strong>Mathematics</strong></td>
+<td>RL for discovering new mathematical conjectures and proofs</td>
+<td>FunSearch (DeepMind), AI-assisted theorem proving</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 7 — BENCHMARKS ════════ -->
+<section class="section" id="tab-benchmarks">
+ <h2>Benchmarks</h2>
+ <p class="desc">Quantitative performance comparisons across Atari games and multi-dimensional algorithm property assessment.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Atari-57 Benchmark (Human-Normalised %)</h3>
+ <canvas id="chartAtari"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Algorithm Properties (Radar)</h3>
+ <canvas id="chartRadar"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Training Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cumulative Reward (Return)</strong></td>
+<td>Total discounted reward accumulated per episode; the primary optimisation objective</td>
+</tr>
+<tr>
+<td><strong>Episode Length</strong></td>
+<td>Number of steps per episode; indicator of policy efficiency</td>
+</tr>
+<tr>
+<td><strong>Sample Efficiency</strong></td>
+<td>How many environment interactions are needed to reach a target performance level</td>
+</tr>
+<tr>
+<td><strong>Wall-Clock Time</strong></td>
+<td>Real-world time to reach target performance</td>
+</tr>
+<tr>
+<td><strong>Policy Entropy</strong></td>
+<td>Measure of exploration — high entropy = diverse actions; low entropy = deterministic</td>
+</tr>
+<tr>
+<td><strong>Value Loss</strong></td>
+<td>Error in the value function's predictions — indicates learning progress</td>
+</tr>
+<tr>
+<td><strong>Policy Loss</strong></td>
+<td>The policy gradient loss; tracks policy optimisation progress</td>
+</tr>
+<tr>
+<td><strong>KL Divergence</strong></td>
+<td>Distance between current and reference policy; monitors policy stability</td>
+</tr>
+</tbody>
+</table>
+<h3>Evaluation Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Average Return</strong></td>
+<td>Mean cumulative reward across evaluation episodes</td>
+</tr>
+<tr>
+<td><strong>Win Rate</strong></td>
+<td>Percentage of games/episodes won (for competitive settings)</td>
+</tr>
+<tr>
+<td><strong>Elo Rating</strong></td>
+<td>Relative skill rating in competitive settings (chess, Go, games)</td>
+</tr>
+<tr>
+<td><strong>Success Rate</strong></td>
+<td>% of episodes where the goal is achieved (for goal-conditioned tasks)</td>
+</tr>
+<tr>
+<td><strong>Regret</strong></td>
+<td>Difference between optimal cumulative reward and agent's cumulative reward</td>
+</tr>
+<tr>
+<td><strong>Robustness</strong></td>
+<td>Performance under perturbation, distribution shift, or adversarial conditions</td>
+</tr>
+</tbody>
+</table>
+<h3>RLHF-Specific Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Human Win Rate</strong></td>
+<td>% of comparisons where the RL-tuned model is preferred over the baseline by human evaluators</td>
+</tr>
+<tr>
+<td><strong>Reward Model Accuracy</strong></td>
+<td>How well the reward model predicts human preferences on held-out comparison data</td>
+</tr>
+<tr>
+<td><strong>KL from SFT</strong></td>
+<td>KL divergence from the supervised fine-tuned baseline; monitors over-optimisation</td>
+</tr>
+<tr>
+<td><strong>Toxicity / Helpfulness / Harmlessness Scores</strong></td>
+<td>Domain-specific safety and quality metrics scored by automated evaluators</td>
+</tr>
+<tr>
+<td><strong>Chatbot Arena Elo</strong></td>
+<td>Crowdsourced Elo from blind pairwise comparisons on LMSYS Chatbot Arena</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 8 — MARKET DATA ════════ -->
+<section class="section" id="tab-market">
+ <h2>Market Data</h2>
+ <p class="desc">RL market segmentation by application domain and projected growth trajectory through 2030.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>RL Market Segments ($B)</h3>
+ <canvas id="chartSegments"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>RL Market Growth 2024 → 2030 (CAGR ~30%)</h3>
+ <canvas id="chartGrowth"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Context</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global RL Market (2024)</strong></td>
+<td>~$2.1 billion</td>
+<td>Fortune Business Insights; fastest-growing ML sub-field</td>
+</tr>
+<tr>
+<td><strong>RL in Robotics Market (2024)</strong></td>
+<td>~$680 million</td>
+<td>Sim-to-real and manipulation dominate</td>
+</tr>
+<tr>
+<td><strong>RLHF/Alignment Market (2024)</strong></td>
+<td>~$1.4 billion</td>
+<td>Scale AI, Anthropic, OpenAI alignment teams; largest commercial RL application</td>
+</tr>
+<tr>
+<td><strong>RL in Game AI Revenue (2024)</strong></td>
+<td>~$320 million</td>
+<td>Game testing, NPC design, procedural generation</td>
+</tr>
+<tr>
+<td><strong>% of Top-50 AI Labs Using RL (2024)</strong></td>
+<td>~92%</td>
+<td>Nearly universal in frontier AI research</td>
+</tr>
+<tr>
+<td><strong>Estimated Annual RL Compute Spend (2024)</strong></td>
+<td>~$3.5 billion</td>
+<td>Training frontier RL models is compute-intensive</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Trends</h3>
+<table>
+<thead>
+<tr>
+<th>Trend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RLHF as Standard</strong></td>
+<td>RLHF / DPO is now the standard final training stage for all frontier LLMs</td>
+</tr>
+<tr>
+<td><strong>RL for Reasoning</strong></td>
+<td>RL used to improve mathematical reasoning and code generation in LLMs (o1, o3, R1)</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real Maturing</strong></td>
+<td>Sim-to-real transfer for robotics becoming increasingly reliable</td>
+</tr>
+<tr>
+<td><strong>Offline RL Growth</strong></td>
+<td>Offline RL gaining traction in healthcare, finance, and domains where online exploration is unsafe</td>
+</tr>
+<tr>
+<td><strong>Foundation Models + RL</strong></td>
+<td>Combining pre-trained foundation models with RL fine-tuning for domain-specific control</td>
+</tr>
+<tr>
+<td><strong>Multi-Agent RL</strong></td>
+<td>Growing applications in traffic, logistics, multi-robot systems, and strategic games</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════ TAB 9 — RISKS ════════ -->
+<section class="section" id="tab-risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Key risks and open challenges facing reinforcement learning systems in research and production.</p>
+
+ <div class="risk-grid">
+ <div class="risk-card b-red">
+ <h4 class="c-red"> Reward Hacking</h4>
+ <p>Agent finds unintended shortcuts to maximise the reward signal without exhibiting the desired behaviour — exploiting loopholes in the reward function specification.</p>
+ </div>
+ <div class="risk-card b-orange">
+ <h4 class="c-orange"> Sample Inefficiency</h4>
+ <p>Millions or billions of environment interactions needed for learning. Impractical for real-world training where each interaction is costly, slow, or risky.</p>
+ </div>
+ <div class="risk-card b-purple">
+ <h4 class="c-purple"> Sim-to-Real Gap</h4>
+ <p>Policies trained in simulation often fail in noisy, complex real-world environments due to unmodelled dynamics, sensor noise, and distribution shift.</p>
+ </div>
+ <div class="risk-card b-blue">
+ <h4 class="c-blue"> Safety &amp; Alignment</h4>
+ <p>RL agents may learn dangerous or unintended behaviours as side effects of reward maximisation. Safe exploration and constrained RL remain open problems.</p>
+ </div>
+ <div class="risk-card b-cyan">
+ <h4 class="c-cyan"> Instability</h4>
+ <p>Training can diverge, oscillate, or collapse entirely. RL is notoriously sensitive to hyperparameters, reward scaling, network architecture, and random seeds.</p>
+ </div>
+ <div class="risk-card b-green">
+ <h4 class="c-green"> Scalability</h4>
+ <p>Multi-agent coordination complexity explodes combinatorially. Credit assignment in large teams is unsolved. Real-time inference latency constraints limit deployment.</p>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Fundamental Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sample Inefficiency</strong></td>
+<td>Model-free RL typically requires millions to billions of environment interactions to learn good policies</td>
+</tr>
+<tr>
+<td><strong>Reward Hacking</strong></td>
+<td>Agent finds unintended shortcuts to maximise reward without achieving the desired behaviour</td>
+</tr>
+<tr>
+<td><strong>Reward Design</strong></td>
+<td>Specifying a reward function that captures exactly what you want is extremely difficult</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real Gap</strong></td>
+<td>Policies learned in simulation often fail when transferred to the real world due to modelling imperfections</td>
+</tr>
+<tr>
+<td><strong>Instability</strong></td>
+<td>Training is often unstable; small hyperparameter changes can cause catastrophic failure</td>
+</tr>
+<tr>
+<td><strong>Partial Observability</strong></td>
+<td>Real-world environments rarely provide the full state; agents must learn from incomplete information</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Joint action spaces in multi-agent settings grow exponentially</td>
+</tr>
+<tr>
+<td><strong>Exploration-Exploitation</strong></td>
+<td>Balancing discovery of new strategies with exploitation of known good strategies remains fundamentally hard</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reward Hacking</strong></td>
+<td>Agent exploits unintended loopholes in the reward function</td>
+<td>Multi-objective rewards; human oversight; formal reward specification</td>
+</tr>
+<tr>
+<td><strong>Unsafe Exploration</strong></td>
+<td>Agent causes damage while exploring (e.g., crashing a robot, making bad trades)</td>
+<td>Safe RL constraints; offline RL; conservative exploration</td>
+</tr>
+<tr>
+<td><strong>Distributional Shift</strong></td>
+<td>Deployment environment differs from training; policy fails silently</td>
+<td>Domain randomisation; robust training; monitoring</td>
+</tr>
+<tr>
+<td><strong>Goal Misalignment</strong></td>
+<td>Optimised reward does not reflect true human intent</td>
+<td>RLHF; iterative alignment; constitutional AI</td>
+</tr>
+<tr>
+<td><strong>Emergent Deception</strong></td>
+<td>In MARL or alignment settings, agents may learn to deceive or manipulate</td>
+<td>Interpretability research; red-teaming</td>
+</tr>
+<tr>
+<td><strong>Over-Optimisation</strong></td>
+<td>In RLHF, model exploits reward model's weaknesses rather than genuinely improving</td>
+<td>KL penalty; reward model ensembles; iterative retraining</td>
+</tr>
+</tbody>
+</table>
+<h3>When RL Is the Right Choice</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Why RL Excels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sequential Decisions</strong></td>
+<td>When optimal behaviour depends on a sequence of actions, not a single prediction</td>
+</tr>
+<tr>
+<td><strong>No Labelled Data</strong></td>
+<td>When you can define a reward signal but don't have labelled training examples</td>
+</tr>
+<tr>
+<td><strong>Simulator Available</strong></td>
+<td>When a high-fidelity simulator exists for safe, cheap exploration</td>
+</tr>
+<tr>
+<td><strong>Adaptive Behaviour</strong></td>
+<td>When the optimal strategy changes over time and the system must adapt</td>
+</tr>
+<tr>
+<td><strong>Superhuman Discovery</strong></td>
+<td>When you want the agent to discover strategies beyond human expertise</td>
+</tr>
+<tr>
+<td><strong>Alignment</strong></td>
+<td>When you need to fine-tune a model to align with human values and preferences</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="agentic-ai.html">Agentic AI</a>
+<a href="autonomous-ai.html">Autonomous AI</a>
+<a href="physical-embodied-ai.html">Physical / Embodied AI</a>
+<a href="evolutionary-genetic-ai.html">Evolutionary / Genetic AI</a>
+<a href="optimisation-operations-research-ai.html">Optimisation / OR AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════ TAB 10 — GLOSSARY ════════ -->
+<section class="section" id="tab-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key reinforcement learning terms and definitions — searchable.</p>
+
+ <input type="text" class="glossary-search" id="glossarySearch" placeholder="Search glossary…">
+
+ <div class="glossary-list" id="glossaryList">
+ <div class="glossary-entry"><strong>Actor-Critic</strong><span>Architecture combining a policy network (actor) that selects actions and a value function network (critic) that evaluates them.</span>
+ <div class="glossary-entry"><strong>Policy</strong><span>Mapping from states to actions — the agent's learned strategy for decision-making.</span></div>
+ <div class="glossary-entry"><strong>Reward Function</strong><span>Signal defining the goal — scalar feedback the agent aims to maximise over time.</span></div>
+ <div class="glossary-entry"><strong>Value Function</strong><span>Estimate of expected cumulative future reward from a given state or state-action pair.</span></div>
+ <div class="glossary-entry"><strong>Q-Learning</strong><span>Off-policy algorithm learning the value of state-action pairs to find optimal policies.</span></div>
+ <div class="glossary-entry"><strong>DQN</strong><span>Deep Q-Network — combines Q-learning with deep neural networks for high-dimensional state spaces.</span></div>
+ <div class="glossary-entry"><strong>PPO</strong><span>Proximal Policy Optimisation — stable policy gradient method with clipped objective for reliable training.</span></div>
+ <div class="glossary-entry"><strong>Actor-Critic</strong><span>Architecture with separate policy (actor) and value (critic) networks for reduced variance.</span></div>
+ <div class="glossary-entry"><strong>Exploration vs Exploitation</strong><span>Fundamental trade-off between trying new actions (explore) and using known good actions (exploit).</span></div>
+ <div class="glossary-entry"><strong>Epsilon-Greedy</strong><span>Exploration strategy choosing random actions with probability ε, greedy actions otherwise.</span></div>
+ <div class="glossary-entry"><strong>RLHF</strong><span>Reinforcement Learning from Human Feedback — training reward models from human preferences for LLM alignment.</span></div>
+ <div class="glossary-entry"><strong>Sim-to-Real</strong><span>Transferring RL policies trained in simulation to physical environments.</span></div>
+ <div class="glossary-entry"><strong>Multi-Agent RL</strong><span>Multiple agents learning simultaneously in a shared environment, with cooperation or competition.</span></div>
+ <div class="glossary-entry"><strong>Model-Based RL</strong><span>RL using a learned world model to plan actions without requiring real environment interactions.</span></div>
+ <div class="glossary-entry"><strong>Offline RL</strong><span>Learning policies from fixed pre-collected datasets without further environment interaction.</span></div>
+ <div class="glossary-entry"><strong>Curriculum Learning</strong><span>Training RL agents on progressively harder tasks to improve learning efficiency.</span></div>
+ <div class="glossary-entry"><strong>Reward Shaping</strong><span>Modifying the reward function to guide learning without changing the optimal policy.</span></div>
+ <div class="glossary-entry"><strong>SAC</strong><span>Soft Actor-Critic — off-policy algorithm maximising both reward and entropy for robust exploration.</span></div>
+ <div class="glossary-entry"><strong>Temporal Difference</strong><span>Learning from the difference between successive value estimates without waiting for episode completion.</span></div>
+</div>
+ <div class="glossary-entry"><strong>Bellman Equation</strong><span>Recursive decomposition of the value function: V(s) = E[r + γV(s')]. Foundation of dynamic programming and temporal-difference methods.</span></div>
+ <div class="glossary-entry"><strong>Discount Factor (γ)</strong><span>Scalar between 0 and 1 that weights future rewards relative to immediate rewards. γ = 0 is myopic; γ → 1 values long-term outcomes.</span></div>
+ <div class="glossary-entry"><strong>DPO (Direct Preference Optimisation)</strong><span>Alternative to RLHF that optimises LLM policies directly from human preference pairs without training an explicit reward model.</span></div>
+ <div class="glossary-entry"><strong>Entropy Regularisation</strong><span>Adding a policy entropy bonus to the objective to encourage exploration and prevent premature convergence to deterministic policies.</span></div>
+ <div class="glossary-entry"><strong>Episode</strong><span>A complete sequence of agent-environment interaction from an initial state to a terminal state (or maximum time step).</span></div>
+ <div class="glossary-entry"><strong>Experience Replay</strong><span>Storing past (s, a, r, s') transitions in a buffer and sampling mini-batches for training. Breaks temporal correlations and improves sample efficiency.</span></div>
+ <div class="glossary-entry"><strong>Exploitation vs Exploration</strong><span>Fundamental trade-off between using known high-reward actions (exploit) and trying new actions to discover potentially better strategies (explore).</span></div>
+ <div class="glossary-entry"><strong>Markov Decision Process (MDP)</strong><span>Formal mathematical framework for sequential decision-making: states S, actions A, transition function P, reward function R, discount γ.</span></div>
+ <div class="glossary-entry"><strong>Off-Policy</strong><span>Learning from data generated by a different (possibly older) policy. Enables experience replay. Examples: DQN, SAC, TD3.</span></div>
+ <div class="glossary-entry"><strong>On-Policy</strong><span>Learning only from data generated by the current policy. Data is discarded after each update. Examples: PPO, A2C, REINFORCE.</span></div>
+ <div class="glossary-entry"><strong>Policy</strong><span>A mapping from states to actions — either deterministic π(s) → a or stochastic π(a|s) → probability distribution. The core object RL seeks to optimise.</span></div>
+ <div class="glossary-entry"><strong>Reward Shaping</strong><span>Modifying the reward signal with additional terms to guide learning without changing the optimal policy. Potential-based shaping preserves optimality.</span></div>
+ <div class="glossary-entry"><strong>RLHF</strong><span>Reinforcement Learning from Human Feedback — using human preference comparisons as the reward signal to align model behaviour with human intent.</span></div>
+ <div class="glossary-entry"><strong>Value Function</strong><span>Expected cumulative discounted reward from a state V(s) or state-action pair Q(s,a). Guides action selection and policy improvement.</span></div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action Space</strong></td>
+<td>The set of all possible actions available to the agent at each step</td>
+</tr>
+<tr>
+<td><strong>Actor-Critic</strong></td>
+<td>An RL architecture with two components: the actor (policy) selects actions; the critic (value function) evaluates them</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>The learner and decision-maker that interacts with the environment</td>
+</tr>
+<tr>
+<td><strong>AlphaGo</strong></td>
+<td>DeepMind's RL system that defeated the world champion in Go (2016)</td>
+</tr>
+<tr>
+<td><strong>AlphaZero</strong></td>
+<td>DeepMind's self-play RL system that mastered chess, shogi, and Go from scratch (2018)</td>
+</tr>
+<tr>
+<td><strong>Bellman Equation</strong></td>
+<td>Recursive equation relating the value of a state to the values of successor states; foundation of value-based RL</td>
+</tr>
+<tr>
+<td><strong>Cumulative Reward (Return)</strong></td>
+<td>The total sum of discounted rewards received over an episode</td>
+</tr>
+<tr>
+<td><strong>Curiosity-Driven Exploration</strong></td>
+<td>Intrinsic motivation where the agent is rewarded for visiting novel or surprising states</td>
+</tr>
+<tr>
+<td><strong>Discount Factor (γ)</strong></td>
+<td>A parameter (0 ≤ γ ≤ 1) that determines how much the agent values future rewards relative to immediate ones</td>
+</tr>
+<tr>
+<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td>An alternative to RLHF that optimises the policy directly from preference data without training a separate reward model</td>
+</tr>
+<tr>
+<td><strong>DQN (Deep Q-Network)</strong></td>
+<td>A deep RL algorithm that uses a neural network to approximate the Q-value function</td>
+</tr>
+<tr>
+<td><strong>Elo Rating</strong></td>
+<td>A system for calculating relative skill levels in competitive games; used to rank RL agents</td>
+</tr>
+<tr>
+<td><strong>Environment</strong></td>
+<td>The external system that the agent interacts with; provides states and rewards in response to actions</td>
+</tr>
+<tr>
+<td><strong>Episode</strong></td>
+<td>One complete sequence of agent-environment interaction from start to terminal state</td>
+</tr>
+<tr>
+<td><strong>Epsilon-Greedy (ε-greedy)</strong></td>
+<td>An exploration strategy: with probability ε take a random action; otherwise take the best-known action</td>
+</tr>
+<tr>
+<td><strong>Experience Replay</strong></td>
+<td>Storing past transitions in a buffer and randomly sampling from them for learning; reduces correlation between samples</td>
+</tr>
+<tr>
+<td><strong>Exploitation</strong></td>
+<td>Taking the action currently estimated to be best</td>
+</tr>
+<tr>
+<td><strong>Exploration</strong></td>
+<td>Taking non-optimal actions to discover potentially better strategies</td>
+</tr>
+<tr>
+<td><strong>Inverse RL (IRL)</strong></td>
+<td>Inferring the reward function from observed expert behaviour</td>
+</tr>
+<tr>
+<td><strong>KL Divergence</strong></td>
+<td>A measure of how different two probability distributions are; used in RLHF to prevent over-optimisation</td>
+</tr>
+<tr>
+<td><strong>MARL (Multi-Agent RL)</strong></td>
+<td>RL involving multiple agents learning simultaneously in a shared environment</td>
+</tr>
+<tr>
+<td><strong>Minimax</strong></td>
+<td>An algorithm for adversarial games that selects the move maximising the minimum guaranteed outcome</td>
+</tr>
+<tr>
+<td><strong>Model-Based RL</strong></td>
+<td>RL that learns a model of the environment's dynamics and plans using the learned model</td>
+</tr>
+<tr>
+<td><strong>Model-Free RL</strong></td>
+<td>RL that learns the policy or value function directly from experience without building an environment model</td>
+</tr>
+<tr>
+<td><strong>MuZero</strong></td>
+<td>DeepMind's model-based RL system that learns without knowing the environment's rules</td>
+</tr>
+<tr>
+<td><strong>Off-Policy</strong></td>
+<td>Learning from data generated by a different policy than the one being optimised</td>
+</tr>
+<tr>
+<td><strong>On-Policy</strong></td>
+<td>Learning from data generated by the current policy being optimised</td>
+</tr>
+<tr>
+<td><strong>Policy (π)</strong></td>
+<td>A mapping from states to actions (or action probabilities) — the agent's learned strategy</td>
+</tr>
+<tr>
+<td><strong>PPO (Proximal Policy Optimisation)</strong></td>
+<td>A policy gradient algorithm that clips updates for stability; the most widely used RL algorithm</td>
+</tr>
+<tr>
+<td><strong>Q-Value (Q-Function)</strong></td>
+<td>The expected cumulative reward for taking a specific action in a specific state and then following the policy</td>
+</tr>
+<tr>
+<td><strong>Regret</strong></td>
+<td>The difference between the optimal cumulative reward and the agent's actual cumulative reward</td>
+</tr>
+<tr>
+<td><strong>Reward Function</strong></td>
+<td>A function that maps states (or state-action pairs) to scalar reward values</td>
+</tr>
+<tr>
+<td><strong>Reward Hacking</strong></td>
+<td>When an agent exploits unintended pathways to maximise reward without achieving the intended behaviour</td>
+</tr>
+<tr>
+<td><strong>RLHF (RL from Human Feedback)</strong></td>
+<td>Training a reward model from human preference comparisons, then using it as the RL reward signal</td>
+</tr>
+<tr>
+<td><strong>SAC (Soft Actor-Critic)</strong></td>
+<td>An off-policy actor-critic algorithm that maximises both reward and entropy for robust learning</td>
+</tr>
+<tr>
+<td><strong>Sample Efficiency</strong></td>
+<td>The amount of environment interaction required to achieve a given performance level</td>
+</tr>
+<tr>
+<td><strong>Self-Play</strong></td>
+<td>Training by having the agent play against copies of itself; used in competitive games</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real</strong></td>
+<td>Transferring a policy trained in simulation to a real-world physical system</td>
+</tr>
+<tr>
+<td><strong>State Space</strong></td>
+<td>The set of all possible states the environment can be in</td>
+</tr>
+<tr>
+<td><strong>TD Learning (Temporal Difference)</strong></td>
+<td>Learning by bootstrapping — updating value estimates based on other value estimates rather than complete returns</td>
+</tr>
+<tr>
+<td><strong>Value Function</strong></td>
+<td>A function estimating the expected cumulative reward from a given state (V(s)) under a given policy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Reinforcement Learning AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/17-reinforcement-learning-ai-overview.gif" alt="Reinforcement Learning AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Reinforcement Learning AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/17-reinforcement-learning-ai-tech-stack.gif" alt="Reinforcement Learning AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Relevant Regulatory Context</h3>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>Relevance to RL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>RL-powered systems in high-risk domains (autonomous vehicles, medical devices) face stringent requirements</td>
+</tr>
+<tr>
+<td><strong>FDA SaMD Guidance</strong></td>
+<td>RL-based treatment recommendations must be validated and documented as medical devices</td>
+</tr>
+<tr>
+<td><strong>Financial Regulators (SEC, FCA, MAS)</strong></td>
+<td>RL-based trading systems must comply with market manipulation rules and algorithmic trading regulations</td>
+</tr>
+<tr>
+<td><strong>Autonomous Vehicle Standards (ISO 21448 / SOTIF)</strong></td>
+<td>Safety of the intended functionality — directly relevant to RL-driven vehicle control</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>Risk management framework applies to RL deployments; emphasises testing, monitoring, and transparency</td>
+</tr>
+</tbody>
+</table>
+<h3>Governance Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explainability</strong></td>
+<td>RL policies (especially deep RL) are opaque; difficult to explain why a specific action was chosen</td>
+</tr>
+<tr>
+<td><strong>Testing Exhaustiveness</strong></td>
+<td>The state space is typically infinite; comprehensive testing is impossible</td>
+</tr>
+<tr>
+<td><strong>Reward Alignment Verification</strong></td>
+<td>Proving that the reward function captures the intended objective is formally undecidable in general</td>
+</tr>
+<tr>
+<td><strong>Reproducibility</strong></td>
+<td>RL training is often non-deterministic; results vary across random seeds</td>
+</tr>
+<tr>
+<td><strong>Sim-to-Real Accountability</strong></td>
+<td>When a simulated policy fails in the real world, attribution of responsibility is unclear</td>
+</tr>
+<tr>
+<td><strong>Continuous Learning</strong></td>
+<td>If the policy updates in deployment, governance must address model versioning and regression</td>
+</tr>
+</tbody>
+</table>
+<h3>Best Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Defined Operating Domain</strong></td>
+<td>Clearly specify the conditions under which the RL policy is valid</td>
+</tr>
+<tr>
+<td><strong>Safety Constraints</strong></td>
+<td>Hard-coded safety boundaries that the RL policy cannot override</td>
+</tr>
+<tr>
+<td><strong>Reward Documentation</strong></td>
+<td>Full documentation of the reward function, its rationale, and known limitations</td>
+</tr>
+<tr>
+<td><strong>Shadow Deployment</strong></td>
+<td>Run RL policy in shadow mode alongside existing system before live deployment</td>
+</tr>
+<tr>
+<td><strong>Human Override</strong></td>
+<td>Always maintain human override capability for safety-critical applications</td>
+</tr>
+<tr>
+<td><strong>Monitoring &amp; Kill-Switch</strong></td>
+<td>Continuous monitoring with automatic policy rollback if performance degrades</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Deep Reinforcement Learning</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Landmark Achievements</h3>
+<table>
+<thead>
+<tr>
+<th>Achievement</th>
+<th>Year</th>
+<th>Agent</th>
+<th>Key Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Atari Games (Human-Level)</strong></td>
+<td>2015</td>
+<td>DQN (DeepMind)</td>
+<td>First deep RL agent to learn directly from pixels; experience replay + target network</td>
+</tr>
+<tr>
+<td><strong>Go (Superhuman)</strong></td>
+<td>2016</td>
+<td>AlphaGo (DeepMind)</td>
+<td>Defeated world champion Lee Sedol 4–1; combined RL with Monte Carlo Tree Search</td>
+</tr>
+<tr>
+<td><strong>Go (Self-Play Only)</strong></td>
+<td>2017</td>
+<td>AlphaGo Zero</td>
+<td>Learned from pure self-play with no human data; surpassed AlphaGo in 40 hours</td>
+</tr>
+<tr>
+<td><strong>Chess, Shogi, Go</strong></td>
+<td>2018</td>
+<td>AlphaZero</td>
+<td>Single algorithm mastered three games from self-play; superhuman in all</td>
+</tr>
+<tr>
+<td><strong>Dota 2 (Professional Team)</strong></td>
+<td>2019</td>
+<td>OpenAI Five</td>
+<td>Defeated world champion Dota 2 team in 5v5 cooperative gameplay</td>
+</tr>
+<tr>
+<td><strong>StarCraft II (Grandmaster)</strong></td>
+<td>2019</td>
+<td>AlphaStar (DeepMind)</td>
+<td>Grandmaster level in StarCraft II; multi-agent league training</td>
+</tr>
+<tr>
+<td><strong>Without Knowing Rules</strong></td>
+<td>2020</td>
+<td>MuZero (DeepMind)</td>
+<td>Learned environment model end-to-end; superhuman without knowing game rules</td>
+</tr>
+<tr>
+<td><strong>Protein Folding</strong></td>
+<td>2020</td>
+<td>AlphaFold 2 (Note: uses supervised learning, not RL — included for historical context of DeepMind) (DeepMind)</td>
+<td>Solved protein structure prediction; combined RL-inspired training with attention</td>
+</tr>
+<tr>
+<td><strong>Diplomacy</strong></td>
+<td>2022</td>
+<td>Cicero (Meta)</td>
+<td>Combined RL with natural language for strategic negotiation in the game Diplomacy</td>
+</tr>
+<tr>
+<td><strong>LLM Alignment</strong></td>
+<td>2022+</td>
+<td>RLHF (OpenAI, Anthropic)</td>
+<td>Aligning language models to human preferences using RL from human feedback</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Architectures for Deep RL</h3>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>Description</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CNN + DQN</strong></td>
+<td>Convolutional network processes visual input into Q-values</td>
+<td>Atari, visual control</td>
+</tr>
+<tr>
+<td><strong>Actor-Critic (MLP)</strong></td>
+<td>Separate policy (actor) and value (critic) networks</td>
+<td>Continuous control (MuJoCo, robotics)</td>
+</tr>
+<tr>
+<td><strong>Transformer-Based RL</strong></td>
+<td>Attention mechanisms over observation and action sequences</td>
+<td>Decision Transformer, Gato</td>
+</tr>
+<tr>
+<td><strong>Graph Neural Networks</strong></td>
+<td>Process relational/graph-structured observations</td>
+<td>Multi-agent coordination, molecular RL</td>
+</tr>
+<tr>
+<td><strong>Recurrent Actor-Critic</strong></td>
+<td>LSTM/GRU handles partial observability by maintaining hidden state</td>
+<td>POMDPs, real-world control</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">RLHF — Reinforcement Learning from Human Feedback</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>How RLHF Works</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│ RLHF PIPELINE │
+│ │
+│ 1. SUPERVISED 2. REWARD MODEL 3. RL FINE-TUNING │
+│ FINE-TUNING TRAINING (PPO) │
+│ ────────────── ────────────── ────────────── │
+│ Fine-tune base Human annotators Use reward model │
+│ LLM on high- rank pairs of as reward signal; │
+│ quality prompt- model outputs; fine-tune LLM │
+│ response data train a reward with PPO to │
+│ model to predict maximise predicted │
+│ human preference human preference │
+│ │
+│ ──── RESULT: LLM ALIGNED TO HUMAN VALUES AND PREFERENCES ──────── │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>RLHF Key Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base LLM</strong></td>
+<td>Pre-trained language model (GPT, Claude, Llama) as the starting point</td>
+</tr>
+<tr>
+<td><strong>SFT Data</strong></td>
+<td>Human-written gold-standard prompt-response pairs for supervised fine-tuning</td>
+</tr>
+<tr>
+<td><strong>Comparison Data</strong></td>
+<td>Human annotators rank pairs of model responses (A &gt; B, B &gt; A, or tie)</td>
+</tr>
+<tr>
+<td><strong>Reward Model</strong></td>
+<td>Trained on comparison data to predict a scalar "human preference" score for any response</td>
+</tr>
+<tr>
+<td><strong>PPO Optimiser</strong></td>
+<td>Proximal Policy Optimisation fine-tunes the LLM to maximise the reward model's score</td>
+</tr>
+<tr>
+<td><strong>KL Penalty</strong></td>
+<td>KL divergence penalty prevents the RL-tuned model from straying too far from the SFT model</td>
+</tr>
+</tbody>
+</table>
+<h3>RLHF Variants &amp; Alternatives</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RLHF (PPO)</strong></td>
+<td>Original approach: train reward model, then optimise LLM with PPO (OpenAI, Anthropic)</td>
+</tr>
+<tr>
+<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td>Skip the reward model — directly optimise the LLM from preference data (Rafailov et al., 2023)</td>
+</tr>
+<tr>
+<td><strong>RLAIF</strong></td>
+<td>Replace human annotators with AI annotators (Constitutional AI approach — Anthropic)</td>
+</tr>
+<tr>
+<td><strong>KTO (Kahneman-Tversky Optimisation)</strong></td>
+<td>Align with binary good/bad feedback rather than pairwise comparisons</td>
+</tr>
+<tr>
+<td><strong>RLVR (RL with Verifiable Rewards)</strong></td>
+<td>Use programmatic verification (e.g., code execution, math checking) as the reward signal</td>
+</tr>
+<tr>
+<td><strong>GRPO (Group Relative Policy Optimisation)</strong></td>
+<td>DeepSeek's approach; uses group scoring instead of a learned reward model</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Multi-Agent Reinforcement Learning</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>MARL Paradigms</h3>
+<table>
+<thead>
+<tr>
+<th>Paradigm</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cooperative</strong></td>
+<td>All agents share a common reward; goal is team optimisation</td>
+<td>Multi-robot warehouse, OpenAI Five (within a team)</td>
+</tr>
+<tr>
+<td><strong>Competitive</strong></td>
+<td>Agents have opposing objectives; zero-sum interactions</td>
+<td>AlphaGo/AlphaZero self-play, adversarial training</td>
+</tr>
+<tr>
+<td><strong>Mixed (General-Sum)</strong></td>
+<td>Agents have partially aligned, partially conflicting objectives</td>
+<td>Traffic coordination, negotiation, economic modelling</td>
+</tr>
+</tbody>
+</table>
+<h3>Key MARL Challenges</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Non-Stationarity</strong></td>
+<td>From each agent's perspective, the environment is non-stationary because other agents are simultaneously learning</td>
+</tr>
+<tr>
+<td><strong>Credit Assignment</strong></td>
+<td>Determining which agent's action contributed to a shared team reward</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Joint action space grows exponentially with the number of agents</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>How agents should communicate to coordinate — explicit messages vs. implicit signals</td>
+</tr>
+<tr>
+<td><strong>Emergent Behaviour</strong></td>
+<td>Agents may develop unexpected strategies that are hard to predict or control</td>
+</tr>
+</tbody>
+</table>
+<h3>MARL Algorithms</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Independent Learners</strong></td>
+<td>Each agent learns independently, treating other agents as part of the environment</td>
+</tr>
+<tr>
+<td><strong>CTDE (Centralised Training, Decentralised Execution)</strong></td>
+<td>Train with global information; execute with only local observations</td>
+</tr>
+<tr>
+<td><strong>QMIX</strong></td>
+<td>Value decomposition: factorises the joint Q-function into per-agent Q-values with monotonic constraints</td>
+</tr>
+<tr>
+<td><strong>MAPPO</strong></td>
+<td>Multi-agent PPO; extends PPO to multi-agent settings with shared or separate policies</td>
+</tr>
+<tr>
+<td><strong>Communication-Based (CommNet, TarMAC)</strong></td>
+<td>Agents learn when and what to communicate to each other</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="tab-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Reinforcement Learning (RL)</strong> is a branch of AI where an agent learns to make decisions by directly interacting with an environment. The agent takes actions, observes the outcomes (states and rewards), and gradually learns a <strong>policy</strong> — a mapping from states to actions — that maximises cumulative long-term reward.</p>
+<p>Unlike supervised learning (which requires labelled examples) or unsupervised learning (which discovers structure in data), RL learns from the <strong>consequences of its own actions</strong>. This makes it uniquely suited for sequential decision-making problems where the optimal strategy must be discovered through experimentation — games, robotics, resource allocation, and system control.</p>
+<p>RL has produced some of the most celebrated achievements in modern AI: AlphaGo defeating the world Go champion (2016), AlphaFold solving protein structure prediction, OpenAI Five defeating professional Dota 2 teams, and RLHF enabling the alignment of large language models like GPT-4 and Claude.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Optimises — learns optimal sequential decision-making strategies through trial-and-error interaction with an environment</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Agent-environment loop: agent observes state → takes action → receives reward → updates policy to maximise cumulative reward</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Learned policies, value functions, optimal action sequences, adaptive control strategies</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Learns from interaction and reward signals — no labelled data, no explicit programming of strategy; discovers solutions through exploration</td>
+</tr>
+</tbody>
+</table>
+<h3>Reinforcement Learning vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously using tools, memory, and planning</td>
+<td>Research agent, coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new content from learned patterns</td>
+<td>Text generation, image synthesis</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from labelled historical data</td>
+<td>Fraud detection, disease prediction</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Maps input to output with no learning</td>
+<td>Thermostat, rule-based spam filter</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons from explicitly encoded knowledge and rules</td>
+<td>Expert system, theorem prover</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI learns from labelled historical data to classify or forecast. RL learns from interaction — there is no labelled dataset; the agent discovers optimal behaviour through exploration and reward signals.</p>
+<p><strong>Key Distinction from Agentic AI:</strong> Agentic AI uses pre-built capabilities (LLMs, tools, memory) to pursue goals in open-ended environments. RL learns its capabilities from scratch through reward-driven trial and error — it discovers what to do rather than being told.</p>
+<p><strong>Key Distinction from Reactive AI:</strong> Reactive AI has fixed, pre-programmed responses with no learning. RL starts with no knowledge and learns optimal behaviour over time through experience.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p><strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</strong></p>
+ <p style="margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+</footer>
+
+<!-- ════════ JAVASCRIPT ════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── Tab Navigation ── */
+const navBtns = document.querySelectorAll('#nav button');
+const sections = document.querySelectorAll('.section');
+navBtns.forEach(btn => {
+ btn.addEventListener('click', () => {
+ navBtns.forEach(b => b.classList.remove('active'));
+ sections.forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ── Stack Layer Accordion ── */
+function toggleLayer(el) {
+ el.classList.toggle('expanded');
+}
+
+/* ── Domain Accordion ── */
+function toggleDomain(el) {
+ el.classList.toggle('open');
+}
+
+/* ── Glossary Search ── */
+document.getElementById('glossarySearch').addEventListener('input', function() {
+ const q = this.value.toLowerCase();
+ document.querySelectorAll('.glossary-entry').forEach(e => {
+ e.style.display = e.textContent.toLowerCase().includes(q) ? '' : 'none';
+ });
+});
+
+/* ── Chart.js Initialisation ── */
+let chartsInitialised = false;
+function initCharts() {
+ if (chartsInitialised) return;
+
+ const defaults = Chart.defaults;
+ defaults.color = '#8b949e';
+ defaults.font.family = "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+
+ /* ── Atari-57 Bar Chart ── */
+ const ctxAtari = document.getElementById('chartAtari');
+ if (ctxAtari && ctxAtari.getContext) {
+ new Chart(ctxAtari, {
+ type: 'bar',
+ data: {
+ labels: ['Agent57', 'MuZero', 'DreamerV3', 'Rainbow', 'PPO', 'DQN'],
+ datasets: [{
+ label: 'Human-Normalised %',
+ data: [8000, 4000, 2100, 1200, 800, 400],
+ backgroundColor: [
+ 'rgba(88,166,255,0.7)',
+ 'rgba(63,185,80,0.7)',
+ 'rgba(210,168,255,0.7)',
+ 'rgba(121,192,255,0.7)',
+ 'rgba(240,136,62,0.7)',
+ 'rgba(255,123,114,0.7)'
+ ],
+ borderColor: ['#c9a84c','#5b9e6f','#9684bf','#5e96b8','#c9956a','#bf7570'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { beginAtZero: true, grid: { color: 'rgba(48,54,61,0.5)' }, ticks: { callback: v => v + '%' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* ── Algorithm Properties Radar Chart ── */
+ const ctxRadar = document.getElementById('chartRadar');
+ if (ctxRadar && ctxRadar.getContext) {
+ new Chart(ctxRadar, {
+ type: 'radar',
+ data: {
+ labels: ['Sample Efficiency', 'Stability', 'Wall-Clock Speed', 'Continuous Control', 'Discrete Actions'],
+ datasets: [
+ {
+ label: 'DQN',
+ data: [40, 50, 70, 20, 90],
+ borderColor: '#c9a84c',
+ backgroundColor: 'rgba(201,168,76,0.1)',
+ pointBackgroundColor: '#c9a84c',
+ borderWidth: 2
+ },
+ {
+ label: 'PPO',
+ data: [30, 85, 80, 70, 85],
+ borderColor: '#5b9e6f',
+ backgroundColor: 'rgba(63,185,80,0.1)',
+ pointBackgroundColor: '#5b9e6f',
+ borderWidth: 2
+ },
+ {
+ label: 'SAC',
+ data: [60, 75, 65, 95, 30],
+ borderColor: '#9684bf',
+ backgroundColor: 'rgba(210,168,255,0.1)',
+ pointBackgroundColor: '#9684bf',
+ borderWidth: 2
+ },
+ {
+ label: 'Dreamer',
+ data: [80, 70, 50, 85, 75],
+ borderColor: '#c9956a',
+ backgroundColor: 'rgba(240,136,62,0.1)',
+ pointBackgroundColor: '#c9956a',
+ borderWidth: 2
+ },
+ {
+ label: 'MuZero',
+ data: [85, 65, 40, 60, 95],
+ borderColor: '#bf7570',
+ backgroundColor: 'rgba(255,123,114,0.1)',
+ pointBackgroundColor: '#bf7570',
+ borderWidth: 2
+ }
+ ]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 16 } } },
+ scales: {
+ r: {
+ beginAtZero: true,
+ max: 100,
+ angleLines: { color: 'rgba(48,54,61,0.5)' },
+ grid: { color: 'rgba(48,54,61,0.5)' },
+ pointLabels: { color: '#e6edf3', font: { size: 11 } },
+ ticks: { backdropColor: 'transparent', color: '#8b949e', stepSize: 20 }
+ }
+ }
+ }
+ });
+ }
+
+ /* ── Market Segments Bar Chart ── */
+ const ctxSeg = document.getElementById('chartSegments');
+ if (ctxSeg && ctxSeg.getContext) {
+ new Chart(ctxSeg, {
+ type: 'bar',
+ data: {
+ labels: ['RL for LLM\nAlignment', 'RL in\nAutonomous Sys.', 'RL in\nRobotics', 'RL in\nGaming', 'RL Research\nTools'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [4.2, 2.1, 1.8, 0.9, 0.3],
+ backgroundColor: [
+ 'rgba(88,166,255,0.7)',
+ 'rgba(63,185,80,0.7)',
+ 'rgba(210,168,255,0.7)',
+ 'rgba(240,136,62,0.7)',
+ 'rgba(121,192,255,0.7)'
+ ],
+ borderColor: ['#c9a84c','#5b9e6f','#9684bf','#c9956a','#5e96b8'],
+ borderWidth: 1,
+ borderRadius: 6
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { beginAtZero: true, grid: { color: 'rgba(48,54,61,0.5)' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ }
+
+ /* ── Market Growth Line Chart ── */
+ const ctxGrowth = document.getElementById('chartGrowth');
+ if (ctxGrowth && ctxGrowth.getContext) {
+ new Chart(ctxGrowth, {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+ datasets: [{
+ label: 'Total Market ($B)',
+ data: [9.3, 12.1, 15.7, 20.4, 26.5, 34.4, 44.7],
+ borderColor: '#5b9e6f',
+ backgroundColor: 'rgba(63,185,80,0.1)',
+ fill: true,
+ tension: 0.35,
+ pointBackgroundColor: '#5b9e6f',
+ pointBorderColor: '#5b9e6f',
+ pointRadius: 5,
+ pointHoverRadius: 7,
+ borderWidth: 2.5
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { position: 'bottom' } },
+ scales: {
+ y: { beginAtZero: false, grid: { color: 'rgba(48,54,61,0.5)' }, ticks: { callback: v => '$' + v + 'B' } },
+ x: { grid: { color: 'rgba(48,54,61,0.3)' } }
+ }
+ }
+ });
+ }
+
+ chartsInitialised = true;
+}
+
+/* Initialise charts if benchmarks or market tab is active on load */
+initCharts();
+
+</script>
+<nav class="chapter-nav">
+ <a href="recommendation-retrieval-ai.html"><span>&larr;</span><div><small>Previous</small>Recommendation / Retrieval AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="scientific-simulation-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Scientific / Simulation AI</div><span>&rarr;</span></a>
+</nav>
+
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bayesian / Probabilistic AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+ <h1>Bayesian / Probabilistic AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Bayesian AI — the inference pipeline, 8-layer stack, inference methods, probabilistic programming, benchmarks, market data, and more.</p>
+ <span class="reading-time">~48 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2); font-weight:400; font-size:0.88rem; margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/04-bayesian-probabilistic-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools &amp; Platforms</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 1 — PIPELINE -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-pipeline">
+ <h2>The Bayesian Inference Pipeline</h2>
+ <p class="desc">Bayesian inference follows a principled cycle: encode prior beliefs, observe data, compute the posterior, predict, decide, and update. Click each step to learn more.</p>
+
+ 
+
+ <div class="pipeline-info" id="pipeline-info">
+ <h3>Click a step</h3>
+ <p>Select any step in the inference pipeline above to see what happens at that stage.</p>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Bayesian AI Works — The Inference Pipeline</h3>
+<pre><code>+------------------------------------------------------------------------+
+| BAYESIAN INFERENCE PIPELINE |
+| |
+| 1. PRIOR 2. LIKELIHOOD 3. POSTERIOR |
+| ---------------- ---------------- ---------------- |
+| Encode existing Define how the data Combine prior and |
+| knowledge as a is generated given likelihood via Bayes' |
+| probability the model parameters theorem to get updated |
+| distribution beliefs |
+| |
+| 4. PREDICTION 5. DECISION 6. UPDATE |
+| ---------------- ---------------- ---------------- |
+| Integrate over Make optimal decisions Incorporate new data |
+| posterior to that account for and update posterior |
+| produce predictive uncertainty continuously |
+| distribution |
++------------------------------------------------------------------------+
+</code></pre>
+<h3>Bayes' Theorem — The Foundation</h3>
+<p>$$P(\theta | D) = \frac{P(D | \theta) \cdot P(\theta)}{P(D)}$$</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$P(\theta | D)$</td>
+<td><strong>Posterior</strong></td>
+<td>Updated belief about parameters after observing data</td>
+</tr>
+<tr>
+<td>$P(D | \theta)$</td>
+<td><strong>Likelihood</strong></td>
+<td>Probability of the observed data given specific parameter values</td>
+</tr>
+<tr>
+<td>$P(\theta)$</td>
+<td><strong>Prior</strong></td>
+<td>Initial belief about parameters before seeing data</td>
+</tr>
+<tr>
+<td>$P(D)$</td>
+<td><strong>Evidence</strong></td>
+<td>Normalising constant; total probability of the data under all possible parameters</td>
+</tr>
+</tbody>
+</table>
+<h3>The Bayesian Workflow</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Specify the Generative Model</strong></td>
+<td>Define how the data is generated: likelihood function + prior distributions over parameters</td>
+</tr>
+<tr>
+<td><strong>Observe Data</strong></td>
+<td>Collect observed data to condition on</td>
+</tr>
+<tr>
+<td><strong>Compute the Posterior</strong></td>
+<td>Use MCMC, variational inference, or analytical solutions to approximate the posterior</td>
+</tr>
+<tr>
+<td><strong>Posterior Predictive Check</strong></td>
+<td>Generate predictions from the posterior and compare to observed data to validate the model</td>
+</tr>
+<tr>
+<td><strong>Predict</strong></td>
+<td>For new inputs, integrate over the posterior to produce predictive distributions with uncertainty</td>
+</tr>
+<tr>
+<td><strong>Decide</strong></td>
+<td>Make decisions that account for uncertainty — risk-averse or risk-neutral depending on context</td>
+</tr>
+<tr>
+<td><strong>Update</strong></td>
+<td>As new data arrives, the posterior becomes the new prior; repeat the cycle</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Parameters &amp; Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prior Distribution</strong></td>
+<td>Encodes existing knowledge; informative priors help with small data; vague priors let data speak</td>
+</tr>
+<tr>
+<td><strong>Likelihood Function</strong></td>
+<td>Specifies the data-generating process (normal, Poisson, binomial, etc.)</td>
+</tr>
+<tr>
+<td><strong>MCMC Chains / Samples</strong></td>
+<td>Number of posterior samples; more = better approximation but slower</td>
+</tr>
+<tr>
+<td><strong>Warm-up / Burn-in</strong></td>
+<td>Initial MCMC samples discarded before the chain converges to the stationary distribution</td>
+</tr>
+<tr>
+<td><strong>Variational Family</strong></td>
+<td>Choice of approximate posterior distributions for variational inference</td>
+</tr>
+<tr>
+<td><strong>Credible Interval Width</strong></td>
+<td>Width of the posterior interval (e.g., 95% credible interval)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Bayesian optimisation found better hyperparameters than grid search 10x faster in most ML competitions.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>Gaussian processes provide not just predictions but calibrated uncertainty estimates for every data point.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Probabilistic programming languages like Stan and Pyro can express virtually any statistical model as code.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What does Bayes' theorem compute?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Gradient updates</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Posterior probability from prior and likelihood</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Neural network weights</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Data augmentation</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> What is a Gaussian Process (GP)?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A data cleaning method</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">A non-parametric probabilistic model defining distributions over functions</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A type of GAN</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">A clustering algorithm</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What does MCMC stand for?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Multi-Channel Monte Carlo</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Markov Chain Monte Carlo</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Maximum Certainty Minimum Complexity</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Model Compression via Monte Carlo</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 2 — 8-LAYER STACK -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-stack">
+ <h2>The Bayesian AI Stack — 8 Layers</h2>
+ <p class="desc">Click any layer to expand its details. The stack is ordered from problem formulation (bottom) to decision-making (top).</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Bayesian AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Name</th>
+<th>Role</th>
+<th>Key Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td><strong>Decision Layer</strong></td>
+<td>Convert posterior predictions into optimal decisions under uncertainty</td>
+<td>Decision theory, utility functions, risk analysis</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Prediction &amp; Uncertainty</strong></td>
+<td>Generate predictive distributions with calibrated uncertainty estimates</td>
+<td>Posterior predictive, credible intervals, HPD intervals</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Model Checking</strong></td>
+<td>Validate model fit via posterior predictive checks and diagnostics</td>
+<td>LOO-CV, WAIC, R-hat, ESS, divergence checks</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Inference Engine</strong></td>
+<td>Compute or approximate the posterior distribution</td>
+<td>MCMC (NUTS), VI (ADVI), Laplace, EP</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Model Specification</strong></td>
+<td>Define the generative model: likelihood + priors + structure</td>
+<td>Probabilistic programming languages</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Prior Knowledge</strong></td>
+<td>Encode domain expertise as informative priors</td>
+<td>Expert elicitation, prior predictive checks</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Data Layer</strong></td>
+<td>Collect and preprocess observed data</td>
+<td>Pandas, Arrow, database queries</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Problem Formulation</strong></td>
+<td>Define the scientific or business question as a probabilistic model</td>
+<td>Domain expertise, causal DAGs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 3 — SUB-TYPES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-subtypes">
+ <h2>Bayesian AI Sub-Types</h2>
+ <p class="desc">The major families of Bayesian inference methods, each with distinct trade-offs between exactness, scalability, and flexibility.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Inference Method</h3>
+<table>
+<thead>
+<tr>
+<th>Sub-Type</th>
+<th>Core Mechanism</th>
+<th>Typical Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exact Bayesian Inference</strong></td>
+<td>Analytically compute the posterior (conjugate priors)</td>
+<td>Simple models, Bayesian linear regression, Beta-Binomial</td>
+</tr>
+<tr>
+<td><strong>MCMC-Based Inference</strong></td>
+<td>Sample from the posterior via Markov chains</td>
+<td>Complex hierarchical models, clinical trials, spatial models</td>
+</tr>
+<tr>
+<td><strong>Variational Inference</strong></td>
+<td>Optimise an approximate posterior</td>
+<td>Large-scale models, Bayesian deep learning, topic models</td>
+</tr>
+<tr>
+<td><strong>Gaussian Process Inference</strong></td>
+<td>Non-parametric function-space inference</td>
+<td>Bayesian optimisation, geostatistics, surrogate modelling</td>
+</tr>
+<tr>
+<td><strong>Bayesian Network Inference</strong></td>
+<td>Propagate beliefs through graphical models</td>
+<td>Diagnosis, risk analysis, causal reasoning</td>
+</tr>
+<tr>
+<td><strong>Bayesian Deep Learning</strong></td>
+<td>Place distributions over neural network weights</td>
+<td>Uncertainty-aware predictions, active learning, safety-critical AI</td>
+</tr>
+<tr>
+<td><strong>Bayesian Nonparametric Inference</strong></td>
+<td>Infinite-dimensional models that grow with data</td>
+<td>Flexible clustering, topic discovery, density estimation</td>
+</tr>
+<tr>
+<td><strong>Approximate Bayesian Computation (ABC)</strong></td>
+<td>Likelihood-free inference via simulation</td>
+<td>Population genetics, ecology, models with intractable likelihoods</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 4 — CORE ARCHITECTURES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">The foundational probabilistic model architectures that underpin Bayesian AI systems across domains.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Techniques</h3>
+<h3>Bayesian Networks (Probabilistic Graphical Models)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Directed acyclic graph (DAG) where nodes are random variables and edges represent conditional dependencies</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Encodes causal and conditional relationships explicitly; supports exact or approximate inference</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Medical diagnosis, risk analysis, fault detection, gene regulatory networks, causal discovery</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Structure learning is NP-hard; exact inference is computationally expensive for large networks</td>
+</tr>
+<tr>
+<td><strong>Key Implementations</strong></td>
+<td>pgmpy, bnlearn (R), Pomegranate, BayesiaLab</td>
+</tr>
+</tbody>
+</table>
+<h3>Gaussian Processes (GPs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>A non-parametric Bayesian model that defines a distribution over functions; predictions include uncertainty bands</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Naturally produces calibrated uncertainty estimates; works well with small datasets</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Bayesian optimisation, geostatistics (kriging), surrogate modelling, time-series forecasting</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Cubic computational complexity O(n^3); does not scale to large datasets without approximation</td>
+</tr>
+<tr>
+<td><strong>Scalable Variants</strong></td>
+<td>Sparse GPs (inducing points), GPyTorch (GPU-accelerated), Variational GPs</td>
+</tr>
+</tbody>
+</table>
+<h3>Markov Chain Monte Carlo (MCMC)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Draw samples from the posterior distribution by constructing a Markov chain that converges to it</td>
+</tr>
+<tr>
+<td><strong>Key Algorithms</strong></td>
+<td>Metropolis-Hastings, Gibbs Sampling, Hamiltonian Monte Carlo (HMC), NUTS (No-U-Turn Sampler)</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>The gold-standard for posterior inference when analytical solutions are intractable</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Asymptotically exact; applicable to arbitrarily complex models</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Computationally expensive; convergence can be slow for high-dimensional models</td>
+</tr>
+<tr>
+<td><strong>Modern Standard</strong></td>
+<td>NUTS (Hoffman &amp; Gelman, 2014); used in Stan, PyMC, NumPyro — self-tuning HMC</td>
+</tr>
+</tbody>
+</table>
+<h3>Variational Inference (VI)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Approximate the posterior by optimising a simpler distribution to be as close as possible (minimise KL divergence)</td>
+</tr>
+<tr>
+<td><strong>Key Algorithms</strong></td>
+<td>Mean-field VI, Stochastic VI (SVI), Automatic Differentiation VI (ADVI), Normalising Flows</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Much faster than MCMC; scales to large datasets and complex models; compatible with deep learning</td>
+</tr>
+<tr>
+<td><strong>Key Limitation</strong></td>
+<td>Approximate — may underestimate posterior uncertainty, especially with simple variational families</td>
+</tr>
+<tr>
+<td><strong>Used In</strong></td>
+<td>Bayesian deep learning, topic modelling (LDA), large-scale probabilistic models</td>
+</tr>
+</tbody>
+</table>
+<h3>Bayesian Linear &amp; Generalised Linear Models</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Place priors on regression coefficients; derive posterior distributions over coefficients</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Fully interpretable; uncertainty over each coefficient; natural regularisation via priors</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Clinical trials, epidemiology, A/B testing, risk scoring, causal effect estimation</td>
+</tr>
+<tr>
+<td><strong>Key Libraries</strong></td>
+<td>Stan, PyMC, brms (R), rstanarm (R)</td>
+</tr>
+</tbody>
+</table>
+<h3>Hidden Markov Models (HMMs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Model sequential data as transitions between hidden states with observable emissions</td>
+</tr>
+<tr>
+<td><strong>Key Algorithms</strong></td>
+<td>Forward-backward algorithm, Viterbi algorithm, Baum-Welch (EM for HMMs)</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Speech recognition (legacy), gene finding, financial regime detection, activity recognition</td>
+</tr>
+</tbody>
+</table>
+<h3>Bayesian Nonparametrics</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Models whose complexity grows with data; the number of parameters is not fixed a priori</td>
+</tr>
+<tr>
+<td><strong>Key Models</strong></td>
+<td>Dirichlet Process Mixture Models, Gaussian Process regression, Indian Buffet Process, Beta Process</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Automatically infers the number of clusters, factors, or components from the data</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Clustering with unknown number of clusters, topic modelling, density estimation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 5 — TOOLS & PLATFORMS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-tools">
+ <h2>Tools &amp; Platforms</h2>
+ <p class="desc">Industry-leading probabilistic programming frameworks and Bayesian optimisation tools powering modern Bayesian AI.</p>
+
+ <table class="fw-table">
+ <thead>
+ <tr><th>Tool</th><th>Language</th><th>Description</th></tr>
+ </thead>
+ <tbody id="tools-body"></tbody>
+ </table>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Probabilistic Programming Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Language</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stan</strong></td>
+<td>C++ / R / Python</td>
+<td>Industry gold-standard MCMC; NUTS sampler; CmdStan, RStan, PyStan</td>
+</tr>
+<tr>
+<td><strong>PyMC v5</strong></td>
+<td>Python</td>
+<td>Intuitive API; MCMC + VI; ArviZ integration; strong community</td>
+</tr>
+<tr>
+<td><strong>NumPyro</strong></td>
+<td>Python/JAX</td>
+<td>Fast GPU-accelerated inference; composable with JAX</td>
+</tr>
+<tr>
+<td><strong>Pyro</strong></td>
+<td>Python/PyTorch</td>
+<td>Deep probabilistic programming; SVI; flexible</td>
+</tr>
+<tr>
+<td><strong>TensorFlow Probability</strong></td>
+<td>Python/TF</td>
+<td>Probabilistic layers; MCMC + VI; Keras integration</td>
+</tr>
+<tr>
+<td><strong>Turing.jl</strong></td>
+<td>Julia</td>
+<td>Composable; fast MCMC; differential equation support</td>
+</tr>
+<tr>
+<td><strong>brms</strong></td>
+<td>R</td>
+<td>High-level R formula syntax for Bayesian models via Stan backend</td>
+</tr>
+</tbody>
+</table>
+<h3>Bayesian Optimisation Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Language</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BoTorch (Meta)</strong></td>
+<td>Python/PyTorch</td>
+<td>Modular BO framework; built on GPyTorch; supports multi-objective BO</td>
+</tr>
+<tr>
+<td><strong>Ax (Meta)</strong></td>
+<td>Python</td>
+<td>Adaptive experimentation platform; uses BoTorch; A/B testing + BO</td>
+</tr>
+<tr>
+<td><strong>Optuna</strong></td>
+<td>Python</td>
+<td>Hyperparameter optimisation; supports Bayesian (TPE) + pruning</td>
+</tr>
+<tr>
+<td><strong>Hyperopt</strong></td>
+<td>Python</td>
+<td>Tree-structured Parzen Estimator (TPE) based BO</td>
+</tr>
+<tr>
+<td><strong>Google Vizier</strong></td>
+<td>Python</td>
+<td>Google's BO service; now open-sourced</td>
+</tr>
+<tr>
+<td><strong>Dragonfly</strong></td>
+<td>Python</td>
+<td>Scalable BO with multi-fidelity and multi-objective support</td>
+</tr>
+<tr>
+<td><strong>Trieste</strong></td>
+<td>Python/TF</td>
+<td>BO library from Secondmind; supports batch and constrained optimisation</td>
+</tr>
+</tbody>
+</table>
+<h3>Gaussian Process Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Language</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPyTorch</strong></td>
+<td>Python/PyTorch</td>
+<td>Scalable GPs; GPU-accelerated; variational and exact GP inference</td>
+</tr>
+<tr>
+<td><strong>GPflow</strong></td>
+<td>Python/TF</td>
+<td>GP library on TensorFlow; variational GPs; multi-output GPs</td>
+</tr>
+<tr>
+<td><strong>scikit-learn GPs</strong></td>
+<td>Python</td>
+<td>Built-in GP regression and classification; good baseline</td>
+</tr>
+<tr>
+<td><strong>GPy</strong></td>
+<td>Python</td>
+<td>Comprehensive GP library from Sheffield; multi-output, sparse GPs</td>
+</tr>
+</tbody>
+</table>
+<h3>Inference Diagnostics &amp; Visualisation</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ArviZ</strong></td>
+<td>Bayesian analysis and visualisation; trace plots, posterior plots, LOO-CV, R-hat, ESS</td>
+</tr>
+<tr>
+<td><strong>bayesplot (R)</strong></td>
+<td>Visualisation for Bayesian workflows; posterior, prior/posterior comparison, MCMC diagnostics</td>
+</tr>
+<tr>
+<td><strong>ShinyStan</strong></td>
+<td>Interactive browser-based MCMC diagnostics for Stan models</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 6 — USE CASES -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-usecases">
+ <h2>Use Cases by Domain</h2>
+ <p class="desc">Bayesian AI powers uncertainty-aware decision-making across healthcare, finance, technology, science, manufacturing, and analytics.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Healthcare &amp; Clinical Research</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clinical Trial Design</strong></td>
+<td>Bayesian adaptive trial designs that update dosing and allocation as data arrives</td>
+<td>Berry Consultants, FACTS, Cytel</td>
+</tr>
+<tr>
+<td><strong>Bayesian Meta-Analysis</strong></td>
+<td>Combine results across multiple studies with proper uncertainty</td>
+<td>Cochrane Reviews, brms, Stan</td>
+</tr>
+<tr>
+<td><strong>Disease Progression Modelling</strong></td>
+<td>Probabilistic model of disease trajectory to guide treatment decisions</td>
+<td>Alzheimer's progression models, oncology DPMs</td>
+</tr>
+<tr>
+<td><strong>Drug Dose-Response</strong></td>
+<td>Model dose-response curves with uncertainty to set safe effective doses</td>
+<td>CRM (Continual Reassessment Method)</td>
+</tr>
+<tr>
+<td><strong>Epidemiological Modelling</strong></td>
+<td>Bayesian SIR/SEIR models for pandemic tracking and forecasting</td>
+<td>COVID-19 models (Imperial College, IHME)</td>
+</tr>
+</tbody>
+</table>
+<h3>Finance &amp; Insurance</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risk Modelling</strong></td>
+<td>Bayesian estimation of tail risks with full posterior uncertainty</td>
+<td>VaR modelling, operational risk, credit risk</td>
+</tr>
+<tr>
+<td><strong>A/B Testing &amp; Experimentation</strong></td>
+<td>Bayesian A/B testing with early stopping and continuous monitoring</td>
+<td>VWO, Optimizely (Bayesian mode), Eppo</td>
+</tr>
+<tr>
+<td><strong>Actuarial Modelling</strong></td>
+<td>Bayesian credibility theory for insurance pricing with limited claims data</td>
+<td>Bayesian claim frequency/severity models</td>
+</tr>
+<tr>
+<td><strong>Portfolio Optimisation</strong></td>
+<td>Bayesian estimates of expected returns with uncertainty propagation</td>
+<td>Black-Litterman model, Bayesian mean-variance</td>
+</tr>
+<tr>
+<td><strong>Fraud Detection Under Uncertainty</strong></td>
+<td>Flag suspicious activity with calibrated confidence scores</td>
+<td>Bayesian anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<h3>Technology &amp; Product</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bayesian A/B Testing</strong></td>
+<td>Measure experiment outcomes with credible intervals; early stopping rules</td>
+<td>Google, Netflix, Microsoft experimentation</td>
+</tr>
+<tr>
+<td><strong>Hyperparameter Optimisation</strong></td>
+<td>Find optimal ML hyperparameters with minimal compute budget</td>
+<td>Optuna, BoTorch, Google Vizier, SigOpt</td>
+</tr>
+<tr>
+<td><strong>Anomaly Detection</strong></td>
+<td>Bayesian changepoint detection and outlier scoring with uncertainty</td>
+<td>Bayesian Online Changepoint Detection (BOCPD)</td>
+</tr>
+<tr>
+<td><strong>Demand Forecasting</strong></td>
+<td>Probabilistic demand forecasts with full prediction intervals</td>
+<td>Prophet (Meta), PyMC time series</td>
+</tr>
+<tr>
+<td><strong>Natural Language Processing</strong></td>
+<td>Topic modelling (LDA), Bayesian sentiment analysis, uncertainty in NLP</td>
+<td>Latent Dirichlet Allocation, Bayesian NLP</td>
+</tr>
+</tbody>
+</table>
+<h3>Science &amp; Engineering</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geostatistics &amp; Spatial Modelling</strong></td>
+<td>Gaussian Process kriging for spatial prediction with uncertainty</td>
+<td>Mining, environmental monitoring, agriculture</td>
+</tr>
+<tr>
+<td><strong>Astrophysics</strong></td>
+<td>Bayesian inference on cosmological parameters from observational data</td>
+<td>Planck CMB analysis, gravitational wave PE</td>
+</tr>
+<tr>
+<td><strong>Particle Physics</strong></td>
+<td>Statistical inference on particle properties with systematic uncertainty</td>
+<td>CERN ATLAS/CMS analyses</td>
+</tr>
+<tr>
+<td><strong>Robotics &amp; Control</strong></td>
+<td>Bayesian state estimation and model-based control with uncertainty</td>
+<td>Kalman filters, Bayesian SLAM</td>
+</tr>
+<tr>
+<td><strong>Materials Discovery</strong></td>
+<td>Bayesian optimisation for materials with expensive experimental evaluations</td>
+<td>Self-driving laboratories, BO for materials</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 7 — BENCHMARKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-benchmarks">
+ <h2>Benchmarks &amp; Diagnostics</h2>
+ <p class="desc">Key model comparison metrics and inference diagnostic targets used to evaluate Bayesian models.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Model Comparison Metrics</h3>
+ <canvas id="chart-bench-bar"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Inference Diagnostics Targets</h3>
+ <canvas id="chart-bench-radar"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation & Performance Metrics</h3>
+<h3>Model Comparison Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LOO-CV (Leave-One-Out Cross-Validation)</strong></td>
+<td>Predictive accuracy estimated by leaving out one observation at a time</td>
+<td>Gold-standard for Bayesian model comparison</td>
+</tr>
+<tr>
+<td><strong>WAIC (Widely Applicable Information Criterion)</strong></td>
+<td>Bayesian generalisation of AIC; estimates predictive accuracy</td>
+<td>General model comparison</td>
+</tr>
+<tr>
+<td><strong>Bayes Factor</strong></td>
+<td>Ratio of evidence for two competing models</td>
+<td>Hypothesis testing</td>
+</tr>
+<tr>
+<td><strong>Log Predictive Density</strong></td>
+<td>Log probability of held-out data under the posterior predictive distribution</td>
+<td>Predictive quality evaluation</td>
+</tr>
+<tr>
+<td><strong>DIC (Deviance Information Criterion)</strong></td>
+<td>Bayesian model comparison metric based on effective number of parameters</td>
+<td>Hierarchical models (use LOO-CV if possible)</td>
+</tr>
+</tbody>
+</table>
+<h3>Inference Diagnostics</h3>
+<table>
+<thead>
+<tr>
+<th>Diagnostic</th>
+<th>What It Checks</th>
+<th>Target Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R-hat (Gelman-Rubin)</strong></td>
+<td>Convergence of MCMC chains; compares between-chain and within-chain variance</td>
+<td>&lt; 1.01 (chains have converged)</td>
+</tr>
+<tr>
+<td><strong>Effective Sample Size (ESS)</strong></td>
+<td>Number of effectively independent posterior samples</td>
+<td>&gt; 400 per parameter (minimum)</td>
+</tr>
+<tr>
+<td><strong>Divergences</strong></td>
+<td>HMC/NUTS integration failures indicating problematic posterior geometry</td>
+<td>0 divergences (any divergence is a warning)</td>
+</tr>
+<tr>
+<td><strong>Trace Plots</strong></td>
+<td>Visual inspection of MCMC chain mixing and stationarity</td>
+<td>Chains should look like "hairy caterpillars"</td>
+</tr>
+<tr>
+<td><strong>Energy Plot</strong></td>
+<td>Diagnoses HMC sampling efficiency</td>
+<td>Marginal and transition energy should match</td>
+</tr>
+</tbody>
+</table>
+<h3>Calibration Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Calibration Plot</strong></td>
+<td>Whether predicted probabilities match observed frequencies</td>
+</tr>
+<tr>
+<td><strong>Expected Calibration Error (ECE)</strong></td>
+<td>Average gap between predicted confidence and actual accuracy</td>
+</tr>
+<tr>
+<td><strong>Coverage of Credible Intervals</strong></td>
+<td>Whether the stated 95% interval actually contains 95% of observed values</td>
+</tr>
+<tr>
+<td><strong>Continuous Ranked Probability Score (CRPS)</strong></td>
+<td>Measures quality of the full predictive distribution against observed outcomes</td>
+</tr>
+<tr>
+<td><strong>Prediction Interval Width</strong></td>
+<td>Sharpness of uncertainty estimates; narrower is better (if well-calibrated)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 8 — MARKET DATA -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-market">
+ <h2>Market Data</h2>
+ <p class="desc">Current market size and projected growth for Bayesian and probabilistic AI segments.</p>
+
+ <div class="chart-row">
+ <div class="chart-box">
+ <h3>Market Segments (2026, $B)</h3>
+ <canvas id="chart-market-bar"></canvas>
+ </div>
+ <div class="chart-box">
+ <h3>Bayesian ML Market Growth 2024–2030 (CAGR 23%)</h3>
+ <canvas id="chart-market-line"></canvas>
+ </div>
+ </div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Size &amp; Growth</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Bayesian / Probabilistic ML Market (2024)</strong></td>
+<td>~$1.8 billion</td>
+<td>Includes probabilistic modelling, Bayesian analytics, and BO platforms</td>
+</tr>
+<tr>
+<td><strong>Projected Market Size (2030)</strong></td>
+<td>~$6.2 billion</td>
+<td>CAGR ~23%; driven by clinical trials, uncertainty-aware AI, and BO</td>
+</tr>
+<tr>
+<td><strong>A/B Testing / Experimentation Market (2024)</strong></td>
+<td>~$1.2 billion</td>
+<td>Bayesian A/B testing growing as share of overall experimentation market</td>
+</tr>
+<tr>
+<td><strong>Key Verticals</strong></td>
+<td>Pharma, finance, tech (experimentation), defence</td>
+<td>Strongest where uncertainty quantification is legally or operationally required</td>
+</tr>
+<tr>
+<td><strong>Stan User Base</strong></td>
+<td>100,000+ users globally</td>
+<td>Most widely adopted probabilistic programming language</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Vendors &amp; Competitive Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Leaders</th>
+<th>Challengers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Probabilistic Programming</strong></td>
+<td>Stan, PyMC, NumPyro</td>
+<td>Pyro, Turing.jl, TensorFlow Probability</td>
+</tr>
+<tr>
+<td><strong>Bayesian Optimisation</strong></td>
+<td>BoTorch/Ax (Meta), Optuna, Google Vizier</td>
+<td>SigOpt (Intel), Dragonfly, Hyperopt</td>
+</tr>
+<tr>
+<td><strong>Bayesian A/B Testing</strong></td>
+<td>Optimizely, VWO, Eppo, Statsig</td>
+<td>LaunchDarkly, GrowthBook</td>
+</tr>
+<tr>
+<td><strong>Gaussian Processes</strong></td>
+<td>GPyTorch, GPflow, GPy</td>
+<td>scikit-learn GPs, BoTorch</td>
+</tr>
+<tr>
+<td><strong>Clinical Trial Software</strong></td>
+<td>Berry Consultants (FACTS), Cytel, Medidata</td>
+<td>Adaptive trials via Stan, brms</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ SECTION 9 — RISKS -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-risks">
+ <h2>Risks &amp; Challenges</h2>
+ <p class="desc">Key risks and limitations facing Bayesian AI adoption and deployment.</p>
+
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Boundaries</h3>
+<h3>Technical Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Computational Cost</strong></td>
+<td>MCMC for complex models can be extremely slow; posterior inference scales poorly with data size and dimensions</td>
+</tr>
+<tr>
+<td><strong>Prior Sensitivity</strong></td>
+<td>Results can be heavily influenced by prior choices, especially with small datasets</td>
+</tr>
+<tr>
+<td><strong>Model Misspecification</strong></td>
+<td>If the generative model is wrong, Bayesian updating may concentrate on the wrong region of parameter space</td>
+</tr>
+<tr>
+<td><strong>Approximate Inference Errors</strong></td>
+<td>Variational inference can underestimate uncertainty; MCMC may not converge</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Exact Bayesian inference is intractable for large neural networks and massive datasets</td>
+</tr>
+<tr>
+<td><strong>Expertise Required</strong></td>
+<td>Designing good Bayesian models requires strong statistical expertise</td>
+</tr>
+<tr>
+<td><strong>Conjugacy Constraints</strong></td>
+<td>Analytical solutions exist only for conjugate prior-likelihood pairs; general models require numerical methods</td>
+</tr>
+<tr>
+<td><strong>Identifiability Issues</strong></td>
+<td>Complex models may have multiple parameter configurations that explain the data equally well</td>
+</tr>
+</tbody>
+</table>
+<h3>Interpretation &amp; Communication Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prior Subjectivity</strong></td>
+<td>Critics argue Bayesian priors introduce subjectivity; defenders argue priors encode real knowledge</td>
+</tr>
+<tr>
+<td><strong>Credible vs. Confidence Intervals</strong></td>
+<td>Bayesian credible intervals have different interpretations than frequentist confidence intervals</td>
+</tr>
+<tr>
+<td><strong>Overconfident Posteriors</strong></td>
+<td>Poor model specification or overly tight priors can produce posteriors that are unjustifiably narrow</td>
+</tr>
+<tr>
+<td><strong>Communication Complexity</strong></td>
+<td>Probabilistic results are harder to communicate to non-technical stakeholders than point estimates</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="predictive-discriminative-ai.html">Predictive / Discriminative AI</a>
+<a href="analytical-ai.html">Analytical AI</a>
+<a href="explainable-ai.html">Explainable AI (XAI)</a>
+<a href="federated-privacy-ai.html">Federated / Privacy-Preserving AI</a>
+<a href="scientific-simulation-ai.html">Scientific / Simulation AI</a>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<!-- ██ SECTION 10 — GLOSSARY -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-glossary">
+ <h2>Glossary</h2>
+ <p class="desc">Key terms in Bayesian and probabilistic AI.</p>
+
+ <input type="text" class="glossary-search" id="glossary-search" placeholder="Search terms…">
+ 
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bayes' Theorem</strong></td>
+<td>The rule for updating beliefs: posterior is proportional to likelihood times prior</td>
+</tr>
+<tr>
+<td><strong>Bayesian Network</strong></td>
+<td>A directed acyclic graph encoding conditional dependencies between random variables</td>
+</tr>
+<tr>
+<td><strong>Bayesian Optimisation (BO)</strong></td>
+<td>Using a probabilistic surrogate model to efficiently optimise expensive black-box functions</td>
+</tr>
+<tr>
+<td><strong>Calibration</strong></td>
+<td>The degree to which predicted probabilities match observed frequencies</td>
+</tr>
+<tr>
+<td><strong>Conjugate Prior</strong></td>
+<td>A prior distribution that, when combined with a specific likelihood, yields a posterior in the same distribution family</td>
+</tr>
+<tr>
+<td><strong>Credible Interval</strong></td>
+<td>A Bayesian interval containing the parameter with a stated probability (e.g., 95%); differs from frequentist confidence interval</td>
+</tr>
+<tr>
+<td><strong>Dirichlet Process</strong></td>
+<td>A Bayesian nonparametric prior over distributions; enables mixture models with an unknown number of components</td>
+</tr>
+<tr>
+<td><strong>Evidence (Marginal Likelihood)</strong></td>
+<td>The probability of the observed data under the model, integrating over all parameter values</td>
+</tr>
+<tr>
+<td><strong>Gaussian Process (GP)</strong></td>
+<td>A non-parametric Bayesian model that defines a distribution over functions; predictions include uncertainty</td>
+</tr>
+<tr>
+<td><strong>Hamiltonian Monte Carlo (HMC)</strong></td>
+<td>An MCMC algorithm that uses gradient information to efficiently explore the posterior</td>
+</tr>
+<tr>
+<td><strong>Hidden Markov Model (HMM)</strong></td>
+<td>A probabilistic model for sequential data with hidden states and observable emissions</td>
+</tr>
+<tr>
+<td><strong>Hierarchical Model</strong></td>
+<td>A multi-level Bayesian model where parameters at one level are drawn from distributions at a higher level</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>The process of computing the posterior distribution from the prior and observed data</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>The probability of the observed data given specific parameter values; P(D given theta)</td>
+</tr>
+<tr>
+<td><strong>Markov Chain Monte Carlo (MCMC)</strong></td>
+<td>A family of algorithms that draw samples from the posterior distribution by constructing convergent Markov chains</td>
+</tr>
+<tr>
+<td><strong>NUTS (No-U-Turn Sampler)</strong></td>
+<td>A self-tuning variant of HMC; the default sampler in Stan and PyMC</td>
+</tr>
+<tr>
+<td><strong>Posterior Distribution</strong></td>
+<td>The updated probability distribution over parameters after observing data; the result of Bayesian inference</td>
+</tr>
+<tr>
+<td><strong>Posterior Predictive Distribution</strong></td>
+<td>The distribution of future observations predicted by the model after conditioning on observed data</td>
+</tr>
+<tr>
+<td><strong>Prior Distribution</strong></td>
+<td>The probability distribution representing beliefs about parameters before observing data</td>
+</tr>
+<tr>
+<td><strong>Probabilistic Programming</strong></td>
+<td>A programming paradigm where users specify probabilistic models as code and inference is automated</td>
+</tr>
+<tr>
+<td><strong>R-hat (Gelman-Rubin Statistic)</strong></td>
+<td>A convergence diagnostic comparing between-chain and within-chain variance; values near 1.0 indicate convergence</td>
+</tr>
+<tr>
+<td><strong>Surrogate Model</strong></td>
+<td>An approximate, cheap-to-evaluate model used in place of an expensive objective function (common in BO)</td>
+</tr>
+<tr>
+<td><strong>Variational Inference (VI)</strong></td>
+<td>An approximate inference method that optimises a simpler distribution to approximate the posterior</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Bayesian / Probabilistic AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/04-bayesian-probabilistic-ai-overview.gif" alt="Bayesian / Probabilistic AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Bayesian / Probabilistic AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/04-bayesian-probabilistic-ai-tech-stack.gif" alt="Bayesian / Probabilistic AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>Bayesian methods are generally favoured by regulators because they provide <strong>transparent uncertainty quantification</strong> — a requirement in many high-stakes domains.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Regulatory Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pharmaceuticals (FDA/EMA)</strong></td>
+<td>FDA has issued guidance supporting Bayesian adaptive trial designs; EMA recognises Bayesian methods</td>
+</tr>
+<tr>
+<td><strong>Medical Devices</strong></td>
+<td>Bayesian methods accepted for premarket submissions (510(k), PMA) with proper justification</td>
+</tr>
+<tr>
+<td><strong>Financial Services</strong></td>
+<td>Bayesian models used for stress testing, risk modelling; regulators require posterior uncertainty reporting</td>
+</tr>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>Uncertainty quantification is aligned with transparency and robustness requirements for high-risk AI</td>
+</tr>
+<tr>
+<td><strong>Insurance / Actuarial</strong></td>
+<td>Bayesian credibility theory is a standard actuarial tool; regulators understand and accept it</td>
+</tr>
+<tr>
+<td><strong>Clinical Research</strong></td>
+<td>ICH E9(R1) addendum supports Bayesian estimands and frameworks for clinical trials</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Bayesian Deep Learning — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Overview</h3>
+<p>Bayesian Deep Learning (BDL) integrates Bayesian uncertainty quantification into deep neural networks — enabling neural networks to express not just predictions, but how confident they are in those predictions.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Method</th>
+<th>Key Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MC Dropout</strong></td>
+<td>Use dropout at inference time; multiple forward passes approximate the posterior</td>
+<td>Simple to implement; approximate uncertainty</td>
+</tr>
+<tr>
+<td><strong>Bayes By Backprop</strong></td>
+<td>Learn a distribution over weights using variational inference</td>
+<td>Principled; more memory-intensive</td>
+</tr>
+<tr>
+<td><strong>Deep Ensembles</strong></td>
+<td>Train multiple independent networks; treat ensemble variance as uncertainty</td>
+<td>Simple, effective, well-calibrated</td>
+</tr>
+<tr>
+<td><strong>Laplace Approximation</strong></td>
+<td>Fit a Gaussian to the posterior at the MAP estimate using the Hessian</td>
+<td>Post-hoc; works with pre-trained models</td>
+</tr>
+<tr>
+<td><strong>Stochastic Weight Averaging (SWAG)</strong></td>
+<td>Approximate posterior using trajectory of SGD weights</td>
+<td>Low cost; good uncertainty estimates</td>
+</tr>
+<tr>
+<td><strong>Neural Network Gaussian Processes (NNGP)</strong></td>
+<td>Interpret infinite-width neural networks as GPs</td>
+<td>Theoretical connection; exact in the limit</td>
+</tr>
+</tbody>
+</table>
+<h3>Why It Matters</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>How BDL Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomous Driving</strong></td>
+<td>Detect when the perception model is uncertain and hand control back to the driver</td>
+</tr>
+<tr>
+<td><strong>Medical Diagnosis</strong></td>
+<td>Flag cases where the model is unsure, routing them to human expert review</td>
+</tr>
+<tr>
+<td><strong>Active Learning</strong></td>
+<td>Identify the most informative data points to label next, reducing labelling cost</td>
+</tr>
+<tr>
+<td><strong>Out-of-Distribution Detection</strong></td>
+<td>Detect inputs that are unlike the training data and should not be trusted</td>
+</tr>
+<tr>
+<td><strong>Calibrated Predictions</strong></td>
+<td>Ensure that predicted probabilities match real-world frequencies</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Probabilistic Programming — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>What Is Probabilistic Programming</h3>
+<p>Probabilistic programming languages (PPLs) allow users to specify Bayesian models as programs and automatically perform inference — without needing to manually derive or implement inference algorithms.</p>
+<h3>Leading Probabilistic Programming Languages</h3>
+<table>
+<thead>
+<tr>
+<th>Language / Framework</th>
+<th>Backend</th>
+<th>Key Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stan</strong></td>
+<td>C++</td>
+<td>Gold-standard for MCMC (NUTS); R, Python, Julia interfaces; industry and academia</td>
+</tr>
+<tr>
+<td><strong>PyMC (v5)</strong></td>
+<td>PyTensor</td>
+<td>Python-native; MCMC + VI; intuitive API; strong community</td>
+</tr>
+<tr>
+<td><strong>NumPyro</strong></td>
+<td>JAX</td>
+<td>JAX-accelerated; fast MCMC and VI; GPU/TPU support; composable with JAX ecosystem</td>
+</tr>
+<tr>
+<td><strong>Pyro</strong></td>
+<td>PyTorch</td>
+<td>Deep probabilistic programming; stochastic variational inference; GPU-accelerated</td>
+</tr>
+<tr>
+<td><strong>TensorFlow Probability</strong></td>
+<td>TensorFlow</td>
+<td>Probabilistic layers for Keras; MCMC, VI, bijectors, distributions</td>
+</tr>
+<tr>
+<td><strong>Edward2 / Oryx</strong></td>
+<td>TensorFlow / JAX</td>
+<td>Lightweight probabilistic programming; research-oriented</td>
+</tr>
+<tr>
+<td><strong>Turing.jl</strong></td>
+<td>Julia</td>
+<td>Julia-native; composable; fast MCMC; excellent differential equation integration</td>
+</tr>
+<tr>
+<td><strong>Bean Machine (Meta)</strong></td>
+<td>PyTorch</td>
+<td>Graph-based PPL for Bayesian modelling; automated inference</td>
+</tr>
+<tr>
+<td><strong>brms (R)</strong></td>
+<td>Stan</td>
+<td>High-level R formula interface for Bayesian GLMs, GAMs, and multilevel models</td>
+</tr>
+<tr>
+<td><strong>BUGS / JAGS</strong></td>
+<td>Custom</td>
+<td>Pioneering PPLs; still used in epidemiology and medical research</td>
+</tr>
+</tbody>
+</table>
+<h3>Probabilistic Programming Workflow</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Define Priors</strong></td>
+<td>Specify prior distributions for each parameter based on domain knowledge</td>
+</tr>
+<tr>
+<td><strong>Define Likelihood</strong></td>
+<td>Specify the data-generating process (e.g., y ~ Normal(mu, sigma))</td>
+</tr>
+<tr>
+<td><strong>Condition on Data</strong></td>
+<td>Provide observed data to the model</td>
+</tr>
+<tr>
+<td><strong>Run Inference</strong></td>
+<td>The PPL automatically runs MCMC, VI, or other algorithms to compute the posterior</td>
+</tr>
+<tr>
+<td><strong>Diagnose</strong></td>
+<td>Check convergence diagnostics: R-hat, ESS, divergences, trace plots</td>
+</tr>
+<tr>
+<td><strong>Posterior Predictive Check</strong></td>
+<td>Simulate data from the posterior and compare to actual observations</td>
+</tr>
+<tr>
+<td><strong>Report &amp; Decide</strong></td>
+<td>Summarise posterior, compute credible intervals, and make decisions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Bayesian Optimisation — Deep Dive</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Overview</h3>
+<p>Bayesian Optimisation (BO) uses a probabilistic surrogate model (typically a Gaussian Process) to efficiently find the optimum of expensive-to-evaluate black-box functions.</p>
+<pre><code>+------------------------------------------------------------------------+
+| BAYESIAN OPTIMISATION LOOP |
+| |
+| 1. FIT SURROGATE 2. ACQUISITION 3. EVALUATE |
+| ---------------- ---------------- ---------------- |
+| Fit a GP (or other Compute acquisition Evaluate the true |
+| surrogate) to all function to find objective at the |
+| observations so far most promising point selected point |
+| |
+| 4. UPDATE 5. REPEAT |
+| ---------------- ---------------- |
+| Add new observation Until budget |
+| to dataset exhausted |
++------------------------------------------------------------------------+
+</code></pre>
+<h3>Key Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+<th>Common Choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Surrogate Model</strong></td>
+<td>Approximate the objective function with uncertainty</td>
+<td>Gaussian Process, Random Forest, Bayesian NN</td>
+</tr>
+<tr>
+<td><strong>Acquisition Function</strong></td>
+<td>Decide where to evaluate next, balancing exploration and exploitation</td>
+<td>Expected Improvement (EI), UCB, Knowledge Gradient</td>
+</tr>
+<tr>
+<td><strong>Observation Model</strong></td>
+<td>Handle noise in objective function evaluations</td>
+<td>Exact observations, noisy GP, heteroscedastic noise</td>
+</tr>
+</tbody>
+</table>
+<h3>Applications of Bayesian Optimisation</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Description</th>
+<th>Key Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hyperparameter Tuning</strong></td>
+<td>Find optimal ML hyperparameters with minimal training runs</td>
+<td>Optuna, BoTorch, Hyperopt, Ax (Meta)</td>
+</tr>
+<tr>
+<td><strong>Drug Discovery</strong></td>
+<td>Optimise molecular properties with expensive wet-lab experiments</td>
+<td>BoTorch, GPyOpt, ChemOS</td>
+</tr>
+<tr>
+<td><strong>Materials Design</strong></td>
+<td>Find materials with optimal properties (conductivity, strength)</td>
+<td>BoTorch, Dragonfly, Emukit</td>
+</tr>
+<tr>
+<td><strong>A/B Testing / Experiment Design</strong></td>
+<td>Allocate experimental budget efficiently across variants</td>
+<td>Ax (Meta), Adaptive Experimentation</td>
+</tr>
+<tr>
+<td><strong>Robotics &amp; Control</strong></td>
+<td>Tune controller parameters with minimal real-world trials</td>
+<td>BoTorch, Trieste, Safety-aware BO</td>
+</tr>
+<tr>
+<td><strong>Chip Design</strong></td>
+<td>Optimise VLSI placement and routing parameters</td>
+<td>Google Vizier, BoTorch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Bayesian and Probabilistic AI</strong> is the branch of artificial intelligence grounded in <strong>probability theory and Bayesian inference</strong> — representing knowledge as probability distributions, updating beliefs systematically as new data arrives (via Bayes' theorem), and producing predictions that carry explicit measures of uncertainty. Every output of a Bayesian system comes with a confidence interval, a credible interval, or a full posterior distribution — not just a point estimate.</p>
+<p>This paradigm is fundamentally different from standard machine learning, which typically produces a single best prediction. A standard classifier says "this email is spam with 87% probability." A Bayesian system says "my belief that this email is spam is described by a distribution centered at 87%, and my uncertainty about that estimate is +/- 4%, given the data I have seen." This distinction is critical in high-stakes domains where knowing what the model does not know is as important as its predictions.</p>
+<p>Bayesian AI has deep historical roots — Bayes' theorem was published in 1763 — and has been the dominant paradigm in fields such as clinical trial design, epidemiology, A/B testing, geostatistics, and signal processing for decades. Its resurgence in modern AI is driven by the need for <strong>uncertainty quantification</strong> in safety-critical applications, the development of <strong>probabilistic programming languages</strong> that make Bayesian modelling accessible, and the integration of Bayesian principles into deep learning.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Quantifies uncertainty — produces predictions as probability distributions, not point estimates</td>
+</tr>
+<tr>
+<td><strong>How It Works</strong></td>
+<td>Specify a prior; observe data; compute the posterior via Bayes' theorem; make predictions by integrating over the posterior</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Posterior distributions, credible intervals, predictive distributions, optimal decisions under uncertainty</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Every prediction carries an explicit measure of confidence; the model knows what it does not know</td>
+</tr>
+</tbody>
+</table>
+<h3>Bayesian AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling, uncertainty quantification</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously using tools, memory, and planning</td>
+<td>Research agent, coding agent, autonomous workflow</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from existing data</td>
+<td>Dashboard, root-cause analysis, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new original content from learned distributions</td>
+<td>Write an essay, generate an image, synthesise a video</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies or forecasts from historical patterns</td>
+<td>Fraud score, churn probability, demand forecast</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input with no learning or memory</td>
+<td>Chess engine, rule-based spam filter</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI typically produces a single best estimate (a point prediction). Bayesian AI produces a full probability distribution over outcomes — capturing not just the best guess, but exactly how uncertain that guess is.</p>
+<p><strong>Key Distinction from Explainable AI:</strong> XAI explains which features drove a decision. Bayesian AI quantifies how confident the model is in that decision and where more data would reduce uncertainty.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ <p>Bayesian / Probabilistic AI — Interactive Architecture Chart · <strong>Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.</strong> · 2026</p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ██ JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ─── NAV TABS ─── */
+document.querySelectorAll('.nav-bar button').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.nav-bar button').forEach(b => b.classList.remove('active'));
+ document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
+ initCharts();
+ });
+});
+
+/* ─── PIPELINE ─── */
+const pipelineData = [
+ { icon: 'Gm', label: 'Prior', desc: 'Encode domain knowledge and beliefs as prior probability distributions P(θ) before observing any data. Priors range from uninformative (flat) to strongly informative (domain-expert), and their choice shapes the posterior.' },
+ { icon: 'Da', label: 'Likelihood', desc: 'Define the likelihood function P(D|θ) — how probable the observed data is under each parameter setting. This is the statistical model connecting parameters to observations (e.g., Gaussian, Bernoulli, Poisson).' },
+ { icon: 'Cy', label: 'Posterior', desc: 'Apply Bayes\' theorem to compute the posterior P(θ|D) ∝ P(D|θ)·P(θ). This combines prior beliefs with observed evidence. The posterior is the central object of Bayesian inference — it captures full uncertainty over parameters.' },
+ { icon: 'Ta', label: 'Prediction', desc: 'Generate predictions by integrating over the full posterior, producing the posterior predictive distribution P(y*|D). Unlike point estimates, this naturally includes parameter uncertainty in every prediction.' },
+ { icon: '', label: 'Decision', desc: 'Make optimal decisions under uncertainty using decision theory. Minimise expected loss (or maximise expected utility) by weighting outcomes by their posterior probability. Used in Bayesian optimisation, clinical trials, and risk management.' },
+ { icon: '', label: 'Update', desc: 'When new data arrives, yesterday\'s posterior becomes today\'s prior — enabling sequential, online Bayesian updating. This is the Bayesian learning loop: beliefs are continuously refined as evidence accumulates.' },
+];
+const pipeCont = document.getElementById('pipeline-container');
+pipelineData.forEach((s, i) => {
+ if (i > 0) {
+ const arrow = document.createElement('span');
+ arrow.className = 'pipeline-arrow';
+ arrow.textContent = '→';
+ pipeCont.appendChild(arrow);
+ }
+ const step = document.createElement('div');
+ step.className = 'pipeline-step';
+ step.innerHTML = `<div class="step-icon">${s.icon}</div><div class="step-label">${s.label}</div>`;
+ step.addEventListener('click', () => {
+ document.querySelectorAll('.pipeline-step').forEach(el => el.classList.remove('active-step'));
+ step.classList.add('active-step');
+ document.getElementById('pipeline-info').innerHTML = `<h3>${s.label}</h3><p>${s.desc}</p>`;
+ });
+ pipeCont.appendChild(step);
+});
+
+/* ─── 8-LAYER STACK ─── */
+const stackData = [
+ { num: 8, title: 'Decision Layer', detail: 'Make decisions under uncertainty using posterior predictive distributions. Apply decision theory, expected utility maximisation, and Bayesian optimisation to select optimal actions given calibrated uncertainty.', color: 'red' },
+ { num: 7, title: 'Prediction & Uncertainty', detail: 'Generate predictions with calibrated credible intervals by marginalising over the full posterior. Posterior predictive distributions naturally quantify both aleatoric and epistemic uncertainty.', color: 'orange' },
+ { num: 6, title: 'Model Checking', detail: 'Validate models with posterior predictive checks (PPC), leave-one-out cross-validation (LOO-CV), WAIC, Bayes factors, and convergence diagnostics (R-hat, ESS, divergences).', color: 'purple' },
+ { num: 5, title: 'Inference Engine', detail: 'Execute inference via MCMC (NUTS, HMC), variational inference (ADVI, SVI), Laplace approximation, or exact conjugate updates. The engine computes or approximates the posterior distribution.', color: 'blue' },
+ { num: 4, title: 'Model Specification', detail: 'Define the probabilistic model: hierarchical/multi-level models, Gaussian processes, Bayesian neural networks, hidden Markov models, mixture models, and state-space models.', color: 'green' },
+ { num: 3, title: 'Prior Knowledge', detail: 'Encode domain expertise as prior distributions — informative, weakly informative, or non-informative priors. Prior elicitation, sensitivity analysis, and regularisation through principled priors.', color: 'blue' },
+ { num: 2, title: 'Data Layer', detail: 'Observations, experimental data, censored/missing data, and data transformations. Handle right-censored survival data, truncated distributions, and measurement error models.', color: 'purple' },
+ { num: 1, title: 'Problem Formulation', detail: 'Define the likelihood function, identify parameters of interest, and choose the prior structure. Frame the research question in probabilistic terms — what do we want to learn and what do we know?', color: 'green' },
+];
+const stackEl = document.getElementById('stack');
+stackData.forEach(l => {
+ const colorMap = { blue: '', green: '2', purple: '3', orange: '4', red: '5' };
+ const div = document.createElement('div');
+ div.className = `stack-layer bg-${l.color}`;
+ div.innerHTML = `
+ <div class="layer-head">
+ <div class="layer-num b-${l.color}" style="border:2px solid; color:var(--accent${colorMap[l.color]});">${l.num}</div>
+ <span class="layer-title">${l.title}</span>
+ <span class="expand-icon">▼</span>
+ </div>
+ <div class="layer-detail">${l.detail}</div>`;
+ div.addEventListener('click', () => div.classList.toggle('expanded'));
+ stackEl.appendChild(div);
+});
+
+/* ─── SUB-TYPES ─── */
+const subtypes = [
+ { name: 'Exact Bayesian Inference', badge: 'Analytical', badgeClass: 'bg-blue c-blue', items: ['Conjugate priors enable closed-form posterior computation', 'Beta-Binomial, Normal-Normal, Gamma-Poisson families', 'Exact marginal likelihoods for model comparison', 'Limited to conjugate model families'] },
+ { name: 'MCMC-Based Inference', badge: 'Gold Standard', badgeClass: 'bg-green c-green', items: ['Markov chain sampling from arbitrary posteriors', 'HMC/NUTS: self-tuning, gradient-based, efficient', 'Supports complex hierarchical and multi-level models', 'Asymptotically exact but computationally expensive'] },
+ { name: 'Variational Inference', badge: 'Scalable', badgeClass: 'bg-purple c-purple', items: ['Optimise an approximate posterior (ELBO objective)', 'ADVI, SVI, normalising flows for flexibility', 'Scalable to massive datasets and deep models', 'Fast convergence but may underestimate uncertainty'] },
+ { name: 'Gaussian Process Inference', badge: 'Non-parametric', badgeClass: 'bg-orange c-orange', items: ['Non-parametric function-space inference', 'Calibrated uncertainty for regression and classification', 'Bayesian optimisation and geostatistics', 'O(n³) scaling — sparse GPs for larger datasets'] },
+ { name: 'Bayesian Network Inference', badge: 'Graphical', badgeClass: 'bg-blue c-blue', items: ['Directed graphical model with conditional dependencies', 'Exact: variable elimination, junction tree', 'Approximate: belief propagation, sampling', 'Diagnosis, causal reasoning, expert systems'] },
+ { name: 'Bayesian Deep Learning', badge: 'Neural', badgeClass: 'bg-purple c-purple', items: ['Distributions over neural network weights', 'MC Dropout, Bayes-by-Backprop, deep ensembles', 'Uncertainty-aware predictions for safety-critical tasks', 'Active area bridging deep learning and Bayesian methods'] },
+ { name: 'Bayesian Nonparametric', badge: 'Flexible', badgeClass: 'bg-green c-green', items: ['Infinite-dimensional models: complexity grows with data', 'Dirichlet processes, Indian buffet process, beta process', 'Flexible clustering, topic modelling, density estimation', 'Chinese restaurant process for intuitive construction'] },
+ { name: 'ABC (Approximate Bayesian Computation)', badge: 'Likelihood-Free', badgeClass: 'bg-orange c-orange', items: ['Simulation-based inference when likelihood is intractable', 'Compare simulated vs observed summary statistics', 'Rejection, MCMC-ABC, SMC-ABC algorithms', 'Used in genetics, ecology, and complex simulators'] },
+];
+const subtypeGrid = document.getElementById('subtypes-grid');
+subtypes.forEach(s => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<div class="badge ${s.badgeClass}">${s.badge}</div><h3>${s.name}</h3><ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+ subtypeGrid.appendChild(card);
+});
+
+/* ─── CORE ARCHITECTURES ─── */
+const architectures = [
+ { name: 'Bayesian Networks (PGMs)', badge: 'Graphical', badgeClass: 'bg-blue c-blue', items: ['DAG of nodes (variables) and edges (dependencies)', 'Exact inference via variable elimination or junction tree', 'Approximate via belief propagation or Gibbs sampling', 'Medical diagnosis, risk assessment, causal reasoning'] },
+ { name: 'Gaussian Processes', badge: 'Non-parametric', badgeClass: 'bg-green c-green', items: ['Distribution over functions defined by kernel/covariance', 'Posterior mean + calibrated uncertainty bands', 'Bayesian optimisation for hyperparameter tuning', 'Geostatistics, surrogate modelling, sensor fusion'] },
+ { name: 'MCMC (NUTS Sampler)', badge: 'Sampling', badgeClass: 'bg-purple c-purple', items: ['No-U-Turn Sampler: self-tuning Hamiltonian Monte Carlo', 'Gold-standard for complex posteriors and hierarchical models', 'Diagnostics: R-hat, ESS, divergences, trace plots', 'Computationally expensive but asymptotically exact'] },
+ { name: 'Variational Inference', badge: 'Optimisation', badgeClass: 'bg-orange c-orange', items: ['Cast inference as optimisation: minimise KL divergence', 'ADVI (automatic), SVI (stochastic), normalising flows', 'Orders of magnitude faster than MCMC for large models', 'Trades accuracy for speed — may underestimate tails'] },
+ { name: 'Bayesian Linear / GLMs', badge: 'Interpretable', badgeClass: 'bg-blue c-blue', items: ['Priors on regression coefficients for regularisation', 'Full posterior over weights → credible intervals', 'Conjugate or MCMC-based inference', 'Fully interpretable, strong in clinical and social science'] },
+ { name: 'Hidden Markov Models', badge: 'Sequential', badgeClass: 'bg-green c-green', items: ['Sequential data with latent discrete states', 'Forward-backward algorithm, Viterbi decoding', 'Baum-Welch for parameter estimation', 'Speech recognition, regime detection, bioinformatics'] },
+];
+const archGrid = document.getElementById('arch-grid');
+architectures.forEach(a => {
+ const card = document.createElement('div');
+ card.className = 'card';
+ card.innerHTML = `<div class="badge ${a.badgeClass}">${a.badge}</div><h3>${a.name}</h3><ul>${a.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+ archGrid.appendChild(card);
+});
+
+/* ─── TOOLS TABLE ─── */
+const tools = [
+ ['Stan', 'C++', 'Industry gold-standard MCMC with NUTS sampler'],
+ ['PyMC v5', 'Python', 'Intuitive API with MCMC + VI, strong community'],
+ ['NumPyro', 'Python / JAX', 'Fast GPU-accelerated inference, composable with JAX'],
+ ['Pyro', 'Python / PyTorch', 'Deep probabilistic programming with SVI'],
+ ['TensorFlow Probability', 'Python / TF', 'Probabilistic layers and Keras integration'],
+ ['Turing.jl', 'Julia', 'Composable with fast MCMC and differential equations'],
+ ['brms', 'R', 'High-level formula syntax for Bayesian models via Stan'],
+ ['BoTorch', 'Python / PyTorch', 'Modular Bayesian optimisation framework'],
+];
+const toolsBody = document.getElementById('tools-body');
+tools.forEach(t => {
+ const tr = document.createElement('tr');
+ tr.innerHTML = `<td><strong style="color:var(--text)">${t[0]}</strong></td><td>${t[1]}</td><td>${t[2]}</td>`;
+ toolsBody.appendChild(tr);
+});
+
+/* ─── USE CASES ACCORDION ─── */
+const usecases = [
+ { domain: ' Healthcare', items: [
+ ['Clinical Trial Design', 'Adaptive Bayesian trials with sequential updating and early stopping rules'],
+ ['Meta-Analysis', 'Hierarchical Bayesian meta-analysis combining studies with heterogeneity'],
+ ['Disease Progression', 'Multi-state models capturing patient deterioration under uncertainty'],
+ ['Dose-Response', 'Non-linear dose-response curves with informative priors from previous studies'],
+ ['Epidemiology', 'Bayesian SIR/SEIR models for outbreak forecasting and intervention planning'],
+ ]},
+ { domain: ' Finance', items: [
+ ['Risk Modelling', 'Bayesian VaR and CVaR estimation with fat-tailed posterior distributions'],
+ ['A/B Testing', 'Bayesian hypothesis testing with posterior probability of lift'],
+ ['Actuarial Modelling', 'Hierarchical claim frequency and severity models with credibility priors'],
+ ['Portfolio Optimisation', 'Black-Litterman and Bayesian mean-variance with uncertainty on returns'],
+ ['Fraud Detection', 'Bayesian anomaly scoring with prior knowledge of fraud patterns'],
+ ]},
+ { domain: ' Technology', items: [
+ ['Bayesian A/B Testing', 'Continuous monitoring of experiments with posterior stopping rules'],
+ ['Hyperparameter Optimisation', 'Gaussian process-based Bayesian optimisation (BO) for ML tuning'],
+ ['Anomaly Detection', 'Bayesian changepoint detection and online density estimation'],
+ ['Demand Forecasting', 'Structural time-series with Bayesian uncertainty for supply chain'],
+ ]},
+ { domain: ' Science', items: [
+ ['Geostatistics', 'Gaussian process kriging for spatial interpolation and mapping'],
+ ['Astrophysics', 'Parameter estimation for cosmological models and gravitational waves'],
+ ['Particle Physics', 'Bayesian analysis of collision data, limit setting, model comparison'],
+ ['Robotics', 'Bayesian state estimation, SLAM, and sensor fusion under noise'],
+ ['Materials Discovery', 'Bayesian optimisation for experimental design in materials science'],
+ ]},
+ { domain: ' Manufacturing', items: [
+ ['Process Control', 'Bayesian SPC with posterior predictive monitoring for drift detection'],
+ ['Quality Estimation', 'Hierarchical models linking process parameters to quality outcomes'],
+ ['Yield Optimisation', 'Sequential Bayesian optimisation for maximising production yield'],
+ ['Supply Chain Risk', 'Bayesian network models for probabilistic supply chain risk assessment'],
+ ]},
+ { domain: ' Healthcare Analytics', items: [
+ ['Patient Risk', 'Bayesian risk scores combining EHR data with clinical priors'],
+ ['Treatment Outcomes', 'Causal Bayesian models for personalised treatment effect estimation'],
+ ['Drug Efficacy', 'Bayesian adaptive platform trials for multiple treatment arms'],
+ ]},
+];
+const ucAcc = document.getElementById('usecases-acc');
+usecases.forEach(u => {
+ const item = document.createElement('div');
+ item.className = 'domain-item';
+ item.innerHTML = `
+ <div class="domain-header"><span>${u.domain}</span><span class="arrow">▸</span></div>
+ <div class="domain-body">
+ <table><thead><tr><th>Application</th><th>Description</th></tr></thead>
+ <tbody>${u.items.map(r => `<tr><td><strong style="color:var(--text)">${r[0]}</strong></td><td>${r[1]}</td></tr>`).join('')}</tbody></table>
+ </div>`;
+ item.querySelector('.domain-header').addEventListener('click', () => item.classList.toggle('open'));
+ ucAcc.appendChild(item);
+});
+
+/* ─── RISKS ─── */
+const risks = [
+ { title: 'Computational Cost', desc: 'MCMC is extremely slow for complex models with many parameters and large datasets. Full posterior computation can take hours to days, limiting real-time and large-scale applications.', color: 'var(--accent5)' },
+ { title: 'Prior Sensitivity', desc: 'Results can be heavily influenced by prior choices, especially with limited data. Poorly chosen priors may dominate the posterior and lead to misleading conclusions.', color: 'var(--accent4)' },
+ { title: 'Model Misspecification', desc: 'If the assumed model is wrong, the posterior concentrates on the wrong parameters. Bayesian inference is only as good as the model — garbage in, garbage out still applies.', color: 'var(--accent5)' },
+ { title: 'Approximate Inference Errors', desc: 'Variational inference can systematically underestimate posterior uncertainty, leading to overconfident predictions. The gap between the true posterior and the approximation is hard to measure.', color: 'var(--accent3)' },
+ { title: 'Scalability', desc: 'Exact Bayesian inference is intractable for models with millions of parameters (e.g., neural networks). Even approximate methods struggle with the dimensionality of modern deep learning.', color: 'var(--accent4)' },
+ { title: 'Expertise Required', desc: 'Effective Bayesian modelling requires strong statistical knowledge: choosing priors, model specification, convergence diagnostics, and interpretation of posteriors demand specialist skills.', color: 'var(--accent6)' },
+];
+const riskGrid = document.getElementById('risk-grid');
+risks.forEach(r => {
+ const card = document.createElement('div');
+ card.className = 'risk-card';
+ card.style.borderLeftColor = r.color;
+ card.innerHTML = `<h4>${r.title}</h4><p>${r.desc}</p>`;
+ riskGrid.appendChild(card);
+});
+
+/* ─── GLOSSARY ─── */
+const glossary = [
+ { term: "Bayes' Theorem", def: "P(θ|D) ∝ P(D|θ)·P(θ) — the foundational rule for updating beliefs given evidence. Relates prior, likelihood, and posterior distributions." },
+ { term: "Bayesian Network", def: "A directed acyclic graph (DAG) representing conditional dependencies between random variables. Used for reasoning under uncertainty and causal modelling." },
+ { term: "Bayesian Optimisation", def: "A sequential strategy for global optimisation of expensive black-box functions using a GP surrogate and an acquisition function (e.g., EI, UCB)." },
+ { term: "Calibration", def: "The degree to which predicted probabilities match observed frequencies. A calibrated model's 80% credible intervals contain the truth 80% of the time." },
+ { term: "Conjugate Prior", def: "A prior distribution that, when combined with a specific likelihood, yields a posterior in the same family — enabling closed-form updates (e.g., Beta-Binomial)." },
+ { term: "Credible Interval", def: "The Bayesian counterpart of a confidence interval — a range containing the parameter with a specified posterior probability (e.g., 95% highest density interval)." },
+ { term: "Dirichlet Process", def: "A distribution over distributions used in Bayesian nonparametrics. Enables infinite mixture models where the number of clusters is learned from data." },
+ { term: "Evidence (Marginal Likelihood)", def: "P(D) = ∫P(D|θ)P(θ)dθ — the normalising constant in Bayes' theorem. Used for Bayesian model comparison via Bayes factors." },
+ { term: "Gaussian Process", def: "A distribution over functions defined by a mean function and kernel (covariance function). Any finite set of function values is jointly Gaussian." },
+ { term: "HMC (Hamiltonian Monte Carlo)", def: "An MCMC algorithm that uses gradient information and Hamiltonian dynamics to propose distant, high-acceptance samples — far more efficient than random-walk methods." },
+ { term: "HMM (Hidden Markov Model)", def: "A sequential probabilistic model with latent discrete states. Observations depend on hidden states that follow Markov transitions." },
+ { term: "Hierarchical Model", def: "A multi-level Bayesian model where parameters are themselves drawn from higher-level distributions — enabling partial pooling across groups (e.g., schools, patients)." },
+ { term: "Inference", def: "The process of computing or approximating the posterior distribution P(θ|D) from the prior and likelihood. Methods include exact, MCMC, VI, and ABC." },
+ { term: "Likelihood", def: "P(D|θ) — the probability of the observed data given specific parameter values. The likelihood function encodes how the model generates data." },
+ { term: "MCMC (Markov Chain Monte Carlo)", def: "A family of algorithms that generate samples from the posterior by constructing a Markov chain whose stationary distribution is the target posterior." },
+ ['Acquisition Function', 'Criterion (EI, UCB, PI) guiding where to sample next in Bayesian optimisation.'],
+ ['Laplace Approximation', 'Approximating the posterior with a Gaussian centered at the MAP estimate.'],
+];
+const glossList = document.getElementById('glossary-list');
+function renderGlossary(filter = '') {
+ const f = filter.toLowerCase();
+ glossList.innerHTML = glossary
+ .filter(g => g.term.toLowerCase().includes(f) || g.def.toLowerCase().includes(f))
+ .map(g => `<div class="glossary-entry"><strong>${g.term}</strong><span>${g.def}</span></div>`)
+ .join('');
+}
+renderGlossary();
+document.getElementById('glossary-search').addEventListener('input', e => renderGlossary(e.target.value));
+
+/* ─── CHARTS ─── */
+const chartDefaults = {
+ color: '#e6edf3',
+ borderColor: '#30363d',
+ font: { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" },
+};
+Chart.defaults.color = chartDefaults.color;
+Chart.defaults.borderColor = chartDefaults.borderColor;
+
+let chartsInitialised = false;
+function initCharts() {
+ if (chartsInitialised) return;
+
+ /* Benchmark Bar */
+ const benchBar = document.getElementById('chart-bench-bar');
+ if (benchBar && benchBar.getContext) {
+ new Chart(benchBar, {
+ type: 'bar',
+ data: {
+ labels: ['LOO-CV', 'WAIC', 'Bayes Factor', 'Log Pred. Density', 'DIC'],
+ datasets: [{
+ label: 'Score',
+ data: [92, 89, 85, 91, 82],
+ backgroundColor: ['#c9a84c', '#5b9e6f', '#9684bf', '#c9956a', '#bf7570'],
+ borderRadius: 6,
+ barThickness: 36,
+ }],
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ y: { beginAtZero: true, max: 100, grid: { color: '#1c2333' } },
+ x: { grid: { display: false } },
+ },
+ },
+ });
+ }
+
+ /* Benchmark Radar */
+ const benchRadar = document.getElementById('chart-bench-radar');
+ if (benchRadar && benchRadar.getContext) {
+ new Chart(benchRadar, {
+ type: 'radar',
+ data: {
+ labels: ['R-hat <1.01', 'ESS >400', 'Zero Divergences', 'Trace Convergence', 'Energy Good'],
+ datasets: [{
+ label: '% Target Met',
+ data: [99, 95, 98, 97, 96],
+ backgroundColor: 'rgba(201,168,76,0.10)',
+ borderColor: '#c9a84c',
+ pointBackgroundColor: '#c9a84c',
+ pointRadius: 5,
+ borderWidth: 2,
+ }],
+ },
+ options: {
+ responsive: true,
+ scales: {
+ r: {
+ beginAtZero: true,
+ max: 100,
+ ticks: { stepSize: 20, backdropColor: 'transparent', color: '#8b949e' },
+ grid: { color: '#30363d' },
+ angleLines: { color: '#30363d' },
+ pointLabels: { color: '#e6edf3', font: { size: 11 } },
+ },
+ },
+ plugins: { legend: { labels: { color: '#e6edf3', padding: 16 } } },
+ },
+ });
+ }
+
+ /* Market Bar */
+ const marketBar = document.getElementById('chart-market-bar');
+ if (marketBar && marketBar.getContext) {
+ new Chart(marketBar, {
+ type: 'bar',
+ data: {
+ labels: ['Bayesian / Prob ML', 'A/B Testing / Experimentation'],
+ datasets: [{
+ label: 'Market Size ($B)',
+ data: [1.8, 1.2],
+ backgroundColor: ['#c9a84c', '#9684bf'],
+ borderRadius: 6,
+ barThickness: 52,
+ }],
+ },
+ options: {
+ indexAxis: 'y',
+ responsive: true,
+ plugins: { legend: { display: false } },
+ scales: {
+ x: { beginAtZero: true, grid: { color: '#1c2333' } },
+ y: { grid: { display: false } },
+ },
+ },
+ });
+ }
+
+ /* Market Line */
+ const marketLine = document.getElementById('chart-market-line');
+ if (marketLine && marketLine.getContext) {
+ new Chart(marketLine, {
+ type: 'line',
+ data: {
+ labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+ datasets: [{
+ label: 'Bayesian ML ($B)',
+ data: [1.8, 2.2, 2.7, 3.4, 4.2, 5.1, 6.2],
+ borderColor: '#5b9e6f',
+ backgroundColor: 'rgba(168,184,124,0.10)',
+ fill: true,
+ tension: 0.35,
+ pointBackgroundColor: '#5b9e6f',
+ pointRadius: 5,
+ borderWidth: 2.5,
+ }],
+ },
+ options: {
+ responsive: true,
+ plugins: { legend: { labels: { color: '#e6edf3', padding: 16 } } },
+ scales: {
+ y: { beginAtZero: true, grid: { color: '#1c2333' } },
+ x: { grid: { color: '#1c2333' } },
+ },
+ },
+ });
+ }
+
+ chartsInitialised = true;
+}
+
+/* Initialise charts if benchmarks or market tab is the first active */
+initCharts();
+
+</script>
+<nav class="chapter-nav">
+ <a href="autonomous-ai.html"><span>&larr;</span><div><small>Previous</small>Autonomous AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="cognitive-neuro-symbolic-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Cognitive / Neuro-Symbolic AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

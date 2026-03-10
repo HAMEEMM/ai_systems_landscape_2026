@@ -1,0 +1,4240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predictive / Discriminative AI — Interactive Architecture Chart (2026)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+ <span class="theme-toggle-icon" id="themeIcon">&#9790;</span>
+ <span class="theme-toggle-label" id="themeLabel">Dark</span>
+</button>
+<a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
+
+<header class="hero">
+ <h1>Predictive / Discriminative AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Predictive AI — the ML pipeline, 8-layer stack, classification/regression/forecasting, gradient boosting, benchmarks, market data, and more.</p>
+ <span class="reading-time">~63 min read &middot; Interactive Reference</span>
+ <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
+ <p class="author" style="color:var(--text2);font-weight:400;font-size:0.88rem;margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
+ <p style="margin-top:12px;"><a href="../publications/14-predictive-discriminative-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+</header>
+
+<nav class="nav-bar" id="nav">
+ <button class="active" data-tab="pipeline">ML Pipeline</button>
+ <button data-tab="stack">8-Layer Stack</button>
+ <button data-tab="subtypes">Sub-Types</button>
+ <button data-tab="architectures">Core Architectures</button>
+ <button data-tab="tools">Tools &amp; Frameworks</button>
+ <button data-tab="usecases">Use Cases</button>
+ <button data-tab="benchmarks">Benchmarks</button>
+ <button data-tab="market">Market Data</button>
+ <button data-tab="risks">Risks</button>
+ <button data-tab="glossary">Glossary</button>
+ <button data-tab="regulation">Regulation</button>
+ <button data-tab="mlops">MLOps</button>
+ <button data-tab="automl">AutoML</button>
+ <button data-tab="deepdives">Deep Dives</button>
+ <button data-tab="overview">Overview</button>
+<button data-tab="infographics">Infographics</button>
+</nav>
+
+<!-- ═══ ML PIPELINE ═══ -->
+<div class="section active" id="sec-pipeline">
+ <h2>ML Pipeline</h2>
+ <p class="desc">The end-to-end machine learning pipeline for predictive / discriminative AI — from problem definition through monitoring and retraining.</p>
+ <div class="pipeline">
+ <div class="step" style="border-color:var(--accent)"><h4 class="c-blue">1. Problem Definition</h4><p>Define target, success metrics, constraints</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent2)"><h4 class="c-green">2. Data Collection</h4><p>Gather training data from DBs, APIs, logs</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent3)"><h4 class="c-purple">3. Data Cleaning / EDA</h4><p>Handle missing values, outliers, distributions</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent4)"><h4 class="c-orange">4. Feature Engineering</h4><p>Transform, encode, create informative features</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent5)"><h4 class="c-red">5. Model Selection</h4><p>Choose algorithm family, baseline models</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent6)"><h4 style="color:var(--accent6)">6. Training</h4><p>Fit model, tune hyperparameters, validate</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent2)"><h4 class="c-green">7. Evaluation</h4><p>Cross-val, hold-out, precision/recall, AUC</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent3)"><h4 class="c-purple">8. Deployment</h4><p>REST/gRPC API, batch scoring, edge deploy</p></div><span class="arrow">→</span>
+ <div class="step" style="border-color:var(--accent)"><h4 class="c-blue">9. Monitoring / Retrain</h4><p>Drift detection, alerts, scheduled retraining</p></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-pipeline')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-pipeline">
+<h3>How Predictive AI Works — The ML Pipeline</h3>
+<p>Predictive AI systems follow a structured pipeline from raw data to deployed prediction:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────┐
+│ PREDICTIVE AI PIPELINE │
+│ │
+│ 1. DATA 2. FEATURES 3. TRAINING │
+│ ───────────── ────────────── ────────────── │
+│ Collect &amp; Engineer &amp; Fit model to │
+│ label transform labelled data; │
+│ training data input variables minimise loss │
+│ │
+│ 4. EVALUATION 5. DEPLOYMENT 6. MONITORING │
+│ ───────────── ────────────── ────────────── │
+│ Measure Serve predictions Monitor drift, │
+│ accuracy, via API or accuracy, and │
+│ precision, AUC batch pipeline data quality │
+│ │
+│ ──────── RETRAIN LOOP: NEW DATA → IMPROVED MODEL ──────── │
+└──────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>The Prediction Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Collection</strong></td>
+<td>Historical labelled examples are gathered (inputs + known correct outputs)</td>
+</tr>
+<tr>
+<td><strong>Preprocessing</strong></td>
+<td>Data is cleaned, normalised, and missing values are handled</td>
+</tr>
+<tr>
+<td><strong>Feature Engineering</strong></td>
+<td>Raw data is transformed into numeric features the model can learn from</td>
+</tr>
+<tr>
+<td><strong>Model Training</strong></td>
+<td>A learning algorithm adjusts its parameters to minimise prediction error on training data</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Model performance is evaluated on a held-out validation set to detect overfitting</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Final performance measurement on a completely unseen test set</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Model is packaged and served via API, batch job, or embedded in an application</td>
+</tr>
+<tr>
+<td><strong>Monitoring</strong></td>
+<td>Prediction accuracy and data distributions are tracked over time in production</td>
+</tr>
+<tr>
+<td><strong>Retraining</strong></td>
+<td>Model is periodically updated with new labelled data as patterns evolve</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Predictive Model Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What It Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Learning Rate</strong></td>
+<td>How aggressively the model updates weights during training</td>
+</tr>
+<tr>
+<td><strong>Number of Estimators</strong></td>
+<td>Number of trees in ensemble methods (Random Forest, XGBoost)</td>
+</tr>
+<tr>
+<td><strong>Max Depth</strong></td>
+<td>Maximum depth of decision trees; controls model complexity</td>
+</tr>
+<tr>
+<td><strong>Regularisation (L1/L2)</strong></td>
+<td>Penalises model complexity to prevent overfitting</td>
+</tr>
+<tr>
+<td><strong>Threshold</strong></td>
+<td>Classification probability cutoff (e.g., flag fraud if P &gt; 0.7)</td>
+</tr>
+<tr>
+<td><strong>Class Weights</strong></td>
+<td>Adjust training emphasis on minority classes in imbalanced datasets</td>
+</tr>
+<tr>
+<td><strong>Feature Importance</strong></td>
+<td>Ranking of input variables by their contribution to predictions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<div class="did-you-know-section">
+ <h3>Did You Know?</h3>
+ <div class="dyk-container">
+ <div class="dyk-card">
+ <span class="dyk-icon">1</span>
+ <p>Random forests remain the most-used ML algorithm in Kaggle competitions, despite deep learning advances.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">2</span>
+ <p>XGBoost's gradient boosting approach won more Kaggle competitions than any other single algorithm between 2015-2020.</p>
+ </div>
+ <div class="dyk-card">
+ <span class="dyk-icon">3</span>
+ <p>Logistic regression, invented in 1958, still powers billions of real-time ad-targeting decisions daily.</p>
+ </div>
+ </div>
+</div>
+
+<!-- ═══ KNOWLEDGE QUIZ ═══ -->
+<div class="quiz-section">
+ <h3>Knowledge Check</h3>
+ <p class="quiz-subtitle">Test your understanding — select the best answer for each question.</p>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q1.</strong> What does a discriminative model learn?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">The joint distribution P(X,Y)</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">The decision boundary P(Y|X)</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">How to generate new data</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">The marginal distribution P(X)</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q2.</strong> Which algorithm uses an ensemble of decision trees with boosting?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">K-Nearest Neighbours</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">XGBoost</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Naive Bayes</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Principal Component Analysis</button>
+ <p class="quiz-feedback"></p>
+ </div>
+ <div class="quiz-question">
+ <p class="quiz-q"><strong>Q3.</strong> What metric measures the area under the ROC curve?</p>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">F1 Score</button>
+ <button class="quiz-option" data-correct="true" onclick="checkAnswer(this)">AUC-ROC</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Mean Squared Error</button>
+ <button class="quiz-option" data-correct="false" onclick="checkAnswer(this)">R-squared</button>
+ <p class="quiz-feedback"></p>
+ </div>
+</div>
+</div>
+
+<!-- ═══ 8-LAYER STACK ═══ -->
+<div class="section" id="sec-stack">
+ <h2>The Predictive AI Stack — 8 Layers</h2>
+ <p class="desc">Click any layer to expand details about the components and technologies at each level of the predictive ML stack.</p>
+ <div class="stack-layers">
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-blue c-blue">8</span><span class="layer-title">Monitoring &amp; Drift Detection</span><span class="expand-icon">▼</span>
+</div><div class="layer-detail">Feature drift detection, prediction drift alerts, data quality monitoring, model performance dashboards, automated retraining triggers.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-green c-green">7</span><span class="layer-title">Model Serving</span><span class="expand-icon">▼</span></div><div class="layer-detail">REST/gRPC APIs, batch scoring pipelines, edge inference, model versioning, A/B serving, canary deployments, latency optimization.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-purple c-purple">6</span><span class="layer-title">Evaluation &amp; Validation</span><span class="expand-icon">▼</span></div><div class="layer-detail">K-fold cross-validation, stratified hold-out sets, A/B testing, champion-challenger evaluation, fairness audits, calibration checks.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-orange c-orange">5</span><span class="layer-title">Model Training</span><span class="expand-icon">▼</span></div><div class="layer-detail">Gradient descent optimization, hyperparameter tuning (grid, random, Bayesian), AutoML pipelines, distributed training, early stopping.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-red c-red">4</span><span class="layer-title">Feature Engineering</span><span class="expand-icon">▼</span></div><div class="layer-detail">Numerical transformations, categorical encoding, text embeddings, feature crosses, feature stores for online/offline serving, automated feature generation.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-blue c-blue">3</span><span class="layer-title">Data Processing</span><span class="expand-icon">▼</span></div><div class="layer-detail">ETL/ELT pipelines, data cleaning, missing value imputation, normalisation, standardisation, outlier handling, data versioning.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-green c-green">2</span><span class="layer-title">Data Storage</span><span class="expand-icon">▼</span></div><div class="layer-detail">Data lakes (S3, GCS), data warehouses (Snowflake, BigQuery), feature stores (Feast, Tecton), vector databases, Delta Lake / Iceberg.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-purple c-purple">1</span><span class="layer-title">Data Sources</span><span class="expand-icon">▼</span></div><div class="layer-detail">Transactional databases, application logs, event streams (Kafka), REST/GraphQL APIs, IoT sensors, third-party data providers.</div></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-stack')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-stack">
+<h3>The Predictive AI Stack — 8 Layers</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Data &amp; Label Infrastructure</strong></td>
+<td>Data collection, labelling pipelines, annotation tooling, data warehouses</td>
+</tr>
+<tr>
+<td><strong>2. Feature Engineering &amp; Stores</strong></td>
+<td>Feature computation, transformation, storage, and serving infrastructure</td>
+</tr>
+<tr>
+<td><strong>3. Model Training Infrastructure</strong></td>
+<td>GPU/CPU compute, distributed training, experiment tracking</td>
+</tr>
+<tr>
+<td><strong>4. Model Development Frameworks</strong></td>
+<td>scikit-learn, XGBoost, TensorFlow, PyTorch, and the ML ecosystem</td>
+</tr>
+<tr>
+<td><strong>5. AutoML &amp; Model Selection</strong></td>
+<td>Automated architecture search, hyperparameter optimisation, no-code ML</td>
+</tr>
+<tr>
+<td><strong>6. Model Registry &amp; Versioning</strong></td>
+<td>Storing, versioning, and managing trained model artefacts</td>
+</tr>
+<tr>
+<td><strong>7. Deployment &amp; Serving</strong></td>
+<td>Real-time inference endpoints, batch prediction, embedded ML</td>
+</tr>
+<tr>
+<td><strong>8. Monitoring, Observability &amp; Retraining</strong></td>
+<td>Drift detection, data quality monitoring, automated retraining pipelines</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ SUB-TYPES ═══ -->
+<div class="section" id="sec-subtypes">
+ <h2>Sub-Types of Predictive / Discriminative AI</h2>
+ <p class="desc">Fifteen distinct prediction paradigms — from binary classification to zero-shot learning.</p>
+ <div class="cards cards-3">
+ <div class="card"><span class="badge bg-blue c-blue">Classification</span><h3>Binary Classification</h3><p>Spam/not-spam, fraud/legit, churn/retain. Core methods: logistic regression, SVM, gradient boosting.</p>
+</div>
+ <div class="card"><span class="badge bg-green c-green">Classification</span><h3>Multi-Class Classification</h3><p>Image recognition, named entity recognition. Core methods: softmax, random forest, deep neural networks.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Classification</span><h3>Multi-Label Classification</h3><p>Document tagging, scene annotation. Multiple labels per instance; binary relevance, classifier chains.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Regression</span><h3>Regression</h3><p>House prices, demand forecasting, salary prediction. Linear, polynomial, neural regression models.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Forecasting</span><h3>Time-Series Forecasting</h3><p>Sales, weather, energy demand. ARIMA, Prophet, N-BEATS, temporal fusion transformers.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Detection</span><h3>Anomaly Detection</h3><p>Fraud, intrusion, defect detection. Isolation forest, autoencoders, one-class SVM.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Ranking</span><h3>Ranking</h3><p>Search results, recommendations. LambdaMART, RankNet, listwise learning-to-rank.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Survival</span><h3>Survival Analysis</h3><p>Churn prediction, reliability engineering. Cox proportional hazards, Kaplan-Meier estimator.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Vision</span><h3>Object Detection</h3><p>Bounding box localisation. YOLO, Faster R-CNN, DETR, anchor-free detectors.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Vision</span><h3>Image Classification</h3><p>Scene &amp; object categorisation. CNN, Vision Transformer (ViT), EfficientNet.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Sequence</span><h3>Sequence Labelling</h3><p>NER, POS tagging, slot filling. CRF, BiLSTM-CRF, token-level transformers.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Structured</span><h3>Structured Prediction</h3><p>Parsing, semantic segmentation. Energy-based models, graph neural networks.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Calibration</span><h3>Calibrated Prediction</h3><p>Risk scoring with reliable probabilities. Platt scaling, isotonic regression, temperature scaling.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Ordinal</span><h3>Ordinal Regression</h3><p>Ratings, severity levels, ordered categories. Proportional odds model, threshold-based approaches.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Few-Shot</span><h3>Zero-Shot / Few-Shot Classification</h3><p>Generalise with minimal labels. CLIP, prompt-tuning, prototypical networks, meta-learning.</p></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-subtypes">
+<h3>Sub-Types by Task</h3>
+<h3>Classification</h3>
+<p>Assigns each input to one of a fixed set of discrete categories.</p>
+<table>
+<thead>
+<tr>
+<th>Classification Type</th>
+<th>What It Does</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binary Classification</strong></td>
+<td>Predicts one of two classes (positive/negative)</td>
+<td>Fraud / not fraud; spam / not spam; malignant / benign</td>
+</tr>
+<tr>
+<td><strong>Multi-Class Classification</strong></td>
+<td>Predicts one of three or more classes</td>
+<td>Image category (cat/dog/bird); sentiment (positive/neutral/negative)</td>
+</tr>
+<tr>
+<td><strong>Multi-Label Classification</strong></td>
+<td>Assigns multiple labels simultaneously</td>
+<td>Topic tagging (news article tagged finance + politics + AI)</td>
+</tr>
+<tr>
+<td><strong>Ordinal Classification</strong></td>
+<td>Predicts ordered categories</td>
+<td>Star ratings (1–5); severity scores (mild/moderate/severe)</td>
+</tr>
+<tr>
+<td><strong>Hierarchical Classification</strong></td>
+<td>Predicts within a category hierarchy</td>
+<td>Product taxonomy; medical ICD coding</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real-World Examples:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Classification Task</th>
+<th>Model Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email</td>
+<td>Spam detection</td>
+<td>Naive Bayes / XGBoost</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>Tumour malignancy prediction</td>
+<td>CNN / XGBoost</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Loan default prediction</td>
+<td>Logistic Regression / LightGBM</td>
+</tr>
+<tr>
+<td>E-Commerce</td>
+<td>Product category assignment</td>
+<td>BERT / XGBoost</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Intrusion detection</td>
+<td>Random Forest / DNN</td>
+</tr>
+<tr>
+<td>HR</td>
+<td>Resume screening</td>
+<td>BERT / Logistic Regression</td>
+</tr>
+</tbody>
+</table>
+<h3>Regression</h3>
+<p>Predicts a continuous numeric value from input features.</p>
+<table>
+<thead>
+<tr>
+<th>Regression Type</th>
+<th>What It Does</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linear Regression</strong></td>
+<td>Models a linear relationship between inputs and output</td>
+<td>Housing price estimation</td>
+</tr>
+<tr>
+<td><strong>Polynomial Regression</strong></td>
+<td>Fits curved relationships</td>
+<td>Non-linear growth curves</td>
+</tr>
+<tr>
+<td><strong>Ridge / Lasso Regression</strong></td>
+<td>Regularised linear regression</td>
+<td>High-dimensional feature sets</td>
+</tr>
+<tr>
+<td><strong>Gradient Boosting Regression</strong></td>
+<td>Ensemble regression for non-linear relationships</td>
+<td>Demand forecasting, revenue prediction</td>
+</tr>
+<tr>
+<td><strong>Neural Regression</strong></td>
+<td>Deep learning for complex regression tasks</td>
+<td>Energy consumption, stock price targets</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real-World Examples:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Regression Task</th>
+<th>Typical Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real Estate</td>
+<td>Property price prediction</td>
+<td>XGBoost / LightGBM</td>
+</tr>
+<tr>
+<td>Retail</td>
+<td>Sales volume forecasting</td>
+<td>LightGBM / LSTM</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Portfolio return estimation</td>
+<td>Ridge Regression / DNN</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>Electricity demand prediction</td>
+<td>Prophet / LSTM</td>
+</tr>
+<tr>
+<td>Manufacturing</td>
+<td>Equipment remaining useful life</td>
+<td>Random Forest / XGBoost</td>
+</tr>
+</tbody>
+</table>
+<h3>Anomaly Detection</h3>
+<p>Identifies observations that deviate significantly from expected patterns.</p>
+<table>
+<thead>
+<tr>
+<th>Anomaly Type</th>
+<th>What It Does</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Point Anomaly</strong></td>
+<td>A single value is abnormal relative to the rest</td>
+<td>Fraudulent credit card transaction</td>
+</tr>
+<tr>
+<td><strong>Contextual Anomaly</strong></td>
+<td>A value is abnormal in context but not globally</td>
+<td>Normal temperature reading in wrong season</td>
+</tr>
+<tr>
+<td><strong>Collective Anomaly</strong></td>
+<td>A sequence of values together is abnormal</td>
+<td>Network intrusion pattern</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Anomaly Detection Methods:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Isolation Forest</strong></td>
+<td>Isolates anomalies via random decision trees; anomalies are easier to isolate</td>
+<td>General-purpose tabular anomaly detection</td>
+</tr>
+<tr>
+<td><strong>One-Class SVM</strong></td>
+<td>Learns the boundary of normal data; flags anything outside</td>
+<td>High-dimensional feature spaces</td>
+</tr>
+<tr>
+<td><strong>Autoencoder</strong></td>
+<td>Learns to reconstruct normal data; high reconstruction error = anomaly</td>
+<td>Complex, unstructured data; network traffic</td>
+</tr>
+<tr>
+<td><strong>Statistical Methods (Z-score, IQR)</strong></td>
+<td>Flags values beyond statistical thresholds</td>
+<td>Simple univariate time-series monitoring</td>
+</tr>
+<tr>
+<td><strong>LSTM Anomaly Detection</strong></td>
+<td>Learns normal temporal patterns; flags deviations</td>
+<td>Time-series: log monitoring, IoT sensor data</td>
+</tr>
+<tr>
+<td><strong>DBSCAN</strong></td>
+<td>Density-based clustering; outliers are unclustered points</td>
+<td>Spatial anomalies, customer behaviour</td>
+</tr>
+</tbody>
+</table>
+<h3>Ranking &amp; Recommendation</h3>
+<p>Orders or suggests items based on predicted relevance or preference.</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>How It Works</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collaborative Filtering</strong></td>
+<td>Finds users with similar behaviour; recommends what they liked</td>
+<td>Netflix, Spotify, Amazon</td>
+</tr>
+<tr>
+<td><strong>Content-Based Filtering</strong></td>
+<td>Recommends items similar to what the user previously liked</td>
+<td>News recommendation, YouTube</td>
+</tr>
+<tr>
+<td><strong>Hybrid Recommendation</strong></td>
+<td>Combines collaborative and content-based signals</td>
+<td>Most modern systems (Netflix, Spotify)</td>
+</tr>
+<tr>
+<td><strong>Matrix Factorisation</strong></td>
+<td>Decomposes user-item interaction matrix into latent factors</td>
+<td>Classic recommendation baseline (SVD)</td>
+</tr>
+<tr>
+<td><strong>Learning to Rank (LTR)</strong></td>
+<td>Trains a model to order results by predicted relevance</td>
+<td>Google Search, Bing, e-commerce search</td>
+</tr>
+<tr>
+<td><strong>Two-Tower Models</strong></td>
+<td>Separate encoder towers for user and item; dot-product similarity</td>
+<td>YouTube, TikTok, Pinterest at scale</td>
+</tr>
+<tr>
+<td><strong>Deep Learning Recommendation Models (DLRM)</strong></td>
+<td>Deep neural networks with sparse and dense features</td>
+<td>Meta's DLRM; industry-standard at scale</td>
+</tr>
+</tbody>
+</table>
+<h3>Time-Series Forecasting</h3>
+<p>Projects future values based on historical temporal data.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ARIMA / SARIMA</strong></td>
+<td>Statistical autoregressive integrated moving average models</td>
+<td>Univariate, stationary time series</td>
+</tr>
+<tr>
+<td><strong>Prophet (Meta)</strong></td>
+<td>Additive model with trend, seasonality, and holiday effects</td>
+<td>Business metrics; missing data tolerant</td>
+</tr>
+<tr>
+<td><strong>Exponential Smoothing</strong></td>
+<td>Weighted average of past observations; higher weight to recent data</td>
+<td>Short-horizon demand forecasting</td>
+</tr>
+<tr>
+<td><strong>LSTM / GRU</strong></td>
+<td>Recurrent neural networks that learn long-range temporal dependencies</td>
+<td>Complex, multivariate sequences</td>
+</tr>
+<tr>
+<td><strong>Temporal Fusion Transformer (TFT)</strong></td>
+<td>Transformer for multi-horizon, multivariate forecasting</td>
+<td>Long-horizon forecasting with covariates</td>
+</tr>
+<tr>
+<td><strong>N-BEATS / N-HiTS</strong></td>
+<td>Pure neural architectures for time series; competitive with transformers</td>
+<td>General time-series forecasting</td>
+</tr>
+<tr>
+<td><strong>Chronos (Amazon)</strong></td>
+<td>Foundation model for zero-shot time-series forecasting</td>
+<td>Transfer learning across time-series tasks</td>
+</tr>
+<tr>
+<td><strong>TimesFM (Google)</strong></td>
+<td>Large pre-trained time-series forecasting model</td>
+<td>Few-shot and zero-shot forecasting</td>
+</tr>
+<tr>
+<td><strong>Moirai (Salesforce)</strong></td>
+<td>Universal time-series forecasting foundation model</td>
+<td>Multi-domain forecasting</td>
+</tr>
+</tbody>
+</table>
+<h3>Risk Scoring</h3>
+<p>Assigns a probability or score representing the likelihood of a specific risk event.</p>
+<table>
+<thead>
+<tr>
+<th>Risk Scoring Type</th>
+<th>What It Predicts</th>
+<th>Real-World Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credit Risk</strong></td>
+<td>Probability of loan default</td>
+<td>FICO Score, VantageScore, bank internal models</td>
+</tr>
+<tr>
+<td><strong>Fraud Risk</strong></td>
+<td>Probability of fraudulent transaction</td>
+<td>Visa Advanced AI, Stripe Radar, PayPal AI</td>
+</tr>
+<tr>
+<td><strong>Churn Risk</strong></td>
+<td>Probability a customer will cancel or leave</td>
+<td>Salesforce Einstein Churn, Gainsight AI</td>
+</tr>
+<tr>
+<td><strong>Health Risk</strong></td>
+<td>Patient probability of adverse health event</td>
+<td>Sepsis prediction, readmission risk (EHR models)</td>
+</tr>
+<tr>
+<td><strong>Insurance Risk</strong></td>
+<td>Probability of claim; premium pricing</td>
+<td>Progressive Snapshot AI, Lemonade AI</td>
+</tr>
+<tr>
+<td><strong>Cyber Risk</strong></td>
+<td>Likelihood of security breach or vulnerability</td>
+<td>CrowdStrike Risk Score, Tenable</td>
+</tr>
+<tr>
+<td><strong>Operational Risk</strong></td>
+<td>Probability of equipment failure or process breakdown</td>
+<td>Predictive maintenance scores (GE, Siemens)</td>
+</tr>
+</tbody>
+</table>
+<h3>Natural Language Processing (Discriminative NLP)</h3>
+<p>Classifying, extracting, or structuring information from text — without generating new content.</p>
+<table>
+<thead>
+<tr>
+<th>NLP Task</th>
+<th>What It Does</th>
+<th>Models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sentiment Analysis</strong></td>
+<td>Classify text sentiment (positive/negative/neutral)</td>
+<td>BERT, RoBERTa, DistilBERT</td>
+</tr>
+<tr>
+<td><strong>Named Entity Recognition (NER)</strong></td>
+<td>Identify and label entities (person, org, location)</td>
+<td>BERT-NER, spaCy, Flair</td>
+</tr>
+<tr>
+<td><strong>Text Classification</strong></td>
+<td>Assign text to predefined categories</td>
+<td>BERT, XGBoost + TF-IDF</td>
+</tr>
+<tr>
+<td><strong>Intent Classification</strong></td>
+<td>Identify user intent in conversational inputs</td>
+<td>BERT, Dialogflow, Amazon Lex</td>
+</tr>
+<tr>
+<td><strong>Relation Extraction</strong></td>
+<td>Identify relationships between entities in text</td>
+<td>BERT-based RE models</td>
+</tr>
+<tr>
+<td><strong>Text Summarisation (Extractive)</strong></td>
+<td>Select and rank existing sentences from document</td>
+<td>BERT-based, TextRank</td>
+</tr>
+<tr>
+<td><strong>Question Answering (Extractive)</strong></td>
+<td>Extract the answer span from a context document</td>
+<td>BERT, RoBERTa (SQuAD)</td>
+</tr>
+<tr>
+<td><strong>Toxicity Detection</strong></td>
+<td>Identify harmful, abusive, or policy-violating content</td>
+<td>Perspective API, OpenAI Moderation API</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ CORE ARCHITECTURES ═══ -->
+<div class="section" id="sec-architectures">
+ <h2>Core Architectures</h2>
+ <p class="desc">The fundamental model families powering predictive AI — from interpretable baselines to automated ensembles.</p>
+ <div class="cards cards-2">
+ <div class="card"><span class="badge bg-blue c-blue">Ensemble</span><h3>Gradient Boosting</h3><p>XGBoost, LightGBM, CatBoost. Sequential weak learners correcting predecessors. Tabular SOTA; dominant in competitions and production.</p>
+</div>
+ <div class="card"><span class="badge bg-green c-green">Ensemble</span><h3>Random Forest</h3><p>Bagging of decision trees with feature randomisation. Robust, minimal tuning, strong baseline for classification and regression.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Deep Learning</span><h3>Deep Neural Networks</h3><p>MLP, CNN, Transformer architectures. Learn representations end-to-end; excel on vision, sequence, and large-scale tabular data.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Kernel</span><h3>Support Vector Machines</h3><p>Kernel trick for non-linear boundaries. Max-margin classifier; effective on small-to-medium datasets with careful tuning.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Linear</span><h3>Logistic / Linear Regression</h3><p>Simple, interpretable, and fast inference. Excellent baseline; widely used in regulated industries for explainability.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Instance</span><h3>k-Nearest Neighbours</h3><p>Instance-based lazy learning; no explicit training phase. Predictions via distance metrics; works well with low-dimensional data.</p></div>
+ <div class="card"><span class="badge bg-green c-green">Probabilistic</span><h3>Naive Bayes</h3><p>Probabilistic classifier with independence assumption. Fast text classification; strong baseline for NLP tasks.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">AutoML</span><h3>AutoML Ensembles</h3><p>Auto-sklearn, H2O AutoML, AutoGluon. Automated model selection, hyperparameter tuning, and stacking for optimal performance.</p></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-architectures')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-architectures">
+<h3>Core Architectures & Algorithms</h3>
+<h3>Gradient Boosted Trees (GBT)</h3>
+<p>The <strong>dominant algorithm</strong> for structured / tabular data in production.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Builds an ensemble of decision trees sequentially; each tree corrects the errors of its predecessors</td>
+</tr>
+<tr>
+<td><strong>Why It Dominates</strong></td>
+<td>Handles mixed data types, missing values, and non-linear relationships without extensive preprocessing</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Consistently outperforms deep learning on tabular data; fast training and inference</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Fraud detection, credit scoring, churn prediction, ranking, any structured data task</td>
+</tr>
+<tr>
+<td><strong>Top Implementations</strong></td>
+<td>XGBoost, LightGBM, CatBoost</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key GBT Variants:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Introduced By</th>
+<th>Key Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XGBoost</strong></td>
+<td>Tianqi Chen, 2014</td>
+<td>Regularised boosting; tree pruning; GPU support; Kaggle champion</td>
+</tr>
+<tr>
+<td><strong>LightGBM</strong></td>
+<td>Microsoft, 2017</td>
+<td>Leaf-wise growth; histogram binning; fastest large-dataset training</td>
+</tr>
+<tr>
+<td><strong>CatBoost</strong></td>
+<td>Yandex, 2017</td>
+<td>Native categorical feature handling; ordered boosting; minimal preprocessing</td>
+</tr>
+<tr>
+<td><strong>HistGradientBoosting</strong></td>
+<td>scikit-learn</td>
+<td>Native sklearn implementation; competitive at scale</td>
+</tr>
+</tbody>
+</table>
+<h3>Random Forest</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Builds many uncorrelated decision trees in parallel; aggregates predictions by majority vote or averaging</td>
+</tr>
+<tr>
+<td><strong>Why It Works</strong></td>
+<td>Reduces variance through averaging; robust to outliers and noise</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Highly reliable out-of-the-box; good baseline for any classification or regression task</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Slower inference than GBT; less accurate on complex patterns</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Medical diagnosis, risk scoring, feature selection, general-purpose classification</td>
+</tr>
+</tbody>
+</table>
+<h3>Logistic Regression</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Learns a linear decision boundary; outputs probabilities via sigmoid/softmax function</td>
+</tr>
+<tr>
+<td><strong>Why It Persists</strong></td>
+<td>Fast, interpretable, probabilistically calibrated, and robust with regularisation</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Fully transparent; coefficients directly interpretable as feature contributions</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Credit scoring (FICO), medical risk stratification, marketing propensity models</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Cannot capture non-linear relationships without feature engineering</td>
+</tr>
+</tbody>
+</table>
+<h3>Support Vector Machines (SVMs)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Finds the maximum-margin hyperplane separating classes in high-dimensional space</td>
+</tr>
+<tr>
+<td><strong>Kernel Trick</strong></td>
+<td>Projects data into higher dimensions where linear separation becomes possible</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>Effective in high-dimensional spaces; memory-efficient; theoretically well-grounded</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Text classification, bioinformatics, image classification (pre-deep learning)</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Does not scale well to large datasets; hyperparameter tuning is critical</td>
+</tr>
+</tbody>
+</table>
+<h3>Deep Neural Networks (DNNs)</h3>
+<p>The <strong>dominant architecture</strong> for unstructured data — images, text, audio, and video.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Learns hierarchical representations through multiple layers of non-linear transformations</td>
+</tr>
+<tr>
+<td><strong>Why It Dominates Unstructured Data</strong></td>
+<td>Automatically learns features from raw data; scales with data volume and compute</td>
+</tr>
+<tr>
+<td><strong>Key Advantage</strong></td>
+<td>State-of-the-art on image classification, NLP classification, speech recognition</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Medical imaging, fraud detection on sequences, NLP classification, recommendation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key DNN Architectures for Prediction:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>Best For</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CNN (Convolutional Neural Network)</strong></td>
+<td>Image classification, detection, segmentation</td>
+<td>ResNet, EfficientNet, ViT</td>
+</tr>
+<tr>
+<td><strong>RNN / LSTM</strong></td>
+<td>Sequential data, time-series prediction</td>
+<td>Demand forecasting, anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Transformer (Encoder-only)</strong></td>
+<td>Text classification, NLP tasks</td>
+<td>BERT, RoBERTa, DeBERTa</td>
+</tr>
+<tr>
+<td><strong>Tabular DNN</strong></td>
+<td>Large-scale structured data</td>
+<td>TabNet, NODE, FT-Transformer</td>
+</tr>
+<tr>
+<td><strong>Graph Neural Network (GNN)</strong></td>
+<td>Relational and graph-structured data</td>
+<td>GraphSAGE, GAT, fraud networks</td>
+</tr>
+</tbody>
+</table>
+<h3>Bayesian Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What It Does</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Naive Bayes</strong></td>
+<td>Applies Bayes' theorem with feature independence assumption</td>
+<td>Text classification, spam filtering, fast baseline</td>
+</tr>
+<tr>
+<td><strong>Bayesian Networks</strong></td>
+<td>Probabilistic graphical model of variable relationships</td>
+<td>Medical diagnosis, causal reasoning</td>
+</tr>
+<tr>
+<td><strong>Gaussian Processes</strong></td>
+<td>Non-parametric probabilistic predictions with uncertainty estimates</td>
+<td>Small datasets, scientific regression, active learning</td>
+</tr>
+<tr>
+<td><strong>Bayesian Optimisation</strong></td>
+<td>Find optimal hyperparameters or model architecture efficiently</td>
+<td>AutoML, neural architecture search</td>
+</tr>
+</tbody>
+</table>
+<h3>K-Nearest Neighbours (KNN)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Classifies a new point based on the majority label of its k nearest neighbours</td>
+</tr>
+<tr>
+<td><strong>Advantage</strong></td>
+<td>Non-parametric; no training phase; intuitive</td>
+</tr>
+<tr>
+<td><strong>Limitation</strong></td>
+<td>Slow inference at scale; sensitive to irrelevant features and data scale</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Recommendation systems (collaborative filtering baseline), anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<h3>Architecture Comparison Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Best For</th>
+<th>Tabular Data</th>
+<th>Unstructured Data</th>
+<th>Interpretability</th>
+<th>Training Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XGBoost / LightGBM</strong></td>
+<td>Structured / tabular</td>
+<td>Excellent</td>
+<td>Poor</td>
+<td>Medium</td>
+<td>Very Fast</td>
+</tr>
+<tr>
+<td><strong>Random Forest</strong></td>
+<td>General purpose</td>
+<td>Very Good</td>
+<td>Poor</td>
+<td>Medium</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td><strong>Logistic Regression</strong></td>
+<td>Linear, regulated domains</td>
+<td>Good</td>
+<td>Poor</td>
+<td>Excellent</td>
+<td>Very Fast</td>
+</tr>
+<tr>
+<td><strong>SVM</strong></td>
+<td>High-dimensional sparse</td>
+<td>Good</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Deep Neural Networks</strong></td>
+<td>Unstructured data</td>
+<td>Moderate</td>
+<td>Excellent</td>
+<td>Low</td>
+<td>Slow</td>
+</tr>
+<tr>
+<td><strong>BERT / Transformers</strong></td>
+<td>NLP classification</td>
+<td>Poor</td>
+<td>Excellent (text)</td>
+<td>Low</td>
+<td>Slow</td>
+</tr>
+<tr>
+<td><strong>GNNs</strong></td>
+<td>Graph / relational data</td>
+<td>Moderate</td>
+<td>Excellent (graphs)</td>
+<td>Low</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ TOOLS & FRAMEWORKS ═══ -->
+<div class="section" id="sec-tools">
+ <h2>Tools &amp; Frameworks</h2>
+ <p class="desc">The leading libraries, platforms, and services powering the predictive AI ecosystem.</p>
+ <table class="fw-table">
+ <thead><tr><th>Tool</th><th>Provider</th><th>Focus</th></tr></thead>
+ <tbody>
+ <tr><td>scikit-learn</td><td>Open-source</td><td>Swiss-army knife ML; preprocessing, models, evaluation</td></tr>
+ <tr><td>XGBoost</td><td>DMLC</td><td>Gradient boosting; Kaggle champion; tabular data</td></tr>
+ <tr><td>LightGBM</td><td>Microsoft</td><td>Fast gradient boosting; histogram-based; large datasets</td></tr>
+ <tr><td>CatBoost</td><td>Yandex</td><td>Gradient boosting with native categorical support</td></tr>
+ <tr><td>PyTorch</td><td>Meta</td><td>Deep learning framework; dynamic graphs; research</td></tr>
+ <tr><td>TensorFlow / Keras</td><td>Google</td><td>Production DL framework; TF Serving, TFLite</td></tr>
+ <tr><td>Hugging Face</td><td>Hugging Face</td><td>Transformers hub; fine-tuning; model sharing</td></tr>
+ <tr><td>Amazon SageMaker</td><td>AWS</td><td>End-to-end ML platform; training, deployment, monitoring</td></tr>
+ <tr><td>Vertex AI</td><td>Google</td><td>GCP ML platform; AutoML, pipelines, model registry</td></tr>
+ <tr><td>Azure ML</td><td>Microsoft</td><td>Enterprise ML platform; Designer, SDK, endpoints</td></tr>
+ <tr><td>MLflow</td><td>Databricks</td><td>Experiment tracking, model registry, deployment</td></tr>
+ <tr><td>Feast</td><td>Tecton / LF</td><td>Open-source feature store; online/offline serving</td></tr>
+ <tr><td>Weights &amp; Biases</td><td>W&amp;B</td><td>Experiment tracking, hyperparameter sweeps, artifacts</td></tr>
+ <tr><td>Evidently AI</td><td>Evidently</td><td>ML monitoring; data drift, model quality dashboards</td></tr>
+ </tbody>
+ </table>
+
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-tools')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-tools">
+<h3>Leading Platforms, Frameworks & Tools</h3>
+<h3>Core ML Libraries (Python)</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Purpose</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>scikit-learn</strong></td>
+<td>Comprehensive ML library</td>
+<td>Open-Source (any OS; Python 3.9+; CPU-only)</td>
+<td>Most widely used ML library; 500+ algorithms; consistent API</td>
+</tr>
+<tr>
+<td><strong>XGBoost</strong></td>
+<td>Gradient boosting</td>
+<td>Open-Source (any OS; Python/C++/R; CPU or NVIDIA GPU)</td>
+<td>Kaggle champion; GPU support; regularised boosting</td>
+</tr>
+<tr>
+<td><strong>LightGBM</strong></td>
+<td>Gradient boosting</td>
+<td>Open-Source (any OS; Python/C++/R; CPU or GPU)</td>
+<td>Microsoft; fastest large-scale GBM; leaf-wise growth</td>
+</tr>
+<tr>
+<td><strong>CatBoost</strong></td>
+<td>Gradient boosting</td>
+<td>Open-Source (any OS; Python/C++/R; CPU or NVIDIA GPU)</td>
+<td>Yandex; native categorical handling; minimal preprocessing</td>
+</tr>
+<tr>
+<td><strong>imbalanced-learn</strong></td>
+<td>Imbalanced datasets</td>
+<td>Open-Source (any OS; Python 3.9+; CPU-only)</td>
+<td>SMOTE, ADASYN, and ensemble methods for imbalanced learning</td>
+</tr>
+<tr>
+<td><strong>statsmodels</strong></td>
+<td>Statistical models</td>
+<td>Open-Source (any OS; Python 3.9+; CPU-only)</td>
+<td>ARIMA, OLS, GLM; p-values and confidence intervals</td>
+</tr>
+<tr>
+<td><strong>Optuna</strong></td>
+<td>Hyperparameter optimisation</td>
+<td>Open-Source (any OS; Python 3.8+; CPU; optional DB backend)</td>
+<td>Bayesian search; pruning; distributed; most popular HPO library</td>
+</tr>
+<tr>
+<td><strong>SHAP</strong></td>
+<td>Explainability</td>
+<td>Open-Source (any OS; Python 3.8+; CPU)</td>
+<td>Feature attribution; model-agnostic; integrates with all major models</td>
+</tr>
+</tbody>
+</table>
+<h3>Deep Learning Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maintained By</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PyTorch</strong></td>
+<td>Meta</td>
+<td>Open-Source (any OS; Python; NVIDIA GPU recommended; CUDA 11.8+)</td>
+<td>De facto standard for research and production deep learning</td>
+</tr>
+<tr>
+<td><strong>TensorFlow</strong></td>
+<td>Google</td>
+<td>Open-Source (any OS; Python; CPU or NVIDIA GPU; CUDA 11.8+)</td>
+<td>Production-grade; TF Serving; TFLite for edge deployment</td>
+</tr>
+<tr>
+<td><strong>Keras</strong></td>
+<td>Google</td>
+<td>Open-Source (any OS; Python; runs on TensorFlow backend)</td>
+<td>High-level API on TensorFlow; beginner-friendly</td>
+</tr>
+<tr>
+<td><strong>JAX</strong></td>
+<td>Google</td>
+<td>Open-Source (any OS; Python; TPU / NVIDIA GPU; XLA-accelerated)</td>
+<td>High-performance numerical computing; XLA compilation; growing adoption</td>
+</tr>
+<tr>
+<td><strong>PyTorch Lightning</strong></td>
+<td>Lightning AI</td>
+<td>Open-Source (any OS; Python; inherits PyTorch GPU requirements)</td>
+<td>Structured PyTorch; reduces boilerplate; reproducibility</td>
+</tr>
+<tr>
+<td><strong>Hugging Face Transformers</strong></td>
+<td>Hugging Face</td>
+<td>Open-Source (any OS; Python; CPU or NVIDIA GPU; CUDA 11.8+)</td>
+<td>Pre-trained NLP models; 500k+ model checkpoints; fine-tuning pipeline</td>
+</tr>
+<tr>
+<td><strong>FastAI</strong></td>
+<td>fast.ai</td>
+<td>Open-Source (any OS; Python; inherits PyTorch GPU requirements)</td>
+<td>High-level PyTorch API; excellent for practitioners</td>
+</tr>
+</tbody>
+</table>
+<h3>Time-Series Libraries</h3>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Focus</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prophet</strong></td>
+<td>Business forecasting</td>
+<td>Open-Source (any OS; Python/R; CPU)</td>
+<td>Meta's additive model; handles seasonality and holidays; easy to use</td>
+</tr>
+<tr>
+<td><strong>statsforecast</strong></td>
+<td>Statistical forecasting</td>
+<td>Open-Source (any OS; Python; CPU)</td>
+<td>Fast, scalable implementation of classical statistical models</td>
+</tr>
+<tr>
+<td><strong>neuralforecast</strong></td>
+<td>DL forecasting</td>
+<td>Open-Source (any OS; Python; CPU or NVIDIA GPU)</td>
+<td>LSTM, NBEATS, TFT — production neural forecasting</td>
+</tr>
+<tr>
+<td><strong>Darts</strong></td>
+<td>Universal time-series</td>
+<td>Open-Source (any OS; Python; CPU or GPU)</td>
+<td>Unified interface for statistical, ML, and DL forecasting models</td>
+</tr>
+<tr>
+<td><strong>sktime</strong></td>
+<td>Unified time-series ML</td>
+<td>Open-Source (any OS; Python; CPU)</td>
+<td>Classification, regression, and forecasting under one API</td>
+</tr>
+<tr>
+<td><strong>tsfresh</strong></td>
+<td>Feature extraction</td>
+<td>Open-Source (any OS; Python; CPU)</td>
+<td>Automated time-series feature engineering; 789 features per series</td>
+</tr>
+<tr>
+<td><strong>GluonTS</strong></td>
+<td>Probabilistic forecasting</td>
+<td>Open-Source (any OS; Python; CPU or GPU; Amazon-maintained)</td>
+<td>Amazon; probabilistic deep learning time-series models</td>
+</tr>
+</tbody>
+</table>
+<h3>Cloud ML Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Provider</th>
+<th>Deployment</th>
+<th>Key Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AWS SageMaker</strong></td>
+<td>Amazon</td>
+<td>Cloud (AWS — EC2, S3, ECS; GPU: P4d/P5 instances)</td>
+<td>End-to-end ML platform; AutoML, training, deployment, monitoring; 100+ built-in algorithms</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AI</strong></td>
+<td>Google</td>
+<td>Cloud (GCP — Compute Engine, GCS; GPU: A100/H100 VMs)</td>
+<td>Unified ML platform; AutoML, custom training, Model Garden, Feature Store</td>
+</tr>
+<tr>
+<td><strong>Azure Machine Learning</strong></td>
+<td>Microsoft</td>
+<td>Cloud (Azure — VMs, Blob Storage; GPU: NC/ND series)</td>
+<td>Enterprise MLOps; pipeline automation; responsible AI dashboard; Fabric integration</td>
+</tr>
+<tr>
+<td><strong>Databricks ML</strong></td>
+<td>Databricks</td>
+<td>Cloud (AWS, Azure, GCP — Spark clusters; GPU optional)</td>
+<td>MLflow-native; distributed training; Delta Lake integration; LakeHouse ML</td>
+</tr>
+<tr>
+<td><strong>IBM Watson Studio</strong></td>
+<td>IBM</td>
+<td>Hybrid (IBM Cloud; On-Prem via Cloud Pak for Data on x86/POWER servers)</td>
+<td>Enterprise ML with governance; OpenScale model monitoring</td>
+</tr>
+<tr>
+<td><strong>Oracle OCI ML</strong></td>
+<td>Oracle</td>
+<td>Cloud (Oracle Cloud Infrastructure — OCI Compute; GPU: A100 bare metal)</td>
+<td>Database-native ML; AutoML; integrated with Oracle Cloud analytics</td>
+</tr>
+<tr>
+<td><strong>Snowpark ML</strong></td>
+<td>Snowflake</td>
+<td>Cloud (Snowflake on AWS, Azure, GCP — uses Snowflake warehouses)</td>
+<td>Train and deploy ML models directly in Snowflake without moving data</td>
+</tr>
+</tbody>
+</table>
+<h3>Experiment Tracking &amp; Model Registry</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Deployment</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLflow</strong></td>
+<td>Open-Source / Cloud (self-host any infra; managed on Databricks — AWS, Azure, GCP)</td>
+<td>De facto standard for experiment tracking; model registry; deployment</td>
+</tr>
+<tr>
+<td><strong>Weights &amp; Biases (W&amp;B)</strong></td>
+<td>Cloud (W&amp;B SaaS on AWS / GCP; self-hosted option on any K8s)</td>
+<td>Rich experiment tracking; collaborative; visualisation-first</td>
+</tr>
+<tr>
+<td><strong>Neptune.ai</strong></td>
+<td>Cloud (Neptune SaaS on AWS; self-hosted option)</td>
+<td>Experiment tracking; model registry; research-friendly</td>
+</tr>
+<tr>
+<td><strong>Comet ML</strong></td>
+<td>Cloud (Comet SaaS on AWS; self-hosted option)</td>
+<td>Experiment management; automated insights; enterprise governance</td>
+</tr>
+<tr>
+<td><strong>DVC (Data Version Control)</strong></td>
+<td>Open-Source (any OS; Git-based; stores data on S3, GCS, Azure Blob, or local)</td>
+<td>Version control for data and models; Git-native</td>
+</tr>
+<tr>
+<td><strong>ClearML</strong></td>
+<td>Open-Source / Cloud (self-host Docker/K8s; ClearML Cloud on AWS)</td>
+<td>Full MLOps suite; experiment tracking + orchestration + data management</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ USE CASES ═══ -->
+<div class="section" id="sec-usecases">
+ <h2>Use Cases by Industry</h2>
+ <p class="desc">How predictive / discriminative AI creates value across major industry verticals.</p>
+ <div class="domain-acc">
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Financial Services</span>
+</div><div class="domain-body"><div class="domain-body-inner">Credit scoring and underwriting, real-time fraud detection, algorithmic trading signal generation, insurance pricing and claims prediction, anti-money laundering risk scoring.</div></div></div>
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Healthcare</span></div><div class="domain-body"><div class="domain-body-inner">Disease risk prediction, hospital readmission scoring, medical imaging diagnosis (X-ray, MRI, pathology), drug response prediction, clinical trial patient matching.</div></div></div>
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Retail &amp; E-Commerce</span></div><div class="domain-body"><div class="domain-body-inner">Demand forecasting and inventory optimisation, customer churn prediction, dynamic pricing engines, market basket analysis, next-best-offer recommendations.</div></div></div>
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Manufacturing</span></div><div class="domain-body"><div class="domain-body-inner">Predictive maintenance for equipment failure, quality control and defect detection, yield optimisation, supply chain demand planning, energy consumption forecasting.</div></div></div>
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Marketing &amp; AdTech</span></div><div class="domain-body"><div class="domain-body-inner">Click-through rate (CTR) prediction, customer lifetime value estimation, marketing attribution modelling, audience segmentation and targeting, bid optimisation.</div></div></div>
+ <div class="domain-item" onclick="this.classList.toggle('open')"><div class="domain-header"><span> Cybersecurity</span></div><div class="domain-body"><div class="domain-body-inner">Network intrusion detection, malware classification, phishing email detection, threat scoring and prioritisation, user and entity behaviour analytics (UEBA).</div></div></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-usecases">
+<h3>Industry Use Cases</h3>
+<h3>Financial Services</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credit Scoring</strong></td>
+<td>Predict probability of loan default; determine creditworthiness</td>
+<td>FICO Score, VantageScore, bank internal models</td>
+</tr>
+<tr>
+<td><strong>Fraud Detection</strong></td>
+<td>Real-time classification of payment transactions as fraudulent</td>
+<td>Visa Advanced AI, Stripe Radar, PayPal AI</td>
+</tr>
+<tr>
+<td><strong>Anti-Money Laundering (AML)</strong></td>
+<td>Detect suspicious transaction networks and behaviour patterns</td>
+<td>NICE Actimize, Featurespace ARIC, Oracle Financial Crime</td>
+</tr>
+<tr>
+<td><strong>Algorithmic Trading</strong></td>
+<td>Predict short-term price movements; execute systematic strategies</td>
+<td>Two Sigma, Renaissance Technologies, Citadel ML</td>
+</tr>
+<tr>
+<td><strong>Risk Management</strong></td>
+<td>Estimate market, credit, and operational risk at portfolio level</td>
+<td>BlackRock Aladdin, Bloomberg BAM, internal quant models</td>
+</tr>
+<tr>
+<td><strong>Customer Churn Prediction</strong></td>
+<td>Identify customers likely to close accounts or switch providers</td>
+<td>Salesforce Einstein, Pecan AI, DataRobot</td>
+</tr>
+<tr>
+<td><strong>Insurance Underwriting</strong></td>
+<td>Score individual risk for premium pricing</td>
+<td>Lemonade AI, Progressive Snapshot, Swiss Re models</td>
+</tr>
+<tr>
+<td><strong>Loan Origination</strong></td>
+<td>Automate and optimise loan approval decisions</td>
+<td>Blend, Zest AI, Upstart</td>
+</tr>
+</tbody>
+</table>
+<h3>Healthcare &amp; Life Sciences</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Medical Imaging Diagnosis</strong></td>
+<td>Classify X-rays, CT scans, MRIs, pathology slides</td>
+<td>Viz.ai, Aidoc, Google Health AI, PathAI</td>
+</tr>
+<tr>
+<td><strong>Sepsis Prediction</strong></td>
+<td>Predict sepsis onset hours before clinical deterioration</td>
+<td>Epic Sepsis Model, Dascena, Johns Hopkins AI</td>
+</tr>
+<tr>
+<td><strong>Readmission Risk</strong></td>
+<td>Predict hospital readmission probability within 30 days</td>
+<td>Epic, Optum AI, Health Catalyst</td>
+</tr>
+<tr>
+<td><strong>Disease Progression</strong></td>
+<td>Forecast disease trajectory for chronic conditions</td>
+<td>Flatiron, Tempus, Komodo Health</td>
+</tr>
+<tr>
+<td><strong>Drug Target Identification</strong></td>
+<td>Predict protein-drug binding affinity</td>
+<td>Atomwise, Insilico Medicine, Schrödinger</td>
+</tr>
+<tr>
+<td><strong>Clinical Trial Matching</strong></td>
+<td>Score patient eligibility against trial criteria</td>
+<td>Mendel AI, Deep 6 AI, Transparently AI</td>
+</tr>
+<tr>
+<td><strong>EHR Risk Stratification</strong></td>
+<td>Score patients by risk level for proactive care management</td>
+<td>Health Catalyst, Arcadia, Cotiviti AI</td>
+</tr>
+<tr>
+<td><strong>Pathology AI</strong></td>
+<td>Classify tissue samples for cancer detection</td>
+<td>PathAI, Paige.AI, Lunit</td>
+</tr>
+</tbody>
+</table>
+<h3>Retail &amp; E-Commerce</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Demand Forecasting</strong></td>
+<td>Predict product-level sales volumes across stores and channels</td>
+<td>Amazon Forecast, Walmart AI, Blue Yonder</td>
+</tr>
+<tr>
+<td><strong>Inventory Optimisation</strong></td>
+<td>Set optimal stock levels to balance service and cost</td>
+<td>o9 Solutions, Llamasoft (Coupa), Relex</td>
+</tr>
+<tr>
+<td><strong>Churn Prediction</strong></td>
+<td>Identify at-risk subscribers or repeat customers</td>
+<td>Salesforce Einstein, Amplitude AI, Mixpanel</td>
+</tr>
+<tr>
+<td><strong>Price Optimisation</strong></td>
+<td>Set dynamic prices to maximise revenue</td>
+<td>Pros Holdings, Zilliant, Revionics</td>
+</tr>
+<tr>
+<td><strong>Product Recommendation</strong></td>
+<td>Personalise product discovery for each shopper</td>
+<td>Amazon, Netflix, Shopify AI</td>
+</tr>
+<tr>
+<td><strong>Propensity to Buy</strong></td>
+<td>Score likelihood of purchase for marketing targeting</td>
+<td>Salesforce, HubSpot AI, Amplitude</td>
+</tr>
+<tr>
+<td><strong>Return Prediction</strong></td>
+<td>Forecast product returns for logistics planning</td>
+<td>Internal models at Amazon, Zalando</td>
+</tr>
+<tr>
+<td><strong>Customer Lifetime Value (CLV)</strong></td>
+<td>Predict total future revenue from a customer</td>
+<td>Pecan AI, DataRobot, Salesforce Einstein</td>
+</tr>
+</tbody>
+</table>
+<h3>Marketing &amp; Advertising</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lead Scoring</strong></td>
+<td>Predict which leads are most likely to convert</td>
+<td>Salesforce Einstein Lead Score, HubSpot AI, 6sense</td>
+</tr>
+<tr>
+<td><strong>Customer Segmentation</strong></td>
+<td>Cluster customers by behaviour and value</td>
+<td>Adobe Experience Platform, Segment, Amplitude</td>
+</tr>
+<tr>
+<td><strong>Campaign Response Prediction</strong></td>
+<td>Predict which customers will respond to a campaign</td>
+<td>Persado, Optimove, Braze AI</td>
+</tr>
+<tr>
+<td><strong>Ad Click-Through Rate (CTR) Prediction</strong></td>
+<td>Score probability of a user clicking an ad</td>
+<td>Google Ads AI, Meta Ads AI, The Trade Desk</td>
+</tr>
+<tr>
+<td><strong>Attribution Modelling</strong></td>
+<td>Predict the contribution of each touchpoint to conversion</td>
+<td>Rockerbox, Northbeam, Measured</td>
+</tr>
+<tr>
+<td><strong>Email Send-Time Optimisation</strong></td>
+<td>Predict the best time to send email to each user</td>
+<td>Salesforce Marketing Cloud AI, Klaviyo AI</td>
+</tr>
+<tr>
+<td><strong>Uplift Modelling</strong></td>
+<td>Predict incremental impact of an intervention (not just response)</td>
+<td>Pylift, CausalML, internal models</td>
+</tr>
+</tbody>
+</table>
+<h3>Manufacturing &amp; Supply Chain</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Predictive Maintenance</strong></td>
+<td>Predict equipment failure before it occurs</td>
+<td>Siemens MindSphere, GE Predix, IBM Maximo</td>
+</tr>
+<tr>
+<td><strong>Quality Control / Defect Detection</strong></td>
+<td>Classify manufactured goods for defects</td>
+<td>Cognex AI, Landing AI, NVIDIA Metropolis</td>
+</tr>
+<tr>
+<td><strong>Supply Chain Risk Scoring</strong></td>
+<td>Predict supplier disruption probability</td>
+<td>Resilinc AI, Riskmethods, o9 Solutions</td>
+</tr>
+<tr>
+<td><strong>Production Yield Prediction</strong></td>
+<td>Forecast production output and waste</td>
+<td>AspenTech, Rockwell AI, Sight Machine</td>
+</tr>
+<tr>
+<td><strong>Energy Consumption Forecasting</strong></td>
+<td>Predict plant-level energy use for optimisation</td>
+<td>EnerNOC AI, AutoGrid, SparkCognition</td>
+</tr>
+<tr>
+<td><strong>Delivery Time Prediction</strong></td>
+<td>Estimate shipment delivery windows</td>
+<td>Project44, FourKites, Amazon SWA</td>
+</tr>
+</tbody>
+</table>
+<h3>Human Resources &amp; Talent</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Candidate Screening</strong></td>
+<td>Score résumés against job requirements</td>
+<td>HireVue AI, Pymetrics, Eightfold AI</td>
+</tr>
+<tr>
+<td><strong>Employee Attrition Prediction</strong></td>
+<td>Identify flight-risk employees before they resign</td>
+<td>Workday AI, Visier, OneModel</td>
+</tr>
+<tr>
+<td><strong>Performance Prediction</strong></td>
+<td>Forecast employee performance ratings</td>
+<td>Eightfold AI, Culture Amp</td>
+</tr>
+<tr>
+<td><strong>Workforce Demand Planning</strong></td>
+<td>Forecast staffing needs by role, location, and time</td>
+<td>Workday Scheduling AI, Legion AI</td>
+</tr>
+<tr>
+<td><strong>Compensation Benchmarking</strong></td>
+<td>Predict market-competitive compensation</td>
+<td>Radford AI, Levels.fyi ML models</td>
+</tr>
+</tbody>
+</table>
+<h3>Cybersecurity</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intrusion Detection</strong></td>
+<td>Classify network traffic as malicious or benign</td>
+<td>CrowdStrike Falcon, Darktrace, Vectra AI</td>
+</tr>
+<tr>
+<td><strong>Malware Classification</strong></td>
+<td>Classify files and code as malicious</td>
+<td>CrowdStrike, SentinelOne AI, Cylance</td>
+</tr>
+<tr>
+<td><strong>User &amp; Entity Behaviour Analytics (UEBA)</strong></td>
+<td>Score anomalous user behaviour within an organisation</td>
+<td>Exabeam, Securonix, Microsoft Sentinel</td>
+</tr>
+<tr>
+<td><strong>Vulnerability Risk Scoring</strong></td>
+<td>Prioritise CVEs by exploitability probability</td>
+<td>Tenable Predictive Prioritization, Qualys</td>
+</tr>
+<tr>
+<td><strong>Phishing Detection</strong></td>
+<td>Classify emails and URLs as phishing attempts</td>
+<td>Proofpoint AI, Mimecast, Microsoft Defender</td>
+</tr>
+<tr>
+<td><strong>Insider Threat Detection</strong></td>
+<td>Detect anomalous behaviour indicating insider risk</td>
+<td>ObserveIT, Dtex Systems, Forcepoint AI</td>
+</tr>
+</tbody>
+</table>
+<h3>Logistics &amp; Transportation</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+<th>Key Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Route Optimisation</strong></td>
+<td>Predict and select optimal delivery routes</td>
+<td>Google Maps Platform, Uber AI, Route4Me</td>
+</tr>
+<tr>
+<td><strong>ETA Prediction</strong></td>
+<td>Predict shipment and delivery arrival times</td>
+<td>FourKites, Project44, Amazon AI</td>
+</tr>
+<tr>
+<td><strong>Demand Forecasting (Ride-Sharing)</strong></td>
+<td>Predict rider demand to position drivers</td>
+<td>Uber Forecasting, Lyft ML</td>
+</tr>
+<tr>
+<td><strong>Freight Rate Prediction</strong></td>
+<td>Forecast spot and contract freight rates</td>
+<td>Freightos, Flexport AI</td>
+</tr>
+<tr>
+<td><strong>Airport / Traffic Congestion Prediction</strong></td>
+<td>Forecast capacity and flow</td>
+<td>Google Maps, INRIX AI, HERE AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ BENCHMARKS ═══ -->
+<div class="section" id="sec-benchmarks">
+ <h2>Benchmarks &amp; Model Comparisons</h2>
+ <p class="desc">Performance benchmarks for leading predictive model architectures on tabular tasks.</p>
+ <div class="chart-row">
+ <div class="chart-box"><h3>Tabular ML Benchmarks (Accuracy %)</h3><canvas id="chartBench"></canvas>
+</div>
+ <div class="chart-box"><h3>Model Properties (Radar)</h3><canvas id="chartRadar"></canvas></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-benchmarks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-benchmarks">
+<h3>Evaluation Metrics & Benchmarks</h3>
+<p>Choosing the right metric is as important as choosing the right model — different business objectives demand different measurement criteria.</p>
+<h3>Classification Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Formula / Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Correct predictions / Total predictions</td>
+<td>Balanced classes; misleading on imbalanced data</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>TP / (TP + FP)</td>
+<td>Minimise false positives (e.g., spam filters)</td>
+</tr>
+<tr>
+<td><strong>Recall (Sensitivity)</strong></td>
+<td>TP / (TP + FN)</td>
+<td>Minimise false negatives (e.g., cancer detection)</td>
+</tr>
+<tr>
+<td><strong>F1 Score</strong></td>
+<td>Harmonic mean of Precision and Recall</td>
+<td>Imbalanced classes; trade-off metric</td>
+</tr>
+<tr>
+<td><strong>F-beta Score</strong></td>
+<td>Weighted F1 with beta controlling recall/precision trade-off</td>
+<td>Domain-specific cost asymmetry</td>
+</tr>
+<tr>
+<td><strong>AUC-ROC</strong></td>
+<td>Area under the Receiver Operating Characteristic curve</td>
+<td>Ranking quality; threshold-independent</td>
+</tr>
+<tr>
+<td><strong>AUC-PR</strong></td>
+<td>Area under the Precision-Recall curve</td>
+<td>Highly imbalanced datasets; fraud, rare disease</td>
+</tr>
+<tr>
+<td><strong>Log Loss (Cross-Entropy)</strong></td>
+<td>Penalises confident wrong predictions heavily</td>
+<td>Probabilistic calibration quality</td>
+</tr>
+<tr>
+<td><strong>MCC (Matthews Correlation Coefficient)</strong></td>
+<td>Balanced metric even for very imbalanced datasets</td>
+<td>Binary classification; comprehensive single metric</td>
+</tr>
+<tr>
+<td><strong>Cohen's Kappa</strong></td>
+<td>Agreement beyond chance</td>
+<td>Multi-class with imbalanced distribution</td>
+</tr>
+<tr>
+<td><strong>Confusion Matrix</strong></td>
+<td>TP / TN / FP / FN breakdown by class</td>
+<td>Detailed per-class error analysis</td>
+</tr>
+</tbody>
+</table>
+<h3>Regression Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MAE (Mean Absolute Error)</strong></td>
+<td>Average absolute difference between predicted and actual</td>
+<td>Interpretable; robust to outliers</td>
+</tr>
+<tr>
+<td><strong>MSE (Mean Squared Error)</strong></td>
+<td>Average squared difference; penalises large errors heavily</td>
+<td>When large errors are particularly costly</td>
+</tr>
+<tr>
+<td><strong>RMSE (Root MSE)</strong></td>
+<td>Square root of MSE; same units as target</td>
+<td>Standard regression evaluation metric</td>
+</tr>
+<tr>
+<td><strong>MAPE (Mean Absolute % Error)</strong></td>
+<td>Percentage error relative to actual value</td>
+<td>Forecasting; interpretable to business users</td>
+</tr>
+<tr>
+<td><strong>SMAPE (Symmetric MAPE)</strong></td>
+<td>Symmetric version of MAPE; handles zero actuals</td>
+<td>Time-series forecasting</td>
+</tr>
+<tr>
+<td><strong>R² (Coefficient of Determination)</strong></td>
+<td>Proportion of variance explained by the model</td>
+<td>Model fit quality relative to a baseline</td>
+</tr>
+<tr>
+<td><strong>WAPE (Weighted APE)</strong></td>
+<td>Sum of absolute errors / Sum of actuals</td>
+<td>Supply chain and demand forecasting</td>
+</tr>
+</tbody>
+</table>
+<h3>Ranking &amp; Recommendation Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NDCG (Normalised Discounted Cumulative Gain)</strong></td>
+<td>Measures ranking quality; rewards correct items higher in the list</td>
+<td>Search ranking, recommendation systems</td>
+</tr>
+<tr>
+<td><strong>MAP (Mean Average Precision)</strong></td>
+<td>Average precision across all queries</td>
+<td>Information retrieval</td>
+</tr>
+<tr>
+<td><strong>MRR (Mean Reciprocal Rank)</strong></td>
+<td>Reciprocal of the rank of the first relevant result</td>
+<td>Question answering, search</td>
+</tr>
+<tr>
+<td><strong>Hit Rate / Recall@k</strong></td>
+<td>Fraction of users for whom a relevant item appears in top-k</td>
+<td>Recommendation systems</td>
+</tr>
+<tr>
+<td><strong>Precision@k</strong></td>
+<td>Fraction of top-k recommendations that are relevant</td>
+<td>Recommendation systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Time-Series Forecasting Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MASE (Mean Absolute Scaled Error)</strong></td>
+<td>MAE scaled by in-sample naive forecast error</td>
+<td>Scale-independent; cross-series comparison</td>
+</tr>
+<tr>
+<td><strong>sMAPE</strong></td>
+<td>Symmetric MAPE; bounded between 0% and 200%</td>
+<td>Standard competition metric</td>
+</tr>
+<tr>
+<td><strong>CRPS (Continuous Ranked Probability Score)</strong></td>
+<td>Evaluates probabilistic forecast quality</td>
+<td>Uncertainty quantification</td>
+</tr>
+<tr>
+<td><strong>Pinball Loss</strong></td>
+<td>Measures quantile forecast accuracy</td>
+<td>Probabilistic forecasting</td>
+</tr>
+</tbody>
+</table>
+<h3>Validation Strategies</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hold-Out Split</strong></td>
+<td>70/15/15 train/validation/test split</td>
+<td>Large datasets; fast evaluation</td>
+</tr>
+<tr>
+<td><strong>k-Fold Cross-Validation</strong></td>
+<td>Rotate through k folds; average performance</td>
+<td>Small to medium datasets; robust estimate</td>
+</tr>
+<tr>
+<td><strong>Stratified k-Fold</strong></td>
+<td>Maintain class proportions across folds</td>
+<td>Imbalanced classification</td>
+</tr>
+<tr>
+<td><strong>Time-Series CV (Walk-Forward)</strong></td>
+<td>Train on past; validate on next window; roll forward</td>
+<td>All time-series and forecasting models</td>
+</tr>
+<tr>
+<td><strong>Group k-Fold</strong></td>
+<td>Ensure same entity (user, patient) is only in one fold</td>
+<td>Recommendation; patient-level models</td>
+</tr>
+<tr>
+<td><strong>Nested Cross-Validation</strong></td>
+<td>Outer loop for model evaluation; inner loop for HPO</td>
+<td>Unbiased performance estimate with HPO</td>
+</tr>
+</tbody>
+</table>
+<h3>Calibration</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Calibration</strong></td>
+<td>Alignment between a model's predicted probabilities and actual event frequencies</td>
+</tr>
+<tr>
+<td><strong>Reliability Diagram</strong></td>
+<td>Plot predicted probability vs. observed frequency; well-calibrated model falls on the diagonal</td>
+</tr>
+<tr>
+<td><strong>Brier Score</strong></td>
+<td>Mean squared error between predicted probability and actual binary outcome</td>
+</tr>
+<tr>
+<td><strong>Platt Scaling</strong></td>
+<td>Post-hoc logistic regression to calibrate SVM or other model probabilities</td>
+</tr>
+<tr>
+<td><strong>Isotonic Regression</strong></td>
+<td>Non-parametric calibration; better than Platt for larger datasets</td>
+</tr>
+<tr>
+<td><strong>Temperature Scaling</strong></td>
+<td>Simple, effective calibration for deep neural networks</td>
+</tr>
+</tbody>
+</table>
+<h3>Public Benchmarks &amp; Datasets</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark / Dataset</th>
+<th>Domain</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kaggle Competitions</strong></td>
+<td>All domains</td>
+<td>Real-world predictive modelling challenges; community leaderboards</td>
+</tr>
+<tr>
+<td><strong>UCI ML Repository</strong></td>
+<td>All domains</td>
+<td>600+ classic ML datasets; academic standard</td>
+</tr>
+<tr>
+<td><strong>OpenML</strong></td>
+<td>All domains</td>
+<td>4,000+ datasets; reproducible ML benchmarking</td>
+</tr>
+<tr>
+<td><strong>MNIST / CIFAR-10/100</strong></td>
+<td>Image classification</td>
+<td>Standard CV classification baselines</td>
+</tr>
+<tr>
+<td><strong>ImageNet (ILSVRC)</strong></td>
+<td>Image classification</td>
+<td>1M+ images; CNN benchmark; top-1/top-5 accuracy</td>
+</tr>
+<tr>
+<td><strong>SQuAD 1.1 / 2.0</strong></td>
+<td>NLP / Reading comprehension</td>
+<td>Extractive QA; BERT family benchmark</td>
+</tr>
+<tr>
+<td><strong>GLUE / SuperGLUE</strong></td>
+<td>NLP classification</td>
+<td>Multi-task NLP benchmark suite</td>
+</tr>
+<tr>
+<td><strong>M4 / M5 Competition</strong></td>
+<td>Time-series forecasting</td>
+<td>Retail demand; 100k series; academic gold standard</td>
+</tr>
+<tr>
+<td><strong>Electricity / ETT</strong></td>
+<td>Time-series forecasting</td>
+<td>Energy demand; standard DL forecasting benchmark</td>
+</tr>
+<tr>
+<td><strong>Adult Income / German Credit</strong></td>
+<td>Fairness</td>
+<td>Demographic bias assessment in classification</td>
+</tr>
+<tr>
+<td><strong>MIMIC-III / IV</strong></td>
+<td>Healthcare ML</td>
+<td>ICU patient data; mortality, sepsis, readmission prediction</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ MARKET DATA ═══ -->
+<div class="section" id="sec-market">
+ <h2>Market &amp; Adoption Data</h2>
+ <p class="desc">Market sizing and growth projections for the Predictive Analytics ecosystem.</p>
+ <div class="chart-row">
+ <div class="chart-box"><h3>Predictive Analytics Market ($B)</h3><canvas id="chartMkt"></canvas>
+</div>
+ <div class="chart-box"><h3>Market Growth 2024 → 2030 (CAGR 23%)</h3><canvas id="chartGrowth"></canvas></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-market')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-market">
+<h3>Market & Adoption Data</h3>
+<h3>Market Size &amp; Growth</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Global Predictive Analytics Market (2024)</strong></td>
+<td>~$14.9 billion</td>
+<td>Grand View Research; includes predictive AI across all verticals</td>
+</tr>
+<tr>
+<td><strong>Projected Market Size (2030)</strong></td>
+<td>~$67.9 billion</td>
+<td>CAGR ~28.5%; driven by enterprise ML adoption and AutoML democratisation</td>
+</tr>
+<tr>
+<td><strong>% of Enterprises Using ML in Production (2024)</strong></td>
+<td>~54%</td>
+<td>McKinsey Global AI Survey 2024</td>
+</tr>
+<tr>
+<td><strong>Top Verticals by Spend</strong></td>
+<td>BFSI, Healthcare, Retail, Manufacturing, Telecom</td>
+<td>Consistent across major analyst reports</td>
+</tr>
+<tr>
+<td><strong>AutoML Market Size (2024)</strong></td>
+<td>~$1.7 billion</td>
+<td>Growing to ~$8.0B by 2030; CAGR ~30%+</td>
+</tr>
+<tr>
+<td><strong>MLOps Market Size (2024)</strong></td>
+<td>~$2.1 billion</td>
+<td>Projected to reach ~$13.5B by 2030</td>
+</tr>
+</tbody>
+</table>
+<h3>Adoption Patterns by Enterprise Size</h3>
+<table>
+<thead>
+<tr>
+<th>Enterprise Segment</th>
+<th>Adoption Pattern</th>
+<th>Key Tools / Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Large Enterprise (&gt;10,000 employees)</strong></td>
+<td>Custom models + cloud ML platforms; dedicated data science teams; MLOps at scale</td>
+<td>SageMaker, Vertex AI, Azure ML, Databricks</td>
+</tr>
+<tr>
+<td><strong>Mid-Market (500–10,000 employees)</strong></td>
+<td>AutoML + SaaS ML platforms; growing data science function</td>
+<td>DataRobot, H2O, Dataiku, Pecan AI</td>
+</tr>
+<tr>
+<td><strong>Small Business (&lt;500 employees)</strong></td>
+<td>No-code ML; embedded AI in SaaS applications</td>
+<td>Obviously AI, Pecan, built-in AI in CRM/ERP</td>
+</tr>
+<tr>
+<td><strong>Startups</strong></td>
+<td>Open-source ML + cloud; rapid experimentation; lean ML stack</td>
+<td>scikit-learn, XGBoost, PyTorch + AWS/GCP</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Adoption Drivers</h3>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cost Reduction Pressure</strong></td>
+<td>Predictive models reduce operational costs through automation, efficiency, and waste reduction</td>
+</tr>
+<tr>
+<td><strong>Cloud ML Democratisation</strong></td>
+<td>Managed ML services (SageMaker, Vertex AI) lower the barrier to production deployment</td>
+</tr>
+<tr>
+<td><strong>AutoML Maturation</strong></td>
+<td>Non-specialist practitioners can now build production-grade models without deep ML expertise</td>
+</tr>
+<tr>
+<td><strong>Regulatory Demand</strong></td>
+<td>Financial services, insurance, and healthcare regulators increasingly expect AI-driven risk management</td>
+</tr>
+<tr>
+<td><strong>Data Availability</strong></td>
+<td>Explosion of structured data from CRM, ERP, IoT, and transactional systems provides rich training material</td>
+</tr>
+<tr>
+<td><strong>ROI Demonstrability</strong></td>
+<td>Predictive AI delivers measurable, auditable business value — churn reduction, fraud savings, yield improvement</td>
+</tr>
+<tr>
+<td><strong>Foundation Model Transfer</strong></td>
+<td>Pre-trained models reduce the labelled data and compute required to build production NLP and CV systems</td>
+</tr>
+</tbody>
+</table>
+<h3>Productivity &amp; ROI Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Typical ROI / Impact</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fraud Detection</strong></td>
+<td>20–40% reduction in fraud losses; 50%+ reduction in manual review cost</td>
+<td>Visa, Mastercard internal reports</td>
+</tr>
+<tr>
+<td><strong>Predictive Maintenance</strong></td>
+<td>10–25% reduction in maintenance costs; 35–45% reduction in downtime</td>
+<td>McKinsey Manufacturing AI Report</td>
+</tr>
+<tr>
+<td><strong>Demand Forecasting</strong></td>
+<td>15–30% reduction in inventory carrying costs; 5–10% improvement in service levels</td>
+<td>Gartner Supply Chain AI Survey</td>
+</tr>
+<tr>
+<td><strong>Churn Prediction</strong></td>
+<td>5–15% improvement in customer retention rate</td>
+<td>Salesforce Customer Success AI benchmarks</td>
+</tr>
+<tr>
+<td><strong>Credit Scoring (ML vs FICO)</strong></td>
+<td>15–25% better discrimination (AUC); 10–15% reduction in default rates at same approval rate</td>
+<td>Upstart, Zest AI published results</td>
+</tr>
+<tr>
+<td><strong>Medical Imaging AI</strong></td>
+<td>94–99% sensitivity on specific tasks vs. 85–90% for radiologists alone (augmented)</td>
+<td>FDA-cleared device studies</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Vendors &amp; Competitive Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Leaders</th>
+<th>Challengers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cloud ML Platforms</strong></td>
+<td>AWS SageMaker, Google Vertex AI, Azure ML</td>
+<td>Databricks, Snowflake ML, Oracle OCI</td>
+</tr>
+<tr>
+<td><strong>Enterprise AutoML</strong></td>
+<td>DataRobot, H2O Driverless AI, Dataiku</td>
+<td>RapidMiner, SAS Viya, Alteryx AI</td>
+</tr>
+<tr>
+<td><strong>Open-Source ML</strong></td>
+<td>scikit-learn, XGBoost, LightGBM, PyTorch</td>
+<td>CatBoost, JAX, FastAI</td>
+</tr>
+<tr>
+<td><strong>MLOps &amp; Monitoring</strong></td>
+<td>MLflow, Weights &amp; Biases, Arize AI</td>
+<td>Fiddler, Evidently, NannyML, Arthur AI</td>
+</tr>
+<tr>
+<td><strong>Feature Stores</strong></td>
+<td>Feast, Tecton, Databricks Feature Store</td>
+<td>Hopsworks, Vertex Feature Store</td>
+</tr>
+<tr>
+<td><strong>Time-Series Forecasting</strong></td>
+<td>Prophet, statsforecast, Darts</td>
+<td>Chronos, TimesFM, Moirai</td>
+</tr>
+<tr>
+<td><strong>Explainability</strong></td>
+<td>SHAP, LIME, InterpretML</td>
+<td>Fiddler, Arthur AI, Credo AI</td>
+</tr>
+<tr>
+<td><strong>Fairness &amp; Governance</strong></td>
+<td>Fairlearn, AIF360, Responsible AI Dashboard</td>
+<td>Credo AI, Arthur AI, Holistic AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+
+<!-- ═══ RISKS ═══ -->
+<div class="section" id="sec-risks">
+ <h2>Risks &amp; Limitations</h2>
+ <p class="desc">Critical challenges and failure modes when deploying predictive / discriminative AI systems.</p>
+ <div class="risk-grid">
+ <div class="risk-card" style="border-color:var(--accent5)"><h4 class="c-red">Bias &amp; Fairness</h4><p>Historical data encodes discrimination; models can produce disparate impact on protected groups without careful auditing.</p>
+</div>
+ <div class="risk-card" style="border-color:var(--accent4)"><h4 class="c-orange">Data Leakage</h4><p>Target leakage or train-test contamination inflates evaluation metrics; models fail catastrophically in production.</p></div>
+ <div class="risk-card" style="border-color:var(--accent3)"><h4 class="c-purple">Concept Drift</h4><p>Data distribution shifts over time; model accuracy degrades silently without proper monitoring and retraining pipelines.</p></div>
+ <div class="risk-card" style="border-color:var(--accent)"><h4 class="c-blue">Overfitting</h4><p>Model memorises training data noise rather than learning true patterns; poor generalisation to unseen data.</p></div>
+ <div class="risk-card" style="border-color:var(--accent2)"><h4 class="c-green">Feature Attribution</h4><p>Black-box models cannot explain individual predictions; creates regulatory risk in finance, healthcare, and hiring.</p></div>
+ <div class="risk-card" style="border-color:var(--accent5)"><h4 class="c-red">Adversarial Examples</h4><p>Small, carefully crafted input perturbations can flip predictions; represents a security vulnerability in deployed models.</p></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-risks')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-risks">
+<h3>Risks, Limitations & Fairness</h3>
+<h3>Technical Limitations</h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Distributional Shift</strong></td>
+<td>A model trained on historical data may fail when the real-world data distribution changes (e.g., COVID-19 disrupted all demand forecasting models)</td>
+</tr>
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>Model learns noise in training data; performs poorly on unseen data</td>
+</tr>
+<tr>
+<td><strong>Underfitting</strong></td>
+<td>Model is too simple to capture real patterns; high bias, low variance</td>
+</tr>
+<tr>
+<td><strong>Data Leakage</strong></td>
+<td>Future information accidentally included in training features; inflates performance metrics</td>
+</tr>
+<tr>
+<td><strong>Correlation vs. Causation</strong></td>
+<td>Predictive models learn correlations; they cannot identify causal mechanisms or reason about interventions</td>
+</tr>
+<tr>
+<td><strong>Benchmark Overfitting</strong></td>
+<td>Models optimised for benchmark metrics that do not reflect real business outcomes</td>
+</tr>
+<tr>
+<td><strong>Label Quality</strong></td>
+<td>Garbage labels produce garbage models; incorrect or inconsistent labelling degrades all downstream performance</td>
+</tr>
+<tr>
+<td><strong>Feature Drift</strong></td>
+<td>A feature available at training time disappears or changes definition in production</td>
+</tr>
+<tr>
+<td><strong>Extrapolation Failure</strong></td>
+<td>Models perform poorly on inputs outside their training distribution (out-of-distribution generalisation)</td>
+</tr>
+<tr>
+<td><strong>Cold Start Problem</strong></td>
+<td>Recommendation and personalisation models have no data for new users or items</td>
+</tr>
+</tbody>
+</table>
+<h3>Fairness &amp; Bias Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Description</th>
+<th>Real-World Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Historical Bias</strong></td>
+<td>Model learns and perpetuates discriminatory patterns present in training data</td>
+<td>COMPAS recidivism; Amazon hiring algorithm</td>
+</tr>
+<tr>
+<td><strong>Sampling Bias</strong></td>
+<td>Training data does not represent all demographic groups equally</td>
+<td>Facial recognition failing on darker skin tones (MIT Media Lab study)</td>
+</tr>
+<tr>
+<td><strong>Label Bias</strong></td>
+<td>Human labellers encode their own biases into training labels</td>
+<td>Sentiment models reflecting annotator demographics</td>
+</tr>
+<tr>
+<td><strong>Proxy Discrimination</strong></td>
+<td>Model uses race-neutral features (zip code, name) that correlate with protected attributes</td>
+<td>Redlining via ML; credit scoring via geography</td>
+</tr>
+<tr>
+<td><strong>Feedback Loops</strong></td>
+<td>Biased predictions influence future actions that generate new biased training data</td>
+<td>Predictive policing; content recommendation radicalisation</td>
+</tr>
+<tr>
+<td><strong>Algorithmic Monoculture</strong></td>
+<td>When many organisations use the same model, systematic errors affect entire populations</td>
+<td>All banks using the same credit model denying the same groups</td>
+</tr>
+<tr>
+<td><strong>Disparate Impact</strong></td>
+<td>Model produces statistically different outcomes for protected demographic groups</td>
+<td>Employment screening; loan approval; insurance pricing</td>
+</tr>
+</tbody>
+</table>
+<h3>Fairness Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Demographic Parity</strong></td>
+<td>Equal positive prediction rates across demographic groups</td>
+<td>Cannot be simultaneously satisfied with other metrics</td>
+</tr>
+<tr>
+<td><strong>Equalised Odds</strong></td>
+<td>Equal TPR and FPR across groups</td>
+<td>Useful when both errors carry consequences</td>
+</tr>
+<tr>
+<td><strong>Equal Opportunity</strong></td>
+<td>Equal true positive rate across groups</td>
+<td>Focus on the beneficial outcome</td>
+</tr>
+<tr>
+<td><strong>Individual Fairness</strong></td>
+<td>Similar individuals receive similar predictions</td>
+<td>Hard to operationalise; requires similarity metric</td>
+</tr>
+<tr>
+<td><strong>Calibration by Group</strong></td>
+<td>Probabilities are accurate within each demographic group</td>
+<td>Required for fair risk scoring</td>
+</tr>
+<tr>
+<td><strong>Counterfactual Fairness</strong></td>
+<td>Prediction would be the same if only protected attribute changed</td>
+<td>Theoretical; causal framework</td>
+</tr>
+</tbody>
+</table>
+<h3>Transparency &amp; Explainability Risks</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Black-Box Models</strong></td>
+<td>Gradient boosting and deep learning models do not provide inherently interpretable decisions</td>
+</tr>
+<tr>
+<td><strong>Right to Explanation</strong></td>
+<td>GDPR Article 22 requires meaningful explanation for automated decisions affecting individuals</td>
+</tr>
+<tr>
+<td><strong>Explanation Fidelity</strong></td>
+<td>Post-hoc explanations (SHAP, LIME) approximate model behaviour but are not exact</td>
+</tr>
+<tr>
+<td><strong>Adversarial Manipulation</strong></td>
+<td>Explanations can be gamed to appear fair while underlying model remains biased</td>
+</tr>
+<tr>
+<td><strong>Regulatory Documentation</strong></td>
+<td>Model Cards, Datasheets, and risk documentation required by EU AI Act for high-risk models</td>
+</tr>
+</tbody>
+</table>
+<h3>Safety Design Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Human-in-the-Loop for High Stakes</strong></td>
+<td>Require human review for consequential automated decisions (loans, hiring, medical)</td>
+</tr>
+<tr>
+<td><strong>Regular Retraining</strong></td>
+<td>Prevent model staleness; retrain when drift is detected</td>
+</tr>
+<tr>
+<td><strong>Fairness Auditing</strong></td>
+<td>Regularly evaluate model performance across demographic subgroups</td>
+</tr>
+<tr>
+<td><strong>Model Cards</strong></td>
+<td>Publish model documentation covering intended use, limitations, and performance breakdowns</td>
+</tr>
+<tr>
+<td><strong>Explainability by Design</strong></td>
+<td>Choose interpretable models when possible; reserve black boxes for cases where performance justifies it</td>
+</tr>
+<tr>
+<td><strong>Conservative Thresholds</strong></td>
+<td>Set classification thresholds to minimise the more costly error type</td>
+</tr>
+<tr>
+<td><strong>Data Provenance</strong></td>
+<td>Track the lineage of datasets and labels; document collection methods and known biases</td>
+</tr>
+<tr>
+<td><strong>Secure Feature Access</strong></td>
+<td>Restrict access to sensitive attributes; apply privacy-preserving transformations where needed</td>
+</tr>
+<tr>
+<td><strong>Robustness Testing</strong></td>
+<td>Evaluate sensitivity to outliers, missingness, adversarial perturbations, and out-of-distribution inputs</td>
+</tr>
+<tr>
+<td><strong>Post-Deployment Monitoring</strong></td>
+<td>Monitor drift and error rates continuously; trigger review when metrics degrade</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-cross-refs')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-cross-refs">
+<div class="cross-refs">
+ <h3>Related AI System Types</h3>
+ <p style="color:var(--text2);margin-bottom:12px;">Explore how this system type connects to others in the AI landscape:</p>
+ <a href="analytical-ai.html">Analytical AI</a>
+<a href="bayesian-probabilistic-ai.html">Bayesian / Probabilistic AI</a>
+<a href="explainable-ai.html">Explainable AI (XAI)</a>
+<a href="recommendation-retrieval-ai.html">Recommendation / Retrieval AI</a>
+<a href="generative-ai.html">Generative AI</a>
+</div>
+</div>
+</div>
+
+<!-- ═══ GLOSSARY ═══ -->
+<div class="section" id="sec-glossary">
+ <h2>Key Terminology Glossary</h2>
+ <p class="desc">Essential predictive / discriminative AI terminology — searchable.</p>
+ <input class="glossary-search" id="glossarySearch" placeholder="Search terms…"/>
+ <div class="glossary-list" id="glossaryList">
+ <div class="glossary-entry"><strong>AUC-ROC</strong><span>Area Under the Receiver Operating Characteristic curve; measures classifier discrimination across all thresholds.</span>
+</div>
+ <div class="glossary-entry"><strong>Bagging</strong><span>Bootstrap Aggregating; parallel ensemble method training models on random data subsets to reduce variance.</span></div>
+ <div class="glossary-entry"><strong>Boosting</strong><span>Sequential ensemble technique where each learner corrects the errors of its predecessor.</span></div>
+ <div class="glossary-entry"><strong>Calibration</strong><span>Aligning predicted probabilities with actual outcome frequencies for reliable risk scoring.</span></div>
+ <div class="glossary-entry"><strong>Cross-Validation</strong><span>Splitting data into K folds for robust model evaluation; each fold serves as validation once.</span></div>
+ <div class="glossary-entry"><strong>F1 Score</strong><span>Harmonic mean of precision and recall; balances false positives and false negatives.</span></div>
+ <div class="glossary-entry"><strong>Feature Engineering</strong><span>Creating informative input features from raw data to improve model performance.</span></div>
+ <div class="glossary-entry"><strong>Gradient Descent</strong><span>Iterative optimisation algorithm that adjusts parameters in the direction of steepest loss reduction.</span></div>
+ <div class="glossary-entry"><strong>Hyperparameter</strong><span>Configuration setting determined before training begins (e.g., learning rate, tree depth, regularisation).</span></div>
+ <div class="glossary-entry"><strong>Imputation</strong><span>Filling in missing values in a dataset using statistical methods (mean, median, KNN, MICE).</span></div>
+ <div class="glossary-entry"><strong>L1/L2 Regularisation</strong><span>Penalty terms (Lasso/Ridge) added to the loss function to prevent overfitting and improve generalisation.</span></div>
+ <div class="glossary-entry"><strong>Overfitting</strong><span>Model captures noise rather than signal in training data; indicates need for regularisation or more data.</span></div>
+ <div class="glossary-entry"><strong>Precision</strong><span>True positives divided by (True positives + False positives); measures prediction exactness.</span></div>
+ <div class="glossary-entry"><strong>Recall</strong><span>True positives divided by (True positives + False negatives); measures sensitivity / completeness.</span></div>
+ <div class="glossary-entry"><strong>SHAP</strong><span>SHapley Additive exPlanations; game-theoretic approach to explain individual feature contributions.</span></div>
+ </div>
+
+<button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-glossary')">
+  Full Reference
+</button>
+<div class="deep-dive collapsed" id="dd-glossary">
+<h3>Key Terminology Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithm</strong></td>
+<td>A set of rules or statistical procedure a model follows to learn patterns from data</td>
+</tr>
+<tr>
+<td><strong>AUC-ROC</strong></td>
+<td>Area Under the Receiver Operating Characteristic Curve; measures a classifier's ability to discriminate between classes regardless of threshold</td>
+</tr>
+<tr>
+<td><strong>Bagging</strong></td>
+<td>Bootstrap aggregating; training multiple models on random data subsets and averaging their predictions to reduce variance</td>
+</tr>
+<tr>
+<td><strong>Batch Prediction</strong></td>
+<td>Running a trained model over a large dataset at a scheduled time to produce predictions offline</td>
+</tr>
+<tr>
+<td><strong>Bias (Statistical)</strong></td>
+<td>Systematic error in a model's predictions due to incorrect assumptions in the learning algorithm</td>
+</tr>
+<tr>
+<td><strong>Bias (Ethical)</strong></td>
+<td>Unfair, discriminatory, or unrepresentative patterns in model predictions affecting demographic groups</td>
+</tr>
+<tr>
+<td><strong>Boosting</strong></td>
+<td>Sequential ensemble method where each model corrects the errors of its predecessor; e.g., XGBoost, LightGBM</td>
+</tr>
+<tr>
+<td><strong>Calibration</strong></td>
+<td>The degree to which a model's predicted probabilities match actual observed frequencies</td>
+</tr>
+<tr>
+<td><strong>CatBoost</strong></td>
+<td>Gradient boosting library by Yandex with native categorical feature handling</td>
+</tr>
+<tr>
+<td><strong>Class Imbalance</strong></td>
+<td>A dataset where one class has far fewer examples than another; common in fraud, rare disease, and anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Classification</strong></td>
+<td>A supervised learning task where the model predicts which discrete category an input belongs to</td>
+</tr>
+<tr>
+<td><strong>Concept Drift</strong></td>
+<td>When the statistical relationship between features and the target variable changes over time in production</td>
+</tr>
+<tr>
+<td><strong>Confusion Matrix</strong></td>
+<td>A table showing the counts of true positives, true negatives, false positives, and false negatives for a classifier</td>
+</tr>
+<tr>
+<td><strong>Cross-Validation</strong></td>
+<td>A technique for evaluating model performance by rotating through multiple train/test splits of the data</td>
+</tr>
+<tr>
+<td><strong>Data Drift</strong></td>
+<td>When the statistical distribution of input features in production diverges from the training data distribution</td>
+</tr>
+<tr>
+<td><strong>Data Leakage</strong></td>
+<td>When information from outside the training period or the target itself accidentally enters the feature set, artificially inflating performance</td>
+</tr>
+<tr>
+<td><strong>Decision Tree</strong></td>
+<td>A model that makes predictions by splitting the data into branches based on feature thresholds</td>
+</tr>
+<tr>
+<td><strong>Discriminative Model</strong></td>
+<td>A model that directly learns the boundary between classes — P(Y|X) — rather than modelling the full data distribution</td>
+</tr>
+<tr>
+<td><strong>Embeddings</strong></td>
+<td>Dense, low-dimensional vector representations of discrete entities (users, products, words) that capture semantic similarity</td>
+</tr>
+<tr>
+<td><strong>Ensemble</strong></td>
+<td>A combination of multiple models whose predictions are aggregated to improve accuracy and robustness</td>
+</tr>
+<tr>
+<td><strong>F1 Score</strong></td>
+<td>The harmonic mean of precision and recall; the standard metric for imbalanced classification tasks</td>
+</tr>
+<tr>
+<td><strong>Feature</strong></td>
+<td>An individual measurable property or input variable used by a model to make predictions</td>
+</tr>
+<tr>
+<td><strong>Feature Engineering</strong></td>
+<td>The process of creating, transforming, and selecting input variables to improve model performance</td>
+</tr>
+<tr>
+<td><strong>Feature Importance</strong></td>
+<td>A measure of how much each feature contributes to a model's predictions</td>
+</tr>
+<tr>
+<td><strong>Feature Store</strong></td>
+<td>A centralised infrastructure layer for computing, storing, and serving ML features consistently across training and inference</td>
+</tr>
+<tr>
+<td><strong>Gradient Descent</strong></td>
+<td>An optimisation algorithm that iteratively adjusts model parameters in the direction of the steepest decrease in the loss function</td>
+</tr>
+<tr>
+<td><strong>Hyperparameter</strong></td>
+<td>A model configuration setting (e.g., learning rate, tree depth) set before training and not learned from data</td>
+</tr>
+<tr>
+<td><strong>Hyperparameter Optimisation (HPO)</strong></td>
+<td>The process of systematically searching for the best hyperparameter values to maximise model performance</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>The process of applying a trained model to new, unseen data to generate predictions</td>
+</tr>
+<tr>
+<td><strong>Isolation Forest</strong></td>
+<td>An unsupervised anomaly detection algorithm that isolates anomalies by randomly partitioning the feature space</td>
+</tr>
+<tr>
+<td><strong>K-Fold Cross-Validation</strong></td>
+<td>Splitting data into k equal folds; training on k-1 folds and validating on the remaining one, rotated k times</td>
+</tr>
+<tr>
+<td><strong>Label</strong></td>
+<td>The known correct output for a training example; also called the target variable or ground truth</td>
+</tr>
+<tr>
+<td><strong>LightGBM</strong></td>
+<td>Microsoft's gradient boosting framework; optimised for speed and large datasets via leaf-wise tree growth</td>
+</tr>
+<tr>
+<td><strong>Logistic Regression</strong></td>
+<td>A linear classification model that outputs class probabilities via a sigmoid or softmax function</td>
+</tr>
+<tr>
+<td><strong>Loss Function</strong></td>
+<td>A mathematical function that measures the difference between the model's predictions and the true labels; minimised during training</td>
+</tr>
+<tr>
+<td><strong>MAE (Mean Absolute Error)</strong></td>
+<td>The average absolute difference between predicted and actual values in a regression task</td>
+</tr>
+<tr>
+<td><strong>MLOps</strong></td>
+<td>Machine Learning Operations; the discipline of deploying, monitoring, and maintaining ML models in production</td>
+</tr>
+<tr>
+<td><strong>Model Card</strong></td>
+<td>A standardised document summarising a model's intended use, performance characteristics, limitations, and ethical considerations</td>
+</tr>
+<tr>
+<td><strong>Model Drift</strong></td>
+<td>The degradation of a deployed model's predictive performance over time as real-world patterns evolve</td>
+</tr>
+<tr>
+<td><strong>Model Registry</strong></td>
+<td>A centralised repository for storing, versioning, and managing trained ML model artefacts</td>
+</tr>
+<tr>
+<td><strong>Normalisation</strong></td>
+<td>Scaling numeric features to a standard range (e.g., [0,1]) so that features with different scales do not dominate the model</td>
+</tr>
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>When a model learns the noise and idiosyncrasies of training data so well that it fails to generalise to new data</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>The fraction of positive predictions that are actually correct: TP / (TP + FP)</td>
+</tr>
+<tr>
+<td><strong>Predictive Maintenance</strong></td>
+<td>Using ML models to predict when equipment will fail so maintenance can be proactively scheduled</td>
+</tr>
+<tr>
+<td><strong>Propensity Model</strong></td>
+<td>A model that estimates the probability that an individual will take a specific action (purchase, churn, respond)</td>
+</tr>
+<tr>
+<td><strong>Random Forest</strong></td>
+<td>An ensemble of decision trees trained on random subsets of data and features; predictions are aggregated by voting</td>
+</tr>
+<tr>
+<td><strong>Real-Time Inference</strong></td>
+<td>Serving model predictions via an API in response to live requests, typically with sub-100ms latency</td>
+</tr>
+<tr>
+<td><strong>Recall</strong></td>
+<td>The fraction of actual positives correctly identified by the model: TP / (TP + FN); also called sensitivity</td>
+</tr>
+<tr>
+<td><strong>Regression</strong></td>
+<td>A supervised learning task where the model predicts a continuous numeric value</td>
+</tr>
+<tr>
+<td><strong>Regularisation</strong></td>
+<td>Techniques (L1/L2 penalty, dropout) that constrain model complexity to reduce overfitting</td>
+</tr>
+<tr>
+<td><strong>RMSE (Root Mean Squared Error)</strong></td>
+<td>The square root of the average squared prediction error; the standard regression metric</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td>A numeric probability or index output by a model representing the likelihood of a specific risk event</td>
+</tr>
+<tr>
+<td><strong>SHAP (SHapley Additive exPlanations)</strong></td>
+<td>A game-theory-based method for explaining how each feature contributed to a specific model prediction</td>
+</tr>
+<tr>
+<td><strong>SMOTE</strong></td>
+<td>Synthetic Minority Over-sampling Technique; generates synthetic minority class examples to address class imbalance</td>
+</tr>
+<tr>
+<td><strong>Supervised Learning</strong></td>
+<td>A learning paradigm where models are trained on (input, label) pairs with the goal of predicting the label for new inputs</td>
+</tr>
+<tr>
+<td><strong>SVM (Support Vector Machine)</strong></td>
+<td>A classification algorithm that finds the maximum-margin hyperplane separating two classes in feature space</td>
+</tr>
+<tr>
+<td><strong>Target Encoding</strong></td>
+<td>Replacing a categorical variable with the mean of the target variable for that category; useful for high-cardinality features</td>
+</tr>
+<tr>
+<td><strong>Transfer Learning</strong></td>
+<td>Fine-tuning a pre-trained model on a new, smaller, domain-specific dataset</td>
+</tr>
+<tr>
+<td><strong>Underfitting</strong></td>
+<td>When a model is too simple to capture the real patterns in data; exhibits high bias and low variance</td>
+</tr>
+<tr>
+<td><strong>Uplift Modelling</strong></td>
+<td>A technique that models the incremental effect of a treatment (e.g., marketing contact) on an individual's behaviour</td>
+</tr>
+<tr>
+<td><strong>Validation Set</strong></td>
+<td>A held-out subset of training data used to evaluate model performance and tune hyperparameters during development</td>
+</tr>
+<tr>
+<td><strong>Variance (Statistical)</strong></td>
+<td>The sensitivity of a model's predictions to fluctuations in the training data; high variance leads to overfitting</td>
+</tr>
+<tr>
+<td><strong>Walk-Forward Validation</strong></td>
+<td>A time-series cross-validation strategy where the model is trained on past data and validated on the next future window</td>
+</tr>
+<tr>
+<td><strong>XGBoost</strong></td>
+<td>Extreme Gradient Boosting; a regularised gradient boosting framework; dominant on tabular ML tasks and Kaggle competitions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+ <div class="glossary-entry"><strong>Supervised Learning</strong><span>Training on labelled examples where the correct output for each input is known.</span></div>
+ <div class="glossary-entry"><strong>Classification</strong><span>Predicting a categorical label (spam/not-spam, disease/healthy) for an input.</span></div>
+ <div class="glossary-entry"><strong>Regression</strong><span>Predicting a continuous numerical value (price, temperature, probability) from features.</span></div>
+ <div class="glossary-entry"><strong>Gradient Boosting</strong><span>Ensemble method building trees sequentially, each correcting errors of the previous trees.</span></div>
+ <div class="glossary-entry"><strong>Random Forest</strong><span>Ensemble of decision trees trained on random subsets of data and features.</span></div>
+ <div class="glossary-entry"><strong>XGBoost</strong><span>Extreme Gradient Boosting — high-performance gradient boosting with regularisation and parallel processing.</span></div>
+ <div class="glossary-entry"><strong>LightGBM</strong><span>Microsoft's gradient boosting framework using histogram-based algorithms for speed and efficiency.</span></div>
+ <div class="glossary-entry"><strong>Feature Engineering</strong><span>Creating informative input variables from raw data to improve model performance.</span></div>
+ <div class="glossary-entry"><strong>Cross-Validation</strong><span>Evaluating model performance by training and testing on different data splits.</span></div>
+ <div class="glossary-entry"><strong>ROC-AUC</strong><span>Area Under the Receiver Operating Characteristic curve — measures classification performance across thresholds.</span></div>
+ <div class="glossary-entry"><strong>Precision and Recall</strong><span>Precision: fraction of positive predictions that are correct. Recall: fraction of actual positives found.</span></div>
+ <div class="glossary-entry"><strong>F1 Score</strong><span>Harmonic mean of precision and recall, balancing both metrics in a single number.</span></div>
+ <div class="glossary-entry"><strong>Confusion Matrix</strong><span>Table showing true positives, true negatives, false positives, and false negatives.</span></div>
+ <div class="glossary-entry"><strong>Overfitting</strong><span>Model memorising training data noise, leading to poor generalisation on unseen data.</span></div>
+ <div class="glossary-entry"><strong>Regularisation</strong><span>Techniques (L1, L2, dropout) penalising model complexity to prevent overfitting.</span></div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-infographics">
+ <h2>Visual Infographics</h2>
+ <p class="desc">Animation infographics for Predictive / Discriminative AI — overview and full technology stack.</p>
+
+ <div class="gif-gallery">
+ <div class="gif-card">
+ <h3>Conceptual Overview</h3>
+ <img src="../assets/overview-gifs/14-predictive-discriminative-ai-overview.gif" alt="Predictive / Discriminative AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Predictive / Discriminative AI · 2026</p>
+ </div>
+ <div class="gif-card">
+ <h3>Full Technology Stack</h3>
+ <img src="../assets/tech-stack-gifs/14-predictive-discriminative-ai-tech-stack.gif" alt="Predictive / Discriminative AI — Tech Stack Infographic" loading="lazy">
+ <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
+ </div>
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-regulation">
+ <h2>Regulation</h2>
+ <p class="desc">Detailed reference content for regulation.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>Predictive AI has been regulated longer than generative and agentic AI because it is most commonly deployed for <strong>high-stakes decisioning</strong> — credit, hiring, insurance, healthcare, and law enforcement. The 2025–2026 regulatory wave formalises documentation, transparency, and risk-management requirements that many regulated industries already partially implement.</p>
+<h3>EU AI Act — Predictive AI Implications</h3>
+<p>Many predictive models fall under the <strong>high-risk</strong> classification when deployed in employment, education, credit, insurance, public benefits, healthcare, biometric identification, or law enforcement contexts.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement Area</th>
+<th>Practical Implication for Predictive AI Systems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risk Management System</strong></td>
+<td>Formal risk process covering model development, deployment, and incident handling</td>
+</tr>
+<tr>
+<td><strong>Data Governance</strong></td>
+<td>Document training data sources, representativeness, bias mitigation measures, and preprocessing steps</td>
+</tr>
+<tr>
+<td><strong>Technical Documentation</strong></td>
+<td>Model design, intended use, performance characteristics, known limitations, and monitoring plan</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; Traceability</strong></td>
+<td>Maintain logs of inputs, outputs, and key decisions for auditability and incident investigation</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Users must be informed when subject to AI-driven decisions in high-risk contexts</td>
+</tr>
+<tr>
+<td><strong>Human Oversight</strong></td>
+<td>Ability for a human to intervene, override, and review automated decisions</td>
+</tr>
+<tr>
+<td><strong>Accuracy, Robustness &amp; Cybersecurity</strong></td>
+<td>Stress-test and monitor for failures and attacks; ensure resilience across edge cases</td>
+</tr>
+<tr>
+<td><strong>Post-Market Monitoring</strong></td>
+<td>Ongoing monitoring and mandatory reporting of serious incidents post-deployment</td>
+</tr>
+</tbody>
+</table>
+<h3>Sector-Specific Regulation</h3>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Regulatory Drivers</th>
+<th>Typical Controls Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credit &amp; Lending</strong></td>
+<td>ECOA, FCRA, CFPB guidance (US); FCA (UK); EU consumer credit directive</td>
+<td>Explainability, adverse action notices, disparate impact testing, model validation</td>
+</tr>
+<tr>
+<td><strong>Insurance</strong></td>
+<td>State regulators (US); EIOPA (EU); FCA (UK)</td>
+<td>Pricing transparency, discrimination constraints, audit trails, actuarial sign-off</td>
+</tr>
+<tr>
+<td><strong>Healthcare</strong></td>
+<td>FDA / EMA / MHRA; HIPAA (US); MDR (EU)</td>
+<td>Clinical validation, safety monitoring, privacy safeguards, regulatory clearance for SaMD</td>
+</tr>
+<tr>
+<td><strong>Employment</strong></td>
+<td>EEOC guidance (US); NYC Local Law 144; EU AI Act Title III</td>
+<td>Bias audits, candidate notification, documentation of model use</td>
+</tr>
+<tr>
+<td><strong>Data Privacy</strong></td>
+<td>GDPR (EU); CCPA / CPRA (US); LGPD (Brazil); PDPA (various)</td>
+<td>Data minimisation, lawful basis for processing, right to explanation, data subject rights</td>
+</tr>
+<tr>
+<td><strong>Financial Markets</strong></td>
+<td>SR 11-7 (US Fed); EBA guidelines (EU); MAS (Singapore)</td>
+<td>Model risk management, validation, governance, documentation of assumptions</td>
+</tr>
+<tr>
+<td><strong>Public Sector</strong></td>
+<td>EU AI Act prohibited &amp; high-risk lists; national AI strategies</td>
+<td>Mandatory human oversight; prohibition on certain social scoring applications</td>
+</tr>
+</tbody>
+</table>
+<h3>Model Risk Management (SR 11-7 Framework)</h3>
+<p>The US Federal Reserve's <strong>SR 11-7 guidance</strong> is the most widely adopted framework for model governance in financial services — and its principles are increasingly applied across industries.</p>
+<table>
+<thead>
+<tr>
+<th>SR 11-7 Component</th>
+<th>What It Requires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Development</strong></td>
+<td>Sound methodology; well-reasoned assumptions; documented design choices</td>
+</tr>
+<tr>
+<td><strong>Model Validation</strong></td>
+<td>Independent validation by a team separate from model developers</td>
+</tr>
+<tr>
+<td><strong>Conceptual Soundness</strong></td>
+<td>Review of the theory and assumptions underlying the model</td>
+</tr>
+<tr>
+<td><strong>Ongoing Monitoring</strong></td>
+<td>Track model performance and stability over time; flag material degradation</td>
+</tr>
+<tr>
+<td><strong>Outcomes Analysis</strong></td>
+<td>Compare model predictions to actual outcomes; assess accuracy and discrimination</td>
+</tr>
+<tr>
+<td><strong>Benchmarking</strong></td>
+<td>Compare model against alternative approaches or challenger models</td>
+</tr>
+<tr>
+<td><strong>Model Inventory</strong></td>
+<td>Maintain a register of all models in use, their status, risk tier, and validation history</td>
+</tr>
+</tbody>
+</table>
+<h3>Responsible AI Toolkits</h3>
+<table>
+<thead>
+<tr>
+<th>Toolkit</th>
+<th>Provider</th>
+<th>Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fairlearn</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Fairness assessment and mitigation for classification and regression models</td>
+</tr>
+<tr>
+<td><strong>AI Fairness 360 (AIF360)</strong></td>
+<td>IBM (open-source)</td>
+<td>70+ fairness metrics; 10+ bias mitigation algorithms</td>
+</tr>
+<tr>
+<td><strong>What-If Tool</strong></td>
+<td>Google (open-source)</td>
+<td>Interactive exploration of model behaviour and fairness across subgroups</td>
+</tr>
+<tr>
+<td><strong>SHAP</strong></td>
+<td>Open-source</td>
+<td>Model-agnostic feature attribution; supports all major ML frameworks</td>
+</tr>
+<tr>
+<td><strong>LIME</strong></td>
+<td>Open-source</td>
+<td>Local interpretable model-agnostic explanations; approximates model locally</td>
+</tr>
+<tr>
+<td><strong>InterpretML</strong></td>
+<td>Microsoft (open-source)</td>
+<td>Explainable Boosting Machines (EBM); glass-box model family</td>
+</tr>
+<tr>
+<td><strong>Responsible AI Dashboard</strong></td>
+<td>Microsoft (Azure ML)</td>
+<td>Integrated fairness, explainability, error analysis, and causal analysis</td>
+</tr>
+<tr>
+<td><strong>Fiddler AI</strong></td>
+<td>SaaS</td>
+<td>Enterprise model monitoring, explainability, and fairness auditing</td>
+</tr>
+<tr>
+<td><strong>Arthur AI</strong></td>
+<td>SaaS</td>
+<td>Bias detection, performance monitoring, explainability for regulated industries</td>
+</tr>
+<tr>
+<td><strong>Credo AI</strong></td>
+<td>SaaS</td>
+<td>AI governance platform; policy-as-code; compliance evidence generation</td>
+</tr>
+</tbody>
+</table>
+<h3>Documentation Standards</h3>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Description</th>
+<th>Who Uses It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Cards</strong></td>
+<td>Standardised model documentation covering intended use, performance, limitations, and ethical considerations</td>
+<td>Google, Hugging Face, industry-wide</td>
+</tr>
+<tr>
+<td><strong>Datasheets for Datasets</strong></td>
+<td>Documentation standard for training datasets covering motivation, composition, and known biases</td>
+<td>Academic and enterprise ML teams</td>
+</tr>
+<tr>
+<td><strong>FactSheets</strong></td>
+<td>IBM's structured transparency document for AI services</td>
+<td>IBM customers and enterprise deployments</td>
+</tr>
+<tr>
+<td><strong>AI BoM (Bill of Materials)</strong></td>
+<td>Inventory of all components, data sources, and dependencies in an AI system</td>
+<td>Enterprise AI governance; supply chain compliance</td>
+</tr>
+<tr>
+<td><strong>EU AI Act Technical File</strong></td>
+<td>Mandatory documentation package for high-risk AI systems under the EU AI Act</td>
+<td>EU market deployers of high-risk AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-mlops">
+ <h2>MLOps</h2>
+ <p class="desc">Detailed reference content for mlops.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">MLOps — Model Deployment & Lifecycle</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>MLOps (Machine Learning Operations) is the discipline of deploying, monitoring, and maintaining predictive models in production reliably and at scale.</p>
+<h3>Model Deployment Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Real-Time Inference (REST API)</strong></td>
+<td>Model served as an API endpoint; responds to requests in milliseconds</td>
+<td>Fraud detection, credit scoring, recommendation</td>
+</tr>
+<tr>
+<td><strong>Batch Prediction</strong></td>
+<td>Model runs over a dataset at scheduled intervals; results stored</td>
+<td>Daily churn scores, overnight demand forecasts</td>
+</tr>
+<tr>
+<td><strong>Streaming Inference</strong></td>
+<td>Model applied to events in real time as they arrive (Kafka, Kinesis)</td>
+<td>Transaction monitoring, log anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Edge Deployment</strong></td>
+<td>Model deployed on device; no server round-trip required</td>
+<td>Mobile apps, IoT sensors, autonomous vehicles</td>
+</tr>
+<tr>
+<td><strong>Embedded ML</strong></td>
+<td>Model compiled into a software product or firmware</td>
+<td>Spam filters in email clients, ABS in vehicles</td>
+</tr>
+<tr>
+<td><strong>Shadow Mode</strong></td>
+<td>New model runs in parallel with production; results compared without serving to users</td>
+<td>Safe A/B testing before full cutover</td>
+</tr>
+<tr>
+<td><strong>A/B Testing</strong></td>
+<td>Route a portion of traffic to new model; compare business metrics</td>
+<td>Gradual model rollout with statistical confidence</td>
+</tr>
+<tr>
+<td><strong>Canary Deployment</strong></td>
+<td>Gradually increase traffic to new model while monitoring for degradation</td>
+<td>Risk-managed production transitions</td>
+</tr>
+</tbody>
+</table>
+<h3>Model Serving Infrastructure</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Type</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TensorFlow Serving</strong></td>
+<td>Open-source</td>
+<td>Production-grade serving for TF models; gRPC + REST</td>
+</tr>
+<tr>
+<td><strong>TorchServe</strong></td>
+<td>Open-source</td>
+<td>PyTorch's official model server</td>
+</tr>
+<tr>
+<td><strong>Triton Inference Server</strong></td>
+<td>Open-source (NVIDIA)</td>
+<td>Multi-framework; GPU-optimised; high-throughput batching</td>
+</tr>
+<tr>
+<td><strong>BentoML</strong></td>
+<td>Open-source / SaaS</td>
+<td>Framework-agnostic model serving; easy containerisation</td>
+</tr>
+<tr>
+<td><strong>Seldon Core</strong></td>
+<td>Open-source</td>
+<td>Kubernetes-native model serving; explainability integration</td>
+</tr>
+<tr>
+<td><strong>KServe</strong></td>
+<td>Open-source</td>
+<td>Kubernetes-based serverless inference; multi-model serving</td>
+</tr>
+<tr>
+<td><strong>Ray Serve</strong></td>
+<td>Open-source</td>
+<td>Distributed inference; Python-native; composable pipelines</td>
+</tr>
+<tr>
+<td><strong>FastAPI</strong></td>
+<td>Open-source</td>
+<td>Lightweight REST API framework; common for custom serving</td>
+</tr>
+</tbody>
+</table>
+<h3>Model Monitoring</h3>
+<table>
+<thead>
+<tr>
+<th>Monitoring Type</th>
+<th>What It Detects</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Drift</strong></td>
+<td>Input feature distributions shift from training data</td>
+<td>Evidently, NannyML, WhyLogs, Arize</td>
+</tr>
+<tr>
+<td><strong>Concept Drift</strong></td>
+<td>Relationship between inputs and output changes over time</td>
+<td>Evidently, NannyML, Fiddler</td>
+</tr>
+<tr>
+<td><strong>Label / Prediction Drift</strong></td>
+<td>Output distributions shift unexpectedly</td>
+<td>Arize Phoenix, Fiddler, Arthur AI</td>
+</tr>
+<tr>
+<td><strong>Data Quality</strong></td>
+<td>Missing values, outliers, schema violations in production data</td>
+<td>Great Expectations, Monte Carlo, Soda</td>
+</tr>
+<tr>
+<td><strong>Model Performance Decay</strong></td>
+<td>Accuracy, precision, or AUC drops below threshold</td>
+<td>MLflow, Arize, Fiddler, SageMaker Monitor</td>
+</tr>
+<tr>
+<td><strong>Infrastructure Monitoring</strong></td>
+<td>Latency, throughput, error rates of serving infrastructure</td>
+<td>Prometheus, Grafana, Datadog</td>
+</tr>
+</tbody>
+</table>
+<h3>MLOps Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Type</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLflow</strong></td>
+<td>Open-source</td>
+<td>Experiment tracking + model registry + deployment; industry standard</td>
+</tr>
+<tr>
+<td><strong>Kubeflow</strong></td>
+<td>Open-source</td>
+<td>Kubernetes-native ML pipelines; production-grade orchestration</td>
+</tr>
+<tr>
+<td><strong>ZenML</strong></td>
+<td>Open-source</td>
+<td>Clean MLOps abstraction; framework-agnostic pipelines</td>
+</tr>
+<tr>
+<td><strong>Metaflow (Netflix)</strong></td>
+<td>Open-source</td>
+<td>Python-first ML workflow management; data science-friendly</td>
+</tr>
+<tr>
+<td><strong>Prefect / Airflow</strong></td>
+<td>Open-source</td>
+<td>General workflow orchestration used for ML pipelines</td>
+</tr>
+<tr>
+<td><strong>Weights &amp; Biases</strong></td>
+<td>SaaS</td>
+<td>Experiment tracking + artifact management + model registry</td>
+</tr>
+<tr>
+<td><strong>Arize AI</strong></td>
+<td>SaaS</td>
+<td>Model observability; drift detection; explainability</td>
+</tr>
+<tr>
+<td><strong>Fiddler AI</strong></td>
+<td>SaaS</td>
+<td>Enterprise ML monitoring; explainability; bias detection</td>
+</tr>
+<tr>
+<td><strong>Evidently AI</strong></td>
+<td>Open-source / SaaS</td>
+<td>Data and model monitoring reports; drift analysis</td>
+</tr>
+<tr>
+<td><strong>NannyML</strong></td>
+<td>Open-source / SaaS</td>
+<td>Performance monitoring without ground truth labels</td>
+</tr>
+<tr>
+<td><strong>Arthur AI</strong></td>
+<td>SaaS</td>
+<td>ML monitoring; bias detection; explainability for regulated industries</td>
+</tr>
+</tbody>
+</table>
+<h3>The Full MLOps Lifecycle</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│ MLOPS LIFECYCLE │
+│ │
+│ DATA EXPERIMENTATION DEPLOYMENT │
+│ ───────────── ───────────────── ────────────── │
+│ Ingest → Train → Evaluate → Package → Serve │
+│ Validate → Track → Compare → via API / Batch │
+│ Feature Store Register Model / Edge │
+│ │
+│ MONITORING GOVERNANCE RETRAINING │
+│ ───────────── ───────────────── ────────────── │
+│ Drift → Audit logs → Trigger → │
+│ Performance → Compliance → Retrain → │
+│ Alerts Lineage Validate → Redeploy │
+└─────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-automl">
+ <h2>AutoML</h2>
+ <p class="desc">Detailed reference content for automl.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">AutoML & No-Code ML</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>AutoML automates the most labour-intensive steps of the ML pipeline — algorithm selection, feature engineering, and hyperparameter tuning — making predictive AI accessible to non-specialist practitioners.</p>
+<h3>AutoML Capabilities</h3>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What It Automates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithm Selection</strong></td>
+<td>Tests multiple algorithms and selects the best performer</td>
+</tr>
+<tr>
+<td><strong>Feature Engineering</strong></td>
+<td>Automatically creates, selects, and transforms features</td>
+</tr>
+<tr>
+<td><strong>Hyperparameter Optimisation</strong></td>
+<td>Searches for optimal model parameters</td>
+</tr>
+<tr>
+<td><strong>Ensemble Construction</strong></td>
+<td>Combines the best models into an ensemble</td>
+</tr>
+<tr>
+<td><strong>Model Evaluation</strong></td>
+<td>Runs cross-validation and computes performance metrics</td>
+</tr>
+<tr>
+<td><strong>Neural Architecture Search (NAS)</strong></td>
+<td>Discovers optimal DNN architectures automatically</td>
+</tr>
+<tr>
+<td><strong>Data Preprocessing</strong></td>
+<td>Handles missing values, encoding, and normalisation automatically</td>
+</tr>
+</tbody>
+</table>
+<h3>Leading AutoML Platforms</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Type</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H2O AutoML</strong></td>
+<td>Open-source / SaaS</td>
+<td>Best open-source AutoML; Driverless AI; widely used in enterprise</td>
+</tr>
+<tr>
+<td><strong>Auto-sklearn</strong></td>
+<td>Open-source</td>
+<td>Bayesian optimisation over scikit-learn pipelines; academic standard</td>
+</tr>
+<tr>
+<td><strong>TPOT</strong></td>
+<td>Open-source</td>
+<td>Genetic programming for pipeline optimisation; exports clean Python code</td>
+</tr>
+<tr>
+<td><strong>AutoGluon</strong></td>
+<td>Open-source (Amazon)</td>
+<td>State-of-the-art AutoML; strong stacking; competitive with manual models</td>
+</tr>
+<tr>
+<td><strong>Google Vertex AutoML</strong></td>
+<td>SaaS</td>
+<td>No-code tabular, image, text, and video ML on Google Cloud</td>
+</tr>
+<tr>
+<td><strong>AWS SageMaker Autopilot</strong></td>
+<td>SaaS</td>
+<td>AutoML with full pipeline visibility; explainability built-in</td>
+</tr>
+<tr>
+<td><strong>Azure Automated ML</strong></td>
+<td>SaaS</td>
+<td>Enterprise AutoML with responsible AI integration</td>
+</tr>
+<tr>
+<td><strong>DataRobot</strong></td>
+<td>SaaS</td>
+<td>Market-leading enterprise AutoML; MLOps; time-to-value focus</td>
+</tr>
+<tr>
+<td><strong>Dataiku</strong></td>
+<td>SaaS</td>
+<td>Collaborative data science and ML platform; low-code/pro-code</td>
+</tr>
+<tr>
+<td><strong>RapidMiner</strong></td>
+<td>SaaS</td>
+<td>Visual ML pipeline builder; no-code + Python integration</td>
+</tr>
+<tr>
+<td><strong>Obviously AI</strong></td>
+<td>SaaS</td>
+<td>One-click predictive models for business users; natural language interface</td>
+</tr>
+<tr>
+<td><strong>Pecan AI</strong></td>
+<td>SaaS</td>
+<td>Automated predictive analytics for business metrics</td>
+</tr>
+</tbody>
+</table>
+<h3>Foundation Models for Time-Series (Zero-Shot Forecasting)</h3>
+<p>A rapidly emerging category: large pre-trained models that forecast without task-specific training.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Organisation</th>
+<th>Context Length</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chronos</strong></td>
+<td>Amazon</td>
+<td>512 time steps</td>
+<td>Tokenises time-series; transformer-based; strong zero-shot</td>
+</tr>
+<tr>
+<td><strong>TimesFM</strong></td>
+<td>Google</td>
+<td>512 time steps</td>
+<td>Decoder-only transformer; strong zero-shot forecasting</td>
+</tr>
+<tr>
+<td><strong>Moirai</strong></td>
+<td>Salesforce</td>
+<td>1–5,000 steps</td>
+<td>Any-variate; any-frequency; universal forecasting</td>
+</tr>
+<tr>
+<td><strong>Lag-Llama</strong></td>
+<td>Community</td>
+<td>1,024 steps</td>
+<td>Open-source; univariate probabilistic forecasting</td>
+</tr>
+<tr>
+<td><strong>MOMENT</strong></td>
+<td>CMU</td>
+<td>512 time steps</td>
+<td>Multi-task time-series foundation model</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-deepdives">
+ <h2>Deep Dives</h2>
+ <p class="desc">Detailed reference content for deep dives.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Feature Engineering & Data Preparation</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p>Feature engineering is the process of transforming raw data into the numeric representations that ML models learn from. It remains one of the most impactful steps in the predictive AI pipeline.</p>
+<h3>Structured / Tabular Feature Types</h3>
+<table>
+<thead>
+<tr>
+<th>Feature Type</th>
+<th>Description</th>
+<th>Handling Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Numeric</strong></td>
+<td>Continuous or discrete numbers</td>
+<td>Normalisation, scaling, log transform</td>
+</tr>
+<tr>
+<td><strong>Categorical (Low Cardinality)</strong></td>
+<td>Variables with few categories (e.g., country)</td>
+<td>One-hot encoding, label encoding</td>
+</tr>
+<tr>
+<td><strong>Categorical (High Cardinality)</strong></td>
+<td>Variables with many categories (e.g., product ID)</td>
+<td>Target encoding, embeddings, hashing</td>
+</tr>
+<tr>
+<td><strong>Ordinal</strong></td>
+<td>Ordered categories (e.g., education level)</td>
+<td>Integer encoding preserving order</td>
+</tr>
+<tr>
+<td><strong>Datetime</strong></td>
+<td>Timestamps and date values</td>
+<td>Extract day, month, year, hour, day-of-week, cyclical encoding</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td>Free-form strings</td>
+<td>TF-IDF, word2vec, BERT embeddings</td>
+</tr>
+<tr>
+<td><strong>Geospatial</strong></td>
+<td>Latitude, longitude, region</td>
+<td>Geohashing, distance features, clustering</td>
+</tr>
+<tr>
+<td><strong>Interaction Features</strong></td>
+<td>Products or ratios of two features</td>
+<td>Manual engineering or automated discovery</td>
+</tr>
+<tr>
+<td><strong>Lag Features</strong></td>
+<td>Prior time period values as features</td>
+<td>For time-series; critical for forecasting</td>
+</tr>
+<tr>
+<td><strong>Aggregation Features</strong></td>
+<td>Grouped statistics (user's last 30-day average spend)</td>
+<td>Window functions; feature stores</td>
+</tr>
+</tbody>
+</table>
+<h3>Feature Engineering Techniques</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normalisation (Min-Max)</strong></td>
+<td>Scale features to [0, 1] range</td>
+<td>Neural networks; distance-based models</td>
+</tr>
+<tr>
+<td><strong>Standardisation (Z-score)</strong></td>
+<td>Transform to zero mean, unit variance</td>
+<td>Logistic Regression, SVM, KNN</td>
+</tr>
+<tr>
+<td><strong>Log Transformation</strong></td>
+<td>Reduce skewness of heavily right-skewed distributions</td>
+<td>Revenue, transaction amounts, counts</td>
+</tr>
+<tr>
+<td><strong>Binning / Discretisation</strong></td>
+<td>Convert continuous variable to ordinal buckets</td>
+<td>Age groups, income bands, risk tiers</td>
+</tr>
+<tr>
+<td><strong>Polynomial Features</strong></td>
+<td>Create squared and interaction terms</td>
+<td>Capture non-linearity in linear models</td>
+</tr>
+<tr>
+<td><strong>Target Encoding</strong></td>
+<td>Replace category with mean of target variable</td>
+<td>High-cardinality categoricals in GBT</td>
+</tr>
+<tr>
+<td><strong>PCA / Dimensionality Reduction</strong></td>
+<td>Compress many correlated features into fewer components</td>
+<td>High-dimensional data; reduce noise</td>
+</tr>
+<tr>
+<td><strong>Embeddings</strong></td>
+<td>Dense vector representations of categorical entities</td>
+<td>Users, products, documents in deep models</td>
+</tr>
+<tr>
+<td><strong>Window Statistics</strong></td>
+<td>Rolling mean, max, std over time window</td>
+<td>Time-series; fraud; user behaviour</td>
+</tr>
+</tbody>
+</table>
+<h3>Data Quality &amp; Preprocessing</h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Missing Values</strong></td>
+<td>Impute with mean/median/mode; model-based imputation; flag missingness as a feature</td>
+</tr>
+<tr>
+<td><strong>Class Imbalance</strong></td>
+<td>Oversample minority (SMOTE), undersample majority, adjust class weights, use AUC not accuracy</td>
+</tr>
+<tr>
+<td><strong>Outliers</strong></td>
+<td>Detect via IQR/Z-score; clip, transform, or flag as a separate category</td>
+</tr>
+<tr>
+<td><strong>Data Leakage</strong></td>
+<td>Ensure no future information is used as a feature; strict train/test temporal splits</td>
+</tr>
+<tr>
+<td><strong>Concept Drift</strong></td>
+<td>Monitor feature distributions in production; trigger retraining when distributions shift</td>
+</tr>
+<tr>
+<td><strong>Label Noise</strong></td>
+<td>Clean labels via majority vote, label smoothing, or confident learning</td>
+</tr>
+<tr>
+<td><strong>Duplicates</strong></td>
+<td>Deduplicate before train/test split to avoid data contamination</td>
+</tr>
+</tbody>
+</table>
+<h3>Feature Stores</h3>
+<p>Feature stores are the infrastructure layer for managing, storing, and serving features consistently across training and inference.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Type</th>
+<th>Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Feast</strong></td>
+<td>Open-source</td>
+<td>Most widely used open-source feature store; online + offline serving</td>
+</tr>
+<tr>
+<td><strong>Tecton</strong></td>
+<td>SaaS</td>
+<td>Enterprise feature platform; real-time streaming features</td>
+</tr>
+<tr>
+<td><strong>Databricks Feature Store</strong></td>
+<td>SaaS</td>
+<td>Native integration with MLflow and Delta Lake</td>
+</tr>
+<tr>
+<td><strong>Vertex AI Feature Store</strong></td>
+<td>SaaS</td>
+<td>Google's managed feature store; scalable low-latency serving</td>
+</tr>
+<tr>
+<td><strong>AWS SageMaker Feature Store</strong></td>
+<td>SaaS</td>
+<td>Online and offline store; integrated with SageMaker</td>
+</tr>
+<tr>
+<td><strong>Hopsworks</strong></td>
+<td>Open-source / SaaS</td>
+<td>Full-stack feature store with model registry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Model Training Techniques</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <h3>Supervised Learning</h3>
+<p>The foundational paradigm for all predictive AI.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Learn from (input, label) pairs; minimise prediction error on known outcomes</td>
+</tr>
+<tr>
+<td><strong>Requirement</strong></td>
+<td>Labelled training data — each example must have a known correct output</td>
+</tr>
+<tr>
+<td><strong>Training Process</strong></td>
+<td>Iterate over data; compute loss between predictions and labels; update weights via gradient descent or tree-splitting</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>All classification, regression, risk scoring, and ranking tasks</td>
+</tr>
+</tbody>
+</table>
+<h3>Semi-Supervised Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Use a small amount of labelled data plus a large amount of unlabelled data</td>
+</tr>
+<tr>
+<td><strong>Why It Matters</strong></td>
+<td>Labelling is expensive; unlabelled data is abundant</td>
+</tr>
+<tr>
+<td><strong>Techniques</strong></td>
+<td>Self-training, label propagation, pseudo-labelling, consistency regularisation</td>
+</tr>
+<tr>
+<td><strong>Used For</strong></td>
+<td>Medical imaging (few labelled scans), NLP text classification, fraud detection</td>
+</tr>
+</tbody>
+</table>
+<h3>Transfer Learning</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Mechanism</strong></td>
+<td>Fine-tune a large pre-trained model on a small domain-specific labelled dataset</td>
+</tr>
+<tr>
+<td><strong>Why It Works</strong></td>
+<td>Pre-trained models encode rich general representations; domain data adapts the final layers</td>
+</tr>
+<tr>
+<td><strong>Key Benefit</strong></td>
+<td>Achieves strong performance with orders of magnitude less labelled data</td>
+</tr>
+<tr>
+<td><strong>Examples</strong></td>
+<td>BERT fine-tuned for contract classification; ImageNet-pre-trained CNN for medical imaging</td>
+</tr>
+</tbody>
+</table>
+<h3>Hyperparameter Optimisation</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grid Search</strong></td>
+<td>Exhaustively try all combinations in a specified grid</td>
+<td>Small parameter spaces; sanity checks</td>
+</tr>
+<tr>
+<td><strong>Random Search</strong></td>
+<td>Randomly sample parameter combinations</td>
+<td>More efficient than grid search; general use</td>
+</tr>
+<tr>
+<td><strong>Bayesian Optimisation (Optuna, Hyperopt)</strong></td>
+<td>Build a surrogate model of performance; intelligently explore space</td>
+<td>Complex, expensive search spaces</td>
+</tr>
+<tr>
+<td><strong>Successive Halving / Hyperband</strong></td>
+<td>Early-stop underperforming configurations; allocate budget to promising ones</td>
+<td>Large-scale ML at resource-constrained budgets</td>
+</tr>
+<tr>
+<td><strong>Neural Architecture Search (NAS)</strong></td>
+<td>Automatically discover optimal model architectures</td>
+<td>Deep learning; automated model design</td>
+</tr>
+</tbody>
+</table>
+<h3>Ensemble Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bagging</strong></td>
+<td>Train multiple models on random data subsets; aggregate predictions (e.g., Random Forest)</td>
+<td>Reduce variance; avoid overfitting</td>
+</tr>
+<tr>
+<td><strong>Boosting</strong></td>
+<td>Train models sequentially; each corrects predecessor errors (e.g., XGBoost)</td>
+<td>Reduce bias; high accuracy on tabular data</td>
+</tr>
+<tr>
+<td><strong>Stacking</strong></td>
+<td>Use predictions of base models as features for a meta-model</td>
+<td>Kaggle competitions; maximum accuracy</td>
+</tr>
+<tr>
+<td><strong>Voting</strong></td>
+<td>Combine predictions from diverse models by majority vote or averaging</td>
+<td>Robust, easy to implement ensemble</td>
+</tr>
+<tr>
+<td><strong>Blending</strong></td>
+<td>Similar to stacking but uses a holdout set rather than cross-validation</td>
+<td>Production ensembles</td>
+</tr>
+</tbody>
+</table>
+<h3>Class Imbalance Handling</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SMOTE</strong></td>
+<td>Synthetic Minority Over-sampling Technique — generates synthetic minority examples</td>
+<td>Moderate imbalance; tabular data</td>
+</tr>
+<tr>
+<td><strong>Class Weights</strong></td>
+<td>Increase the training loss for minority class errors</td>
+<td>All gradient-based models; simple and effective</td>
+</tr>
+<tr>
+<td><strong>Undersampling</strong></td>
+<td>Reduce majority class to balance dataset</td>
+<td>Very high imbalance; large majority class</td>
+</tr>
+<tr>
+<td><strong>Threshold Adjustment</strong></td>
+<td>Lower classification threshold to increase minority recall</td>
+<td>When false negatives are more costly</td>
+</tr>
+<tr>
+<td><strong>Ensemble for Imbalance (BalancedBagging)</strong></td>
+<td>Bagging with balanced sampling per tree</td>
+<td>Random Forest on imbalanced data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+ </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-overview">
+ <h2>Overview</h2>
+ <p class="desc">Detailed reference content for overview.</p>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
+ <div class="deep-dive" style="margin-top:0;">
+ <p><strong>Predictive / Discriminative AI</strong> is the branch of artificial intelligence focused on systems that learn to <strong>map inputs to outputs</strong> — classifying what something is, scoring the probability of an outcome, ranking items by relevance, or forecasting future values — based entirely on patterns extracted from historical labelled data.</p>
+<p>This is the most widely deployed form of AI in production today. It powers spam filters, credit scores, fraud detection, medical diagnosis, demand forecasting, recommender systems, and the vast majority of "AI in the enterprise" that predated the generative AI era.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Capability</strong></td>
+<td>Discriminates — learns the boundary between classes or the mapping from inputs to outputs</td>
+</tr>
+<tr>
+<td><strong>How It Learns</strong></td>
+<td>Supervised or semi-supervised learning on labelled datasets; minimises a loss function</td>
+</tr>
+<tr>
+<td><strong>What It Produces</strong></td>
+<td>Labels, probabilities, scores, rankings, or numeric forecasts — not new content</td>
+</tr>
+<tr>
+<td><strong>Key Differentiator</strong></td>
+<td>Predicts from existing patterns; it does not create, reason autonomously, or generate</td>
+</tr>
+</tbody>
+</table>
+<h3>Predictive AI vs. Other AI Types</h3>
+<table>
+<thead>
+<tr>
+<th>AI Type</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Predictive / Discriminative AI</strong></td>
+<td>Classifies, scores, and forecasts from patterns in historical data</td>
+<td>Fraud score, churn probability, demand forecast</td>
+</tr>
+<tr>
+<td><strong>Agentic AI</strong></td>
+<td>Pursues goals autonomously using tools, memory, and planning</td>
+<td>Research agent, coding agent</td>
+</tr>
+<tr>
+<td><strong>Analytical AI</strong></td>
+<td>Extracts insights and explanations from existing data</td>
+<td>Dashboard, root-cause analysis</td>
+</tr>
+<tr>
+<td><strong>Autonomous AI (Non-Agentic)</strong></td>
+<td>Operates independently within fixed boundaries without human input</td>
+<td>Autopilot, auto-scaling, algorithmic trading</td>
+</tr>
+<tr>
+<td><strong>Bayesian / Probabilistic AI</strong></td>
+<td>Reasons under uncertainty using probability distributions</td>
+<td>Clinical trial analysis, A/B testing, risk modelling</td>
+</tr>
+<tr>
+<td><strong>Cognitive / Neuro-Symbolic AI</strong></td>
+<td>Combines neural learning with symbolic reasoning</td>
+<td>LLM + knowledge graph, physics-informed neural net</td>
+</tr>
+<tr>
+<td><strong>Conversational AI</strong></td>
+<td>Manages multi-turn dialogue between humans and machines</td>
+<td>Customer service chatbot, voice assistant</td>
+</tr>
+<tr>
+<td><strong>Evolutionary / Genetic AI</strong></td>
+<td>Optimises solutions through population-based search inspired by natural selection</td>
+<td>Neural architecture search, logistics scheduling</td>
+</tr>
+<tr>
+<td><strong>Explainable AI (XAI)</strong></td>
+<td>Makes AI decisions understandable to humans</td>
+<td>SHAP explanations, LIME, Grad-CAM</td>
+</tr>
+<tr>
+<td><strong>Generative AI</strong></td>
+<td>Creates new original content from learned distributions</td>
+<td>Write an essay, generate an image</td>
+</tr>
+<tr>
+<td><strong>Multimodal Perception AI</strong></td>
+<td>Fuses vision, language, audio, and other modalities</td>
+<td>GPT-4o processing image + text, AV sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Optimisation / Operations Research AI</strong></td>
+<td>Finds optimal solutions to constrained mathematical problems</td>
+<td>Vehicle routing, supply chain planning, scheduling</td>
+</tr>
+<tr>
+<td><strong>Physical / Embodied AI</strong></td>
+<td>Acts in the physical world through sensors and actuators</td>
+<td>Autonomous vehicle, robot arm, drone</td>
+</tr>
+<tr>
+<td><strong>Privacy-Preserving AI</strong></td>
+<td>Trains and runs AI without exposing raw data</td>
+<td>Federated hospital models, differential privacy</td>
+</tr>
+<tr>
+<td><strong>Reactive AI</strong></td>
+<td>Responds to current input with no learning or memory</td>
+<td>Chess engine, rule-based spam filter</td>
+</tr>
+<tr>
+<td><strong>Recommendation / Retrieval AI</strong></td>
+<td>Surfaces relevant items from large catalogues based on user signals</td>
+<td>Netflix suggestions, Google Search, Spotify playlists</td>
+</tr>
+<tr>
+<td><strong>Reinforcement Learning AI</strong></td>
+<td>Learns optimal behaviour from reward signals via trial and error</td>
+<td>AlphaGo, robotic locomotion, RLHF</td>
+</tr>
+<tr>
+<td><strong>Scientific / Simulation AI</strong></td>
+<td>Solves scientific problems and models physical systems</td>
+<td>AlphaFold, climate simulation, molecular dynamics</td>
+</tr>
+<tr>
+<td><strong>Symbolic / Rule-Based AI</strong></td>
+<td>Reasons over explicit rules and knowledge to derive conclusions</td>
+<td>Medical expert system, legal reasoning engine</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key Distinction from Generative AI:</strong> Generative AI <em>produces</em> new content that did not exist. Predictive AI <em>evaluates</em> what already exists — assigning it to a category, estimating its probability, or forecasting what will happen next.</p>
+<p><strong>Key Distinction from Analytical AI:</strong> Analytical AI answers "what does this data mean?" and surfaces insights. Predictive AI answers "what will happen?" or "which category does this belong to?" — outputting a specific, actionable prediction.</p>
+</blockquote>
+<hr />
+ </div>
+</section>
+
+<footer class="footer">
+ Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026
+ <div class="footer-sub">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</div>
+</footer>
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+
+/* ── Tab Navigation ── */
+document.querySelectorAll('.nav-bar button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.nav-bar button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+btn.dataset.tab).classList.add('active');if(btn.dataset.tab==='benchmarks'&&!window._bC)initBenchCharts();if(btn.dataset.tab==='market'&&!window._mC)initMktCharts();});});
+
+/* ── Glossary Search ── */
+document.getElementById('glossarySearch').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('.glossary-entry').forEach(e=>{e.style.display=e.textContent.toLowerCase().includes(q)?'':'none';});});
+
+/* ── Benchmark Charts ── */
+function initBenchCharts(){
+ window._bC=true;
+ const baseOpts={responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}},y:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}}}};
+ new Chart(document.getElementById('chartBench'),{type:'bar',data:{labels:['XGBoost','LightGBM','CatBoost','Random Forest','MLP','Logistic Reg.'],datasets:[{data:[89,88.5,88,85,83,78],backgroundColor:['#c9a84c','#5b9e6f','#9684bf','#c9956a','#bf7570','#5e96b8']}]},options:{...baseOpts,scales:{...baseOpts.scales,y:{...baseOpts.scales.y,min:70,max:100}}}});
+ new Chart(document.getElementById('chartRadar'),{type:'radar',data:{labels:['Interpretability','Speed (Train)','Speed (Inference)','Accuracy (Tabular)','Handles Missing'],datasets:[{label:'Logistic Reg.',data:[95,98,99,60,20],borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.06)',pointBackgroundColor:'#c9a84c'},{label:'Random Forest',data:[70,80,75,80,60],borderColor:'#5b9e6f',backgroundColor:'rgba(63,185,80,0.08)',pointBackgroundColor:'#5b9e6f'},{label:'XGBoost',data:[50,65,85,92,90],borderColor:'#9684bf',backgroundColor:'rgba(210,168,255,0.08)',pointBackgroundColor:'#9684bf'},{label:'DNN',data:[25,30,60,78,40],borderColor:'#c9956a',backgroundColor:'rgba(240,136,62,0.08)',pointBackgroundColor:'#c9956a'}]},options:{responsive:true,scales:{r:{grid:{color:'#2a2d38'},angleLines:{color:'#2a2d38'},pointLabels:{color:'#9a9690'},ticks:{display:false},min:0,max:100}},plugins:{legend:{labels:{color:'#e8e4dd'}}}}});
+}
+
+/* ── Market Charts ── */
+function initMktCharts(){
+ window._mC=true;
+ const baseOpts={responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}},y:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}}}};
+ new Chart(document.getElementById('chartMkt'),{type:'bar',data:{labels:['Predictive Analytics','MLOps','AutoML','Feature Stores'],datasets:[{data:[14.9,2.4,1.8,0.6],backgroundColor:['#c9a84c','#5b9e6f','#9684bf','#c9956a']}]},options:baseOpts});
+ new Chart(document.getElementById('chartGrowth'),{type:'line',data:{labels:['2024','2025','2026','2027','2028','2029','2030'],datasets:[{label:'Predictive Analytics ($B)',data:[14.9,18.2,22.3,27.3,33.5,41.0,50.3],borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',fill:true,tension:0.3,pointBackgroundColor:'#c9a84c'}]},options:{...baseOpts,plugins:{legend:{labels:{color:'#e8e4dd'}}}}});
+}
+
+</script>
+<nav class="chapter-nav">
+ <a href="physical-embodied-ai.html"><span>&larr;</span><div><small>Previous</small>Physical / Embodied AI</div></a>
+ <a href="../index.html" class="home-link">All 19 Types</a>
+ <a href="reactive-ai.html" style="margin-left:auto;text-align:right;"><div><small>Next</small>Reactive AI</div><span>&rarr;</span></a>
+</nav>
+<button class="scroll-to-top" id="scrollToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>window.addEventListener("scroll",function(){var b=document.getElementById("scrollToTop");if(window.scrollY>400){b.classList.add("visible")}else{b.classList.remove("visible")}});</script>
+</body>
+</html>

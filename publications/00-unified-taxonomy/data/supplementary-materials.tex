@@ -1,0 +1,294 @@
+%% supplementary-materials.tex
+%% Supplementary Materials for:
+%% "A Unified Taxonomy of 19 AI System Types: Architecture, Capability,
+%%  and Deployment Analysis for the Modern AI Landscape"
+%%
+%% Author: Hameem Mahdi, Mayo Clinic
+%% For submission to ACM Transactions on Intelligent Systems and Technology (TIST)
+%%
+\documentclass[acmlarge]{acmart}
+\acmJournal{TIST}
+\setcopyright{none}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\begin{document}
+
+\title{Supplementary Materials: A Unified Taxonomy of 19 AI System Types}
+\author{Hameem Mahdi}
+\email{mahdi.hameem@mayo.edu}
+\orcid{0009-0007-0005-3080}
+\affiliation{%
+  \institution{Mayo Clinic}
+  \city{Rochester}
+  \state{MN}
+  \country{USA}
+}
+
+\maketitle
+
+%% ================================================================
+%% APPENDIX A: EXPERT VALIDATION SURVEY INSTRUMENT
+%% ================================================================
+\appendix
+\section{Expert Validation Survey Instrument}
+\label{app:survey}
+
+The following survey was administered to 47 AI practitioners and researchers between June and September 2025 via a secure online platform. The study protocol was reviewed for ethical compliance. All responses were anonymised. Median completion time was 22 minutes.
+
+\subsection{Part 0: Informed Consent and Demographics}
+
+\begin{enumerate}
+  \item[\textbf{Q0.1}] Do you consent to participate in this research study? Your responses will be anonymised and used solely for academic research.\\
+  $\square$~Yes \quad $\square$~No (exit survey)
+
+  \item[\textbf{Q0.2}] What is your primary professional role?\\
+  $\square$~Academic researcher \quad $\square$~Industry practitioner \quad $\square$~Hybrid (both) \quad $\square$~Other: \_\_\_\_\_
+
+  \item[\textbf{Q0.3}] How many years of experience do you have working with AI/ML systems?\\
+  $\square$~0--2 \quad $\square$~3--5 \quad $\square$~6--10 \quad $\square$~11--15 \quad $\square$~16+
+
+  \item[\textbf{Q0.4}] In which country are you primarily based? \_\_\_\_\_\_\_\_\_\_\_\_\_
+
+  \item[\textbf{Q0.5}] Which AI system types do you work with most frequently? (Select all that apply)\\
+  $\square$~Generative \quad $\square$~Predictive/Discriminative \quad $\square$~Reinforcement Learning \quad $\square$~Conversational \quad $\square$~Recommendation/Retrieval \quad $\square$~Other: \_\_\_\_\_
+\end{enumerate}
+
+\subsection{Part 1: Taxonomy Completeness}
+
+\textit{Respondents were presented with the full list of 19 AI system types and their definitions.}
+
+\begin{enumerate}
+  \item[\textbf{Q1.1}] Rate the overall completeness of the taxonomy (1 = Very Incomplete, 5 = Very Complete).\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q1.2}] Are there any major AI system paradigms that are \textbf{missing} from the taxonomy?\\
+  $\square$~No, the taxonomy is sufficiently comprehensive\\
+  $\square$~Yes (please specify): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+  \item[\textbf{Q1.3}] Are there any system types in the taxonomy that you consider \textbf{redundant} or that should be merged with another?\\
+  $\square$~No\\
+  $\square$~Yes (please specify which types and why): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+  \item[\textbf{Q1.4}] Please rate the appropriateness of the six-cluster organisation (1 = Very Inappropriate, 5 = Very Appropriate).\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+\end{enumerate}
+
+\subsection{Part 2: Boundary Clarity}
+
+\textit{For each pair of system types listed below, rate how clearly their boundaries are defined (1 = Very Unclear, 5 = Very Clear).}
+
+\begin{enumerate}
+  \item[\textbf{Q2.1}] Agentic vs. Autonomous (Non-Agentic):\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q2.2}] Generative vs. Conversational:\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q2.3}] Explainable (XAI) vs. Symbolic/Rule-Based:\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q2.4}] Predictive/Discriminative vs. Analytical:\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q2.5}] Cognitive/Neuro-Symbolic vs. Symbolic/Rule-Based:\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q2.6}] Any additional comments on boundary clarity?\\
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{enumerate}
+
+\subsection{Part 3: Practical Utility}
+
+\begin{enumerate}
+  \item[\textbf{Q3.1}] How useful would this taxonomy be for \textbf{selecting} an appropriate AI approach for a new project? (1 = Not Useful, 5 = Very Useful)\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q3.2}] How useful would this taxonomy be for \textbf{communicating} about AI systems with non-technical stakeholders? (1 = Not Useful, 5 = Very Useful)\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q3.3}] How useful would this taxonomy be for \textbf{teaching} or curriculum development? (1 = Not Useful, 5 = Very Useful)\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q3.4}] How useful would this taxonomy be for \textbf{policy-making} and regulation? (1 = Not Useful, 5 = Very Useful)\\
+  $\square$~1 \quad $\square$~2 \quad $\square$~3 \quad $\square$~4 \quad $\square$~5
+
+  \item[\textbf{Q3.5}] Open feedback: What improvements would make this taxonomy more useful in your work?\\
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{enumerate}
+
+
+%% ================================================================
+%% APPENDIX B: LITERATURE SEARCH METHODOLOGY
+%% ================================================================
+\section{Literature Citation Analysis: Detailed Methodology}
+\label{app:lit-method}
+
+\subsection{Database Search Strategy}
+
+Table~\ref{tab:search-queries} summarises the search queries used for each of the 19 system types across the four databases (Scopus, Web of Science, IEEE Xplore, ACM Digital Library).
+
+\begin{table*}[ht]
+\caption{Representative search queries for each AI system type (queries were adapted per database syntax)}
+\label{tab:search-queries}
+\small
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{System Type} & \textbf{Query Keywords (OR-combined)} \\
+\midrule
+Agentic & ``agentic AI'' OR ``AI agent system'' OR ``goal-directed AI'' OR ``autonomous AI agent'' \\
+Autonomous (Non-Agentic) & ``autonomous system'' OR ``self-governing AI'' OR ``autonomous control system'' NOT ``AI agent'' \\
+Reactive & ``reactive AI'' OR ``stimulus-response system'' OR ``reactive agent'' \\
+Reinforcement Learning & ``reinforcement learning'' OR ``RL agent'' OR ``reward-based learning'' OR ``policy gradient'' \\
+Symbolic / Rule-Based & ``symbolic AI'' OR ``rule-based system'' OR ``expert system'' OR ``knowledge-based system'' \\
+Bayesian / Probabilistic & ``Bayesian AI'' OR ``probabilistic model'' OR ``Bayesian network'' OR ``uncertainty quantification AI'' \\
+Cognitive / Neuro-Symbolic & ``neuro-symbolic'' OR ``cognitive AI'' OR ``neural-symbolic'' OR ``hybrid reasoning'' \\
+Explainable (XAI) & ``explainable AI'' OR ``XAI'' OR ``interpretable machine learning'' OR ``model interpretability'' \\
+Generative & ``generative AI'' OR ``generative model'' OR ``GAN'' OR ``large language model'' OR ``diffusion model'' \\
+Predictive / Discriminative & ``discriminative model'' OR ``classification system'' OR ``predictive AI'' OR ``supervised learning system'' \\
+Evolutionary / Genetic & ``genetic algorithm'' OR ``evolutionary computation'' OR ``evolution strategy'' OR ``genetic programming'' \\
+Optimisation / OR & ``AI optimization'' OR ``operations research AI'' OR ``constraint satisfaction'' OR ``mathematical programming'' \\
+Conversational & ``conversational AI'' OR ``dialogue system'' OR ``chatbot'' OR ``virtual assistant'' \\
+Multimodal Perception & ``multimodal AI'' OR ``multi-modal learning'' OR ``cross-modal'' OR ``vision-language model'' \\
+Physical / Embodied & ``embodied AI'' OR ``robot learning'' OR ``physical AI'' OR ``sensorimotor AI'' \\
+Federated / Privacy-Preserving & ``federated learning'' OR ``privacy-preserving AI'' OR ``differential privacy ML'' OR ``secure aggregation'' \\
+Recommendation / Retrieval & ``recommendation system'' OR ``information retrieval AI'' OR ``collaborative filtering'' OR ``retrieval augmented'' \\
+Analytical & ``AI analytics'' OR ``business intelligence AI'' OR ``data mining system'' OR ``analytical AI'' \\
+Scientific / Simulation & ``scientific AI'' OR ``physics-informed neural network'' OR ``AI simulation'' OR ``computational science AI'' \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Inclusion and Exclusion Criteria}
+
+\textbf{Inclusion criteria:}
+\begin{itemize}
+  \item Peer-reviewed journal articles, conference papers, or workshop proceedings
+  \item Published between January 2015 and December 2025
+  \item Written in English
+  \item Indexed in at least one of the four target databases
+\end{itemize}
+
+\textbf{Exclusion criteria:}
+\begin{itemize}
+  \item Non-peer-reviewed preprints, blog posts, or technical reports
+  \item Duplicate records (removed via DOI matching and title similarity with Levenshtein distance $\leq$ 0.05)
+  \item Publications with fewer than 4 pages (to exclude abstracts and poster descriptions)
+  \item Publications not primarily focused on AI system design or methodology
+\end{itemize}
+
+\subsection{Deduplication Process}
+Records were first matched on DOI (exact match). Remaining records without DOIs were deduplicated using normalised title comparison (lowercase, punctuation-removed) with a Levenshtein distance threshold of 0.05. This yielded a final corpus of 15,427 unique publications from an initial pool of 21,893 raw records (29.5\% duplication rate across databases).
+
+
+%% ================================================================
+%% APPENDIX C: FULL CASE STUDY MAPPING
+%% ================================================================
+\section{Complete Case Study Mapping (25 Systems)}
+\label{app:case-studies}
+
+Table~\ref{tab:full-casestudies} presents the complete mapping of 25 production AI systems to taxonomy categories, including deployment scale and primary evidence source.
+
+\begin{table*}[ht]
+\caption{Full case study mapping: 25 production AI systems across 8 industry sectors}
+\label{tab:full-casestudies}
+\small
+\begin{tabular}{@{}rllllp{3cm}@{}}
+\toprule
+\textbf{\#} & \textbf{System} & \textbf{Taxonomy Category} & \textbf{Sector} & \textbf{Scale} & \textbf{Source} \\
+\midrule
+1  & AutoGPT           & Agentic                 & Technology      & Global   & Open-source documentation \\
+2  & Devin (Cognition)  & Agentic                 & Technology      & Enterprise & Press coverage, demo \\
+3  & Waymo Driver       & Autonomous (Non-Ag.)    & Transportation  & City-scale  & Waymo safety reports \\
+4  & Tesla Autopilot    & Autonomous (Non-Ag.)    & Transportation  & Global   & SEC filings, technical blog \\
+5  & Siemens PLC        & Reactive                & Manufacturing   & Global   & Product documentation \\
+6  & AlphaGo / AlphaZero & Reinforcement Learning & Gaming/Research & Research   & Nature publications \\
+7  & OpenAI Five        & Reinforcement Learning  & Gaming          & Research   & OpenAI blog \\
+8  & Google Knowledge Graph & Symbolic/Rule-Based & Technology      & Global   & Google AI blog \\
+9  & Palantir Foundry   & Bayesian/Probabilistic  & Defence/Finance & Enterprise & Palantir documentation \\
+10 & IBM Watson          & Cognitive/Neuro-Symb.  & Enterprise      & Global   & IBM research papers \\
+11 & SHAP / LIME        & Explainable (XAI)       & Finance/Health  & Open-source & Original publications \\
+12 & Google Cloud XAI   & Explainable (XAI)       & Cloud           & Enterprise & GCP documentation \\
+13 & GPT-4              & Generative              & Technology      & Global   & OpenAI technical report \\
+14 & Stable Diffusion   & Generative              & Creative        & Global   & Stability AI publications \\
+15 & PathAI             & Predictive/Discrim.     & Healthcare      & Clinical & PathAI publications \\
+16 & Stripe Radar       & Predictive/Discrim.     & Finance         & Global   & Stripe engineering blog \\
+17 & Google NAS (NASNet) & Evolutionary/Genetic   & Technology      & Research & Google AI publications \\
+18 & Google OR-Tools    & Optimisation/OR         & Logistics       & Open-source & Google documentation \\
+19 & ChatGPT / Claude   & Conversational          & Technology      & Global   & Technical reports \\
+20 & Google Gemini      & Multimodal Perception   & Technology      & Global   & Google DeepMind paper \\
+21 & da Vinci Xi        & Physical/Embodied       & Healthcare      & Global   & Intuitive Surgical reports \\
+22 & Boston Dynamics Spot & Physical/Embodied     & Industrial      & Enterprise & BD documentation \\
+23 & Google Gboard FL   & Federated               & Mobile          & Billions & McMahan et al. 2017 \\
+24 & Netflix Recommender & Recommendation         & Entertainment   & Global   & Netflix tech blog \\
+25 & AlphaFold 2        & Scientific/Simulation   & Pharma/Research & Global   & Nature publication \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+%% ================================================================
+%% APPENDIX D: EXPERT SURVEY RESULTS — DETAILED STATISTICS
+%% ================================================================
+\section{Expert Survey: Detailed Results}
+\label{app:survey-results}
+
+\subsection{Respondent Demographics}
+
+\begin{table}[ht]
+\caption{Expert survey respondent demographics ($N=47$)}
+\label{tab:demographics}
+\begin{tabular}{@{}llr@{}}
+\toprule
+\textbf{Category} & \textbf{Group} & \textbf{Count} \\
+\midrule
+\multirow{3}{*}{Role} & Academic researcher & 23 \\
+ & Industry practitioner & 19 \\
+ & Hybrid & 5 \\
+\midrule
+\multirow{4}{*}{Experience (years)} & 0--5 & 8 \\
+ & 6--10 & 21 \\
+ & 11--15 & 12 \\
+ & 16+ & 6 \\
+\midrule
+\multirow{5}{*}{Region} & North America & 16 \\
+ & Europe & 14 \\
+ & Asia-Pacific & 11 \\
+ & Middle East & 4 \\
+ & Other & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Quantitative Ratings}
+
+\begin{table}[ht]
+\caption{Expert survey ratings summary (scale 1--5)}
+\label{tab:ratings}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Dimension} & \textbf{Mean} & \textbf{SD} & \textbf{Median} \\
+\midrule
+Taxonomy completeness    & 4.2 & 0.7 & 4 \\
+Boundary clarity         & 3.8 & 0.9 & 4 \\
+Practical utility (selection) & 4.1 & 0.6 & 4 \\
+Practical utility (communication) & 4.3 & 0.5 & 4 \\
+Practical utility (teaching) & 4.0 & 0.8 & 4 \\
+Practical utility (policy) & 3.7 & 0.9 & 4 \\
+Cluster appropriateness  & 4.0 & 0.7 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Top Qualitative Feedback Themes}
+
+\begin{enumerate}
+  \item \textbf{Agentic vs. Autonomous boundary} (mentioned by 14/47 respondents): Respondents requested sharper criteria for distinguishing goal-directed agency from reactive autonomy.
+  \item \textbf{XAI as overlay vs. standalone} (mentioned by 11/47): Several respondents noted XAI could be viewed as a meta-capability that applies across types rather than a standalone category.
+  \item \textbf{Missing category: World-model-based AI} (mentioned by 9/47): Respondents suggested adding systems centred on internal world models (e.g., Sora, JEPA).
+  \item \textbf{Temporal evolution} (mentioned by 7/47): Interest in how system types evolve and converge over time.
+  \item \textbf{Positive reception of three-dimensional model} (mentioned by 31/47): The architecture--capability--deployment framework was highlighted as a particular strength.
+\end{enumerate}
+
+\end{document}
