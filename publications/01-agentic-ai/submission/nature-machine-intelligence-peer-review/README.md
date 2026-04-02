@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Nature Machine Intelligence |
-| **Publisher** | Springer Nature |
-| **URL** | https://www.nature.com/natmachintell/ |
-| **Impact Factor** | ~18.8 (2024) |
-| **Scope** | Machine intelligence, AI systems, and their societal impact |
-| **Template** | Nature Portfolio LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                       |
+| ----------------- | ----------------------------------------------------------- |
+| **Journal**       | Nature Machine Intelligence                                 |
+| **Publisher**     | Springer Nature                                             |
+| **URL**           | https://www.nature.com/natmachintell/                       |
+| **Impact Factor** | ~18.8 (2024)                                                |
+| **Scope**         | Machine intelligence, AI systems, and their societal impact |
+| **Template**      | Nature Portfolio LaTeX template                             |
+| **Open Access**   | Hybrid                                                      |
 
 ---
 
@@ -29,19 +29,28 @@
 
 ---
 
+## Preprint
+
+A preprint of this work is available on engrXiv:
+
+- **DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
+- **Posted:** March 2026
+
+---
+
 ## Submission Steps
 
 1. **Create a Springer Nature account**
 2. **Follow Nature Portfolio formatting** guidelines
 3. **Submit via** https://mts-natmachintell.nature.com/
-4. **Include the engrXiv preprint DOI**
+4. **Include the engrXiv preprint DOI** (10.31224/6738)
 
 ---
 
 ## Status
 
-- [ ] Manuscript formatted for Nature Machine Intelligence
-- [ ] Cover letter prepared
+- [x] Manuscript formatted for Nature Machine Intelligence
+- [x] Cover letter prepared
 - [ ] Submitted to Nature Machine Intelligence
 - [ ] Reviews received
 - [ ] Paper accepted
@@ -52,5 +61,9 @@
 
 ```
 nature-machine-intelligence-peer-review/
-├── README.md              ← You are here
+├── paper.tex              ← Main manuscript (LaTeX)
+├── references.bib         ← Bibliography (20 cited entries)
+├── paper.pdf              ← Compiled PDF
+├── cover_letter.tex       ← Cover letter (LaTeX)
+└── README.md              ← You are here
 ```

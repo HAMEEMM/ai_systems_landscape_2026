@@ -1,0 +1,53 @@
+\documentclass[11pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!70!black]{hyperref}
+
+\signature{Hameem Mahdi, B.S.C.S., M.S.E., Ph.D.\\Mayo Clinic\\Rochester, MN 55905, USA\\mahdi.hameem@mayo.edu\\ORCID: 0009-0007-0005-3080}
+
+\address{Hameem Mahdi\\Mayo Clinic\\Rochester, MN 55905, USA\\mahdi.hameem@mayo.edu}
+
+\date{April 2, 2026}
+
+\begin{document}
+
+\begin{letter}{%
+Editorial Office\\
+\emph{Nature Machine Intelligence}\\
+Springer Nature}
+
+\opening{Dear Editors,}
+
+I am writing to submit the manuscript entitled ``Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems'' for consideration as an Article in \emph{Nature Machine Intelligence}.
+
+\textbf{Summary.}
+Large language model (LLM) agents that autonomously perceive environments, plan multi-step strategies, execute actions through external tools, and self-correct from feedback represent a paradigm shift in AI. Yet the field lacks a unified architectural vocabulary, forcing practitioners to navigate a ``framework zoo'' of incompatible abstractions. This manuscript proposes \textsc{Perceive--Plan--Act--Self-Correct} (PPAS), a four-phase canonical loop grounded in classical agent theory (BDI, SOAR, OODA) and extended for LLM-era systems. We decompose agentic architectures into an 8-layer technology stack and map 15+ open-source frameworks to a common reference model.
+
+\textbf{Key contributions.}
+\begin{enumerate}
+    \item A formal four-phase agent loop (PPAS) that unifies existing design patterns under a single architectural vocabulary.
+    \item An 8-layer technology stack mapping orchestration frameworks, memory systems, tool ecosystems, and inter-agent protocols to a common reference.
+    \item Three empirical studies: (a)~a benchmark meta-analysis across SWE-Bench Verified, WebArena, and GAIA covering 12 frontier agents; (b)~a controlled design-pattern comparison demonstrating that reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% on SWE-Bench) while reducing irreversible-action failures by 73\%; and (c)~an inter-agent protocol evaluation of MCP, A2A, and AG-UI.
+    \item A failure-mode taxonomy and EU AI Act governance mapping for responsible agentic deployment.
+\end{enumerate}
+
+\textbf{Significance and fit.}
+Agentic AI is among the fastest-growing areas in machine intelligence, with the market projected to reach \$139--182 billion by 2034. \emph{Nature Machine Intelligence} is the ideal venue because (i)~the journal's scope explicitly encompasses AI system architectures and their real-world impact, (ii)~the paper bridges theoretical foundations with empirical evaluation and governance---a combination that aligns with the journal's interdisciplinary readership, and (iii)~no prior work has provided a unified architectural framework validated across multiple benchmarks, design patterns, and inter-agent protocols at this scale.
+
+\textbf{Preprint disclosure.}
+A preprint of this work has been posted on engrXiv (DOI: \href{https://doi.org/10.31224/6738}{10.31224/6738}, March 2026), in accordance with Springer Nature's preprint policy.
+
+\textbf{Data and code availability.}
+All datasets, benchmark results, and analysis scripts are publicly available at:\\ \url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/01-agentic-ai}.
+
+This manuscript has not been published elsewhere and is not under consideration by another journal. I have no competing interests to declare.
+
+Thank you for your consideration. I look forward to your response.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
