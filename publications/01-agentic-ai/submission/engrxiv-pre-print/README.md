@@ -8,14 +8,14 @@
 
 ## Publication Details
 
-| Field | Value |
-|---|---|
-| **Server** | [engrXiv](https://engrxiv.org/) (Engineering Archive) |
-| **DOI** | [10.31224/6738](https://doi.org/10.31224/6738) |
-| **Published** | March 2026 |
-| **Category** | Computer Science / Systems Engineering |
-| **License** | CC BY 4.0 |
-| **Paper Series** | AI Systems Landscape 2026 — Paper #1 |
+| Field            | Value                                                 |
+| ---------------- | ----------------------------------------------------- |
+| **Server**       | [engrXiv](https://engrxiv.org/) (Engineering Archive) |
+| **DOI**          | [10.31224/6738](https://doi.org/10.31224/6738)        |
+| **Published**    | March 2026                                            |
+| **Category**     | Computer Science / Systems Engineering                |
+| **License**      | CC BY 4.0                                             |
+| **Paper Series** | AI Systems Landscape 2026 — Paper #1                  |
 
 ---
 
