@@ -51,7 +51,7 @@ A preprint of this work is available on engrXiv:
 
 - [x] Manuscript formatted for Nature Machine Intelligence
 - [x] Cover letter prepared
-- [ ] Submitted to Nature Machine Intelligence
+- [x] Submitted to Nature Machine Intelligence (April 2026)
 - [ ] Reviews received
 - [ ] Paper accepted
 

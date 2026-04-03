@@ -12,8 +12,8 @@
 
 ## Status
 
-> **engrXiv Preprint Published** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)  
-> Nature Machine Intelligence peer-review submission in preparation — target Q3 2026
+> **engrXiv Preprint Accepted** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)  
+> **Submitted to [Nature Machine Intelligence](https://www.nature.com/natmachintell/)** — April 2026 (under review)
 
 ---
 
@@ -148,14 +148,18 @@ This is the end-to-end tech stack the paper will cover, organized as a developme
 publications/01-agentic-ai/
 ├── README.md                  ← You are here (research plan & roadmap)
 ├── submission/
-│   ├── engrxiv-pre-print/     ← engrXiv preprint submission
+│   ├── engrxiv-pre-print/     ← engrXiv preprint (accepted)
 │   │   ├── paper.tex          ← Full manuscript (article class, author-year citations)
+│   │   ├── paper.pdf          ← Compiled manuscript
 │   │   ├── references.bib     ← BibTeX bibliography
-│   │   └── README.md          ← engrXiv submission instructions
-│   └── nature-machine-intelligence-peer-review/    ← Nature Machine Intelligence peer-review submission
+│   │   └── README.md          ← Publication record
+│   └── nature-machine-intelligence-peer-review/    ← Nature Machine Intelligence (under review)
 │       ├── paper.tex          ← Condensed manuscript (Nature format)
-│       ├── references.bib     ← Bibliography (Nature style)
-│       └── README.md          ← Nature Machine Intelligence submission instructions
+│       ├── paper.pdf          ← Compiled manuscript
+│       ├── references.bib     ← Bibliography (Nature style, 20 entries)
+│       ├── cover_letter.tex   ← Cover letter
+│       ├── cover_letter.pdf   ← Compiled cover letter
+│       └── README.md          ← Submission status
 ├── data/                      ← Raw data and analysis notebooks
 │   ├── benchmarks/            ← Benchmark result aggregation
 │   ├── market-data/           ← Market sizing sources
