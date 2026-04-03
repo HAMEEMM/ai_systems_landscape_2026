@@ -35,7 +35,7 @@ This paper presents a rigorous **architectural framework** for goal-directed Age
 
 ---
 
-## Proposed Paper Structure
+## Paper Structure
 
 | §   | Section                               | Content                                                                                                                                                                              |
 | --- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -57,7 +57,7 @@ This paper presents a rigorous **architectural framework** for goal-directed Age
 
 ## Full Agentic AI Development Lifecycle & Tech Stack
 
-This is the end-to-end tech stack the paper will cover, organized as a development lifecycle you can follow hands-on.
+This is the end-to-end tech stack the paper covers, organized as a development lifecycle.
 
 ### Phase 1 — Learn the Foundations (Weeks 1–3)
 
@@ -100,31 +100,20 @@ This is the end-to-end tech stack the paper will cover, organized as a developme
 | **Literature Review**       | Systematic search across Scopus, IEEE Xplore, ACM DL, arXiv, Semantic Scholar                       | [Semantic Scholar API](https://www.semanticscholar.org/product/api), [Connected Papers](https://www.connectedpapers.com/), [Elicit](https://elicit.com/) |
 | **Data Collection**         | Aggregate benchmark results, market data (Gartner, IDC, Grand View Research), GitHub stars/adoption | Public leaderboards, company reports, arXiv papers                                                                                                       |
 | **Experimental Validation** | Reproduce key benchmark runs, case study interviews, framework comparison                           | Your Phase 2–4 implementations as primary evidence                                                                                                       |
-| **Writing**                 | LaTeX manuscript in `acmart` format, BibTeX bibliography, supplementary materials                   | [Overleaf](https://www.overleaf.com/), VS Code + LaTeX Workshop, [Zotero](https://www.zotero.org/) for reference management                              |
+| **Writing**                 | LaTeX manuscript, BibTeX bibliography, supplementary materials                                      | VS Code + LaTeX Workshop, [Zotero](https://www.zotero.org/) for reference management                                                                     |
 | **Figures**                 | Architecture diagrams, benchmark charts, stack visualisations                                       | TikZ/PGFPlots (LaTeX), [Draw.io](https://draw.io/), [Excalidraw](https://excalidraw.com/)                                                                |
 
 ---
 
-## Where to Publish — Peer-Review Platforms
+## Publication Record
 
-### Recommended Target Venue
+| Venue                                                                    | Type        | Status       | Date       |
+| ------------------------------------------------------------------------ | ----------- | ------------ | ---------- |
+| **[engrXiv](https://engrxiv.org/)**                                      | Preprint    | Accepted     | March 2026 |
+| **[Nature Machine Intelligence](https://www.nature.com/natmachintell/)** | Peer Review | Under Review | April 2026 |
 
-| Priority            | Venue                                                                                     | Type       | Why                                                                                      |
-| ------------------- | ----------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------- |
-| **1st choice**      | **[Nature Machine Intelligence](https://www.nature.com/natmachintell/)**                  | Journal    | Premier AI journal. Multi-agent/agent architecture is a core topic. Impact factor ~18.8. |
-| **2nd choice**      | **[JMLR](https://jmlr.org/)** (Journal of Machine Learning Research)                      | Journal    | Open access. Systems + ML focus. Highly respected.                                       |
-| **3rd choice**      | **[IEEE TPAMI](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34)**             | Journal    | Top-tier. If the paper takes a more architectural/systems angle.                         |
-| **Alt: Conference** | **[NeurIPS](https://neurips.cc/) / [ICML](https://icml.cc/) / [AAAI](https://aaai.org/)** | Conference | Higher visibility, faster turnaround, but page-limited (8–10 pages).                     |
-| **Alt: Workshop**   | **NeurIPS Agent Workshop** or **ICML AgentLab**                                           | Workshop   | Lower barrier, good for early-stage feedback before journal submission.                  |
-
-### Pre-Print Strategy
-
-| Step | Platform                                                 | Purpose                                                    |
-| ---- | -------------------------------------------------------- | ---------------------------------------------------------- |
-| 1    | **[arXiv cs.AI](https://arxiv.org/)**                    | Post pre-print immediately for visibility and timestamping |
-| 2    | **[Semantic Scholar](https://www.semanticscholar.org/)** | Auto-indexed from arXiv; increases citation discovery      |
-| 3    | **[Papers with Code](https://paperswithcode.com/)**      | Link paper to your GitHub repo and benchmark results       |
-| 4    | **[SSRN](https://www.ssrn.com/)**                        | Additional pre-print platform for cross-disciplinary reach |
+- **Preprint DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
@@ -189,7 +178,7 @@ publications/01-agentic-ai/
   journal = {engrXiv},
   doi     = {10.31224/6738},
   url     = {https://doi.org/10.31224/6738},
-  note    = {Preprint}
+  note    = {Preprint; submitted to Nature Machine Intelligence, April 2026}
 }
 ```
 
