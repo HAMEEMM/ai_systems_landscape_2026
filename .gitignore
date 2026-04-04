@@ -11,3 +11,6 @@ env/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Personal paper notes (not for version control)
+*-MY-PAPER-NOTES.md
