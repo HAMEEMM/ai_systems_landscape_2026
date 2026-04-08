@@ -12,14 +12,14 @@
 
 ## Status
 
-> **engrXiv Preprint Accepted** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)  
-> **Submitted to [Nature Machine Intelligence](https://www.nature.com/natmachintell/)** — April 2026 (under review)
+> **engrXiv Preprint Accepted** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)
+> **[Artificial Intelligence Review](https://link.springer.com/journal/10462)** (Springer, IF ~10.7) — submission in preparation
 
 ---
 
 ## Paper Objective
 
-This paper presents a rigorous **architectural framework** for goal-directed Agentic AI systems, centering on the canonical loop: **Perceive → Plan → Act → Self-Correct**. It covers the complete development lifecycle and 8-layer technology stack, offers empirical validation through benchmark analysis and production case studies, and positions the framework within the broader AI systems taxonomy established in our companion paper (Paper #0, ACM Computing Surveys — under review).
+This paper presents a rigorous **architectural framework** for goal-directed Agentic AI systems, centering on the canonical loop: **Perceive → Plan → Act → Self-Correct**. It covers the complete development lifecycle and 8-layer technology stack, offers empirical validation through benchmark analysis and production case studies, and positions the framework within the broader AI systems taxonomy established in our companion paper.
 
 ---
 
@@ -63,7 +63,7 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 | Layer                  | What to Learn                                                               | Hands-On Resources                                                                                                                                                                                                        |
 | ---------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Foundation Models**  | How LLMs work — attention, tokenization, inference, RLHF, tool-calling APIs | [Andrej Karpathy — Let's Build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY), [OpenAI Cookbook](https://cookbook.openai.com/), [Anthropic Docs](https://docs.anthropic.com/)                                          |
+| **Foundation Models**  | How LLMs work — attention, tokenization, inference, RLHF, tool-calling APIs | [Andrej Karpathy — Let&#39;s Build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY), [OpenAI Cookbook](https://cookbook.openai.com/), [Anthropic Docs](https://docs.anthropic.com/)                                      |
 | **Prompt Engineering** | System prompts, few-shot, chain-of-thought, structured outputs              | [Prompt Engineering Guide](https://www.promptingguide.ai/), [DeepLearning.AI Short Courses](https://www.deeplearning.ai/short-courses/)                                                                                   |
 | **Agent Concepts**     | ReAct pattern, tool use, agent loop, planning                               | [Lilian Weng — LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/), [Andrew Ng — Agentic Design Patterns](https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/) |
 
@@ -100,17 +100,17 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 | **Literature Review**       | Systematic search across Scopus, IEEE Xplore, ACM DL, arXiv, Semantic Scholar                       | [Semantic Scholar API](https://www.semanticscholar.org/product/api), [Connected Papers](https://www.connectedpapers.com/), [Elicit](https://elicit.com/) |
 | **Data Collection**         | Aggregate benchmark results, market data (Gartner, IDC, Grand View Research), GitHub stars/adoption | Public leaderboards, company reports, arXiv papers                                                                                                       |
 | **Experimental Validation** | Reproduce key benchmark runs, case study interviews, framework comparison                           | Your Phase 2–4 implementations as primary evidence                                                                                                       |
-| **Writing**                 | LaTeX manuscript, BibTeX bibliography, supplementary materials                                      | VS Code + LaTeX Workshop, [Zotero](https://www.zotero.org/) for reference management                                                                     |
-| **Figures**                 | Architecture diagrams, benchmark charts, stack visualisations                                       | TikZ/PGFPlots (LaTeX), [Draw.io](https://draw.io/), [Excalidraw](https://excalidraw.com/)                                                                |
+| **Writing**                 | LaTeX manuscript, BibTeX bibliography, supplementary materials                                      | VS Code + LaTeX Workshop,[Zotero](https://www.zotero.org/) for reference management                                                                      |
+| **Figures**                 | Architecture diagrams, benchmark charts, stack visualisations                                       | TikZ/PGFPlots (LaTeX),[Draw.io](https://draw.io/), [Excalidraw](https://excalidraw.com/)                                                                 |
 
 ---
 
 ## Publication Record
 
-| Venue                                                                    | Type        | Status       | Date       |
-| ------------------------------------------------------------------------ | ----------- | ------------ | ---------- |
-| **[engrXiv](https://engrxiv.org/)**                                      | Preprint    | Accepted     | March 2026 |
-| **[Nature Machine Intelligence](https://www.nature.com/natmachintell/)** | Peer Review | Under Review | April 2026 |
+| Venue                                                                         | Type        | Status         | Date       |
+| ----------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
+| **[engrXiv](https://engrxiv.org/)**                                           | Preprint    | Accepted       | March 2026 |
+| **[Artificial Intelligence Review](https://link.springer.com/journal/10462)** | Peer Review | In Preparation | April 2026 |
 
 - **Preprint DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -142,12 +142,10 @@ publications/01-agentic-ai/
 │   │   ├── paper.pdf          ← Compiled manuscript
 │   │   ├── references.bib     ← BibTeX bibliography
 │   │   └── README.md          ← Publication record
-│   └── nature-machine-intelligence-peer-review/    ← Nature Machine Intelligence (under review)
-│       ├── paper.tex          ← Condensed manuscript (Nature format)
-│       ├── paper.pdf          ← Compiled manuscript
-│       ├── references.bib     ← Bibliography (Nature style, 20 entries)
-│       ├── cover_letter.tex   ← Cover letter
-│       ├── cover_letter.pdf   ← Compiled cover letter
+│   └── artificial-intelligence-review-peer-review/  ← Artificial Intelligence Review (in preparation)
+│       ├── paper.tex          ← Main manuscript (Springer sn-jnl format)
+│       ├── references.bib     ← Bibliography (author-year, 20 entries)
+│       ├── cover_letter.tex   ← Cover letter (includes NMI prior submission)
 │       └── README.md          ← Submission status
 ├── data/                      ← Raw data and analysis notebooks
 │   ├── benchmarks/            ← Benchmark result aggregation
@@ -178,7 +176,7 @@ publications/01-agentic-ai/
   journal = {engrXiv},
   doi     = {10.31224/6738},
   url     = {https://doi.org/10.31224/6738},
-  note    = {Preprint; submitted to Nature Machine Intelligence, April 2026}
+  note    = {Preprint; peer review at Artificial Intelligence Review in preparation}
 }
 ```
 
