@@ -84,9 +84,9 @@
 
 ### 10. Suggest Reviewers (Optional but Recommended)
 
-- [ ] Reviewer 1: **\*\***\_\_\_**\*\*** (agent architectures expert)
-- [ ] Reviewer 2: **\*\***\_\_\_**\*\*** (LLM systems / benchmarks)
-- [ ] Reviewer 3: **\*\***\_\_\_**\*\*** (AI governance / safety)
+- [ ] Reviewer 1: **Lei Wang** — Renmin University / Frontiers in Computer Science — lead author of "A Survey on Large Language Model Based Autonomous Agents" (cited as `wang2024survey`); deep expertise in agent architectures, planning, and multi-agent coordination.
+- [ ] Reviewer 2: **Graham Neubig** — Carnegie Mellon University — co-author of WebArena benchmark (cited as `zhou2024webarena`); expert in LLM-based task agents, code generation, and evaluation methodology.
+- [ ] Reviewer 3: **Noah Shinn** — Princeton University — first author of Reflexion (cited as `shinn2023reflexion`); expertise in self-correcting agents, verbal reinforcement learning, and agent safety patterns.
 
 ### 11. Review and Submit
 
