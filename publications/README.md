@@ -14,28 +14,28 @@ This directory contains 20 research papers — one **unified taxonomy paper** (#
 
 ## Venue Mapping — All 20 Papers
 
-| #  | AI System Type                        | Paper Title                                                                                                                         | Preprint Server                | Peer-Review Venue                          |
-| -- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------ |
-| 00 | Unified Taxonomy                      | A Unified Taxonomy of 19 AI System Types: Architecture, Capability, and Deployment Analysis for the Modern AI Landscape             | **arXiv** (`cs.AI`)    | **ACM Computing Surveys**            |
-| 01 | Agentic AI                            | Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems                                  | **engrXiv**              | **Artificial Intelligence Review**   |
-| 02 | Analytical AI                         | Causal Inference at Scale: How Analytical AI Transforms Pattern Mining Into Actionable Business Intelligence                        | **SSRN** (Elsevier)      | **Expert Systems with Applications** |
-| 03 | Autonomous AI                         | Autonomy Without Agency: A Formal Distinction Between Autonomous and Agentic AI Systems in Safety-Critical Domains                  | **arXiv** (`cs.RO`)    | **Science Robotics**                 |
-| 04 | Bayesian / Probabilistic AI           | From Bayes' Theorem to Clinical Deployment: Probabilistic AI for High-Stakes Decision-Making Under Uncertainty                      | **Zenodo**               | **JMLR**                             |
-| 05 | Cognitive / Neuro-Symbolic AI         | Beyond Hallucination: How Neuro-Symbolic Fusion Enables Verifiable Reasoning in Large Language Models                               | **SSRN** (Elsevier)      | **Artificial Intelligence**          |
-| 06 | Conversational AI                     | Where Humans Meet Machines: A Survey of Conversational AI Pipelines From NLU to Real-Time Response Generation                       | **Research Square** (SN) | **npj Digital Medicine**             |
-| 07 | Evolutionary / Genetic AI             | Population-Based Search for Neural Architecture Design: Evolutionary AI in AutoML, Drug Discovery, and Robot Morphology             | **TechRxiv** (IEEE)      | **IEEE TEC**                         |
-| 08 | Explainable AI (XAI)                  | SHAP, LIME, and Beyond: Post-Hoc Explanation Methods for Black-Box Models in Healthcare, Finance, and Criminal Justice              | **OSF Preprints**        | **ACM TIST**                         |
-| 09 | Federated / Privacy-Preserving AI     | Trustless Collaboration: Harnessing Cryptographic Computation and Federated AI for Secure Multi-Institutional Synthesis             | **SSRN** (Elsevier)      | **The Lancet Digital Health**        |
-| 10 | Generative AI                         | Architectural Evolution: From Statistical Autoregression to Grounded and Verifiable Reasoning in Generative Systems                 | **Research Square** (SN) | **Nature**                           |
-| 11 | Multimodal / Perception AI            | Seeing, Reading, and Hearing Simultaneously: How Multimodal Perception AI Achieves Understanding Beyond Any Single Modality         | **SSRN** (Elsevier)      | **Information Fusion**               |
-| 12 | Optimisation / Operations Research AI | Exact Solvers, Heuristics, and Hybrid AI: A Survey of Optimization Architectures for Supply Chain, Routing, and Resource Allocation | **HAL**                  | **INFORMS Journal on Computing**     |
-| 13 | Physical / Embodied AI                | AI in the Physical World: Foundation Models for Robotics, Sim-to-Real Transfer, and Real-Time Embodied Intelligence                 | **TechRxiv** (IEEE)      | **IEEE TRO**                         |
-| 14 | Predictive / Discriminative AI        | Supervised Learning in Production: How Predictive AI Drives Billions of Daily Decisions in Medical Diagnosis                        | **medRxiv**              | **JAMIA**                            |
-| 15 | Reactive AI                           | Stateless by Design: Why Reactive AI Systems Without Memory, Learning, or Planning Remain Essential in Safety-Critical Domains      | **EarthArXiv**           | **PLOS ONE**                         |
-| 16 | Recommendation / Retrieval AI         | From Collaborative Filtering to Neural Retrieval: The Evolution of Recommendation AI in Search and Social Media Platforms           | **SocArXiv**             | **ACM TOIS**                         |
-| 17 | Reinforcement Learning AI             | Trial, Error, and Reward: How Reinforcement Learning Discovers Strategies No Human Taught — From Game Play to Protein Folding      | **Research Square** (SN) | **Machine Learning**                 |
-| 18 | Scientific / Simulation AI            | AlphaFold, GNoME, and GraphCast: How Scientific AI Is Transforming Chemistry, Materials Science, and Weather Forecasting            | **Research Square** (SN) | **Nature Computational Science**     |
-| 19 | Symbolic / Rule-Based AI              | Explicit Knowledge, Traceable Reasoning: A Survey of Symbolic and Rule-Based AI From GOFAI to Modern Hybrid Systems                 | **MetaArXiv**            | **JAIR**                             |
+| #   | AI System Type                        | Paper Title                                                                                                                         | Preprint Server          | Peer-Review Venue                    |
+| --- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------ |
+| 00  | Unified Taxonomy                      | A Unified Taxonomy of 19 AI System Types: Architecture, Capability, and Deployment Analysis for the Modern AI Landscape             | **arXiv** (`cs.AI`)      | **ACM TIST**                         |
+| 01  | Agentic AI                            | Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems                                  | **engrXiv**              | **Artificial Intelligence Review**   |
+| 02  | Analytical AI                         | Causal Inference at Scale: How Analytical AI Transforms Pattern Mining Into Actionable Business Intelligence                        | **SSRN** (Elsevier)      | **Expert Systems with Applications** |
+| 03  | Autonomous AI                         | Autonomy Without Agency: A Formal Distinction Between Autonomous and Agentic AI Systems in Safety-Critical Domains                  | **arXiv** (`cs.RO`)      | **Science Robotics**                 |
+| 04  | Bayesian / Probabilistic AI           | From Bayes' Theorem to Clinical Deployment: Probabilistic AI for High-Stakes Decision-Making Under Uncertainty                      | **Zenodo**               | **JMLR**                             |
+| 05  | Cognitive / Neuro-Symbolic AI         | Beyond Hallucination: How Neuro-Symbolic Fusion Enables Verifiable Reasoning in Large Language Models                               | **SSRN** (Elsevier)      | **Artificial Intelligence**          |
+| 06  | Conversational AI                     | Where Humans Meet Machines: A Survey of Conversational AI Pipelines From NLU to Real-Time Response Generation                       | **Research Square** (SN) | **npj Digital Medicine**             |
+| 07  | Evolutionary / Genetic AI             | Population-Based Search for Neural Architecture Design: Evolutionary AI in AutoML, Drug Discovery, and Robot Morphology             | **TechRxiv** (IEEE)      | **IEEE TEC**                         |
+| 08  | Explainable AI (XAI)                  | SHAP, LIME, and Beyond: Post-Hoc Explanation Methods for Black-Box Models in Healthcare, Finance, and Criminal Justice              | **OSF Preprints**        | **ACM Computing Surveys**            |
+| 09  | Federated / Privacy-Preserving AI     | Trustless Collaboration: Harnessing Cryptographic Computation and Federated AI for Secure Multi-Institutional Synthesis             | **SSRN** (Elsevier)      | **The Lancet Digital Health**        |
+| 10  | Generative AI                         | Architectural Evolution: From Statistical Autoregression to Grounded and Verifiable Reasoning in Generative Systems                 | **Research Square** (SN) | **Nature**                           |
+| 11  | Multimodal / Perception AI            | Seeing, Reading, and Hearing Simultaneously: How Multimodal Perception AI Achieves Understanding Beyond Any Single Modality         | **SSRN** (Elsevier)      | **Information Fusion**               |
+| 12  | Optimisation / Operations Research AI | Exact Solvers, Heuristics, and Hybrid AI: A Survey of Optimization Architectures for Supply Chain, Routing, and Resource Allocation | **HAL**                  | **INFORMS Journal on Computing**     |
+| 13  | Physical / Embodied AI                | AI in the Physical World: Foundation Models for Robotics, Sim-to-Real Transfer, and Real-Time Embodied Intelligence                 | **TechRxiv** (IEEE)      | **IEEE TRO**                         |
+| 14  | Predictive / Discriminative AI        | Supervised Learning in Production: How Predictive AI Drives Billions of Daily Decisions in Medical Diagnosis                        | **medRxiv**              | **JAMIA**                            |
+| 15  | Reactive AI                           | Stateless by Design: Why Reactive AI Systems Without Memory, Learning, or Planning Remain Essential in Safety-Critical Domains      | **EarthArXiv**           | **PLOS ONE**                         |
+| 16  | Recommendation / Retrieval AI         | From Collaborative Filtering to Neural Retrieval: The Evolution of Recommendation AI in Search and Social Media Platforms           | **SocArXiv**             | **ACM TOIS**                         |
+| 17  | Reinforcement Learning AI             | Trial, Error, and Reward: How Reinforcement Learning Discovers Strategies No Human Taught — From Game Play to Protein Folding       | **Research Square** (SN) | **Machine Learning**                 |
+| 18  | Scientific / Simulation AI            | AlphaFold, GNoME, and GraphCast: How Scientific AI Is Transforming Chemistry, Materials Science, and Weather Forecasting            | **Research Square** (SN) | **Nature Computational Science**     |
+| 19  | Symbolic / Rule-Based AI              | Explicit Knowledge, Traceable Reasoning: A Survey of Symbolic and Rule-Based AI From GOFAI to Modern Hybrid Systems                 | **MetaArXiv**            | **JAIR**                             |
 
 > **Publisher alignment rule:** When the peer-review publisher operates a preprint server (Elsevier → SSRN, IEEE → TechRxiv, Springer Nature → Research Square), the paper uses that publisher's server for streamlined transfer. Papers whose peer-review publisher has no preprint server use an independent server.
 
@@ -47,10 +47,10 @@ This directory contains 20 research papers — one **unified taxonomy paper** (#
 | --------------- | ------------------ | ----------------------------------- | ----------------------------------- |
 | arXiv           | #00, #03           | Cornell University / arXiv.org      | https://arxiv.org/                  |
 | engrXiv         | #01                | Center for Open Science (OSF)       | https://engrxiv.org/                |
-| SSRN            | #02, #05, #09, #11 | **Elsevier**                  | https://www.ssrn.com/               |
-| TechRxiv        | #07, #13           | **IEEE**                      | https://www.techrxiv.org/           |
+| SSRN            | #02, #05, #09, #11 | **Elsevier**                        | https://www.ssrn.com/               |
+| TechRxiv        | #07, #13           | **IEEE**                            | https://www.techrxiv.org/           |
 | Zenodo          | #04                | CERN / OpenAIRE                     | https://zenodo.org/                 |
-| Research Square | #06, #10, #17, #18 | **Springer Nature**           | https://www.researchsquare.com/     |
+| Research Square | #06, #10, #17, #18 | **Springer Nature**                 | https://www.researchsquare.com/     |
 | OSF Preprints   | #08                | Center for Open Science (OSF)       | https://osf.io/preprints/           |
 | HAL             | #12                | CNRS / CCSD (France)                | https://hal.science/                |
 | medRxiv         | #14                | Cold Spring Harbor Lab / BMJ / Yale | https://www.medrxiv.org/            |
@@ -62,9 +62,9 @@ This directory contains 20 research papers — one **unified taxonomy paper** (#
 
 > **IF (Impact Factor)** — A yearly metric calculated by Clarivate / Journal Citation Reports measuring how often articles in a journal get cited. Higher = more prestigious.
 
-| Venue / Journal                  | Paper | Publisher                                           | Journal URL                                                           | Submission Portal                                                 | IF    | Open Access       |
-| -------------------------------- | ----- | --------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ----- | ----------------- |
-| ACM Computing Surveys            | #00   | [ACM](https://www.acm.org/)                            | https://dl.acm.org/journal/csur                                        | [ScholarOne](https://mc.manuscriptcentral.com/csur)                  | ~16.6 | Hybrid            |
+| Venue / Journal                  | Paper | Publisher                                              | Journal URL                                                            | Submission Portal                                                    | IF    | Open Access       |
+| -------------------------------- | ----- | ------------------------------------------------------ | ---------------------------------------------------------------------- | -------------------------------------------------------------------- | ----- | ----------------- |
+| ACM Computing Surveys            | #08   | [ACM](https://www.acm.org/)                            | https://dl.acm.org/journal/csur                                        | [ScholarOne](https://mc.manuscriptcentral.com/csur)                  | ~16.6 | Hybrid            |
 | Artificial Intelligence Review   | #01   | [Springer Nature](https://www.springernature.com/)     | https://link.springer.com/journal/10462                                | [Editorial Manager](https://www.editorialmanager.com/aire/)          | ~10.7 | Hybrid            |
 | Expert Systems with Applications | #02   | [Elsevier](https://www.elsevier.com/)                  | https://www.sciencedirect.com/journal/expert-systems-with-applications | [Editorial Manager](https://www.editorialmanager.com/eswa/)          | ~8.5  | Hybrid            |
 | Science Robotics                 | #03   | [AAAS](https://www.aaas.org/)                          | https://www.science.org/journal/scirobotics                            | [CTS](https://cts.sciencemag.org/)                                   | ~25.0 | Hybrid            |
@@ -72,7 +72,7 @@ This directory contains 20 research papers — one **unified taxonomy paper** (#
 | Artificial Intelligence          | #05   | [Elsevier](https://www.elsevier.com/)                  | https://www.sciencedirect.com/journal/artificial-intelligence          | [Editorial Manager](https://www.editorialmanager.com/artint/)        | ~14.4 | Hybrid            |
 | npj Digital Medicine             | #06   | [Springer Nature](https://www.springernature.com/)     | https://www.nature.com/npjdigitalmed/                                  | [MTS](https://mts-npjdigitalmed.nature.com/)                         | ~15.2 | Yes (APC ~$2,990) |
 | IEEE TEC                         | #07   | [IEEE](https://www.ieee.org/)                          | https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235          | [ScholarOne](https://mc.manuscriptcentral.com/tevc-ieee)             | ~11.8 | Hybrid            |
-| ACM TIST                         | #08   | [ACM](https://www.acm.org/)                            | https://dl.acm.org/journal/tist                                        | [ScholarOne](https://mc.manuscriptcentral.com/tist)                  | ~10.5 | Optional          |
+| ACM TIST                         | #00   | [ACM](https://www.acm.org/)                            | https://dl.acm.org/journal/tist                                        | [ScholarOne](https://mc.manuscriptcentral.com/tist)                  | ~10.5 | Optional          |
 | The Lancet Digital Health        | #09   | [Lancet / Elsevier](https://www.thelancet.com/)        | https://www.thelancet.com/journals/landig/home                         | [Editorial Manager](https://www.editorialmanager.com/landig/)        | ~30.8 | Yes (APC ~$5,000) |
 | Nature                           | #10   | [Springer Nature](https://www.springernature.com/)     | https://www.nature.com/nature/                                         | [MTS](https://mts-nature.nature.com/)                                | ~64.8 | Hybrid            |
 | Information Fusion               | #11   | [Elsevier](https://www.elsevier.com/)                  | https://www.sciencedirect.com/journal/information-fusion               | [Editorial Manager](https://www.editorialmanager.com/inffus/)        | ~18.6 | Hybrid            |
@@ -101,7 +101,7 @@ publications/
 │   └── submission/
 │       ├── arxiv-pre-print/           ← arXiv preprint (cs.AI)
 │       │   └── README.md
-│       └── acm-computing-surveys-peer-review/ ← ACM Computing Surveys
+│       └── acm-tist-peer-review/          ← ACM TIST
 │           └── README.md
 ├── 01-agentic-ai/
 │   └── submission/
@@ -134,7 +134,7 @@ publications/
 ├── 08-explainable-ai/
 │   └── submission/
 │       ├── osf-pre-print/             ← OSF Preprints
-│       └── acm-tist-peer-review/      ← ACM TIST peer review
+│       └── acm-computing-surveys-peer-review/ ← ACM Computing Surveys
 ├── 09-federated-privacy-ai/
 │   └── submission/
 │       ├── ssrn-pre-print/            ← SSRN preprint (Elsevier)

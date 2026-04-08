@@ -10,13 +10,13 @@
 
 ## Status
 
-> Manuscript submitted — under peer review at ACM Computing Surveys
+> Manuscript submitted — under peer review at ACM TIST
 
 ---
 
 ## Abstract
 
-*Coming soon.*
+_Coming soon._
 
 ---
 
@@ -28,5 +28,5 @@ publications/00-unified-taxonomy/
 ├── data/              ← Datasets, benchmarks, scripts
 ├── submission/
 │   ├── arxiv-pre-print/         ← arXiv preprint (cs.AI)
-│   └── acm-computing-surveys-peer-review/    ← ACM Computing Surveys peer review
+│   └── acm-tist-peer-review/    ← ACM TIST peer review
 ```

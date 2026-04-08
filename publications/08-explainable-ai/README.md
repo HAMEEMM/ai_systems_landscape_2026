@@ -16,7 +16,7 @@
 
 ## Abstract
 
-*Coming soon.*
+_Coming soon._
 
 ---
 
@@ -25,7 +25,8 @@
 ```
 publications/08-explainable-ai/
 ├── README.md          ← You are here
-├── paper.pdf          ← Final manuscript (when ready)
-├── figures/           ← Figures and diagrams
-└── supplementary/     ← Supplementary materials
+├── data/              ← Datasets, benchmarks, scripts
+└── submission/
+    ├── osf-pre-print/                     ← OSF Preprints
+    └── acm-computing-surveys-peer-review/  ← ACM Computing Surveys
 ```
