@@ -27,6 +27,6 @@ publications/00-unified-taxonomy/
 ├── README.md          ← You are here
 ├── data/              ← Datasets, benchmarks, scripts
 ├── submission/
-│   ├── arxiv-pre-print/         ← arXiv preprint (cs.AI)
+│   ├── engrxiv-pre-print/       ← engrXiv preprint
 │   └── acm-tist-peer-review/    ← ACM TIST peer review
 ```

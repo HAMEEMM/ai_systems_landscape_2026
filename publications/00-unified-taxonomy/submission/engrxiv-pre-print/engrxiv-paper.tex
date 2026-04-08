@@ -1,54 +1,73 @@
 %%
-%% arxiv-paper.tex — arXiv preprint version
-%% Original: ACM TIST Formatted Paper
-%% Converted to standard LaTeX article class for arXiv submission
+%% engrxiv-paper.tex — engrXiv Preprint Format
+%% Paper #0 in the AI Systems Landscape 2026 series
+%% License: CC BY 4.0
 %%
-\documentclass[11pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 
-%% ── Page geometry ──
-\usepackage[margin=1in]{geometry}
-
-%% ── Typography & encoding ──
-\usepackage[T1]{fontenc}
+%% ================================================================
+%% PACKAGES
+%% ================================================================
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}           % Latin Modern fonts (available on arXiv)
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in, headheight=15pt]{geometry}
+\usepackage{setspace}
+\onehalfspacing
 
-%% ── Maths & symbols ──
-\usepackage{amsmath, amssymb}
-
-%% ── Tables & figures ──
 \usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{float}
-
-%% ── TikZ (same libraries as original) ──
+\usepackage{multirow}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit, backgrounds, decorations.pathreplacing}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-
-%% ── Hyperlinks & metadata ──
-\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=blue!70!black,citecolor=green!50!black,urlcolor=blue!70!black]{hyperref}
+\usepackage{url}
+\usepackage{orcidlink}
 
-%% ── Author block ──
-\usepackage{authblk}
+%% ================================================================
+%% PREPRINT HEADER
+%% ================================================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\lhead{\textsc{engrXiv Preprint} — CC BY 4.0}
+\rhead{\thepage}
+\lfoot{\footnotesize AI Systems Landscape 2026 — Paper \#0}
+\rfoot{\footnotesize \today}
 
-%% ── natbib for citation commands (compatible with bibtex) ──
-\usepackage[numbers,sort&compress]{natbib}
-
-\newcommand{\orcidicon}[1]{\href{https://orcid.org/#1}{\mbox{\textcolor[RGB]{166,206,57}{\textbullet}}}}
-
+%% ================================================================
 \begin{document}
 
-%%
-%% Title and author information
-\title{A Unified Taxonomy of 19 AI System Types: Architecture, Capability,\\and Deployment Analysis for the Modern AI Landscape}
+%% ================================================================
+%% TITLE PAGE
+%% ================================================================
+\begin{center}
+    {\Large\bfseries A Unified Taxonomy of 19 AI System Types:\\[4pt]
+    Architecture, Capability, and Deployment Analysis\\[2pt]
+    for the Modern AI Landscape}
 
-\author[1]{Hameem Mahdi~\orcidicon{0009-0007-0005-3080}}
-\affil[1]{Mayo Clinic, Rochester, MN, USA \\\texttt{mahdi.hameem@mayo.edu}}
+    \vspace{1em}
 
-\date{March 2026}
+    {\large Hameem Mahdi~\orcidlink{0009-0007-0005-3080}}\\[4pt]
+    Mayo Clinic, Rochester, MN, USA\\
+    \texttt{mahdi.hameem@mayo.edu}
+
+    \vspace{1em}
+
+    {\small\textbf{Preprint} — Not yet peer-reviewed}\\[2pt]
+    {\small License: \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0 International}}\\[2pt]
+    {\small Paper \#0 in the \emph{AI Systems Landscape 2026} series}
+\end{center}
+
+\vspace{1em}
 
 %%
 %% Abstract
@@ -57,11 +76,7 @@ This paper presents a comprehensive taxonomy of 19 distinct AI system types that
 \end{abstract}
 
 %%
-%% Build the title section
-\maketitle
-
-%%
-%% Keywords (arXiv style — placed after abstract)
+%% Keywords (placed after abstract)
 \noindent\textbf{Keywords:} AI Taxonomy, System Architecture, Capability Analysis, Deployment Framework, Artificial Intelligence Classification, Machine Learning Systems, Neuro-Symbolic AI, Agentic Systems
 \vspace{0.5em}
 
@@ -961,9 +976,17 @@ As AI continues to evolve, this taxonomy should serve as a living framework that
 This research was conducted independently. The author thanks the 47 AI practitioners and researchers who participated in the expert validation survey across 14 countries, and acknowledges valuable feedback from colleagues during the development of this taxonomy framework. The author also acknowledges the use of publicly available bibliometric data from Scopus, Web of Science, IEEE Xplore, and the ACM Digital Library.
 
 %% ================================================================
-%% REFERENCES
+%% DATA AVAILABILITY
 %% ================================================================
-\bibliographystyle{plainnat}
+\section*{Data Availability}
+All datasets, analysis scripts, and supplementary materials are publicly available at \url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/00-unified-taxonomy/data}.
+
+\section*{Competing Interests}
+The author declares no competing interests.
+
+%% ================================================================
+%% BIBLIOGRAPHY
+%% ================================================================
 \bibliography{references}
 
 \end{document}

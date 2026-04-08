@@ -1,6 +1,6 @@
 %% references.bib
 %% BibTeX database for: A Unified Taxonomy of 19 AI System Types
-%% ACM TIST submission — uses ACM-Reference-Format via acmart class
+%% engrXiv preprint version — uses plainnat style via natbib
 %%
 %% HOW THIS WORKS:
 %% ───────────────
@@ -10,17 +10,17 @@
 %%
 %% In the .tex file, you simply write:
 %%   \bibliography{references}
-%% (no .bib extension needed). The acmart class automatically loads
-%% \bibliographystyle{ACM-Reference-Format}, so you do NOT set it manually.
+%% (no .bib extension needed). The engrxiv-paper.tex file sets
+%% \bibliographystyle{plainnat} for natbib-compatible formatting.
 %%
 %% When you compile, run these commands in order:
-%%   1. pdflatex paper.tex     (first pass — collects \cite keys)
-%%   2. bibtex paper           (reads .bib, generates .bbl)
-%%   3. pdflatex paper.tex     (inserts bibliography)
-%%   4. pdflatex paper.tex     (resolves cross-references)
+%%   1. pdflatex engrxiv-paper.tex     (first pass — collects \cite keys)
+%%   2. bibtex engrxiv-paper           (reads .bib, generates .bbl)
+%%   3. pdflatex engrxiv-paper.tex     (inserts bibliography)
+%%   4. pdflatex engrxiv-paper.tex     (resolves cross-references)
 %%
 %% BENEFITS:
-%%   • ACM-compliant formatting is automatic
+%%   • Clean numeric citation formatting via plainnat
 %%   • Easy to add/remove references without touching the .tex
 %%   • Reusable across papers
 %%   • Consistent formatting guaranteed by BibTeX style

@@ -34,7 +34,7 @@
 1. **Create an ACM account** at https://dl.acm.org/
 2. **Prepare manuscript** in `acmart` format
 3. **Submit via** ACM ScholarOne: https://mc.manuscriptcentral.com/tist
-4. **Include the arXiv preprint DOI**
+4. **Include the engrXiv preprint DOI**
 
 ---
 
