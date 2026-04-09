@@ -13,32 +13,32 @@
 
 ### 1. Springer `sn-jnl` Template — DONE
 
-- [x] `sn-jnl.cls` and `sn-basic.bst` placed in the same directory as `air-paper.tex`
-- [x] Source: official Springer Nature template (via GitHub mirror of Springer's LaTeX author support bundle)
+- [X] `sn-jnl.cls` and `sn-basic.bst` placed in the same directory as `air-paper.tex`
+- [X] Source: official Springer Nature template (via GitHub mirror of Springer's LaTeX author support bundle)
 
 ### 2. Compile the Manuscript — DONE
 
-- [x] Run: `pdflatex air-paper.tex && bibtex air-paper && pdflatex air-paper.tex && pdflatex air-paper.tex`
-- [x] Verified: all tables, figures, and citations render correctly (12 pages, 332 KB)
-- [x] Verified: no `??` or `[?]` unresolved references
-- [x] Saved: `air-paper.pdf`
+- [X] Run: `pdflatex air-paper.tex && bibtex air-paper && pdflatex air-paper.tex && pdflatex air-paper.tex`
+- [X] Verified: all tables, figures, and citations render correctly (12 pages, 332 KB)
+- [X] Verified: no `??` or `[?]` unresolved references
+- [X] Saved: `air-paper.pdf`
 
 ### 3. Compile the Cover Letter
 
-- [x] Create `air-cover-letter.tex` (no cover letter file currently exists)
-- [x] Run: `pdflatex air-cover-letter.tex`
-- [x] Save: `air-cover-letter.pdf`
-- [x] Verify: engrXiv preprint DOI is present
+- [X] Create `air-cover-letter.tex` (no cover letter file currently exists)
+- [X] Run: `pdflatex air-cover-letter.tex`
+- [X] Save: `air-cover-letter.pdf`
+- [X] Verify: engrXiv preprint DOI is present
 
 ### 4. Final Quality Checks
 
-- [x] Confirm author name, affiliation, email, and ORCID are correct
-- [x] Confirm all 20 bibliography entries resolve
-- [x] Confirm no stale branding remains in the manuscript
-- [x] Confirm `\documentclass[sn-basic]{sn-jnl}` is the document class
-- [x] Confirm author-year citations (`\citep{}`, `\citet{}`) render correctly
-- [x] Spot-check abstract and keywords
-- [x] Confirm Data Availability and Code Availability URLs are valid
+- [X] Confirm author name, affiliation, email, and ORCID are correct
+- [X] Confirm all 20 bibliography entries resolve
+- [X] Confirm no stale branding remains in the manuscript
+- [X] Confirm `\documentclass[sn-basic]{sn-jnl}` is the document class
+- [X] Confirm author-year citations (`\citep{}`, `\citet{}`) render correctly
+- [X] Spot-check abstract and keywords
+- [X] Confirm Data Availability and Code Availability URLs are valid
 
 ---
 
@@ -46,30 +46,30 @@
 
 ### 5. Log in to Editorial Manager
 
-- [ ] Go to: https://www.editorialmanager.com/aire/
-- [ ] Log in with your Springer Nature account
-- [ ] If no account exists: Register → use mahdi.hameem@mayo.edu
+- [X] Go to: https://www.editorialmanager.com/aire/
+- [X] Log in with your Springer Nature account
+- [X] If no account exists: Register → use mahdi.hameem@mayo.edu
 
 ### 6. Start New Submission
 
-- [ ] Click "Submit New Manuscript"
-- [ ] Article Type: **Review Article** (or "Survey Paper" if shown)
-- [ ] Title: `Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems`
+- [X] Click "Submit New Manuscript"
+- [X] Article Type: **Review Article** (or "Survey Paper" if shown)
+- [X] Title: `Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems`
 
 ### 7. Enter Metadata
 
-- [ ] **Authors:** Hameem M. Mahdi (Mayo Clinic, Rochester, MN, USA)
-- [ ] **ORCID:** 0009-0007-0005-3080
-- [ ] **Corresponding author email:** mahdi.hameem@mayo.edu
-- [ ] **Abstract:** Copy from paper.tex (the \abstract{} block)
-- [ ] **Keywords:** Agentic AI; Large language models; AI architectures; Multi-agent systems; Agent frameworks; Human-in-the-loop
+- [X] **Authors:** Hameem M. Mahdi (Mayo Clinic, Rochester, MN, USA)
+- [X] **ORCID:** 0009-0007-0005-3080
+- [X] **Corresponding author email:** mahdi.hameem@mayo.edu
+- [X] **Abstract:** Copy from paper.tex (the \abstract{} block)
+- [X] **Keywords:** Agentic AI; Large language models; AI architectures; Multi-agent systems; Agent frameworks; Human-in-the-loop
 
 ### 8. Upload Files
 
-- [ ] **Manuscript:** Upload `air-paper.tex` (or `air-paper.pdf` — check AIR preference)
-- [ ] **Bibliography:** Upload `air-references.bib`
-- [ ] **Cover Letter:** Upload `air-cover-letter.pdf`
-- [ ] **Source Files:** If required, upload a ZIP containing: `air-paper.tex`, `air-references.bib`, `sn-jnl.cls`, `sn-basic.bst`
+- [X] **Manuscript:** Upload `air-paper.tex` (or `air-paper.pdf` — check AIR preference)
+- [X] **Bibliography:** Upload `air-references.bib`
+- [X] **Cover Letter:** Upload `air-cover-letter.pdf`
+- [X] **Source Files:** If required, upload a ZIP containing: `air-paper.tex`, `air-references.bib`, `sn-jnl.cls`, `sn-basic.bst`
 
 ### 9. Additional Questions (expect these)
 
