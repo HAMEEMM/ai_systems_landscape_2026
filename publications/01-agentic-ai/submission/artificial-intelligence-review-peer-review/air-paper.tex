@@ -1,3 +1,4 @@
+% !TEX recipe = pdflatex → bibtex → pdflatex × 2
 %%
 %% Agentic AI Paper — Artificial Intelligence Review Submission
 %% Paper #1 in the AI Systems Landscape 2026 series
@@ -42,6 +43,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{subcaption}
+\usepackage{placeins}
 
 %% Theorem environments
 \theoremstyle{definition}
@@ -50,10 +52,9 @@
 %% ================================================================
 %% FRONT MATTER
 %% ================================================================
+%% \jyear may not be defined in older sn-jnl.cls versions:
+\providecommand{\jyear}[1]{\def\@jyear{#1}}
 \jyear{2026}
-
-\raggedright
-\unnumbered
 
 \begin{document}
 
@@ -65,13 +66,14 @@
 
 \abstract{Large language model (LLM) agents that autonomously perceive environments, plan multi-step strategies, execute actions through external tools, and self-correct from feedback represent a paradigm shift from prompt-response to goal-directed AI. Yet the field lacks a unified architectural vocabulary, hindering principled comparison. Here we propose \textsc{Perceive--Plan--Act--Self-Correct} (PPAS), a four-phase canonical loop grounded in classical agent theory and extended for LLM-era systems. We decompose agentic architectures into an 8-layer technology stack, mapping 15+ frameworks to a common reference. Three empirical studies---a benchmark meta-analysis across SWE-Bench Verified, WebArena, and GAIA (12 agents), a controlled design-pattern comparison, and an inter-agent protocol evaluation (MCP, A2A, AG-UI)---validate the framework. Reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% SWE-Bench) while reducing irreversible-action failures by 73\%. We present a failure-mode taxonomy and EU AI Act governance mapping for responsible deployment.}
 
-\keywords{Agentic AI \and Large language models \and AI architectures \and Multi-agent systems \and Agent frameworks \and Model Context Protocol \and Human-in-the-loop}
+\keywords{Agentic AI, Large language models, AI architectures, Multi-agent systems, Agent frameworks, Model Context Protocol, Human-in-the-loop}
 
 \maketitle
 
 %% ================================================================
 %% 1. INTRODUCTION
 %% ================================================================
+\newpage
 \section{Introduction}\label{sec:introduction}
 
 The rapid evolution of large language models (LLMs) has given rise to \emph{agentic AI} systems that autonomously perceive their environment, formulate multi-step plans, execute actions via external tools, and self-correct from feedback \citep{yao2023react,shinn2023reflexion,wang2024survey}. Unlike static generative models, these systems maintain persistent state, interact with dynamic environments, and exhibit goal-directed behaviour over extended time horizons.
@@ -266,11 +268,12 @@ Adoption (est.)      & 10,000+ servers              & 50+ pilot orgs            
 
 We conducted a systematic meta-analysis of publicly reported benchmark results for frontier agentic systems. Data was collected from three sources: (i)~official benchmark leaderboards (swebench.com, HuggingFace GAIA leaderboard, webarena.dev), (ii)~peer-reviewed publications and arXiv preprints, and (iii)~official company announcements with verifiable methodology descriptions. Inclusion criteria required: results published after January 2024, evaluation on standardised test splits, and publicly documented methodology. The final dataset covers 12 agents across three benchmarks: SWE-Bench Verified \citep{jimenez2024swebench} ($n=500$, software engineering), WebArena \citep{zhou2024webarena} ($n=812$, web tasks), and GAIA \citep{mialon2023gaia} ($n=466$, general reasoning).
 
-\begin{table*}[ht]
-\centering
+\FloatBarrier
+\begin{table}[!htbp]
+\centering\footnotesize
 \caption{Frontier agent performance across major benchmarks (2024--2025). Agents are grouped by primary benchmark. Dashes indicate unreported results.}
 \label{tab:benchmarks}
-\begin{tabular}{llcccc}
+\begin{tabular}{@{}llcccc@{}}
 \toprule
 \textbf{Agent} & \textbf{Organisation} & \textbf{SWE-Bench (\%)} & \textbf{WebArena (\%)} & \textbf{GAIA (\%)} & \textbf{Pattern} \\
 \midrule
@@ -288,7 +291,7 @@ Agent-E             & Emergence AI   & ---  & 31.1 & ---  & Plan-and-Execute \\
 WebVoyager          & Zhejiang Univ  & ---  & 30.1 & ---  & ReAct \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 Three findings emerge. First, design pattern sophistication correlates strongly with performance: HITL + Reflection agents (Claude Code, 72.5\%) substantially outperform pure ReAct agents (SWE-Agent, 33.2\%) on SWE-Bench. Second, the gap between best and median agents is 39.3 percentage points, indicating that orchestration quality matters at least as much as foundation model capability. Third, specialisation effects are evident---top SWE-Bench performers differ from GAIA leaders, suggesting no single architecture dominates across domains.
 
@@ -478,6 +481,6 @@ This manuscript was previously submitted to \emph{Nature Machine Intelligence} (
 %% ================================================================
 %% REFERENCES
 %% ================================================================
-\bibliography{references}
+\bibliography{air-references}
 
 \end{document}

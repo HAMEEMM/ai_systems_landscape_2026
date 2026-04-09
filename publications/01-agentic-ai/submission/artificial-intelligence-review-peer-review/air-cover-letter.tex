@@ -1,0 +1,59 @@
+% !TEX recipe = pdflatex only
+\documentclass[10pt]{letter}
+
+\usepackage[margin=1in, top=0.75in, bottom=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue}
+
+\signature{Hameem M.\ Mahdi, B.S.C.S., M.S.E., Ph.D.\\
+Mayo Clinic, Rochester, MN 55905, USA\\
+\href{mailto:mahdi.hameem@mayo.edu}{mahdi.hameem@mayo.edu} ~|~ ORCID: \href{https://orcid.org/0009-0007-0005-3080}{0009-0007-0005-3080}}
+
+\address{Hameem M.\ Mahdi\\
+Mayo Clinic\\
+200 First Street SW\\
+Rochester, MN 55905, USA}
+
+\date{April 8, 2026}
+\setlength{\parskip}{0.4em}
+
+\begin{document}
+
+\begin{letter}{Editorial Office\\
+\emph{Artificial Intelligence Review}\\
+Springer Nature}
+
+\opening{Dear Editors,}
+
+I am pleased to submit ``Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems'' for consideration as a Review Article in \emph{Artificial Intelligence Review}.
+
+\textbf{Summary.}\quad
+The paper proposes the \textsc{Perceive--Plan--Act--Self-Correct} (PPAS) framework, a four-phase canonical loop for goal-directed agentic AI grounded in classical agent theory and extended for LLM-era architectures. We decompose agentic systems into an 8-layer technology stack mapping 15+ frameworks to a common reference, validated by three empirical studies: a benchmark meta-analysis (12 agents across SWE-Bench Verified, WebArena, and GAIA), a design-pattern comparison, and an inter-agent protocol evaluation (MCP, A2A, AG-UI).
+
+\textbf{Key contributions:}
+\begin{enumerate}[nosep, leftmargin=1.5em]
+    \item A formal four-phase agent loop unifying existing architectural patterns;
+    \item An 8-layer technology stack mapping 15+ frameworks to a common reference model;
+    \item Empirical evidence that reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% SWE-Bench Verified) while reducing irreversible-action failures by 73\%;
+    \item A failure-mode taxonomy with EU AI Act governance mapping.
+\end{enumerate}
+
+\textbf{Significance for AIR.}\quad
+Agentic AI represents one of the fastest-growing areas of AI research, yet the field lacks a unified architectural vocabulary. This work provides exactly such a unifying framework, validated empirically, and is well aligned with AIR's scope of comprehensive review and survey articles.
+
+\textbf{Prior submission disclosure.}\quad
+This manuscript was previously submitted to \emph{Nature Machine Intelligence} (ID:~NATMACHINTELL-A26041846, 3~April~2026) and desk-rejected on 7~April~2026 without external review due to scope mismatch; no quality concerns were raised.
+
+\textbf{Preprint.}\quad A preprint is available on engrXiv: \url{https://doi.org/10.31224/6738} (March 2026).
+
+\textbf{Data and code availability.}\quad All datasets, scripts, and notebooks are at: \url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/01-agentic-ai}
+
+The manuscript is not under consideration elsewhere. I confirm compliance with the journal's submission guidelines. Thank you for considering this submission.
+
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}

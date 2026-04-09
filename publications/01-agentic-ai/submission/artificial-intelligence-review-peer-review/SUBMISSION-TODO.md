@@ -2,45 +2,42 @@
 
 > **DELETE THIS FILE** after submission is complete.
 
-**Paper:** Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems  
-**Target:** Artificial Intelligence Review (Springer Nature)  
-**Portal:** https://www.editorialmanager.com/aire/  
+**Paper:** Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems
+**Target:** Artificial Intelligence Review (Springer Nature)
+**Portal:** https://www.editorialmanager.com/aire/
 **Date:** April 2026
 
 ---
 
 ## Pre-Submission Checklist
 
-### 1. Download the Springer `sn-jnl` Template (if not installed)
+### 1. Springer `sn-jnl` Template — DONE
 
-- [ ] Go to: https://www.springer.com/gp/livingreviews/latex-templates
-- [ ] Download `sn-jnl.cls` and `sn-basic.bst` (included in Springer's LaTeX support bundle)
-- [ ] Place `sn-jnl.cls`, `sn-basic.bst`, and `sn-jnl.bst` in the same directory as `paper.tex`
-- [ ] Or install via your LaTeX distribution's package manager (e.g., `tlmgr install springernature`)
+- [x] `sn-jnl.cls` and `sn-basic.bst` placed in the same directory as `air-paper.tex`
+- [x] Source: official Springer Nature template (via GitHub mirror of Springer's LaTeX author support bundle)
 
-### 2. Compile the Manuscript
+### 2. Compile the Manuscript — DONE
 
-- [ ] Run: `pdflatex paper.tex`
-- [ ] Run: `bibtex paper`
-- [ ] Run: `pdflatex paper.tex` (twice more for cross-references)
-- [ ] Verify: all tables, figures, and citations render correctly
-- [ ] Verify: no `??` or `[?]` unresolved references
-- [ ] Save: `paper.pdf`
+- [x] Run: `pdflatex air-paper.tex && bibtex air-paper && pdflatex air-paper.tex && pdflatex air-paper.tex`
+- [x] Verified: all tables, figures, and citations render correctly (12 pages, 332 KB)
+- [x] Verified: no `??` or `[?]` unresolved references
+- [x] Saved: `air-paper.pdf`
 
 ### 3. Compile the Cover Letter
 
-- [ ] Run: `pdflatex cover_letter.tex`
-- [ ] Save: `cover_letter.pdf`
-- [ ] Verify: engrXiv preprint DOI is present
+- [x] Create `air-cover-letter.tex` (no cover letter file currently exists)
+- [x] Run: `pdflatex air-cover-letter.tex`
+- [x] Save: `air-cover-letter.pdf`
+- [x] Verify: engrXiv preprint DOI is present
 
 ### 4. Final Quality Checks
 
-- [ ] Confirm author name, affiliation, email, and ORCID are correct
-- [ ] Confirm all 20 bibliography entries resolve
-- [ ] Confirm no stale branding remains in the manuscript
-- [ ] Confirm `\documentclass[sn-basic]{sn-jnl}` is the document class
-- [ ] Confirm author-year citations (`\citep{}`, `\citet{}`) render correctly
-- [ ] Spot-check abstract and keywords
+- [x] Confirm author name, affiliation, email, and ORCID are correct
+- [x] Confirm all 20 bibliography entries resolve
+- [x] Confirm no stale branding remains in the manuscript
+- [x] Confirm `\documentclass[sn-basic]{sn-jnl}` is the document class
+- [x] Confirm author-year citations (`\citep{}`, `\citet{}`) render correctly
+- [x] Spot-check abstract and keywords
 - [ ] Confirm Data Availability and Code Availability URLs are valid
 
 ---
@@ -69,10 +66,10 @@
 
 ### 8. Upload Files
 
-- [ ] **Manuscript:** Upload `paper.tex` (or `paper.pdf` — check AIR preference)
-- [ ] **Bibliography:** Upload `references.bib`
-- [ ] **Cover Letter:** Upload `cover_letter.pdf`
-- [ ] **Source Files:** If required, upload a ZIP of all LaTeX sources
+- [ ] **Manuscript:** Upload `air-paper.tex` (or `air-paper.pdf` — check AIR preference)
+- [ ] **Bibliography:** Upload `air-references.bib`
+- [ ] **Cover Letter:** Upload `air-cover-letter.pdf`
+- [ ] **Source Files:** If required, upload a ZIP containing: `air-paper.tex`, `air-references.bib`, `sn-jnl.cls`, `sn-basic.bst`
 
 ### 9. Additional Questions (expect these)
 
@@ -107,3 +104,4 @@
 ---
 
 _Created: 7 April 2026 — Temporary file for submission workflow._
+_Updated: 8 April 2026 — Template files installed, manuscript compiled, build artifacts cleaned._
