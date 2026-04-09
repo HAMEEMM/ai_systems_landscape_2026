@@ -52,8 +52,8 @@ A preprint of this work is available on engrXiv:
 ## Status
 
 - [x] Manuscript reformatted for Artificial Intelligence Review
-- [x] Cover letter updated (referencing preprint DOI)
-- [ ] Compile paper.tex and cover_letter.tex to PDF
+- [x] Cover letter created (referencing preprint DOI + NMI prior submission)
+- [x] Compile air-paper.tex and air-cover-letter.tex to PDF
 - [ ] Submitted to Artificial Intelligence Review
 - [ ] Reviews received
 - [ ] Paper accepted
@@ -65,7 +65,12 @@ A preprint of this work is available on engrXiv:
 ```
 artificial-intelligence-review-peer-review/
 ├── README.md              ← You are here
-├── paper.tex              ← Main manuscript (Springer sn-jnl format)
-├── references.bib         ← Bibliography (20 entries, author-year)
-└── cover_letter.tex       ← Cover letter (includes NMI prior submission disclosure)
+├── SUBMISSION-TODO.md     ← Submission checklist (delete after submission)
+├── air-paper.tex          ← Main manuscript (Springer sn-jnl format)
+├── air-paper.pdf          ← Compiled manuscript (12 pages)
+├── air-references.bib     ← Bibliography (20 entries, author-year)
+├── air-cover-letter.tex   ← Cover letter (NMI disclosure + preprint DOI)
+├── air-cover-letter.pdf   ← Compiled cover letter (1 page)
+├── sn-jnl.cls             ← Springer Nature journal document class
+└── sn-basic.bst           ← Springer author-year bibliography style
 ```

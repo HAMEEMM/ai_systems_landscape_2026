@@ -38,7 +38,7 @@
 - [x] Confirm `\documentclass[sn-basic]{sn-jnl}` is the document class
 - [x] Confirm author-year citations (`\citep{}`, `\citet{}`) render correctly
 - [x] Spot-check abstract and keywords
-- [ ] Confirm Data Availability and Code Availability URLs are valid
+- [x] Confirm Data Availability and Code Availability URLs are valid
 
 ---
 
@@ -62,7 +62,7 @@
 - [ ] **ORCID:** 0009-0007-0005-3080
 - [ ] **Corresponding author email:** mahdi.hameem@mayo.edu
 - [ ] **Abstract:** Copy from paper.tex (the \abstract{} block)
-- [ ] **Keywords:** Agentic AI; Large language models; AI architectures; Multi-agent systems; Agent frameworks; Model Context Protocol; Human-in-the-loop
+- [ ] **Keywords:** Agentic AI; Large language models; AI architectures; Multi-agent systems; Agent frameworks; Human-in-the-loop
 
 ### 8. Upload Files
 
