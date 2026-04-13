@@ -34,14 +34,14 @@
 1. **Create an ACM account** at https://dl.acm.org/
 2. **Prepare manuscript** in `acmart` format
 3. **Submit via** ACM ScholarOne: https://mc.manuscriptcentral.com/tist
-4. **Include the engrXiv preprint DOI**
+4. **Include the aiXiv preprint ID** (once published)
 
 ---
 
 ## Status
 
-- [ ] Manuscript formatted in `acmart`
-- [ ] Submitted to ACM TIST
+- [x] Manuscript formatted in `acmart`
+- [x] Submitted to ACM TIST
 - [ ] Reviews received
 - [ ] Paper accepted
 
