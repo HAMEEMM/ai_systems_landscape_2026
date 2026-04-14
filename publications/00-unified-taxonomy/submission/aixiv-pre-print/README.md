@@ -49,8 +49,8 @@
 - [x] aiXiv account created
 - [x] `aixiv-paper.pdf` finalized
 - [x] Files uploaded
-- [ ] Preprint live on aiXiv
-- [ ] aiXiv paper ID recorded: `___________`
+- [x] Preprint live on aiXiv
+- [x] aiXiv paper ID recorded: aixiv.260413.000007
 
 ---
 
