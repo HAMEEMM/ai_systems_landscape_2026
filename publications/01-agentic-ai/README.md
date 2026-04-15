@@ -17,6 +17,12 @@
 
 ---
 
+## Human Analogy
+
+![Agentic AI Human Analogy](01%20Agentic%20AI%20Human%20Analogy.jpg)
+
+---
+
 ## Paper Objective
 
 This paper presents a rigorous **architectural framework** for goal-directed Agentic AI systems, centering on the canonical loop: **Perceive → Plan → Act → Self-Correct**. It covers the complete development lifecycle and 8-layer technology stack, offers empirical validation through benchmark analysis and production case studies, and positions the framework within the broader AI systems taxonomy established in our companion paper.
