@@ -13,7 +13,7 @@
 ## Status
 
 > **engrXiv Preprint Accepted** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)
-> **[Artificial Intelligence Review](https://link.springer.com/journal/10462)** (Springer, IF ~10.7) — submission in preparation
+> **[Artificial Intelligence](https://www.sciencedirect.com/journal/artificial-intelligence)** (Elsevier, IF ~14.4) — submission in preparation
 
 ---
 
@@ -113,10 +113,10 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 ## Publication Record
 
-| Venue                                                                         | Type        | Status         | Date       |
-| ----------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
-| **[engrXiv](https://engrxiv.org/)**                                           | Preprint    | Accepted       | March 2026 |
-| **[Artificial Intelligence Review](https://link.springer.com/journal/10462)** | Peer Review | In Preparation | April 2026 |
+| Venue                                                                                        | Type        | Status         | Date       |
+| -------------------------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
+| **[engrXiv](https://engrxiv.org/)**                                                          | Preprint    | Accepted       | March 2026 |
+| **[Artificial Intelligence](https://www.sciencedirect.com/journal/artificial-intelligence)** | Peer Review | In Preparation | April 2026 |
 
 - **Preprint DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -148,10 +148,10 @@ publications/01-agentic-ai/
 │   │   ├── paper.pdf          ← Compiled manuscript
 │   │   ├── references.bib     ← BibTeX bibliography
 │   │   └── README.md          ← Publication record
-│   └── artificial-intelligence-review-peer-review/  ← Artificial Intelligence Review (in preparation)
-│       ├── paper.tex          ← Main manuscript (Springer sn-jnl format)
-│       ├── references.bib     ← Bibliography (author-year, 20 entries)
-│       ├── cover_letter.tex   ← Cover letter (includes NMI prior submission)
+│   └── artificial-intelligence-peer-review/  ← Artificial Intelligence (in preparation)
+│       ├── aij-paper.tex      ← Main manuscript (Elsevier elsarticle format)
+│       ├── aij-references.bib ← Bibliography (author-year, 20 entries)
+│       ├── aij-cover-letter.tex ← Cover letter (includes prior submission history)
 │       └── README.md          ← Submission status
 ├── data/                      ← Raw data and analysis notebooks
 │   ├── benchmarks/            ← Benchmark result aggregation
@@ -182,7 +182,7 @@ publications/01-agentic-ai/
   journal = {engrXiv},
   doi     = {10.31224/6738},
   url     = {https://doi.org/10.31224/6738},
-  note    = {Preprint; peer review at Artificial Intelligence Review in preparation}
+  note    = {Preprint; peer review at Artificial Intelligence (Elsevier) in preparation}
 }
 ```
 

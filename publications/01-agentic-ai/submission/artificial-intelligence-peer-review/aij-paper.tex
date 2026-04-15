@@ -1,33 +1,29 @@
 % !TEX recipe = pdflatex → bibtex → pdflatex × 2
 %%
-%% Agentic AI Paper — Artificial Intelligence Review Submission
+%% Agentic AI Paper — Artificial Intelligence (Elsevier) Submission
 %% Paper #1 in the AI Systems Landscape 2026 series
 %%
-%% Artificial Intelligence Review (Springer) formatting:
-%%   - Uses Springer Nature sn-jnl document class
-%%   - Author-year citations (natbib)
-%%   - No strict word limit for review/survey papers
+%% Artificial Intelligence (AIJ) formatting:
+%%   - Uses Elsevier elsarticle document class
+%%   - Author-year citations (natbib, authoryear style)
+%%   - No strict word limit
 %%   - Standard numbered sections
-%%   - Methods integrated into main text
-%%   - Single-column layout
-%%
-%% Previous submission: Nature Machine Intelligence (NATMACHINTELL-A26041846)
-%%   - Desk-rejected 7 April 2026 (scope mismatch, not quality)
+%%   - Single-column preprint layout
 %%
 %% Preprint: engrXiv DOI 10.31224/6738 (March 2026)
 %%
 
 %% ================================================================
-%% DOCUMENT CLASS — Springer Nature Journal
+%% DOCUMENT CLASS — Elsevier Article
 %% ================================================================
 %% Options:
-%%   sn-mathphys-num  = Math/Physics numbered refs
-%%   sn-mathphys-ay   = Math/Physics author-year refs
-%%   sn-basic         = Basic Springer (author-year)
-%%   sn-vancouver     = Vancouver numbered refs
+%%   preprint    = Single-column preprint format
+%%   review      = Double-spaced review format
+%%   authoryear  = Author-year citation style
+%%   number      = Numbered citation style
 %%
-%% AIR uses author-year citations:
-\documentclass[sn-basic]{sn-jnl}
+%% AIJ accepts author-year citations:
+\documentclass[preprint,authoryear]{elsarticle}
 
 %% ================================================================
 %% PACKAGES
@@ -44,37 +40,48 @@
 \usepackage{algpseudocode}
 \usepackage{subcaption}
 \usepackage{placeins}
+\usepackage{lineno}
 
 %% Theorem environments
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
 %% ================================================================
+%% JOURNAL METADATA
+%% ================================================================
+\journal{Artificial Intelligence}
+
+%% ================================================================
 %% FRONT MATTER
 %% ================================================================
-%% \jyear may not be defined in older sn-jnl.cls versions:
-\providecommand{\jyear}[1]{\def\@jyear{#1}}
-\jyear{2026}
-\received{9 April 2026}
-
 \begin{document}
+\begin{frontmatter}
 
-\title[PPAS: An Architectural Framework for Agentic AI]{Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems}
+\title{Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems}
 
-\author*[1]{\fnm{Hameem M.} \sur{Mahdi}}\email{mahdi.hameem@mayo.edu}
+\author[mayo]{Hameem M.\ Mahdi\corref{cor1}}
+\ead{mahdi.hameem@mayo.edu}
+\cortext[cor1]{Corresponding author}
 
-\affil*[1]{\orgname{Mayo Clinic}, \orgaddress{\city{Rochester}, \state{MN}, \postcode{55905}, \country{USA}}}
+\affiliation[mayo]{organization={Mayo Clinic},
+            city={Rochester},
+            state={MN},
+            postcode={55905},
+            country={USA}}
 
-\abstract{Large language model (LLM) agents that autonomously perceive environments, plan multi-step strategies, execute actions through external tools, and self-correct from feedback represent a paradigm shift from prompt-response to goal-directed AI. Yet the field lacks a unified architectural vocabulary, hindering principled comparison. Here we propose \textsc{Perceive--Plan--Act--Self-Correct} (PPAS), a four-phase canonical loop grounded in classical agent theory and extended for LLM-era systems. We decompose agentic architectures into an 8-layer technology stack, mapping 15+ frameworks to a common reference. Three empirical studies---a benchmark meta-analysis across SWE-Bench Verified, WebArena, and GAIA (12 agents), a controlled design-pattern comparison, and an inter-agent protocol evaluation (MCP, A2A, AG-UI)---validate the framework. Reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% SWE-Bench) while reducing irreversible-action failures by 73\%. We present a failure-mode taxonomy and EU AI Act governance mapping for responsible deployment.}
+\begin{abstract}
+Large language model (LLM) agents that autonomously perceive environments, plan multi-step strategies, execute actions through external tools, and self-correct from feedback represent a paradigm shift from prompt-response to goal-directed AI. Yet the field lacks a unified architectural vocabulary, hindering principled comparison. Here we propose \textsc{Perceive--Plan--Act--Self-Correct} (PPAS), a four-phase canonical loop grounded in classical agent theory and extended for LLM-era systems. We decompose agentic architectures into an 8-layer technology stack, mapping 15+ frameworks to a common reference. Three empirical studies---a benchmark meta-analysis across SWE-Bench Verified, WebArena, and GAIA (12 agents), a controlled design-pattern comparison, and an inter-agent protocol evaluation (MCP, A2A, AG-UI)---validate the framework. Reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% SWE-Bench) while reducing irreversible-action failures by 73\%. We present a failure-mode taxonomy and EU AI Act governance mapping for responsible deployment.
+\end{abstract}
 
-\keywords{Agentic AI, Large language models, AI architectures, Multi-agent systems, Agent frameworks, Human-in-the-loop}
+\begin{keyword}
+Agentic AI \sep Large language models \sep AI architectures \sep Multi-agent systems \sep Agent frameworks \sep Human-in-the-loop
+\end{keyword}
 
-\maketitle
+\end{frontmatter}
 
 %% ================================================================
 %% 1. INTRODUCTION
 %% ================================================================
-\newpage
 \section{Introduction}\label{sec:introduction}
 
 The rapid evolution of large language models (LLMs) has given rise to \emph{agentic AI} systems that autonomously perceive their environment, formulate multi-step plans, execute actions via external tools, and self-correct from feedback \citep{yao2023react,shinn2023reflexion,wang2024survey}. Unlike static generative models, these systems maintain persistent state, interact with dynamic environments, and exhibit goal-directed behaviour over extended time horizons.
@@ -449,7 +456,6 @@ The PPAS framework provides a unifying architectural model for goal-directed age
 %% ================================================================
 %% DATA & CODE AVAILABILITY
 %% ================================================================
-\backmatter
 
 \section*{Data Availability}
 
@@ -471,20 +477,18 @@ This work builds upon the unified AI systems taxonomy presented in our companion
 
 H.M. conceived the study, designed the framework, conducted the empirical analyses, and wrote the manuscript.
 
-\section*{Declarations}
+\section*{Declaration of Competing Interest}
 
-\subsection*{Funding}
-This research received no external funding.
-
-\subsection*{Competing Interests}
 The author declares no competing interests.
 
-\subsection*{Prior Submission}
-This manuscript was previously submitted to \emph{Nature Machine Intelligence} (NATMACHINTELL-A26041846, 3 April 2026) and desk-rejected on 7 April 2026 without external peer review. The editor confirmed the rejection was due to scope/fit rather than quality concerns.
+\section*{Funding}
+
+This research received no external funding.
 
 %% ================================================================
 %% REFERENCES
 %% ================================================================
-\bibliography{air-references}
+\bibliographystyle{elsarticle-harv}
+\bibliography{aij-references}
 
 \end{document}
