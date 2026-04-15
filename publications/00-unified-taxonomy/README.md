@@ -10,7 +10,7 @@
 
 ## Status
 
-> Manuscript submitted — under peer review at ACM TIST
+> Manuscript submitted — under peer review at ACM Computing Surveys (CSUR)
 
 ---
 
@@ -27,6 +27,7 @@ publications/00-unified-taxonomy/
 ├── README.md          ← You are here
 ├── data/              ← Datasets, benchmarks, scripts
 ├── submission/
-│   ├── aixiv-pre-print/         ← aiXiv preprint
-│   └── acm-tist-peer-review/    ← ACM TIST peer review
+│   ├── aixiv-pre-print/              ← aiXiv preprint
+
+│   └── acm-csur-peer-review/        ← ACM Computing Surveys peer review
 ```
