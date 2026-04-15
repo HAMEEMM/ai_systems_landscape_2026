@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Expert Systems with Applications |
-| **Publisher** | Elsevier |
-| **URL** | https://www.sciencedirect.com/journal/expert-systems-with-applications |
-| **Impact Factor** | ~8.5 (2024) |
-| **Scope** | AI applications, expert systems, business intelligence |
-| **Template** | Elsevier LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                                  |
+| ----------------- | ---------------------------------------------------------------------- |
+| **Journal**       | Expert Systems with Applications                                       |
+| **Publisher**     | Elsevier                                                               |
+| **URL**           | https://www.sciencedirect.com/journal/expert-systems-with-applications |
+| **Impact Factor** | ~8.5 (2024)                                                            |
+| **Scope**         | AI applications, expert systems, business intelligence                 |
+| **Template**      | Elsevier LaTeX or Word template                                        |
+| **Open Access**   | Hybrid                                                                 |
 
 ---
 
@@ -52,4 +52,6 @@
 ```
 expert-systems-peer-review/
 ├── README.md              ← You are here
+├── eswa-paper.tex         ← LaTeX source (elsarticle class, Elsevier format)
+└── eswa-references.bib    ← BibTeX references
 ```

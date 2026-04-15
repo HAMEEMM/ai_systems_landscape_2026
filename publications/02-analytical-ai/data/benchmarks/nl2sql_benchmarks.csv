@@ -1,0 +1,11 @@
+model,benchmark,execution_accuracy_pct,date,source
+GPT-4o + DIN-SQL,Spider,85.3,2024-06,Spider leaderboard
+Claude 3.5 Sonnet,Spider,83.7,2024-09,Spider leaderboard
+DAIL-SQL + GPT-4,Spider,83.1,2024-03,arXiv:2308.15363
+DIN-SQL + GPT-4,Spider,82.8,2024-01,NeurIPS 2024
+C3 + ChatGPT,Spider,81.8,2023-07,arXiv:2307.07306
+ThoughtSpot Sage,Enterprise (internal),78.0,2025-01,ThoughtSpot blog
+Power BI Q&A,Enterprise (internal),72.0,2024-06,Microsoft docs
+GPT-4o,BIRD-SQL,67.2,2024-11,BIRD leaderboard
+Claude 3.5,BIRD-SQL,65.8,2024-10,BIRD leaderboard
+DIN-SQL + GPT-4,BIRD-SQL,60.1,2024-03,BIRD leaderboard

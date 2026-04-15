@@ -1,0 +1,10 @@
+platform,metric,value,unit,date,source
+Snowflake,TPC-DS 1TB Query p50,2.1,seconds,2024-Q4,Snowflake docs
+BigQuery,TPC-DS 1TB Query p50,1.8,seconds,2024-Q4,Google Cloud docs
+Databricks SQL,TPC-DS 1TB Query p50,2.3,seconds,2024-Q4,Databricks blog
+Redshift Serverless,TPC-DS 1TB Query p50,2.5,seconds,2024-Q4,AWS docs
+Tableau,Dashboard Load (10 charts),2.8,seconds,2025-Q1,Benchmark study
+Power BI,Dashboard Load (10 charts),3.1,seconds,2025-Q1,Benchmark study
+Looker,Dashboard Load (10 charts),3.5,seconds,2025-Q1,Benchmark study
+ThoughtSpot,NLQ to Result,4.2,seconds,2025-Q1,ThoughtSpot docs
+Power BI Q&A,NLQ to Result,5.1,seconds,2025-Q1,Microsoft docs

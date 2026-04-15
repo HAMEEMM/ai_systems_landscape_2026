@@ -1,0 +1,10 @@
+algorithm,dataset,silhouette_score,ari,n_clusters,source
+K-Means,"Iris (n=150, d=4)",0.55,0.73,3,sklearn docs
+DBSCAN,"Iris (n=150, d=4)",0.49,0.57,2,sklearn docs
+HDBSCAN,"Iris (n=150, d=4)",0.51,0.65,3,McInnes et al. 2017
+GMM,"Iris (n=150, d=4)",0.55,0.9,3,sklearn docs
+K-Means,"Wine (n=178, d=13)",0.28,0.37,3,sklearn docs
+HDBSCAN,"Wine (n=178, d=13)",0.31,0.42,3,McInnes et al. 2017
+K-Means,"Mall Customers (n=200, d=5)",0.44,N/A,5,Kaggle
+DBSCAN,"Mall Customers (n=200, d=5)",0.38,N/A,4,Kaggle
+HDBSCAN,"Mall Customers (n=200, d=5)",0.41,N/A,5,Kaggle

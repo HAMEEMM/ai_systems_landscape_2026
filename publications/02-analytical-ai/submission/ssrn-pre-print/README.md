@@ -8,13 +8,13 @@
 
 ## Pre-Print Server
 
-| Field | Value |
-|---|---|
-| **Server** | SSRN (Social Science Research Network) |
-| **URL** | https://www.ssrn.com/ |
+| Field        | Value                                         |
+| ------------ | --------------------------------------------- |
+| **Server**   | SSRN (Social Science Research Network)        |
+| **URL**      | https://www.ssrn.com/                         |
 | **Category** | Information Systems / Artificial Intelligence |
-| **License** | Author retains copyright |
-| **Cost** | Free |
+| **License**  | Author retains copyright                      |
+| **Cost**     | Free                                          |
 
 ---
 
@@ -52,4 +52,6 @@
 ```
 ssrn-pre-print/
 ├── README.md              ← You are here
+├── ssrn-paper.tex         ← LaTeX source (article class, 12pt, a4paper)
+└── references.bib         ← BibTeX references (~50 entries)
 ```
