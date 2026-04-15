@@ -2,16 +2,43 @@
 %% This is file `taxonomy-paper.tex',
 %% ACM CSUR Formatted Paper
 %%
-\documentclass[acmlarge]{acmart}
+%% For submission and review of your manuscript please use:
+%%   \documentclass[acmsmall,screen,review]{acmart}
+%% When submitting camera ready or to TAPS, change to:
+%%   \documentclass[acmsmall]{acmart}
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+\documentclass[acmsmall,screen,review]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  These commands have SAMPLE
+%% values in them; ACM will provide the correct values after acceptance.
+\setcopyright{acmlicensed}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}
 
 %% Journal metadata for ACM Computing Surveys
 \acmJournal{CSUR}
 \acmVolume{0}
 \acmNumber{0}
 \acmArticle{0}
-\acmYear{2026}
-\acmDOI{XXXXXXX.XXXXXXX}
-\setcopyright{none}  % Set by ACM after acceptance
+\acmMonth{4}
 
 \usepackage{booktabs}
 \usepackage{tikz}
@@ -37,6 +64,8 @@
 }
 
 \renewcommand{\shortauthors}{H. Mahdi}
+
+\titlenote{Preprint available on aiXiv (Paper ID: \texttt{aixiv.260413.000007}, \url{https://aixiv.science/}).}
 
 %%
 %% Abstract
@@ -73,6 +102,10 @@ This paper presents a comprehensive taxonomy of 19 distinct AI system types that
 %%
 %% Keywords
 \keywords{AI Taxonomy, System Architecture, Capability Analysis, Deployment Framework, Artificial Intelligence Classification, Machine Learning Systems, Neuro-Symbolic AI, Agentic Systems}
+
+\received{April 2026}
+%\received[revised]{}
+%\received[accepted]{}
 
 %%
 %% Build the title section
@@ -978,6 +1011,6 @@ This research was conducted independently. The author thanks the 47 AI practitio
 %% REFERENCES
 %% ================================================================
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{references}
+\bibliography{acm-csur-references}
 
 \end{document}
