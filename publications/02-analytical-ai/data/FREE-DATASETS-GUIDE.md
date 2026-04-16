@@ -80,6 +80,9 @@
 ## Quick Start
 
 ```bash
+# Navigate to the data folder first (required — scripts use relative paths)
+cd publications/02-analytical-ai/data
+
 # Install core analysis dependencies
 pip install pandas scikit-learn matplotlib seaborn requests
 
@@ -95,9 +98,16 @@ git clone https://github.com/taoyds/spider
 # Run benchmark collection
 python benchmarks/collect_benchmarks.py
 
-# Run literature search
+# Run literature search (uses free Semantic Scholar API)
+# Optional: set S2_API_KEY for faster results (get free key at
+#   https://www.semanticscholar.org/product/api#api-key-form)
 python literature/search_literature.py
 
-# Run platform comparison
+# Run platform comparison (uses free GitHub API)
 python market-data/compare_platforms.py
 ```
+
+> **Note:** If `literature/search_literature.py` shows "Rate limited" or "429" errors,
+> this means Semantic Scholar is throttling requests. Either wait 5–10 minutes and retry,
+> or set a free API key via `set S2_API_KEY=your_key` before running.
+> See [README.md](README.md) for full details.

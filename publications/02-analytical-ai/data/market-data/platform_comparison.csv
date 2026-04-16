@@ -1,0 +1,38 @@
+name,category,full_name,stars,forks,open_issues,language,license,created,updated,description
+Grafana,L7-Viz,grafana/grafana,73237,13741,3900,TypeScript,AGPL-3.0,2013-12-11,2026-04-16,"The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple"
+Apache Superset,L7-Viz,apache/superset,72449,17050,1220,TypeScript,Apache-2.0,2015-07-21,2026-04-16,Apache Superset is a Data Visualization and Data Exploration Platform
+scikit-learn,L4-ML,scikit-learn/scikit-learn,65845,26954,2048,Python,BSD-3-Clause,2010-08-17,2026-04-16,scikit-learn: machine learning in Python
+pandas,L4-DataFrames,pandas-dev/pandas,48522,19869,3450,Python,BSD-3-Clause,2010-08-24,2026-04-16,"Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R da"
+ClickHouse,L2-OLAP,ClickHouse/ClickHouse,46917,8306,5840,C++,Apache-2.0,2016-06-02,2026-04-16,ClickHouse® is a real-time analytics database management system
+Metabase,L7-Viz,metabase/metabase,46886,6378,4097,Clojure,NOASSERTION,2015-02-02,2026-04-16,The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_cha
+Apache Spark,L2-Processing,apache/spark,43146,29161,333,Scala,Apache-2.0,2014-02-25,2026-04-16,Apache Spark - A unified analytics engine for large-scale data processing
+Apache Kafka,L1-Ingestion,apache/kafka,32387,15120,334,Java,Apache-2.0,2011-08-15,2026-04-16,Apache Kafka - A distributed event streaming platform
+Redash,L7-Viz,getredash/redash,28453,4577,747,Python,BSD-2-Clause,2013-10-28,2026-04-13,"Make Your Company Data Driven. Connect to any data source, easily visualize, dashboard and share your data."
+Apache Flink,L1-Streaming,apache/flink,25938,13915,325,Java,Apache-2.0,2014-06-07,2026-04-16,Apache Flink
+Vanna.ai,L5-NL2SQL,vanna-ai/vanna,23283,2324,291,Python,MIT,2023-05-13,2026-02-02,🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using Agentic Retrieval 🔄.
+Airbyte,L1-Ingestion,airbytehq/airbyte,21094,5144,2699,Python,NOASSERTION,2020-07-27,2026-04-16,"The leading data integration platform for ETL / ELT data pipelines from APIs, databases & files to data warehouses, data"
+Cube.dev,L3-Semantic,cube-js/cube,19808,1995,943,Rust,NOASSERTION,2018-09-16,2026-04-16,"📊 Cube Core is open-source semantic layer for AI, BI and embedded analytics"
+SciPy,L4-Scientific,scipy/scipy,14606,5694,1787,Python,BSD-3-Clause,2011-03-09,2026-04-16,SciPy library main repository
+Apache Druid,L2-OLAP,apache/druid,13975,3769,819,Java,Apache-2.0,2012-10-23,2026-04-16,Apache Druid: a high performance real-time analytics database.
+Trino,L2-Query Engine,trinodb/trino,12731,3567,2586,Java,Apache-2.0,2019-01-19,2026-04-16,"Official repository of Trino, the distributed SQL query engine for big data, formerly known as PrestoSQL (https://trino."
+dbt Core,L2-Transform,dbt-labs/dbt-core,12634,2377,806,Python,NOASSERTION,2016-03-10,2026-04-16,dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to 
+Debezium,L1-CDC,debezium/debezium,12620,2908,131,Java,Apache-2.0,2016-01-22,2026-04-16,Change data capture for a variety of databases. Please log issues at https://github.com/debezium/dbz/issues.
+DataHub,L8-Catalog,datahub-project/datahub,11801,3440,847,Java,Apache-2.0,2015-11-18,2026-04-16,The Metadata Platform for your Data and AI Stack
+Great Expectations,L8-Quality,great-expectations/great_expectations,11408,1743,52,Python,Apache-2.0,2017-09-11,2026-04-16,Always know what to expect from your data.
+statsmodels,L4-Stats,statsmodels/statsmodels,11363,3323,2959,Python,BSD-3-Clause,2011-06-12,2026-04-16,Statsmodels: statistical modeling and econometrics in Python
+PyOD,L4-Anomaly,yzhao062/pyod,9796,1465,234,Python,BSD-2-Clause,2017-10-03,2026-04-14,"A Python library for anomaly detection across tabular, time series, graph, text, and image data. 60+ detectors, benchmar"
+Delta Lake,L2-Storage,delta-io/delta,8751,2080,1454,Scala,Apache-2.0,2019-04-22,2026-04-16,"An open-source storage framework that enables building a Lakehouse architecture with compute engines including Spark, Pr"
+Apache Iceberg,L2-Storage,apache/iceberg,8741,3164,633,Java,Apache-2.0,2018-11-19,2026-04-16,Apache Iceberg
+DoWhy,L6-Causal,py-why/dowhy,8067,1023,162,Python,MIT,2018-05-31,2026-04-16,DoWhy is a Python library for causal inference that supports explicit modeling and testing of causal assumptions. DoWhy 
+Apache Hudi,L2-Storage,apache/hudi,6141,2474,4019,Java,Apache-2.0,2016-12-14,2026-04-16,"Upserts, Deletes And Incremental Processing on Big Data."
+CausalML,L6-Causal,uber/causalml,5815,857,36,Python,NOASSERTION,2019-07-09,2026-03-21,Uplift modeling and causal inference with machine learning algorithms
+Lightdash,L7-Viz,lightdash/lightdash,5699,700,1940,TypeScript,NOASSERTION,2021-03-19,2026-04-15,Self-serve BI to 10x your data team ⚡️
+Amundsen,L8-Catalog,amundsen-io/amundsen,4759,967,52,Python,Apache-2.0,2019-05-14,2026-04-02,"Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers"
+EconML,L6-Causal,py-why/EconML,4594,804,411,Jupyter Notebook,NOASSERTION,2018-04-30,2026-04-13,ALICE (Automated Learning and Intelligence for Causation and Economics) is a Microsoft Research project aimed at applyin
+Meltano,L1-EL,meltano/meltano,2468,235,266,Python,MIT,2021-06-21,2026-04-15,Meltano: the declarative code-first data integration engine that powers your wildest data and ML-powered product ideas. 
+OpenLineage,L8-Lineage,OpenLineage/OpenLineage,2409,451,319,Java,Apache-2.0,2020-10-24,2026-04-16,An Open Standard for lineage metadata collection
+Soda Core,L8-Quality,sodadata/soda-core,2333,263,171,Python,NOASSERTION,2020-12-14,2026-04-16,Data Contracts engine for the modern data stack. https://www.soda.io
+Marquez,L8-Lineage,MarquezProject/marquez,2166,391,241,Java,Apache-2.0,2018-07-05,2026-04-12,"Collect, aggregate, and visualize a data ecosystem's metadata"
+CausalImpact (R),L6-Causal,google/CausalImpact,1819,261,31,R,Apache-2.0,2014-08-08,2026-03-31,An R package for causal inference in time series
+Tigramite,L6-Causal,jakobrunge/tigramite,1640,311,14,Jupyter Notebook,GPL-3.0,2017-05-15,2026-01-14,Tigramite is a python package for causal inference with a focus on time series data. The Tigramite documentation is at
+Causica,L6-Causal,microsoft/causica,529,66,33,Python,MIT,2022-06-14,2024-12-16,

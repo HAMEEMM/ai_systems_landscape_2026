@@ -78,8 +78,8 @@ SEARCH_QUERIES = [
 FIELDS = "paperId,title,authors,year,citationCount,venue,publicationDate,openAccessPdf,externalIds"
 
 
-def search_papers(query, limit=20):
-    """Search Semantic Scholar for papers matching query."""
+def search_papers(query, limit=20, max_retries=5):
+    """Search Semantic Scholar for papers matching query with retry on 429."""
     url = f"{S2_BASE}/paper/search"
     params = {
         "query": query,
@@ -87,13 +87,26 @@ def search_papers(query, limit=20):
         "fields": FIELDS,
         "year": "2018-2026",  # Broader window for foundational causal inference work
     }
-    try:
-        resp = requests.get(url, params=params, headers=HEADERS, timeout=30)
-        resp.raise_for_status()
-        return resp.json().get("data", [])
-    except requests.RequestException as e:
-        print(f"    Warning: API error for '{query}': {e}")
-        return []
+    for attempt in range(max_retries):
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=30)
+            if resp.status_code == 429:
+                # Use Retry-After header if provided, otherwise exponential backoff
+                retry_after = resp.headers.get("Retry-After")
+                if retry_after:
+                    wait = int(retry_after) + 1
+                else:
+                    wait = 10 * (2 ** attempt)  # 10s, 20s, 40s, 80s, 160s
+                print(f"    Rate limited, waiting {wait}s (attempt {attempt+1}/{max_retries})...")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            return resp.json().get("data", [])
+        except requests.RequestException as e:
+            print(f"    Warning: API error for '{query}': {e}")
+            return []
+    print(f"    Warning: Exhausted retries for '{query}'")
+    return []
 
 
 def flatten_paper(paper):
@@ -134,7 +147,7 @@ def run_all_searches():
             pid = paper.get("paperId", "")
             if pid and pid not in all_papers:
                 all_papers[pid] = flatten_paper(paper)
-        time.sleep(1.1)  # respect rate limit
+        time.sleep(5.0)  # respect rate limit (unauthenticated: ~1 req/sec with safety margin)
     return list(all_papers.values())
 
 
