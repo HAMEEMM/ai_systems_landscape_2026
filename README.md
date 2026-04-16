@@ -72,28 +72,28 @@ ai_systems_landscape_2026/
 
 ## What's Inside
 
-| # | AI System Type | Deep Dive |
-|---|----------------|-----------|
-| 0 | **Master Reference** — taxonomy, comparison tables, classification, market data | [index.html](index.html) |
-| 1 | **Generative AI** — text, images, video, audio, code, 3D, molecules | [generative-ai.html](chapters/generative-ai.html) |
-| 2 | **Agentic AI** — goal-driven agents, tools, memory, multi-step workflows | [agentic-ai.html](chapters/agentic-ai.html) |
-| 3 | **Predictive / Discriminative AI** — classifiers, forecasting, anomaly detection | [predictive-discriminative-ai.html](chapters/predictive-discriminative-ai.html) |
-| 4 | **Analytical AI** — BI, augmented analytics, NLQ, pattern discovery | [analytical-ai.html](chapters/analytical-ai.html) |
-| 5 | **Conversational AI** — chatbots, voice assistants, conversational search | [conversational-ai.html](chapters/conversational-ai.html) |
-| 6 | **Reactive AI** — rule engines, PLCs, minimax, stream processing | [reactive-ai.html](chapters/reactive-ai.html) |
-| 7 | **Symbolic / Rule-Based AI** — knowledge graphs, expert systems, ontologies | [symbolic-rule-based-ai.html](chapters/symbolic-rule-based-ai.html) |
-| 8 | **Reinforcement Learning AI** — PPO, DQN, RLHF, sim-to-real | [reinforcement-learning-ai.html](chapters/reinforcement-learning-ai.html) |
-| 9 | **Physical / Embodied AI** — robotics, AVs, drones, SLAM | [physical-embodied-ai.html](chapters/physical-embodied-ai.html) |
-| 10 | **Autonomous AI (Non-Agentic)** — auto-scaling, autopilot, algo trading | [autonomous-ai.html](chapters/autonomous-ai.html) |
-| 11 | **Federated / Privacy-Preserving AI** — FL, DP, MPC, HE, TEEs | [federated-privacy-ai.html](chapters/federated-privacy-ai.html) |
-| 12 | **Explainable AI (XAI)** — SHAP, LIME, Grad-CAM, counterfactuals | [explainable-ai.html](chapters/explainable-ai.html) |
-| 13 | **Cognitive / Neuro-Symbolic AI** — neural + symbolic, LLM+KG | [cognitive-neuro-symbolic-ai.html](chapters/cognitive-neuro-symbolic-ai.html) |
-| 14 | **Multimodal Perception AI** — VLMs, sensor fusion, any-to-any | [multimodal-perception-ai.html](chapters/multimodal-perception-ai.html) |
-| 15 | **Scientific / Simulation AI** — PINNs, AlphaFold, digital twins | [scientific-simulation-ai.html](chapters/scientific-simulation-ai.html) |
-| 16 | **Recommendation / Retrieval AI** — RecSys, RAG, embeddings | [recommendation-retrieval-ai.html](chapters/recommendation-retrieval-ai.html) |
-| 17 | **Evolutionary / Genetic AI** — GA, NAS, neuroevolution | [evolutionary-genetic-ai.html](chapters/evolutionary-genetic-ai.html) |
-| 18 | **Bayesian / Probabilistic AI** — MCMC, GPs, BNNs, uncertainty | [bayesian-probabilistic-ai.html](chapters/bayesian-probabilistic-ai.html) |
-| 19 | **Optimization / Operations Research AI** — LP, MIP, CP, OR-Tools | [optimization-operations-research-ai.html](chapters/optimization-operations-research-ai.html) |
+| #  | AI System Type                                                                          | Deep Dive                                                                                  |
+| -- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 0  | **Master Reference** — taxonomy, comparison tables, classification, market data  | [index.html](index.html)                                                                      |
+| 1  | **Generative AI** — text, images, video, audio, code, 3D, molecules              | [generative-ai.html](chapters/generative-ai.html)                                             |
+| 2  | **Agentic AI** — goal-driven agents, tools, memory, multi-step workflows         | [agentic-ai.html](chapters/agentic-ai.html)                                                   |
+| 3  | **Predictive / Discriminative AI** — classifiers, forecasting, anomaly detection | [predictive-discriminative-ai.html](chapters/predictive-discriminative-ai.html)               |
+| 4  | **Analytical AI** — BI, augmented analytics, NLQ, pattern discovery              | [analytical-ai.html](chapters/analytical-ai.html)                                             |
+| 5  | **Conversational AI** — chatbots, voice assistants, conversational search        | [conversational-ai.html](chapters/conversational-ai.html)                                     |
+| 6  | **Reactive AI** — rule engines, PLCs, minimax, stream processing                 | [reactive-ai.html](chapters/reactive-ai.html)                                                 |
+| 7  | **Symbolic / Rule-Based AI** — knowledge graphs, expert systems, ontologies      | [symbolic-rule-based-ai.html](chapters/symbolic-rule-based-ai.html)                           |
+| 8  | **Reinforcement Learning AI** — PPO, DQN, RLHF, sim-to-real                      | [reinforcement-learning-ai.html](chapters/reinforcement-learning-ai.html)                     |
+| 9  | **Physical / Embodied AI** — robotics, AVs, drones, SLAM                         | [physical-embodied-ai.html](chapters/physical-embodied-ai.html)                               |
+| 10 | **Autonomous AI (Non-Agentic)** — auto-scaling, autopilot, algo trading          | [autonomous-ai.html](chapters/autonomous-ai.html)                                             |
+| 11 | **Federated / Privacy-Preserving AI** — FL, DP, MPC, HE, TEEs                    | [federated-privacy-ai.html](chapters/federated-privacy-ai.html)                               |
+| 12 | **Explainable AI (XAI)** — SHAP, LIME, Grad-CAM, counterfactuals                 | [explainable-ai.html](chapters/explainable-ai.html)                                           |
+| 13 | **Cognitive / Neuro-Symbolic AI** — neural + symbolic, LLM+KG                    | [cognitive-neuro-symbolic-ai.html](chapters/cognitive-neuro-symbolic-ai.html)                 |
+| 14 | **Multimodal Perception AI** — VLMs, sensor fusion, any-to-any                   | [multimodal-perception-ai.html](chapters/multimodal-perception-ai.html)                       |
+| 15 | **Scientific / Simulation AI** — PINNs, AlphaFold, digital twins                 | [scientific-simulation-ai.html](chapters/scientific-simulation-ai.html)                       |
+| 16 | **Recommendation / Retrieval AI** — RecSys, RAG, embeddings                      | [recommendation-retrieval-ai.html](chapters/recommendation-retrieval-ai.html)                 |
+| 17 | **Evolutionary / Genetic AI** — GA, NAS, neuroevolution                          | [evolutionary-genetic-ai.html](chapters/evolutionary-genetic-ai.html)                         |
+| 18 | **Bayesian / Probabilistic AI** — MCMC, GPs, BNNs, uncertainty                   | [bayesian-probabilistic-ai.html](chapters/bayesian-probabilistic-ai.html)                     |
+| 19 | **Optimization / Operations Research AI** — LP, MIP, CP, OR-Tools                | [optimization-operations-research-ai.html](chapters/optimization-operations-research-ai.html) |
 
 ---
 
