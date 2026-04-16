@@ -1,4 +1,4 @@
-# Data — Paper #12: Optimisation / Operations Research AI
+# Data — Paper #12: Optimization / Operations Research AI
 
 ## Public Datasets for OR AI Research
 

@@ -847,7 +847,7 @@
 <td>Fine-tunes models to follow conversational instructions and system prompts</td>
 </tr>
 <tr>
-<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td><strong>DPO (Direct Preference Optimization)</strong></td>
 <td>Simplified alignment without a separate reward model</td>
 </tr>
 <tr>
@@ -1099,7 +1099,7 @@
 <td><strong>NICE CXone</strong></td>
 <td>NICE</td>
 <td>Cloud (NICE CXone on AWS / Azure)</td>
-<td>AI-powered contact centre; Enlighten AI; workforce optimisation</td>
+<td>AI-powered contact centre; Enlighten AI; workforce optimization</td>
 </tr>
 <tr>
 <td><strong>Five9 IVA</strong></td>
@@ -2357,7 +2357,7 @@
 <td>The process of updating the dialogue state after each user turn; maintaining accumulated belief about user needs</td>
 </tr>
 <tr>
-<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td><strong>DPO (Direct Preference Optimization)</strong></td>
 <td>An alignment technique that trains models directly on human preference pairs without a separate reward model</td>
 </tr>
 <tr>
@@ -3581,7 +3581,7 @@
 <td>GPT-4o processing image + text, AV sensor fusion</td>
 </tr>
 <tr>
-<td><strong>Optimisation / Operations Research AI</strong></td>
+<td><strong>Optimization / Operations Research AI</strong></td>
 <td>Finds optimal solutions to constrained mathematical problems</td>
 <td>Vehicle routing, supply chain planning, scheduling</td>
 </tr>
@@ -3740,7 +3740,7 @@ const architectures = [
  { name: 'Intent Classification', desc: 'BERT, RoBERTa, and fine-tuned Transformers classify user utterances into predefined intent categories. Multi-label classification handles compound intents. Confidence thresholds trigger fallback or disambiguation flows when the model is uncertain.', color: 'blue' },
  { name: 'Entity Extraction (Slot Filling)', desc: 'Named Entity Recognition (NER) tags text spans with entity types — dates, amounts, locations, product names. Sequence labelling models (BiLSTM-CRF, token-classification Transformers) extract structured slots from unstructured user input for downstream processing.', color: 'green' },
  { name: 'Dialogue State Tracking', desc: 'Maintains a structured belief state representing the full conversation context — confirmed slots, pending values, user preferences, and conversation history. DST models update the state after every turn, enabling coherent multi-turn interactions.', color: 'purple' },
- { name: 'Dialogue Policy', desc: 'Decides the next system action given the current dialogue state. Approaches range from hand-crafted rules and decision trees, to supervised learning from human agent logs, RL-based optimisation for long-horizon goals, and LLM-based reasoning for complex scenarios.', color: 'orange' },
+ { name: 'Dialogue Policy', desc: 'Decides the next system action given the current dialogue state. Approaches range from hand-crafted rules and decision trees, to supervised learning from human agent logs, RL-based optimization for long-horizon goals, and LLM-based reasoning for complex scenarios.', color: 'orange' },
  { name: 'Response Generation', desc: 'Produces natural language output. Template-based systems fill slots in predefined responses. Retrieval-based systems select from a candidate pool. Generative models (GPT, Claude) produce free-form text. RAG-enhanced and hybrid approaches combine retrieval with generation for grounded, accurate responses.', color: 'blue' },
  { name: 'Transformer Conversational', desc: 'Large Language Models (GPT, Claude, Gemini, BlenderBot) fine-tuned for dialogue via RLHF, DPO, and instruction tuning. These models handle intent understanding, state tracking, and response generation in a single end-to-end architecture, often replacing multi-component pipelines.', color: 'purple' },
  { name: 'RAG (Retrieval-Augmented Generation)', desc: 'Retrieve relevant documents from vector stores or knowledge bases before generating a response. The retrieved context is prepended to the LLM prompt, grounding responses in factual sources. Reduces hallucination, enables citation, and keeps knowledge current without retraining.', color: 'green' },

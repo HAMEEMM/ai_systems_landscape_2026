@@ -263,11 +263,11 @@ Figure~\ref{fig:taxonomy-hierarchy} presents a visual overview of the six-cluste
      \textbullet~Explainable (XAI)};
 
   \node[cbox, fill=green!8] (c3) at (5.0, -3.0)
-    {\textbf{Learning \& Optimisation}\\[2pt]
+    {\textbf{Learning \& Optimization}\\[2pt]
      \textbullet~Generative\\
      \textbullet~Predictive / Discriminative\\
      \textbullet~Evolutionary / Genetic\\
-     \textbullet~Optimisation / OR};
+     \textbullet~Optimization / OR};
 
   %% ROW 2 — three cluster boxes
   \node[cbox, fill=yellow!10] (c4) at (-5.0, -6.5)
@@ -323,15 +323,15 @@ Table~\ref{tab:taxonomy-overview} provides a high-level summary of all 19 system
     1 & Agentic & Goal-directed autonomous action & Pursues objectives through multi-step reasoning \\
     2 & Autonomous (Non-Agentic) & Self-governing operation & Operates independently without goal-directed planning \\
     3 & Reactive & Stimulus-response behaviour & Responds to inputs without internal state \\
-    4 & Reinforcement Learning & Trial-and-error optimisation & Learns through environmental reward feedback \\
+    4 & Reinforcement Learning & Trial-and-error optimization & Learns through environmental reward feedback \\
     5 & Symbolic / Rule-Based & Explicit knowledge representation & Uses formal logic and rules for reasoning \\
     6 & Bayesian / Probabilistic & Uncertainty-aware inference & Models and reasons under uncertainty \\
     7 & Cognitive / Neuro-Symbolic & Hybrid neural-symbolic processing & Combines pattern recognition with explicit reasoning \\
     8 & Explainable (XAI) & Interpretable decision-making & Provides human-understandable justifications \\
     9 & Generative & Content creation and synthesis & Produces novel outputs (text, images, code) \\
     10 & Predictive / Discriminative & Classification and prediction & Maps inputs to discrete or continuous outputs \\
-    11 & Evolutionary / Genetic & Population-based optimisation & Evolves solutions through selection and variation \\
-    12 & Optimisation / Ops Research & Constraint satisfaction & Finds optimal or near-optimal solutions \\
+    11 & Evolutionary / Genetic & Population-based optimization & Evolves solutions through selection and variation \\
+    12 & Optimization / Ops Research & Constraint satisfaction & Finds optimal or near-optimal solutions \\
     13 & Conversational & Natural language interaction & Engages in human-like dialogue \\
     14 & Multimodal Perception & Cross-modal understanding & Integrates multiple sensory modalities \\
     15 & Physical / Embodied & Sensorimotor interaction & Acts in physical world through robot bodies \\
@@ -390,7 +390,7 @@ We now present a systematic analysis of each of the 19 system types, organized b
 
 \textbf{Architecture.} RL architectures include value function approximation networks (Q-learning, DQN), policy gradient methods and actor-critic models, environment models for model-based RL, experience replay buffers, and exploration strategies balancing exploitation with discovery.
 
-\textbf{Capabilities.} Key capabilities include sequential decision-making with long-horizon optimisation, autonomous skill acquisition through trial-and-error, adaptation to new environments, strategic planning through learned models, and multi-agent coordination in competitive or cooperative settings.
+\textbf{Capabilities.} Key capabilities include sequential decision-making with long-horizon optimization, autonomous skill acquisition through trial-and-error, adaptation to new environments, strategic planning through learned models, and multi-agent coordination in competitive or cooperative settings.
 
 \textbf{Deployment Considerations.} Challenges include significant simulation infrastructure requirements, safety constraints preventing dangerous exploration in real-world settings, careful reward function design to avoid reward hacking, and extended training periods for complex tasks with high sample requirements.
 
@@ -477,12 +477,12 @@ We now present a systematic analysis of each of the 19 system types, organized b
 
 \textbf{Applications:} Neural architecture search (NASNet, ENAS), engineering design optimization, game AI development, financial portfolio optimization, antenna and circuit design, robot controller optimization, and molecular design.
 
-\subsubsection{System 12: Optimisation / Operations Research AI Systems}
-\textbf{Definition.} AI systems based on mathematical optimisation techniques for resource allocation, planning, and operational problem-solving, providing provably optimal or near-optimal solutions with formal guarantees.
+\subsubsection{System 12: Optimization / Operations Research AI Systems}
+\textbf{Definition.} AI systems based on mathematical optimization techniques for resource allocation, planning, and operational problem-solving, providing provably optimal or near-optimal solutions with formal guarantees.
 
-\textbf{Architecture.} These feature linear and integer programming solvers (CPLEX, Gurobi), constraint programming and satisfaction engines, mixed-integer programming, dynamic programming, metaheuristics (simulated annealing, tabu search), and increasingly, learning-augmented optimisation layers.
+\textbf{Architecture.} These feature linear and integer programming solvers (CPLEX, Gurobi), constraint programming and satisfaction engines, mixed-integer programming, dynamic programming, metaheuristics (simulated annealing, tabu search), and increasingly, learning-augmented optimization layers.
 
-\textbf{Capabilities.} Key capabilities include provably near-optimal solutions with quality bounds, complex constraint satisfaction, large-scale problem solving, real-time re-optimisation for dynamic conditions, sensitivity analysis, and robust optimisation under uncertainty.
+\textbf{Capabilities.} Key capabilities include provably near-optimal solutions with quality bounds, complex constraint satisfaction, large-scale problem solving, real-time re-optimization for dynamic conditions, sensitivity analysis, and robust optimization under uncertainty.
 
 \textbf{Deployment Considerations.} Challenges include expertise required for accurate mathematical modelling, NP-hard problem scaling for large instances, solver selection for specific problem classes, and integration complexity with operational data sources.
 
@@ -598,7 +598,7 @@ Table~\ref{tab:comparison} presents a systematic comparison of all 19 system typ
     Generative & Low & Low & High & Medium \\
     Predictive / Discriminative & Low & Medium & Medium & Low \\
     Evolutionary / Genetic & Low & Low & High & Medium \\
-    Optimisation / OR & Low & High & Low & Medium \\
+    Optimization / OR & Low & High & Low & Medium \\
     Conversational & Low & Low & Medium & Medium \\
     Multimodal Perception & Low & Low & Medium & Medium \\
     Physical / Embodied & Medium & Low & Medium & High \\
@@ -613,7 +613,7 @@ Table~\ref{tab:comparison} presents a systematic comparison of all 19 system typ
 \subsection{Capability Spectrum Mapping}
 Our analysis reveals a spectrum of capabilities across the 19 types:
 
-\textbf{Reasoning Depth.} Deep reasoning characterizes Cognitive/Neuro-Symbolic, Symbolic/Rule-Based, and Bayesian/Probabilistic systems. Moderate reasoning is found in Analytical, Scientific/Simulation, and Optimisation/OR systems. Limited explicit reasoning characterizes Reactive, Predictive/Discriminative, and purely Generative systems.
+\textbf{Reasoning Depth.} Deep reasoning characterizes Cognitive/Neuro-Symbolic, Symbolic/Rule-Based, and Bayesian/Probabilistic systems. Moderate reasoning is found in Analytical, Scientific/Simulation, and Optimization/OR systems. Limited explicit reasoning characterizes Reactive, Predictive/Discriminative, and purely Generative systems.
 
 \textbf{Autonomy Level.} High autonomy is exhibited by Agentic, Autonomous (Non-Agentic), and RL systems. Moderate autonomy characterizes Evolutionary/Genetic, Physical/Embodied, and Multimodal Perception systems. Low autonomy is typical of Conversational, Recommendation/Retrieval, and Federated systems.
 
@@ -666,10 +666,10 @@ The analysis reveals fundamental trade-offs, visualised in Figure~\ref{fig:trade
 \addplot[scatter, only marks, scatter src=explicit symbolic]
   coordinates { (4.5,2.0)[c2] (3.4,1.8)[c2] (3.0,4.3)[c2] (4.2,2.8)[c2] };
 \addlegendentry{Knowledge \& Reasoning}
-% C3: Learning & Optimisation (4 systems)
+% C3: Learning & Optimization (4 systems)
 \addplot[scatter, only marks, scatter src=explicit symbolic]
   coordinates { (0.7,2.2)[c3] (1.7,1.0)[c3] (2.5,3.0)[c3] (3.7,1.1)[c3] };
-\addlegendentry{Learning \& Optimisation}
+\addlegendentry{Learning \& Optimization}
 % C4: Interaction & Perception (3 systems)
 \addplot[scatter, only marks, scatter src=explicit symbolic]
   coordinates { (1.2,1.4)[c4] (0.5,3.2)[c4] (0.5,4.6)[c4] };
@@ -698,7 +698,7 @@ The analysis reveals fundamental trade-offs, visualised in Figure~\ref{fig:trade
 \node[font=\tiny, anchor=north] at (axis cs:0.7,2.03) {Generative};
 \node[font=\tiny, anchor=north] at (axis cs:1.7,0.83) {Predictive / Discriminative};
 \node[font=\tiny, anchor=north] at (axis cs:2.5,2.83) {Evolutionary / Genetic};
-\node[font=\tiny, anchor=north] at (axis cs:3.7,0.93) {Optimisation / OR};
+\node[font=\tiny, anchor=north] at (axis cs:3.7,0.93) {Optimization / OR};
 % C4 labels
 \node[font=\tiny, anchor=north] at (axis cs:1.2,1.23) {Conversational};
 \node[font=\tiny, anchor=north] at (axis cs:0.5,3.03) {Multimodal Perception};
@@ -758,7 +758,7 @@ Table~\ref{tab:publications} presents the publication counts per system type, re
     Analytical & 350 & 2.3 & 9.3\% \\
     Cognitive / Neuro-Symbolic & 280 & 1.8 & 35.4\% \\
     Autonomous (Non-Agentic) & 190 & 1.2 & 7.1\% \\
-    Optimisation / OR & 180 & 1.2 & 5.8\% \\
+    Optimization / OR & 180 & 1.2 & 5.8\% \\
     Symbolic / Rule-Based & 160 & 1.0 & $-$2.1\% \\
     Evolutionary / Genetic & 140 & 0.9 & 3.2\% \\
     Reactive & 80 & 0.5 & $-$1.4\% \\
@@ -818,7 +818,7 @@ Figure~\ref{fig:pub-bar} visualises the publication distribution, highlighting t
     Reactive,
     Evolutionary/Genetic,
     Symbolic/Rule-Based,
-    Optimisation/OR,
+    Optimization/OR,
     Autonomous (Non-Ag.),
     Cognitive/Neuro-Symb.,
     Analytical,
@@ -901,7 +901,7 @@ Our taxonomy reveals several important research directions:
 
 \textbf{Bridging Capability Gaps.} Current AI systems show significant gaps in common-sense reasoning across system types, cross-domain knowledge transfer, energy-efficient learning and inference, and safe exploration in real-world environments.
 
-\textbf{Integration Opportunities.} The most promising advances may emerge from combining symbolic reasoning with neural learning (Cognitive/Neuro-Symbolic), integrating physical world understanding with abstract reasoning (Physical/Embodied + Symbolic), and merging optimisation techniques with learning-based approaches (Optimisation + RL).
+\textbf{Integration Opportunities.} The most promising advances may emerge from combining symbolic reasoning with neural learning (Cognitive/Neuro-Symbolic), integrating physical world understanding with abstract reasoning (Physical/Embodied + Symbolic), and merging optimization techniques with learning-based approaches (Optimization + RL).
 
 \textbf{Evaluation Frameworks.} There is a critical need for standardised benchmarks across capability dimensions, real-world validation beyond academic datasets, and metrics capturing safety, fairness, and societal impact alongside raw performance.
 
@@ -961,7 +961,7 @@ Figure~\ref{fig:selection-workflow} provides a decision workflow for practitione
      \textbullet~Novel content $\rightarrow$ \textbf{Generative}\\
      \textbullet~Classify / predict $\rightarrow$ \textbf{Predictive/Discriminative}\\
      \textbullet~Population-based search $\rightarrow$ \textbf{Evolutionary/Genetic}\\
-     \textbullet~Constraint solving $\rightarrow$ \textbf{Optimisation/OR}\\
+     \textbullet~Constraint solving $\rightarrow$ \textbf{Optimization/OR}\\
      \textbullet~Domain simulation $\rightarrow$ \textbf{Scientific/Simulation}};
   \draw[arr] (d3) -- node[lbl, above]{Yes} (boxC);
 

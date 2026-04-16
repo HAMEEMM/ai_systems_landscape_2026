@@ -1,4 +1,4 @@
-# Pre-Print Submission — Paper #12: Optimisation / Operations Research AI
+# Pre-Print Submission — Paper #12: Optimization / Operations Research AI
 
 **Paper Title:** Exact Solvers, Heuristics, and Hybrid AI: A Survey of Optimization Architectures for Supply Chain, Routing, and Resource Allocation
 

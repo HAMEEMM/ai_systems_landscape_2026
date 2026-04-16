@@ -29,7 +29,7 @@ ai_systems_landscape_2026/
 │   ├── federated-privacy-ai.html
 │   ├── generative-ai.html
 │   ├── multimodal-perception-ai.html
-│   ├── optimisation-operations-research-ai.html
+│   ├── optimization-operations-research-ai.html
 │   ├── physical-embodied-ai.html
 │   ├── predictive-discriminative-ai.html
 │   ├── reactive-ai.html
@@ -93,7 +93,7 @@ ai_systems_landscape_2026/
 | 16 | **Recommendation / Retrieval AI** — RecSys, RAG, embeddings | [recommendation-retrieval-ai.html](chapters/recommendation-retrieval-ai.html) |
 | 17 | **Evolutionary / Genetic AI** — GA, NAS, neuroevolution | [evolutionary-genetic-ai.html](chapters/evolutionary-genetic-ai.html) |
 | 18 | **Bayesian / Probabilistic AI** — MCMC, GPs, BNNs, uncertainty | [bayesian-probabilistic-ai.html](chapters/bayesian-probabilistic-ai.html) |
-| 19 | **Optimisation / Operations Research AI** — LP, MIP, CP, OR-Tools | [optimisation-operations-research-ai.html](chapters/optimisation-operations-research-ai.html) |
+| 19 | **Optimization / Operations Research AI** — LP, MIP, CP, OR-Tools | [optimization-operations-research-ai.html](chapters/optimization-operations-research-ai.html) |
 
 ---
 
@@ -135,7 +135,7 @@ Artificial Intelligence
 ├── 9.  Federated / Privacy-Preserving AI
 ├── 10. Generative AI
 ├── 11. Multimodal Perception AI
-├── 12. Optimisation / Operations Research AI
+├── 12. Optimization / Operations Research AI
 ├── 13. Physical / Embodied AI
 ├── 14. Predictive / Discriminative AI
 ├── 15. Reactive AI

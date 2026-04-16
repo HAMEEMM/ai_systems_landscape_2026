@@ -199,7 +199,7 @@
  <div class="dyk-container">
  <div class="dyk-card">
  <span class="dyk-icon">1</span>
- <p>Bayesian optimisation found better hyperparameters than grid search 10x faster in most ML competitions.</p>
+ <p>Bayesian optimization found better hyperparameters than grid search 10x faster in most ML competitions.</p>
  </div>
  <div class="dyk-card">
  <span class="dyk-icon">2</span>
@@ -364,7 +364,7 @@
 <tr>
 <td><strong>Gaussian Process Inference</strong></td>
 <td>Non-parametric function-space inference</td>
-<td>Bayesian optimisation, geostatistics, surrogate modelling</td>
+<td>Bayesian optimization, geostatistics, surrogate modelling</td>
 </tr>
 <tr>
 <td><strong>Bayesian Network Inference</strong></td>
@@ -457,7 +457,7 @@
 </tr>
 <tr>
 <td><strong>Used For</strong></td>
-<td>Bayesian optimisation, geostatistics (kriging), surrogate modelling, time-series forecasting</td>
+<td>Bayesian optimization, geostatistics (kriging), surrogate modelling, time-series forecasting</td>
 </tr>
 <tr>
 <td><strong>Key Limitation</strong></td>
@@ -621,7 +621,7 @@
 <!-- ════════════════════════════════════════════════════════════ -->
 <section class="section" id="sec-tools">
  <h2>Tools &amp; Platforms</h2>
- <p class="desc">Industry-leading probabilistic programming frameworks and Bayesian optimisation tools powering modern Bayesian AI.</p>
+ <p class="desc">Industry-leading probabilistic programming frameworks and Bayesian optimization tools powering modern Bayesian AI.</p>
 
  <table class="fw-table">
  <thead>
@@ -683,7 +683,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Bayesian Optimisation Libraries</h3>
+<h3>Bayesian Optimization Libraries</h3>
 <table>
 <thead>
 <tr>
@@ -706,7 +706,7 @@
 <tr>
 <td><strong>Optuna</strong></td>
 <td>Python</td>
-<td>Hyperparameter optimisation; supports Bayesian (TPE) + pruning</td>
+<td>Hyperparameter optimization; supports Bayesian (TPE) + pruning</td>
 </tr>
 <tr>
 <td><strong>Hyperopt</strong></td>
@@ -726,7 +726,7 @@
 <tr>
 <td><strong>Trieste</strong></td>
 <td>Python/TF</td>
-<td>BO library from Secondmind; supports batch and constrained optimisation</td>
+<td>BO library from Secondmind; supports batch and constrained optimization</td>
 </tr>
 </tbody>
 </table>
@@ -867,7 +867,7 @@
 <td>Bayesian claim frequency/severity models</td>
 </tr>
 <tr>
-<td><strong>Portfolio Optimisation</strong></td>
+<td><strong>Portfolio Optimization</strong></td>
 <td>Bayesian estimates of expected returns with uncertainty propagation</td>
 <td>Black-Litterman model, Bayesian mean-variance</td>
 </tr>
@@ -894,7 +894,7 @@
 <td>Google, Netflix, Microsoft experimentation</td>
 </tr>
 <tr>
-<td><strong>Hyperparameter Optimisation</strong></td>
+<td><strong>Hyperparameter Optimization</strong></td>
 <td>Find optimal ML hyperparameters with minimal compute budget</td>
 <td>Optuna, BoTorch, Google Vizier, SigOpt</td>
 </tr>
@@ -947,7 +947,7 @@
 </tr>
 <tr>
 <td><strong>Materials Discovery</strong></td>
-<td>Bayesian optimisation for materials with expensive experimental evaluations</td>
+<td>Bayesian optimization for materials with expensive experimental evaluations</td>
 <td>Self-driving laboratories, BO for materials</td>
 </tr>
 </tbody>
@@ -1166,7 +1166,7 @@
 <td>Pyro, Turing.jl, TensorFlow Probability</td>
 </tr>
 <tr>
-<td><strong>Bayesian Optimisation</strong></td>
+<td><strong>Bayesian Optimization</strong></td>
 <td>BoTorch/Ax (Meta), Optuna, Google Vizier</td>
 <td>SigOpt (Intel), Dragonfly, Hyperopt</td>
 </tr>
@@ -1330,7 +1330,7 @@
 <td>A directed acyclic graph encoding conditional dependencies between random variables</td>
 </tr>
 <tr>
-<td><strong>Bayesian Optimisation (BO)</strong></td>
+<td><strong>Bayesian Optimization (BO)</strong></td>
 <td>Using a probabilistic surrogate model to efficiently optimise expensive black-box functions</td>
 </tr>
 <tr>
@@ -1676,12 +1676,12 @@
 </table>
 <hr />
  </div>
- <h3 style="color:var(--accent2);margin-bottom:12px;">Bayesian Optimisation — Deep Dive</h3>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Bayesian Optimization — Deep Dive</h3>
  <div class="deep-dive" style="margin-top:0;">
  <h3>Overview</h3>
-<p>Bayesian Optimisation (BO) uses a probabilistic surrogate model (typically a Gaussian Process) to efficiently find the optimum of expensive-to-evaluate black-box functions.</p>
+<p>Bayesian Optimization (BO) uses a probabilistic surrogate model (typically a Gaussian Process) to efficiently find the optimum of expensive-to-evaluate black-box functions.</p>
 <pre><code>+------------------------------------------------------------------------+
-| BAYESIAN OPTIMISATION LOOP |
+| BAYESIAN OPTIMIZATION LOOP |
 | |
 | 1. FIT SURROGATE 2. ACQUISITION 3. EVALUATE |
 | ---------------- ---------------- ---------------- |
@@ -1722,7 +1722,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Applications of Bayesian Optimisation</h3>
+<h3>Applications of Bayesian Optimization</h3>
 <table>
 <thead>
 <tr>
@@ -1865,7 +1865,7 @@
 <td>GPT-4o processing image + text, AV sensor fusion</td>
 </tr>
 <tr>
-<td><strong>Optimisation / Operations Research AI</strong></td>
+<td><strong>Optimization / Operations Research AI</strong></td>
 <td>Finds optimal solutions to constrained mathematical problems</td>
 <td>Vehicle routing, supply chain planning, scheduling</td>
 </tr>
@@ -1947,7 +1947,7 @@ const pipelineData = [
  { icon: 'Da', label: 'Likelihood', desc: 'Define the likelihood function P(D|θ) — how probable the observed data is under each parameter setting. This is the statistical model connecting parameters to observations (e.g., Gaussian, Bernoulli, Poisson).' },
  { icon: 'Cy', label: 'Posterior', desc: 'Apply Bayes\' theorem to compute the posterior P(θ|D) ∝ P(D|θ)·P(θ). This combines prior beliefs with observed evidence. The posterior is the central object of Bayesian inference — it captures full uncertainty over parameters.' },
  { icon: 'Ta', label: 'Prediction', desc: 'Generate predictions by integrating over the full posterior, producing the posterior predictive distribution P(y*|D). Unlike point estimates, this naturally includes parameter uncertainty in every prediction.' },
- { icon: '', label: 'Decision', desc: 'Make optimal decisions under uncertainty using decision theory. Minimise expected loss (or maximise expected utility) by weighting outcomes by their posterior probability. Used in Bayesian optimisation, clinical trials, and risk management.' },
+ { icon: '', label: 'Decision', desc: 'Make optimal decisions under uncertainty using decision theory. Minimise expected loss (or maximise expected utility) by weighting outcomes by their posterior probability. Used in Bayesian optimization, clinical trials, and risk management.' },
  { icon: '', label: 'Update', desc: 'When new data arrives, yesterday\'s posterior becomes today\'s prior — enabling sequential, online Bayesian updating. This is the Bayesian learning loop: beliefs are continuously refined as evidence accumulates.' },
 ];
 const pipeCont = document.getElementById('pipeline-container');
@@ -1971,7 +1971,7 @@ pipelineData.forEach((s, i) => {
 
 /* ─── 8-LAYER STACK ─── */
 const stackData = [
- { num: 8, title: 'Decision Layer', detail: 'Make decisions under uncertainty using posterior predictive distributions. Apply decision theory, expected utility maximisation, and Bayesian optimisation to select optimal actions given calibrated uncertainty.', color: 'red' },
+ { num: 8, title: 'Decision Layer', detail: 'Make decisions under uncertainty using posterior predictive distributions. Apply decision theory, expected utility maximisation, and Bayesian optimization to select optimal actions given calibrated uncertainty.', color: 'red' },
  { num: 7, title: 'Prediction & Uncertainty', detail: 'Generate predictions with calibrated credible intervals by marginalising over the full posterior. Posterior predictive distributions naturally quantify both aleatoric and epistemic uncertainty.', color: 'orange' },
  { num: 6, title: 'Model Checking', detail: 'Validate models with posterior predictive checks (PPC), leave-one-out cross-validation (LOO-CV), WAIC, Bayes factors, and convergence diagnostics (R-hat, ESS, divergences).', color: 'purple' },
  { num: 5, title: 'Inference Engine', detail: 'Execute inference via MCMC (NUTS, HMC), variational inference (ADVI, SVI), Laplace approximation, or exact conjugate updates. The engine computes or approximates the posterior distribution.', color: 'blue' },
@@ -2001,7 +2001,7 @@ const subtypes = [
  { name: 'Exact Bayesian Inference', badge: 'Analytical', badgeClass: 'bg-blue c-blue', items: ['Conjugate priors enable closed-form posterior computation', 'Beta-Binomial, Normal-Normal, Gamma-Poisson families', 'Exact marginal likelihoods for model comparison', 'Limited to conjugate model families'] },
  { name: 'MCMC-Based Inference', badge: 'Gold Standard', badgeClass: 'bg-green c-green', items: ['Markov chain sampling from arbitrary posteriors', 'HMC/NUTS: self-tuning, gradient-based, efficient', 'Supports complex hierarchical and multi-level models', 'Asymptotically exact but computationally expensive'] },
  { name: 'Variational Inference', badge: 'Scalable', badgeClass: 'bg-purple c-purple', items: ['Optimise an approximate posterior (ELBO objective)', 'ADVI, SVI, normalising flows for flexibility', 'Scalable to massive datasets and deep models', 'Fast convergence but may underestimate uncertainty'] },
- { name: 'Gaussian Process Inference', badge: 'Non-parametric', badgeClass: 'bg-orange c-orange', items: ['Non-parametric function-space inference', 'Calibrated uncertainty for regression and classification', 'Bayesian optimisation and geostatistics', 'O(n³) scaling — sparse GPs for larger datasets'] },
+ { name: 'Gaussian Process Inference', badge: 'Non-parametric', badgeClass: 'bg-orange c-orange', items: ['Non-parametric function-space inference', 'Calibrated uncertainty for regression and classification', 'Bayesian optimization and geostatistics', 'O(n³) scaling — sparse GPs for larger datasets'] },
  { name: 'Bayesian Network Inference', badge: 'Graphical', badgeClass: 'bg-blue c-blue', items: ['Directed graphical model with conditional dependencies', 'Exact: variable elimination, junction tree', 'Approximate: belief propagation, sampling', 'Diagnosis, causal reasoning, expert systems'] },
  { name: 'Bayesian Deep Learning', badge: 'Neural', badgeClass: 'bg-purple c-purple', items: ['Distributions over neural network weights', 'MC Dropout, Bayes-by-Backprop, deep ensembles', 'Uncertainty-aware predictions for safety-critical tasks', 'Active area bridging deep learning and Bayesian methods'] },
  { name: 'Bayesian Nonparametric', badge: 'Flexible', badgeClass: 'bg-green c-green', items: ['Infinite-dimensional models: complexity grows with data', 'Dirichlet processes, Indian buffet process, beta process', 'Flexible clustering, topic modelling, density estimation', 'Chinese restaurant process for intuitive construction'] },
@@ -2018,9 +2018,9 @@ subtypes.forEach(s => {
 /* ─── CORE ARCHITECTURES ─── */
 const architectures = [
  { name: 'Bayesian Networks (PGMs)', badge: 'Graphical', badgeClass: 'bg-blue c-blue', items: ['DAG of nodes (variables) and edges (dependencies)', 'Exact inference via variable elimination or junction tree', 'Approximate via belief propagation or Gibbs sampling', 'Medical diagnosis, risk assessment, causal reasoning'] },
- { name: 'Gaussian Processes', badge: 'Non-parametric', badgeClass: 'bg-green c-green', items: ['Distribution over functions defined by kernel/covariance', 'Posterior mean + calibrated uncertainty bands', 'Bayesian optimisation for hyperparameter tuning', 'Geostatistics, surrogate modelling, sensor fusion'] },
+ { name: 'Gaussian Processes', badge: 'Non-parametric', badgeClass: 'bg-green c-green', items: ['Distribution over functions defined by kernel/covariance', 'Posterior mean + calibrated uncertainty bands', 'Bayesian optimization for hyperparameter tuning', 'Geostatistics, surrogate modelling, sensor fusion'] },
  { name: 'MCMC (NUTS Sampler)', badge: 'Sampling', badgeClass: 'bg-purple c-purple', items: ['No-U-Turn Sampler: self-tuning Hamiltonian Monte Carlo', 'Gold-standard for complex posteriors and hierarchical models', 'Diagnostics: R-hat, ESS, divergences, trace plots', 'Computationally expensive but asymptotically exact'] },
- { name: 'Variational Inference', badge: 'Optimisation', badgeClass: 'bg-orange c-orange', items: ['Cast inference as optimisation: minimise KL divergence', 'ADVI (automatic), SVI (stochastic), normalising flows', 'Orders of magnitude faster than MCMC for large models', 'Trades accuracy for speed — may underestimate tails'] },
+ { name: 'Variational Inference', badge: 'Optimization', badgeClass: 'bg-orange c-orange', items: ['Cast inference as optimization: minimise KL divergence', 'ADVI (automatic), SVI (stochastic), normalising flows', 'Orders of magnitude faster than MCMC for large models', 'Trades accuracy for speed — may underestimate tails'] },
  { name: 'Bayesian Linear / GLMs', badge: 'Interpretable', badgeClass: 'bg-blue c-blue', items: ['Priors on regression coefficients for regularisation', 'Full posterior over weights → credible intervals', 'Conjugate or MCMC-based inference', 'Fully interpretable, strong in clinical and social science'] },
  { name: 'Hidden Markov Models', badge: 'Sequential', badgeClass: 'bg-green c-green', items: ['Sequential data with latent discrete states', 'Forward-backward algorithm, Viterbi decoding', 'Baum-Welch for parameter estimation', 'Speech recognition, regime detection, bioinformatics'] },
 ];
@@ -2041,7 +2041,7 @@ const tools = [
  ['TensorFlow Probability', 'Python / TF', 'Probabilistic layers and Keras integration'],
  ['Turing.jl', 'Julia', 'Composable with fast MCMC and differential equations'],
  ['brms', 'R', 'High-level formula syntax for Bayesian models via Stan'],
- ['BoTorch', 'Python / PyTorch', 'Modular Bayesian optimisation framework'],
+ ['BoTorch', 'Python / PyTorch', 'Modular Bayesian optimization framework'],
 ];
 const toolsBody = document.getElementById('tools-body');
 tools.forEach(t => {
@@ -2063,12 +2063,12 @@ const usecases = [
  ['Risk Modelling', 'Bayesian VaR and CVaR estimation with fat-tailed posterior distributions'],
  ['A/B Testing', 'Bayesian hypothesis testing with posterior probability of lift'],
  ['Actuarial Modelling', 'Hierarchical claim frequency and severity models with credibility priors'],
- ['Portfolio Optimisation', 'Black-Litterman and Bayesian mean-variance with uncertainty on returns'],
+ ['Portfolio Optimization', 'Black-Litterman and Bayesian mean-variance with uncertainty on returns'],
  ['Fraud Detection', 'Bayesian anomaly scoring with prior knowledge of fraud patterns'],
  ]},
  { domain: ' Technology', items: [
  ['Bayesian A/B Testing', 'Continuous monitoring of experiments with posterior stopping rules'],
- ['Hyperparameter Optimisation', 'Gaussian process-based Bayesian optimisation (BO) for ML tuning'],
+ ['Hyperparameter Optimization', 'Gaussian process-based Bayesian optimization (BO) for ML tuning'],
  ['Anomaly Detection', 'Bayesian changepoint detection and online density estimation'],
  ['Demand Forecasting', 'Structural time-series with Bayesian uncertainty for supply chain'],
  ]},
@@ -2077,12 +2077,12 @@ const usecases = [
  ['Astrophysics', 'Parameter estimation for cosmological models and gravitational waves'],
  ['Particle Physics', 'Bayesian analysis of collision data, limit setting, model comparison'],
  ['Robotics', 'Bayesian state estimation, SLAM, and sensor fusion under noise'],
- ['Materials Discovery', 'Bayesian optimisation for experimental design in materials science'],
+ ['Materials Discovery', 'Bayesian optimization for experimental design in materials science'],
  ]},
  { domain: ' Manufacturing', items: [
  ['Process Control', 'Bayesian SPC with posterior predictive monitoring for drift detection'],
  ['Quality Estimation', 'Hierarchical models linking process parameters to quality outcomes'],
- ['Yield Optimisation', 'Sequential Bayesian optimisation for maximising production yield'],
+ ['Yield Optimization', 'Sequential Bayesian optimization for maximising production yield'],
  ['Supply Chain Risk', 'Bayesian network models for probabilistic supply chain risk assessment'],
  ]},
  { domain: ' Healthcare Analytics', items: [
@@ -2127,7 +2127,7 @@ risks.forEach(r => {
 const glossary = [
  { term: "Bayes' Theorem", def: "P(θ|D) ∝ P(D|θ)·P(θ) — the foundational rule for updating beliefs given evidence. Relates prior, likelihood, and posterior distributions." },
  { term: "Bayesian Network", def: "A directed acyclic graph (DAG) representing conditional dependencies between random variables. Used for reasoning under uncertainty and causal modelling." },
- { term: "Bayesian Optimisation", def: "A sequential strategy for global optimisation of expensive black-box functions using a GP surrogate and an acquisition function (e.g., EI, UCB)." },
+ { term: "Bayesian Optimization", def: "A sequential strategy for global optimization of expensive black-box functions using a GP surrogate and an acquisition function (e.g., EI, UCB)." },
  { term: "Calibration", def: "The degree to which predicted probabilities match observed frequencies. A calibrated model's 80% credible intervals contain the truth 80% of the time." },
  { term: "Conjugate Prior", def: "A prior distribution that, when combined with a specific likelihood, yields a posterior in the same family — enabling closed-form updates (e.g., Beta-Binomial)." },
  { term: "Credible Interval", def: "The Bayesian counterpart of a confidence interval — a range containing the parameter with a specified posterior probability (e.g., 95% highest density interval)." },
@@ -2140,7 +2140,7 @@ const glossary = [
  { term: "Inference", def: "The process of computing or approximating the posterior distribution P(θ|D) from the prior and likelihood. Methods include exact, MCMC, VI, and ABC." },
  { term: "Likelihood", def: "P(D|θ) — the probability of the observed data given specific parameter values. The likelihood function encodes how the model generates data." },
  { term: "MCMC (Markov Chain Monte Carlo)", def: "A family of algorithms that generate samples from the posterior by constructing a Markov chain whose stationary distribution is the target posterior." },
- ['Acquisition Function', 'Criterion (EI, UCB, PI) guiding where to sample next in Bayesian optimisation.'],
+ ['Acquisition Function', 'Criterion (EI, UCB, PI) guiding where to sample next in Bayesian optimization.'],
  ['Laplace Approximation', 'Approximating the posterior with a Gaussian centered at the MAP estimate.'],
 ];
 const glossList = document.getElementById('glossary-list');

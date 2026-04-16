@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optimisation / Operations Research AI — Interactive Architecture Chart (2026)</title>
+<title>Optimization / Operations Research AI — Interactive Architecture Chart (2026)</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="../assets/css/theme.css">
 <link rel="stylesheet" href="../assets/css/components.css">
@@ -17,12 +17,12 @@
 <a href="../index.html" class="back-to-hub"><span class="back-arrow">&larr;</span> AI Systems Landscape</a>
 
 <header class="hero">
- <h1>Optimisation / Operations Research AI — Interactive Architecture Chart</h1>
- <p class="subtitle">A comprehensive interactive exploration of Optimisation AI — the solve pipeline, 8-layer stack, problem classes, LP/MIP/CP solvers, benchmarks, market data, and more.</p>
+ <h1>Optimization / Operations Research AI — Interactive Architecture Chart</h1>
+ <p class="subtitle">A comprehensive interactive exploration of Optimization AI — the solve pipeline, 8-layer stack, problem classes, LP/MIP/CP solvers, benchmarks, market data, and more.</p>
  <span class="reading-time">~38 min read &middot; Interactive Reference</span>
  <p class="author">Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D. · 2026</p>
  <p class="author" style="color:var(--text2);font-weight:400;font-size:0.88rem;margin-top:4px;">Senior Principal Applied Scientist | Private Equity Leader | AI Innovative Solutions</p>
- <p style="margin-top:12px;"><a href="../publications/12-optimisation-operations-research-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
+ <p style="margin-top:12px;"><a href="../publications/12-optimization-operations-research-ai/" style="display:inline-block;padding:6px 18px;border-radius:20px;background:var(--glow);border:1px solid var(--accent);color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='var(--glow)';this.style.color='var(--accent)'">&#128196; Forthcoming Paper</a></p>
 </header>
 
 <nav class="nav-bar" id="nav">
@@ -44,8 +44,8 @@
 
 <!-- ═══ PIPELINE ═══ -->
 <div class="section active" id="sec-pipeline">
- <h2>Optimisation Solve Pipeline</h2>
- <p class="desc">The end-to-end workflow for solving optimisation problems — from problem definition through deployment and continuous re-optimisation.</p>
+ <h2>Optimization Solve Pipeline</h2>
+ <p class="desc">The end-to-end workflow for solving optimization problems — from problem definition through deployment and continuous re-optimization.</p>
  <div class="pipeline">
  <div class="step" style="border-color:var(--accent)"><h4 class="c-blue">1. Problem Definition</h4><p>Identify objectives, constraints, decision variables</p></div><span class="arrow">→</span>
  <div class="step" style="border-color:var(--accent2)"><h4 class="c-green">2. Mathematical Formulation</h4><p>Model as LP, MIP, CP, or nonlinear program</p></div><span class="arrow">→</span>
@@ -59,9 +59,9 @@
   Full Reference
 </button>
 <div class="deep-dive collapsed" id="dd-pipeline">
-<h3>How Optimisation AI Works — The Solve Pipeline</h3>
+<h3>How Optimization AI Works — The Solve Pipeline</h3>
 <pre><code>+------------------------------------------------------------------------+
-| OPTIMISATION / OR PIPELINE |
+| OPTIMIZATION / OR PIPELINE |
 | |
 | 1. PROBLEM 2. MATHEMATICAL 3. SOLVE |
 | DEFINITION FORMULATION |
@@ -79,7 +79,7 @@
 | business logic systems and conditions change |
 +------------------------------------------------------------------------+
 </code></pre>
-<h3>The Optimisation Process</h3>
+<h3>The Optimization Process</h3>
 <table>
 <thead>
 <tr>
@@ -118,11 +118,11 @@
 </tr>
 <tr>
 <td><strong>Deployment</strong></td>
-<td>Integrate the optimisation engine into production systems for automated or decision-support use</td>
+<td>Integrate the optimization engine into production systems for automated or decision-support use</td>
 </tr>
 <tr>
-<td><strong>Re-Optimisation</strong></td>
-<td>Periodically re-solve as conditions change (rolling horizon, real-time re-optimisation)</td>
+<td><strong>Re-Optimization</strong></td>
+<td>Periodically re-solve as conditions change (rolling horizon, real-time re-optimization)</td>
 </tr>
 </tbody>
 </table>
@@ -224,7 +224,7 @@
 
 <!-- ═══ 8-LAYER STACK ═══ -->
 <div class="section" id="sec-stack">
- <h2>The Optimisation AI Stack — 8 Layers</h2>
+ <h2>The Optimization AI Stack — 8 Layers</h2>
  <p class="desc">Click any layer to expand details about the components and technologies at each level.</p>
  <div class="stack-layers">
  <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-blue c-blue">8</span><span class="layer-title">Decision Interface</span><span class="expand-icon">▼</span>
@@ -233,8 +233,8 @@
  <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-purple c-purple">6</span><span class="layer-title">Post-Processing</span><span class="expand-icon">▼</span></div><div class="layer-detail">Solution validation, sensitivity analysis, infeasibility diagnosis, rounding heuristics, warm-start caching, and KPI computation from solver output.</div></div>
  <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-orange c-orange">5</span><span class="layer-title">Solver Engine</span><span class="expand-icon">▼</span></div><div class="layer-detail">LP simplex/interior-point, branch-and-bound/cut (MIP), constraint propagation (CP), heuristic/metaheuristic engines, parallelism, and presolve techniques.</div></div>
  <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-red c-red">4</span><span class="layer-title">Model Formulation</span><span class="expand-icon">▼</span></div><div class="layer-detail">Algebraic modelling languages (AMPL, Pyomo, JuMP), objective functions, constraint definition, variable typing, model validation, and reformulation techniques.</div></div>
- <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-blue c-blue">3</span><span class="layer-title">Data &amp; Parameters</span><span class="expand-icon">▼</span></div><div class="layer-detail">Cost matrices, demand forecasts, capacity tables, distance/time matrices, scenario parameters, and data quality pipelines feeding the optimisation model.</div></div>
- <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-green c-green">2</span><span class="layer-title">Prediction Layer (ML Forecasting)</span><span class="expand-icon">▼</span></div><div class="layer-detail">Demand forecasting, price prediction, travel-time estimation, failure probability models — ML outputs that serve as parameters to the optimisation model.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-blue c-blue">3</span><span class="layer-title">Data &amp; Parameters</span><span class="expand-icon">▼</span></div><div class="layer-detail">Cost matrices, demand forecasts, capacity tables, distance/time matrices, scenario parameters, and data quality pipelines feeding the optimization model.</div></div>
+ <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-green c-green">2</span><span class="layer-title">Prediction Layer (ML Forecasting)</span><span class="expand-icon">▼</span></div><div class="layer-detail">Demand forecasting, price prediction, travel-time estimation, failure probability models — ML outputs that serve as parameters to the optimization model.</div></div>
  <div class="stack-layer" onclick="this.classList.toggle('expanded')"><div class="layer-head"><span class="layer-num bg-purple c-purple">1</span><span class="layer-title">Problem Identification</span><span class="expand-icon">▼</span></div><div class="layer-detail">Business requirement gathering, feasibility assessment, problem classification (LP vs MIP vs CP), complexity estimation, and scope definition.</div></div>
  </div>
 
@@ -242,7 +242,7 @@
   Full Reference
 </button>
 <div class="deep-dive collapsed" id="dd-stack">
-<h3>The Optimisation AI Stack — 8 Layers</h3>
+<h3>The Optimization AI Stack — 8 Layers</h3>
 <table>
 <thead>
 <tr>
@@ -262,7 +262,7 @@
 <tr>
 <td>7</td>
 <td><strong>Solution Delivery</strong></td>
-<td>Deploy optimisation as APIs, batch jobs, or embedded decision engines</td>
+<td>Deploy optimization as APIs, batch jobs, or embedded decision engines</td>
 <td>Microservices, REST APIs, embedded solvers</td>
 </tr>
 <tr>
@@ -309,20 +309,20 @@
 
 <!-- ═══ SUB-TYPES ═══ -->
 <div class="section" id="sec-subtypes">
- <h2>Optimisation Sub-Types</h2>
- <p class="desc">The major classes of optimisation problems, each with distinct mathematical properties and solution methods.</p>
+ <h2>Optimization Sub-Types</h2>
+ <p class="desc">The major classes of optimization problems, each with distinct mathematical properties and solution methods.</p>
  <div class="cards cards-2">
  <div class="card"><span class="badge bg-blue c-blue">LP</span><h3>Linear Programming (LP)</h3><p>Continuous decision variables with linear objectives and constraints. Solved in polynomial time via simplex or interior-point methods. Foundation of OR.</p>
 </div>
  <div class="card"><span class="badge bg-green c-green">MIP</span><h3>Mixed-Integer Programming (MIP)</h3><p>LP with some integer/binary variables. Branch-and-bound/cut solvers. Core of scheduling, logistics, and facility location.</p></div>
  <div class="card"><span class="badge bg-purple c-purple">CP</span><h3>Constraint Programming (CP)</h3><p>Domain propagation and backtracking search over finite domains. Excels at scheduling, configuration, and highly combinatorial feasibility problems.</p></div>
- <div class="card"><span class="badge bg-orange c-orange">Convex</span><h3>Convex Optimisation</h3><p>Minimise convex functions over convex sets. Guarantees global optimum. Includes quadratic, conic, and semidefinite programming.</p></div>
- <div class="card"><span class="badge bg-red c-red">Combinatorial</span><h3>Combinatorial Optimisation</h3><p>Discrete search over finite but exponentially large solution spaces. TSP, graph colouring, bin packing, assignment problems.</p></div>
- <div class="card"><span class="badge bg-blue c-blue">Network</span><h3>Network Optimisation</h3><p>Shortest path, max flow, min-cost flow, network design. Efficient specialised algorithms (Dijkstra, Ford-Fulkerson).</p></div>
- <div class="card"><span class="badge bg-green c-green">Stochastic</span><h3>Stochastic Optimisation</h3><p>Decision-making under uncertainty with probabilistic parameters. Two-stage, multi-stage, chance-constrained, and robust formulations.</p></div>
- <div class="card"><span class="badge bg-purple c-purple">Multi-Obj</span><h3>Multi-Objective Optimisation</h3><p>Simultaneous optimisation of conflicting objectives. Pareto front enumeration, weighted-sum, epsilon-constraint methods.</p></div>
- <div class="card"><span class="badge bg-orange c-orange">Dynamic</span><h3>Dynamic Optimisation</h3><p>Sequential decisions over time with evolving state. Real-time re-optimisation, rolling-horizon, and online optimisation.</p></div>
- <div class="card"><span class="badge bg-red c-red">Robust</span><h3>Robust Optimisation</h3><p>Worst-case optimisation over uncertainty sets. Immunises solutions against parameter perturbations without probability distributions.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Convex</span><h3>Convex Optimization</h3><p>Minimise convex functions over convex sets. Guarantees global optimum. Includes quadratic, conic, and semidefinite programming.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Combinatorial</span><h3>Combinatorial Optimization</h3><p>Discrete search over finite but exponentially large solution spaces. TSP, graph colouring, bin packing, assignment problems.</p></div>
+ <div class="card"><span class="badge bg-blue c-blue">Network</span><h3>Network Optimization</h3><p>Shortest path, max flow, min-cost flow, network design. Efficient specialised algorithms (Dijkstra, Ford-Fulkerson).</p></div>
+ <div class="card"><span class="badge bg-green c-green">Stochastic</span><h3>Stochastic Optimization</h3><p>Decision-making under uncertainty with probabilistic parameters. Two-stage, multi-stage, chance-constrained, and robust formulations.</p></div>
+ <div class="card"><span class="badge bg-purple c-purple">Multi-Obj</span><h3>Multi-Objective Optimization</h3><p>Simultaneous optimization of conflicting objectives. Pareto front enumeration, weighted-sum, epsilon-constraint methods.</p></div>
+ <div class="card"><span class="badge bg-orange c-orange">Dynamic</span><h3>Dynamic Optimization</h3><p>Sequential decisions over time with evolving state. Real-time re-optimization, rolling-horizon, and online optimization.</p></div>
+ <div class="card"><span class="badge bg-red c-red">Robust</span><h3>Robust Optimization</h3><p>Worst-case optimization over uncertainty sets. Immunises solutions against parameter perturbations without probability distributions.</p></div>
  </div>
 
 <button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-subtypes')">
@@ -351,41 +351,41 @@
 </tr>
 <tr>
 <td><strong>Constraint Programming (CP)</strong></td>
-<td>Feasibility and optimisation with rich constraint types</td>
+<td>Feasibility and optimization with rich constraint types</td>
 <td>Timetabling, job-shop scheduling, configuration</td>
 </tr>
 <tr>
-<td><strong>Convex Optimisation</strong></td>
+<td><strong>Convex Optimization</strong></td>
 <td>Convex objective over convex feasible set</td>
-<td>Portfolio optimisation, control, SVM training</td>
+<td>Portfolio optimization, control, SVM training</td>
 </tr>
 <tr>
-<td><strong>Combinatorial Optimisation</strong></td>
+<td><strong>Combinatorial Optimization</strong></td>
 <td>Discrete decision space; find best combination</td>
 <td>TSP, knapsack, graph colouring, bin packing</td>
 </tr>
 <tr>
-<td><strong>Network Optimisation</strong></td>
-<td>Optimisation over graph/network structures</td>
+<td><strong>Network Optimization</strong></td>
+<td>Optimization over graph/network structures</td>
 <td>Shortest path, max flow, min-cost flow, network design</td>
 </tr>
 <tr>
-<td><strong>Stochastic Optimisation</strong></td>
-<td>Optimisation under uncertainty with probabilistic inputs</td>
-<td>Stochastic programming, robust optimisation</td>
+<td><strong>Stochastic Optimization</strong></td>
+<td>Optimization under uncertainty with probabilistic inputs</td>
+<td>Stochastic programming, robust optimization</td>
 </tr>
 <tr>
-<td><strong>Multi-Objective Optimisation</strong></td>
+<td><strong>Multi-Objective Optimization</strong></td>
 <td>Multiple conflicting objectives</td>
 <td>Cost vs. service level, profit vs. risk</td>
 </tr>
 <tr>
-<td><strong>Dynamic Optimisation</strong></td>
+<td><strong>Dynamic Optimization</strong></td>
 <td>Decisions unfold over time; state evolves</td>
 <td>Inventory management, dynamic pricing, optimal control</td>
 </tr>
 <tr>
-<td><strong>Robust Optimisation</strong></td>
+<td><strong>Robust Optimization</strong></td>
 <td>Find solutions that perform well under worst-case uncertainty</td>
 <td>Supply chain design, financial hedging</td>
 </tr>
@@ -398,15 +398,15 @@
 <!-- ═══ CORE ARCHITECTURES ═══ -->
 <div class="section" id="sec-architectures">
  <h2>Core Architectures &amp; Methods</h2>
- <p class="desc">The algorithmic foundations underlying optimisation solvers and approaches.</p>
+ <p class="desc">The algorithmic foundations underlying optimization solvers and approaches.</p>
  <div class="cards cards-2">
  <div class="card"><h3 class="c-blue">Linear Programming (LP)</h3><p><strong>Methods:</strong> Simplex, interior point</p><p>Continuous linear objectives and constraints. Polynomial-time solvable. Backbone of supply chain, blending, and resource allocation.</p>
 </div>
  <div class="card"><h3 class="c-green">Mixed-Integer Programming (MIP)</h3><p><strong>Methods:</strong> Branch-and-bound, branch-and-cut</p><p>Discrete variables for yes/no decisions. Scheduling, logistics, facility location. NP-hard but modern solvers handle millions of variables.</p></div>
  <div class="card"><h3 class="c-purple">Constraint Programming (CP)</h3><p><strong>Methods:</strong> Domain propagation, backtracking search</p><p>Scheduling, configuration, rostering. Excels where feasibility is the core challenge and constraints are highly combinatorial.</p></div>
- <div class="card"><h3 class="c-orange">Convex Optimisation</h3><p><strong>Methods:</strong> Gradient descent, interior point</p><p>Guaranteed global optimum for convex problems. Quadratic, conic, and semidefinite programming. Portfolio optimisation, signal processing.</p></div>
- <div class="card"><h3 class="c-red">Nonlinear Programming (NLP)</h3><p><strong>Methods:</strong> Sequential quadratic programming (SQP)</p><p>Non-convex objectives/constraints. Engineering design, chemical process optimisation. Local optima challenge.</p></div>
- <div class="card"><h3 style="color:var(--accent6)">Heuristic / Metaheuristic</h3><p><strong>Methods:</strong> Local search, simulated annealing, tabu search, genetic algorithms</p><p>Large-scale approximate solutions where exact methods are intractable. Vehicle routing, scheduling, layout optimisation.</p></div>
+ <div class="card"><h3 class="c-orange">Convex Optimization</h3><p><strong>Methods:</strong> Gradient descent, interior point</p><p>Guaranteed global optimum for convex problems. Quadratic, conic, and semidefinite programming. Portfolio optimization, signal processing.</p></div>
+ <div class="card"><h3 class="c-red">Nonlinear Programming (NLP)</h3><p><strong>Methods:</strong> Sequential quadratic programming (SQP)</p><p>Non-convex objectives/constraints. Engineering design, chemical process optimization. Local optima challenge.</p></div>
+ <div class="card"><h3 style="color:var(--accent6)">Heuristic / Metaheuristic</h3><p><strong>Methods:</strong> Local search, simulated annealing, tabu search, genetic algorithms</p><p>Large-scale approximate solutions where exact methods are intractable. Vehicle routing, scheduling, layout optimization.</p></div>
  <div class="card"><h3 class="c-blue">Dynamic Programming (DP)</h3><p><strong>Methods:</strong> Bellman recursion, memoisation</p><p>Sequential decision problems with overlapping subproblems. Inventory management, shortest paths, resource allocation over time.</p></div>
  </div>
 
@@ -416,7 +416,7 @@
 <div class="deep-dive collapsed" id="dd-architectures">
 <h3>Core Architectures & Algorithms</h3>
 <h3>Linear Programming (LP)</h3>
-<p>The foundation of mathematical optimisation; models problems with linear objectives and constraints.</p>
+<p>The foundation of mathematical optimization; models problems with linear objectives and constraints.</p>
 <table>
 <thead>
 <tr>
@@ -474,7 +474,7 @@
 </tr>
 <tr>
 <td><strong>Why It Matters</strong></td>
-<td>The workhorse of real-world optimisation; most practical problems require integer decisions</td>
+<td>The workhorse of real-world optimization; most practical problems require integer decisions</td>
 </tr>
 </tbody>
 </table>
@@ -509,7 +509,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Convex Optimisation</h3>
+<h3>Convex Optimization</h3>
 <table>
 <thead>
 <tr>
@@ -532,7 +532,7 @@
 </tr>
 <tr>
 <td><strong>Used For</strong></td>
-<td>Portfolio optimisation, control, signal processing, machine learning (SVM training)</td>
+<td>Portfolio optimization, control, signal processing, machine learning (SVM training)</td>
 </tr>
 <tr>
 <td><strong>Key Solver</strong></td>
@@ -563,7 +563,7 @@
 </tr>
 <tr>
 <td><strong>Used For</strong></td>
-<td>Chemical process optimisation, engineering design, optimal control, curve fitting</td>
+<td>Chemical process optimization, engineering design, optimal control, curve fitting</td>
 </tr>
 <tr>
 <td><strong>Key Solver</strong></td>
@@ -661,18 +661,18 @@
 <!-- ═══ TOOLS ═══ -->
 <div class="section" id="sec-tools">
  <h2>Leading Solvers &amp; Tools</h2>
- <p class="desc">The major solvers, modelling languages, and platforms powering modern optimisation.</p>
+ <p class="desc">The major solvers, modelling languages, and platforms powering modern optimization.</p>
  <table class="fw-table">
  <thead><tr><th>Tool</th><th>Vendor</th><th>Key Differentiator</th></tr></thead>
  <tbody>
  <tr><td>Gurobi</td><td>Gurobi</td><td>Industry-leading LP/MIP solver; fastest commercial solver</td></tr>
- <tr><td>IBM CPLEX</td><td>IBM</td><td>Enterprise LP/MIP/CP; constraint optimisation at scale</td></tr>
+ <tr><td>IBM CPLEX</td><td>IBM</td><td>Enterprise LP/MIP/CP; constraint optimization at scale</td></tr>
  <tr><td>FICO Xpress</td><td>FICO</td><td>Integrated solver + modelling for enterprise OR</td></tr>
- <tr><td>MOSEK</td><td>MOSEK</td><td>Best-in-class conic/semidefinite optimisation</td></tr>
+ <tr><td>MOSEK</td><td>MOSEK</td><td>Best-in-class conic/semidefinite optimization</td></tr>
  <tr><td>Google OR-Tools</td><td>Google</td><td>Open-source vehicle routing, scheduling, constraint solving</td></tr>
  <tr><td>HiGHS</td><td>Open-source</td><td>High-performance open LP/MIP solver; Linux Foundation</td></tr>
  <tr><td>SCIP</td><td>Zuse Institute</td><td>Leading academic MIP/MINLP solver</td></tr>
- <tr><td>Pyomo</td><td>Sandia</td><td>Python optimisation modelling language</td></tr>
+ <tr><td>Pyomo</td><td>Sandia</td><td>Python optimization modelling language</td></tr>
  <tr><td>PuLP</td><td>Python</td><td>Simple LP/MIP Python interface</td></tr>
  <tr><td>CVXPY</td><td>Stanford</td><td>Disciplined convex programming in Python</td></tr>
  <tr><td>JuMP</td><td>Julia</td><td>Algebraic modelling in Julia; solver-agnostic</td></tr>
@@ -714,7 +714,7 @@
 <tr>
 <td><strong>MOSEK</strong></td>
 <td>LP/SOCP/SDP/QP</td>
-<td>Specialised in conic optimisation; strong for portfolio and control problems</td>
+<td>Specialised in conic optimization; strong for portfolio and control problems</td>
 </tr>
 <tr>
 <td><strong>LocalSolver</strong></td>
@@ -736,7 +736,7 @@
 <tr>
 <td><strong>Google OR-Tools</strong></td>
 <td>LP/MIP/CP/VRP</td>
-<td>Comprehensive open-source optimisation suite; CP-SAT solver is world-class</td>
+<td>Comprehensive open-source optimization suite; CP-SAT solver is world-class</td>
 </tr>
 <tr>
 <td><strong>HiGHS</strong></td>
@@ -788,7 +788,7 @@
 <tr>
 <td><strong>CVXPY</strong></td>
 <td>Python</td>
-<td>Convex optimisation modelling; disciplined convex programming</td>
+<td>Convex optimization modelling; disciplined convex programming</td>
 </tr>
 <tr>
 <td><strong>JuMP</strong></td>
@@ -835,7 +835,7 @@
 <tr>
 <td><strong>IBM Decision Optimization</strong></td>
 <td>IBM</td>
-<td>CPLEX-powered; integrated into Cloud Pak for Data; ML + optimisation</td>
+<td>CPLEX-powered; integrated into Cloud Pak for Data; ML + optimization</td>
 </tr>
 <tr>
 <td><strong>AIMMS</strong></td>
@@ -850,12 +850,12 @@
 <tr>
 <td><strong>Google Cloud Optimization AI</strong></td>
 <td>Google</td>
-<td>Managed fleet routing optimisation service</td>
+<td>Managed fleet routing optimization service</td>
 </tr>
 <tr>
 <td><strong>Amazon Optimization</strong></td>
 <td>AWS</td>
-<td>Route optimisation and supply chain planning services</td>
+<td>Route optimization and supply chain planning services</td>
 </tr>
 </tbody>
 </table>
@@ -866,15 +866,15 @@
 <!-- ═══ USE CASES ═══ -->
 <div class="section" id="sec-usecases">
  <h2>Industry Use Cases</h2>
- <p class="desc">How Optimisation / OR AI drives measurable impact across logistics, manufacturing, and supply chain.</p>
+ <p class="desc">How Optimization / OR AI drives measurable impact across logistics, manufacturing, and supply chain.</p>
  <div class="domain-acc">
  <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Vehicle Routing (VRP) 
-</div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>UPS ORION</td><td>Saves 100M+ miles/year optimising delivery routes for 100k+ drivers</td></tr><tr><td>Amazon Routing</td><td>Real-time route optimisation across last-mile delivery network</td></tr><tr><td>Google Cloud OR</td><td>Cloud Fleet Routing API for scalable vehicle routing as a service</td></tr></table></div></div>
+</div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>UPS ORION</td><td>Saves 100M+ miles/year optimising delivery routes for 100k+ drivers</td></tr><tr><td>Amazon Routing</td><td>Real-time route optimization across last-mile delivery network</td></tr><tr><td>Google Cloud OR</td><td>Cloud Fleet Routing API for scalable vehicle routing as a service</td></tr></table></div></div>
  <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Warehouse &amp; Facility Location </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>Amazon</td><td>Fulfilment centre placement optimising delivery speed and cost</td></tr><tr><td>Walmart</td><td>Distribution network design covering 4,700+ US stores</td></tr><tr><td>DHL</td><td>Global facility placement balancing service levels and cost</td></tr></table></div></div>
- <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Inventory Optimisation </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>Blue Yonder</td><td>AI-driven inventory planning across retail and manufacturing</td></tr><tr><td>o9 Solutions</td><td>Integrated demand-supply planning with optimisation engine</td></tr><tr><td>RELEX Solutions</td><td>Retail inventory and supply chain optimisation platform</td></tr></table></div></div>
- <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Production Scheduling </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>Siemens</td><td>Manufacturing execution with advanced scheduling optimisation</td></tr><tr><td>SAP APO</td><td>Advanced Planning &amp; Optimisation for production and distribution</td></tr><tr><td>AspenTech</td><td>Process industry scheduling for chemicals, oil &amp; gas</td></tr></table></div></div>
- <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Supply Chain Network Design </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>LLamasoft (Coupa)</td><td>End-to-end supply chain network modelling and optimisation</td></tr><tr><td>Kinaxis</td><td>Concurrent planning with optimisation across supply chain tiers</td></tr></table></div></div>
- <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Load Planning &amp; Container Packing </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>ORTEC</td><td>3D load building and vehicle/container packing optimisation</td></tr><tr><td>FarEye</td><td>Last-mile logistics with load optimisation and route planning</td></tr></table></div></div>
+ <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Inventory Optimization </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>Blue Yonder</td><td>AI-driven inventory planning across retail and manufacturing</td></tr><tr><td>o9 Solutions</td><td>Integrated demand-supply planning with optimization engine</td></tr><tr><td>RELEX Solutions</td><td>Retail inventory and supply chain optimization platform</td></tr></table></div></div>
+ <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Production Scheduling </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>Siemens</td><td>Manufacturing execution with advanced scheduling optimization</td></tr><tr><td>SAP APO</td><td>Advanced Planning &amp; Optimization for production and distribution</td></tr><tr><td>AspenTech</td><td>Process industry scheduling for chemicals, oil &amp; gas</td></tr></table></div></div>
+ <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Supply Chain Network Design </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>LLamasoft (Coupa)</td><td>End-to-end supply chain network modelling and optimization</td></tr><tr><td>Kinaxis</td><td>Concurrent planning with optimization across supply chain tiers</td></tr></table></div></div>
+ <div class="domain-item"><div class="domain-header" onclick="this.parentElement.classList.toggle('open')">Load Planning &amp; Container Packing </div><div class="domain-body"><table><tr><th>Example</th><th>Detail</th></tr><tr><td>ORTEC</td><td>3D load building and vehicle/container packing optimization</td></tr><tr><td>FarEye</td><td>Last-mile logistics with load optimization and route planning</td></tr></table></div></div>
  </div>
 
 <button class="deep-dive-toggle" onclick="toggleDeepDive(this, 'dd-usecases')">
@@ -903,7 +903,7 @@
 <td>Amazon fulfilment network, Walmart, DHL</td>
 </tr>
 <tr>
-<td><strong>Inventory Optimisation</strong></td>
+<td><strong>Inventory Optimization</strong></td>
 <td>Set stock levels that balance holding costs and stockout risk</td>
 <td>Blue Yonder, o9 Solutions, Relex Solutions</td>
 </tr>
@@ -967,22 +967,22 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Portfolio Optimisation</strong></td>
+<td><strong>Portfolio Optimization</strong></td>
 <td>Allocate assets to maximise return for a given risk level (Markowitz)</td>
 <td>BlackRock Aladdin, Bloomberg PORT, MSCI</td>
 </tr>
 <tr>
 <td><strong>Risk Budgeting</strong></td>
 <td>Allocate risk budget across assets or business units</td>
-<td>Risk parity, CVaR optimisation</td>
+<td>Risk parity, CVaR optimization</td>
 </tr>
 <tr>
-<td><strong>Trade Execution Optimisation</strong></td>
+<td><strong>Trade Execution Optimization</strong></td>
 <td>Minimise market impact and transaction costs when executing large trades</td>
-<td>Algorithmic execution, VWAP/TWAP optimisation</td>
+<td>Algorithmic execution, VWAP/TWAP optimization</td>
 </tr>
 <tr>
-<td><strong>Cash Flow Optimisation</strong></td>
+<td><strong>Cash Flow Optimization</strong></td>
 <td>Optimise payment timing and cash positions across accounts</td>
 <td>Treasury management, Kyriba, TIS</td>
 </tr>
@@ -1043,7 +1043,7 @@
 <tr>
 <td><strong>Ambulance Positioning</strong></td>
 <td>Position ambulances to minimise response time across a region</td>
-<td>Emergency service optimisation</td>
+<td>Emergency service optimization</td>
 </tr>
 </tbody>
 </table>
@@ -1065,17 +1065,17 @@
 <tr>
 <td><strong>Renewable Integration</strong></td>
 <td>Schedule storage and demand response to balance variable renewable supply</td>
-<td>Battery optimisation, Tesla Autobidder</td>
+<td>Battery optimization, Tesla Autobidder</td>
 </tr>
 <tr>
-<td><strong>Pipeline Network Optimisation</strong></td>
+<td><strong>Pipeline Network Optimization</strong></td>
 <td>Optimise flow through oil/gas pipeline networks</td>
 <td>DNV, Schlumberger, AspenTech</td>
 </tr>
 <tr>
 <td><strong>EV Charging Station Placement</strong></td>
 <td>Optimise locations for EV charging infrastructure</td>
-<td>Utility planning, municipal optimisation</td>
+<td>Utility planning, municipal optimization</td>
 </tr>
 </tbody>
 </table>
@@ -1183,7 +1183,7 @@
 <tr>
 <td><strong>DIMACS</strong></td>
 <td>Graph problems</td>
-<td>Standard graph optimisation benchmarks (colouring, clique, flow)</td>
+<td>Standard graph optimization benchmarks (colouring, clique, flow)</td>
 </tr>
 <tr>
 <td><strong>CSPLib</strong></td>
@@ -1214,7 +1214,7 @@
 <!-- ═══ MARKET DATA ═══ -->
 <div class="section" id="sec-market">
  <h2>Market &amp; Adoption Data</h2>
- <p class="desc">Market sizing and growth projections for the Optimisation / OR AI ecosystem.</p>
+ <p class="desc">Market sizing and growth projections for the Optimization / OR AI ecosystem.</p>
  <div class="chart-row">
  <div class="chart-box"><h3>Market Segments 2024 ($ Billions)</h3><canvas id="chartMktSeg"></canvas>
 </div>
@@ -1237,7 +1237,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Global Operations Research / Optimisation Market (2024)</strong></td>
+<td><strong>Global Operations Research / Optimization Market (2024)</strong></td>
 <td>~$12.4 billion</td>
 <td>Includes software, services, and consulting across all OR applications</td>
 </tr>
@@ -1247,19 +1247,19 @@
 <td>CAGR ~16%; driven by supply chain, logistics, and AI integration</td>
 </tr>
 <tr>
-<td><strong>Supply Chain Optimisation Software (2024)</strong></td>
+<td><strong>Supply Chain Optimization Software (2024)</strong></td>
 <td>~$5.8 billion</td>
 <td>Largest sub-segment; includes routing, inventory, and network design</td>
 </tr>
 <tr>
-<td><strong>Mathematical Optimisation Solvers (2024)</strong></td>
+<td><strong>Mathematical Optimization Solvers (2024)</strong></td>
 <td>~$1.2 billion</td>
 <td>Commercial solver market (Gurobi, CPLEX, FICO Xpress, MOSEK)</td>
 </tr>
 <tr>
 <td><strong>Decision Intelligence Market (ML + OR) (2024)</strong></td>
 <td>~$3.1 billion</td>
-<td>Fastest-growing segment; convergence of ML prediction + OR optimisation</td>
+<td>Fastest-growing segment; convergence of ML prediction + OR optimization</td>
 </tr>
 </tbody>
 </table>
@@ -1284,7 +1284,7 @@
 <td>CBC, GLPK, Chuffed</td>
 </tr>
 <tr>
-<td><strong>Supply Chain Optimisation</strong></td>
+<td><strong>Supply Chain Optimization</strong></td>
 <td>Blue Yonder, o9 Solutions, Kinaxis</td>
 <td>Coupa, Relex, GAINS</td>
 </tr>
@@ -1312,7 +1312,7 @@
 <!-- ═══ RISKS ═══ -->
 <div class="section" id="sec-risks">
  <h2>Risks &amp; Limitations</h2>
- <p class="desc">Key challenges and pitfalls in deploying Optimisation / OR AI systems.</p>
+ <p class="desc">Key challenges and pitfalls in deploying Optimization / OR AI systems.</p>
  <div class="risk-grid">
  <div class="risk-card" style="border-color:var(--accent5)"><h4 class="c-red">Computational Intractability</h4><p>NP-hard problems may be computationally infeasible at scale; solver time can explode with small increases in problem size.</p>
 </div>
@@ -1347,7 +1347,7 @@
 </tr>
 <tr>
 <td><strong>Data Quality Dependence</strong></td>
-<td>Optimisation is only as good as its input data — garbage in, garbage out</td>
+<td>Optimization is only as good as its input data — garbage in, garbage out</td>
 </tr>
 <tr>
 <td><strong>Uncertainty Handling</strong></td>
@@ -1390,7 +1390,7 @@
 </tr>
 <tr>
 <td><strong>Automation of High-Stakes Decisions</strong></td>
-<td>Fully automated optimisation in healthcare, justice, or finance carries accountability risks</td>
+<td>Fully automated optimization in healthcare, justice, or finance carries accountability risks</td>
 </tr>
 <tr>
 <td><strong>Transparency</strong></td>
@@ -1420,24 +1420,24 @@
 <!-- ═══ GLOSSARY ═══ -->
 <div class="section" id="sec-glossary">
  <h2>Key Terminology Glossary</h2>
- <p class="desc">Essential Optimisation / Operations Research AI terminology.</p>
+ <p class="desc">Essential Optimization / Operations Research AI terminology.</p>
  <input class="glossary-search" id="glossarySearch" placeholder="Search terms…"/>
  <div class="glossary-list" id="glossaryList">
  <div class="glossary-entry"><strong>Branch-and-Bound</strong><span>Tree-search algorithm that partitions the solution space and prunes subproblems using LP relaxation bounds.</span>
 </div>
  <div class="glossary-entry"><strong>Branch-and-Cut</strong><span>Extension of branch-and-bound that adds cutting planes at tree nodes to tighten LP relaxations.</span></div>
- <div class="glossary-entry"><strong>Combinatorial Optimisation</strong><span>Optimisation over a discrete, finite but exponentially large set of feasible solutions.</span></div>
+ <div class="glossary-entry"><strong>Combinatorial Optimization</strong><span>Optimization over a discrete, finite but exponentially large set of feasible solutions.</span></div>
  <div class="glossary-entry"><strong>Constraint</strong><span>A mathematical condition that a feasible solution must satisfy (equality, inequality, or logical).</span></div>
  <div class="glossary-entry"><strong>Constraint Programming</strong><span>Paradigm that finds feasible assignments to variables subject to a set of constraints using propagation and search.</span></div>
- <div class="glossary-entry"><strong>Convex Optimisation</strong><span>Minimisation of a convex function over a convex feasible set; any local optimum is a global optimum.</span></div>
+ <div class="glossary-entry"><strong>Convex Optimization</strong><span>Minimisation of a convex function over a convex feasible set; any local optimum is a global optimum.</span></div>
  <div class="glossary-entry"><strong>Decision Variable</strong><span>A variable whose value the solver determines; represents a decision to be made (e.g., quantity, route, schedule).</span></div>
  <div class="glossary-entry"><strong>Dual Problem</strong><span>A companion problem to the primal whose optimal value provides bounds; strong duality links their solutions.</span></div>
  <div class="glossary-entry"><strong>Dynamic Programming</strong><span>Method solving complex problems by breaking them into overlapping subproblems via Bellman's principle of optimality.</span></div>
  <div class="glossary-entry"><strong>Feasible Region</strong><span>The set of all points satisfying every constraint simultaneously; the solver searches within this space.</span></div>
  <div class="glossary-entry"><strong>Heuristic</strong><span>A practical algorithm that finds good (but not provably optimal) solutions quickly for hard problems.</span></div>
- <div class="glossary-entry"><strong>Integer Programming</strong><span>Optimisation where some or all decision variables must take integer values; core of scheduling and logistics.</span></div>
+ <div class="glossary-entry"><strong>Integer Programming</strong><span>Optimization where some or all decision variables must take integer values; core of scheduling and logistics.</span></div>
  <div class="glossary-entry"><strong>Large Neighbourhood Search</strong><span>Metaheuristic that repeatedly destroys and repairs parts of a solution to explore large neighbourhoods efficiently.</span></div>
- <div class="glossary-entry"><strong>Linear Programming</strong><span>Optimisation of a linear objective subject to linear constraints over continuous variables; solvable in polynomial time.</span></div>
+ <div class="glossary-entry"><strong>Linear Programming</strong><span>Optimization of a linear objective subject to linear constraints over continuous variables; solvable in polynomial time.</span></div>
  <div class="glossary-entry"><strong>LP Relaxation</strong><span>Relaxing integer constraints to continuous; provides bounds used by branch-and-bound to prune the search tree.</span></div>
  </div>
 
@@ -1463,8 +1463,8 @@
 <td>Branch-and-bound enhanced with cutting planes that tighten the LP relaxation at each node</td>
 </tr>
 <tr>
-<td><strong>Combinatorial Optimisation</strong></td>
-<td>Optimisation over a discrete, finite (but often exponentially large) set of feasible solutions</td>
+<td><strong>Combinatorial Optimization</strong></td>
+<td>Optimization over a discrete, finite (but often exponentially large) set of feasible solutions</td>
 </tr>
 <tr>
 <td><strong>Constraint</strong></td>
@@ -1475,8 +1475,8 @@
 <td>A paradigm that solves problems by propagating constraints and searching over reduced variable domains</td>
 </tr>
 <tr>
-<td><strong>Convex Optimisation</strong></td>
-<td>Optimisation where the objective and feasible set are convex; any local optimum is the global optimum</td>
+<td><strong>Convex Optimization</strong></td>
+<td>Optimization where the objective and feasible set are convex; any local optimum is the global optimum</td>
 </tr>
 <tr>
 <td><strong>Decision Variable</strong></td>
@@ -1484,7 +1484,7 @@
 </tr>
 <tr>
 <td><strong>Dual Problem</strong></td>
-<td>A related optimisation problem that provides bounds on the original (primal) problem's objective</td>
+<td>A related optimization problem that provides bounds on the original (primal) problem's objective</td>
 </tr>
 <tr>
 <td><strong>Dynamic Programming</strong></td>
@@ -1500,7 +1500,7 @@
 </tr>
 <tr>
 <td><strong>Integer Programming (IP)</strong></td>
-<td>Optimisation where some or all decision variables are restricted to integer values</td>
+<td>Optimization where some or all decision variables are restricted to integer values</td>
 </tr>
 <tr>
 <td><strong>Large Neighbourhood Search (LNS)</strong></td>
@@ -1508,7 +1508,7 @@
 </tr>
 <tr>
 <td><strong>Linear Programming (LP)</strong></td>
-<td>Optimisation of a linear objective function subject to linear constraints with continuous variables</td>
+<td>Optimization of a linear objective function subject to linear constraints with continuous variables</td>
 </tr>
 <tr>
 <td><strong>LP Relaxation</strong></td>
@@ -1520,7 +1520,7 @@
 </tr>
 <tr>
 <td><strong>Mixed-Integer Programming (MIP)</strong></td>
-<td>LP with some variables constrained to be integers; the workhorse of practical optimisation</td>
+<td>LP with some variables constrained to be integers; the workhorse of practical optimization</td>
 </tr>
 <tr>
 <td><strong>Objective Function</strong></td>
@@ -1540,11 +1540,11 @@
 </tr>
 <tr>
 <td><strong>Pareto Front</strong></td>
-<td>The set of solutions in multi-objective optimisation where no objective can be improved without worsening another</td>
+<td>The set of solutions in multi-objective optimization where no objective can be improved without worsening another</td>
 </tr>
 <tr>
 <td><strong>Prescriptive Analytics</strong></td>
-<td>Analytics that recommends actions — the intersection of prediction (what will happen) and optimisation (what to do)</td>
+<td>Analytics that recommends actions — the intersection of prediction (what will happen) and optimization (what to do)</td>
 </tr>
 <tr>
 <td><strong>Relaxation</strong></td>
@@ -1560,11 +1560,11 @@
 </tr>
 <tr>
 <td><strong>Solver</strong></td>
-<td>Software that finds optimal or near-optimal solutions to mathematical optimisation problems</td>
+<td>Software that finds optimal or near-optimal solutions to mathematical optimization problems</td>
 </tr>
 <tr>
-<td><strong>Stochastic Optimisation</strong></td>
-<td>Optimisation under uncertainty; models uncertain parameters as random variables with known distributions</td>
+<td><strong>Stochastic Optimization</strong></td>
+<td>Optimization under uncertainty; models uncertain parameters as random variables with known distributions</td>
 </tr>
 <tr>
 <td><strong>Vehicle Routing Problem (VRP)</strong></td>
@@ -1574,23 +1574,23 @@
 </table>
 <hr />
 
- <div class="glossary-entry"><strong>Linear Programming</strong><span>Optimisation of a linear objective function subject to linear equality and inequality constraints.</span></div>
+ <div class="glossary-entry"><strong>Linear Programming</strong><span>Optimization of a linear objective function subject to linear equality and inequality constraints.</span></div>
  <div class="glossary-entry"><strong>Mixed-Integer Programming</strong><span>LP extended with integer-valued decision variables — enables discrete decisions (yes/no, integer counts).</span></div>
  <div class="glossary-entry"><strong>Constraint Programming</strong><span>Declarative paradigm where problems are modelled as variables with domains and constraints.</span></div>
  <div class="glossary-entry"><strong>Simplex Method</strong><span>Classic algorithm traversing vertices of the feasible polytope to find the LP optimum.</span></div>
  <div class="glossary-entry"><strong>Interior Point Method</strong><span>Polynomial-time LP algorithm traversing the interior of the feasible region.</span></div>
  <div class="glossary-entry"><strong>Branch and Bound</strong><span>Systematic enumeration splitting the feasible set into branches and pruning using bounds.</span></div>
- <div class="glossary-entry"><strong>Metaheuristic</strong><span>High-level problem-solving strategy (simulated annealing, tabu search) for complex optimisation without guarantees.</span></div>
- <div class="glossary-entry"><strong>Convex Optimisation</strong><span>Optimisation where the objective and constraints are convex — guarantees global optimum.</span></div>
- <div class="glossary-entry"><strong>Combinatorial Optimisation</strong><span>Finding the best solution from a finite but exponentially large set of possibilities.</span></div>
+ <div class="glossary-entry"><strong>Metaheuristic</strong><span>High-level problem-solving strategy (simulated annealing, tabu search) for complex optimization without guarantees.</span></div>
+ <div class="glossary-entry"><strong>Convex Optimization</strong><span>Optimization where the objective and constraints are convex — guarantees global optimum.</span></div>
+ <div class="glossary-entry"><strong>Combinatorial Optimization</strong><span>Finding the best solution from a finite but exponentially large set of possibilities.</span></div>
  <div class="glossary-entry"><strong>Vehicle Routing Problem</strong><span>Optimization of delivery routes for a fleet of vehicles serving customers from depot(s).</span></div>
  <div class="glossary-entry"><strong>Scheduling</strong><span>Assigning resources to tasks over time to optimise objectives like makespan or tardiness.</span></div>
  <div class="glossary-entry"><strong>Gurobi</strong><span>High-performance commercial solver for LP, MIP, QP, and mixed-integer nonlinear programming.</span></div>
- <div class="glossary-entry"><strong>OR-Tools</strong><span>Google's open-source suite for combinatorial optimisation: routing, scheduling, constraint programming.</span></div>
+ <div class="glossary-entry"><strong>OR-Tools</strong><span>Google's open-source suite for combinatorial optimization: routing, scheduling, constraint programming.</span></div>
  <div class="glossary-entry"><strong>Column Generation</strong><span>Decomposition technique solving large LPs by iteratively generating promising variables.</span></div>
  <div class="glossary-entry"><strong>Lagrangian Relaxation</strong><span>Relaxing hard constraints into the objective with penalty multipliers to obtain bounds.</span></div>
- <div class="glossary-entry"><strong>Stochastic Programming</strong><span>Optimisation under uncertainty where some parameters are modelled as random variables.</span></div>
- <div class="glossary-entry"><strong>Robust Optimisation</strong><span>Finding solutions that remain feasible and near-optimal across all realisations of uncertain parameters.</span></div>
+ <div class="glossary-entry"><strong>Stochastic Programming</strong><span>Optimization under uncertainty where some parameters are modelled as random variables.</span></div>
+ <div class="glossary-entry"><strong>Robust Optimization</strong><span>Finding solutions that remain feasible and near-optimal across all realisations of uncertain parameters.</span></div>
 </div>
 </div>
 
@@ -1598,17 +1598,17 @@
 <!-- ════════════════════════════════════════════════════════════ -->
 <section class="section" id="sec-infographics">
  <h2>Visual Infographics</h2>
- <p class="desc">Animation infographics for Optimisation / Operations Research AI — overview and full technology stack.</p>
+ <p class="desc">Animation infographics for Optimization / Operations Research AI — overview and full technology stack.</p>
 
  <div class="gif-gallery">
  <div class="gif-card">
  <h3>Conceptual Overview</h3>
- <img src="../assets/overview-gifs/12-optimisation-operations-research-ai-overview.gif" alt="Optimisation / Operations Research AI — Overview Infographic" loading="lazy">
- <p class="gif-caption">Animation overview · Optimisation / Operations Research AI · 2026</p>
+ <img src="../assets/overview-gifs/12-optimization-operations-research-ai-overview.gif" alt="Optimization / Operations Research AI — Overview Infographic" loading="lazy">
+ <p class="gif-caption">Animation overview · Optimization / Operations Research AI · 2026</p>
  </div>
  <div class="gif-card">
  <h3>Full Technology Stack</h3>
- <img src="../assets/tech-stack-gifs/12-optimisation-or-ai-tech-stack.gif" alt="Optimisation / Operations Research AI — Tech Stack Infographic" loading="lazy">
+ <img src="../assets/tech-stack-gifs/12-optimization-or-ai-tech-stack.gif" alt="Optimization / Operations Research AI — Tech Stack Infographic" loading="lazy">
  <p class="gif-caption">Animation tech stack · Hardware → Compute → Data → Frameworks → Orchestration → Serving → Application · 2026</p>
  </div>
  </div>
@@ -1621,7 +1621,7 @@
  <p class="desc">Detailed reference content for regulation.</p>
  <h3 style="color:var(--accent2);margin-bottom:12px;">Regulation & Governance</h3>
  <div class="deep-dive" style="margin-top:0;">
- <p>Optimisation AI intersects with regulation primarily when it makes or informs high-stakes decisions:</p>
+ <p>Optimization AI intersects with regulation primarily when it makes or informs high-stakes decisions:</p>
 <table>
 <thead>
 <tr>
@@ -1632,19 +1632,19 @@
 <tbody>
 <tr>
 <td><strong>Energy Markets</strong></td>
-<td>Dispatch optimisation subject to energy market rules and grid reliability standards (FERC, ENTSO-E)</td>
+<td>Dispatch optimization subject to energy market rules and grid reliability standards (FERC, ENTSO-E)</td>
 </tr>
 <tr>
 <td><strong>Financial Services</strong></td>
-<td>Portfolio optimisation and trading algorithms subject to market regulation (SEC, FCA, MiFID II)</td>
+<td>Portfolio optimization and trading algorithms subject to market regulation (SEC, FCA, MiFID II)</td>
 </tr>
 <tr>
 <td><strong>Transportation</strong></td>
-<td>Route and schedule optimisation must comply with driver hour regulations, safety rules, and environmental law</td>
+<td>Route and schedule optimization must comply with driver hour regulations, safety rules, and environmental law</td>
 </tr>
 <tr>
 <td><strong>Healthcare</strong></td>
-<td>Treatment planning optimisation (e.g., radiotherapy) subject to medical device regulation (FDA, MDR)</td>
+<td>Treatment planning optimization (e.g., radiotherapy) subject to medical device regulation (FDA, MDR)</td>
 </tr>
 <tr>
 <td><strong>Labour / Workforce</strong></td>
@@ -1652,11 +1652,11 @@
 </tr>
 <tr>
 <td><strong>EU AI Act</strong></td>
-<td>Optimisation systems used in high-risk domains (employment, critical infrastructure) subject to documentation and transparency requirements</td>
+<td>Optimization systems used in high-risk domains (employment, critical infrastructure) subject to documentation and transparency requirements</td>
 </tr>
 <tr>
 <td><strong>Antitrust</strong></td>
-<td>Collaborative optimisation between competitors (e.g., shared logistics) may raise competition law concerns</td>
+<td>Collaborative optimization between competitors (e.g., shared logistics) may raise competition law concerns</td>
 </tr>
 </tbody>
 </table>
@@ -1669,7 +1669,7 @@
 <section class="section" id="sec-deepdives">
  <h2>Deep Dives</h2>
  <p class="desc">Detailed reference content for deep dives.</p>
- <h3 style="color:var(--accent2);margin-bottom:12px;">Combinatorial Optimisation — Deep Dive</h3>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">Combinatorial Optimization — Deep Dive</h3>
  <div class="deep-dive" style="margin-top:0;">
  <h3>Classic Problems</h3>
 <table>
@@ -1758,7 +1758,7 @@
 <td>Iteratively destroy and repair portions of a solution; state-of-the-art for VRP</td>
 </tr>
 <tr>
-<td><strong>Neural Combinatorial Optimisation</strong></td>
+<td><strong>Neural Combinatorial Optimization</strong></td>
 <td>Train neural networks to generate or improve solutions (attention-model TSP solvers)</td>
 </tr>
 <tr>
@@ -1828,8 +1828,8 @@
 </tr>
 <tr>
 <td><strong>Objective</strong></td>
-<td>Feasibility or optimisation</td>
-<td>Optimisation with provable bounds</td>
+<td>Feasibility or optimization</td>
+<td>Optimization with provable bounds</td>
 </tr>
 <tr>
 <td><strong>Strengths</strong></td>
@@ -1850,7 +1850,7 @@
 </table>
 <hr />
  </div>
- <h3 style="color:var(--accent2);margin-bottom:12px;">ML-Augmented Optimisation — Deep Dive</h3>
+ <h3 style="color:var(--accent2);margin-bottom:12px;">ML-Augmented Optimization — Deep Dive</h3>
  <div class="deep-dive" style="margin-top:0;">
  <p>The convergence of machine learning and operations research is one of the most impactful trends in applied AI.</p>
 <h3>Integration Patterns</h3>
@@ -1865,7 +1865,7 @@
 <tbody>
 <tr>
 <td><strong>Predict-then-Optimise</strong></td>
-<td>Use ML to forecast inputs, then solve deterministic optimisation with those predictions</td>
+<td>Use ML to forecast inputs, then solve deterministic optimization with those predictions</td>
 <td>Forecast demand (ML) then optimise inventory (MIP)</td>
 </tr>
 <tr>
@@ -1879,8 +1879,8 @@
 <td>Predict initial facility locations, then optimise</td>
 </tr>
 <tr>
-<td><strong>End-to-End Differentiable Optimisation</strong></td>
-<td>Embed optimisation layers inside neural networks for joint training</td>
+<td><strong>End-to-End Differentiable Optimization</strong></td>
+<td>Embed optimization layers inside neural networks for joint training</td>
 <td>OptNet, cvxpylayers, differentiable LP/QP layers</td>
 </tr>
 <tr>
@@ -1889,14 +1889,14 @@
 <td>Pointer Networks, Attention Model for TSP/VRP</td>
 </tr>
 <tr>
-<td><strong>Reinforcement Learning for Optimisation</strong></td>
+<td><strong>Reinforcement Learning for Optimization</strong></td>
 <td>Use RL to learn construction or improvement heuristics</td>
 <td>RL for vehicle routing, scheduling, bin packing</td>
 </tr>
 <tr>
-<td><strong>Surrogate-Assisted Optimisation</strong></td>
-<td>Replace expensive simulations with ML surrogates to speed up optimisation loops</td>
-<td>Bayesian optimisation, simulation-based design</td>
+<td><strong>Surrogate-Assisted Optimization</strong></td>
+<td>Replace expensive simulations with ML surrogates to speed up optimization loops</td>
+<td>Bayesian optimization, simulation-based design</td>
 </tr>
 </tbody>
 </table>
@@ -1942,9 +1942,9 @@
  <p class="desc">Detailed reference content for overview.</p>
  <h3 style="color:var(--accent2);margin-bottom:12px;">Definition & Core Concept</h3>
  <div class="deep-dive" style="margin-top:0;">
- <p><strong>Optimisation and Operations Research (OR) AI</strong> is the branch of artificial intelligence and applied mathematics focused on systems that <strong>find optimal or near-optimal solutions to well-defined mathematical problems subject to constraints</strong>. It answers the question: given limited resources, conflicting objectives, and operational constraints, what is the best possible decision?</p>
-<p>OR is one of the oldest and most impactful computational disciplines, predating modern AI by decades. It was formalised during World War II to optimise military logistics and has since become the backbone of modern supply chains, airline operations, telecommunications networks, financial portfolio management, and manufacturing scheduling. The convergence of OR with machine learning — what is now called <strong>ML-augmented optimisation</strong> or <strong>decision intelligence</strong> — represents one of the most impactful frontiers of applied AI.</p>
-<p>Unlike predictive AI (which estimates outcomes), generative AI (which creates content), or reinforcement learning (which learns policies through interaction), optimisation AI <strong>solves explicitly formulated mathematical programs</strong> — finding the values of decision variables that minimise or maximise an objective function subject to constraints.</p>
+ <p><strong>Optimization and Operations Research (OR) AI</strong> is the branch of artificial intelligence and applied mathematics focused on systems that <strong>find optimal or near-optimal solutions to well-defined mathematical problems subject to constraints</strong>. It answers the question: given limited resources, conflicting objectives, and operational constraints, what is the best possible decision?</p>
+<p>OR is one of the oldest and most impactful computational disciplines, predating modern AI by decades. It was formalised during World War II to optimise military logistics and has since become the backbone of modern supply chains, airline operations, telecommunications networks, financial portfolio management, and manufacturing scheduling. The convergence of OR with machine learning — what is now called <strong>ML-augmented optimization</strong> or <strong>decision intelligence</strong> — represents one of the most impactful frontiers of applied AI.</p>
+<p>Unlike predictive AI (which estimates outcomes), generative AI (which creates content), or reinforcement learning (which learns policies through interaction), optimization AI <strong>solves explicitly formulated mathematical programs</strong> — finding the values of decision variables that minimise or maximise an objective function subject to constraints.</p>
 <table>
 <thead>
 <tr>
@@ -1971,7 +1971,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Optimisation AI vs. Other AI Types</h3>
+<h3>Optimization AI vs. Other AI Types</h3>
 <table>
 <thead>
 <tr>
@@ -1982,9 +1982,9 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Optimisation / Operations Research AI</strong></td>
+<td><strong>Optimization / Operations Research AI</strong></td>
 <td>Finds optimal solutions to constrained mathematical problems</td>
-<td>Vehicle routing, supply chain planning, scheduling, portfolio optimisation</td>
+<td>Vehicle routing, supply chain planning, scheduling, portfolio optimization</td>
 </tr>
 <tr>
 <td><strong>Agentic AI</strong></td>
@@ -2079,9 +2079,9 @@
 </tbody>
 </table>
 <blockquote>
-<p><strong>Key Distinction from Reinforcement Learning:</strong> RL learns a policy through trial-and-error interaction with an environment. Optimisation AI solves a known mathematical formulation — the objective and constraints are specified explicitly, not discovered through experience.</p>
-<p><strong>Key Distinction from Evolutionary AI:</strong> Evolutionary AI is one class of metaheuristic optimisation methods (population-based, biologically inspired). OR encompasses the full spectrum: exact solvers, mathematical programming, heuristics, metaheuristics, and ML-augmented methods.</p>
-<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI estimates what will happen. Optimisation AI decides what to do about it. In practice, they are often combined: predict demand (Predictive AI), then optimise inventory (Optimisation AI).</p>
+<p><strong>Key Distinction from Reinforcement Learning:</strong> RL learns a policy through trial-and-error interaction with an environment. Optimization AI solves a known mathematical formulation — the objective and constraints are specified explicitly, not discovered through experience.</p>
+<p><strong>Key Distinction from Evolutionary AI:</strong> Evolutionary AI is one class of metaheuristic optimization methods (population-based, biologically inspired). OR encompasses the full spectrum: exact solvers, mathematical programming, heuristics, metaheuristics, and ML-augmented methods.</p>
+<p><strong>Key Distinction from Predictive AI:</strong> Predictive AI estimates what will happen. Optimization AI decides what to do about it. In practice, they are often combined: predict demand (Predictive AI), then optimise inventory (Optimization AI).</p>
 </blockquote>
 <hr />
  </div>
@@ -2106,7 +2106,7 @@ new Chart(document.getElementById('chartBenchCoverage'),{type:'bar',data:{labels
 
 /* ── Market Charts ── */
 function initMktCharts(){window._mC=true;const d={responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}},y:{ticks:{color:'#9a9690'},grid:{color:'#2a2d38'}}}};
-new Chart(document.getElementById('chartMktSeg'),{type:'bar',data:{labels:['OR Market','Supply Chain SW','Math Optimisation Solvers','Decision Intelligence'],datasets:[{data:[12.4,5.8,1.2,3.1],backgroundColor:['#c9a84c','#5b9e6f','#9684bf','#c9956a']}]},options:{...d,scales:{...d.scales,y:{...d.scales.y,title:{display:true,text:'$ Billions',color:'#9a9690'}}}}});
+new Chart(document.getElementById('chartMktSeg'),{type:'bar',data:{labels:['OR Market','Supply Chain SW','Math Optimization Solvers','Decision Intelligence'],datasets:[{data:[12.4,5.8,1.2,3.1],backgroundColor:['#c9a84c','#5b9e6f','#9684bf','#c9956a']}]},options:{...d,scales:{...d.scales,y:{...d.scales.y,title:{display:true,text:'$ Billions',color:'#9a9690'}}}}});
 new Chart(document.getElementById('chartMktGrowth'),{type:'line',data:{labels:['2024','2025','2026','2027','2028','2029','2030'],datasets:[{label:'OR Market ($B)',data:[12.4,14.4,16.7,19.4,22.5,26.1,31.0],borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',fill:true,tension:0.3,pointBackgroundColor:'#c9a84c',pointRadius:5}]},options:{...d,plugins:{legend:{labels:{color:'#e8e4dd'}}},scales:{...d.scales,y:{...d.scales.y,title:{display:true,text:'$ Billions',color:'#9a9690'}}}}});}
 
 </script>

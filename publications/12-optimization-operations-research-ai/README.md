@@ -4,7 +4,7 @@
 
 **Author:** Hameem M Mahdi, B.S.C.S., M.S.E., Ph.D.
 
-**Corresponding Chapter:** [Optimisation / Operations Research AI — Interactive Architecture Chart](../../chapters/optimisation-operations-research-ai.html)
+**Corresponding Chapter:** [Optimization / Operations Research AI — Interactive Architecture Chart](../../chapters/optimization-operations-research-ai.html)
 
 ---
 
@@ -23,7 +23,7 @@
 ## Contents
 
 ```
-publications/12-optimisation-operations-research-ai/
+publications/12-optimization-operations-research-ai/
 ├── README.md          ← You are here
 ├── paper.pdf          ← Final manuscript (when ready)
 ├── figures/           ← Figures and diagrams

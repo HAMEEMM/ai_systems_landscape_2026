@@ -299,7 +299,7 @@
  <span class="layer-title">Deployment &amp; Safety</span>
  <span class="expand-icon">▼</span>
  </div>
- <div class="layer-detail">Safe RL, constrained optimisation (CMDPs), human oversight loops, reward auditing, action veto mechanisms, deployment monitoring, and rollback strategies for production RL systems.</div>
+ <div class="layer-detail">Safe RL, constrained optimization (CMDPs), human oversight loops, reward auditing, action veto mechanisms, deployment monitoring, and rollback strategies for production RL systems.</div>
  </div>
  <div class="stack-layer" onclick="toggleLayer(this)">
  <div class="layer-head">
@@ -312,10 +312,10 @@
  <div class="stack-layer" onclick="toggleLayer(this)">
  <div class="layer-head">
  <span class="layer-num bg-purple c-purple">6</span>
- <span class="layer-title">Policy Optimisation</span>
+ <span class="layer-title">Policy Optimization</span>
  <span class="expand-icon">▼</span>
  </div>
- <div class="layer-detail">PPO, SAC, DQN, REINFORCE, actor-critic methods (A2C/A3C), TD3, trust-region methods (TRPO), natural policy gradient, and evolutionary strategies as optimisation alternatives.</div>
+ <div class="layer-detail">PPO, SAC, DQN, REINFORCE, actor-critic methods (A2C/A3C), TD3, trust-region methods (TRPO), natural policy gradient, and evolutionary strategies as optimization alternatives.</div>
  </div>
  <div class="stack-layer" onclick="toggleLayer(this)">
  <div class="layer-head">
@@ -565,7 +565,7 @@
  </div>
  <div class="card">
  <span class="badge bg-green c-green">Policy Gradient</span>
- <h3 class="c-green">PPO (Proximal Policy Optimisation)</h3>
+ <h3 class="c-green">PPO (Proximal Policy Optimization)</h3>
  <p>Policy gradient method with clipped surrogate objective for stable updates. Default RL algorithm at OpenAI. Balances simplicity, stability, and performance across domains.</p>
  </div>
  <div class="card">
@@ -675,11 +675,11 @@
 <td>Advantage Actor-Critic; A3C uses asynchronous parallel workers for faster training</td>
 </tr>
 <tr>
-<td><strong>PPO (Proximal Policy Optimisation)</strong></td>
+<td><strong>PPO (Proximal Policy Optimization)</strong></td>
 <td>OpenAI (2017); clips policy updates to prevent catastrophic changes; the most widely used RL algorithm today</td>
 </tr>
 <tr>
-<td><strong>TRPO (Trust Region Policy Optimisation)</strong></td>
+<td><strong>TRPO (Trust Region Policy Optimization)</strong></td>
 <td>Constrains policy updates to a trust region for stability; more theoretically principled but slower than PPO</td>
 </tr>
 <tr>
@@ -951,7 +951,7 @@
 <tr>
 <td><strong>DeepSpeed-Chat</strong></td>
 <td>Open-Source (Linux; Python 3.9+; multi-GPU NVIDIA A100/H100; CUDA 11.8+)</td>
-<td>Microsoft; end-to-end RLHF pipeline with ZeRO optimisation for large models</td>
+<td>Microsoft; end-to-end RLHF pipeline with ZeRO optimization for large models</td>
 </tr>
 <tr>
 <td><strong>OpenRLHF</strong></td>
@@ -1023,7 +1023,7 @@
  <li>Core technique behind ChatGPT, Claude, and Gemini instruction following and safety</li>
  <li>Human preference data collected via pairwise comparisons of model outputs</li>
  <li>Reward model trained, then PPO fine-tunes the LLM with KL constraint</li>
- <li>DPO (Direct Preference Optimisation) eliminates the explicit reward model step</li>
+ <li>DPO (Direct Preference Optimization) eliminates the explicit reward model step</li>
  <li>Responsible for the qualitative leap from GPT-3 base to ChatGPT-level assistants</li>
  </ul>
  </div>
@@ -1089,7 +1089,7 @@
  <div class="domain-body-inner">
  <ul>
  <li>Decision-making at intersections, roundabouts, and merges</li>
- <li>Lane changing and highway driving policy optimisation</li>
+ <li>Lane changing and highway driving policy optimization</li>
  <li>Wayve — end-to-end RL-based driving in urban environments</li>
  <li>Simulation training in CARLA, then transfer to real vehicles</li>
  <li>Combined with imitation learning for safe exploration in deployment</li>
@@ -1106,10 +1106,10 @@
  <div class="domain-body-inner">
  <ul>
  <li>Data centre cooling — DeepMind / Google achieved 40% energy reduction</li>
- <li>Network routing and congestion control optimisation</li>
+ <li>Network routing and congestion control optimization</li>
  <li>Cloud scheduling — dynamic VM allocation and autoscaling</li>
  <li>Power grid management — balancing supply and demand in real-time</li>
- <li>Inventory and supply-chain optimisation under uncertainty</li>
+ <li>Inventory and supply-chain optimization under uncertainty</li>
  </ul>
  </div>
  </div>
@@ -1234,7 +1234,7 @@
 <td>JP Morgan LOXM, quantitative hedge funds</td>
 </tr>
 <tr>
-<td><strong>Portfolio Optimisation</strong></td>
+<td><strong>Portfolio Optimization</strong></td>
 <td>Dynamic asset allocation using RL to adapt to market conditions</td>
 <td>Research labs, proprietary trading firms</td>
 </tr>
@@ -1271,9 +1271,9 @@
 <td>Smart city pilots in multiple countries</td>
 </tr>
 <tr>
-<td><strong>Network Optimisation</strong></td>
-<td>Resource allocation and routing optimisation in telecom networks</td>
-<td>5G network slicing, CDN optimisation</td>
+<td><strong>Network Optimization</strong></td>
+<td>Resource allocation and routing optimization in telecom networks</td>
+<td>5G network slicing, CDN optimization</td>
 </tr>
 </tbody>
 </table>
@@ -1373,7 +1373,7 @@
 <tbody>
 <tr>
 <td><strong>Cumulative Reward (Return)</strong></td>
-<td>Total discounted reward accumulated per episode; the primary optimisation objective</td>
+<td>Total discounted reward accumulated per episode; the primary optimization objective</td>
 </tr>
 <tr>
 <td><strong>Episode Length</strong></td>
@@ -1397,7 +1397,7 @@
 </tr>
 <tr>
 <td><strong>Policy Loss</strong></td>
-<td>The policy gradient loss; tracks policy optimisation progress</td>
+<td>The policy gradient loss; tracks policy optimization progress</td>
 </tr>
 <tr>
 <td><strong>KL Divergence</strong></td>
@@ -1459,7 +1459,7 @@
 </tr>
 <tr>
 <td><strong>KL from SFT</strong></td>
-<td>KL divergence from the supervised fine-tuned baseline; monitors over-optimisation</td>
+<td>KL divergence from the supervised fine-tuned baseline; monitors over-optimization</td>
 </tr>
 <tr>
 <td><strong>Toxicity / Helpfulness / Harmlessness Scores</strong></td>
@@ -1695,7 +1695,7 @@
 <td>Interpretability research; red-teaming</td>
 </tr>
 <tr>
-<td><strong>Over-Optimisation</strong></td>
+<td><strong>Over-Optimization</strong></td>
 <td>In RLHF, model exploits reward model's weaknesses rather than genuinely improving</td>
 <td>KL penalty; reward model ensembles; iterative retraining</td>
 </tr>
@@ -1751,7 +1751,7 @@
 <a href="autonomous-ai.html">Autonomous AI</a>
 <a href="physical-embodied-ai.html">Physical / Embodied AI</a>
 <a href="evolutionary-genetic-ai.html">Evolutionary / Genetic AI</a>
-<a href="optimisation-operations-research-ai.html">Optimisation / OR AI</a>
+<a href="optimization-operations-research-ai.html">Optimization / OR AI</a>
 </div>
 </div>
 </section>
@@ -1770,7 +1770,7 @@
  <div class="glossary-entry"><strong>Value Function</strong><span>Estimate of expected cumulative future reward from a given state or state-action pair.</span></div>
  <div class="glossary-entry"><strong>Q-Learning</strong><span>Off-policy algorithm learning the value of state-action pairs to find optimal policies.</span></div>
  <div class="glossary-entry"><strong>DQN</strong><span>Deep Q-Network — combines Q-learning with deep neural networks for high-dimensional state spaces.</span></div>
- <div class="glossary-entry"><strong>PPO</strong><span>Proximal Policy Optimisation — stable policy gradient method with clipped objective for reliable training.</span></div>
+ <div class="glossary-entry"><strong>PPO</strong><span>Proximal Policy Optimization — stable policy gradient method with clipped objective for reliable training.</span></div>
  <div class="glossary-entry"><strong>Actor-Critic</strong><span>Architecture with separate policy (actor) and value (critic) networks for reduced variance.</span></div>
  <div class="glossary-entry"><strong>Exploration vs Exploitation</strong><span>Fundamental trade-off between trying new actions (explore) and using known good actions (exploit).</span></div>
  <div class="glossary-entry"><strong>Epsilon-Greedy</strong><span>Exploration strategy choosing random actions with probability ε, greedy actions otherwise.</span></div>
@@ -1786,7 +1786,7 @@
 </div>
  <div class="glossary-entry"><strong>Bellman Equation</strong><span>Recursive decomposition of the value function: V(s) = E[r + γV(s')]. Foundation of dynamic programming and temporal-difference methods.</span></div>
  <div class="glossary-entry"><strong>Discount Factor (γ)</strong><span>Scalar between 0 and 1 that weights future rewards relative to immediate rewards. γ = 0 is myopic; γ → 1 values long-term outcomes.</span></div>
- <div class="glossary-entry"><strong>DPO (Direct Preference Optimisation)</strong><span>Alternative to RLHF that optimises LLM policies directly from human preference pairs without training an explicit reward model.</span></div>
+ <div class="glossary-entry"><strong>DPO (Direct Preference Optimization)</strong><span>Alternative to RLHF that optimises LLM policies directly from human preference pairs without training an explicit reward model.</span></div>
  <div class="glossary-entry"><strong>Entropy Regularisation</strong><span>Adding a policy entropy bonus to the objective to encourage exploration and prevent premature convergence to deterministic policies.</span></div>
  <div class="glossary-entry"><strong>Episode</strong><span>A complete sequence of agent-environment interaction from an initial state to a terminal state (or maximum time step).</span></div>
  <div class="glossary-entry"><strong>Experience Replay</strong><span>Storing past (s, a, r, s') transitions in a buffer and sampling mini-batches for training. Breaks temporal correlations and improves sample efficiency.</span></div>
@@ -1851,7 +1851,7 @@
 <td>A parameter (0 ≤ γ ≤ 1) that determines how much the agent values future rewards relative to immediate ones</td>
 </tr>
 <tr>
-<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td><strong>DPO (Direct Preference Optimization)</strong></td>
 <td>An alternative to RLHF that optimises the policy directly from preference data without training a separate reward model</td>
 </tr>
 <tr>
@@ -1892,7 +1892,7 @@
 </tr>
 <tr>
 <td><strong>KL Divergence</strong></td>
-<td>A measure of how different two probability distributions are; used in RLHF to prevent over-optimisation</td>
+<td>A measure of how different two probability distributions are; used in RLHF to prevent over-optimization</td>
 </tr>
 <tr>
 <td><strong>MARL (Multi-Agent RL)</strong></td>
@@ -1927,7 +1927,7 @@
 <td>A mapping from states to actions (or action probabilities) — the agent's learned strategy</td>
 </tr>
 <tr>
-<td><strong>PPO (Proximal Policy Optimisation)</strong></td>
+<td><strong>PPO (Proximal Policy Optimization)</strong></td>
 <td>A policy gradient algorithm that clips updates for stability; the most widely used RL algorithm</td>
 </tr>
 <tr>
@@ -2282,7 +2282,7 @@
 </tr>
 <tr>
 <td><strong>PPO Optimiser</strong></td>
-<td>Proximal Policy Optimisation fine-tunes the LLM to maximise the reward model's score</td>
+<td>Proximal Policy Optimization fine-tunes the LLM to maximise the reward model's score</td>
 </tr>
 <tr>
 <td><strong>KL Penalty</strong></td>
@@ -2304,7 +2304,7 @@
 <td>Original approach: train reward model, then optimise LLM with PPO (OpenAI, Anthropic)</td>
 </tr>
 <tr>
-<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td><strong>DPO (Direct Preference Optimization)</strong></td>
 <td>Skip the reward model — directly optimise the LLM from preference data (Rafailov et al., 2023)</td>
 </tr>
 <tr>
@@ -2312,7 +2312,7 @@
 <td>Replace human annotators with AI annotators (Constitutional AI approach — Anthropic)</td>
 </tr>
 <tr>
-<td><strong>KTO (Kahneman-Tversky Optimisation)</strong></td>
+<td><strong>KTO (Kahneman-Tversky Optimization)</strong></td>
 <td>Align with binary good/bad feedback rather than pairwise comparisons</td>
 </tr>
 <tr>
@@ -2320,7 +2320,7 @@
 <td>Use programmatic verification (e.g., code execution, math checking) as the reward signal</td>
 </tr>
 <tr>
-<td><strong>GRPO (Group Relative Policy Optimisation)</strong></td>
+<td><strong>GRPO (Group Relative Policy Optimization)</strong></td>
 <td>DeepSeek's approach; uses group scoring instead of a learned reward model</td>
 </tr>
 </tbody>
@@ -2341,7 +2341,7 @@
 <tbody>
 <tr>
 <td><strong>Cooperative</strong></td>
-<td>All agents share a common reward; goal is team optimisation</td>
+<td>All agents share a common reward; goal is team optimization</td>
 <td>Multi-robot warehouse, OpenAI Five (within a team)</td>
 </tr>
 <tr>
@@ -2524,7 +2524,7 @@
 <td>GPT-4o processing image + text, AV sensor fusion</td>
 </tr>
 <tr>
-<td><strong>Optimisation / Operations Research AI</strong></td>
+<td><strong>Optimization / Operations Research AI</strong></td>
 <td>Finds optimal solutions to constrained mathematical problems</td>
 <td>Vehicle routing, supply chain planning, scheduling</td>
 </tr>

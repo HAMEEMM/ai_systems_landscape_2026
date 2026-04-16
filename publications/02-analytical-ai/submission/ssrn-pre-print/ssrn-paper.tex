@@ -343,7 +343,7 @@ We identify seven distinct sub-types, each representing a specialised applicatio
     \item \textbf{Data Observability \& Quality AI}: Automated monitoring of data freshness, volume, schema, and distribution. Key players: Monte Carlo, Bigeye, Anomalo, Great Expectations, Soda.
     \item \textbf{Customer \& Product Analytics}: Funnel analysis, retention cohorts, path analysis, A/B testing. Platforms: Amplitude, Mixpanel, PostHog, Heap, Pendo.
     \item \textbf{Financial \& Business Analytics}: Revenue analytics, unit economics, financial planning \& analysis (FP\&A). Tools: Mosaic, Pigment, Anaplan.
-    \item \textbf{Operational Analytics}: Process mining, AIOps, supply chain optimisation. Leaders: Celonis, SAP Signavio, Datadog, Splunk.
+    \item \textbf{Operational Analytics}: Process mining, AIOps, supply chain optimization. Leaders: Celonis, SAP Signavio, Datadog, Splunk.
 \end{enumerate}
 
 %% ================================================================
@@ -562,7 +562,7 @@ Power BI Q\&A           & Enterprise (internal) & 72.0 & Microsoft docs \\
 \end{tabular}
 \end{table}
 
-The gap between academic benchmarks (Spider, 81--85\%) and the more realistic BIRD-SQL (60--67\%) underscores the challenge of value-grounded reasoning over dirty, real-world schemas. Enterprise NLQ products report intermediate accuracy, reflecting proprietary schema-aware optimisations.
+The gap between academic benchmarks (Spider, 81--85\%) and the more realistic BIRD-SQL (60--67\%) underscores the challenge of value-grounded reasoning over dirty, real-world schemas. Enterprise NLQ products report intermediate accuracy, reflecting proprietary schema-aware optimizations.
 
 \subsection{Failure Modes}
 The dominant NL2SQL failure modes are: (i)~\textbf{schema hallucination}: generating queries referencing non-existent columns or tables; (ii)~\textbf{semantic misinterpretation}: correct SQL that answers the wrong question (e.g., confusing ``active users'' with ``registered users''); (iii)~\textbf{aggregation errors}: incorrect GROUP BY clauses or missing WHERE filters; and (iv)~\textbf{multi-hop reasoning failure}: inability to chain multiple analytical steps (e.g., ``show me the top products by customers who churned last quarter'').

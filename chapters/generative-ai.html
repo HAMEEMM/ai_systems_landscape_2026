@@ -1636,7 +1636,7 @@
  <tr><td style="color:var(--accent); font-weight:600;">LangChain</td><td>Chain-based LLM orchestration &amp; agents</td></tr>
  <tr><td style="color:var(--accent2); font-weight:600;">LlamaIndex</td><td>Data ingestion, indexing &amp; RAG pipelines</td></tr>
  <tr><td style="color:var(--accent3); font-weight:600;">Haystack</td><td>End-to-end NLP &amp; retrieval pipelines</td></tr>
- <tr><td style="color:var(--accent4); font-weight:600;">DSPy</td><td>Programmatic prompt optimisation</td></tr>
+ <tr><td style="color:var(--accent4); font-weight:600;">DSPy</td><td>Programmatic prompt optimization</td></tr>
  <tr><td style="color:var(--accent5); font-weight:600;">Semantic Kernel</td><td>Microsoft SDK for AI orchestration</td></tr>
  <tr><td style="color:var(--accent6); font-weight:600;">Instructor</td><td>Structured output extraction from LLMs</td></tr>
  </tbody>
@@ -2647,7 +2647,7 @@
 </tr>
 <tr>
 <td><strong>DPO</strong></td>
-<td>Direct Preference Optimisation — alignment without a separate reward model</td>
+<td>Direct Preference Optimization — alignment without a separate reward model</td>
 </tr>
 <tr>
 <td><strong>Constitutional AI</strong></td>
@@ -3050,7 +3050,7 @@
 <td>Constitutional AI (Anthropic)</td>
 </tr>
 <tr>
-<td><strong>DPO (Direct Preference Optimisation)</strong></td>
+<td><strong>DPO (Direct Preference Optimization)</strong></td>
 <td>Train directly on preference pairs; no reward model needed</td>
 <td>LLaMA 3, Mistral, most open models</td>
 </tr>
@@ -3066,7 +3066,7 @@
 </tr>
 <tr>
 <td><strong>PPO</strong></td>
-<td>Proximal Policy Optimisation; core RL algorithm for RLHF</td>
+<td>Proximal Policy Optimization; core RL algorithm for RLHF</td>
 <td>Original ChatGPT training</td>
 </tr>
 </tbody>
@@ -3236,7 +3236,7 @@
 </tbody>
 </table>
 <hr />
-<h3>AI Gateway &amp; Inference Optimisation</h3>
+<h3>AI Gateway &amp; Inference Optimization</h3>
 <table>
 <thead>
 <tr>
@@ -3704,7 +3704,7 @@
 <td>GPT-4o processing image + text, AV sensor fusion</td>
 </tr>
 <tr>
-<td><strong>Optimisation / Operations Research AI</strong></td>
+<td><strong>Optimization / Operations Research AI</strong></td>
 <td>Finds optimal solutions to constrained mathematical problems</td>
 <td>Vehicle routing, supply chain planning, scheduling</td>
 </tr>
@@ -3784,7 +3784,7 @@ tabs.forEach(btn => {
 const pipelineData = [
  { title: '1 — DATA', color: 'var(--accent)', desc: 'Collect and clean massive datasets from the web, books, code repositories, images, audio, and video. Data quality, deduplication, and filtering are critical — garbage in, garbage out. Datasets can reach trillions of tokens.' },
  { title: '2 — PRE-TRAINING', color: 'var(--accent2)', desc: 'Self-supervised learning on the collected corpus. The model learns statistical patterns, language structure, world knowledge, and reasoning capabilities. This phase requires thousands of GPUs and weeks to months of compute.' },
- { title: '3 — FINE-TUNING', color: 'var(--accent3)', desc: 'Adapt the base model for specific domains or behaviours. Techniques include supervised fine-tuning (SFT), reinforcement learning from human feedback (RLHF), direct preference optimisation (DPO), and parameter-efficient methods like LoRA/QLoRA.' },
+ { title: '3 — FINE-TUNING', color: 'var(--accent3)', desc: 'Adapt the base model for specific domains or behaviours. Techniques include supervised fine-tuning (SFT), reinforcement learning from human feedback (RLHF), direct preference optimization (DPO), and parameter-efficient methods like LoRA/QLoRA.' },
  { title: '4 — INFERENCE', color: 'var(--accent4)', desc: 'The user submits a prompt — text, image, audio, or multimodal input. The system tokenises the input, applies any system instructions, retrieves context (RAG), and feeds the sequence to the model for autoregressive generation.' },
  { title: '5 — GENERATION', color: 'var(--accent5)', desc: 'The model produces novel content token-by-token (text), pixel-by-pixel (images), or frame-by-frame (video). Sampling strategies (temperature, top-p, top-k) control creativity vs. determinism. Post-processing filters may apply safety checks.' },
 ];
@@ -3936,7 +3936,7 @@ const glossary = [
  ['LoRA (Low-Rank Adaptation)', 'Parameter-efficient fine-tuning method that trains small rank-decomposition matrices instead of full model weights — typically <1% of parameters.'],
  ['QLoRA', 'Quantised LoRA — combines 4-bit model quantisation with LoRA adapters, enabling fine-tuning of large models on consumer GPUs.'],
  ['RLHF', 'Reinforcement Learning from Human Feedback — training a reward model from human preference data, then optimising the LLM policy using PPO or similar RL algorithms.'],
- ['DPO (Direct Preference Optimisation)', 'Alignment technique that directly optimises the policy from preference pairs without needing a separate reward model — simpler than RLHF.'],
+ ['DPO (Direct Preference Optimization)', 'Alignment technique that directly optimises the policy from preference pairs without needing a separate reward model — simpler than RLHF.'],
  ['Constitutional AI', 'Anthropic\'s alignment approach where the model critiques and revises its own outputs according to a set of written principles (a "constitution").'],
  ['RAG (Retrieval-Augmented Generation)', 'Architecture that retrieves relevant documents from an external knowledge base and injects them into the prompt context before generation.'],
  ['Embeddings', 'Dense vector representations of text, images, or other data in a continuous space where semantic similarity corresponds to geometric proximity.'],
