@@ -10,7 +10,7 @@
 
 | Field             | Value                                                                                              |
 | ----------------- | -------------------------------------------------------------------------------------------------- |
-| **Journal**       | Artificial Intelligence                                                                            |
+| **Journal**       | Artificial Intelligence (AIJ)                                                                      |
 | **Publisher**     | Elsevier                                                                                           |
 | **URL**           | https://www.sciencedirect.com/journal/artificial-intelligence                                      |
 | **Impact Factor** | ~14.4 (2024)                                                                                       |
@@ -22,39 +22,44 @@
 
 ## Why Artificial Intelligence (AIJ)?
 
-- **Premier AI journal** (est. 1970) — one of the oldest and most prestigious venues
-  for foundational AI research.
-- **Strong Impact Factor (~14.4)** — significantly higher than the previous venue.
-- **Core scope match** — AIJ publishes agent architectures, formal reasoning frameworks,
-  planning systems, and multi-agent coordination — exactly what the PPAS paper covers.
-- The formal PPAS loop definition, OODA/BDI/SOAR comparison, 8-layer stack decomposition,
-  and benchmark meta-analysis are core AIJ territory.
-
----
-
-## Preprint
-
-A preprint of this work is available on engrXiv:
-
-- **DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
-- **Posted:** March 2026
+- **Premier AI journal** (est. 1970) — one of the oldest and most prestigious venues for foundational AI research
+- **Strong Impact Factor (~14.4)** — top-tier venue for agent architectures and planning
+- **Core scope match** — AIJ publishes agent architectures, formal reasoning frameworks, planning systems, and multi-agent coordination — exactly what the PPAS paper covers
+- The formal PPAS loop definition, OODA/BDI/SOAR comparison, 8-layer stack decomposition, and benchmark meta-analysis are core AIJ territory
 
 ---
 
 ## Submission Steps
 
 1. **Use existing Elsevier account**
-2. **Reformat to Elsevier `elsarticle` template** (check AIJ author guidelines)
-3. **Submit via** https://www.editorialmanager.com/artint/
-4. **Include the engrXiv preprint DOI** (10.31224/6738)
+2. **Prepare manuscript** in `elsarticle` format (review mode)
+3. **Submit via** Editorial Manager: https://www.editorialmanager.com/artint/
+4. **Include the engrXiv preprint DOI** ([10.31224/6738](https://doi.org/10.31224/6738))
+
+---
+
+## Status
+
+- [x] Manuscript formatted in `elsarticle` (review mode)
+- [x] Cover letter prepared
+- [x] Submitted to Artificial Intelligence
+- [ ] Reviews received
+- [ ] Paper accepted
 
 ---
 
 ## Files
 
-| File                   | Description                                   |
-| ---------------------- | --------------------------------------------- |
-| `aij-paper.tex`        | Main manuscript (Elsevier elsarticle format)  |
-| `aij-references.bib`   | BibTeX bibliography (author-year, natbib)     |
-| `aij-cover-letter.tex` | Cover letter with prior submission disclosure |
-| `.gitignore`           | LaTeX build artifact exclusions               |
+```
+artificial-intelligence-peer-review/
+├── README.md                        ← You are here
+├── aij-paper.tex                    ← Main manuscript (elsarticle format)
+├── aij-paper.pdf                    ← Compiled PDF
+├── aij-references.bib               ← BibTeX bibliography (author-year, natbib)
+├── aij-cover-letter.tex             ← Cover letter with preprint disclosure
+├── aij-cover-letter.pdf             ← Compiled cover letter
+├── ARTINT-S-26-00918.pdf            ← Journal submission confirmation
+├── declarationStatement.docx        ← Declaration statement
+├── Disclosure Statement on AI Use.docx ← AI use disclosure
+└── .gitignore                       ← LaTeX build artifact exclusions
+```
