@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Agentic AI Dev — publications/01-agentic-ai/dev
+# Covers all 5 phases of the PPAS development lifecycle
+#
+# Install all at once:  pip install -r requirements.txt
+# Or per-phase as you reach each phase.
+# ─────────────────────────────────────────────────────────────────────────
+
+# ── Phase 1: Foundation Model APIs (Layer 1) ─────────────────────────────
+openai>=1.30.0
+anthropic>=0.25.0
+google-generativeai>=0.5.0
+
+# ── Phase 2: Agent Runtime & Orchestration (Layer 2) ─────────────────────
+langgraph>=0.2.0
+langchain>=0.2.0
+langchain-openai>=0.1.8
+langchain-anthropic>=0.1.15
+langchain-community>=0.2.0
+
+# ── Phase 2: Memory Systems (Layer 3) ────────────────────────────────────
+mem0ai>=0.0.8
+redis>=5.0.0
+
+# ── Phase 2–3: Tool Integration (Layer 4) ────────────────────────────────
+tavily-python>=0.3.0
+
+# ── Phase 3: Multi-Agent Frameworks ──────────────────────────────────────
+crewai>=0.28.0
+pyautogen>=0.2.0
+
+# ── Phase 3: MCP Protocol (Layer 5) ─────────────────────────────────────
+mcp>=1.0.0
+
+# ── Phase 4: Observability & Safety (Layer 8) ────────────────────────────
+langsmith>=0.1.77
+langfuse>=2.7.3
+guardrails-ai>=0.4.0
+
+# ── Utilities ────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+pydantic>=2.7.0
+rich>=13.7.0
+httpx>=0.27.0

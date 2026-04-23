@@ -1,0 +1,30 @@
+# ── API Keys — NEVER commit these ──────────────────────────────────────
+.env
+*.env
+.env.*
+!.env.example
+
+# ── Python ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.Python
+
+# ── Jupyter ────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Output artifacts ───────────────────────────────────────────────────
+*.log
+outputs/
+results/
+*.pkl
+*.h5
+
+# ── OS ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
