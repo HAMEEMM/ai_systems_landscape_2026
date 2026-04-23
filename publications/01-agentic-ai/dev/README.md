@@ -9,11 +9,11 @@
 
 ```bash
 # 1. Open this folder in VS Code
-cd G:\Developments\artificial_intelligence_development\ai_systems_landscape_2026\publications\01-agentic-ai\dev
+cd /g/Developments/artificial_intelligence_development/ai_systems_landscape_2026/publications/01-agentic-ai/dev
 
 # 2. Create Python virtual environment
 python -m venv .venv
-.venv\Scripts\activate          # Windows
+.venv/Scripts/activate          # Windows Bash
 # source .venv/bin/activate     # macOS/Linux
 
 # 3. Install dependencies
@@ -29,7 +29,7 @@ python phase-1-foundations/03-agent-loop-scratch/01_ppas_loop.py
 
 ---
 
-## 4Visual Guide — PPAS Architecture and Workflow
+## Visual Guide — PPAS Architecture and Workflow
 
 ### PPAS Agent Structure (Architecture)
 
@@ -105,16 +105,16 @@ dev/
 
 ## Start Here (recommended order)
 
-| Step | File                                              | What You Learn             |
-| ---- | ------------------------------------------------- | -------------------------- |
-| 1    | `phase-1/01-llm-api-basics/01_openai_basic.py`    | How to call an LLM         |
-| 2    | `phase-1/03-agent-loop-scratch/01_ppas_loop.py`   | **The core PPAS loop**     |
-| 3    | `phase-2/01-langgraph-react/01_react_agent.py`    | Same loop with a framework |
-| 4    | `phase-2/03-memory-systems/01_working_memory.py`  | How agent memory works     |
-| 5    | `phase-3/01-supervisor-topology/01_supervisor.py` | Multi-agent coordination   |
-| 6    | `phase-3/03-mcp-server/01_mcp_server.py`          | MCP protocol               |
-| 7    | `phase-4/02-guardrails/01_input_validation.py`    | Safety guardrails          |
-| 8    | `phase-4/03-benchmark-eval/01_benchmark_intro.py` | Evaluating agents          |
+| Step | File                                                | What You Learn               |
+| ---- | --------------------------------------------------- | ---------------------------- |
+| 1    | `phase-1/01-llm-api-basics/01_openai_basic.py`    | How to call an LLM           |
+| 2    | `phase-1/03-agent-loop-scratch/01_ppas_loop.py`   | **The core PPAS loop** |
+| 3    | `phase-2/01-langgraph-react/01_react_agent.py`    | Same loop with a framework   |
+| 4    | `phase-2/03-memory-systems/01_working_memory.py`  | How agent memory works       |
+| 5    | `phase-3/01-supervisor-topology/01_supervisor.py` | Multi-agent coordination     |
+| 6    | `phase-3/03-mcp-server/01_mcp_server.py`          | MCP protocol                 |
+| 7    | `phase-4/02-guardrails/01_input_validation.py`    | Safety guardrails            |
+| 8    | `phase-4/03-benchmark-eval/01_benchmark_intro.py` | Evaluating agents            |
 
 ---
 
