@@ -40,10 +40,10 @@
 
 ## Status
 
-- [ ] SSRN account created
-- [ ] Manuscript PDF prepared
-- [ ] Preprint uploaded to SSRN
-- [ ] SSRN ID recorded: `SSRN ________`
+- [x] SSRN account created
+- [x] Manuscript PDF prepared
+- [x] Preprint uploaded to SSRN
+- [x] SSRN ID recorded: `SSRN 6655740`
 
 ---
 

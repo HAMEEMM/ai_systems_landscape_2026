@@ -17,6 +17,9 @@
 
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{array}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit, backgrounds, decorations.pathreplacing}
 \usepackage{pgfplots}
@@ -43,6 +46,7 @@
 %% PREPRINT HEADER
 %% ================================================================
 \usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -174,14 +178,14 @@ An analytics pipeline $\mathcal{P} = \langle S_1, S_2, \ldots, S_7 \rangle$ is a
 
 \begin{figure}[ht]
 \centering
-\begin{tikzpicture}[node distance=1.8cm, >=Stealth, thick,
+\begin{tikzpicture}[node distance=3.0cm, >=Stealth, thick,
   stage/.style={rectangle, rounded corners=6pt, draw, fill=blue!10,
-    minimum width=2.4cm, minimum height=0.8cm, align=center, font=\small\bfseries}]
+    minimum width=2.6cm, minimum height=0.9cm, align=center, font=\small\bfseries}]
   \node[stage] (ingest) {Ingest};
   \node[stage, right of=ingest] (prepare) {Prepare};
   \node[stage, right of=prepare] (analyse) {Analyse};
   \node[stage, right of=analyse] (surface) {Surface};
-  \node[stage, below=1.2cm of surface] (explain) {Explain};
+  \node[stage, below=1.8cm of surface] (explain) {Explain};
   \node[stage, left of=explain] (distribute) {Distribute};
   \node[stage, left of=distribute] (feedback) {Feedback};
 
@@ -237,7 +241,7 @@ We decompose the Analytical AI architecture into eight functional layers. Figure
 \centering
 \caption{The 8-Layer Analytical AI Technology Stack with representative implementations.}
 \label{tab:stack}
-\begin{tabular}{clll}
+\begin{tabular}{c >{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{4.8cm} >{\raggedright\arraybackslash}p{4.3cm}}
 \toprule
 \textbf{Layer} & \textbf{Name} & \textbf{Function} & \textbf{Representative Tools} \\
 \midrule
@@ -270,7 +274,7 @@ Cloud data warehouses have become the dominant analytical storage paradigm. Tabl
 \centering
 \caption{Cloud data warehouse comparison (Q1 2026).}
 \label{tab:warehouses}
-\begin{tabular}{llll}
+\begin{tabular}{l >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{4.0cm}}
 \toprule
 \textbf{Platform} & \textbf{Architecture} & \textbf{Pricing Model} & \textbf{Key Strength} \\
 \midrule
@@ -352,7 +356,7 @@ We identify seven distinct sub-types, each representing a specialised applicatio
 \section{Core Analytical Techniques}\label{sec:techniques}
 
 \subsection{Clustering \& Segmentation}
-Clustering partitions unlabelled data into meaningful groups. We compare four dominant algorithms across key trade-offs:
+Clustering partitions unlabelled data into meaningful groups. Core algorithms include K-Means~\citep{lloyd1982kmeans}, DBSCAN~\citep{ester1996dbscan}, HDBSCAN~\citep{mcinnes2017hdbscan}, and Gaussian Mixture Models (GMM). We compare their key trade-offs:
 
 \begin{table}[ht]
 \centering
@@ -370,7 +374,7 @@ GMM       & Ellipsoidal & Moderate   & $O(nk^2d)$   & $k$, covariance type \\
 \end{tabular}
 \end{table}
 
-In practice, HDBSCAN has emerged as the preferred choice for exploratory analytical tasks because it automatically determines the number of clusters and handles varying density distributions, eliminating the need to specify $k$ a priori.
+In practice, HDBSCAN has emerged as the preferred choice for exploratory analytical tasks because it automatically determines the number of clusters and handles varying density distributions, eliminating the need to specify $k$ a priori~\citep{mcinnes2017hdbscan}.
 
 Table~\ref{tab:clustering-benchmarks} reports empirical clustering quality on standard UCI and Kaggle datasets.
 
@@ -400,19 +404,19 @@ HDBSCAN & Mall Customers ($n$=200, $d$=5) & 0.41 & ---  & 5 \\
 GMM achieves the highest ARI on Iris (0.90), reflecting its ability to model the ellipsoidal cluster geometry of that dataset. On the higher-dimensional Wine dataset, all algorithms exhibit lower scores, highlighting the curse of dimensionality. The Mall Customers dataset lacks ground-truth labels, so ARI is unavailable; silhouette scores indicate moderate cluster separation across all methods.
 
 \subsection{Dimensionality Reduction}
-PCA provides linear projection preserving maximum variance, suitable for feature engineering and data compression. t-SNE and UMAP excel at nonlinear manifold embedding for 2D/3D visualisation. UMAP is preferred for analytical workflows due to its superior global structure preservation and 10--100$\times$ faster execution compared to t-SNE on datasets exceeding 100K points.
+PCA provides linear projection preserving maximum variance, suitable for feature engineering and data compression. t-SNE~\citep{vandermaaten2008tsne} and UMAP excel at nonlinear manifold embedding for 2D/3D visualisation. UMAP~\citep{mcinnes2018umap} is preferred for analytical workflows due to its superior global structure preservation and 10--100$\times$ faster execution compared to t-SNE on datasets exceeding 100K points.
 
 \subsection{Anomaly Detection}
-Automated anomaly detection on KPI time series is a core capability of the analytical engine. Statistical Process Control (SPC) using control charts (Shewhart, CUSUM, EWMA) provides interpretable alerts with well-understood false-positive rates. Machine learning approaches---Isolation Forest, HBOS (Histogram-Based Outlier Score), and Autoencoder-based detectors---capture complex multivariate anomalies but require careful threshold calibration.
+Automated anomaly detection on KPI time series is a core capability of the analytical engine. Statistical Process Control (SPC) using control charts (Shewhart, CUSUM, EWMA) provides interpretable alerts with well-understood false-positive rates. Machine learning approaches---Isolation Forest~\citep{liu2008isolation}, HBOS (Histogram-Based Outlier Score)~\citep{goldstein2012hbos}, and Autoencoder-based detectors---capture complex multivariate anomalies but require careful threshold calibration.
 
 \subsection{Statistical Analysis}
 Descriptive statistics (central tendency, dispersion, distribution shape), hypothesis testing (t-tests, chi-squared, ANOVA), regression analysis (linear, logistic, polynomial), and time-series decomposition (trend, seasonality, residual) form the foundation of every analytical system. These methods are implemented across pandas, scipy, statsmodels, and R's base statistical libraries.
 
 \subsection{Association Rule Mining}
-The Apriori and FP-Growth algorithms discover frequent itemsets and association rules (support, confidence, lift). While computationally mature, these techniques remain widely used in retail analytics (market basket analysis), recommendation systems, and cross-sell/upsell strategies.
+The Apriori~\citep{agrawal1994apriori} and FP-Growth~\citep{han2000fpgrowth} algorithms discover frequent itemsets and association rules (support, confidence, lift). While computationally mature, these techniques remain widely used in retail analytics (market basket analysis), recommendation systems, and cross-sell/upsell strategies.
 
 \subsection{Graph Analytics}
-Graph methods---centrality measures (degree, betweenness, PageRank), community detection (Louvain, Leiden), and link prediction---reveal relationship patterns invisible to tabular analysis. Applications include fraud detection (transaction graph anomalies), social network analysis, and supply chain dependency mapping.
+Graph methods---centrality measures (degree, betweenness, PageRank), community detection (Louvain~\citep{blondel2008louvain}, Leiden), and link prediction---reveal relationship patterns invisible to tabular analysis. Applications include fraud detection (transaction graph anomalies), social network analysis, and supply chain dependency mapping.
 
 %% ================================================================
 %% SECTION 7: CAUSAL INFERENCE & ROOT-CAUSE ANALYSIS
@@ -435,7 +439,7 @@ Rubin's framework~\citep{rubin2005causal} defines causal effects through counter
 \centering
 \caption{Causal inference techniques comparison.}
 \label{tab:causal-techniques}
-\begin{tabular}{lll}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{5.5cm}}
 \toprule
 \textbf{Technique} & \textbf{Assumption} & \textbf{Use Case} \\
 \midrule
@@ -476,7 +480,7 @@ Table~\ref{tab:causal-benchmarks} reports estimation bias and RMSE across librar
 
 \begin{table}[ht]
 \centering
-\caption{Causal inference estimation accuracy on benchmark datasets.}
+\caption{Causal inference estimation accuracy on benchmark datasets. IHDP = Infant Health and Development Program~\citep{hill2011ihdp}; Card = college proximity IV dataset~\citep{card1995college}.}
 \label{tab:causal-benchmarks}
 \begin{tabular}{lllrr}
 \toprule
@@ -493,16 +497,16 @@ CausalImpact & Bayesian Struct.~TS & Synthetic ($n$=365)  & 0.03 & 0.12 \\
 \end{tabular}
 \end{table}
 
-EconML's Double ML achieves the lowest bias (0.01) and RMSE (0.08) on synthetic data where assumptions are perfectly satisfied, while DoWhy's backdoor method shows strong performance on the semi-synthetic IHDP benchmark (bias 0.02, RMSE 0.14). CausalML's X-Learner performs well on the larger Twins dataset, demonstrating scalability of meta-learner approaches.
+EconML's Double ML achieves the lowest bias (0.01) and RMSE (0.08) on synthetic data where assumptions are perfectly satisfied, while DoWhy's backdoor method shows strong performance on the semi-synthetic IHDP benchmark~\citep{hill2011ihdp} (bias 0.02, RMSE 0.14). CausalML's X-Learner performs well on the larger Twins dataset, demonstrating scalability of meta-learner approaches.
 
 \subsection{Root-Cause Analysis (RCA) Techniques}
 When a KPI changes unexpectedly, RCA techniques identify the underlying drivers:
 
 \begin{itemize}
     \item \textbf{Driver Trees}: Decompose a top-level metric into a hierarchical tree of sub-metrics, identifying which branches contributed most to the change.
-    \item \textbf{Change-Point Detection}: Identify the exact time at which a distribution shift occurred (PELT, CUSUM, Bayesian online change-point detection).
+    \item \textbf{Change-Point Detection}: Identify the exact time at which a distribution shift occurred (PELT~\citep{killick2012pelt}, CUSUM, Bayesian online change-point detection~\citep{adams2007bocpd}).
     \item \textbf{Attribution Analysis}: Quantify the contribution of each dimension (geography, product, channel) to an aggregate metric change using Shapley values.
-    \item \textbf{SHAP for Analytical AI}: Apply SHAP (SHapley Additive exPlanations) values to explain which features drive predictions in anomaly detection and clustering models.
+    \item \textbf{SHAP for Analytical AI}: Apply SHAP~\citep{lundberg2017shap} (SHapley Additive exPlanations) values to explain which features drive predictions in anomaly detection and clustering models.
 \end{itemize}
 
 %% ================================================================
@@ -517,7 +521,7 @@ We propose a maturity model for NLQ capabilities in Analytical AI systems:
 \centering
 \caption{NLQ capability maturity levels.}
 \label{tab:nlq-levels}
-\begin{tabular}{clll}
+\begin{tabular}{c l >{\raggedright\arraybackslash}p{5.0cm} >{\raggedright\arraybackslash}p{3.2cm}}
 \toprule
 \textbf{Level} & \textbf{Name} & \textbf{Capability} & \textbf{Example Platform} \\
 \midrule
@@ -539,18 +543,18 @@ The critical dependency is the semantic layer (Layer 3): NL2SQL accuracy improve
 Table~\ref{tab:nl2sql-benchmarks} reports execution accuracy across the two dominant public benchmarks---Spider and BIRD-SQL---as of mid-2025.
 
 \begin{table}[ht]
-\centering
+\centering\small
 \caption{NL2SQL execution accuracy on public benchmarks.}
 \label{tab:nl2sql-benchmarks}
-\begin{tabular}{llrl}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm} l r >{\raggedright\arraybackslash}p{3.8cm}}
 \toprule
 \textbf{Model / System} & \textbf{Benchmark} & \textbf{Exec.~Acc.~(\%)} & \textbf{Source} \\
 \midrule
 GPT-4o + DIN-SQL        & Spider & 85.3 & Spider leaderboard \\
 Claude 3.5 Sonnet       & Spider & 83.7 & Spider leaderboard \\
-DAIL-SQL + GPT-4        & Spider & 83.1 & arXiv:2308.15363 \\
-DIN-SQL + GPT-4         & Spider & 82.8 & NeurIPS 2024 \\
-C3 + ChatGPT            & Spider & 81.8 & arXiv:2307.07306 \\
+DAIL-SQL + GPT-4        & Spider & 83.1 & \citep{gao2023dailsql} \\
+DIN-SQL + GPT-4         & Spider & 82.8 & \citep{pourreza2024dinsql} \\
+C3 + ChatGPT            & Spider & 81.8 & \citep{dong2023c3} \\
 \midrule
 GPT-4o                  & BIRD-SQL & 67.2 & BIRD leaderboard \\
 Claude 3.5              & BIRD-SQL & 65.8 & BIRD leaderboard \\
@@ -565,7 +569,9 @@ Power BI Q\&A           & Enterprise (internal) & 72.0 & Microsoft docs \\
 The gap between academic benchmarks (Spider, 81--85\%) and the more realistic BIRD-SQL (60--67\%) underscores the challenge of value-grounded reasoning over dirty, real-world schemas. Enterprise NLQ products report intermediate accuracy, reflecting proprietary schema-aware optimizations.
 
 \subsection{Failure Modes}
+\begin{sloppypar}
 The dominant NL2SQL failure modes are: (i)~\textbf{schema hallucination}: generating queries referencing non-existent columns or tables; (ii)~\textbf{semantic misinterpretation}: correct SQL that answers the wrong question (e.g., confusing ``active users'' with ``registered users''); (iii)~\textbf{aggregation errors}: incorrect GROUP BY clauses or missing WHERE filters; and (iv)~\textbf{multi-hop reasoning failure}: inability to chain multiple analytical steps (e.g., ``show me the top products by customers who churned last quarter'').
+\end{sloppypar}
 
 %% ================================================================
 %% SECTION 9: EMPIRICAL EVALUATION
@@ -714,7 +720,7 @@ The augmented analytics and data observability segments are growing at more than
 \centering
 \caption{BI platform adoption and investment indicators (Q1 2026).}
 \label{tab:bi-market}
-\begin{tabular}{lllr}
+\begin{tabular}{l l >{\raggedright\arraybackslash}p{5.0cm} r}
 \toprule
 \textbf{Platform} & \textbf{Gartner MQ} & \textbf{Key Differentiator} & \textbf{Pricing} \\
 \midrule
@@ -851,7 +857,7 @@ Our analysis yields six principal findings corresponding to our research questio
 \begin{description}
     \item[RQ1 (Architecture):] The 7-stage pipeline (Ingest $\rightarrow$ Feedback) and 8-layer stack formalise the architectural primitives that distinguish Analytical AI from Predictive (forward-looking), Generative (content-creating), and Agentic (action-taking) paradigms.
     \item[RQ2 (Stack Mapping):] No single platform spans all eight layers. Enterprise deployments typically combine 5--8 specialised tools, with the semantic layer (L3) emerging as the critical integration point.
-    \item[RQ3 (Causal Inference):] DoWhy's four-step methodology (model, identify, estimate, refute) provides the most rigorous pipeline, while CausalImpact is preferred for marketing and intervention analysis due to its Bayesian time-series approach.
+    \item[RQ3 (Causal Inference):] EconML's Double ML achieves the highest estimation accuracy on benchmarks (bias 0.01, RMSE 0.08). DoWhy's four-step methodology (model, identify, estimate, refute) provides the most rigorous end-to-end causal pipeline for production deployments, while CausalImpact is preferred for time-series marketing interventions due to its Bayesian structural approach.
     \item[RQ4 (NLQ):] Production NL2SQL accuracy ranges from 65--85\% depending on semantic layer maturity. Schema hallucination and semantic misinterpretation are the dominant failure modes.
     \item[RQ5 (Data Quality):] Each percentage point decrease in data completeness or accuracy degrades downstream insight reliability non-linearly. Organisations with $<95\%$ data quality scores report 3$\times$ higher rates of incorrect analytical conclusions.
     \item[RQ6 (ROI):] Measurable returns include 20--30\% reduction in ad-hoc requests (self-service BI), 40--60\% faster time-to-insight (augmented analytics), and 60--80\% reduction in data incident MTTD (observability).
@@ -860,7 +866,7 @@ Our analysis yields six principal findings corresponding to our research questio
 The causal inference frontier---Layer 6 of our stack---represents the most significant opportunity for advancing Analytical AI beyond correlation-based dashboards toward genuine root-cause understanding. As the combined market reaches an estimated \$111B by 2030, establishing principled frameworks for architecture, evaluation, and governance becomes essential for trustworthy data-driven decision-making.
 
 All data, analysis notebooks, and reproduction scripts are available at: \\
-\url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/02-analytical-ai}
+{\small\url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/02-analytical-ai}}
 
 %% ================================================================
 %% ACKNOWLEDGMENTS
