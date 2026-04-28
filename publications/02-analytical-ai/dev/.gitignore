@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables (contains secrets)
+shared/config/.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Build / dist
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Experiment outputs (regenerable)
+phase-5-experiments/01-benchmark-results/*.json
+phase-5-experiments/02-case-studies/*.json
+
+# Diagram outputs (regenerable via generate_diagrams.py)
+assets/diagrams/*.png
+
+# DuckDB databases
+*.duckdb
+*.duckdb.wal
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
