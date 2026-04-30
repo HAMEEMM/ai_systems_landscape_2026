@@ -27,6 +27,9 @@ _Runtime Data Flow · Phase-by-Phase Development Path · Paper §2–9 Coverage_
 ## Quick Start
 
 ```bash
+# 0. Change to the dev/ directory (required for all commands below)
+cd G:/Developments/artificial_intelligence_development/ai_systems_landscape_2026/publications/02-analytical-ai/dev
+
 # 1. Create and activate virtual environment
 python -m venv .venv
 # Windows:
@@ -46,9 +49,6 @@ python phase-5-experiments/02-case-studies/01_end_to_end_bi_system.py
 
 # 5. Run the benchmark suite
 python phase-5-experiments/01-benchmark-results/run_benchmarks.py
-
-# 6. Re-generate 4K diagrams (optional)
-python assets/diagrams/generate_diagrams.py
 ```
 
 ---

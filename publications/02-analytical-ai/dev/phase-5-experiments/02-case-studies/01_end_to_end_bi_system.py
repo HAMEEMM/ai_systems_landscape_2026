@@ -74,21 +74,22 @@ class AnalyticalAISystem:
     # ── L3–L5: Analytics Engine ──────────────────────────────────────────
     def analyse(self) -> None:
         # KPI aggregation via DuckDB
-        kpis = self.con.execute("""
+        agg = self.con.execute("""
             SELECT
                 COUNT(*)                        AS txn_count,
                 ROUND(SUM(revenue), 2)          AS total_revenue,
                 ROUND(AVG(revenue), 2)          AS avg_order_value,
-                ROUND(AVG(discount) * 100, 2)   AS avg_discount_pct,
-                product AS top_product
-            FROM (
-                SELECT *, ROW_NUMBER() OVER (ORDER BY revenue DESC) AS rn FROM sales
-            ) WHERE rn = 1
+                ROUND(AVG(discount) * 100, 2)   AS avg_discount_pct
+            FROM sales
         """).fetchone()
+        top_product = self.con.execute("""
+            SELECT product FROM sales ORDER BY revenue DESC LIMIT 1
+        """).fetchone()[0]
         self.state["kpis"] = dict(zip(
-            ["txn_count", "total_revenue", "avg_order_value", "avg_discount_pct", "top_product"],
-            kpis
+            ["txn_count", "total_revenue", "avg_order_value", "avg_discount_pct"],
+            agg
         ))
+        self.state["kpis"]["top_product"] = top_product
 
         # Customer clustering
         X = StandardScaler().fit_transform(self.customer_df)
