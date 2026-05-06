@@ -13,7 +13,7 @@
 ## Status
 
 > **engrXiv Preprint Accepted** — DOI: [10.31224/6738](https://doi.org/10.31224/6738) (March 2026)
-> **[Artificial Intelligence](https://www.sciencedirect.com/journal/artificial-intelligence)** (Elsevier, IF ~14.4) — submission in preparation
+> **[Engineering Applications of Artificial Intelligence (EAAI)](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence)** — VSI: EAAI_Agentic AI — submission in preparation
 
 ---
 
@@ -113,10 +113,10 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 ## Publication Record
 
-| Venue                                                                                        | Type        | Status         | Date       |
-| -------------------------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
-| **[engrXiv](https://engrxiv.org/)**                                                          | Preprint    | Accepted       | March 2026 |
-| **[Artificial Intelligence](https://www.sciencedirect.com/journal/artificial-intelligence)** | Peer Review | In Preparation | April 2026 |
+| Venue                                                                                                                                                                              | Type        | Status         | Date       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
+| **[engrXiv](https://engrxiv.org/)**                                                                                                                                                | Preprint    | Accepted       | March 2026 |
+| **[Engineering Applications of Artificial Intelligence (EAAI)](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence)** — VSI: EAAI_Agentic AI | Peer Review | In Preparation | May 2026   |
 
 - **Preprint DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -143,16 +143,20 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 publications/01-agentic-ai/
 ├── README.md                  ← You are here (research plan & roadmap)
 ├── submission/
-│   ├── engrxiv-pre-print/     ← engrXiv preprint (accepted)
-│   │   ├── paper.tex          ← Full manuscript (article class, author-year citations)
-│   │   ├── paper.pdf          ← Compiled manuscript
-│   │   ├── references.bib     ← BibTeX bibliography
-│   │   └── README.md          ← Publication record
-│   └── artificial-intelligence-peer-review/  ← Artificial Intelligence (in preparation)
-│       ├── aij-paper.tex      ← Main manuscript (Elsevier elsarticle format)
-│       ├── aij-references.bib ← Bibliography (author-year, 20 entries)
-│       ├── aij-cover-letter.tex ← Cover letter (includes prior submission history)
-│       └── README.md          ← Submission status
+│   ├── engrxiv-pre-print-v2/      ← engrXiv preprint v2 (in preparation for upload)
+│   │   ├── engrxiv-paper-v2.tex   ← v2 manuscript (PPAS/OODA expansion + §8.4)
+│   │   └── references.bib         ← BibTeX bibliography
+│   ├── engrxiv-pre-print-v1/      ← engrXiv preprint v1 (accepted March 2026, DOI 10.31224/6738)
+│   │   ├── engrxiv-paper.tex      ← v1 manuscript (article class)
+│   │   ├── engrxiv-paper.pdf      ← Compiled PDF
+│   │   ├── references.bib         ← BibTeX bibliography
+│   │   └── README.md              ← Publication record
+│   └── eaai-agentic-ai/           ← EAAI submission — VSI: EAAI_Agentic AI (in preparation)
+│       ├── eaai-paper.tex         ← Main manuscript (Elsevier elsarticle format)
+│       ├── eaai-references.bib    ← Bibliography
+│       ├── eaai-paper.pdf         ← Compiled PDF
+│       ├── cover-letter.tex       ← EAAI cover letter
+│       └── README.md              ← Submission status
 ├── data/                      ← Raw data and analysis notebooks
 │   ├── benchmarks/            ← Benchmark result aggregation
 │   ├── market-data/           ← Market sizing sources
@@ -182,7 +186,7 @@ publications/01-agentic-ai/
   journal = {engrXiv},
   doi     = {10.31224/6738},
   url     = {https://doi.org/10.31224/6738},
-  note    = {Preprint; peer review at Artificial Intelligence (Elsevier) in preparation}
+  note    = {Preprint; peer review at Engineering Applications of Artificial Intelligence (EAAI), VSI: EAAI_Agentic AI, in preparation}
 }
 ```
 

@@ -1,0 +1,70 @@
+% !TEX recipe = pdflatex only
+% Transferred from Artificial Intelligence (rejected: scope mismatch)
+% Now submitting to Engineering Applications of Artificial Intelligence
+% Special Issue: VSI: EAAI_Agentic AI
+% Manuscript: [new number will be assigned]
+\documentclass[10pt]{letter}
+
+\usepackage[margin=1in, top=0.75in, bottom=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue}
+
+\signature{Hameem M.\ Mahdi, B.S.C.S., M.S.E., Ph.D.\\
+Mayo Clinic, Rochester, MN 55905, USA\\
+\href{mailto:mahdi.hameem@mayo.edu}{mahdi.hameem@mayo.edu} ~|~ ORCID: \href{https://orcid.org/0009-0007-0005-3080}{0009-0007-0005-3080}}
+
+\address{Hameem M.\ Mahdi\\
+Mayo Clinic\\
+200 First Street SW\\
+Rochester, MN 55905, USA}
+
+\date{May 5, 2026}
+\setlength{\parskip}{0.4em}
+
+\begin{document}
+
+\begin{letter}{Editor-in-Chief\\
+\emph{Engineering Applications of Artificial Intelligence}\\
+Special Issue: VSI: EAAI\_Agentic AI\\
+Elsevier}
+
+\opening{Dear Editor-in-Chief,}
+
+I am pleased to submit ``Perceive, Plan, Act, Self-Correct: An Architectural Framework for Goal-Directed Agentic AI Systems'' for consideration as a contribution to the Virtual Special Issue \textbf{VSI: EAAI\_Agentic AI} in \emph{Engineering Applications of Artificial Intelligence}.
+
+\textbf{Transfer history.}\quad
+This manuscript was previously submitted to \emph{Artificial Intelligence} (AIJ), where it received a desk rejection (May 2026) on grounds of scope mismatch: the Associate Editor noted that AIJ's focus on theoretical foundations and formal proofs did not align well with the paper's empirical, engineering-oriented contributions. We believe \emph{Engineering Applications of Artificial Intelligence} and its special issue on Agentic AI represent the natural home for this work, and no substantive changes to the manuscript have been made in response to that desk rejection.
+
+\textbf{Summary.}\quad
+The paper proposes the \textsc{Perceive--Plan--Act--Self-Correct} (PPAS) framework, a four-phase canonical loop for goal-directed agentic AI grounded in classical agent theory and extended for LLM-era architectures. We decompose agentic systems into an 8-layer technology stack mapping 15+ frameworks to a common engineering reference, validated by three empirical studies: a benchmark meta-analysis (12 agents across SWE-Bench Verified, WebArena, and GAIA), a controlled design-pattern comparison, and an inter-agent protocol evaluation (MCP, A2A, AG-UI).
+
+\textbf{Fit for EAAI and VSI: EAAI\_Agentic AI.}\quad
+This submission is directly aligned with the special issue scope:
+\begin{enumerate}[nosep, leftmargin=1.5em]
+    \item \textbf{Empirical validation of agentic architectures} --- three studies producing quantitative performance data across controlled conditions and public benchmarks;
+    \item \textbf{Engineering-focused framework} --- the 8-layer technology stack is a practical blueprint for building and evaluating real agentic systems, not a theoretical abstraction;
+    \item \textbf{Practical multi-agent coordination analysis} --- empirical evaluation of MCP, A2A, and AG-UI protocols under controlled conditions, yielding latency and reliability measurements directly applicable to production deployments;
+    \item \textbf{EU AI Act governance mapping for real systems} --- Article-level compliance mappings for the PPAS loop, providing a concrete engineering checklist for practitioners deploying agents under the EU regulatory framework.
+\end{enumerate}
+
+\textbf{Key contributions:}
+\begin{enumerate}[nosep, leftmargin=1.5em]
+    \item A formal four-phase agent loop unifying existing architectural patterns;
+    \item An 8-layer technology stack mapping 15+ frameworks to a common reference model;
+    \item Empirical evidence that reflective planning with human-in-the-loop approval achieves the highest task-completion rates (72.5\% SWE-Bench Verified) while reducing irreversible-action failures by 73\%;
+    \item A failure-mode taxonomy with EU AI Act and NIST AI RMF governance mappings.
+\end{enumerate}
+
+\textbf{Preprint.}\quad A preprint is available on engrXiv: \url{https://doi.org/10.31224/6738} (March 2026, accepted).
+
+\textbf{Data and code availability.}\quad All datasets, scripts, and notebooks are publicly available at: \url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/01-agentic-ai}
+
+The manuscript is not under consideration elsewhere. I confirm compliance with the journal's submission guidelines and have disclosed the prior submission history above in the interest of full transparency. Thank you for considering this submission for the VSI: EAAI\_Agentic AI special issue.
+
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}
