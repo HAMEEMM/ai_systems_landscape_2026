@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Artificial Intelligence |
-| **Publisher** | Elsevier |
-| **URL** | https://www.sciencedirect.com/journal/artificial-intelligence |
-| **Impact Factor** | ~14.4 (2024) |
-| **Scope** | AI theory, knowledge representation, reasoning, cognitive architectures |
-| **Template** | Elsevier LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                                   |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Journal**       | Artificial Intelligence                                                 |
+| **Publisher**     | Elsevier                                                                |
+| **URL**           | https://www.sciencedirect.com/journal/artificial-intelligence           |
+| **Impact Factor** | ~14.4 (2024)                                                            |
+| **Scope**         | AI theory, knowledge representation, reasoning, cognitive architectures |
+| **Template**      | Elsevier LaTeX or Word template                                         |
+| **Open Access**   | Hybrid                                                                  |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for Artificial Intelligence
 - [ ] Submitted to Artificial Intelligence
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

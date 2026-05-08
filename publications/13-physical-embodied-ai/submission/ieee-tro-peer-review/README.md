@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | IEEE Transactions on Robotics (TRO) |
-| **Publisher** | IEEE |
-| **URL** | https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8860 |
-| **Impact Factor** | ~6.8 (2024) |
-| **Scope** | Robotics, manipulation, locomotion, autonomous systems |
-| **Template** | IEEE Transactions LaTeX template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                         |
+| ----------------- | ------------------------------------------------------------- |
+| **Journal**       | IEEE Transactions on Robotics (TRO)                           |
+| **Publisher**     | IEEE                                                          |
+| **URL**           | https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8860 |
+| **Impact Factor** | ~6.8 (2024)                                                   |
+| **Scope**         | Robotics, manipulation, locomotion, autonomous systems        |
+| **Template**      | IEEE Transactions LaTeX template                              |
+| **Open Access**   | Hybrid                                                        |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for IEEE TRO
 - [ ] Submitted to IEEE TRO
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | IEEE Transactions on Evolutionary Computation (TEC) |
-| **Publisher** | IEEE |
-| **URL** | https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235 |
-| **Impact Factor** | ~11.8 (2024) |
-| **Scope** | Evolutionary computation, genetic algorithms, swarm intelligence |
-| **Template** | IEEE Transactions LaTeX template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                            |
+| ----------------- | ---------------------------------------------------------------- |
+| **Journal**       | IEEE Transactions on Evolutionary Computation (TEC)              |
+| **Publisher**     | IEEE                                                             |
+| **URL**           | https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235    |
+| **Impact Factor** | ~11.8 (2024)                                                     |
+| **Scope**         | Evolutionary computation, genetic algorithms, swarm intelligence |
+| **Template**      | IEEE Transactions LaTeX template                                 |
+| **Open Access**   | Hybrid                                                           |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for IEEE TEC
 - [ ] Submitted to IEEE TEC
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

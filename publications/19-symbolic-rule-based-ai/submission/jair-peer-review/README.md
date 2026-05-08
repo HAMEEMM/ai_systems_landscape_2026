@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Journal of Artificial Intelligence Research (JAIR) |
-| **Publisher** | AI Access Foundation |
-| **URL** | https://www.jair.org/ |
-| **Impact Factor** | ~5.0 (2024) |
-| **Scope** | All areas of AI — theory, algorithms, applications |
-| **Template** | JAIR LaTeX style |
-| **Open Access** | Yes (free — no APC) |
+| Field             | Value                                              |
+| ----------------- | -------------------------------------------------- |
+| **Journal**       | Journal of Artificial Intelligence Research (JAIR) |
+| **Publisher**     | AI Access Foundation                               |
+| **URL**           | https://www.jair.org/                              |
+| **Impact Factor** | ~5.0 (2024)                                        |
+| **Scope**         | All areas of AI — theory, algorithms, applications |
+| **Template**      | JAIR LaTeX style                                   |
+| **Open Access**   | Yes (free — no APC)                                |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for JAIR
 - [ ] Submitted to JAIR
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

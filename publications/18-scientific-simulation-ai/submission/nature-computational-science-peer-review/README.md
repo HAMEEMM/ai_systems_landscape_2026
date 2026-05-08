@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Nature Computational Science |
-| **Publisher** | Springer Nature |
-| **URL** | https://www.nature.com/natcomputsci/ |
-| **Impact Factor** | ~12.0 (2024) |
-| **Scope** | Computational methods for science, scientific AI, simulation |
-| **Template** | Nature Portfolio LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                        |
+| ----------------- | ------------------------------------------------------------ |
+| **Journal**       | Nature Computational Science                                 |
+| **Publisher**     | Springer Nature                                              |
+| **URL**           | https://www.nature.com/natcomputsci/                         |
+| **Impact Factor** | ~12.0 (2024)                                                 |
+| **Scope**         | Computational methods for science, scientific AI, simulation |
+| **Template**      | Nature Portfolio LaTeX or Word template                      |
+| **Open Access**   | Hybrid                                                       |
 
 ---
 
@@ -44,6 +44,7 @@
 - [ ] Cover letter prepared
 - [ ] Submitted to Nature Computational Science
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

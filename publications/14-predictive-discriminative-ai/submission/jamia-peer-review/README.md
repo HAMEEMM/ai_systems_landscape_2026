@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | JAMIA (Journal of the American Medical Informatics Association) |
-| **Publisher** | Oxford University Press |
-| **URL** | https://academic.oup.com/jamia |
-| **Impact Factor** | ~7.4 (2024) |
-| **Scope** | Biomedical informatics, clinical AI, health data systems |
-| **Template** | Oxford University Press author guidelines |
-| **Open Access** | Optional |
+| Field             | Value                                                           |
+| ----------------- | --------------------------------------------------------------- |
+| **Journal**       | JAMIA (Journal of the American Medical Informatics Association) |
+| **Publisher**     | Oxford University Press                                         |
+| **URL**           | https://academic.oup.com/jamia                                  |
+| **Impact Factor** | ~7.4 (2024)                                                     |
+| **Scope**         | Biomedical informatics, clinical AI, health data systems        |
+| **Template**      | Oxford University Press author guidelines                       |
+| **Open Access**   | Optional                                                        |
 
 ---
 
@@ -42,6 +42,7 @@
 - [ ] Manuscript formatted for JAMIA
 - [ ] Submitted to JAMIA
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

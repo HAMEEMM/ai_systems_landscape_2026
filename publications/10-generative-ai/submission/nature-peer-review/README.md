@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Nature |
-| **Publisher** | Springer Nature |
-| **URL** | https://www.nature.com/ |
-| **Impact Factor** | ~64.8 (2024) |
-| **Scope** | All scientific disciplines — original research of outstanding significance |
-| **Template** | Nature LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                                      |
+| ----------------- | -------------------------------------------------------------------------- |
+| **Journal**       | Nature                                                                     |
+| **Publisher**     | Springer Nature                                                            |
+| **URL**           | https://www.nature.com/                                                    |
+| **Impact Factor** | ~64.8 (2024)                                                               |
+| **Scope**         | All scientific disciplines — original research of outstanding significance |
+| **Template**      | Nature LaTeX or Word template                                              |
+| **Open Access**   | Hybrid                                                                     |
 
 ---
 
@@ -44,6 +44,7 @@
 - [ ] Cover letter prepared
 - [ ] Submitted to Nature
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Information Fusion |
-| **Publisher** | Elsevier |
-| **URL** | https://www.sciencedirect.com/journal/information-fusion |
-| **Impact Factor** | ~18.6 (2024) |
-| **Scope** | Multi-source data fusion, multimodal learning, sensor fusion |
-| **Template** | Elsevier LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                        |
+| ----------------- | ------------------------------------------------------------ |
+| **Journal**       | Information Fusion                                           |
+| **Publisher**     | Elsevier                                                     |
+| **URL**           | https://www.sciencedirect.com/journal/information-fusion     |
+| **Impact Factor** | ~18.6 (2024)                                                 |
+| **Scope**         | Multi-source data fusion, multimodal learning, sensor fusion |
+| **Template**      | Elsevier LaTeX or Word template                              |
+| **Open Access**   | Hybrid                                                       |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for Information Fusion
 - [ ] Submitted to Information Fusion
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

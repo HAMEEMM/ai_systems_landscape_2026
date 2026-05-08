@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | The Lancet Digital Health |
-| **Publisher** | Elsevier (The Lancet) |
-| **URL** | https://www.thelancet.com/journals/landig/home |
-| **Impact Factor** | ~36.6 (2024) |
-| **Scope** | Digital health, health data, AI in medicine |
-| **Template** | Lancet Word or LaTeX template |
-| **Open Access** | Yes (gold OA) |
+| Field             | Value                                          |
+| ----------------- | ---------------------------------------------- |
+| **Journal**       | The Lancet Digital Health                      |
+| **Publisher**     | Elsevier (The Lancet)                          |
+| **URL**           | https://www.thelancet.com/journals/landig/home |
+| **Impact Factor** | ~36.6 (2024)                                   |
+| **Scope**         | Digital health, health data, AI in medicine    |
+| **Template**      | Lancet Word or LaTeX template                  |
+| **Open Access**   | Yes (gold OA)                                  |
 
 ---
 
@@ -52,6 +52,7 @@
 - [ ] Manuscript formatted for Lancet Digital Health
 - [ ] Submitted
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

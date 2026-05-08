@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | npj Digital Medicine |
-| **Publisher** | Springer Nature |
-| **URL** | https://www.nature.com/npjdigitalmed/ |
-| **Impact Factor** | ~15.2 (2024) |
-| **Scope** | Digital health, patient-facing AI, clinical AI tools |
-| **Template** | Nature Portfolio LaTeX or Word template |
-| **Open Access** | Yes (mandatory — APC ~$2,990) |
+| Field             | Value                                                |
+| ----------------- | ---------------------------------------------------- |
+| **Journal**       | npj Digital Medicine                                 |
+| **Publisher**     | Springer Nature                                      |
+| **URL**           | https://www.nature.com/npjdigitalmed/                |
+| **Impact Factor** | ~15.2 (2024)                                         |
+| **Scope**         | Digital health, patient-facing AI, clinical AI tools |
+| **Template**      | Nature Portfolio LaTeX or Word template              |
+| **Open Access**   | Yes (mandatory — APC ~$2,990)                        |
 
 ---
 
@@ -45,6 +45,7 @@
 - [ ] Cover letter prepared
 - [ ] Submitted to npj Digital Medicine
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

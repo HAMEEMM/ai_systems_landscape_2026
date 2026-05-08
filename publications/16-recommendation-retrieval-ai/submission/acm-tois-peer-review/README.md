@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | ACM Transactions on Information Systems (TOIS) |
-| **Publisher** | Association for Computing Machinery (ACM) |
-| **URL** | https://dl.acm.org/journal/tois |
-| **Impact Factor** | ~5.6 (2024) |
-| **Scope** | Information retrieval, recommendation systems, search |
-| **Template** | `acmart` document class |
-| **Open Access** | Optional |
+| Field             | Value                                                 |
+| ----------------- | ----------------------------------------------------- |
+| **Journal**       | ACM Transactions on Information Systems (TOIS)        |
+| **Publisher**     | Association for Computing Machinery (ACM)             |
+| **URL**           | https://dl.acm.org/journal/tois                       |
+| **Impact Factor** | ~5.6 (2024)                                           |
+| **Scope**         | Information retrieval, recommendation systems, search |
+| **Template**      | `acmart` document class                               |
+| **Open Access**   | Optional                                              |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted in `acmart`
 - [ ] Submitted to ACM TOIS
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

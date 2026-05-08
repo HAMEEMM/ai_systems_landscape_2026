@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Machine Learning (Springer) |
-| **Publisher** | Springer |
-| **URL** | https://link.springer.com/journal/10994 |
-| **Impact Factor** | ~4.9 (2024) |
-| **Scope** | Machine learning theory, algorithms, RL, supervised/unsupervised learning |
-| **Template** | Springer LaTeX template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                                     |
+| ----------------- | ------------------------------------------------------------------------- |
+| **Journal**       | Machine Learning (Springer)                                               |
+| **Publisher**     | Springer                                                                  |
+| **URL**           | https://link.springer.com/journal/10994                                   |
+| **Impact Factor** | ~4.9 (2024)                                                               |
+| **Scope**         | Machine learning theory, algorithms, RL, supervised/unsupervised learning |
+| **Template**      | Springer LaTeX template                                                   |
+| **Open Access**   | Hybrid                                                                    |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for Machine Learning
 - [ ] Submitted to Machine Learning
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

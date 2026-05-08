@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | INFORMS Journal on Computing |
-| **Publisher** | INFORMS (Institute for Operations Research and the Management Sciences) |
-| **URL** | https://pubsonline.informs.org/journal/ijoc |
-| **Impact Factor** | ~2.1 (2024) |
-| **Scope** | Computing methods for optimization, operations research, algorithms |
-| **Template** | INFORMS LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                                   |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Journal**       | INFORMS Journal on Computing                                            |
+| **Publisher**     | INFORMS (Institute for Operations Research and the Management Sciences) |
+| **URL**           | https://pubsonline.informs.org/journal/ijoc                             |
+| **Impact Factor** | ~2.1 (2024)                                                             |
+| **Scope**         | Computing methods for optimization, operations research, algorithms     |
+| **Template**      | INFORMS LaTeX or Word template                                          |
+| **Open Access**   | Hybrid                                                                  |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for INFORMS JoC
 - [ ] Submitted to INFORMS JoC
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

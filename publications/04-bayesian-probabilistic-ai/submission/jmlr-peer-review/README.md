@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Journal of Machine Learning Research (JMLR) |
-| **Publisher** | JMLR, Inc. |
-| **URL** | https://jmlr.org/ |
-| **Impact Factor** | ~6.0 (2024) |
-| **Scope** | Machine learning theory, algorithms, and methods |
-| **Template** | JMLR LaTeX style (`jmlr.sty`) |
-| **Open Access** | Yes (free — no APC) |
+| Field             | Value                                            |
+| ----------------- | ------------------------------------------------ |
+| **Journal**       | Journal of Machine Learning Research (JMLR)      |
+| **Publisher**     | JMLR, Inc.                                       |
+| **URL**           | https://jmlr.org/                                |
+| **Impact Factor** | ~6.0 (2024)                                      |
+| **Scope**         | Machine learning theory, algorithms, and methods |
+| **Template**      | JMLR LaTeX style (`jmlr.sty`)                    |
+| **Open Access**   | Yes (free — no APC)                              |
 
 ---
 
@@ -45,6 +45,7 @@
 - [ ] Submitted to JMLR
 - [ ] Reviews received
 - [ ] Revisions submitted
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

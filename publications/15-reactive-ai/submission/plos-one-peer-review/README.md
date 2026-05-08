@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | PLOS ONE |
-| **Publisher** | Public Library of Science |
-| **URL** | https://journals.plos.org/plosone/ |
-| **Impact Factor** | ~3.7 (2024) |
-| **Scope** | All scientific disciplines — open access |
-| **Template** | PLOS ONE LaTeX or Word template |
-| **Open Access** | Yes (mandatory — APC ~$1,931) |
+| Field             | Value                                    |
+| ----------------- | ---------------------------------------- |
+| **Journal**       | PLOS ONE                                 |
+| **Publisher**     | Public Library of Science                |
+| **URL**           | https://journals.plos.org/plosone/       |
+| **Impact Factor** | ~3.7 (2024)                              |
+| **Scope**         | All scientific disciplines — open access |
+| **Template**      | PLOS ONE LaTeX or Word template          |
+| **Open Access**   | Yes (mandatory — APC ~$1,931)            |
 
 ---
 
@@ -42,6 +42,7 @@
 - [ ] Manuscript formatted for PLOS ONE
 - [ ] Submitted to PLOS ONE
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

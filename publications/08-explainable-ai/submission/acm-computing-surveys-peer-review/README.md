@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted in `acmart`
 - [ ] Submitted to ACM Computing Surveys
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

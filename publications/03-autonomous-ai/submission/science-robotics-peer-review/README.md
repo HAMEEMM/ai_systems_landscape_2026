@@ -8,15 +8,15 @@
 
 ## Peer-Review Venue
 
-| Field | Value |
-|---|---|
-| **Journal** | Science Robotics |
-| **Publisher** | American Association for the Advancement of Science (AAAS) |
-| **URL** | https://www.science.org/journal/scirobotics |
-| **Impact Factor** | ~25.0 (2024) |
-| **Scope** | Robotics, autonomous systems, human-robot interaction |
-| **Template** | Science family LaTeX or Word template |
-| **Open Access** | Hybrid |
+| Field             | Value                                                      |
+| ----------------- | ---------------------------------------------------------- |
+| **Journal**       | Science Robotics                                           |
+| **Publisher**     | American Association for the Advancement of Science (AAAS) |
+| **URL**           | https://www.science.org/journal/scirobotics                |
+| **Impact Factor** | ~25.0 (2024)                                               |
+| **Scope**         | Robotics, autonomous systems, human-robot interaction      |
+| **Template**      | Science family LaTeX or Word template                      |
+| **Open Access**   | Hybrid                                                     |
 
 ---
 
@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for Science Robotics
 - [ ] Submitted to Science Robotics
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---
