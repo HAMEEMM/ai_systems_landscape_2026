@@ -49,6 +49,8 @@
 - [x] aiXiv account created
 - [x] `aixiv-paper.pdf` finalized
 - [x] Files uploaded
+- [ ] Paper rejected
+- [x] Paper accepted
 - [x] Preprint live on aiXiv
 - [x] aiXiv paper ID recorded: aixiv.260413.000007
 

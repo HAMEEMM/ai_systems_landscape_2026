@@ -49,6 +49,8 @@
 - [x] engrXiv account created
 - [x] `engrxiv-paper.pdf` finalized
 - [x] Files uploaded
+- [ ] Paper rejected
+- [x] Paper accepted
 - [x] Preprint live on engrXiv
 - [x] engrXiv DOI recorded: [10.31224/6738](https://doi.org/10.31224/6738)
 

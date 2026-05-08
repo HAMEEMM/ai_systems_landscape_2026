@@ -51,6 +51,7 @@
 - [x] Transfer to EAAI — VSI: EAAI_Agentic AI
 - [x] Submitted to Engineering Applications of Artificial Intelligence
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---

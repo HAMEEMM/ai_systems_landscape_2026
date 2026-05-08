@@ -44,7 +44,8 @@
 - [x] Manuscript formatted in `acmart` (survey mode)
 - [x] Cover letter prepared
 - [x] Submitted to ACM Computing Surveys
-- [ ] Reviews received
+- [x] Reviews received
+- [x] Paper rejected
 - [ ] Paper accepted
 
 ---

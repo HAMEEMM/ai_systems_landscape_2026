@@ -43,6 +43,7 @@
 - [ ] Manuscript formatted for Expert Systems with Applications
 - [ ] Submitted to ESWA
 - [ ] Reviews received
+- [ ] Paper rejected
 - [ ] Paper accepted
 
 ---
