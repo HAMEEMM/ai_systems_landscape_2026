@@ -34,7 +34,7 @@
 1. **Create an Elsevier account**
 2. **Prepare manuscript** in Elsevier format
 3. **Submit via** https://www.editorialmanager.com/eswa/
-4. **Include the SSRN preprint DOI**
+4. **Include the arXiv preprint DOI** (e.g., `arXiv:2026.XXXXX [cs.AI]`)
 
 ---
 

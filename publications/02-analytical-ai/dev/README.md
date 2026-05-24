@@ -2,7 +2,7 @@
 
 ### 5-Phase Development Workspace · Paper §2–9 Coverage
 
-> **Paper**: Mahdi, H. (2026). _Causal Inference at Scale: Architectural Patterns for Analytical AI Systems in Enterprise Business Intelligence_. SSRN Preprint. CC BY 4.0.
+> **Paper**: Mahdi, H. (2026). _Causal Inference at Scale: Architectural Patterns for Analytical AI Systems in Enterprise Business Intelligence_. arXiv Preprint. CC BY 4.0.
 
 This workspace provides a complete, runnable implementation of every concept from the paper — from raw data ingestion through causal inference, NL2SQL, and production BI system assembly. No GPU required. OpenAI key optional.
 
@@ -173,7 +173,7 @@ Full list: [`shared/requirements.txt`](shared/requirements.txt)
   title   = {Causal Inference at Scale: Architectural Patterns for
              Analytical AI Systems in Enterprise Business Intelligence},
   year    = {2026},
-  note    = {SSRN Preprint. \url{https://ssrn.com/abstract=XXXXXXX}},
+  note    = {arXiv Preprint. \url{https://arxiv.org/abs/2026.XXXXX}},
   license = {CC BY 4.0}
 }
 ```

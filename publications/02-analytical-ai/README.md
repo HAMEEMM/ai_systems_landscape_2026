@@ -130,15 +130,16 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 ### Primary Preprint Server
 
-| Field        | Value                                                                                                                                        |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Server**   | [SSRN (Social Science Research Network)](https://www.ssrn.com/)                                                                              |
-| **Operator** | Elsevier                                                                                                                                     |
-| **Category** | Information Systems / Artificial Intelligence                                                                                                |
-| **Cost**     | Free                                                                                                                                         |
-| **Why SSRN** | Strong fit for business intelligence and analytics research; Elsevier-aligned with ESWA; high visibility among business/industry researchers |
+| Field          | Value                                                                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Server**     | [arXiv](https://arxiv.org/)                                                                                                                                         |
+| **Operator**   | Cornell University / arXiv.org                                                                                                                                      |
+| **Category**   | Computer Science — Artificial Intelligence (`cs.AI`)                                                                                                                |
+| **Cross-list** | `cs.LG` (Machine Learning)                                                                                                                                          |
+| **Cost**       | Free                                                                                                                                                                |
+| **Why arXiv**  | Premier CS/AI preprint server; highest visibility in the field; ESWA permits arXiv preprints; indexed immediately by Google Scholar, Semantic Scholar, and OpenAlex |
 
-> See [`submission/ssrn-pre-print/README.md`](submission/ssrn-pre-print/README.md) for preprint submission steps.
+> See [`submission/arxiv-pre-print/README.md`](submission/arxiv-pre-print/README.md) for preprint submission steps.
 
 ### Primary Peer-Review Venue
 
@@ -200,8 +201,9 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 publications/02-analytical-ai/
 ├── README.md                  ← You are here (research plan & roadmap)
 ├── submission/
-│   ├── ssrn-pre-print/        ← SSRN preprint submission
-│   │   ├── paper.tex          ← Full manuscript
+│   ├── arxiv-pre-print/       ← arXiv preprint submission (cs.AI, cs.LG)
+│   │   ├── arxiv-paper.tex    ← Full manuscript
+│   │   ├── arxiv-paper.pdf    ← Compiled PDF
 │   │   ├── references.bib     ← BibTeX bibliography
 │   │   └── README.md          ← Preprint submission status
 │   └── expert-systems-peer-review/  ← Expert Systems with Applications submission
@@ -234,8 +236,8 @@ publications/02-analytical-ai/
   author  = {Hameem M. Mahdi},
   title   = {Causal Inference at Scale: How Analytical {AI} Transforms Pattern Mining Into Actionable Business Intelligence},
   year    = {2026},
-  journal = {SSRN},
-  note    = {Preprint; peer review at Expert Systems with Applications in preparation}
+  journal = {arXiv},
+  note    = {Preprint (arXiv:2026.XXXXX [cs.AI]); peer review at Expert Systems with Applications in preparation}
 }
 ```
 
