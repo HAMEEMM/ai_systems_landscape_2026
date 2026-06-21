@@ -113,10 +113,10 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 ## Publication Record
 
-| Venue                                                                                                                                                                              | Type        | Status         | Date       |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------------- | ---------- |
-| **[engrXiv](https://engrxiv.org/)**                                                                                                                                                | Preprint    | Accepted       | March 2026 |
-| **[Engineering Applications of Artificial Intelligence (EAAI)](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence)** — VSI: EAAI_Agentic AI | Peer Review | In Preparation | May 2026   |
+| Venue                                                                                                                                                                              | Type        | Status   | Date       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- | ---------- |
+| **[engrXiv](https://engrxiv.org/)**                                                                                                                                                | Preprint    | Accepted | March 2026 |
+| **[Engineering Applications of Artificial Intelligence (EAAI)](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence)** — VSI: EAAI_Agentic AI | Peer Review | Rejected | June 2026  |
 
 - **Preprint DOI:** [10.31224/6738](https://doi.org/10.31224/6738)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
