@@ -37,12 +37,24 @@
 
 ---
 
+## Submission Steps
+
+1. Compile `arxiv-paper-v1.tex` with pdflatex (or Overleaf) to produce `arxiv-paper-v1.pdf`
+2. Log in at https://arxiv.org/ and start a new submission
+3. Select primary category **cs.RO** and cross-list **cs.AI**
+4. Upload source files: `arxiv-paper-v1.tex`, `references.bib`
+5. Confirm metadata (title, authors, abstract, keywords)
+6. Record the arXiv ID below once assigned
+
+---
+
 ## Status
 
-- [ ] arXiv account created
-- [ ] Manuscript prepared
+- [x] arXiv account created
+- [x] Manuscript prepared (`arxiv-paper-v1.tex` + `references.bib`)
+- [x] PDF compiled and reviewed
 - [ ] Preprint uploaded to arXiv
-- [ ] ID recorded
+- [ ] arXiv ID recorded
 
 ---
 
@@ -51,4 +63,6 @@
 ```
 arxiv-pre-print/
 ├── README.md              ← You are here
+├── arxiv-paper-v1.tex     ← LaTeX source (standard article, 14 sections)
+└── references.bib         ← Bibliography (32 entries)
 ```
