@@ -34,7 +34,7 @@
 \usepackage{xcolor}
 \usepackage[breaklinks=true,colorlinks=true,linkcolor=blue!70!black,citecolor=green!50!black,urlcolor=blue!70!black]{hyperref}
 \usepackage{url}
-\usepackage{orcidlink}
+% orcidlink removed -- replaced with plain hyperlink for arXiv compatibility
 \usepackage{placeins}
 
 %% ================================================================
@@ -52,7 +52,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \lhead{\textsc{arXiv Preprint} — CC BY 4.0}
 \rhead{\thepage}
-\lfoot{\footnotesize AI Systems Landscape 2026 — Paper \#2}
+\lfoot{\footnotesize AI Systems Landscape 2026 --- Paper \#2}
 \rfoot{\footnotesize \today}
 
 %% ================================================================
@@ -68,13 +68,16 @@
 
     \vspace{1em}
 
-    {\large Hameem Mahdi~\orcidlink{0009-0007-0005-3080}}\\[4pt]
+    {\large Hameem Mahdi}\\[2pt]
+    {\small \href{https://orcid.org/0009-0007-0005-3080}{ORCID: 0009-0007-0005-3080}}\\[4pt]
     Mayo Clinic, Rochester, MN, USA\\
     \texttt{mahdi.hameem@mayo.edu}
 
     \vspace{1em}
 
-    {\small\textbf{Preprint} — Not yet peer-reviewed}\\[2pt]
+    {\small\textbf{Preprint} (Not yet peer-reviewed)}\\[2pt]
+    {\small Submitted to arXiv, July 2026}\\[2pt]
+    {\small arXiv Category: cs.AI (Artificial Intelligence); cs.LG (Machine Learning)}\\[2pt]
     {\small License: \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0 International}}\\[2pt]
     {\small Paper \#2 in the \emph{AI Systems Landscape 2026} series}
 \end{center}
