@@ -8,14 +8,14 @@
 
 ## Pre-Print Server
 
-| Field          | Value                                                |
-| -------------- | ---------------------------------------------------- |
-| **Server**     | arXiv                                                |
-| **URL**        | https://arxiv.org/                                   |
+| Field                | Value                                                   |
+| -------------------- | ------------------------------------------------------- |
+| **Server**     | arXiv                                                   |
+| **URL**        | https://arxiv.org/                                      |
 | **Category**   | Computer Science — Artificial Intelligence (`cs.AI`) |
-| **Cross-list** | `cs.LG` (Machine Learning)                           |
-| **License**    | CC BY 4.0                                            |
-| **Cost**       | Free                                                 |
+| **Cross-list** | `cs.LG` (Machine Learning)                            |
+| **License**    | CC BY 4.0                                               |
+| **Cost**       | Free                                                    |
 
 ---
 
@@ -43,10 +43,10 @@
 
 ## Status
 
-- [x] arXiv account created
-- [x] Manuscript prepared
-- [x] Preprint uploaded to arXiv
-- [x] arXiv ID recorded (7630854)
+- [X] arXiv account created
+- [X] Manuscript prepared
+- [X] Preprint uploaded to arXiv
+- [X] arXiv ID recorded (7630854)
 - [ ] Paper rejected
 - [ ] Paper accepted
 
