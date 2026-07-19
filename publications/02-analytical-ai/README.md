@@ -132,14 +132,14 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 
 | Field          | Value                                                                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Server**     | [arXiv](https://arxiv.org/)                                                                                                                                         |
-| **Operator**   | Cornell University / arXiv.org                                                                                                                                      |
-| **Category**   | Computer Science — Artificial Intelligence (`cs.AI`)                                                                                                                |
-| **Cross-list** | `cs.LG` (Machine Learning)                                                                                                                                          |
-| **Cost**       | Free                                                                                                                                                                |
-| **Why arXiv**  | Premier CS/AI preprint server; highest visibility in the field; ESWA permits arXiv preprints; indexed immediately by Google Scholar, Semantic Scholar, and OpenAlex |
+| **Server**     | [engrXiv](https://engrxiv.org/)                                                                                                                                     |
+| **Operator**   | Open Engineering Inc. / Center for Open Science (OSF)                                                                                                               |
+| **Category**   | Engineering -- Computer Science / Applied AI                                                                                                                         |
+| **Cross-list** | N/A                                                                                                                                                                  |
+| **Cost**       | Free                                                                                                                                                                 |
+| **Why engrXiv**| No endorsement required; consistent with Paper #1 (DOI 10.31224/6738); permanent OSF infrastructure; ESWA permits engrXiv preprints; indexed by Google Scholar      |
 
-> See [`submission/arxiv-pre-print/README.md`](submission/arxiv-pre-print/README.md) for preprint submission steps.
+> See [`submission/engrxiv-pre-print/README.md`](submission/engrxiv-pre-print/README.md) for preprint submission steps.
 
 ### Primary Peer-Review Venue
 
@@ -201,9 +201,9 @@ This is the end-to-end tech stack the paper covers, organized as a development l
 publications/02-analytical-ai/
 ├── README.md                  ← You are here (research plan & roadmap)
 ├── submission/
-│   ├── arxiv-pre-print/       ← arXiv preprint submission (cs.AI, cs.LG)
-│   │   ├── arxiv-paper.tex    ← Full manuscript
-│   │   ├── arxiv-paper.pdf    ← Compiled PDF
+│   ├── engrxiv-pre-print/       ← engrXiv preprint submission
+│   │   ├── engrxiv-paper.tex    ← Full manuscript
+│   │   ├── engrxiv-paper.pdf    ← Compiled PDF
 │   │   ├── references.bib     ← BibTeX bibliography
 │   │   └── README.md          ← Preprint submission status
 │   └── expert-systems-peer-review/  ← Expert Systems with Applications submission
@@ -236,8 +236,8 @@ publications/02-analytical-ai/
   author  = {Hameem M. Mahdi},
   title   = {Causal Inference at Scale: How Analytical {AI} Transforms Pattern Mining Into Actionable Business Intelligence},
   year    = {2026},
-  journal = {arXiv},
-  note    = {Preprint (arXiv:2026.XXXXX [cs.AI]); peer review at Expert Systems with Applications in preparation}
+  journal = {engrXiv},
+  note    = {Preprint (engrXiv preprint); peer review at Expert Systems with Applications in preparation}
 }
 ```
 

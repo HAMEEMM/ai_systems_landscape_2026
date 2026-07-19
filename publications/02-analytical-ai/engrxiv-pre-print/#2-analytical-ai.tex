@@ -1,5 +1,5 @@
 %%
-%% Analytical AI Paper — arXiv Preprint Format
+%% Analytical AI Paper -- engrXiv Preprint Format
 %% Paper #2 in the AI Systems Landscape 2026 series
 %% License: CC BY 4.0
 %%
@@ -50,9 +50,9 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
-\lhead{\textsc{arXiv Preprint} — CC BY 4.0}
+\lhead{\small engrXiv Preprint | CC BY 4.0}
 \rhead{\thepage}
-\lfoot{\footnotesize AI Systems Landscape 2026 --- Paper \#2}
+\lfoot{\footnotesize AI Systems Landscape 2026, Paper \#2}
 \rfoot{\footnotesize \today}
 
 %% ================================================================
@@ -76,8 +76,8 @@
     \vspace{1em}
 
     {\small\textbf{Preprint} (Not yet peer-reviewed)}\\[2pt]
-    {\small Submitted to arXiv, July 2026}\\[2pt]
-    {\small arXiv Category: cs.AI (Artificial Intelligence); cs.LG (Machine Learning)}\\[2pt]
+    {\small Submitted to engrXiv, July 2026}\\[2pt]
+    {\small engrXiv: Engineering Open Archive (engrxiv.org)}\\[2pt]
     {\small License: \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0 International}}\\[2pt]
     {\small Paper \#2 in the \emph{AI Systems Landscape 2026} series}
 \end{center}
@@ -89,7 +89,7 @@
 %% ================================================================
 \begin{abstract}
 \noindent
-Analytical AI systems---the intelligence layer that automatically explores, interprets, and explains patterns in data---underpin nearly every enterprise decision, yet the field lacks a unified architectural framework spanning the full stack from data ingestion to causal attribution. This paper presents a comprehensive analysis of Analytical AI, formalising a 7-stage analytics pipeline (Ingest $\rightarrow$ Prepare $\rightarrow$ Analyse $\rightarrow$ Surface $\rightarrow$ Explain $\rightarrow$ Distribute $\rightarrow$ Feedback) and an 8-layer technology stack (Data Sources \& Ingestion, Data Integration \& Storage, Semantic \& Metric Layer, Analytical Engine, NLP \& Conversational Interface, Causal \& Diagnostic AI, Visualisation \& Reporting, Governance, Lineage \& Access). We map 80+ platforms and tools to this stack, survey seven sub-types of analytical systems (BI \& Dashboarding, Augmented Analytics, Natural Language Analytics, Data Observability, Customer Analytics, Financial Analytics, Operational Analytics), and provide empirical benchmarks for insight quality, system performance, and data quality. The paper's central contribution is a rigorous analysis of the causal inference frontier---the techniques (DAGs, do-calculus, structural causal models, difference-in-differences, CausalImpact) that enable the critical transition from correlation-based reporting to genuine root-cause attribution. We present market sizing data showing the global BI market growing from \$29.3B (2024) to \$54.3B (2030), with augmented analytics expanding from \$14.5B to \$45.9B and data observability from \$1.2B to \$5.0B. Risk analysis covers technical limitations (GIGO, correlation $\neq$ causation, metric inconsistency), interpretive risks (Simpson's paradox, cherry-picking, survivorship bias), and regulatory implications under GDPR, CCPA, HIPAA, and the EU AI Act. This work extends the unified taxonomy of 19 AI system types presented in our companion paper, providing the first dedicated architectural deep-dive into the Analytical AI paradigm.
+Analytical AI systems, the intelligence layer that automatically explores, interprets, and explains patterns in data, underpinning nearly every enterprise decision, yet the field lacks a unified architectural framework spanning the full stack from data ingestion to causal attribution. This paper presents a comprehensive analysis of Analytical AI, formalising a 7-stage analytics pipeline (Ingest, Prepare, Analyse, Surface, Explain, Distribute, Feedback) and an 8-layer technology stack (Data Sources \& Ingestion, Data Integration \& Storage, Semantic \& Metric Layer, Analytical Engine, NLP \& Conversational Interface, Causal \& Diagnostic AI, Visualisation \& Reporting, Governance, Lineage \& Access). We map 80+ platforms and tools to this stack, survey seven sub-types of analytical systems (BI \& Dashboarding, Augmented Analytics, Natural Language Analytics, Data Observability, Customer Analytics, Financial Analytics, Operational Analytics), and provide empirical benchmarks for insight quality, system performance, and data quality. The paper's central contribution is a rigorous analysis of the causal inference frontier: the techniques (DAGs, do-calculus, structural causal models, difference-in-differences, CausalImpact) that enable the critical transition from correlation-based reporting to genuine root-cause attribution. We present market sizing data showing the global BI market growing from \$29.3B (2024) to \$54.3B (2030), with augmented analytics expanding from \$14.5B to \$45.9B and data observability from \$1.2B to \$5.0B. Risk analysis covers technical limitations (GIGO, correlation $\neq$ causation, metric inconsistency), interpretive risks (Simpson's paradox, cherry-picking, survivorship bias), and regulatory implications under GDPR, CCPA, HIPAA, and the EU AI Act. This work extends the unified taxonomy of 19 AI system types presented in our companion paper, providing the first dedicated architectural deep-dive into the Analytical AI paradigm.
 \end{abstract}
 
 \medskip
@@ -104,11 +104,11 @@ Analytical AI systems---the intelligence layer that automatically explores, inte
 \section{Introduction}\label{sec:intro}
 
 \subsection{Background and Motivation}
-Every organisation generates data; few extract genuine understanding from it. The global business intelligence (BI) and analytics market, valued at \$29.3 billion in 2024, is projected to reach \$54.3 billion by 2030~\citep{grandview2025bi}, driven by the promise of data-driven decision-making. Yet most enterprise analytics remain trapped at the descriptive level---dashboards that report \emph{what happened} without explaining \emph{why} or recommending \emph{what to do next}.
+Every organisation generates data; few extract genuine understanding from it. The global business intelligence (BI) and analytics market, valued at \$29.3 billion in 2024, is projected to reach \$54.3 billion by 2030~\citep{grandview2025bi}, driven by the promise of data-driven decision-making. Yet most enterprise analytics remain trapped at the descriptive level, with dashboards that report \emph{what happened} without explaining \emph{why} or recommending \emph{what to do next}.
 
 \textbf{Analytical AI} is the intelligence layer that bridges this gap. Unlike Predictive AI (which forecasts future outcomes), Generative AI (which creates new content), or Agentic AI (which autonomously executes multi-step plans)~\citep{mahdi2026taxonomy}, Analytical AI focuses on \emph{understanding}: automatically exploring patterns, diagnosing root causes, and surfacing actionable insights from structured and semi-structured data.
 
-The field has undergone a paradigm shift over the past five years. Traditional BI platforms that required manual query construction and static report design are being augmented---and in some cases replaced---by AI-powered systems that automatically detect anomalies, generate natural language explanations, and perform causal inference to distinguish genuine drivers from coincidental correlations~\citep{gartner2024augmented}. ThoughtSpot, Tableau AI, and Power BI Copilot exemplify this transition, embedding LLM-based natural language querying (NLQ) directly into analytics workflows.
+The field has undergone a paradigm shift over the past five years. Traditional BI platforms that required manual query construction and static report design are being augmented, and in some cases replaced, by AI-powered systems that automatically detect anomalies, generate natural language explanations, and perform causal inference to distinguish genuine drivers from coincidental correlations~\citep{gartner2024augmented}. ThoughtSpot, Tableau AI, and Power BI Copilot exemplify this transition, embedding LLM-based natural language querying (NLQ) directly into analytics workflows.
 
 Despite this rapid evolution, the Analytical AI field lacks a unified architectural framework. BI vendors, data engineering platforms, causal inference researchers, and data observability startups operate in largely separate communities, each with distinct vocabularies and assumptions. This fragmentation makes it difficult for practitioners to design end-to-end analytical systems and for researchers to identify gaps and opportunities.
 
@@ -127,9 +127,9 @@ This paper addresses these challenges through six research questions:
 \subsection{Contributions}
 Our main contributions are:
 \begin{enumerate}
-    \item A \textbf{7-stage analytics pipeline} (Ingest $\rightarrow$ Feedback) formalising the end-to-end data-to-insight workflow.
+    \item A \textbf{7-stage analytics pipeline} (Ingest to Feedback) formalising the end-to-end data-to-insight workflow.
     \item An \textbf{8-layer technology stack} mapping 80+ platforms and tools to a common reference architecture.
-    \item A comprehensive analysis of the \textbf{causal inference frontier}---techniques and tools that enable root-cause attribution beyond correlation.
+    \item A comprehensive analysis of the \textbf{causal inference frontier}: techniques and tools that enable root-cause attribution beyond correlation.
     \item A \textbf{5-level NLQ maturity model} characterising the evolution from keyword search to autonomous analyst.
     \item Empirical \textbf{benchmarks} for insight quality, system performance, and data quality across production deployments.
     \item A \textbf{market and adoption analysis} spanning BI, augmented analytics, data observability, and process mining.
@@ -145,19 +145,19 @@ The remainder of this paper is organised as follows. Section~\ref{sec:background
 \section{Background \& Related Work}\label{sec:background}
 
 \subsection{The Evolution of Business Intelligence}
-The trajectory of BI spans five decades: from static batch reports in mainframe-era decision support systems (1970s--1980s), through OLAP cubes and dimensional modelling~\citep{kimball2013data}, to self-service BI platforms (Tableau, Power BI) that democratised data access in the 2010s. The current era---\emph{augmented analytics}~\citep{gartner2024augmented}---embeds machine learning directly into the analytics workflow, automating data preparation, insight discovery, and natural language explanation.
+The trajectory of BI spans five decades: from static batch reports in mainframe-era decision support systems (1970s to 1980s), through OLAP cubes and dimensional modelling~\citep{kimball2013data}, to self-service BI platforms (Tableau, Power BI) that democratised data access in the 2010s. The current era, \emph{augmented analytics}~\citep{gartner2024augmented}, which embeds machine learning directly into the analytics workflow, automating data preparation, insight discovery, and natural language explanation.
 
 \subsection{Causal Inference in Data Science}
 The causal inference literature provides the theoretical foundations for Layer 6 of our stack. Pearl's do-calculus and structural causal models (SCMs)~\citep{pearl2009causality} formalise interventional reasoning. Rubin's potential outcomes framework~\citep{rubin2005causal} underpins experimental and quasi-experimental methods (difference-in-differences, instrumental variables, regression discontinuity, propensity score matching). Recent work has operationalised these methods in open-source libraries: DoWhy~\citep{sharma2020dowhy}, CausalML~\citep{chen2020causalml}, EconML~\citep{econml2019}, and CausalImpact~\citep{brodersen2015causalimpact}.
 
 \subsection{Natural Language Querying}
-NL2SQL---translating natural language questions into structured database queries---has progressed from rule-based systems through sequence-to-sequence models to LLM-based approaches. The Spider benchmark~\citep{yu2018spider} established cross-database evaluation, while BIRD~\citep{li2024bird} introduced value-grounded evaluation. Production systems (ThoughtSpot Sage, Power BI Q\&A, Tableau Ask Data) report 70--85\% accuracy on enterprise datasets, with hallucination and schema misinterpretation as dominant failure modes.
+NL2SQL, which involves translating natural language questions into structured database queries, has progressed from rule-based systems through sequence-to-sequence models to LLM-based approaches. The Spider benchmark~\citep{yu2018spider} established cross-database evaluation, while BIRD~\citep{li2024bird} introduced value-grounded evaluation. Production systems (ThoughtSpot Sage, Power BI Q\&A, Tableau Ask Data) report 70 to 85\% accuracy on enterprise datasets, with hallucination and schema misinterpretation as dominant failure modes.
 
 \subsection{Data Observability}
-Data observability---monitoring data freshness, volume, schema, distribution, and lineage---has emerged as a critical complement to traditional data quality. Monte Carlo, Bigeye, Anomalo, and Great Expectations~\citep{greatexpectations2023} automate anomaly detection across data pipelines. Barr Moses et al. coined the term ``data downtime'' to describe periods when data is missing, inaccurate, or otherwise unusable~\citep{moses2022data}.
+Data observability, which covers monitoring data freshness, volume, schema, distribution, and lineage, has emerged as a critical complement to traditional data quality. Monte Carlo, Bigeye, Anomalo, and Great Expectations~\citep{greatexpectations2023} automate anomaly detection across data pipelines. Barr Moses et al. coined the term ``data downtime'' to describe periods when data is missing, inaccurate, or otherwise unusable~\citep{moses2022data}.
 
 \subsection{Position Relative to This Work}
-While individual surveys exist for BI, causal inference, NL2SQL, and data observability, no prior work provides a \emph{unified architectural framework} spanning the complete Analytical AI stack---from data ingestion through causal attribution to governance---validated with empirical benchmarks and a market landscape analysis.
+While individual surveys exist for BI, causal inference, NL2SQL, and data observability, no prior work provides a \emph{unified architectural framework} spanning the complete Analytical AI stack from data ingestion through causal attribution to governance, validated with empirical benchmarks and a market landscape analysis.
 
 %% ================================================================
 %% SECTION 3: THE ANALYTICS PIPELINE
@@ -169,13 +169,13 @@ We formalise the end-to-end Analytical AI workflow as a 7-stage pipeline.
 \begin{definition}[Analytics Pipeline]
 An analytics pipeline $\mathcal{P} = \langle S_1, S_2, \ldots, S_7 \rangle$ is an ordered sequence of stages that transforms raw data sources into actionable insights with a feedback loop:
 \begin{enumerate}
-    \item \textsc{Ingest}: $D_{\text{raw}} = \text{ingest}(\mathcal{S}_{\text{ext}})$ --- extract data from external sources.
-    \item \textsc{Prepare}: $D_{\text{clean}} = \text{prepare}(D_{\text{raw}})$ --- clean, transform, and model data.
-    \item \textsc{Analyse}: $I = \text{analyse}(D_{\text{clean}})$ --- apply statistical, ML, and mining techniques.
-    \item \textsc{Surface}: $V = \text{surface}(I)$ --- visualise insights in dashboards and reports.
-    \item \textsc{Explain}: $C = \text{explain}(I, D_{\text{clean}})$ --- apply causal inference and root-cause analysis.
-    \item \textsc{Distribute}: $\text{distribute}(V, C)$ --- push insights via alerts, APIs, and subscriptions.
-    \item \textsc{Feedback}: $\text{feedback}(V, C) \rightarrow \mathcal{P}$ --- measure adoption, refine metrics, close the loop.
+    \item \textsc{Ingest}: $D_{\text{raw}} = \text{ingest}(\mathcal{S}_{\text{ext}})$: extract data from external sources.
+    \item \textsc{Prepare}: $D_{\text{clean}} = \text{prepare}(D_{\text{raw}})$: clean, transform, and model data.
+    \item \textsc{Analyse}: $I = \text{analyse}(D_{\text{clean}})$: apply statistical, ML, and mining techniques.
+    \item \textsc{Surface}: $V = \text{surface}(I)$: visualise insights in dashboards and reports.
+    \item \textsc{Explain}: $C = \text{explain}(I, D_{\text{clean}})$: apply causal inference and root-cause analysis.
+    \item \textsc{Distribute}: $\text{distribute}(V, C)$: push insights via alerts, APIs, and subscriptions.
+    \item \textsc{Feedback}: $\text{feedback}(V, C)$, feeding results back to $\mathcal{P}$: measure adoption, refine metrics, close the loop.
 \end{enumerate}
 \end{definition}
 
@@ -261,7 +261,7 @@ L8 & Governance, Lineage \& Access & Data quality, cataloguing, RBAC, lineage   
 \end{table*}
 
 \subsection{Layer 1: Data Sources \& Ingestion}
-The ingestion layer connects to heterogeneous data sources---transactional databases, SaaS APIs, IoT streams, event logs, and flat files---and moves data into the analytical store. Two paradigms dominate:
+The ingestion layer connects to heterogeneous data sources: transactional databases, SaaS APIs, IoT streams, event logs, and flat files, and moves data into the analytical store. Two paradigms dominate:
 
 \begin{itemize}
     \item \textbf{Batch ELT}: Fivetran (300+ connectors) and Airbyte (350+ open-source connectors) extract data on scheduled intervals and load it raw into cloud warehouses, where transformation occurs via dbt.
@@ -397,9 +397,9 @@ GMM     & Iris ($n$=150, $d$=4)           & 0.55 & 0.90 & 3 \\
 K-Means & Wine ($n$=178, $d$=13)          & 0.28 & 0.37 & 3 \\
 HDBSCAN & Wine ($n$=178, $d$=13)          & 0.31 & 0.42 & 3 \\
 \midrule
-K-Means & Mall Customers ($n$=200, $d$=5) & 0.44 & ---  & 5 \\
-DBSCAN  & Mall Customers ($n$=200, $d$=5) & 0.38 & ---  & 4 \\
-HDBSCAN & Mall Customers ($n$=200, $d$=5) & 0.41 & ---  & 5 \\
+K-Means & Mall Customers ($n$=200, $d$=5) & 0.44 & N/A & 5 \\
+DBSCAN  & Mall Customers ($n$=200, $d$=5) & 0.38 & N/A & 4 \\
+HDBSCAN & Mall Customers ($n$=200, $d$=5) & 0.41 & N/A & 5 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -407,10 +407,10 @@ HDBSCAN & Mall Customers ($n$=200, $d$=5) & 0.41 & ---  & 5 \\
 GMM achieves the highest ARI on Iris (0.90), reflecting its ability to model the ellipsoidal cluster geometry of that dataset. On the higher-dimensional Wine dataset, all algorithms exhibit lower scores, highlighting the curse of dimensionality. The Mall Customers dataset lacks ground-truth labels, so ARI is unavailable; silhouette scores indicate moderate cluster separation across all methods.
 
 \subsection{Dimensionality Reduction}
-PCA provides linear projection preserving maximum variance, suitable for feature engineering and data compression. t-SNE~\citep{vandermaaten2008tsne} and UMAP excel at nonlinear manifold embedding for 2D/3D visualisation. UMAP~\citep{mcinnes2018umap} is preferred for analytical workflows due to its superior global structure preservation and 10--100$\times$ faster execution compared to t-SNE on datasets exceeding 100K points.
+PCA provides linear projection preserving maximum variance, suitable for feature engineering and data compression. t-SNE~\citep{vandermaaten2008tsne} and UMAP excel at nonlinear manifold embedding for 2D/3D visualisation. UMAP~\citep{mcinnes2018umap} is preferred for analytical workflows due to its superior global structure preservation and 10 to 100 times faster execution compared to t-SNE on datasets exceeding 100K points.
 
 \subsection{Anomaly Detection}
-Automated anomaly detection on KPI time series is a core capability of the analytical engine. Statistical Process Control (SPC) using control charts (Shewhart, CUSUM, EWMA) provides interpretable alerts with well-understood false-positive rates. Machine learning approaches---Isolation Forest~\citep{liu2008isolation}, HBOS (Histogram-Based Outlier Score)~\citep{goldstein2012hbos}, and Autoencoder-based detectors---capture complex multivariate anomalies but require careful threshold calibration.
+Automated anomaly detection on KPI time series is a core capability of the analytical engine. Statistical Process Control (SPC) using control charts (Shewhart, CUSUM, EWMA) provides interpretable alerts with well-understood false-positive rates. Machine learning approaches: Isolation Forest~\citep{liu2008isolation}, HBOS (Histogram-Based Outlier Score)~\citep{goldstein2012hbos}, and Autoencoder-based detectors, which capture complex multivariate anomalies but require careful threshold calibration.
 
 \subsection{Statistical Analysis}
 Descriptive statistics (central tendency, dispersion, distribution shape), hypothesis testing (t-tests, chi-squared, ANOVA), regression analysis (linear, logistic, polynomial), and time-series decomposition (trend, seasonality, residual) form the foundation of every analytical system. These methods are implemented across pandas, scipy, statsmodels, and R's base statistical libraries.
@@ -419,14 +419,14 @@ Descriptive statistics (central tendency, dispersion, distribution shape), hypot
 The Apriori~\citep{agrawal1994apriori} and FP-Growth~\citep{han2000fpgrowth} algorithms discover frequent itemsets and association rules (support, confidence, lift). While computationally mature, these techniques remain widely used in retail analytics (market basket analysis), recommendation systems, and cross-sell/upsell strategies.
 
 \subsection{Graph Analytics}
-Graph methods---centrality measures (degree, betweenness, PageRank), community detection (Louvain~\citep{blondel2008louvain}, Leiden), and link prediction---reveal relationship patterns invisible to tabular analysis. Applications include fraud detection (transaction graph anomalies), social network analysis, and supply chain dependency mapping.
+Graph methods: centrality measures (degree, betweenness, PageRank), community detection (Louvain~\citep{blondel2008louvain}, Leiden), and link prediction, reveal relationship patterns invisible to tabular analysis. Applications include fraud detection (transaction graph anomalies), social network analysis, and supply chain dependency mapping.
 
 %% ================================================================
 %% SECTION 7: CAUSAL INFERENCE & ROOT-CAUSE ANALYSIS
 %% ================================================================
 \section{Causal Inference \& Root-Cause Analysis}\label{sec:causal}
 
-The causal inference frontier represents the most intellectually significant layer of the Analytical AI stack---the transition from \emph{correlation} (``revenue dropped when we changed the homepage'') to \emph{causation} (``the homepage change \emph{caused} a 12\% revenue decrease, controlling for seasonal effects'').
+The causal inference frontier represents the most intellectually significant layer of the Analytical AI stack, marking the transition from \emph{correlation} (``revenue dropped when we changed the homepage'') to \emph{causation} (``the homepage change \emph{caused} a 12\% revenue decrease, controlling for seasonal effects'').
 
 \subsection{Theoretical Foundations}
 
@@ -540,10 +540,10 @@ We propose a maturity model for NLQ capabilities in Analytical AI systems:
 \subsection{NL2SQL Architecture}
 Modern NL2SQL systems follow a pipeline: (1)~parse the natural language question, (2)~retrieve relevant schema metadata and semantic layer definitions, (3)~generate candidate SQL using an LLM, (4)~validate the SQL against the schema, (5)~execute and present results with natural language explanation.
 
-The critical dependency is the semantic layer (Layer 3): NL2SQL accuracy improves dramatically (from $\sim$65\% to $\sim$85\%) when the LLM has access to curated metric definitions rather than raw table schemas~\citep{gartner2024augmented}.
+The critical dependency is the semantic layer (Layer 3): NL2SQL accuracy improves dramatically (from approximately $65\% to approximately $85\%) when the LLM has access to curated metric definitions rather than raw table schemas~\citep{gartner2024augmented}.
 
 \subsection{NL2SQL Benchmark Results}
-Table~\ref{tab:nl2sql-benchmarks} reports execution accuracy across the two dominant public benchmarks---Spider and BIRD-SQL---as of mid-2025.
+Table~\ref{tab:nl2sql-benchmarks} reports execution accuracy across the two dominant public benchmarks, Spider and BIRD-SQL, as of mid-2025.
 
 \begin{table}[ht]
 \centering\small
@@ -569,7 +569,7 @@ Power BI Q\&A           & Enterprise (internal) & 72.0 & Microsoft docs \\
 \end{tabular}
 \end{table}
 
-The gap between academic benchmarks (Spider, 81--85\%) and the more realistic BIRD-SQL (60--67\%) underscores the challenge of value-grounded reasoning over dirty, real-world schemas. Enterprise NLQ products report intermediate accuracy, reflecting proprietary schema-aware optimizations.
+The gap between academic benchmarks (Spider, 81 to 85\%) and the more realistic BIRD-SQL (60 to 67\%) underscores the challenge of value-grounded reasoning over dirty, real-world schemas. Enterprise NLQ products report intermediate accuracy, reflecting proprietary schema-aware optimizations.
 
 \subsection{Failure Modes}
 \begin{sloppypar}
@@ -627,7 +627,7 @@ Power BI Q\&A      & NLQ to Result           & 5.1 & seconds \\
 \end{tabular}
 \end{table}
 
-BigQuery leads warehouse query performance (1.8\,s p50), while Tableau demonstrates the fastest dashboard rendering. NLQ pipelines incur additional latency (4--5\,s) due to LLM inference and SQL generation steps.
+BigQuery leads warehouse query performance (1.8\,s p50), while Tableau demonstrates the fastest dashboard rendering. NLQ pipelines incur additional latency (4 to 5 seconds) due to LLM inference and SQL generation steps.
 
 Table~\ref{tab:performance} summarises target performance thresholds for production deployments.
 
@@ -710,7 +710,7 @@ Augmented Analytics         & 14.5 & 45.9  & 21.2\% \\
 Data Observability          & 1.2  & 5.0   & 26.8\% \\
 Process Mining              & 1.6  & 6.0   & 24.5\% \\
 \midrule
-\textbf{Total (est.)}      & \textbf{46.6} & \textbf{111.2} & --- \\
+\textbf{Total (est.)}      & \textbf{46.6} & \textbf{111.2} & N/A \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -741,9 +741,9 @@ Sigma         & Niche      & Spreadsheet-like cloud BI           & \$25/user/mo 
 Published case studies report measurable returns across three analytical investment categories:
 
 \begin{itemize}
-    \item \textbf{Self-service BI}: 20--30\% reduction in ad-hoc data requests to central analytics teams.
-    \item \textbf{Augmented analytics}: 40--60\% reduction in time-to-insight through automated insight discovery.
-    \item \textbf{Data observability}: 60--80\% reduction in mean time to detect (MTTD) data quality incidents.
+    \item \textbf{Self-service BI}: 20 to 30\% reduction in ad-hoc data requests to central analytics teams.
+    \item \textbf{Augmented analytics}: 40 to 60\% reduction in time-to-insight through automated insight discovery.
+    \item \textbf{Data observability}: 60 to 80\% reduction in mean time to detect (MTTD) data quality incidents.
 \end{itemize}
 
 %% ================================================================
@@ -775,10 +775,10 @@ Three cognitive biases systematically distort analytical interpretation:
 \subsection{Organisational Risks}
 
 \begin{itemize}
-    \item \textbf{Low Adoption}: Analytics tools deployed but not used---Gartner estimates that 30--40\% of BI licences go unused.
+    \item \textbf{Low Adoption}: Analytics tools deployed but not used; Gartner estimates that 30 to 40\% of BI licences go unused.
     \item \textbf{Insight-Action Gap}: Insights generated but not acted upon due to organisational inertia or unclear ownership.
     \item \textbf{Dashboard Overload}: Proliferation of dashboards ($>$100 per organisation) leading to metric fatigue and decision paralysis.
-    \item \textbf{Metric Gaming}: Goodhart's Law---when a measure becomes a target, it ceases to be a good measure.
+    \item \textbf{Metric Gaming}: Goodhart's Law: when a measure becomes a target, it ceases to be a good measure.
 \end{itemize}
 
 \subsection{Privacy \& Ethical Risks}
@@ -841,9 +841,9 @@ Best practices include: single source of truth (SSOT) for metric definitions via
 
 \begin{enumerate}
     \item \textbf{Real-Time Causal Inference at Petabyte Scale}: Current causal libraries operate on sampled datasets; scaling DAG-based inference to real-time streaming data at warehouse scale remains unsolved.
-    \item \textbf{LLM-Powered Autonomous Analysts (Level 5 NLQ)}: Agents that proactively explore data, generate hypotheses, test them, and present findings---combining Analytical AI with Agentic AI.
+    \item \textbf{LLM-Powered Autonomous Analysts (Level 5 NLQ)}: Agents that proactively explore data, generate hypotheses, test them, and present findings, combining Analytical AI with Agentic AI.
     \item \textbf{Composable \& Embedded Analytics}: Analytics components (charts, NLQ interfaces, alerts) embedded directly into operational applications rather than siloed BI tools.
-    \item \textbf{Data Mesh Governance at Scale}: Federated domain-oriented data ownership with centralised governance standards---balancing autonomy with consistency.
+    \item \textbf{Data Mesh Governance at Scale}: Federated domain-oriented data ownership with centralised governance standards, balancing autonomy with consistency.
     \item \textbf{Causal Foundation Models}: Pre-trained models that encode causal priors, enabling zero-shot causal inference on novel datasets without explicit DAG specification.
     \item \textbf{Cross-Organisational Analytics Federation}: Privacy-preserving analytical queries across organisational boundaries using federated computation and differential privacy.
 \end{enumerate}
@@ -853,20 +853,20 @@ Best practices include: single source of truth (SSOT) for metric definitions via
 %% ================================================================
 \section{Conclusion}\label{sec:conclusion}
 
-This paper presented a comprehensive architectural analysis of Analytical AI---the intelligence layer that transforms raw data into actionable business insights. Through a formal 7-stage pipeline, an 8-layer technology stack mapping 80+ platforms, a causal inference frontier analysis, and a 5-level NLQ maturity model, we provide a unified framework for understanding the complete Analytical AI landscape.
+This paper presented a comprehensive architectural analysis of Analytical AI, the intelligence layer that transforms raw data into actionable business insights. Through a formal 7-stage pipeline, an 8-layer technology stack mapping 80+ platforms, a causal inference frontier analysis, and a 5-level NLQ maturity model, we provide a unified framework for understanding the complete Analytical AI landscape.
 
 Our analysis yields six principal findings corresponding to our research questions:
 
 \begin{description}
-    \item[RQ1 (Architecture):] The 7-stage pipeline (Ingest $\rightarrow$ Feedback) and 8-layer stack formalise the architectural primitives that distinguish Analytical AI from Predictive (forward-looking), Generative (content-creating), and Agentic (action-taking) paradigms.
-    \item[RQ2 (Stack Mapping):] No single platform spans all eight layers. Enterprise deployments typically combine 5--8 specialised tools, with the semantic layer (L3) emerging as the critical integration point.
+    \item[RQ1 (Architecture):] The 7-stage pipeline (Ingest to Feedback) and 8-layer stack formalise the architectural primitives that distinguish Analytical AI from Predictive (forward-looking), Generative (content-creating), and Agentic (action-taking) paradigms.
+    \item[RQ2 (Stack Mapping):] No single platform spans all eight layers. Enterprise deployments typically combine 5 to 8 specialised tools, with the semantic layer (L3) emerging as the critical integration point.
     \item[RQ3 (Causal Inference):] EconML's Double ML achieves the highest estimation accuracy on benchmarks (bias 0.01, RMSE 0.08). DoWhy's four-step methodology (model, identify, estimate, refute) provides the most rigorous end-to-end causal pipeline for production deployments, while CausalImpact is preferred for time-series marketing interventions due to its Bayesian structural approach.
-    \item[RQ4 (NLQ):] Production NL2SQL accuracy ranges from 65--85\% depending on semantic layer maturity. Schema hallucination and semantic misinterpretation are the dominant failure modes.
+    \item[RQ4 (NLQ):] Production NL2SQL accuracy ranges from 65 to 85\% depending on semantic layer maturity. Schema hallucination and semantic misinterpretation are the dominant failure modes.
     \item[RQ5 (Data Quality):] Each percentage point decrease in data completeness or accuracy degrades downstream insight reliability non-linearly. Organisations with $<95\%$ data quality scores report 3$\times$ higher rates of incorrect analytical conclusions.
-    \item[RQ6 (ROI):] Measurable returns include 20--30\% reduction in ad-hoc requests (self-service BI), 40--60\% faster time-to-insight (augmented analytics), and 60--80\% reduction in data incident MTTD (observability).
+    \item[RQ6 (ROI):] Measurable returns include 20 to 30\% reduction in ad-hoc requests (self-service BI), 40 to 60\% faster time-to-insight (augmented analytics), and 60 to 80\% reduction in data incident MTTD (observability).
 \end{description}
 
-The causal inference frontier---Layer 6 of our stack---represents the most significant opportunity for advancing Analytical AI beyond correlation-based dashboards toward genuine root-cause understanding. As the combined market reaches an estimated \$111B by 2030, establishing principled frameworks for architecture, evaluation, and governance becomes essential for trustworthy data-driven decision-making.
+The causal inference frontier (Layer 6) of our stack represents the most significant opportunity for advancing Analytical AI beyond correlation-based dashboards toward genuine root-cause understanding. As the combined market reaches an estimated \$111B by 2030, establishing principled frameworks for architecture, evaluation, and governance becomes essential for trustworthy data-driven decision-making.
 
 All data, analysis notebooks, and reproduction scripts are available at: \\
 {\small\url{https://github.com/HAMEEMM/ai_systems_landscape_2026/tree/main/publications/02-analytical-ai}}
