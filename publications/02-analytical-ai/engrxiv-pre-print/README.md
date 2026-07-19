@@ -8,13 +8,13 @@
 
 ## Pre-Print Server
 
-| Field        | Value                                                 |
-| ------------ | ----------------------------------------------------- |
-| **Server**   | engrXiv (Engineering Open Archive)                    |
-| **Operator** | Open Engineering Inc. / Center for Open Science (OSF) |
-| **URL**      | https://engrxiv.org/                                  |
-| **License**  | CC BY 4.0                                             |
-| **Cost**     | Free                                                  |
+| Field        | Value                              |
+| ------------ | ---------------------------------- |
+| **Server**   | engrXiv (Engineering Open Archive) |
+| **Operator** | Devin R. Berg                      |
+| **URL**      | https://engrxiv.org/               |
+| **License**  | CC BY 4.0                          |
+| **Cost**     | Free                               |
 
 ---
 
