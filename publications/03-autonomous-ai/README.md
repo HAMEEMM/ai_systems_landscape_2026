@@ -10,13 +10,13 @@
 
 ## Status
 
-> Manuscript in preparation
+> engrXiv preprint package prepared; peer-review submission in preparation.
 
 ---
 
 ## Abstract
 
-*Coming soon.*
+The preprint manuscript is available in [engrxiv-pre-print](engrxiv-pre-print/README.md).
 
 ---
 
@@ -24,8 +24,12 @@
 
 ```
 publications/03-autonomous-ai/
-├── README.md          ← You are here
-├── paper.pdf          ← Final manuscript (when ready)
-├── figures/           ← Figures and diagrams
-└── supplementary/     ← Supplementary materials
+├── README.md              <- You are here
+├── engrxiv-pre-print/     <- engrXiv preprint package
+│   ├── #3-autonomous-ai.tex
+│   ├── #3-autonomous-ai.pdf
+│   ├── README.md
+│   └── references.bib
+└── submission/
+	└── science-robotics-peer-review/ <- Science Robotics package
 ```
